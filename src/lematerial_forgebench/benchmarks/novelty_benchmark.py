@@ -12,7 +12,6 @@ import numpy as np
 from lematerial_forgebench.benchmarks.base import BaseBenchmark
 from lematerial_forgebench.evaluator import EvaluationResult, EvaluatorConfig
 from lematerial_forgebench.metrics.novelty_metric import NoveltyMetric
-from lematerial_forgebench.utils.distribution_utils import safe_float
 
 
 class NoveltyBenchmark(BaseBenchmark):
@@ -74,10 +73,9 @@ class NoveltyBenchmark(BaseBenchmark):
         # Set up evaluator configs
         evaluator_configs = {
             "novelty": EvaluatorConfig(
-                name="Novelty Analysis",
+                name="novelty",
                 description=(
-                    "Evaluates structural novelty against reference "
-                    "datasets"
+                    "Evaluates structural novelty against reference datasets"
                 ),
                 metrics={"novelty": novelty_metric},
                 weights={"novelty": 1.0},
@@ -130,10 +128,10 @@ class NoveltyBenchmark(BaseBenchmark):
         novelty_results = evaluator_results.get("novelty")
         if novelty_results:
             # Get the combined score (should be same as novelty_score)
-            final_scores["novelty_score"] = safe_float(
-                novelty_results.get("combined_value")
-            )
-            final_scores["novelty_ratio"] = final_scores["novelty_score"]
+            combined_value = novelty_results.get("combined_value")
+            if combined_value is not None:
+                final_scores["novelty_score"] = float(combined_value)
+                final_scores["novelty_ratio"] = float(combined_value)
 
             # Extract detailed metrics from the metric results
             metric_results = novelty_results.get("metric_results", {})

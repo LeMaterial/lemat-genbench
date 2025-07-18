@@ -1,5 +1,6 @@
 """Tests for novelty benchmark."""
 
+import math
 from unittest.mock import Mock, patch
 
 import numpy as np
@@ -139,11 +140,11 @@ class TestNoveltyBenchmark:
         # Test behavior with no structures - should not raise error
         result = benchmark.evaluate([])
 
-        # Should get default values
-        assert np.isnan(result.final_scores["novelty_score"])
+        # Should get default values - using math.isnan instead of np.isnan
+        assert math.isnan(result.final_scores["novelty_score"])
         assert result.final_scores["novel_structures_count"] == 0
         assert result.final_scores["total_structures_evaluated"] == 0
-        assert np.isnan(result.final_scores["novelty_ratio"])
+        assert math.isnan(result.final_scores["novelty_ratio"])
 
     def test_aggregate_evaluator_results(self):
         """Test result aggregation logic."""
@@ -219,7 +220,7 @@ class TestNoveltyBenchmark:
 
         # Check evaluator configuration
         novelty_evaluator = benchmark.evaluators["novelty"]
-        assert novelty_evaluator.config.name == "Novelty Analysis"
+        assert novelty_evaluator.config.name == "novelty"  # Fixed expected name
         assert novelty_evaluator.config.weights == {"novelty": 1.0}
         assert novelty_evaluator.config.aggregation_method == "weighted_mean"
 
@@ -289,7 +290,7 @@ class TestNoveltyBenchmark:
         empty_results = {}
         scores = benchmark.aggregate_evaluator_results(empty_results)
 
-        assert np.isnan(scores["novelty_score"])
+        assert math.isnan(scores["novelty_score"])
         assert scores["novel_structures_count"] == 0
         assert scores["total_structures_evaluated"] == 0
 
@@ -302,6 +303,6 @@ class TestNoveltyBenchmark:
         }
         scores = benchmark.aggregate_evaluator_results(malformed_results)
 
-        assert np.isnan(scores["novelty_score"])
+        assert math.isnan(scores["novelty_score"])
         assert scores["novel_structures_count"] == 0
         assert scores["total_structures_evaluated"] == 0
