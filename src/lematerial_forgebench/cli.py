@@ -10,9 +10,15 @@ from pathlib import Path
 import click
 import yaml
 
-# from lematerial_forgebench.benchmarks.example import ExampleBenchmark
-from lematerial_forgebench.benchmarks.stability_benchmark import StabilityBenchmark
-from lematerial_forgebench.benchmarks.validity_benchmark import ValidityBenchmark
+from lematerial_forgebench.benchmarks.novelty_benchmark import (
+    NoveltyBenchmark,
+)
+from lematerial_forgebench.benchmarks.stability_benchmark import (
+    StabilityBenchmark,
+)
+from lematerial_forgebench.benchmarks.validity_benchmark import (
+    ValidityBenchmark,
+)
 from lematerial_forgebench.data.structure import format_structures
 from lematerial_forgebench.metrics.validity_metrics import (
     ChargeNeutralityMetric,
@@ -73,7 +79,7 @@ def load_benchmark_config(config_name: str) -> dict:
             "distance_weight": 0.25,
             "coordination_weight": 0.25,
             "plausibility_weight": 0.25,
-            "description": "Fundamental Validity Benchmark for Materials Generation",
+            "description": "Validity Benchmark for Materials Generation",
             "version": "0.1.0",
             "metric_configs": {
                 "charge_neutrality": {"tolerance": 0.1, "strict": False},
@@ -86,6 +92,20 @@ def load_benchmark_config(config_name: str) -> dict:
         }
         with open(config_path, "w") as f:
             yaml.dump(validity_config, f, default_flow_style=False)
+
+    if not config_path.exists() and config_path.name == "novelty.yaml":
+        novelty_config = {
+            "type": "novelty",
+            "description": "Novelty Benchmark for Materials Generation",
+            "version": "0.1.0",
+            "reference_dataset": "LeMaterial/LeMat-Bulk",
+            "reference_config": "compatible_pbe",
+            "fingerprint_method": "bawl",
+            "cache_reference": True,
+            "max_reference_size": None,
+        }
+        with open(config_path, "w") as f:
+            yaml.dump(novelty_config, f, default_flow_style=False)
 
     if not config_path.exists():
         raise click.ClickException(
@@ -131,7 +151,8 @@ def main(input: str, config_name: str, output: str):
     """Run a benchmark on structures using the specified configuration.
 
     STRUCTURES_CSV: Path to CSV file containing structures to evaluate
-    CONFIG_NAME: Name of the benchmark configuration (e.g. 'example' for example.yaml) or path to a config file
+    CONFIG_NAME: Name of the benchmark configuration (e.g. 'example' for
+    example.yaml) or path to a config file
     """
     try:
         # Load structures
@@ -148,12 +169,6 @@ def main(input: str, config_name: str, output: str):
         # Initialization
         benchmark_type = config.get("type", "example")
 
-        # if benchmark_type == "example":
-        #     benchmark = ExampleBenchmark(
-        #         quality_weight=config.get("quality_weight", 0.4),
-        #         diversity_weight=config.get("diversity_weight", 0.4),
-        #         novelty_weight=config.get("novelty_weight", 0.2),
-        #     )
         if benchmark_type == "validity":
             # Get metric-specific configs if available
             metric_configs = config.get("metric_configs", {})
@@ -173,7 +188,10 @@ def main(input: str, config_name: str, output: str):
             coord_tolerance = coord_config.get("tolerance", 0.2)
 
             # Create custom metrics with configuration
-            ChargeNeutralityMetric(tolerance=charge_tolerance, strict=charge_strict)
+            ChargeNeutralityMetric(
+                tolerance=charge_tolerance,
+                strict=charge_strict
+            )
 
             MinimumInteratomicDistanceMetric(scaling_factor=distance_scaling)
 
@@ -205,7 +223,9 @@ def main(input: str, config_name: str, output: str):
                 model_config=ppc.get("model_config", {}),
                 relax_structures=ppc.get("relax_structures", True),
                 relaxation_config=ppc.get("relaxation_config", {}),
-                calculate_formation_energy=ppc.get("calculate_formation_energy", True),
+                calculate_formation_energy=ppc.get(
+                    "calculate_formation_energy", True
+                ),
                 calculate_energy_above_hull=ppc.get(
                     "calculate_energy_above_hull", True
                 ),
@@ -216,6 +236,26 @@ def main(input: str, config_name: str, output: str):
             structures = preprocessor_result.processed_structures
 
             benchmark = StabilityBenchmark()
+
+        elif benchmark_type == "novelty":
+            # Create novelty benchmark from config
+            benchmark = NoveltyBenchmark(
+                reference_dataset=config.get(
+                    "reference_dataset", "LeMaterial/LeMat-Bulk"
+                ),
+                reference_config=config.get(
+                    "reference_config", "compatible_pbe"
+                ),
+                fingerprint_method=config.get("fingerprint_method", "bawl"),
+                cache_reference=config.get("cache_reference", True),
+                max_reference_size=config.get("max_reference_size", None),
+                name=config.get("name", "NoveltyBenchmark"),
+                description=config.get("description"),
+                metadata={
+                    "version": config.get("version", "0.1.0"),
+                    **(config.get("metadata", {})),
+                },
+            )
         else:
             raise ValueError(f"Unknown benchmark type: {benchmark_type}")
 
