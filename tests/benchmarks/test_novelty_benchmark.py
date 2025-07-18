@@ -3,7 +3,6 @@
 import math
 from unittest.mock import Mock, patch
 
-import numpy as np
 import pytest
 from pymatgen.core.structure import Structure
 from pymatgen.util.testing import PymatgenTest
