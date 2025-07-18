@@ -78,37 +78,40 @@ class MetricEvaluator:
 
     Example
     -------
-    >>> metrics = {
-    ...     "StructuralDiversity": MetricConfig(
-    ...         name="StructuralDiversity",
-    ...         description="Structural diversity metric",
-    ...         metric=StructuralDiversityMetric(),
-    ...     ),
-    ...     "CompositionDiversity": MetricConfig(
-    ...         name="CompositionDiversity",
-    ...         description="Composition diversity metric",
-    ...         metric=CompositionDiversityMetric(),
-    ...     ),
-    ...     "Novelty": MetricConfig(
-    ...         name="Novelty",
-    ...         description="Novelty metric",
-    ...         metric=NoveltyMetric(),
-    ...     )
-    ... }
-    >>> weights = {
-    ...     "StructuralDiversity": 0.4,
-    ...     "CompositionDiversity": 0.4,
-    ...     "Novelty": 0.2
-    ... }
-    >>> evaluator = MetricEvaluator(
-    ...     metrics=metrics,
-    ...     weights=weights,
-    ...     aggregation_method="weighted_mean"
-    ... )
-    >>> result = evaluator.evaluate(structures)
-    >>> print(f"Combined score: {result.combined_value:.3f}")
-    >>> for name, res in result.metric_results.items():
-    ...     print(f"{name}: {res.value:.3f}")
+
+    .. code-block:: python
+
+        metrics = {
+            "StructuralDiversity": MetricConfig(
+                name="StructuralDiversity",
+                description="Structural diversity metric",
+                metric=StructuralDiversityMetric(),
+            ),
+            "CompositionDiversity": MetricConfig(
+                name="CompositionDiversity",
+                description="Composition diversity metric",
+                metric=CompositionDiversityMetric(),
+            ),
+            "Novelty": MetricConfig(
+                name="Novelty",
+                description="Novelty metric",
+                metric=NoveltyMetric(),
+            )
+        }
+        weights = {
+            "StructuralDiversity": 0.4,
+            "CompositionDiversity": 0.4,
+            "Novelty": 0.2
+        }
+        evaluator = MetricEvaluator(
+            metrics=metrics,
+            weights=weights,
+            aggregation_method="weighted_mean"
+        )
+        result = evaluator.evaluate(structures)
+        print(f"Combined score: {result.combined_value:.3f}")
+        for name, res in result.metric_results.items():
+            print(f"{name}: {res.value:.3f}")
     """
 
     def __init__(
@@ -166,10 +169,7 @@ class MetricEvaluator:
                 f"Unknown aggregation method: {self.config.aggregation_method}"
             )
 
-    def evaluate(
-        self,
-        structures: list[Structure],
-    ) -> EvaluationResult:
+    def evaluate(self, structures: list[Structure]) -> EvaluationResult:
         """Evaluate all metrics on the given structures.
 
         Parameters
@@ -191,7 +191,7 @@ class MetricEvaluator:
         for metric_name, metric in self.metrics.items():
             try:
                 result = metric.compute(
-                    structures=structures,
+                    structures=structures, **metric._get_compute_attributes()
                 )
                 metric_results[metric_name] = result
 
@@ -211,41 +211,43 @@ class MetricEvaluator:
 
         # Combine results if weights provided
         combined_value = None
+        try:
+            if self.config.weights is not None:
+                values = []
+                weights = []
+                all_uncertainties = {}
 
-        if self.config.weights is not None:
-            values = []
-            weights = []
-            all_uncertainties = {}
+                for metric_name, metric in self.config.metrics.items():
+                    result = metric_results[metric_name]
+                    if not np.isnan(result.value):
+                        value = result.value
 
-            for metric_name, metric in self.config.metrics.items():
-                result = metric_results[metric_name]
-                if not np.isnan(result.value):
-                    value = result.value
+                        values.append(value)
+                        weights.append(self.config.weights[metric_name])
 
-                    values.append(value)
-                    weights.append(self.config.weights[metric_name])
+                        if result.uncertainties:
+                            for key, val in result.uncertainties.items():
+                                if key not in all_uncertainties:
+                                    all_uncertainties[key] = []
+                                all_uncertainties[key].append(val)
 
-                    if result.uncertainties:
-                        for key, val in result.uncertainties.items():
-                            if key not in all_uncertainties:
-                                all_uncertainties[key] = []
-                            all_uncertainties[key].append(val)
+                if values:
+                    weights = np.array(weights) / np.sum(weights)  # Normalize weights
 
-            if values:
-                weights = np.array(weights) / np.sum(weights)  # Normalize weights
-
-                if self.config.aggregation_method == "weighted_sum":
-                    combined_value = np.sum(np.array(values) * weights)
-                elif self.config.aggregation_method == "weighted_mean":
-                    combined_value = np.average(values, weights=weights)
-                elif self.config.aggregation_method == "min":
-                    combined_value = np.min(values)
-                elif self.config.aggregation_method == "max":
-                    combined_value = np.max(values)
-                else:
-                    raise ValueError(
-                        f"Unknown aggregation method: {self.config.aggregation_method}"
-                    )
+                    if self.config.aggregation_method == "weighted_sum":
+                        combined_value = np.sum(np.array(values) * weights)
+                    elif self.config.aggregation_method == "weighted_mean":
+                        combined_value = np.average(values, weights=weights)
+                    elif self.config.aggregation_method == "min":
+                        combined_value = np.min(values)
+                    elif self.config.aggregation_method == "max":
+                        combined_value = np.max(values)
+                    else:
+                        raise ValueError(
+                            f"Unknown aggregation method: {self.config.aggregation_method}"
+                        )
+        except TypeError:
+            pass
 
         return EvaluationResult(
             metric_results=metric_results,

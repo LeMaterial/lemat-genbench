@@ -1,0 +1,31 @@
+type: stability
+
+# Weights for different validity components
+formation_energy_weight: 0.25
+energy_above_hull_weight: 0.25
+relaxation_rmse_weight: 0.25
+embedding_rmse_weight: 0.25
+
+# Additional configuration options
+description: "Stability Benchmark"
+version: "0.1.0"
+
+# Metric-specific configurations
+metric_configs:
+  formation_energy:
+    tolerance: 0.1
+    strict: false
+
+preprocessor_config:
+  model_name: orb
+  model_config:
+    model_type: orb_v3_conservative_inf_omat
+    device: cpu
+  relax_structures: true
+  relaxation_config:
+    fmax: 0.02
+    steps: 500
+  calculate_formation_energy: true
+  calculate_energy_above_hull: true
+  extract_embeddings: true
+

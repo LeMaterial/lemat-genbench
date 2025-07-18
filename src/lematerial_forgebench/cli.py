@@ -20,8 +20,8 @@ from lematerial_forgebench.metrics.validity_metrics import (
     MinimumInteratomicDistanceMetric,
     PhysicalPlausibilityMetric,
 )
-from lematerial_forgebench.preprocess.stability_preprocess import (
-    StabilityPreprocessor,
+from lematerial_forgebench.preprocess.universal_stability_preprocess import (
+    UniversalStabilityPreprocessor,
 )
 from lematerial_forgebench.utils.logging import logger
 
@@ -125,7 +125,7 @@ def save_results(results: dict, output_path: str):
     "-o",
     type=click.Path(),
     help="Path to save results",
-    default="benchmark_results.yaml",
+    default="results/benchmark_results.yaml",
 )
 def main(input: str, config_name: str, output: str):
     """Run a benchmark on structures using the specified configuration.
@@ -173,14 +173,9 @@ def main(input: str, config_name: str, output: str):
             coord_tolerance = coord_config.get("tolerance", 0.2)
 
             # Create custom metrics with configuration
-            ChargeNeutralityMetric(
-                tolerance=charge_tolerance, strict=charge_strict
-            )
+            ChargeNeutralityMetric(tolerance=charge_tolerance, strict=charge_strict)
 
-            MinimumInteratomicDistanceMetric(
-                scaling_factor=distance_scaling
-            )
-
+            MinimumInteratomicDistanceMetric(scaling_factor=distance_scaling)
 
             CoordinationEnvironmentMetric(
                 nn_method=coord_nn_method, tolerance=coord_tolerance
@@ -204,7 +199,18 @@ def main(input: str, config_name: str, output: str):
 
         elif benchmark_type == "stability":
             # before running the benchmark, we need to preprocess the structures
-            stability_preprocessor = StabilityPreprocessor()
+            ppc = config.get("preprocessor_config", {})
+            stability_preprocessor = UniversalStabilityPreprocessor(
+                model_type=ppc.get("model_type", "orb"),
+                model_config=ppc.get("model_config", {}),
+                relax_structures=ppc.get("relax_structures", True),
+                relaxation_config=ppc.get("relaxation_config", {}),
+                calculate_formation_energy=ppc.get("calculate_formation_energy", True),
+                calculate_energy_above_hull=ppc.get(
+                    "calculate_energy_above_hull", True
+                ),
+                extract_embeddings=ppc.get("extract_embeddings", True),
+            )
             # Use the preprocessor to process structures
             preprocessor_result = stability_preprocessor(structures)
             structures = preprocessor_result.processed_structures

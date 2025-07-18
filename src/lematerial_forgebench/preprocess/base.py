@@ -7,6 +7,7 @@ from typing import Any, List, Optional, TypeVar
 
 import pandas as pd
 from pymatgen.core.structure import Structure
+from tqdm import tqdm
 
 from lematerial_forgebench.data.structure import format_structures
 from lematerial_forgebench.utils.logging import logger
@@ -278,7 +279,7 @@ class BasePreprocessor(ABC):
                 self.config.n_jobs <= 1 or n_input <= 1
             ):  # Also run serially for single structure
                 # Serial computation
-                for idx, structure in enumerate(structures):
+                for idx, structure in enumerate(tqdm(structures)):
                     try:
                         processed_structure = self.process_structure(
                             structure, **process_args

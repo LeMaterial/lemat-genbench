@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Optional, Set
 import numpy as np
 from datasets import load_dataset
 from material_hasher.hasher.bawl import BAWLHasher
+from pymatgen.analysis.local_env import EconNN
 from pymatgen.core.structure import Structure
 
 from lematerial_forgebench.metrics.base import BaseMetric, MetricConfig
@@ -119,7 +120,18 @@ class NoveltyMetric(BaseMetric):
     def _init_fingerprinter(self) -> None:
         """Initialize the fingerprinting method."""
         if self.config.fingerprint_method.lower() == "bawl":
-            self.fingerprinter = BAWLHasher()
+            self.fingerprinter = BAWLHasher(
+                graphing_algorithm="WL",
+                bonding_algorithm=EconNN,
+                bonding_kwargs={
+                    "tol": 0.2,
+                    "cutoff": 10,
+                    "use_fictive_radius": True,
+                },
+                include_composition=True,
+                symmetry_labeling="SPGLib",
+                shorten_hash=False,
+            )
         else:
             raise ValueError(
                 f"Unknown fingerprint method: {self.config.fingerprint_method}. "

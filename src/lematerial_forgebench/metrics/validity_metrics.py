@@ -20,6 +20,7 @@ from pymatgen.analysis.local_env import (
 from pymatgen.core import Composition
 from pymatgen.core.periodic_table import Element
 from pymatgen.core.structure import Structure
+from pymatgen.io.cif import CifParser, CifWriter
 
 from lematerial_forgebench.metrics.base import BaseMetric, MetricConfig, MetricResult
 from lematerial_forgebench.utils.logging import logger
@@ -153,13 +154,13 @@ class ChargeNeutralityMetric(BaseMetric):
             return 1.0
         except ValueError:
             # this means the bv_sum calculation has predicted this structure is NOT metallic. Therefore, we can try and assign oxidation states using PMG's
-            # oxidation state functions, which do not return oxidation states for metallic structuers.
+            # oxidation state functions, which do not return oxidation states for metallic structures.
             logger.warning(
                 "the bond valence sum calculation yielded values that were not zero meaning this is not predicted to be a metallic structure"
             )
 
             try:
-                # Try to determine oxidation states - good first pass, if this can be done within pymatgen, it will almost certianly be a structure that is charge balanced
+                # Try to determine oxidation states - good first pass, if this can be done within pymatgen, it will almost certainly be a structure that is charge balanced
                 structure_with_oxi = bv_analyzer.get_oxi_state_decorated_structure(
                     structure
                 )
@@ -401,8 +402,6 @@ class MinimumInteratomicDistanceMetric(BaseMetric):
                     0.7 + element_radii[element_i] + element_radii[element_j]
                 ) * scaling_factor
                 actual_dist = all_distances[i, j]
-
-                # print(min_dist)
 
                 if actual_dist >= min_dist:
                     valid_pairs += 1
@@ -958,18 +957,12 @@ class PhysicalPlausibilityMetric(BaseMetric):
         # Check 3: Format representation check
         if check_format:
             total_checks += 1
-            # try:
             # Try to convert to CIF format and back
-            import io
-
-            from pymatgen.io.cif import CifParser, CifWriter
 
             # Write to CIF
             cif_writer = CifWriter(structure)
             cif_string = "temp.cif"
-            # cif_string = io.StringIO()
             cif_writer.write_file(cif_string)
-            # cif_string.seek(0)
 
             # Parse back from CIF
             parser = CifParser(cif_string)
@@ -989,15 +982,10 @@ class PhysicalPlausibilityMetric(BaseMetric):
             ):
                 checks_passed += 1
             else:
-                # print('Format failed')
-
                 logger.debug(
                     f"Format check failed: original={structure.composition}, "
                     f"recovered={recovered_structure.composition}"
                 )
-            # except Exception as e:
-            #     print('Format failed')
-            #     logger.debug(f"Format check failed: {str(e)}")
 
         # Check 4: Symmetry check
         if check_symmetry:
@@ -1013,17 +1001,12 @@ class PhysicalPlausibilityMetric(BaseMetric):
                 if 0 < spacegroup <= 230:
                     checks_passed += 1
                 else:
-                    # print('Symmetry failed')
                     logger.debug(f"Symmetry check failed: spacegroup={spacegroup}")
             except Exception as e:
                 print("Symmetry failed")
                 logger.debug(f"Symmetry check failed: {str(e)}")
 
         # Return the ratio of passed checks
-        # print(checks_passed)
-        # print(total_checks)
-        # print(checks_passed/total_checks)
-
         if checks_passed / total_checks == 1.0:
             return 1.0
         else:

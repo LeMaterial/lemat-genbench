@@ -10,17 +10,46 @@ dependencies = [
     "ase>=3.25.0",
     "click>=8.1.8",
     "datasets>=3.5.0",
+    "frechetdist>=0.6",
     "fsspec>=2024.12.0",
-    "mace-torch>=0.3.13",
+    "func-timeout>=4.3.5",
     "material-hasher",
-    "numpy>=2.2.5",
+    "numpy>=1.26.4",
     "pandas>=2.2.3",
     "pyarrow>=19.0.1",
     "pymatgen>=2025.4.20",
     "pytest>=8.3.5",
-    "requests>=2.32.3",
-    "rich>=14.0.0",
-    "tqdm>=4.67.1",
+    "rich==13.9.4",
+    "torch>=2.4.0",
+    "torch-geometric>=2.6.1",
+]
+
+[project.optional-dependencies]
+
+mace = [
+    "mace-torch>=0.3.13",
+    "e3nn==0.4.4",
+    "numpy==2.2.3",
+    "torch==2.6.0",
+    "torch_scatter==2.1.2+pt26cu124; sys_platform != 'darwin'",
+    "torch-sparse==0.6.18+pt26cu124; sys_platform != 'darwin'",
+    "torch-cluster==1.6.3+pt26cu124; sys_platform != 'darwin'",
+    "torch-spline-conv==1.2.2+pt26cu124; sys_platform != 'darwin'",
+]
+orb = [
+    "orb-models>=0.5.1",
+    "torch_scatter==2.1.2+pt26cu124; sys_platform != 'darwin'",
+    "torch-sparse==0.6.18+pt26cu124; sys_platform != 'darwin'",
+    "torch-cluster==1.6.3+pt26cu124; sys_platform != 'darwin'",
+    "torch-spline-conv==1.2.2+pt26cu124; sys_platform != 'darwin'",
+]
+fairchem = ["fairchem-core>=2.1.0"]
+equiformer = [
+    "torch==2.4.0",
+    "fairchem-core==1.10.0",
+    "torch-sparse==0.6.18+pt26cu124; sys_platform != 'darwin'",
+    "torch-cluster==1.6.3+pt26cu124; sys_platform != 'darwin'",
+    "torch-spline-conv==1.2.2+pt26cu124; sys_platform != 'darwin'",
 ]
 
 [project.scripts]
@@ -50,6 +79,24 @@ dev-dependencies = [
     "requests>=2.32.3",
     "botocore>=1.36.20",
 ]
+find-links = [
+    "https://data.pyg.org/whl/torch-2.6.0+cu124.html",
+    "https://data.pyg.org/whl/torch-2.6.0+cpu.html",
+    "https://data.pyg.org/whl/torch-2.4.0+cu124.html",
+    "https://data.pyg.org/whl/torch-2.4.0+cpu.html",
+]
+conflicts = [
+    [
+        { extra = "fairchem" },
+        { extra = "orb" },
+        { extra = "equiformer" },
+    ],
+    [
+        { extra = "fairchem" },
+        { extra = "mace" },
+        { extra = "equiformer" },
+    ],
+]
 
 [tool.uv.sources]
 material-hasher = { git = "https://github.com/lematerial/material-hasher.git" }
@@ -57,3 +104,6 @@ material-hasher = { git = "https://github.com/lematerial/material-hasher.git" }
 
 [tool.ruff.lint]
 extend-select = ["I"]
+
+[tool.ruff.lint.per-file-ignores]
+"*.ipynb" = ["F401"]

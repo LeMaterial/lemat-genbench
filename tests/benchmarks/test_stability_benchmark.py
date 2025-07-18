@@ -1,11 +1,10 @@
 """Tests for stability benchmark."""
 
-import numpy as np
 from pymatgen.util.testing import PymatgenTest
 
 from lematerial_forgebench.benchmarks.stability_benchmark import StabilityBenchmark
-from lematerial_forgebench.preprocess.stability_preprocess import (
-    StabilityPreprocessor,
+from lematerial_forgebench.preprocess.universal_stability_preprocess import (
+    UniversalStabilityPreprocessor,
 )
 
 """Tests for stability benchmark."""
@@ -50,7 +49,7 @@ class TestStabilityBenchmark:
         structures = [test.get_structure("Si"), test.get_structure("LiFePO4")]
 
         # first, we need to preprocess the structures
-        stability_preprocessor = StabilityPreprocessor()
+        stability_preprocessor = UniversalStabilityPreprocessor()
         preprocessor_result = stability_preprocessor(structures)
         structures = preprocessor_result.processed_structures
 
@@ -130,7 +129,6 @@ def test_evaluator_configuration():
 
     # Check evaluator configuration
     stability_evaluator = benchmark.evaluators["stability"]
-    # print(stability_evaluator)
     assert stability_evaluator.config.name == "stability"
     assert stability_evaluator.config.weights == {"stability": 1.0}
     assert stability_evaluator.config.aggregation_method == "weighted_mean"

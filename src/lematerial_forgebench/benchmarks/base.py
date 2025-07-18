@@ -12,6 +12,7 @@ assess different aspects of generated materials.
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
+import pandas as pd
 from pymatgen.core.structure import Structure
 
 from lematerial_forgebench.evaluator import (
@@ -42,6 +43,7 @@ class BenchmarkConfig:
     description: str
     evaluator_configs: dict[str, EvaluatorConfig]
     metadata: dict[str, any] | None = None
+    reference_df: pd.DataFrame | None = None
 
 
 @dataclass
@@ -91,12 +93,14 @@ class BaseBenchmark(ABC):
         description: str,
         evaluator_configs: dict[str, EvaluatorConfig],
         metadata: dict[str, any] | None = None,
+        reference_df: pd.DataFrame | None = None,
     ):
         self.config = BenchmarkConfig(
             name=name,
             description=description,
             evaluator_configs=evaluator_configs,
             metadata=metadata or {},
+            reference_df=reference_df,
         )
 
         # Create evaluators from configs
@@ -134,10 +138,7 @@ class BaseBenchmark(ABC):
         """
         pass
 
-    def evaluate(
-        self,
-        structures: list[Structure],
-    ) -> BenchmarkResult:
+    def evaluate(self, structures: list[Structure]) -> BenchmarkResult:
         """Run the complete benchmark evaluation.
 
         Parameters
@@ -155,9 +156,7 @@ class BaseBenchmark(ABC):
             result = evaluator.evaluate(
                 structures=structures,
             )
-            # print(result.metric_results)
-            # print(result.combined_value)
-            # print(type(result))
+
             evaluator_results[name] = {
                 "combined_value": result.combined_value,
                 **{
@@ -172,7 +171,6 @@ class BaseBenchmark(ABC):
             }
 
         final_scores = self.aggregate_evaluator_results(evaluator_results)
-        print(final_scores)
         result_metadata = {
             "benchmark_name": self.config.name,
             "benchmark_description": self.config.description,

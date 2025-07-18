@@ -40,7 +40,6 @@ def test_structures_with_precomputed_e_above_hull():
 
 def test_stability_metric(test_structures_with_precomputed_e_above_hull):
     metric = StabilityMetric(
-        relaxer_type="orb",
         # relaxer_config={"steps": 500, "fmax": 0.02},
     )
     result = metric(test_structures_with_precomputed_e_above_hull)

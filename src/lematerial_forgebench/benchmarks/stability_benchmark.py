@@ -17,6 +17,7 @@ from lematerial_forgebench.metrics.stability_metrics import (
     RelaxationStabilityMetric,
     StabilityMetric,
 )
+from lematerial_forgebench.utils.distribution_utils import safe_float
 
 
 class StabilityBenchmark(BaseBenchmark):
@@ -133,18 +134,6 @@ class StabilityBenchmark(BaseBenchmark):
         dict[str, float]
             Final aggregated scores.
         """
-        import math
-
-        def safe_float(value):
-            """Safely convert value to float, handling None and NaN."""
-            return value
-            # if value is None:
-            #     raise ValueError
-
-            # float_val = float(value)
-            # if math.isnan(float_val):
-            #     raise ValueError
-            # return float_val
 
         final_scores = {
             "stable_ratio": np.nan,

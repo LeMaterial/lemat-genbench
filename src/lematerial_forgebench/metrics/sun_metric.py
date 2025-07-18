@@ -7,7 +7,7 @@ unique, and novel.
 
 import time
 from dataclasses import dataclass
-from typing import Any, Dict, List, Optional, Set
+from typing import Any, Dict, List, Optional
 
 import numpy as np
 from pymatgen.core.structure import Structure

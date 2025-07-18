@@ -4,7 +4,6 @@ import traceback
 from unittest.mock import MagicMock, patch
 
 import numpy as np
-import pytest
 from pymatgen.core.structure import Structure
 
 from lematerial_forgebench.metrics.base import MetricResult

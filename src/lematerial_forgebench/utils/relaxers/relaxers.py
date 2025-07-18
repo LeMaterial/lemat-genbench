@@ -1,23 +1,14 @@
-"""Implementations for structure relaxation."""
+"""relaxer implementations using the MLIP system."""
 
-import gc
 import tempfile
-from abc import abstractmethod
 
-import torch
-from ase.filters import FrechetCellFilter
-from ase.optimize import FIRE
-
-# from fairchem.core import OCPCalculator
-from orb_models.forcefield import pretrained
-from orb_models.forcefield.calculator import ORBCalculator
 from pymatgen.core import Structure
 from pymatgen.entries.compatibility import MaterialsProject2020Compatibility
 from pymatgen.entries.computed_entries import ComputedStructureEntry
-from pymatgen.io.ase import AseAtomsAdaptor
 from pymatgen.io.vasp.inputs import Incar, Poscar
 from pymatgen.io.vasp.sets import MPRelaxSet
 
+from lematerial_forgebench.models.registry import get_calculator
 from lematerial_forgebench.utils.logging import logger
 from lematerial_forgebench.utils.relaxers.registry import (
     BaseRelaxer,
@@ -81,133 +72,142 @@ class BaseVASPRelaxer(BaseRelaxer):
         return cse
 
 
-class ASERelaxerBase(BaseVASPRelaxer):
-    """Base class for ASE-based relaxers."""
+class MLIPRelaxer(BaseVASPRelaxer):
+    """Universal relaxer that uses any MLIP calculator."""
 
-    def __init__(
-        self,
-        fmax: float = 0.02,
-        steps: int = 500,
-        cpu: bool = True,
-        **params,
-    ):
-        """Initialize ASE relaxer.
+    def __init__(self, calculator, **kwargs):
+        """Initialize with a MLIP calculator.
 
         Parameters
         ----------
-        fmax : float, default=0.02
-            Maximum force convergence criterion.
-        steps : int, default=500
-            Maximum number of optimization steps.
-        cpu : bool, default=False
-            Whether to use CPU instead of GPU.
-        **params
-            Additional parameters specific to each relaxer type.
+        calculator : BaseMLIPCalculator
+            Calculator to use for relaxation
+        **kwargs
+            Additional parameters (fmax, steps, etc.)
         """
-        self.fmax = fmax
-        self.steps = steps
-        self.cpu = cpu
-        self.params = params  # Store additional parameters for subclasses
-        # Abstract calculator setup - must be implemented by subclasses
-        self.calc = self._setup_calculator()
+        self.calculator = calculator
+        self.fmax = kwargs.get("fmax", 0.02)
+        self.steps = kwargs.get("steps", 500)
 
-    @abstractmethod
-    def _setup_calculator(self):
-        """Set up the calculator for this relaxer.
-
-        Returns
-        -------
-        Calculator
-            The initialized calculator object.
-        """
-        pass
-
-    def relax(self, structure: Structure, relax: bool = False) -> RelaxationResult:
-        """Relax a structure using calculator.
+    def relax(self, structure: Structure, relax: bool = True) -> RelaxationResult:
+        """Relax a structure using the MLIP calculator.
 
         Parameters
         ----------
         structure : Structure
-            Structure to relax.
-        relax : bool, default=False
-            Only relaxes the structure if True.
+            Structure to relax
+        relax : bool
+            Whether to actually perform relaxation
 
         Returns
         -------
         RelaxationResult
-            Result of the relaxation.
+            Result of the relaxation
         """
-
         try:
-            if structure is None or not structure.is_valid():
-                print("Skipping structure: Invalid crystal")
+            if not structure.is_valid():
                 return RelaxationResult(
                     success=False,
-                    message="Invalid crystal",
+                    message="Invalid crystal structure",
                 )
 
-            # Convert to ASE atoms
-            atoms = structure.to_ase_atoms()
-
-            atoms.calc = self.calc
-
-            # Relax structure
-
             if relax:
-                dyn = FIRE(FrechetCellFilter(atoms), logfile=None)
-                dyn.run(fmax=self.fmax, steps=self.steps)
+                # Use the calculator's built-in relaxation
+                relaxed_structure, calc_result = self.calculator.relax_structure(
+                    structure, fmax=self.fmax, steps=self.steps
+                )
 
-            # Get results
-            final_energy = atoms.get_potential_energy()
+                return RelaxationResult(
+                    success=True,
+                    energy=calc_result.energy,
+                    structure=relaxed_structure,
+                    message=f"Relaxed using {self.calculator.__class__.__name__}",
+                )
+            else:
+                # Just calculate energy without relaxation
+                calc_result = self.calculator.calculate_energy_forces(structure)
 
-            final_structure = AseAtomsAdaptor.get_structure(atoms)
+                return RelaxationResult(
+                    success=True,
+                    energy=calc_result.energy,
+                    structure=structure,
+                    message=f"Energy calculated using {self.calculator.__class__.__name__}",
+                )
 
-            # Clean up
-            # gc.collect()
-            # if torch.cuda.is_available():
-            #     torch.cuda.empty_cache()
-
-            return RelaxationResult(
-                success=True,
-                energy=final_energy,
-                structure=final_structure,
-            )
         except Exception as e:
-            logger.error(f"ASE relaxation failed: {str(e)}")
+            logger.error(f"MLIP relaxation failed: {str(e)}")
             return RelaxationResult(
                 success=False,
                 message=str(e),
             )
 
 
+# Register MLIP-based relaxers using the factory pattern
 @register_relaxer("orb")
-class OrbRelaxerImpl(ASERelaxerBase):
-    """Orb relaxer implementation."""
+class ORBRelaxer(MLIPRelaxer):
+    """ORB-based relaxer."""
 
-    def _setup_calculator(self):
-        """Set up the Orb calculator."""
-        device = "cpu" if self.cpu else "cuda"
-        print(device)
-        if self.params.get("direct", False):
-            orbff = pretrained.orb_v3_direct_inf_mpa(
-                device=device,
-                compile=False,
-                precision="float32-high",  # or "float32-highest" / "float64
-            )
-        else:
-            orbff = pretrained.orb_v3_conservative_inf_mpa(
-                device=device,
-                compile=False,
-                precision="float32-high",  # or "float32-highest" / "float64
-            )
-        return ORBCalculator(orbff, device=device)
+    def __init__(self, **kwargs):
+        # Extract ORB-specific parameters
+        model_type = kwargs.pop("model_type", "orb_v3_conservative_inf_omat")
+        device = kwargs.pop("device", "cpu")
+        precision = kwargs.pop("precision", "float32-high")
+
+        # Create ORB calculator
+        calculator = get_calculator(
+            "orb", model_type=model_type, device=device, precision=precision
+        )
+
+        super().__init__(calculator, **kwargs)
 
 
-# TODO: Fix Meta Fairchem Relaxers
-# @register_relaxer("ocp")
-# class OCPRelaxerImpl(ASERelaxerBase):
-#     """OCP relaxer implementation."""
+@register_relaxer("mace")
+class MACERelaxer(MLIPRelaxer):
+    """MACE-based relaxer."""
 
-#     def _setup_calculator(self):
-#         """Set up the OCP calculator."""
-#         return OCPCalculator(checkpoint_path=self.checkpoint_path, cpu=self.cpu)
+    def __init__(self, **kwargs):
+        # Extract MACE-specific parameters
+        model_type = kwargs.pop("model_type", "mp")
+        device = kwargs.pop("device", "cpu")
+        model_path = kwargs.pop("model_path", None)
+
+        # Create MACE calculator
+        calculator = get_calculator(
+            "mace", model_type=model_type, device=device, model_path=model_path
+        )
+
+        super().__init__(calculator, **kwargs)
+
+
+@register_relaxer("uma")
+class UMARelaxer(MLIPRelaxer):
+    """UMA-based relaxer."""
+
+    def __init__(self, **kwargs):
+        # Extract UMA-specific parameters
+        model_name = kwargs.pop("model_name", "uma-s-1")
+        task = kwargs.pop("task", "omat")
+        device = kwargs.pop("device", "cpu")
+        precision = kwargs.pop("precision", "float32")
+
+        # Create UMA calculator
+        calculator = get_calculator(
+            "uma", model_name=model_name, task=task, device=device, precision=precision
+        )
+
+        super().__init__(calculator, **kwargs)
+
+
+@register_relaxer("equiformer")
+class EquiformerRelaxer(MLIPRelaxer):
+    """Equiformer-based relaxer."""
+
+    def __init__(self, **kwargs):
+        # Extract Equiformer-specific parameters
+        model_path = kwargs.pop("model_path")  # Required parameter
+        device = kwargs.pop("device", "cpu")
+
+        # Create Equiformer calculator
+        calculator = get_calculator("equiformer", model_path=model_path, device=device)
+
+        super().__init__(calculator, **kwargs)

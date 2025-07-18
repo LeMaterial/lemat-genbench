@@ -117,7 +117,6 @@ class StabilityMetric(BaseMetric):
         description: str | None = None,
         lower_is_better: bool = False,
         n_jobs: int = 1,
-        relaxer_type: str = "orb",
     ):
         super().__init__(
             name=name or "StabilityMetric",
@@ -212,7 +211,6 @@ class E_HullMetric(BaseMetric):
         description: str | None = None,
         lower_is_better: bool = False,
         n_jobs: int = 1,
-        relaxer_type: str = "orb",
     ):
         super().__init__(
             name=name or "StabilityMetric",

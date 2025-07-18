@@ -45,6 +45,8 @@ class BaseRelaxer(ABC):
         ----------
         structure : Structure
             Structure to relax.
+        relax : bool
+            Whether to actually perform relaxation.
 
         Returns
         -------
@@ -53,7 +55,6 @@ class BaseRelaxer(ABC):
         """
         pass
 
-    @abstractmethod
     def get_computed_entry(
         self, structure: Structure, energy: float
     ) -> ComputedStructureEntry:
@@ -71,7 +72,8 @@ class BaseRelaxer(ABC):
         ComputedStructureEntry
             The computed structure entry with appropriate corrections applied.
         """
-        pass
+        # Default implementation - can be overridden by subclasses
+        return ComputedStructureEntry(structure, energy, correction=0.0)
 
 
 _RELAXER_REGISTRY: Dict[str, Type[BaseRelaxer]] = {}
@@ -103,6 +105,9 @@ def register_relaxer(name: str):
 def get_relaxer(relaxer_type: str, **kwargs) -> BaseRelaxer:
     """Get a relaxer implementation by name.
 
+    This function first tries to use the new MLIP-based relaxers,
+    and falls back to the legacy system if needed.
+
     Parameters
     ----------
     relaxer_type : str
@@ -120,9 +125,77 @@ def get_relaxer(relaxer_type: str, **kwargs) -> BaseRelaxer:
     ValueError
         If relaxer_type is not registered.
     """
-    if relaxer_type not in _RELAXER_REGISTRY:
-        raise ValueError(
-            f"Unknown relaxer type: {relaxer_type}. "
-            f"Available types: {list(_RELAXER_REGISTRY.keys())}"
+    # Try new MLIP-based relaxers first
+    if relaxer_type in _RELAXER_REGISTRY:
+        return _RELAXER_REGISTRY[relaxer_type](**kwargs)
+
+    # Fallback: try to create MLIP relaxer directly
+    try:
+        from lematerial_forgebench.models.registry import (
+            get_calculator,
+            list_available_models,
         )
-    return _RELAXER_REGISTRY[relaxer_type](**kwargs)
+
+        if relaxer_type in list_available_models():
+            # Create calculator and wrap it in MLIPRelaxer
+            calculator = get_calculator(relaxer_type, **kwargs)
+
+            # Import here to avoid circular imports
+            from lematerial_forgebench.utils.relaxers.relaxers import MLIPRelaxer
+
+            return MLIPRelaxer(calculator, **kwargs)
+
+    except ImportError:
+        pass
+
+    # If not found, raise error
+    available_relaxers = list(_RELAXER_REGISTRY.keys())
+    try:
+        from lematerial_forgebench.models.registry import list_available_models
+
+        available_relaxers.extend(list_available_models())
+    except ImportError:
+        pass
+
+    raise ValueError(
+        f"Unknown relaxer type: {relaxer_type}. Available types: {available_relaxers}"
+    )
+
+
+def list_available_relaxers() -> list[str]:
+    """List all available relaxer types.
+
+    Returns
+    -------
+    list[str]
+        List of available relaxer names.
+    """
+    relaxers = list(_RELAXER_REGISTRY.keys())
+
+    # Add MLIP calculators as available relaxers
+    try:
+        from lematerial_forgebench.models.registry import list_available_models
+
+        relaxers.extend(list_available_models())
+    except ImportError:
+        pass
+
+    return list(set(relaxers))  # Remove duplicates
+
+
+def print_available_relaxers():
+    """Print information about available relaxers."""
+    relaxers = list_available_relaxers()
+    print("Available Relaxers:")
+    print("=" * 30)
+
+    for relaxer in relaxers:
+        print(f"- {relaxer}")
+
+        # Add description if available
+        if relaxer in _RELAXER_REGISTRY:
+            cls = _RELAXER_REGISTRY[relaxer]
+            if hasattr(cls, "__doc__") and cls.__doc__:
+                print(f"  {cls.__doc__.strip()}")
+
+    print(f"\nTotal: {len(relaxers)} relaxers available")

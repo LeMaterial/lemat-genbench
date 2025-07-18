@@ -35,7 +35,7 @@ jobs:
 
       - name: Install project dependencies
         run: |
-         uv sync --all-extras
+         uv sync --extra mace --extra orb
 
       - name: Run linting
         run: |

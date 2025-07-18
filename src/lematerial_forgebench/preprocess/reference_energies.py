@@ -1,6 +1,5 @@
 import json
 import os
-import pickle
 from collections import Counter
 from functools import lru_cache
 from pathlib import Path
@@ -117,8 +116,6 @@ def filter_df(df, matrix, composition):
     forbidden_elements = 1 - structure_vector
     intersection_elements = df.loc[(matrix @ forbidden_elements) == 0]
 
-    # print(intersection_elements)
-
     return intersection_elements
 
 
@@ -143,5 +140,4 @@ def get_energy_above_hull(total_energy, composition):
     entry = PDEntry(composition, total_energy)
     e_above_hull = pd.get_decomp_and_e_above_hull(entry, allow_negative=True)[1]
 
-    # print(e_above_hull)
     return e_above_hull
