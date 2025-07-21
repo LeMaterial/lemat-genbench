@@ -25,7 +25,7 @@ class DiversityBenchmark(BaseBenchmark):
 
     def __init__(
         self,
-        name: str = "DiveristyBenchmark",
+        name: str = "DiversityBenchmark",
         description: str | None = None,
         metadata: Dict[str, Any] | None = None,
     ):
