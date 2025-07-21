@@ -6,6 +6,7 @@ unique, and novel.
 """
 
 import time
+import warnings
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 
@@ -16,7 +17,7 @@ from lematerial_forgebench.metrics.base import BaseMetric, MetricConfig, MetricR
 from lematerial_forgebench.metrics.novelty_metric import NoveltyMetric
 from lematerial_forgebench.metrics.uniqueness_metric import UniquenessMetric
 from lematerial_forgebench.utils.logging import logger
-import warnings 
+
 warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=DeprecationWarning, message=r".*__array__.*copy.*")
@@ -458,16 +459,15 @@ class MetaSUNMetric(SUNMetric):
 
 
 if __name__ == "__main__":
-    import pickle
+
+    import warnings
 
     from pymatgen.util.testing import PymatgenTest
 
-    from lematerial_forgebench.metrics.sun_metric import MetaSUNMetric, SUNMetric
-    
+    from lematerial_forgebench.metrics.sun_metric import SUNMetric
     from lematerial_forgebench.preprocess.universal_stability_preprocess import (
         UniversalStabilityPreprocessor,
     )
-    import warnings 
 
     warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
     warnings.filterwarnings("ignore", category=FutureWarning, module="pymatgen.analysis.graphs")

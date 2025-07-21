@@ -5,6 +5,7 @@ structures are not present in a reference dataset of known materials.
 Uses LeMat-Bulk dataset and BAWL fingerprinting.
 """
 
+import warnings
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Set
 
@@ -16,7 +17,7 @@ from pymatgen.core.structure import Structure
 
 from lematerial_forgebench.metrics.base import BaseMetric, MetricConfig
 from lematerial_forgebench.utils.logging import logger
-import warnings 
+
 warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=DeprecationWarning, message=r".*__array__.*copy.*")

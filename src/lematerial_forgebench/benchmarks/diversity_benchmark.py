@@ -7,15 +7,14 @@ structures.
 from typing import Any, Dict
 
 import numpy as np
-import pandas as pd
 
 from lematerial_forgebench.benchmarks.base import BaseBenchmark
 from lematerial_forgebench.evaluator import EvaluationResult, EvaluatorConfig
 from lematerial_forgebench.metrics.diversity_metric import (
     ElementDiversityMetric,
-    SpaceGroupDiversityMetric, 
-    SiteNumberComponentMetric,
     PhysicalSizeComponentMetric,
+    SiteNumberComponentMetric,
+    SpaceGroupDiversityMetric,
 )
 from lematerial_forgebench.utils.distribution_utils import safe_float
 
@@ -158,7 +157,6 @@ class DiversityBenchmark(BaseBenchmark):
 
 
 if __name__ == "__main__":
-    import pickle
 
     from pymatgen.util.testing import PymatgenTest
 

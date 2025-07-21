@@ -1,6 +1,5 @@
 """Tests for validity benchmark."""
 
-import pickle
 
 from pymatgen.util.testing import PymatgenTest
 
