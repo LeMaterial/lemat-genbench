@@ -65,7 +65,7 @@ SAMPLE_LEMAT_ROW = {
     "dos_ef": 4.318709,
     "functional": "pbe",
     "cross_compatibility": True,
-    "bawl_fingerprint": "38f73083d88aa235c8c8c9d66617f3e3_229_Sr1Sb4",
+    "entalpic_fingerprint": "38f73083d88aa235c8c8c9d66617f3e3_229_Sr1Sb4",
 }
 
 

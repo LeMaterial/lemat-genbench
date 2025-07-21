@@ -174,9 +174,9 @@ class NoveltyMetric(BaseMetric):
             logger.info(f"Loaded {len(dataset)} structures from reference dataset")
 
             # Check if fingerprints are already available in the dataset
-            if "bawl_fingerprint" in dataset.column_names:
+            if "entalpic_fingerprint" in dataset.column_names:
                 logger.info("Using pre-computed BAWL fingerprints from dataset")
-                fingerprints = set(dataset["bawl_fingerprint"])
+                fingerprints = set(dataset["entalpic_fingerprint"])
                 # Filter out any None or empty fingerprints
                 fingerprints = {fp for fp in fingerprints if fp and fp.strip()}
             else:
