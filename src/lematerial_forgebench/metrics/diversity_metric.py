@@ -54,7 +54,7 @@ class ElementComponentConfig(MetricConfig):
 
     reference_element_space:int = 118
 
-class _ElementDiversityMetric(BaseMetric):
+class ElementDiversityMetric(BaseMetric):
     """
     Calculates a scalar score capturing elemental diversity across the structures compared to reference distribution
     """
@@ -238,7 +238,7 @@ class SpaceGroupComponentConfig(MetricConfig):
     """
     reference_space_group_space: int = 230
 
-class _SpaceGroupDiversityMetric(BaseMetric):
+class SpaceGroupDiversityMetric(BaseMetric):
     """
     Calculates a scalar score capturing Spacegroup Diversity across the structures
     """
@@ -427,7 +427,7 @@ class PhysicalSizeComponentConfig(MetricConfig):
     lattice_bin_size: float = 0.5
     packing_factor_bin_size: float = 0.05
 
-class _PhysicalSizeComponentMetric(BaseMetric):
+class PhysicalSizeComponentMetric(BaseMetric):
     """
     Calculates a scalar score capturing Physical Aspects of the Structure to measure Diversity across the structures
     """
@@ -568,7 +568,7 @@ class _PhysicalSizeComponentMetric(BaseMetric):
             Float value for the largest sized bucket to capture
         """
 
-        bins = np.arange(smallest_density_bucket, largest_density_bucket, self.config.bin_size )
+        bins = np.arange(smallest_density_bucket, largest_density_bucket, self.config.density_bin_size )
         bucket_dict = {lower_ceiling :1 for lower_ceiling in bins } # setting this as a uniform dist 
         self.reference_density_histogram = bucket_dict
 
@@ -588,7 +588,7 @@ class _PhysicalSizeComponentMetric(BaseMetric):
             Float value for the largest sized bucket to capture
         """
 
-        bins = np.arange(smallest_lattice_size, largest_lattice_size, self.config.bin_size )
+        bins = np.arange(smallest_lattice_size, largest_lattice_size, self.config.density_bin_size )
         bucket_dict = {lower_ceiling:1 for lower_ceiling in bins } # setting as a uniform dist
         self.reference_lattice_a = bucket_dict
         self.reference_lattice_b = bucket_dict
@@ -710,15 +710,15 @@ class _PhysicalSizeComponentMetric(BaseMetric):
     def _get_compute_attributes(self) -> dict[str, Any]:
         return {
             "density_histogram" : self.density_histogram,
-            "reference_histogram" : self.reference_density_histogram,
+            # "reference_histogram" : self.reference_density_histogram,
             "lattice_a_histogram" : self.lattice_a_histogram,
-            "lattice_a_reference" : self.reference_lattice_a,
+            # "lattice_a_reference" : self.reference_lattice_a,
             "lattice_b_histogram" : self.lattice_b_histogram,
-            "lattice_b_reference" : self.reference_lattice_b,
+            # "lattice_b_reference" : self.reference_lattice_b,
             "lattice_c_histogram" : self.lattice_c_histogram,
-            "lattice_c_reference" : self.reference_lattice_c,
+            # "lattice_c_reference" : self.reference_lattice_c,
             "packing_factor_histogram": self.packing_factor_histogram,
-            "packing_factor_reference": self.reference_packing_factor,
+            # "packing_factor_reference": self.reference_packing_factor,
             "density_bin_size": self.config.density_bin_size,
             "lattice_bin_size": self.config.lattice_bin_size,
             "packing_factor_bin_size": self.config.packing_factor_bin_size,
@@ -895,10 +895,14 @@ class SiteNumberComponentConfig(MetricConfig):
     weights for evaluating Elemental components of structural diversity.
     """
 
-class _SiteNumberComponentMetric(BaseMetric):
+class SiteNumberComponentMetric(BaseMetric):
     """
     Calculates a scalar score capturing Number of Sites diversity across the structures compared to reference distribution
     """
+
+    # TODO should this be number of symmetrically unique sites? or does that just become a 
+    # proxy of Space Group etc? 
+
     def __init__(
         self,
         name: str | None = "Site Number Diversity",
@@ -920,12 +924,12 @@ class _SiteNumberComponentMetric(BaseMetric):
             n_jobs=self.config.n_jobs,
             )
         
-        # Initialize element Histogram
-        self._init_element_histogram()
+        # Initialize site Histogram
+        self._init_site_histogram()
     
     def _init_site_histogram(self):
         """
-        Initialize an empty dictionary to function as a histogram counter for element.
+        Initialize an empty dictionary to function as a histogram counter for number of sites.
         Dictionary mapping is Number of Sites in unit Cell -> total count across all structure
         Note: Before compute, Dictionary Values are normalized 
         """
@@ -999,7 +1003,7 @@ class _SiteNumberComponentMetric(BaseMetric):
         ----------
         structure: Structure
             A pymatgen Structure object to evaluate.
-        elemental_histogram: dict[str:int]
+        site_number_histogram: dict[str:int]
             Class variable for storing the current histogram/distribution of elements across all structures
 
         Returns:
@@ -1010,7 +1014,8 @@ class _SiteNumberComponentMetric(BaseMetric):
         """
         try:
             number_of_sites_in_structure = len(structure.sites)
-            site_number_histogram[number_of_sites_in_structure]
+            site_number_histogram[number_of_sites_in_structure] += 1
+
             return number_of_sites_in_structure
     
         except Exception as e:
@@ -1050,3 +1055,39 @@ class _SiteNumberComponentMetric(BaseMetric):
                 "shannon_entropy_variance": site_diversity["entropy_variance"],
             }
         }
+
+
+if __name__ == "__main__":
+    from pymatgen.util.testing import PymatgenTest
+
+    test = PymatgenTest()
+
+    structures = [
+        test.get_structure("Si"),
+        test.get_structure("LiFePO4"),
+    ]
+
+    metric = ElementDiversityMetric()
+    metric_result = metric(structures)
+    print("ElementDiversityMetric")
+    print(metric_result)
+    print("")
+
+    metric = SpaceGroupDiversityMetric()
+    metric_result = metric(structures)
+    print("SpaceGroupDiversityMetric")
+    print(metric_result)
+    print("")
+
+    metric = PhysicalSizeComponentMetric()
+    metric._init_reference_packing_factor_histogram()
+    metric_result = metric(structures)
+    print("PhysicalSizeComponentMetric")
+    print(metric_result)
+    print("")
+
+    metric = SiteNumberComponentMetric()
+    metric_result = metric(structures)
+    print("SiteNumberComponentMetric")
+    print(metric_result)
+    print("")
