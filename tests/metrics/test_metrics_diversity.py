@@ -12,13 +12,13 @@ from pymatgen.io.cif import CifParser
 
 from lematerial_forgebench.metrics.base import MetricResult
 from lematerial_forgebench.metrics.diversity_metric import (
-    _ElementDiversityMetric,
-    _PhysicalSizeComponentMetric,
-    _SiteNumberComponentMetric,
-    _SpaceGroupDiversityMetric,
+    ElementDiversityMetric,
+    PhysicalSizeComponentMetric,
+    SiteNumberComponentMetric,
+    SpaceGroupDiversityMetric,
 )
 
-trial_data_file_path = "trial_data/crystal_symmcd_mp20.csv"
+trial_data_file_path = "data/trial_data/crystal_symmcd_mp20.csv"
 
 def load_structures_from_csv(filepath: str, n_samples: int) -> list[Structure]:
     """Load the first `n` CIF structures from a CSV where each row is a quoted CIF string.
@@ -72,7 +72,7 @@ class TestElementDiversityMetric:
     def test_diversity_metrics_initialization(self):
         """ Tests the initialization of Diversity Metric"""
 
-        metric = _ElementDiversityMetric()
+        metric = ElementDiversityMetric()
         assert metric.name == "Element Diversity"
 
     def test_element_diversity_score(self, fetch_sample_from_trial_data):
@@ -84,7 +84,7 @@ class TestElementDiversityMetric:
                 PyTest Fixture which locally initializes a list of 10 structures from the trial data
         """
 
-        metric = _ElementDiversityMetric()
+        metric = ElementDiversityMetric()
         metric_score = metric.compute(fetch_sample_from_trial_data)
         
         # Sanity Checks
@@ -114,7 +114,7 @@ class TestSpaceGroupDiversityMetric:
     def test_diversity_metrics_initialization(self):
         """ Tests the initialization of Diversity Metric"""
 
-        metric = _SpaceGroupDiversityMetric()
+        metric = SpaceGroupDiversityMetric()
         assert metric.name == "Space Group Diversity"
 
     def test_element_diversity_score(self, fetch_sample_from_trial_data):
@@ -126,7 +126,7 @@ class TestSpaceGroupDiversityMetric:
                 PyTest Fixture which locally initializes a list of 10 structures from the trial data
         """
 
-        metric = _SpaceGroupDiversityMetric()
+        metric = SpaceGroupDiversityMetric()
         metric_score = metric.compute(fetch_sample_from_trial_data)
         
         # Sanity Checks
@@ -156,7 +156,7 @@ class TestPhysicalDiversityMetrics:
     """ Tests the Density Diversity Metric Component of the overall Diversity Metrics"""
 
     def test_diversity_metrics_initialization(self):
-        metric = _PhysicalSizeComponentMetric()
+        metric = PhysicalSizeComponentMetric()
         assert metric.name == "Physical Diversity"
 
     def test_element_diversity_score(self, fetch_sample_from_trial_data):
@@ -168,7 +168,8 @@ class TestPhysicalDiversityMetrics:
                 PyTest Fixture which locally initializes a list of 10 structures from the trial data
         """
 
-        metric = _PhysicalSizeComponentMetric()
+        metric = PhysicalSizeComponentMetric()
+        metric._init_reference_packing_factor_histogram()
         metric_score = metric.compute(fetch_sample_from_trial_data)
         
         # Sanity Checks
@@ -218,7 +219,7 @@ class TestAtomNumberDiversityMetric:
     def test_diversity_metrics_initialization(self):
         """ Tests the initialization of Diversity Metric"""
 
-        metric = _SiteNumberComponentMetric()
+        metric = SiteNumberComponentMetric()
         assert metric.name == "Site Number Diversity"
 
     def test_element_diversity_score(self, fetch_sample_from_trial_data):
@@ -230,7 +231,7 @@ class TestAtomNumberDiversityMetric:
                 PyTest Fixture which locally initializes a list of 10 structures from the trial data
         """
 
-        metric = _SiteNumberComponentMetric()
+        metric = SiteNumberComponentMetric()
         metric_score = metric.compute(fetch_sample_from_trial_data)
         
         # Sanity Checks
