@@ -1,6 +1,6 @@
 """Diversity benchmark for material structures.
 
-This module implements a benchmark that computes a series of diversity metrics for a sample of 
+This module implements a benchmark that computes a series of diversity metrics for a sample of
 structures.
 """
 
@@ -20,7 +20,7 @@ from lematerial_forgebench.utils.distribution_utils import safe_float
 
 
 class DiversityBenchmark(BaseBenchmark):
-    """Benchmark for evaluating metrics of structural diversity across a series of structural 
+    """Benchmark for evaluating metrics of structural diversity across a series of structural
     parameters."""
 
     def __init__(
@@ -41,9 +41,7 @@ class DiversityBenchmark(BaseBenchmark):
             Additional metadata for the benchmark.
         """
         if description is None:
-            description = (
-                "Computes the diversity of a sample of structures."
-            )
+            description = "Computes the diversity of a sample of structures."
 
         # Initialize the ElementDiversityMetric
         element_diversity = ElementDiversityMetric()
@@ -62,35 +60,35 @@ class DiversityBenchmark(BaseBenchmark):
         space_group_diversity = SpaceGroupDiversityMetric()
         # Set up evaluator configs
         evaluator_configs["space_group_diversity"] = EvaluatorConfig(
-                name="space_group_diversity",
-                description="Calculates the space group diveristy of a sample of structures",
-                metrics={"space_group_diversity": space_group_diversity},
-                weights={"space_group_diversity": 1.0},
-                aggregation_method="weighted_mean",
-            )
+            name="space_group_diversity",
+            description="Calculates the space group diveristy of a sample of structures",
+            metrics={"space_group_diversity": space_group_diversity},
+            weights={"space_group_diversity": 1.0},
+            aggregation_method="weighted_mean",
+        )
 
         # Initialize the SiteNumberComponentMetric
         site_number_diversity = SiteNumberComponentMetric()
         # Set up evaluator configs
         evaluator_configs["site_number_diversity"] = EvaluatorConfig(
-                name="site_number_diversity",
-                description="Calculates the space group diveristy of a sample of structures",
-                metrics={"site_number_diversity": site_number_diversity},
-                weights={"site_number_diversity": 1.0},
-                aggregation_method="weighted_mean",
-            )
+            name="site_number_diversity",
+            description="Calculates the space group diveristy of a sample of structures",
+            metrics={"site_number_diversity": site_number_diversity},
+            weights={"site_number_diversity": 1.0},
+            aggregation_method="weighted_mean",
+        )
 
         # Initialize the PhysicalSizeComponentMetric
         physical_size_diversity = PhysicalSizeComponentMetric()
         physical_size_diversity._init_reference_packing_factor_histogram()
         # Set up evaluator configs
         evaluator_configs["physical_size_diversity"] = EvaluatorConfig(
-                name="physical_size_diversity",
-                description="Calculates the space group diveristy of a sample of structures",
-                metrics={"physical_size_diversity": physical_size_diversity},
-                weights={"physical_size_diversity": 1.0},
-                aggregation_method="weighted_mean",
-            )
+            name="physical_size_diversity",
+            description="Calculates the space group diveristy of a sample of structures",
+            metrics={"physical_size_diversity": physical_size_diversity},
+            weights={"physical_size_diversity": 1.0},
+            aggregation_method="weighted_mean",
+        )
 
         # Create benchmark metadata
         benchmark_metadata = {
@@ -126,28 +124,34 @@ class DiversityBenchmark(BaseBenchmark):
             "element_diversity": np.nan,
             "space_group_diversity": np.nan,
             "site_number_diversity": np.nan,
-            "physical_size_diversity": np.nan, 
+            "physical_size_diversity": np.nan,
         }
 
         # Extract element_diversity results
         element_diversity_results = evaluator_results.get("element_diversity")
         if element_diversity_results:
-            final_scores["element_diversity"] = element_diversity_results.get("combined_value")
+            final_scores["element_diversity"] = element_diversity_results.get(
+                "combined_value"
+            )
 
-        # Extract space_group_diversity results 
+        # Extract space_group_diversity results
         space_group_diversity_results = evaluator_results.get("space_group_diversity")
         if space_group_diversity_results:
-            final_scores["space_group_diversity"] = safe_float(space_group_diversity_results.get("combined_value"))
+            final_scores["space_group_diversity"] = safe_float(
+                space_group_diversity_results.get("combined_value")
+            )
 
-        # Extract site_number_diversity results 
+        # Extract site_number_diversity results
         site_number_diversity_results = evaluator_results.get("site_number_diversity")
         if site_number_diversity_results:
             final_scores["site_number_diversity"] = safe_float(
                 site_number_diversity_results.get("combined_value")
             )
 
-        # Extract physical_size_diversity results 
-        physical_size_diversity_results = evaluator_results.get("physical_size_diversity")
+        # Extract physical_size_diversity results
+        physical_size_diversity_results = evaluator_results.get(
+            "physical_size_diversity"
+        )
         if physical_size_diversity_results:
             final_scores["physical_size_diversity"] = safe_float(
                 physical_size_diversity_results.get("combined_value")
@@ -157,9 +161,7 @@ class DiversityBenchmark(BaseBenchmark):
 
 
 if __name__ == "__main__":
-
     from pymatgen.util.testing import PymatgenTest
-
 
     test = PymatgenTest()
 
@@ -168,15 +170,30 @@ if __name__ == "__main__":
         test.get_structure("LiFePO4"),
     ]
 
-
     benchmark = DiversityBenchmark()
     benchmark_result = benchmark.evaluate(structures)
 
     print("element_diversity")
-    print(benchmark_result.evaluator_results["element_diversity"]["metric_results"]["element_diversity"].metrics)
+    print(
+        benchmark_result.evaluator_results["element_diversity"]["metric_results"][
+            "element_diversity"
+        ].metrics
+    )
     print("space_group_diversity")
-    print(benchmark_result.evaluator_results["space_group_diversity"]["metric_results"]["space_group_diversity"].metrics)
+    print(
+        benchmark_result.evaluator_results["space_group_diversity"]["metric_results"][
+            "space_group_diversity"
+        ].metrics
+    )
     print("site_number_diversity")
-    print(benchmark_result.evaluator_results["site_number_diversity"]["metric_results"]["site_number_diversity"].metrics)
+    print(
+        benchmark_result.evaluator_results["site_number_diversity"]["metric_results"][
+            "site_number_diversity"
+        ].metrics
+    )
     print("physical_size_diversity")
-    print(benchmark_result.evaluator_results["physical_size_diversity"]["metric_results"]["physical_size_diversity"].metrics)
+    print(
+        benchmark_result.evaluator_results["physical_size_diversity"]["metric_results"][
+            "physical_size_diversity"
+        ].metrics
+    )
