@@ -16,6 +16,9 @@ from lematerial_forgebench.benchmarks.novelty_benchmark import (
 from lematerial_forgebench.benchmarks.stability_benchmark import (
     StabilityBenchmark,
 )
+from lematerial_forgebench.benchmarks.uniqueness_benchmark import (
+    UniquenessBenchmark,
+)
 from lematerial_forgebench.benchmarks.validity_benchmark import (
     ValidityBenchmark,
 )
@@ -92,6 +95,16 @@ def load_benchmark_config(config_name: str) -> dict:
         }
         with open(config_path, "w") as f:
             yaml.dump(validity_config, f, default_flow_style=False)
+            
+    if not config_path.exists() and config_path.name == "uniqueness.yaml":
+        uniqueness_config = {
+            "type": "uniqueness",
+            "description": "Uniqueness Benchmark for Materials Generation",
+            "version": "0.1.0",
+            "fingerprint_method": "bawl",
+        }
+        with open(config_path, "w") as f:
+            yaml.dump(uniqueness_config, f, default_flow_style=False)
 
     if not config_path.exists() and config_path.name == "novelty.yaml":
         novelty_config = {
@@ -151,7 +164,7 @@ def main(input: str, config_name: str, output: str):
     """Run a benchmark on structures using the specified configuration.
 
     STRUCTURES_CSV: Path to CSV file containing structures to evaluate
-    CONFIG_NAME: Name of the benchmark configuration (e.g. 'example' for
+    CONFIG_NAME: Name of the benchmark configuration (e.g. 'example' for 
     example.yaml) or path to a config file
     """
     try:
@@ -236,6 +249,18 @@ def main(input: str, config_name: str, output: str):
             structures = preprocessor_result.processed_structures
 
             benchmark = StabilityBenchmark()
+            
+        elif benchmark_type == "uniqueness":
+            # Create uniqueness benchmark from config
+            benchmark = UniquenessBenchmark(
+                fingerprint_method=config.get("fingerprint_method", "bawl"),
+                name=config.get("name", "UniquenessBenchmark"),
+                description=config.get("description"),
+                metadata={
+                    "version": config.get("version", "0.1.0"),
+                    **(config.get("metadata", {})),
+                },
+            )
 
         elif benchmark_type == "novelty":
             # Create novelty benchmark from config

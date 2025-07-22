@@ -1,0 +1,6 @@
+type: "uniqueness"
+description: "Uniqueness Benchmark for Materials Generation"
+version: "0.1.0"
+
+# Fingerprinting configuration
+fingerprint_method: "bawl"
