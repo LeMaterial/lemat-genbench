@@ -269,7 +269,7 @@ class SpaceGroupDiversityMetric(BaseMetric):
         """
         mean_symmetry_rating = np.mean(values)
         spacegroup_diversity_metric = compute_vendi_score_with_uncertainty(self.spacegroup_histogram)
-        space_group_coverage = len(self.spacegroup_histogram.keys()) // self.config.reference_space_group_space
+        space_group_coverage = len(self.spacegroup_histogram.keys()) / self.config.reference_space_group_space
 
         return {
             "metrics": {
