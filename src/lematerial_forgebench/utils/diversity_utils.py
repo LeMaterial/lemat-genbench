@@ -1,6 +1,4 @@
-import json
 import numpy as np
-
 
 
 def compute_vendi_score_with_uncertainty(site_number) -> dict[str, float]:

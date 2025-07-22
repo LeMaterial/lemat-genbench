@@ -31,9 +31,10 @@ from scipy.special import rel_entr
 
 from lematerial_forgebench.metrics import BaseMetric
 from lematerial_forgebench.metrics.base import MetricConfig
+from lematerial_forgebench.utils.diversity_utils import (
+    compute_vendi_score_with_uncertainty,
+)
 from lematerial_forgebench.utils.logging import logger
-
-from lematerial_forgebench.utils.diversity_utils import compute_vendi_score_with_uncertainty
 
 """
 -------------------------------------------------------------------------------
