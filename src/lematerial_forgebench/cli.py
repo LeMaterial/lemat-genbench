@@ -10,7 +10,9 @@ from pathlib import Path
 import click
 import yaml
 
-# from lematerial_forgebench.benchmarks.example import ExampleBenchmark
+from lematerial_forgebench.benchmarks.novelty_benchmark import (
+    NoveltyBenchmark,
+)
 from lematerial_forgebench.benchmarks.stability_benchmark import (
     StabilityBenchmark,
 )
@@ -104,6 +106,20 @@ def load_benchmark_config(config_name: str) -> dict:
         with open(config_path, "w") as f:
             yaml.dump(uniqueness_config, f, default_flow_style=False)
 
+    if not config_path.exists() and config_path.name == "novelty.yaml":
+        novelty_config = {
+            "type": "novelty",
+            "description": "Novelty Benchmark for Materials Generation",
+            "version": "0.1.0",
+            "reference_dataset": "LeMaterial/LeMat-Bulk",
+            "reference_config": "compatible_pbe",
+            "fingerprint_method": "bawl",
+            "cache_reference": True,
+            "max_reference_size": None,
+        }
+        with open(config_path, "w") as f:
+            yaml.dump(novelty_config, f, default_flow_style=False)
+
     if not config_path.exists():
         raise click.ClickException(
             f"Config '{config_path}' not found. "
@@ -166,12 +182,6 @@ def main(input: str, config_name: str, output: str):
         # Initialization
         benchmark_type = config.get("type", "example")
 
-        # if benchmark_type == "example":
-        #     benchmark = ExampleBenchmark(
-        #         quality_weight=config.get("quality_weight", 0.4),
-        #         diversity_weight=config.get("diversity_weight", 0.4),
-        #         novelty_weight=config.get("novelty_weight", 0.2),
-        #     )
         if benchmark_type == "validity":
             # Get metric-specific configs if available
             metric_configs = config.get("metric_configs", {})
@@ -192,7 +202,8 @@ def main(input: str, config_name: str, output: str):
 
             # Create custom metrics with configuration
             ChargeNeutralityMetric(
-                tolerance=charge_tolerance, strict=charge_strict
+                tolerance=charge_tolerance,
+                strict=charge_strict
             )
 
             MinimumInteratomicDistanceMetric(scaling_factor=distance_scaling)
@@ -244,6 +255,20 @@ def main(input: str, config_name: str, output: str):
             benchmark = UniquenessBenchmark(
                 fingerprint_method=config.get("fingerprint_method", "bawl"),
                 name=config.get("name", "UniquenessBenchmark"),
+
+        elif benchmark_type == "novelty":
+            # Create novelty benchmark from config
+            benchmark = NoveltyBenchmark(
+                reference_dataset=config.get(
+                    "reference_dataset", "LeMaterial/LeMat-Bulk"
+                ),
+                reference_config=config.get(
+                    "reference_config", "compatible_pbe"
+                ),
+                fingerprint_method=config.get("fingerprint_method", "bawl"),
+                cache_reference=config.get("cache_reference", True),
+                max_reference_size=config.get("max_reference_size", None),
+                name=config.get("name", "NoveltyBenchmark"),
                 description=config.get("description"),
                 metadata={
                     "version": config.get("version", "0.1.0"),

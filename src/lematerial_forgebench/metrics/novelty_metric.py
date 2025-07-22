@@ -5,6 +5,7 @@ structures are not present in a reference dataset of known materials.
 Uses LeMat-Bulk dataset and BAWL fingerprinting.
 """
 
+import warnings
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Set
 
@@ -17,6 +18,9 @@ from pymatgen.core.structure import Structure
 from lematerial_forgebench.metrics.base import BaseMetric, MetricConfig
 from lematerial_forgebench.utils.logging import logger
 
+warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", category=DeprecationWarning, message=r".*__array__.*copy.*")
 
 @dataclass
 class NoveltyConfig(MetricConfig):
@@ -171,9 +175,9 @@ class NoveltyMetric(BaseMetric):
             logger.info(f"Loaded {len(dataset)} structures from reference dataset")
 
             # Check if fingerprints are already available in the dataset
-            if "bawl_fingerprint" in dataset.column_names:
+            if "entalpic_fingerprint" in dataset.column_names:
                 logger.info("Using pre-computed BAWL fingerprints from dataset")
-                fingerprints = set(dataset["bawl_fingerprint"])
+                fingerprints = set(dataset["entalpic_fingerprint"])
                 # Filter out any None or empty fingerprints
                 fingerprints = {fp for fp in fingerprints if fp and fp.strip()}
             else:

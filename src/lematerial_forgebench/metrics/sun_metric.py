@@ -6,6 +6,7 @@ unique, and novel.
 """
 
 import time
+import warnings
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 
@@ -17,6 +18,9 @@ from lematerial_forgebench.metrics.novelty_metric import NoveltyMetric
 from lematerial_forgebench.metrics.uniqueness_metric import UniquenessMetric
 from lematerial_forgebench.utils.logging import logger
 
+warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", category=DeprecationWarning, message=r".*__array__.*copy.*")
 
 @dataclass
 class SUNConfig(MetricConfig):
@@ -452,3 +456,42 @@ class MetaSUNMetric(SUNMetric):
     def primary_threshold(self) -> float:
         """Get the primary threshold for this metric."""
         return self.config.metastability_threshold
+
+
+if __name__ == "__main__":
+
+    import warnings
+
+    from pymatgen.util.testing import PymatgenTest
+
+    from lematerial_forgebench.metrics.sun_metric import SUNMetric
+    from lematerial_forgebench.preprocess.universal_stability_preprocess import (
+        UniversalStabilityPreprocessor,
+    )
+
+    warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
+    warnings.filterwarnings("ignore", category=FutureWarning, module="pymatgen.analysis.graphs")
+    warnings.filterwarnings("ignore", category=DeprecationWarning, message=r".*__array__.*copy.*")
+
+    breakpoint
+    test = PymatgenTest()
+
+    structures = [
+        test.get_structure("Si"),
+        test.get_structure("LiFePO4"),
+    ]
+
+    mlips = ["orb", "mace"]
+    for mlip in mlips:
+        metric = SUNMetric()
+        
+        timeout = 60 # seconds to timeout for each MLIP run 
+        stability_preprocessor = UniversalStabilityPreprocessor(
+            model_name=mlip,
+            timeout=timeout,
+            relax_structures=False,
+        )
+
+        stability_preprocessor_result = stability_preprocessor(structures)
+        metric_result = metric(stability_preprocessor_result.processed_structures)
+        print(mlip +" " + str(metric_result.metrics))

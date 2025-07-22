@@ -1,4 +1,5 @@
 import time
+import warnings
 from abc import ABC, abstractmethod
 from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass
@@ -11,6 +12,10 @@ from pymatgen.core.structure import Structure
 
 from lematerial_forgebench.data.structure import format_structures
 from lematerial_forgebench.utils.logging import logger
+
+warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", category=DeprecationWarning, message=r".*__array__.*copy.*")
 
 ClassVar = TypeVar("ClassVar", bound="BaseMetric")
 
