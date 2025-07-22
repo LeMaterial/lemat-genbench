@@ -1,0 +1,13 @@
+type: "novelty"
+description: "Novelty Benchmark for Materials Generation"
+version: "0.1.0"
+
+# Reference dataset configuration
+reference_dataset: "LeMaterial/LeMat-Bulk"
+reference_config: "compatible_pbe"
+fingerprint_method: "bawl"
+
+# Performance and caching settings
+cache_reference: true
+max_reference_size: null
+
