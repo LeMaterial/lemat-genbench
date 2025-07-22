@@ -35,6 +35,9 @@ from lematerial_forgebench.utils.diversity_utils import (
     compute_vendi_score_with_uncertainty,
 )
 from lematerial_forgebench.utils.logging import logger
+from lematerial_forgebench.utils.oxidation_state import (
+    get_inequivalent_site_info,
+)
 
 """
 -------------------------------------------------------------------------------
@@ -352,8 +355,8 @@ class PhysicalSizeComponentMetric(BaseMetric):
             )
 
         self._init_lattice_param_histogram(
-            smallest_lattice_size=0.0,
-            largest_lattice_size=50.0,
+            smallest_lattice_size=1.0,
+            largest_lattice_size=100.0,
         )
 
         self._init_packing_factor_histogram(
@@ -367,8 +370,8 @@ class PhysicalSizeComponentMetric(BaseMetric):
             largest_density_bucket=25.0,
         )
         self._init_reference_lattice_params_histogram(
-            smallest_lattice_size=0.0,
-            largest_lattice_size=50.0,
+            smallest_lattice_size=1.0,
+            largest_lattice_size=100.0,
         )
         self._init_packing_factor_histogram(
             smallest_packing_factor=0.0,
@@ -582,12 +585,14 @@ class PhysicalSizeComponentMetric(BaseMetric):
             Estimated packing factor (0 to ~0.74 typical).
         """
         total_atomic_volume = 0.0
+        structure = structure.remove_oxidation_states()
+        sites = get_inequivalent_site_info(structure)
 
-        for site in structure:
-            element = Element(site.specie.symbol)
+        for site_index in len(sites['sites']):            
+            element = Element(sites["species"][site_index])
             radius = element.covalent_radius  # in angstroms
             atom_volume = (4/3) * np.pi * (radius ** 3)
-            total_atomic_volume += atom_volume
+            total_atomic_volume += atom_volume * sites["multiplicities"][site_index]
 
         packing_factor = total_atomic_volume / structure.volume
         return min(packing_factor, 1.0)  # Clamp to 1.0 max
@@ -596,15 +601,10 @@ class PhysicalSizeComponentMetric(BaseMetric):
     def _get_compute_attributes(self) -> dict[str, Any]:
         return {
             "density_histogram" : self.density_histogram,
-            # "reference_histogram" : self.reference_density_histogram,
             "lattice_a_histogram" : self.lattice_a_histogram,
-            # "lattice_a_reference" : self.reference_lattice_a,
             "lattice_b_histogram" : self.lattice_b_histogram,
-            # "lattice_b_reference" : self.reference_lattice_b,
             "lattice_c_histogram" : self.lattice_c_histogram,
-            # "lattice_c_reference" : self.reference_lattice_c,
             "packing_factor_histogram": self.packing_factor_histogram,
-            # "packing_factor_reference": self.reference_packing_factor,
             "density_bin_size": self.config.density_bin_size,
             "lattice_bin_size": self.config.lattice_bin_size,
             "packing_factor_bin_size": self.config.packing_factor_bin_size,
