@@ -7,10 +7,9 @@ Each benchmark represents a different aspect of quality assessment.
 
 from .base import BaseBenchmark, BenchmarkConfig, BenchmarkResult
 from .distribution_benchmark import DistributionBenchmark
-from .stability_benchmark import StabilityBenchmark
-from .uniqueness_benchmark import UniquenessBenchmark
 from .novelty_benchmark import NoveltyBenchmark
 from .stability_benchmark import StabilityBenchmark
+from .uniqueness_benchmark import UniquenessBenchmark
 from .validity_benchmark import ValidityBenchmark
 
 __all__ = [

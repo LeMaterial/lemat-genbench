@@ -255,6 +255,12 @@ def main(input: str, config_name: str, output: str):
             benchmark = UniquenessBenchmark(
                 fingerprint_method=config.get("fingerprint_method", "bawl"),
                 name=config.get("name", "UniquenessBenchmark"),
+                description=config.get("description"),
+                metadata={
+                    "version": config.get("version", "0.1.0"),
+                    **(config.get("metadata", {})),
+                },
+            )
 
         elif benchmark_type == "novelty":
             # Create novelty benchmark from config
