@@ -1,0 +1,23 @@
+type: "hhi"
+description: >
+  HHI (Herfindahl-Hirschman Index) Benchmark for Supply Risk Assessment
+version: "0.1.0"
+
+# Weights for different HHI components
+production_weight: 0.25
+reserve_weight: 0.75
+
+# Scaling configuration
+scale_to_0_10: true
+
+# Risk assessment thresholds (for scaled values 0-10)
+# Low risk: HHI <= 2.0
+# Moderate risk: 2.0 < HHI <= 5.0  
+# High risk: HHI > 5.0
+
+# Additional metadata
+metadata:
+  reference: >
+    Herfindahl-Hirschman Index for supply risk assessment
+  use_case: >
+    Evaluating element supply concentration risk in materials
