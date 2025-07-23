@@ -26,7 +26,6 @@ from dataclasses import dataclass
 from typing import Any, Dict
 
 import numpy as np
-from pymatgen.core import Structure
 from pymatgen.core.structure import Structure
 from scipy.special import rel_entr
 

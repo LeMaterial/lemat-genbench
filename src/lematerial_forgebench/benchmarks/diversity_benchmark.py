@@ -167,33 +167,38 @@ if __name__ == "__main__":
 
     structures = [
         test.get_structure("Si"),
+        test.get_structure("Si"),
+        test.get_structure("Si"),
+
         test.get_structure("LiFePO4"),
     ]
 
     benchmark = DiversityBenchmark()
     benchmark_result = benchmark.evaluate(structures)
 
-    print("element_diversity")
-    print(
-        benchmark_result.evaluator_results["element_diversity"]["metric_results"][
-            "element_diversity"
-        ].metrics
-    )
-    print("space_group_diversity")
-    print(
-        benchmark_result.evaluator_results["space_group_diversity"]["metric_results"][
-            "space_group_diversity"
-        ].metrics
-    )
-    print("site_number_diversity")
-    print(
-        benchmark_result.evaluator_results["site_number_diversity"]["metric_results"][
-            "site_number_diversity"
-        ].metrics
-    )
-    print("physical_size_diversity")
-    print(
-        benchmark_result.evaluator_results["physical_size_diversity"]["metric_results"][
-            "physical_size_diversity"
-        ].metrics
-    )
+    print(benchmark_result["element_diversity"])
+
+    # print("element_diversity")
+    # print(
+    #     benchmark_result.evaluator_results["element_diversity"]["metric_results"][
+    #         "element_diversity"
+    #     ].metrics
+    # )
+    # print("space_group_diversity")
+    # print(
+    #     benchmark_result.evaluator_results["space_group_diversity"]["metric_results"][
+    #         "space_group_diversity"
+    #     ].metrics
+    # )
+    # print("site_number_diversity")
+    # print(
+    #     benchmark_result.evaluator_results["site_number_diversity"]["metric_results"][
+    #         "site_number_diversity"
+    #     ].metrics
+    # )
+    # print("physical_size_diversity")
+    # print(
+    #     benchmark_result.evaluator_results["physical_size_diversity"]["metric_results"][
+    #         "physical_size_diversity"
+    #     ].metrics
+    # )
