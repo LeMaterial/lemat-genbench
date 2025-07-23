@@ -1,9 +1,10 @@
 import numpy as np
+from pymatgen.analysis.molecule_structure_comparator import CovalentRadius
+from pymatgen.core.structure import Structure
+
 from lematerial_forgebench.utils.oxidation_state import (
     get_inequivalent_site_info,
 )
-from pymatgen.analysis.molecule_structure_comparator import CovalentRadius
-from pymatgen.core.structure import Structure
 
 
 def compute_vendi_score_with_uncertainty(site_number) -> dict[str, float]:

@@ -27,16 +27,17 @@ from typing import Any, Dict
 
 import numpy as np
 from pymatgen.core import Structure
+from pymatgen.core.structure import Structure
 from scipy.special import rel_entr
 
 from lematerial_forgebench.metrics import BaseMetric
 from lematerial_forgebench.metrics.base import MetricConfig
 from lematerial_forgebench.utils.diversity_utils import (
+    compute_packing_factor,
     compute_vendi_score_with_uncertainty,
 )
 from lematerial_forgebench.utils.logging import logger
-from lematerial_forgebench.utils.diversity_utils import compute_packing_factor
-from pymatgen.core.structure import Structure
+
 """
 -------------------------------------------------------------------------------
 Elemental Diversity
