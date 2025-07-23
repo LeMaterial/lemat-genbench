@@ -8,8 +8,6 @@ reserves.
 import math
 from typing import Any, Dict
 
-import numpy as np
-
 from lematerial_forgebench.benchmarks.base import BaseBenchmark
 from lematerial_forgebench.evaluator import EvaluatorConfig
 from lematerial_forgebench.metrics.hhi_metrics import (
