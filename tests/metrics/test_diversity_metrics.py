@@ -3,12 +3,9 @@ Unit Test File for Diversity Metrics. File path at src/lematerial_forgebench/met
 Note: Diversity Assumes stable Materials, and ignores unstable or invalid materials
 """
 
-import csv
-from io import StringIO
-
+import pandas as pd
 import pytest
 from pymatgen.core import Structure
-from pymatgen.io.cif import CifParser
 
 from lematerial_forgebench.metrics.base import MetricResult
 from lematerial_forgebench.metrics.diversity_metric import (
@@ -18,7 +15,7 @@ from lematerial_forgebench.metrics.diversity_metric import (
     SpaceGroupDiversityMetric,
 )
 
-trial_data_file_path = "data/trial_data/crystal_symmcd_mp20.csv"
+trial_data_file_path = "data/trial_data/lemat_sample.pkl"
 
 def load_structures_from_csv(filepath: str, n_samples: int) -> list[Structure]:
     """Load the first `n` CIF structures from a CSV where each row is a quoted CIF string.
@@ -35,18 +32,9 @@ def load_structures_from_csv(filepath: str, n_samples: int) -> list[Structure]:
     list[Structure]
         List of pymatgen Structure objects.
     """
-    structures = []
-    with open(filepath, newline='', encoding='utf-8') as f:
-        reader = csv.reader(f)
-        for row in reader:
-            if not row:
-                continue
-            cif_text = row[0]
-            parser = CifParser(StringIO(cif_text))
-            structure = parser.parse_structures()[0]
-            structures.append(structure)
-            if len(structures) >= n_samples:
-                break
+    with open (filepath, "rb") as f:
+        trial_data = pd.read_pickle(f)
+    structures = trial_data["LeMatStructs"].to_numpy()
     return structures
 
 @pytest.fixture
