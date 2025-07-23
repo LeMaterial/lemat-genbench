@@ -381,15 +381,16 @@ class BaseMetric(ABC):
 
             # Compute aggregate statistics
             try:
-                if values and not all(np.isnan(v) for v in values):
+                if values:
                     result_dict = self.aggregate_results(values)
                 else:
-                    # Case where all values are NaN or empty
+                    # Case where all values are empty
                     result_dict = {
                         "metrics": {self.name: float("nan")},
                         "primary_metric": self.name,
                         "uncertainties": {},
                     }
+        
             except TypeError:
                 if values[0].values() and not all(
                     np.isnan(v) for v in values[0].values()

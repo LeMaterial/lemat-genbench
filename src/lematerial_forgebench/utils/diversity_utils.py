@@ -1,4 +1,9 @@
 import numpy as np
+from lematerial_forgebench.utils.oxidation_state import (
+    get_inequivalent_site_info,
+)
+from pymatgen.analysis.molecule_structure_comparator import CovalentRadius
+from pymatgen.core.structure import Structure
 
 
 def compute_vendi_score_with_uncertainty(site_number) -> dict[str, float]:
@@ -53,3 +58,30 @@ def compute_vendi_score_with_uncertainty(site_number) -> dict[str, float]:
         "entropy_variance": entropy_variance,
         "entropy_std": entropy_std,
     }
+
+def compute_packing_factor(structure: Structure) -> float:
+    """
+    Approximate the atomic packing factor (APF) of a structure
+    using covalent radii to estimate atomic volumes.
+
+    Parameters
+    ----------
+    structure : pymatgen Structure
+        The crystal structure to analyze.
+
+    Returns
+    -------
+    float
+        Estimated packing factor (0 to ~0.74 typical).
+    """
+    total_atomic_volume = 0.0
+    structure = structure.remove_oxidation_states()
+    sites = get_inequivalent_site_info(structure)
+
+    for site_index in range(0, len(sites['sites'])):            
+        radius = CovalentRadius().radius[sites["species"][site_index]]
+        atom_volume = (4/3) * np.pi * (radius ** 3)
+        total_atomic_volume += atom_volume * sites["multiplicities"][site_index]
+
+    packing_factor = total_atomic_volume / structure.volume
+    return min(packing_factor, 1.0)  # Clamp to 1.0 max

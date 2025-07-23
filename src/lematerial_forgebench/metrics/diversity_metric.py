@@ -26,7 +26,7 @@ from dataclasses import dataclass
 from typing import Any, Dict
 
 import numpy as np
-from pymatgen.core import Element, Structure
+from pymatgen.core import Structure
 from scipy.special import rel_entr
 
 from lematerial_forgebench.metrics import BaseMetric
@@ -35,10 +35,8 @@ from lematerial_forgebench.utils.diversity_utils import (
     compute_vendi_score_with_uncertainty,
 )
 from lematerial_forgebench.utils.logging import logger
-from lematerial_forgebench.utils.oxidation_state import (
-    get_inequivalent_site_info,
-)
-
+from lematerial_forgebench.utils.diversity_utils import compute_packing_factor
+from pymatgen.core.structure import Structure
 """
 -------------------------------------------------------------------------------
 Elemental Diversity
@@ -568,57 +566,19 @@ class PhysicalSizeComponentMetric(BaseMetric):
             "entropy_std": entropy_std,
             "kl_divergence": kl_divergence,
         }
-    
-    def _compute_packing_factor(structure: Structure) -> float:
-        """
-        Approximate the atomic packing factor (APF) of a structure
-        using covalent radii to estimate atomic volumes.
 
-        Parameters
-        ----------
-        structure : pymatgen Structure
-            The crystal structure to analyze.
-
-        Returns
-        -------
-        float
-            Estimated packing factor (0 to ~0.74 typical).
-        """
-        total_atomic_volume = 0.0
-        structure = structure.remove_oxidation_states()
-        sites = get_inequivalent_site_info(structure)
-
-        for site_index in len(sites['sites']):            
-            element = Element(sites["species"][site_index])
-            radius = element.covalent_radius  # in angstroms
-            atom_volume = (4/3) * np.pi * (radius ** 3)
-            total_atomic_volume += atom_volume * sites["multiplicities"][site_index]
-
-        packing_factor = total_atomic_volume / structure.volume
-        return min(packing_factor, 1.0)  # Clamp to 1.0 max
-    
 
     def _get_compute_attributes(self) -> dict[str, Any]:
         return {
-            "density_histogram" : self.density_histogram,
-            "lattice_a_histogram" : self.lattice_a_histogram,
-            "lattice_b_histogram" : self.lattice_b_histogram,
-            "lattice_c_histogram" : self.lattice_c_histogram,
-            "packing_factor_histogram": self.packing_factor_histogram,
+            "packing_factor_function": compute_packing_factor,
             "density_bin_size": self.config.density_bin_size,
             "lattice_bin_size": self.config.lattice_bin_size,
             "packing_factor_bin_size": self.config.packing_factor_bin_size,
-            "packing_factor_function": self._compute_packing_factor,
         }
     
     @staticmethod
     def compute_structure(
         structure: Structure,
-        density_histogram: Dict[float, int],
-        lattice_a_histogram: Dict[float, int],
-        lattice_b_histogram: Dict[float, int],
-        lattice_c_histogram: Dict[float, int],
-        packing_factor_histogram: Dict[float, int],
         packing_factor_function: callable,
         density_bin_size: float,
         lattice_bin_size: float,
@@ -631,21 +591,6 @@ class PhysicalSizeComponentMetric(BaseMetric):
         ----------
         structure: Structure
             A pymatgen Structure object to evaluate.
-        density_histogram: dict[float:int]
-            a bucket-based histogram capturing diversity and corresponding frequency of density of materials
-            in the generated set.
-        lattice_a_histogram: dict[float:int]
-            a bucket-based histogram capturing diversity and corresponding frequency of lattice A of materials
-            in the generated set.
-        lattice_b_histogram: dict[float:int]
-            a bucket-based histogram capturing diversity and corresponding frequency of lattice B of materials
-            in the generated set.
-        lattice_c_histogram: dict[float:int]
-            a bucket-based histogram capturing diversity and corresponding frequency of lattice C of materials
-            in the generated set.
-        packing_factor_histogram: dict[float:int]
-            a bucket-based histogram capturing diversity and corresponding frequency of packing factors of materials
-            in the generated set
         packing_factor_function: Callable
             A private function to calculate the packing factor of a structure to then save to the distribution
         density_bin_size : Float
@@ -660,37 +605,40 @@ class PhysicalSizeComponentMetric(BaseMetric):
             This value is the Volume of the Cell Calculated by A x B x C 
 
         """
-        try:
-            # Capture Density
-            density = structure.density
-            density_bin_index = int(density // density_bin_size)
-            density_histogram[density_bin_index] += 1
+        return_dict = defaultdict(lambda: defaultdict(int)) 
+        # try:
+        # Capture Density
+        density = structure.density
+        density_bin_index = int(density // density_bin_size)
+        return_dict['density_histogram'][density_bin_index] += 1
 
-            # Capture Lattice A
-            lattice_a = structure.lattice.a
-            lattice_a_bin_index = int(lattice_a // lattice_bin_size)
-            lattice_a_histogram[lattice_a_bin_index] += 1
-            
-            # Capture Lattice B
-            lattice_b = structure.lattice.b
-            lattice_b_bin_index = int(lattice_b // lattice_bin_size)
-            lattice_b_histogram[lattice_b_bin_index] += 1
+        # Capture Lattice A
+        lattice_a = structure.lattice.a
+        lattice_a_bin_index = int(lattice_a // lattice_bin_size)
+        return_dict['lattice_a_histogram'][lattice_a_bin_index] += 1
 
-            # Capture Lattice A
-            lattice_c = structure.lattice.c
-            lattice_c_bin_index = int(lattice_c // lattice_bin_size)
-            lattice_c_histogram[lattice_c_bin_index] += 1
- 
-            # Capture Packing Factor
-            packing_factor = packing_factor_function(structure)
-            packing_factor_bin_index = int(packing_factor // packing_factor_bin_size)
-            packing_factor_histogram[packing_factor_bin_index] += 1
+        # Capture Lattice B
+        lattice_b = structure.lattice.b
+        lattice_b_bin_index = int(lattice_b // lattice_bin_size)
+        return_dict['lattice_b_histogram'][lattice_b_bin_index] += 1
 
-            return lattice_a * lattice_b * lattice_c # returning the Volume
-    
-        except Exception as e:
-            logger.debug(f"Could not determine Physical Properties of {structure.formula} : {str(e)}")
-            return 0  
+        # Capture Lattice A
+        lattice_c = structure.lattice.c
+        lattice_c_bin_index = int(lattice_c // lattice_bin_size)
+        return_dict['lattice_c_histogram'][lattice_c_bin_index] += 1
+
+        # Capture Packing Factor
+        packing_factor = packing_factor_function(structure)
+        packing_factor_bin_index = int(packing_factor // packing_factor_bin_size)
+        return_dict['packing_factor_histogram'][packing_factor_bin_index] += 1
+
+        return_dict['volume'][0] +=  lattice_a * lattice_b * lattice_c # returning the Volume
+        return_dict["counts"][0] += 1 
+        return return_dict
+        
+        # except Exception as e:
+        #     logger.debug(f"Could not determine Physical Properties of {structure.formula} : {str(e)}")
+        #     return defaultdict(lambda: defaultdict(int)) 
      
     def aggregate_results(self, values: list[float]) -> dict[str, Any]:
         """Aggregate results into final metric values.
@@ -707,35 +655,41 @@ class PhysicalSizeComponentMetric(BaseMetric):
         """
 
         # Calculate the Mean Volume of the Generated Set
-        
-        non_zero_values = [v for v in values if v != 0]
-        if non_zero_values:
-            mean_volume = np.mean(non_zero_values)
-        else:
-            mean_volume = 0.0
+        values_dict = defaultdict(lambda: defaultdict(int))
 
+        for d in values:
+            for outer_key, subdict in d.items():
+                for inner_key, value in subdict.items():
+                    values_dict[outer_key][inner_key] += value
+
+        # Convert to regular nested dicts
+        values_dict = {k: dict(v) for k, v in values_dict.items()}
+
+        mean_volume = values_dict["volume"][0]/values_dict["counts"][0]
 
         density_metrics = self._compute_diversity_with_kl(
-            actual_histogram=self.density_histogram,
-              reference_histogram= self.reference_density_histogram
-              )
+            actual_histogram=values_dict["density_histogram"],
+            reference_histogram= self.reference_density_histogram
+            )
         lattice_a_metrics = self._compute_diversity_with_kl(
-            actual_histogram=self.lattice_a_histogram,
-              reference_histogram= self.reference_lattice_a
-              )
+            actual_histogram=values_dict["lattice_a_histogram"],
+            reference_histogram= self.reference_lattice_a
+            )
         lattice_b_metrics = self._compute_diversity_with_kl(
-            actual_histogram=self.lattice_b_histogram,
-              reference_histogram= self.reference_lattice_b
-              )
+            actual_histogram=values_dict["lattice_b_histogram"],
+            reference_histogram= self.reference_lattice_b
+            )
         lattice_c_metrics = self._compute_diversity_with_kl(
-            actual_histogram=self.lattice_c_histogram,
-              reference_histogram= self.reference_lattice_c
-              )
+            actual_histogram=values_dict["lattice_c_histogram"],
+            reference_histogram= self.reference_lattice_c
+            )
         packing_factor_metrics = self._compute_diversity_with_kl(
-            actual_histogram=self.packing_factor_histogram,
+            actual_histogram=values_dict["packing_factor_histogram"],
             reference_histogram=self.reference_packing_factor
         )
         
+        print(density_metrics["shannon_entropy"])
+
         return {
             "metrics": {
                 "density_diversity_shannon_entropy": density_metrics["shannon_entropy"],
@@ -897,6 +851,9 @@ if __name__ == "__main__":
 
     structures = [
         test.get_structure("Si"),
+        test.get_structure("Si"),
+        test.get_structure("Si"),
+
         test.get_structure("LiFePO4"),
     ]
 
@@ -916,7 +873,7 @@ if __name__ == "__main__":
     metric._init_reference_packing_factor_histogram()
     metric_result = metric(structures)
     print("PhysicalSizeComponentMetric")
-    print(metric_result)
+    print(metric_result.metrics)
     print("")
 
     metric = SiteNumberComponentMetric()

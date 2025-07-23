@@ -490,7 +490,6 @@ class FrechetDistance(BaseMetric):
             },
         )
 
-
 if __name__ == "__main__":
     import pickle
 
