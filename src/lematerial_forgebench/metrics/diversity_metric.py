@@ -61,7 +61,7 @@ class ElementComponentConfig(MetricConfig):
 
 class ElementDiversityMetric(BaseMetric):
     """
-    Calculates a scalar score capturing elemental diversity across the structures compared to reference distribution
+    Calculates a scalar score capturing elemental diversity across the structures compared to uniform distribution
     """
     def __init__(
         self,
@@ -509,7 +509,7 @@ class PhysicalSizeComponentMetric(BaseMetric):
     ) -> dict[str, float]:
         """
         Compute Shannon entropy and KL divergence between the actual 
-        distribution of the current dataset and a reference distribution.
+        distribution of the current dataset and a uniform distribution.
 
         Assumes both distributions are defined over the same bins, and are class objects
 
@@ -689,7 +689,18 @@ class PhysicalSizeComponentMetric(BaseMetric):
             reference_histogram=self.reference_packing_factor
         )
         
-        print(density_metrics["shannon_entropy"])
+        norm_sum_shannon_entropy = (
+            density_metrics["shannon_entropy"] + 
+            lattice_a_metrics["shannon_entropy"] + 
+            lattice_b_metrics["shannon_entropy"] + 
+            lattice_c_metrics["shannon_entropy"] + 
+            packing_factor_metrics["shannon_entropy"] 
+            )/np.log2(len(values))
+        
+        avg_norm_shannon_entropy = norm_sum_shannon_entropy / 5
+
+
+        print()
 
         return {
             "metrics": {
@@ -704,8 +715,9 @@ class PhysicalSizeComponentMetric(BaseMetric):
                 "packing_factor_diversity_shannon_entropy": packing_factor_metrics["shannon_entropy"],
                 "packing_factor_diversity_kl_divergence_from_uniform": packing_factor_metrics["kl_divergence"],
                 "mean_volume": mean_volume,
+                "avg_norm_shannon_entropy": avg_norm_shannon_entropy,
             },
-            "primary_metric": "mean_volume",
+            "primary_metric": "avg_norm_shannon_entropy",
             "uncertainties": {
                 "density_shannon_entropy_std" : density_metrics["entropy_std"],
                 "density_shannon_entropy_variance": density_metrics["entropy_variance"],
@@ -738,7 +750,7 @@ class SiteNumberComponentConfig(MetricConfig):
 
 class SiteNumberComponentMetric(BaseMetric):
     """
-    Calculates a scalar score capturing Number of Sites diversity across the structures compared to reference distribution
+    Calculates a scalar score capturing Number of Sites diversity across the structures compared to uniform distribution
     """
 
     # TODO should this be number of symmetrically unique sites? or does that just become a 
