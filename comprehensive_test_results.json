@@ -1,0 +1,158 @@
+{
+  "availability": {
+    "available_models": [
+      "mace",
+      "uma",
+      "orb"
+    ],
+    "model_info": {
+      "mace": {
+        "class": "MACECalculator",
+        "description": "MACE: Materials Accelerated by Chemical Embedding",
+        "supports_embeddings": true,
+        "supports_relaxation": true,
+        "default_model": "mp",
+        "default_task": null,
+        "is_available": true,
+        "available_models": [
+          "mp",
+          "off"
+        ],
+        "available_tasks": []
+      },
+      "uma": {
+        "class": "UMACalculator",
+        "description": "Universal Models for Atoms by Meta",
+        "supports_embeddings": true,
+        "supports_relaxation": true,
+        "default_model": "uma-s-1",
+        "default_task": "omat",
+        "is_available": true,
+        "available_models": [
+          "uma-s-1"
+        ],
+        "available_tasks": [
+          "oc20",
+          "omat",
+          "omol",
+          "odac",
+          "omc"
+        ]
+      },
+      "orb": {
+        "class": "ORBCalculator",
+        "description": "Orbital Materials' ORB force fields",
+        "supports_embeddings": true,
+        "supports_relaxation": true,
+        "default_model": "orb_v3_conservative_inf_omat",
+        "default_task": null,
+        "is_available": true,
+        "available_models": [
+          "orb_v3_conservative_inf_omat",
+          "orb_v3_conservative_inf_mpa",
+          "orb_v3_direct_inf_mpa",
+          "orb_v2_conservative_inf",
+          "orb_v2_direct_inf"
+        ],
+        "available_tasks": []
+      }
+    }
+  },
+  "orb_direct": {
+    "available": true,
+    "calculator_created": true,
+    "energy_calculated": true,
+    "embeddings_extracted": true,
+    "energy": -10.828152656555176,
+    "forces_norm": 0.0020759354811161757,
+    "calculation_time": 0.17548012733459473
+  },
+  "uma_direct": {
+    "available": true,
+    "calculator_created": true,
+    "energy_calculated": true,
+    "embeddings_extracted": true,
+    "energy": -10.859254300251415,
+    "forces_norm": 5.657384917867603e-06,
+    "calculation_time": 0.1253209114074707
+  },
+  "mace_direct": {
+    "available": true,
+    "any_approach_worked": false,
+    "approaches": {
+      "mp": {
+        "success": false,
+        "error": "too many values to unpack (expected 2)"
+      },
+      "off": {
+        "success": false,
+        "error": "too many values to unpack (expected 2)"
+      },
+      "mp_post_clear": {
+        "success": false,
+        "error": "too many values to unpack (expected 2)"
+      }
+    }
+  },
+  "registry": {
+    "mace": {
+      "success": true,
+      "energy": -5.726475238800049,
+      "embeddings_success": true
+    },
+    "uma": {
+      "success": true,
+      "energy": -10.859254300251415,
+      "embeddings_success": true
+    },
+    "orb": {
+      "success": true,
+      "energy": -10.828152656555176,
+      "embeddings_success": true
+    }
+  },
+  "benchmarks": {
+    "validity": {
+      "success": true,
+      "score": "N/A",
+      "all_scores": {
+        "overall_validity_score": 0.8333333333333333,
+        "charge_neutrality_score": 1.0,
+        "interatomic_distance_score": 1.0,
+        "physical_plausibility_score": 0.5,
+        "valid_structures_ratio": 0.5
+      }
+    },
+    "stability_orb": {
+      "success": true,
+      "formation_energy": 0.021915183444823683
+    },
+    "stability_uma": {
+      "success": true,
+      "formation_energy": -0.009186519856060116
+    }
+  },
+  "performance": {
+    "orb": {
+      "avg_time": 0.027576605478922527,
+      "std_time": 0.038781402816398,
+      "throughput": 72.52524251139789,
+      "num_atoms": 2
+    },
+    "uma": {
+      "avg_time": 0.09671529134114583,
+      "std_time": 0.005211431706537856,
+      "throughput": 20.679253221141206,
+      "num_atoms": 2
+    }
+  },
+  "comparison": {
+    "energies": {
+      "ORB": -10.828152656555176,
+      "UMA": -10.859254300251415
+    },
+    "mean": -10.843703478403295,
+    "std": 0.015550821848119512,
+    "range": 0.031101643696239023
+  }
+}
