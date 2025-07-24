@@ -1,5 +1,8 @@
 """MACE model calculator implementation."""
 
+import io
+
+import torch
 from pymatgen.core.structure import Structure
 
 from lematerial_forgebench.models.base import (
@@ -58,7 +61,49 @@ class MACECalculator(BaseMLIPCalculator):
 
             if self.model_type == "mp":
                 # Materials Project foundation model
-                self.ase_calc = mace_mp(device=device_str, **kwargs)
+                try:
+                    self.ase_calc = mace_mp(device=device_str, **kwargs)
+
+                except Exception:
+                    # Monkeypatch CodeGenMixin.__setstate__ temporarily
+
+                    from e3nn.util.codegen._mixin import CodeGenMixin
+
+                    original_setstate = CodeGenMixin.__setstate__
+
+                    def patched_setstate(self, d):
+                        d = d.copy()
+                        # We don't want to add this to the object when we call super's __setstate__
+                        codegen_state = d.pop("__codegen__", None)
+
+                        # We need to initialize self first so that we can add submodules
+                        # We need to check if other parent classes of self define __getstate__
+                        if hasattr(super(CodeGenMixin, self), "__setstate__"):
+                            super(CodeGenMixin, self).__setstate__(d)
+                        else:
+                            self.__dict__.update(d)
+
+                        if codegen_state is not None:
+                            for fname, buffer in codegen_state.items():
+                                assert isinstance(fname, str)
+                                # Make sure bytes, not ScriptModules, got made
+                                assert isinstance(buffer, bytes)
+                                buffer = io.BytesIO(buffer)
+                                smod = torch.jit.load(buffer)
+                                assert isinstance(smod, torch.jit.ScriptModule)
+
+                                # Add the ScriptModule as a submodule
+                                setattr(self, fname, smod)
+                            self.__codegen__ = list(codegen_state.keys())
+
+                    CodeGenMixin.__setstate__ = patched_setstate
+
+                    try:
+                        self.ase_calc = mace_mp(device=device_str, **kwargs)
+                    finally:
+                        # Reset to original method
+                        CodeGenMixin.__setstate__ = original_setstate
+
             elif self.model_type == "off":
                 # Off-the-shelf models
                 self.ase_calc = mace_off(device=device_str, **kwargs)
