@@ -49,7 +49,7 @@ class DiversityBenchmark(BaseBenchmark):
         evaluator_configs = {
             "element_diversity": EvaluatorConfig(
                 name="element_diversity",
-                description="Calculates the element diveristy of a sample of structures",
+                description="Calculates the element diversity of a sample of structures",
                 metrics={"element_diversity": element_diversity},
                 weights={"element_diversity": 1.0},
                 aggregation_method="weighted_mean",
@@ -61,7 +61,7 @@ class DiversityBenchmark(BaseBenchmark):
         # Set up evaluator configs
         evaluator_configs["space_group_diversity"] = EvaluatorConfig(
             name="space_group_diversity",
-            description="Calculates the space group diveristy of a sample of structures",
+            description="Calculates the space group diversity of a sample of structures",
             metrics={"space_group_diversity": space_group_diversity},
             weights={"space_group_diversity": 1.0},
             aggregation_method="weighted_mean",
@@ -72,7 +72,7 @@ class DiversityBenchmark(BaseBenchmark):
         # Set up evaluator configs
         evaluator_configs["site_number_diversity"] = EvaluatorConfig(
             name="site_number_diversity",
-            description="Calculates the space group diveristy of a sample of structures",
+            description="Calculates the site number diversity of a sample of structures",
             metrics={"site_number_diversity": site_number_diversity},
             weights={"site_number_diversity": 1.0},
             aggregation_method="weighted_mean",
@@ -84,7 +84,7 @@ class DiversityBenchmark(BaseBenchmark):
         # Set up evaluator configs
         evaluator_configs["physical_size_diversity"] = EvaluatorConfig(
             name="physical_size_diversity",
-            description="Calculates the space group diveristy of a sample of structures",
+            description="Calculates the physical size diversity of a sample of structures",
             metrics={"physical_size_diversity": physical_size_diversity},
             weights={"physical_size_diversity": 1.0},
             aggregation_method="weighted_mean",
@@ -169,7 +169,6 @@ if __name__ == "__main__":
         test.get_structure("Si"),
         test.get_structure("Si"),
         test.get_structure("Si"),
-
         test.get_structure("LiFePO4"),
     ]
 
