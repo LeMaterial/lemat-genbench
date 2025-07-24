@@ -179,11 +179,9 @@ class TestPhysicalDiversityMetrics:
         assert "packing_factor_diversity_shannon_entropy" in metric_score.metrics
         assert "packing_factor_diversity_kl_divergence_from_uniform" in metric_score.metrics
 
-            ## Mean Volume
-        assert "mean_volume" in metric_score.metrics
-
-        
-        assert metric_score.primary_metric == "mean_volume"
+            ## primary metric 
+        assert "avg_norm_shannon_entropy" in metric_score.metrics
+        assert metric_score.primary_metric == "avg_norm_shannon_entropy"
         
         #Check Uncertainty Sanity
         assert isinstance(metric_score.uncertainties["density_shannon_entropy_std"], float)
