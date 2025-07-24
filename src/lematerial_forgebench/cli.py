@@ -10,6 +10,7 @@ from pathlib import Path
 import click
 import yaml
 
+from lematerial_forgebench.benchmarks.hhi_benchmark import HHIBenchmark
 from lematerial_forgebench.benchmarks.novelty_benchmark import (
     NoveltyBenchmark,
 )
@@ -119,6 +120,30 @@ def load_benchmark_config(config_name: str) -> dict:
         }
         with open(config_path, "w") as f:
             yaml.dump(novelty_config, f, default_flow_style=False)
+
+    # Add HHI config creation
+    if not config_path.exists() and config_path.name == "hhi.yaml":
+        hhi_config = {
+            "type": "hhi",
+            "description": (
+                "HHI (Herfindahl-Hirschman Index) Benchmark for Supply Risk "
+                "Assessment"
+            ),
+            "version": "0.1.0",
+            "production_weight": 0.25,
+            "reserve_weight": 0.75,
+            "scale_to_0_10": True,
+            "metadata": {
+                "reference": (
+                    "Herfindahl-Hirschman Index for supply risk assessment"
+                ),
+                "use_case": (
+                    "Evaluating element supply concentration risk in materials"
+                ),
+            },
+        }
+        with open(config_path, "w") as f:
+            yaml.dump(hhi_config, f, default_flow_style=False)
 
     if not config_path.exists():
         raise click.ClickException(
@@ -281,8 +306,26 @@ def main(input: str, config_name: str, output: str):
                     **(config.get("metadata", {})),
                 },
             )
+
+        elif benchmark_type == "hhi":
+            # Create HHI benchmark from config
+            benchmark = HHIBenchmark(
+                production_weight=config.get("production_weight", 0.25),
+                reserve_weight=config.get("reserve_weight", 0.75),
+                scale_to_0_10=config.get("scale_to_0_10", True),
+                name=config.get("name", "HHIBenchmark"),
+                description=config.get("description"),
+                metadata={
+                    "version": config.get("version", "0.1.0"),
+                    **(config.get("metadata", {})),
+                },
+            )
+
         else:
-            raise ValueError(f"Unknown benchmark type: {benchmark_type}")
+            raise ValueError(
+                f"Unknown benchmark type: {benchmark_type}. "
+                "Available types: validity, stability, uniqueness, novelty, hhi"
+            )
 
         # Run benchmark
         logger.info("Running benchmark evaluation")
