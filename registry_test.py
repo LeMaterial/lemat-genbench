@@ -586,7 +586,9 @@ class ModelFocusedRegistryTester:
         for model_name in working_models:
             print(f"\nTesting Stability Benchmark with {model_name.upper()}...")
             try:
-                from lematerial_forgebench.benchmarks.stability_benchmark import StabilityBenchmark
+                from lematerial_forgebench.benchmarks.stability_benchmark import (
+                    StabilityBenchmark,
+                )
 
                 # Create benchmark with the specific model
                 stability_benchmark = StabilityBenchmark(model_name=model_name)
@@ -1098,7 +1100,7 @@ class ModelFocusedRegistryTester:
             and len(comp_data["total_energies"]) >= 2):
             energies = list(comp_data["total_energies"].values())
             energy_range = max(energies) - min(energies)
-            per_atom_range = energy_range / len(self.test_structures[0])
+            _ = energy_range / len(self.test_structures[0])
 
             agreement = self._assess_model_agreement(energy_range, len(self.test_structures[0]))
             print(f"Energy Agreement: {agreement}")
