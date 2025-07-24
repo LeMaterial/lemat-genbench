@@ -660,7 +660,15 @@ class PhysicalSizeComponentMetric(BaseMetric):
             This value is the Volume of the Cell Calculated by A x B x C
 
         """
-        return_dict = defaultdict(lambda: defaultdict(int))
+        return_dict = {
+            "density_histogram": defaultdict(int),
+            "lattice_a_histogram": defaultdict(int),
+            "lattice_b_histogram": defaultdict(int),
+            "lattice_c_histogram": defaultdict(int),
+            "packing_factor_histogram": defaultdict(int),
+            "volume": 0,
+            "counts": 0,
+        }
 
         # Capture Density
         density = structure.density
@@ -687,10 +695,8 @@ class PhysicalSizeComponentMetric(BaseMetric):
         packing_factor_bin_index = int(packing_factor // packing_factor_bin_size)
         return_dict["packing_factor_histogram"][packing_factor_bin_index] += 1
 
-        return_dict["volume"][0] += (
-            lattice_a * lattice_b * lattice_c
-        )  # returning the Volume
-        return_dict["counts"][0] += 1
+        return_dict["volume"] += lattice_a * lattice_b * lattice_c
+        return_dict["counts"] += 1
         return return_dict
 
     def aggregate_results(self, values: list[float]) -> dict[str, Any]:
@@ -708,17 +714,32 @@ class PhysicalSizeComponentMetric(BaseMetric):
         """
 
         # Calculate the Mean Volume of the Generated Set
-        values_dict = defaultdict(lambda: defaultdict(int))
+        values_dict = {
+            "density_histogram": defaultdict(int),
+            "lattice_a_histogram": defaultdict(int),
+            "lattice_b_histogram": defaultdict(int),
+            "lattice_c_histogram": defaultdict(int),
+            "packing_factor_histogram": defaultdict(int),
+            "volume": 0,
+            "counts": 0,
+        }
 
         for d in values:
             for outer_key, subdict in d.items():
-                for inner_key, value in subdict.items():
-                    values_dict[outer_key][inner_key] += value
+                if isinstance(subdict, defaultdict):
+                    for inner_key, value in subdict.items():
+                        values_dict[outer_key][inner_key] += value
+                else:
+                    values_dict[outer_key] += subdict
 
         # Convert to regular nested dicts
-        values_dict = {k: dict(v) for k, v in values_dict.items()}
+        for key, value in values_dict.items():
+            if isinstance(value, defaultdict):
+                values_dict[key] = dict(value)
+            else:
+                values_dict[key] = value
 
-        mean_volume = values_dict["volume"][0] / values_dict["counts"][0]
+        mean_volume = values_dict["volume"] / values_dict["counts"]
 
         density_metrics = self._compute_diversity_with_kl(
             actual_histogram=values_dict["density_histogram"],
