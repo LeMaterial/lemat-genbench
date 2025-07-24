@@ -25,6 +25,13 @@ class HHIBenchmark(BaseBenchmark):
         self,
         production_weight: float = 0.25,
         reserve_weight: float = 0.75,
+        # Default weights prioritize long-term supply security over short-term 
+        # market dynamics. Reserve concentration (0.75) reflects fundamental 
+        # geological availability and is harder to change, while production 
+        # concentration (0.25) can be adjusted through investment and trade 
+        # diversification. This weighting is optimal for materials discovery 
+        # where ong-term element availability is more critical than current 
+        # market conditions.
         scale_to_0_10: bool = True,
         name: str = "HHIBenchmark",
         description: str | None = None,
@@ -200,7 +207,7 @@ class HHIBenchmark(BaseBenchmark):
             )
 
         # Compute weighted average of production and reserve HHI
-        # Handle None values properly (FIXED: Check for None first, then NaN)
+        # Handle None values properly
         def is_none_or_nan(value):
             """Check if value is None or NaN."""
             if value is None:
