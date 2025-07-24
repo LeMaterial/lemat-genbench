@@ -411,8 +411,7 @@ class FrechetDistance(BaseMetric):
         start_time = time.time()
 
         all_properties = [
-            structure.properties.get("graph_embedding", {})
-            for structure in structures
+            structure.properties.get("graph_embedding", {}) for structure in structures
         ]
         reference_df = compute_args.get("reference_df")
 
@@ -423,10 +422,9 @@ class FrechetDistance(BaseMetric):
         if "UMA" in structures[0].properties.get("mlip_model"):
             reference_column = "UmaGraphEmbeddings"
         if "Equiformer" in structures[0].properties.get("mlip_model"):
-            reference_column = "EquiformerGraphEmbeddings"        
+            reference_column = "EquiformerGraphEmbeddings"
 
         reference_embeddings = reference_df[reference_column]
-
 
         if reference_df is None:
             raise ValueError(
@@ -435,9 +433,7 @@ class FrechetDistance(BaseMetric):
 
         dist_metrics = {}
 
-        frechetdist = compute_frechetdist(
-            reference_embeddings, all_properties
-        )
+        frechetdist = compute_frechetdist(reference_embeddings, all_properties)
         dist_metrics["FrechetDistance"] = frechetdist
 
         end_time = time.time()
@@ -493,7 +489,6 @@ class FrechetDistance(BaseMetric):
                 "primary_metric": "FrechetDistance",
             },
         )
-    
 
 if __name__ == "__main__":
     import pickle
@@ -519,21 +514,25 @@ if __name__ == "__main__":
     distribution_preprocessor = DistributionPreprocessor()
     distribution_preprocessor_result = distribution_preprocessor(structures)
 
-    metric = JSDistance(reference_df=test_lemat) 
+    metric = JSDistance(reference_df=test_lemat)
     default_args = metric._get_compute_attributes()
-    metric_result = metric(distribution_preprocessor_result.processed_structures, **default_args)
+    metric_result = metric(
+        distribution_preprocessor_result.processed_structures, **default_args
+    )
     print(metric_result.metrics)
 
-    metric = MMD(reference_df=test_lemat) 
+    metric = MMD(reference_df=test_lemat)
     default_args = metric._get_compute_attributes()
-    metric_result = metric(distribution_preprocessor_result.processed_structures, **default_args)
+    metric_result = metric(
+        distribution_preprocessor_result.processed_structures, **default_args
+    )
     print(metric_result.metrics)
 
     mlips = ["orb", "mace"]
     for mlip in mlips:
-        metric = FrechetDistance(reference_df=test_lemat) 
-        
-        timeout = 60 # seconds to timeout for each MLIP run 
+        metric = FrechetDistance(reference_df=test_lemat)
+
+        timeout = 60  # seconds to timeout for each MLIP run
         stability_preprocessor = UniversalStabilityPreprocessor(
             model_name=mlip,
             timeout=timeout,
@@ -543,7 +542,7 @@ if __name__ == "__main__":
         stability_preprocessor_result = stability_preprocessor(structures)
 
         default_args = metric._get_compute_attributes()
-        metric_result = metric(stability_preprocessor_result.processed_structures, **default_args)
-        print(mlip +" " + str(metric_result.metrics))
-
-
+        metric_result = metric(
+            stability_preprocessor_result.processed_structures, **default_args
+        )
+        print(mlip + " " + str(metric_result.metrics))
