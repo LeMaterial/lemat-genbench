@@ -1,14 +1,14 @@
-#!/usr/bin/env python3
 """
 Comprehensive test script for MACE, ORB, and UMA models.
-This is the definitive test that checks everything: availability, energies, forces, 
-embeddings, benchmarks, and provides detailed diagnostics.
+This is the definitive test that checks everything: availability, energies, 
+forces, embeddings, benchmarks, and provides detailed diagnostics.
 """
 
-import traceback
 import time
-import numpy as np
+import traceback
 from pathlib import Path
+
+import numpy as np
 from pymatgen.util.testing import PymatgenTest
 
 
@@ -28,22 +28,21 @@ class ComprehensiveModelTester:
                 test.get_structure("Si"),
                 test.get_structure("LiFePO4"),
             ]
-            
             # Add CIF structures if available
-            cif_files = ["CsBr.cif", "CsPbBr3.cif", "NiO.cif"]
+            cif_files = [
+                "CsBr.cif", "CsPbBr3.cif", "NiO.cif"
+            ]
             for cif_file in cif_files:
                 if Path(cif_file).exists():
                     from pymatgen.core import Structure
                     structure = Structure.from_file(cif_file)
                     structure = structure.remove_oxidation_states()
                     self.test_structures.append(structure)
-            
             print(f"✅ Setup {len(self.test_structures)} test structures")
-            
         except Exception as e:
             print(f"⚠️ Error setting up structures: {e}")
             # Fallback: create simple structures manually
-            from pymatgen.core import Structure, Lattice
+            from pymatgen.core import Lattice, Structure
             si_structure = Structure(
                 Lattice.cubic(5.43),
                 ["Si", "Si"],
@@ -69,9 +68,9 @@ class ComprehensiveModelTester:
         
         try:
             from lematerial_forgebench.models.registry import (
-                list_available_models,
                 get_model_info,
-                print_model_info
+                list_available_models,
+                print_model_info,
             )
             
             available_models = list_available_models()
@@ -88,7 +87,10 @@ class ComprehensiveModelTester:
                 }
             else:
                 print("❌ No models detected!")
-                self.results['availability'] = {'available_models': [], 'model_info': {}}
+                self.results['availability'] = {
+                    'available_models': [],
+                    'model_info': {}
+                }
                 
         except Exception as e:
             print(f"❌ Error checking availability: {e}")
@@ -99,18 +101,29 @@ class ComprehensiveModelTester:
         """Test ORB model directly."""
         self.print_subheader("ORB Direct Testing")
         
-        orb_results = {'available': False, 'calculator_created': False, 'energy_calculated': False, 'embeddings_extracted': False}
+        orb_results = {
+            'available': False,
+            'calculator_created': False,
+            'energy_calculated': False,
+            'embeddings_extracted': False,
+        }
         
         try:
             # Test import
             from orb_models.forcefield import pretrained
-            from orb_models.forcefield.calculator import ORBCalculator as ORBASECalculator
+            from orb_models.forcefield.calculator import (
+                ORBCalculator as ORBASECalculator,
+            )
             print("✅ ORB imports successful")
             orb_results['available'] = True
             
             # Test model creation
             model_func = getattr(pretrained, "orb_v3_conservative_inf_omat")
-            model = model_func(device="cpu", precision="float32-high", compile=False)
+            model = model_func(
+                device="cpu",
+                precision="float32-high",
+                compile=False,
+            )
             ase_calc = ORBASECalculator(model, device="cpu")
             print("✅ ORB model and calculator created")
             orb_results['calculator_created'] = True
@@ -127,14 +140,19 @@ class ComprehensiveModelTester:
             calc_time = time.time() - start_time
             
             print(f"✅ ORB energy: {energy:.3f} eV (calculated in {calc_time:.3f}s)")
-            print(f"   Forces shape: {forces.shape}, norm: {np.linalg.norm(forces):.3f}")
+            print(
+                f"Forces shape: {forces.shape}, "
+                f"norm: {np.linalg.norm(forces):.3f}"
+            )
             orb_results['energy_calculated'] = True
             orb_results['energy'] = energy
             orb_results['forces_norm'] = np.linalg.norm(forces)
             orb_results['calculation_time'] = calc_time
             
             # Test through ForgeBench calculator
-            from lematerial_forgebench.models.orb.calculator import ORBCalculator
+            from lematerial_forgebench.models.orb.calculator import (
+                ORBCalculator,
+            )
             forgebench_calc = ORBCalculator(device="cpu")
             result = forgebench_calc.calculate_energy_forces(structure)
             print(f"✅ ORB through ForgeBench: {result.energy:.3f} eV")
@@ -144,11 +162,18 @@ class ComprehensiveModelTester:
                 embedding_result = forgebench_calc.extract_embeddings(structure)
                 print("✅ ORB embeddings extracted")
                 orb_results['embeddings_extracted'] = True
-                if hasattr(embedding_result, 'embeddings') and embedding_result.embeddings is not None:
+                if hasattr(embedding_result, 'embeddings') and \
+                        embedding_result.embeddings is not None:
                     if hasattr(embedding_result.embeddings, 'shape'):
-                        print(f"   Embeddings shape: {embedding_result.embeddings.shape}")
+                        print(
+                            f"   Embeddings shape: "
+                            f"{embedding_result.embeddings.shape}"
+                        )
                     else:
-                        print(f"   Embeddings length: {len(embedding_result.embeddings)}")
+                        print(
+                            f"   Embeddings length: "
+                            f"{len(embedding_result.embeddings)}"
+                        )
             except Exception as e:
                 print(f"⚠️ ORB embeddings failed: {e}")
             
@@ -162,18 +187,31 @@ class ComprehensiveModelTester:
         """Test UMA model directly."""
         self.print_subheader("UMA Direct Testing")
         
-        uma_results = {'available': False, 'calculator_created': False, 'energy_calculated': False, 'embeddings_extracted': False}
+        uma_results = {
+            'available': False,
+            'calculator_created': False,
+            'energy_calculated': False,
+            'embeddings_extracted': False,
+        }
         
         try:
             # Test import
             from fairchem.core import pretrained_mlip
-            from fairchem.core.calculate.ase_calculator import FAIRChemCalculator
+            from fairchem.core.calculate.ase_calculator import (
+                FAIRChemCalculator,
+            )
             print("✅ UMA imports successful")
             uma_results['available'] = True
             
             # Test predictor creation
-            predictor = pretrained_mlip.get_predict_unit("uma-s-1", device="cpu")
-            ase_calc = FAIRChemCalculator(predict_unit=predictor, task_name="omat")
+            predictor = pretrained_mlip.get_predict_unit(
+                "uma-s-1",
+                device="cpu",
+            )
+            ase_calc = FAIRChemCalculator(
+                predict_unit=predictor,
+                task_name="omat",
+            )
             print("✅ UMA predictor and calculator created")
             uma_results['calculator_created'] = True
             
@@ -195,16 +233,28 @@ class ComprehensiveModelTester:
             
             atoms.info = {**info_copy, **atoms.info}
             
-            print(f"✅ UMA energy: {energy:.3f} eV (calculated in {calc_time:.3f}s)")
-            print(f"   Forces shape: {forces.shape}, norm: {np.linalg.norm(forces):.3f}")
+            print(
+                f"✅ UMA energy: {energy:.3f} eV "
+                f"(calculated in {calc_time:.3f}s)"
+            )
+            print(
+                f"   Forces shape: {forces.shape}, "
+                f"norm: {np.linalg.norm(forces):.3f}"
+            )
             uma_results['energy_calculated'] = True
             uma_results['energy'] = energy
             uma_results['forces_norm'] = np.linalg.norm(forces)
             uma_results['calculation_time'] = calc_time
             
             # Test through ForgeBench calculator
-            from lematerial_forgebench.models.uma.calculator import UMACalculator
-            forgebench_calc = UMACalculator(model_name="uma-s-1", task="omat", device="cpu")
+            from lematerial_forgebench.models.uma.calculator import (
+                UMACalculator,
+            )
+            forgebench_calc = UMACalculator(
+                model_name="uma-s-1",
+                task="omat",
+                device="cpu",
+            )
             result = forgebench_calc.calculate_energy_forces(structure)
             print(f"✅ UMA through ForgeBench: {result.energy:.3f} eV")
             
@@ -241,11 +291,15 @@ class ComprehensiveModelTester:
         """Test MACE model directly with multiple approaches."""
         self.print_subheader("MACE Direct Testing")
         
-        mace_results = {'available': False, 'any_approach_worked': False, 'approaches': {}}
+        mace_results = {
+            'available': False,
+            'any_approach_worked': False,
+            'approaches': {},
+        }
         
         # Test import
         try:
-            from mace.calculators import mace_mp, mace_off, MACECalculator
+            from mace.calculators import MACECalculator, mace_mp, mace_off
             print("✅ MACE imports successful")
             mace_results['available'] = True
         except Exception as e:
@@ -268,13 +322,18 @@ class ComprehensiveModelTester:
             
             print(f"✅ MACE-MP energy: {energy:.3f} eV")
             mace_results['approaches']['mp'] = {
-                'success': True, 'energy': energy, 'forces_norm': np.linalg.norm(forces)
+                'success': True,
+                'energy': energy,
+                'forces_norm': np.linalg.norm(forces),
             }
             mace_results['any_approach_worked'] = True
             
         except Exception as e:
             print(f"❌ MACE-MP failed: {type(e).__name__}: {e}")
-            mace_results['approaches']['mp'] = {'success': False, 'error': str(e)}
+            mace_results['approaches']['mp'] = {
+                'success': False,
+                'error': str(e),
+            }
         
         # Approach 2: MACE-OFF
         print("\n   Approach 2: MACE-OFF (Off-the-shelf)")
@@ -290,13 +349,18 @@ class ComprehensiveModelTester:
             
             print(f"✅ MACE-OFF energy: {energy:.3f} eV")
             mace_results['approaches']['off'] = {
-                'success': True, 'energy': energy, 'forces_norm': np.linalg.norm(forces)
+                'success': True, 
+                'energy': energy,
+                'forces_norm': np.linalg.norm(forces),
             }
             mace_results['any_approach_worked'] = True
             
         except Exception as e:
             print(f"❌ MACE-OFF failed: {type(e).__name__}: {e}")
-            mace_results['approaches']['off'] = {'success': False, 'error': str(e)}
+            mace_results['approaches']['off'] = {
+                'success': False,
+                'error': str(e),
+            }
         
         # Approach 3: Clear cache and retry
         if not mace_results['any_approach_worked']:
@@ -312,25 +376,43 @@ class ComprehensiveModelTester:
                     # Retry MACE-MP after clearing cache
                     calc = mace_mp(device="cpu")
                     structure = self.test_structures[0]
-                    from lematerial_forgebench.models.base import BaseMLIPCalculator
-                    atoms = BaseMLIPCalculator._structure_to_atoms(None, structure)
+                    from lematerial_forgebench.models.base import (
+                        BaseMLIPCalculator,
+                    )
+                    atoms = BaseMLIPCalculator._structure_to_atoms(
+                        None,
+                        structure,
+                    )
                     atoms.calc = calc
                     
                     energy = atoms.get_potential_energy()
                     print(f"✅ MACE-MP (post-clear) energy: {energy:.3f} eV")
-                    mace_results['approaches']['mp_post_clear'] = {'success': True, 'energy': energy}
+                    mace_results['approaches']['mp_post_clear'] = {
+                        'success': True,
+                        'energy': energy,
+                    }
                     mace_results['any_approach_worked'] = True
                     
                 except Exception as e:
                     print(f"❌ Post-clear retry failed: {e}")
-                    mace_results['approaches']['mp_post_clear'] = {'success': False, 'error': str(e)}
+                    mace_results['approaches']['mp_post_clear'] = {
+                        'success': False,
+                        'error': str(e),
+                    }
         
         # Test through ForgeBench if any approach worked
         if mace_results['any_approach_worked']:
             try:
-                from lematerial_forgebench.models.mace.calculator import MACECalculator
-                forgebench_calc = MACECalculator(model_type="mp", device="cpu")
-                result = forgebench_calc.calculate_energy_forces(self.test_structures[0])
+                from lematerial_forgebench.models.mace.calculator import (
+                    MACECalculator,
+                )
+                forgebench_calc = MACECalculator(
+                    model_type="mp",
+                    device="cpu"
+                )
+                result = forgebench_calc.calculate_energy_forces(
+                    self.test_structures[0]
+                )
                 print(f"✅ MACE through ForgeBench: {result.energy:.3f} eV")
                 mace_results['forgebench_success'] = True
             except Exception as e:
@@ -342,64 +424,74 @@ class ComprehensiveModelTester:
     def test_registry_integration(self):
         """Test models through the registry system."""
         self.print_subheader("Registry Integration Testing")
-        
         registry_results = {}
-        
         try:
-            from lematerial_forgebench.models.registry import get_calculator, list_available_models
+            from lematerial_forgebench.models.registry import (
+                get_calculator,
+                list_available_models,
+            )
             available_models = list_available_models()
-            
             for model_name in available_models:
                 print(f"\n   Testing {model_name.upper()} through registry...")
                 model_result = {'success': False}
-                
                 try:
                     # Create calculator with appropriate parameters
                     if model_name == "mace":
-                        calc = get_calculator("mace", model_type="mp", device="cpu")
+                        calc = get_calculator(
+                            "mace", model_type="mp", device="cpu"
+                        )
                     elif model_name == "orb":
-                        calc = get_calculator("orb", model_type="orb_v3_conservative_inf_omat", device="cpu")
+                        calc = get_calculator(
+                            "orb",
+                            model_type="orb_v3_conservative_inf_omat",
+                            device="cpu"
+                        )
                     elif model_name == "uma":
                         # Try to avoid the parameter conflict
-                        calc = get_calculator("uma", task="omat", device="cpu")
+                        calc = get_calculator(
+                            "uma", task="omat", device="cpu"
+                        )
                     else:
                         calc = get_calculator(model_name, device="cpu")
-                    
                     # Test energy calculation
                     structure = self.test_structures[0]
                     result = calc.calculate_energy_forces(structure)
-                    
-                    print(f"✅ {model_name.upper()} registry: {result.energy:.3f} eV")
+                    print(
+                        f"✅ {model_name.upper()} registry: "
+                        f"{result.energy:.3f} eV"
+                    )
                     model_result['success'] = True
                     model_result['energy'] = result.energy
-                    
                     # Test embeddings if supported
                     try:
-                        embedding_result = calc.extract_embeddings(structure)
-                        print(f"   ✅ Embeddings extracted")
+                        calc.extract_embeddings(structure)
+                        print("   ✅ Embeddings extracted")
                         model_result['embeddings_success'] = True
                     except Exception as e:
                         print(f"   ⚠️ Embeddings failed: {e}")
                         model_result['embeddings_success'] = False
-                    
                 except Exception as e:
-                    print(f"❌ {model_name.upper()} registry failed: {type(e).__name__}: {e}")
+                    print(
+                        f"❌ {model_name.upper()} registry failed: "
+                        f"{type(e).__name__}: {e}"
+                    )
                     model_result['error'] = str(e)
-                    
                     # Specific error diagnosis
                     if "multiple values for argument" in str(e):
-                        print("   💡 Parameter conflict detected - registry issue")
+                        print(
+                            "   💡 Parameter conflict detected - registry issue"
+                        )
                         model_result['issue_type'] = 'parameter_conflict'
                     elif "too many values to unpack" in str(e):
-                        print("   💡 Model loading issue - likely compatibility problem")
+                        print(
+                            "   💡 Model loading issue - likely compatibility "
+                            "problem"
+                        )
                         model_result['issue_type'] = 'compatibility_issue'
-                
                 registry_results[model_name] = model_result
-        
         except Exception as e:
             print(f"❌ Registry testing failed: {e}")
             registry_results['error'] = str(e)
-        
         self.results['registry'] = registry_results
     
     def test_benchmarks(self):
@@ -411,10 +503,12 @@ class ComprehensiveModelTester:
         # Test Validity Benchmark (model-independent)
         print("\n   Testing Validity Benchmark...")
         try:
-            from lematerial_forgebench.benchmarks.validity_benchmark import ValidityBenchmark
+            from lematerial_forgebench.benchmarks.validity_benchmark import (
+                ValidityBenchmark,
+            )
             
             validity_benchmark = ValidityBenchmark()
-            result = validity_benchmark.evaluate(self.test_structures[:2])  # Use first 2 structures
+            result = validity_benchmark.evaluate(self.test_structures[:2])
             
             validity_score = result.final_scores.get('validity_score', 'N/A')
             print(f"✅ Validity benchmark completed - Score: {validity_score}")
@@ -433,26 +527,42 @@ class ComprehensiveModelTester:
         working_models = []
         
         # Check which models are working from previous tests
-        if self.results.get('orb_direct', {}).get('energy_calculated', False):
+        if (
+            self.results.get('orb_direct', {}).get('energy_calculated', False)
+        ):
             working_models.append('orb')
-        if self.results.get('uma_direct', {}).get('energy_calculated', False):
+        if (
+            self.results.get('uma_direct', {}).get('energy_calculated', False)
+        ):
             working_models.append('uma')
-        if self.results.get('mace_direct', {}).get('any_approach_worked', False):
+        if (
+            self.results.get('mace_direct', {}).get('any_approach_worked', False)
+        ):
             working_models.append('mace')
         
-        for model_name in working_models[:]:  # Test with first working model only
+        for model_name in working_models[:]:
             try:
                 print(f"     Testing with {model_name.upper()}...")
                 
                 # Use direct calculator creation to avoid registry issues
                 if model_name == 'orb':
-                    from lematerial_forgebench.models.orb.calculator import ORBCalculator
+                    from lematerial_forgebench.models.orb.calculator import (
+                        ORBCalculator,
+                    )
                     calc = ORBCalculator(device="cpu")
                 elif model_name == 'uma':
-                    from lematerial_forgebench.models.uma.calculator import UMACalculator
-                    calc = UMACalculator(model_name="uma-s-1", task="omat", device="cpu")
+                    from lematerial_forgebench.models.uma.calculator import (
+                        UMACalculator,
+                    )
+                    calc = UMACalculator(
+                        model_name="uma-s-1",
+                        task="omat",
+                        device="cpu",
+                    )
                 elif model_name == 'mace':
-                    from lematerial_forgebench.models.mace.calculator import MACECalculator
+                    from lematerial_forgebench.models.mace.calculator import (
+                        MACECalculator,
+                    )
                     calc = MACECalculator(model_type="mp", device="cpu")
                 
                 # Simple stability test - just calculate formation energies
@@ -462,7 +572,10 @@ class ComprehensiveModelTester:
                 # Try to calculate formation energy
                 try:
                     formation_energy = calc.calculate_formation_energy(structure)
-                    print(f"✅ {model_name.upper()} formation energy: {formation_energy:.3f} eV/atom")
+                    print(
+                        f"✅ {model_name.upper()} formation energy: "
+                        f"{formation_energy:.3f} eV/atom"
+                    )
                     
                     benchmark_results[f'stability_{model_name}'] = {
                         'success': True,
@@ -476,58 +589,61 @@ class ComprehensiveModelTester:
                     }
                 
             except Exception as e:
-                print(f"❌ Stability test with {model_name.upper()} failed: {e}")
-                benchmark_results[f'stability_{model_name}'] = {'success': False, 'error': str(e)}
+                print(
+                    f"Stability test with {model_name.upper()} failed: {e}"
+                )
+                benchmark_results[f'stability_{model_name}'] = {
+                    'success': False,
+                    'error': str(e),
+                }
         
         self.results['benchmarks'] = benchmark_results
     
     def test_performance(self):
         """Test performance characteristics."""
         self.print_subheader("Performance Testing")
-        
         performance_results = {}
-        
         # Test each working model's performance
         working_models = []
-        if self.results.get('orb_direct', {}).get('energy_calculated', False):
+        if (
+            self.results.get('orb_direct', {}).get('energy_calculated', False)
+        ):
             working_models.append(('orb', lambda: self.create_orb_calc()))
-        if self.results.get('uma_direct', {}).get('energy_calculated', False):
+        if (
+            self.results.get('uma_direct', {}).get('energy_calculated', False)
+        ):
             working_models.append(('uma', lambda: self.create_uma_calc()))
-        
-        structure = self.test_structures[0]  # Use smallest structure for performance test
-        
+        structure = self.test_structures[0]
         for model_name, calc_factory in working_models:
             print(f"\n   Performance testing {model_name.upper()}...")
             try:
                 calc = calc_factory()
-                
                 # Time multiple calculations
                 times = []
                 for i in range(3):  # 3 runs for average
                     start_time = time.time()
-                    result = calc.calculate_energy_forces(structure)
+                    calc.calculate_energy_forces(structure)
                     calc_time = time.time() - start_time
                     times.append(calc_time)
-                
                 avg_time = np.mean(times)
                 std_time = np.std(times)
                 throughput = len(structure) / avg_time  # atoms per second
-                
                 print(f"✅ {model_name.upper()} performance:")
-                print(f"   Average time: {avg_time:.3f}±{std_time:.3f}s")
+                print(
+                    f"   Average time: {avg_time:.3f}±{std_time:.3f}s"
+                )
                 print(f"   Throughput: {throughput:.1f} atoms/sec")
-                
                 performance_results[model_name] = {
                     'avg_time': avg_time,
                     'std_time': std_time,
                     'throughput': throughput,
                     'num_atoms': len(structure)
                 }
-                
             except Exception as e:
-                print(f"❌ Performance test for {model_name.upper()} failed: {e}")
+                print(
+                    f"❌ Performance test for {model_name.upper()} failed: {e}"
+                )
                 performance_results[model_name] = {'error': str(e)}
-        
         self.results['performance'] = performance_results
     
     def create_orb_calc(self):
@@ -547,20 +663,33 @@ class ComprehensiveModelTester:
         # Collect energies from all working models
         energies = {}
         
-        if 'orb_direct' in self.results and self.results['orb_direct'].get('energy_calculated'):
+        if (
+            self.results.get('orb_direct', {}).get('energy_calculated', False)
+        ):
             energies['ORB'] = self.results['orb_direct']['energy']
         
-        if 'uma_direct' in self.results and self.results['uma_direct'].get('energy_calculated'):
+        if (
+            self.results.get('uma_direct', {}).get('energy_calculated', False)
+        ):
             energies['UMA'] = self.results['uma_direct']['energy']
         
-        if 'mace_direct' in self.results:
-            for approach, result in self.results['mace_direct'].get('approaches', {}).items():
+        if (
+            self.results.get('mace_direct', {}).get('any_approach_worked', False)
+        ):
+            for approach, result in (
+                self.results['mace_direct']
+                .get('approaches', {})
+                .items()
+            ):
                 if result.get('success'):
                     energies[f'MACE-{approach.upper()}'] = result['energy']
                     break  # Use first successful MACE result
         
         if len(energies) >= 2:
-            print(f"\n📊 Energy Comparison ({self.test_structures[0].composition}):")
+            print(
+                f"\n📊 Energy Comparison "
+                f"({self.test_structures[0].composition}):"
+            )
             for model, energy in energies.items():
                 print(f"   {model}: {energy:.3f} eV")
             
@@ -570,7 +699,7 @@ class ComprehensiveModelTester:
             energy_mean = np.mean(energy_values)
             energy_std = np.std(energy_values)
             
-            print(f"\n📈 Statistics:")
+            print("\n📈 Statistics:")
             print(f"   Mean: {energy_mean:.3f} eV")
             print(f"   Std Dev: {energy_std:.3f} eV")
             print(f"   Range: {energy_range:.3f} eV")
@@ -605,7 +734,9 @@ class ComprehensiveModelTester:
         
         # ORB Status
         orb_status = "❌ Not Working"
-        if self.results.get('orb_direct', {}).get('energy_calculated'):
+        if (
+            self.results.get('orb_direct', {}).get('energy_calculated', False)
+        ):
             orb_status = "✅ Fully Working"
         elif self.results.get('orb_direct', {}).get('available'):
             orb_status = "⚠️ Partially Working"
@@ -614,7 +745,9 @@ class ComprehensiveModelTester:
         
         # UMA Status
         uma_status = "❌ Not Working"
-        if self.results.get('uma_direct', {}).get('energy_calculated'):
+        if (
+            self.results.get('uma_direct', {}).get('energy_calculated', False)
+        ):
             uma_status = "✅ Fully Working"
         elif self.results.get('uma_direct', {}).get('available'):
             uma_status = "⚠️ Partially Working"
@@ -623,7 +756,9 @@ class ComprehensiveModelTester:
         
         # MACE Status
         mace_status = "❌ Not Working"
-        if self.results.get('mace_direct', {}).get('any_approach_worked'):
+        if (
+            self.results.get('mace_direct', {}).get('any_approach_worked', False)
+        ):
             mace_status = "✅ Working (some approaches)"
         elif self.results.get('mace_direct', {}).get('available'):
             mace_status = "⚠️ Available but not functional"
@@ -631,12 +766,19 @@ class ComprehensiveModelTester:
         print(f"MACE: {mace_status}")
         
         # Count working models
-        fully_working = sum(1 for status in models_status.values() if "✅ Fully Working" in status or "✅ Working" in status)
+        fully_working = sum(
+            1
+            for status in models_status.values()
+            if (
+                "✅ Fully Working" in status or
+                "✅ Working" in status
+            )
+        )
         
         print(f"\n🎯 OVERALL STATUS: {fully_working}/3 models working")
         
         # Functionality Assessment
-        print(f"\n🔧 FUNCTIONALITY ASSESSMENT")
+        print("\n🔧 FUNCTIONALITY ASSESSMENT")
         print("-" * 40)
         
         functionalities = {
@@ -656,8 +798,14 @@ class ComprehensiveModelTester:
                 functionalities['Embedding Extraction'] += 1
         
         # Registry integration
-        registry_working = sum(1 for model_result in self.results.get('registry', {}).values() 
-                             if isinstance(model_result, dict) and model_result.get('success'))
+        registry_working = sum(
+            1
+            for model_result in self.results.get('registry', {}).values()
+            if (
+                isinstance(model_result, dict) and
+                model_result.get('success')
+            )
+        )
         functionalities['Registry Integration'] = registry_working
         
         # Benchmark integration
@@ -670,14 +818,15 @@ class ComprehensiveModelTester:
         
         # Performance Summary
         if 'performance' in self.results:
-            print(f"\n⚡ PERFORMANCE SUMMARY")
+            print("\n⚡ PERFORMANCE SUMMARY")
             print("-" * 40)
             for model, perf in self.results['performance'].items():
                 if 'avg_time' in perf:
-                    print(f"{model.upper()}: {perf['avg_time']:.3f}s ({perf['throughput']:.1f} atoms/s)")
+                    print(f"{model.upper()}: {perf['avg_time']:.3f}s "
+                          f"({perf['throughput']:.1f} atoms/s)")
         
         # Issues and Recommendations
-        print(f"\n💡 ISSUES AND RECOMMENDATIONS")
+        print("\n💡 ISSUES AND RECOMMENDATIONS")
         print("-" * 40)
         
         if models_status['ORB'] != "✅ Fully Working":
@@ -704,9 +853,14 @@ class ComprehensiveModelTester:
         for model, result in self.results.get('registry', {}).items():
             if isinstance(result, dict) and not result.get('success'):
                 if result.get('issue_type') == 'parameter_conflict':
-                    registry_issues.append(f"{model.upper()}: Parameter conflict in factory function")
+                    registry_issues.append(
+                        f"{model.upper()}: Parameter conflict in factory "
+                        "function"
+                    )
                 elif result.get('issue_type') == 'compatibility_issue':
-                    registry_issues.append(f"{model.upper()}: Model loading compatibility issue")
+                    registry_issues.append(
+                        f"{model.upper()}: Model loading compatibility issue"
+                    )
         
         if registry_issues:
             print("🔧 Registry Issues:")
@@ -714,15 +868,24 @@ class ComprehensiveModelTester:
                 print(f"   - {issue}")
         
         # Success Criteria
-        print(f"\n🎯 SUCCESS CRITERIA ASSESSMENT")
+        print("\n🎯 SUCCESS CRITERIA ASSESSMENT")
         print("-" * 40)
         
         criteria = {
             "At least 2 models working": fully_working >= 2,
-            "Energy calculations functional": functionalities['Energy Calculations'] >= 2,
-            "At least 1 model with embeddings": functionalities['Embedding Extraction'] >= 1,
-            "Benchmarks can run": functionalities['Benchmark Integration'] >= 1,
-            "Framework is usable": fully_working >= 1 and functionalities['Energy Calculations'] >= 1
+            "Energy calculations functional": (
+                functionalities['Energy Calculations'] >= 2
+            ),
+            "At least 1 model with embeddings": (
+                functionalities['Embedding Extraction'] >= 1
+            ),
+            "Benchmarks can run": (
+                functionalities['Benchmark Integration'] >= 1
+            ),
+            "Framework is usable": (
+                (fully_working >= 1) and
+                (functionalities['Energy Calculations'] >= 1)
+            ),
         }
         
         for criterion, met in criteria.items():
@@ -732,7 +895,7 @@ class ComprehensiveModelTester:
         overall_success = all(criteria.values())
         partial_success = sum(criteria.values()) >= 3
         
-        print(f"\n🏆 FINAL VERDICT")
+        print("\n🏆 FINAL VERDICT")
         print("=" * 40)
         
         if overall_success:
@@ -748,7 +911,7 @@ class ComprehensiveModelTester:
             print("🛠️ Focus on fixing core model issues before proceeding.")
         
         # Next Steps
-        print(f"\n📋 RECOMMENDED NEXT STEPS")
+        print("\n📋 RECOMMENDED NEXT STEPS")
         print("-" * 40)
         
         if fully_working >= 2:
@@ -772,7 +935,10 @@ class ComprehensiveModelTester:
                 # Convert numpy types for JSON serialization
                 json_results = self.convert_for_json(self.results)
                 json.dump(json_results, f, indent=2)
-            print(f"\n💾 Detailed results saved to: comprehensive_test_results.json")
+            print(
+                "\n💾 Detailed results saved to: "
+                "comprehensive_test_results.json"
+            )
         except Exception as e:
             print(f"⚠️ Could not save results to file: {e}")
         
@@ -798,7 +964,10 @@ class ComprehensiveModelTester:
         print("🚀 STARTING COMPREHENSIVE MODEL TESTING")
         print("=" * 60)
         print("This will test every aspect of MACE, ORB, and UMA integration.")
-        print("Testing: availability, direct usage, registry, benchmarks, performance")
+        print(
+              "Testing: availability, direct usage, registry, benchmarks, "
+              "performance"
+        )
         print("=" * 60)
         
         try:
