@@ -1,4 +1,4 @@
-"""Tests for Multi-MLIP stability preprocessor."""
+"""Tests for Multi-MLIP stability preprocessor with updated naming conventions."""
 import numpy as np
 import pytest
 from pymatgen.util.testing import PymatgenTest
@@ -86,7 +86,7 @@ class TestMultiMLIPStabilityPreprocessor:
     def test_initialization_with_model_configs(self):
         """Test initialization with model-specific configurations."""
         model_configs = {
-            "orb": {"device": "cpu", "precision": "float32-high"},  # FIXED: Use correct precision
+            "orb": {"device": "cpu", "precision": "float32-high"},
             "mace": {"device": "cpu", "model_path": "mace_mp"},
         }
         
@@ -132,15 +132,15 @@ class TestMultiMLIPProcessing:
         process_args = preprocessor._get_process_attributes()
         result = preprocessor.process_structure(structure, **process_args)
         
-        # Check individual model results
+        # Check individual model results with correct naming
         assert "energy_orb" in result.properties
         assert "formation_energy_orb" in result.properties
         assert "e_above_hull_orb" in result.properties
         
         # Should NOT have aggregated results for single model
-        assert "energy" not in result.properties
-        assert "formation_energy" not in result.properties
-        assert "e_above_hull" not in result.properties
+        assert "energy_aggregated" not in result.properties
+        assert "formation_energy_aggregated" not in result.properties
+        assert "e_above_hull_aggregated" not in result.properties
     
     def test_process_with_multiple_models(self, test_structures):
         """Test processing with multiple models."""
@@ -161,13 +161,13 @@ class TestMultiMLIPProcessing:
         assert "formation_energy_orb" in result.properties
         assert "formation_energy_mace" in result.properties
         
-        # Check aggregated results
-        assert "formation_energy" in result.properties
-        assert "formation_energy_std" in result.properties
-        assert result.properties["formation_energy_count"] == 2
+        # Check aggregated results with new naming convention
+        assert "formation_energy_aggregated" in result.properties
+        assert "formation_energy_aggregated_std" in result.properties
+        assert result.properties["formation_energy_aggregated_count"] == 2
         
         # Standard deviation should be computed
-        assert result.properties["formation_energy_std"] is not None
+        assert result.properties["formation_energy_aggregated_std"] is not None
 
     def test_process_with_relaxation(self, test_structures):
         """Test processing with structure relaxation."""
@@ -189,7 +189,7 @@ class TestMultiMLIPProcessing:
         assert "relaxation_rmse_orb" in result.properties
         
         # Should NOT have aggregated results for single model
-        assert "relaxation_rmse" not in result.properties
+        assert "relaxation_rmse_aggregated" not in result.properties
         
         # But if we use multiple models, we should get aggregated results
         preprocessor_multi = MultiMLIPStabilityPreprocessor(
@@ -207,7 +207,7 @@ class TestMultiMLIPProcessing:
         # Should have both individual and aggregated results
         assert "relaxation_rmse_orb" in result_multi.properties
         assert "relaxation_rmse_mace" in result_multi.properties
-        assert "relaxation_rmse" in result_multi.properties
+        assert "relaxation_rmse_aggregated" in result_multi.properties
 
     def test_process_with_embeddings(self, test_structures):
         """Test processing with embedding extraction."""
@@ -229,7 +229,7 @@ class TestMultiMLIPProcessing:
         assert "graph_embedding_orb" in result.properties
         
         # Should NOT have aggregated embeddings for single model
-        assert "graph_embedding" not in result.properties
+        assert "graph_embedding_aggregated" not in result.properties
         
         # Check embedding shapes
         node_embs = result.properties["node_embeddings_orb"]
@@ -257,8 +257,8 @@ class TestMultiMLIPProcessing:
         # Should have individual results
         assert "formation_energy_orb" in result.properties
         # Should NOT have aggregated results (only 1 model)
-        assert "formation_energy" not in result.properties
-        assert "formation_energy_std" not in result.properties
+        assert "formation_energy_aggregated" not in result.properties
+        assert "formation_energy_aggregated_std" not in result.properties
         
         # Test multiple models - should have BOTH individual AND aggregated results
         preprocessor_multiple = MultiMLIPStabilityPreprocessor(
@@ -277,10 +277,30 @@ class TestMultiMLIPProcessing:
         assert "formation_energy_mace" in result.properties
         
         # Should ALSO have aggregated results (2+ models)
-        assert "formation_energy" in result.properties
-        assert "formation_energy_std" in result.properties
-        assert "formation_energy_count" in result.properties
-        assert result.properties["formation_energy_count"] == 2
+        assert "formation_energy_aggregated" in result.properties
+        assert "formation_energy_aggregated_std" in result.properties
+        assert "formation_energy_aggregated_count" in result.properties
+        assert result.properties["formation_energy_aggregated_count"] == 2
+    
+    def test_error_on_partial_failure(self, test_structures):
+        """Test that partial failure raises error when multiple models requested."""
+        # This test would require mocking calculator failures
+        # For now, we'll test the logic with the aggregation function directly
+        structure = test_structures[0]
+        
+        # Mock scenario: requested 3 models but only 1 succeeded
+        model_results = {
+            "orb": {"formation_energy": -1.5},
+            # "mace" and "uma" failed - not in results
+        }
+        
+        # This should raise an error
+        with pytest.raises(ValueError, match="Multi-model processing failed"):
+            _aggregate_results(
+                structure, model_results, ["orb", "mace", "uma"],
+                "aggregated", "individual", "individual"
+            )
+    
     def test_process_structure_list(self, test_structures):
         """Test processing a list of structures."""
         preprocessor = MultiMLIPStabilityPreprocessor(
@@ -302,7 +322,7 @@ class TestMultiMLIPProcessing:
         for structure in result.processed_structures:
             assert "formation_energy_orb" in structure.properties
             # Should NOT have aggregated results for single model
-            assert "formation_energy" not in structure.properties
+            assert "formation_energy_aggregated" not in structure.properties
 
 
 class TestErrorHandling:
@@ -326,12 +346,6 @@ class TestErrorHandling:
         
         # Result should be returned (possibly unchanged if timeout occurred)
         assert result is not None
-    
-    def test_partial_calculation_failure(self):
-        """Test handling when some calculations fail but others succeed."""
-        # This is a more complex test that would require mocking
-        # We'll implement this after basic functionality is working
-        pass
 
 
 class TestAggregationFunctions:
@@ -353,15 +367,15 @@ class TestAggregationFunctions:
             "aggregated", "individual", "individual"
         )
         
-        # Check aggregated formation energy
-        assert "formation_energy" in structure.properties
-        assert "formation_energy_std" in structure.properties
-        assert "formation_energy_count" in structure.properties
+        # Check aggregated formation energy with new naming convention
+        assert "formation_energy_aggregated" in structure.properties
+        assert "formation_energy_aggregated_std" in structure.properties
+        assert "formation_energy_aggregated_count" in structure.properties
         
         # Check values
-        assert abs(structure.properties["formation_energy"] - (-1.6)) < 0.1  # Mean should be around -1.6
-        assert structure.properties["formation_energy_std"] > 0  # Should have some variation
-        assert structure.properties["formation_energy_count"] == 3
+        assert abs(structure.properties["formation_energy_aggregated"] - (-1.6)) < 0.1  # Mean should be around -1.6
+        assert structure.properties["formation_energy_aggregated_std"] > 0  # Should have some variation
+        assert structure.properties["formation_energy_aggregated_count"] == 3
     
     def test_compute_stats_with_none_values(self):
         """Test statistics computation with some None values."""
@@ -380,9 +394,9 @@ class TestAggregationFunctions:
         )
         
         # Check that aggregation works with partial data
-        assert "formation_energy" in structure.properties
-        assert structure.properties["formation_energy_count"] == 2  # Only 2 valid values
-        assert abs(structure.properties["formation_energy"] - (-1.55)) < 0.1  # Mean of -1.5 and -1.6
+        assert "formation_energy_aggregated" in structure.properties
+        assert structure.properties["formation_energy_aggregated_count"] == 2  # Only 2 valid values
+        assert abs(structure.properties["formation_energy_aggregated"] - (-1.55)) < 0.1  # Mean of -1.5 and -1.6
     
     def test_compute_stats_all_none_values(self):
         """Test statistics computation when all values are None."""
@@ -401,9 +415,9 @@ class TestAggregationFunctions:
         )
         
         # Check that aggregation handles all None values gracefully
-        assert structure.properties["formation_energy"] is None
-        assert structure.properties["formation_energy_std"] is None
-        assert structure.properties["formation_energy_count"] == 0
+        assert structure.properties["formation_energy_aggregated"] is None
+        assert structure.properties["formation_energy_aggregated_std"] is None
+        assert structure.properties["formation_energy_aggregated_count"] == 0
 
 
 class TestIntegrationWithRealModels:
@@ -432,16 +446,16 @@ class TestIntegrationWithRealModels:
         assert "formation_energy_mace" in result.properties
         assert "formation_energy_uma" in result.properties
         
-        # Check aggregated results
-        assert "formation_energy" in result.properties
-        assert "formation_energy_std" in result.properties
-        assert result.properties["formation_energy_count"] == 3
+        # Check aggregated results with new naming convention
+        assert "formation_energy_aggregated" in result.properties
+        assert "formation_energy_aggregated_std" in result.properties
+        assert result.properties["formation_energy_aggregated_count"] == 3
         
         # Check embeddings
         assert "graph_embedding_orb" in result.properties
         assert "graph_embedding_mace" in result.properties
         assert "graph_embedding_uma" in result.properties
-        assert "graph_embedding" in result.properties
+        assert "graph_embedding_aggregated" in result.properties
     
     @pytest.mark.slow
     def test_model_agreement(self, test_structures):

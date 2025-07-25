@@ -1,4 +1,4 @@
-"""Multi-MLIP stability preprocessor for ensemble calculations."""
+"""Multi-MLIP stability preprocessor for ensemble calculations with consistent naming."""
 
 from dataclasses import dataclass, field
 from typing import Any, Dict, List
@@ -71,22 +71,13 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
     """Multi-MLIP stability preprocessor for ensemble calculations.
 
     This preprocessor runs multiple MLIPs on the same structures and provides
-    both individual model results and ensemble aggregations.
-
-    Parameters
-    ----------
-    models : List[str], default=["orb", "mace", "uma"]
-        List of MLIP model names to use
-    model_configs : Dict[str, Dict[str, Any]], optional
-        Model-specific configurations
-    energy_aggregation : str, default="both"
-        How to aggregate energy results
-    rmse_aggregation : str, default="both"
-        How to aggregate RMSE results
-    embedding_strategy : str, default="both"
-        How to handle embeddings
-    **kwargs
-        Additional arguments passed to BasePreprocessor
+    both individual model results and ensemble aggregations with consistent naming.
+    
+    Naming Convention:
+    - Individual results: {property}_{model_name} (e.g., formation_energy_orb)
+    - Aggregated results: {property}_aggregated (e.g., formation_energy_aggregated)
+    - Standard deviations: {property}_aggregated_std
+    - Counts: {property}_aggregated_count
     """
 
     def __init__(
@@ -394,6 +385,7 @@ def _store_individual_results(
     """Store individual model results in structure properties.
     
     Always stores all individual model results regardless of aggregation settings.
+    Uses consistent naming: {property}_{model_name}
     """
     
     for model_name in models:
@@ -428,58 +420,71 @@ def _aggregate_results(
     """Aggregate results across models based on number of models.
     
     Only stores aggregated results if there are 2 or more models.
+    Raises error if multiple models were requested but only one succeeded.
+    Uses consistent naming: {property}_aggregated, {property}_aggregated_std, {property}_aggregated_count
     """
     
-    # Only aggregate if we have multiple models
-    if len(models) < 2:
-        logger.debug(f"Only {len(models)} model(s), skipping aggregation")
+    # Check for partial failures when multiple models were requested
+    successful_models = [model for model in models if model in model_results]
+    
+    if len(models) >= 2 and len(successful_models) == 1:
+        # Multiple models requested but only one succeeded - this is an error
+        failed_models = [model for model in models if model not in model_results]
+        raise ValueError(
+            f"Multi-model processing failed: requested {models} but only {successful_models} succeeded. "
+            f"Failed models: {failed_models}"
+        )
+    
+    # Only aggregate if we have multiple successful models
+    if len(successful_models) < 2:
+        logger.debug(f"Only {len(successful_models)} successful model(s), skipping aggregation")
         return
     
-    # Helper function to compute statistics
+    # Helper function to compute statistics with _aggregated suffix
     def compute_stats(values: List[float], prefix: str) -> None:
         valid_values = [v for v in values if v is not None and not np.isnan(v)]
         if valid_values:
-            structure.properties[prefix] = np.mean(valid_values)
-            structure.properties[f"{prefix}_std"] = np.std(valid_values) if len(valid_values) > 1 else 0.0
-            structure.properties[f"{prefix}_count"] = len(valid_values)
+            structure.properties[f"{prefix}_aggregated"] = np.mean(valid_values)
+            structure.properties[f"{prefix}_aggregated_std"] = np.std(valid_values) if len(valid_values) > 1 else 0.0
+            structure.properties[f"{prefix}_aggregated_count"] = len(valid_values)
         else:
-            structure.properties[prefix] = None
-            structure.properties[f"{prefix}_std"] = None
-            structure.properties[f"{prefix}_count"] = 0
+            structure.properties[f"{prefix}_aggregated"] = None
+            structure.properties[f"{prefix}_aggregated_std"] = None
+            structure.properties[f"{prefix}_aggregated_count"] = 0
 
     # Aggregate energy-based metrics
     # Formation energy
     formation_energies = [
         model_results[model].get("formation_energy") 
-        for model in models if model in model_results
+        for model in successful_models if model in model_results
     ]
     compute_stats(formation_energies, "formation_energy")
     
     # Energy above hull
     e_above_hulls = [
         model_results[model].get("e_above_hull") 
-        for model in models if model in model_results
+        for model in successful_models if model in model_results
     ]
     compute_stats(e_above_hulls, "e_above_hull")
     
     # Total energies
     energies = [
         model_results[model].get("energy") 
-        for model in models if model in model_results
+        for model in successful_models if model in model_results
     ]
     compute_stats(energies, "energy")
 
     # Aggregate RMSE metrics
     rmse_values = [
         model_results[model].get("relaxation_rmse") 
-        for model in models if model in model_results
+        for model in successful_models if model in model_results
     ]
     compute_stats(rmse_values, "relaxation_rmse")
 
     # Aggregate embeddings
     # For graph embeddings, we can average them if they have the same shape
     graph_embeddings = []
-    for model in models:
+    for model in successful_models:
         if model in model_results and model_results[model].get("graph_embedding") is not None:
             emb = model_results[model]["graph_embedding"]
             graph_embeddings.append(emb)
@@ -489,24 +494,24 @@ def _aggregate_results(
             # Check if all embeddings have the same shape
             shapes = [emb.shape for emb in graph_embeddings]
             if len(set(shapes)) == 1:  # All shapes are the same
-                # Average graph embeddings
-                structure.properties["graph_embedding"] = np.mean(graph_embeddings, axis=0)
-                structure.properties["graph_embedding_std"] = np.std(graph_embeddings, axis=0)
-                structure.properties["graph_embedding_count"] = len(graph_embeddings)
+                # Average graph embeddings with _aggregated suffix
+                structure.properties["graph_embedding_aggregated"] = np.mean(graph_embeddings, axis=0)
+                structure.properties["graph_embedding_aggregated_std"] = np.std(graph_embeddings, axis=0)
+                structure.properties["graph_embedding_aggregated_count"] = len(graph_embeddings)
             else:
                 # Different shapes - cannot aggregate directly
                 logger.warning(f"Cannot aggregate graph embeddings with different shapes: {shapes}")
-                # Store concatenated embedding instead
-                structure.properties["graph_embedding"] = np.concatenate(graph_embeddings)
-                structure.properties["graph_embedding_count"] = len(graph_embeddings)
+                # Store concatenated embedding instead with _aggregated suffix
+                structure.properties["graph_embedding_aggregated"] = np.concatenate(graph_embeddings)
+                structure.properties["graph_embedding_aggregated_count"] = len(graph_embeddings)
                 # No std for concatenated embeddings
-                structure.properties["graph_embedding_std"] = None
+                structure.properties["graph_embedding_aggregated_std"] = None
         except Exception as e:
             logger.warning(f"Failed to aggregate graph embeddings: {str(e)}")
             # Fall back to just storing count
-            structure.properties["graph_embedding"] = None
-            structure.properties["graph_embedding_std"] = None
-            structure.properties["graph_embedding_count"] = len(graph_embeddings)
+            structure.properties["graph_embedding_aggregated"] = None
+            structure.properties["graph_embedding_aggregated_std"] = None
+            structure.properties["graph_embedding_aggregated_count"] = len(graph_embeddings)
 
 
 def _calculate_rmse(original: Structure, relaxed: Structure) -> float:
