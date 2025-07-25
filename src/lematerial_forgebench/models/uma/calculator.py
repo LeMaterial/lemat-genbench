@@ -175,20 +175,18 @@ class UMACalculator(BaseMLIPCalculator):
 
 
 def create_uma_calculator(
-    model_name: str = "uma-s-1", task: str = "omat", device: str = "cpu", **kwargs
+    device: str = "cpu", **kwargs
 ) -> UMACalculator:
     """Factory function to create UMA calculator.
 
     Parameters
     ----------
-    model_name : str
-        UMA model name (e.g., "uma-s-1")
-    task : str
-        Task domain for UMA
     device : str
         Device for computation
     **kwargs
-        Additional arguments for the calculator
+        Additional arguments for the calculator including:
+        - model_name: UMA model name (default: "uma-s-1")
+        - task: Task domain for UMA (default: "omat")
 
     Returns
     -------
@@ -197,6 +195,11 @@ def create_uma_calculator(
     """
     # Remove precision from kwargs if present, as UMA doesn't support it
     kwargs.pop("precision", None)
+    
+    # Extract UMA-specific parameters from kwargs
+    model_name = kwargs.pop("model_name", "uma-s-1")
+    task = kwargs.pop("task", "omat")
+    
     return UMACalculator(model_name=model_name, task=task, device=device, **kwargs)
 
 

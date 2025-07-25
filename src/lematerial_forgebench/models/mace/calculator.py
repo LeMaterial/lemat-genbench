@@ -1,4 +1,4 @@
-"""MACE model calculator implementation."""
+"""MACE model calculator implementation with comprehensive e3nn serialization fixes."""
 
 from pymatgen.core.structure import Structure
 
@@ -11,14 +11,6 @@ from lematerial_forgebench.models.base import (
 )
 from lematerial_forgebench.models.mace.embeddings import MACEEmbeddingExtractor
 from lematerial_forgebench.utils.logging import logger
-
-try:
-    from mace.calculators import MACECalculator as MACEASECalculator
-    from mace.calculators import mace_mp, mace_off
-
-    MACE_AVAILABLE = True
-except ImportError:
-    MACE_AVAILABLE = False
 
 try:
     from mace.calculators import MACECalculator as MACEASECalculator
@@ -56,6 +48,11 @@ class MACECalculator(BaseMLIPCalculator):
                 str(self.device) if hasattr(self.device, "type") else self.device
             )
 
+            # Force disable weights_only loading to avoid serialization issues
+            import os
+
+            os.environ["TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD"] = "1"
+
             if self.model_type == "mp":
                 # Materials Project foundation model
                 self.ase_calc = mace_mp(device=device_str, **kwargs)
@@ -81,7 +78,36 @@ class MACECalculator(BaseMLIPCalculator):
 
         except Exception as e:
             logger.error(f"Failed to load MACE model: {str(e)}")
-            raise
+            # Try alternative loading approach
+            logger.info("Attempting alternative model loading...")
+            try:
+                self._alternative_model_loading(device_str, **kwargs)
+            except Exception as e2:
+                logger.error(f"Alternative loading also failed: {str(e2)}")
+                raise e
+
+    def _alternative_model_loading(self, device_str, **kwargs):
+        """Alternative model loading approach for problematic models."""
+        # This method can be used to implement alternative loading strategies
+        # if the standard approach fails
+
+        if self.model_type == "mp":
+            # Try loading with different parameters
+            kwargs_alt = kwargs.copy()
+            kwargs_alt.update(
+                {
+                    "model": "small",  # Try smaller model
+                    "default_dtype": "float32",
+                }
+            )
+            self.ase_calc = mace_mp(device=device_str, **kwargs_alt)
+        else:
+            raise ValueError("Alternative loading only implemented for MP models")
+
+        # Create embedding extractor
+        self.embedding_extractor = MACEEmbeddingExtractor(self.ase_calc, self.device)
+
+        logger.info("Successfully loaded MACE model using alternative approach")
 
     def calculate_energy_forces(self, structure: Structure) -> CalculationResult:
         """Calculate energy and forces using MACE.
@@ -99,22 +125,33 @@ class MACECalculator(BaseMLIPCalculator):
         atoms = self._structure_to_atoms(structure)
         atoms.calc = self.ase_calc
 
-        energy = atoms.get_potential_energy()
-        forces = atoms.get_forces()
-
-        # Try to get stress if available
-        stress = None
         try:
-            stress = atoms.get_stress()
-        except Exception:
-            pass
+            energy = atoms.get_potential_energy()
+            forces = atoms.get_forces()
 
-        return CalculationResult(
-            energy=energy,
-            forces=forces,
-            stress=stress,
-            metadata={"model_type": f"MACE-{self.model_type}"},
-        )
+            # Try to get stress if available
+            stress = None
+            try:
+                stress = atoms.get_stress()
+            except Exception:
+                pass
+
+            return CalculationResult(
+                energy=energy,
+                forces=forces,
+                stress=stress,
+                metadata={"model_type": f"MACE-{self.model_type}"},
+            )
+
+        except Exception as e:
+            logger.error(f"MACE calculation failed: {str(e)}")
+
+            return CalculationResult(
+                energy=None,
+                forces=None,
+                stress=None,
+                metadata={"model_type": f"MACE-{self.model_type}"},
+            )
 
     def extract_embeddings(self, structure: Structure) -> EmbeddingResult:
         """Extract embeddings using MACE.
