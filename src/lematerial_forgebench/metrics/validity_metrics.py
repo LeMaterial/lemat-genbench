@@ -228,7 +228,6 @@ class ChargeNeutralityMetric(BaseMetric):
         """
         # Filter out NaN values
         valid_values = [v for v in values if not np.isnan(v)]
-
         if not valid_values:
             return {
                 "metrics": {
@@ -240,9 +239,7 @@ class ChargeNeutralityMetric(BaseMetric):
             }
 
         # Count how many structures are within tolerance
-        within_tolerance = sum(1 for v in valid_values if v <= self.config.tolerance)
-        charge_neutral_ratio = within_tolerance / len(valid_values)
-
+        charge_neutral_ratio = sum(valid_values) / len(valid_values)
         # Calculate mean absolute deviation
         mean_abs_deviation = np.mean(valid_values)
 
@@ -936,10 +933,10 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
             # Check for collapsed lattice or unreasonably large lattice
             if (
-                volume > 0.1
-                and a > 0.1
-                and b > 0.1
-                and c > 0.1
+                volume > 1
+                and a > 1
+                and b > 1
+                and c > 1
                 and a < 100
                 and b < 100
                 and c < 100
@@ -974,18 +971,25 @@ class PhysicalPlausibilityMetric(BaseMetric):
             # IMPORTANT NOTE - CIF files will sometimes load primitive cells and sometimes conventional cells.
             # This is assuming the initial file is a conventional cell. If this IS NOT THE CASE, amend the input structure
             # to be a conventional cell.
+            print(structure.composition.reduced_formula)
+            print(recovered_structure.composition.reduced_formula)
+            print(len(structure))
+            print(len(recovered_structure))
+
 
             if (
                 structure.composition.reduced_formula
                 == recovered_structure.composition.reduced_formula
-                and len(structure) == len(recovered_structure.to_conventional())
+                and len(structure) == len(recovered_structure)
             ):
                 checks_passed += 1
+            elif len(structure) == len(recovered_structure.to_conventional()):
+                    checks_passed += 1 
             else:
                 logger.debug(
                     f"Format check failed: original={structure.composition}, "
                     f"recovered={recovered_structure.composition}"
-                )
+                    )
 
         # Check 4: Symmetry check
         if check_symmetry:
@@ -1007,6 +1011,8 @@ class PhysicalPlausibilityMetric(BaseMetric):
                 logger.debug(f"Symmetry check failed: {str(e)}")
 
         # Return the ratio of passed checks
+        print("checks passed")
+        print(checks_passed)
         if checks_passed / total_checks == 1.0:
             return 1.0
         else:
