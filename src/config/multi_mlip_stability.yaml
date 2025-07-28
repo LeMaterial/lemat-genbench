@@ -1,0 +1,53 @@
+type: multi_mlip_stability
+
+# Ensemble configuration
+use_ensemble: true                   # Whether to use ensemble mean values or individual MLIP results
+mlip_names:
+  - orb
+  - mace
+  - uma
+
+# Metastability threshold
+metastable_threshold: 0.1            # E_above_hull threshold for metastability (eV/atom)
+
+# Additional configuration options
+description: "Multi-MLIP Stability Benchmark with Ensemble Predictions"
+version: "0.1.0"
+
+# Ensemble-specific configurations
+ensemble_config:
+  min_mlips_required: 2              # Minimum MLIPs needed for ensemble statistics (used by metrics)
+
+# Individual MLIP configurations (if use_ensemble: false)
+individual_mlip_config:
+  use_all_available: true            # Use all available MLIP results
+  require_all_mlips: false           # Don't require all MLIPs to succeed (include partial results)
+  fallback_to_single: true           # Allow single-MLIP results if others failed
+
+# Preprocessor configuration (for reference - matches preprocessing requirements)
+preprocessor_config:
+  model_name: multi_mlip
+  mlip_configs:
+    orb:
+      model_type: orb_v3_conservative_inf_omat
+      device: cpu
+    mace:
+      model_type: mp
+      device: cpu
+    uma:
+      task: omat
+      device: cpu
+  relax_structures: true
+  relaxation_config:
+    fmax: 0.02
+    steps: 500
+  calculate_formation_energy: true
+  calculate_energy_above_hull: true
+  extract_embeddings: true
+  timeout: 60
+
+# Reporting configuration
+reporting:
+  include_individual_mlip_results: true    # Show per-model results alongside ensemble results
+  include_uncertainty_analysis: true       # Include std deviation in results
+  include_ensemble_summary: true           # Include ensemble quality summary
