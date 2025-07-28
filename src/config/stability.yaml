@@ -1,10 +1,11 @@
 type: stability
 
 # Weights for different validity components
-formation_energy_weight: 0.25
-energy_above_hull_weight: 0.25
-relaxation_rmse_weight: 0.25
-embedding_rmse_weight: 0.25
+formation_energy_weight: 0.2
+energy_above_hull_weight: 0.2
+relaxation_rmse_weight: 0.2
+stability_ratio_weight: 0.2
+metastability_ratio_weight: 0.2
 
 # Additional configuration options
 description: "Stability Benchmark"
