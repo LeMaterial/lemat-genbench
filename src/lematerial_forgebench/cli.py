@@ -11,12 +11,13 @@ import click
 import yaml
 
 from lematerial_forgebench.benchmarks.hhi_benchmark import HHIBenchmark
+from lematerial_forgebench.benchmarks.multi_mlip_stability_benchmark import (
+    StabilityBenchmark as MultiMLIPStabilityBenchmark,
+)
 from lematerial_forgebench.benchmarks.novelty_benchmark import (
     NoveltyBenchmark,
 )
-from lematerial_forgebench.benchmarks.stability_benchmark import (
-    StabilityBenchmark,
-)
+from lematerial_forgebench.benchmarks.sun_benchmark import SUNBenchmark
 from lematerial_forgebench.benchmarks.uniqueness_benchmark import (
     UniquenessBenchmark,
 )
@@ -29,9 +30,6 @@ from lematerial_forgebench.metrics.validity_metrics import (
     CoordinationEnvironmentMetric,
     MinimumInteratomicDistanceMetric,
     PhysicalPlausibilityMetric,
-)
-from lematerial_forgebench.preprocess.universal_stability_preprocess import (
-    UniversalStabilityPreprocessor,
 )
 from lematerial_forgebench.utils.logging import logger
 
@@ -145,6 +143,45 @@ def load_benchmark_config(config_name: str) -> dict:
         with open(config_path, "w") as f:
             yaml.dump(hhi_config, f, default_flow_style=False)
 
+    # Add SUN config creation
+    if not config_path.exists() and config_path.name == "sun.yaml":
+        sun_config = {
+            "type": "sun",
+            "description": "SUN Benchmark for evaluating structures that are Stable, Unique, and Novel",
+            "version": "0.1.0",
+            "include_metasun": True,
+            "stability_threshold": 0.0,
+            "metastability_threshold": 0.1,
+            "reference_dataset": "LeMaterial/LeMat-Bulk",
+            "reference_config": "compatible_pbe",
+            "fingerprint_method": "bawl",
+            "cache_reference": True,
+            "max_reference_size": None,
+        }
+        with open(config_path, "w") as f:
+            yaml.dump(sun_config, f, default_flow_style=False)
+
+    # Add Multi-MLIP Stability config creation
+    if not config_path.exists() and config_path.name == "multi_mlip_stability.yaml":
+        multi_mlip_stability_config = {
+            "type": "multi_mlip_stability",
+            "description": "Multi-MLIP Stability Benchmark with Ensemble Predictions",
+            "version": "0.1.0",
+            "use_ensemble": True,
+            "mlip_names": ["orb", "mace", "uma"],
+            "metastable_threshold": 0.1,
+            "ensemble_config": {
+                "min_mlips_required": 2,
+            },
+            "individual_mlip_config": {
+                "use_all_available": True,
+                "require_all_mlips": False,
+                "fallback_to_single": True,
+            },
+        }
+        with open(config_path, "w") as f:
+            yaml.dump(multi_mlip_stability_config, f, default_flow_style=False)
+
     if not config_path.exists():
         raise click.ClickException(
             f"Config '{config_path}' not found. "
@@ -253,27 +290,17 @@ def main(input: str, config_name: str, output: str):
                 },
             )
 
-        elif benchmark_type == "stability":
-            # before running the benchmark, we need to preprocess the structures
-            ppc = config.get("preprocessor_config", {})
-            stability_preprocessor = UniversalStabilityPreprocessor(
-                model_type=ppc.get("model_type", "orb"),
-                model_config=ppc.get("model_config", {}),
-                relax_structures=ppc.get("relax_structures", True),
-                relaxation_config=ppc.get("relaxation_config", {}),
-                calculate_formation_energy=ppc.get(
-                    "calculate_formation_energy", True
-                ),
-                calculate_energy_above_hull=ppc.get(
-                    "calculate_energy_above_hull", True
-                ),
-                extract_embeddings=ppc.get("extract_embeddings", True),
+        elif benchmark_type == "multi_mlip_stability":
+            # Create multi-MLIP stability benchmark from config
+            benchmark = MultiMLIPStabilityBenchmark(
+                config=config,
+                name=config.get("name", "MultiMLIPStabilityBenchmark"),
+                description=config.get("description"),
+                metadata={
+                    "version": config.get("version", "0.1.0"),
+                    **(config.get("metadata", {})),
+                },
             )
-            # Use the preprocessor to process structures
-            preprocessor_result = stability_preprocessor(structures)
-            structures = preprocessor_result.processed_structures
-
-            benchmark = StabilityBenchmark()
             
         elif benchmark_type == "uniqueness":
             # Create uniqueness benchmark from config
@@ -321,10 +348,33 @@ def main(input: str, config_name: str, output: str):
                 },
             )
 
+        elif benchmark_type == "sun":
+            # Create SUN benchmark from config
+            benchmark = SUNBenchmark(
+                stability_threshold=config.get("stability_threshold", 0.0),
+                metastability_threshold=config.get("metastability_threshold", 0.1),
+                reference_dataset=config.get(
+                    "reference_dataset", "LeMaterial/LeMat-Bulk"
+                ),
+                reference_config=config.get(
+                    "reference_config", "compatible_pbe"
+                ),
+                fingerprint_method=config.get("fingerprint_method", "bawl"),
+                cache_reference=config.get("cache_reference", True),
+                max_reference_size=config.get("max_reference_size", None),
+                include_metasun=config.get("include_metasun", True),
+                name=config.get("name", "SUNBenchmark"),
+                description=config.get("description"),
+                metadata={
+                    "version": config.get("version", "0.1.0"),
+                    **(config.get("metadata", {})),
+                },
+            )
+
         else:
             raise ValueError(
                 f"Unknown benchmark type: {benchmark_type}. "
-                "Available types: validity, stability, uniqueness, novelty, hhi"
+                "Available types: validity, multi_mlip_stability, uniqueness, novelty, hhi, sun"
             )
 
         # Run benchmark

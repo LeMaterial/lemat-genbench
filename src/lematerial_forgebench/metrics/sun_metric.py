@@ -281,7 +281,9 @@ class SUNMetric(BaseMetric):
             structure = structures[idx]
 
             # Extract e_above_hull from structure properties
-            e_above_hull = structure.properties.get("e_above_hull", None)
+            e_above_hull = structure.properties.get("e_above_hull_mean", None)
+            if e_above_hull is None:
+                e_above_hull = structure.properties.get("e_above_hull", None)
 
             if e_above_hull is None:
                 logger.warning(

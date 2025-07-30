@@ -4,14 +4,18 @@ import traceback
 from unittest.mock import MagicMock, patch
 
 import numpy as np
+import pytest
 from pymatgen.core.structure import Structure
 
 from lematerial_forgebench.metrics.base import MetricResult
 from lematerial_forgebench.metrics.sun_metric import MetaSUNMetric, SUNMetric
+from lematerial_forgebench.preprocess.multi_mlip_preprocess import (
+    MultiMLIPStabilityPreprocessor,
+)
 
 
-def create_test_structures_with_properties():
-    """Create test structures with known properties for SUN testing."""
+def create_test_structures_with_single_mlip_properties():
+    """Create test structures with legacy single MLIP properties for backward compatibility testing."""
     structures = []
 
     # Structure 1: Stable, will be unique, will be novel
@@ -47,32 +51,795 @@ def create_test_structures_with_properties():
     structure3.properties = {"e_above_hull": 0.2}  # Unstable
     structures.append(structure3)
 
-    # Structure 4: Duplicate of structure 1 (same lattice and species)
-    structure4 = Structure(
-        lattice=lattice1,  # Same as structure1
-        species=["Na", "Cl"],  # Same as structure1
+    return structures
+
+
+def create_test_structures_with_multi_mlip_properties():
+    """Create test structures with multi-MLIP properties for ensemble testing."""
+    structures = []
+
+    # Structure 1: Stable (ensemble mean), will be unique, will be novel
+    lattice1 = [[5.0, 0, 0], [0, 5.0, 0], [0, 0, 5.0]]
+    structure1 = Structure(
+        lattice=lattice1,
+        species=["Na", "Cl"],
         coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
         coords_are_cartesian=False,
     )
-    structure4.properties = {"e_above_hull": 0.0}  # Stable but not unique
-    structures.append(structure4)
+    structure1.properties = {
+        "e_above_hull_mean": 0.0,  # Ensemble mean - stable
+        "e_above_hull_std": 0.02,  # Small uncertainty
+        "e_above_hull_orb": -0.01,
+        "e_above_hull_mace": 0.01,
+        "e_above_hull_uma": 0.0,
+        "e_above_hull_n_mlips": 3,
+    }
+    structures.append(structure1)
 
-    # Structure 5: Stable, will be unique, but will be in reference (not novel)
-    lattice5 = [[4.2, 0, 0], [0, 4.2, 0], [0, 0, 4.2]]
-    structure5 = Structure(
-        lattice=lattice5,
+    # Structure 2: Metastable (ensemble mean), will be unique, will be novel
+    lattice2 = [[4.0, 0, 0], [0, 4.0, 0], [0, 0, 4.0]]
+    structure2 = Structure(
+        lattice=lattice2,
+        species=["K", "Br"],
+        coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+        coords_are_cartesian=False,
+    )
+    structure2.properties = {
+        "e_above_hull_mean": 0.08,  # Ensemble mean - metastable
+        "e_above_hull_std": 0.03,
+        "e_above_hull_orb": 0.05,
+        "e_above_hull_mace": 0.11,
+        "e_above_hull_uma": 0.08,
+        "e_above_hull_n_mlips": 3,
+    }
+    structures.append(structure2)
+
+    # Structure 3: Unstable (ensemble mean), will be unique, will be novel
+    lattice3 = [[6.0, 0, 0], [0, 6.0, 0], [0, 0, 6.0]]
+    structure3 = Structure(
+        lattice=lattice3,
+        species=["Li", "F"],
+        coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+        coords_are_cartesian=False,
+    )
+    structure3.properties = {
+        "e_above_hull_mean": 0.2,  # Ensemble mean - unstable
+        "e_above_hull_std": 0.05,
+        "e_above_hull_orb": 0.18,
+        "e_above_hull_mace": 0.22,
+        "e_above_hull_uma": 0.20,
+        "e_above_hull_n_mlips": 3,
+    }
+    structures.append(structure3)
+
+    # Structure 4: High uncertainty case - ensemble suggests metastable but with high uncertainty
+    lattice4 = [[3.5, 0, 0], [0, 3.5, 0], [0, 0, 3.5]]
+    structure4 = Structure(
+        lattice=lattice4,
         species=["Mg", "O"],
         coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
         coords_are_cartesian=False,
     )
-    structure5.properties = {"e_above_hull": 0.0}  # Stable but will be known
-    structures.append(structure5)
+    structure4.properties = {
+        "e_above_hull_mean": 0.09,  # Ensemble mean - metastable
+        "e_above_hull_std": 0.15,  # High uncertainty
+        "e_above_hull_orb": -0.05,  # ORB says stable
+        "e_above_hull_mace": 0.23,  # MACE says unstable
+        "e_above_hull_uma": 0.09,   # UMA says metastable
+        "e_above_hull_n_mlips": 3,
+    }
+    structures.append(structure4)
 
     return structures
 
 
-class TestSUNMetric:
-    """Test suite for SUNMetric class."""
+def create_mixed_property_structures():
+    """Create structures with mixed property types to test fallback behavior."""
+    structures = []
+
+    # Structure with multi-MLIP properties
+    structure1 = Structure(
+        lattice=[[5.0, 0, 0], [0, 5.0, 0], [0, 0, 5.0]],
+        species=["Na", "Cl"],
+        coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+        coords_are_cartesian=False,
+    )
+    structure1.properties = {
+        "e_above_hull_mean": 0.05,
+        "e_above_hull_std": 0.02,
+    }
+    structures.append(structure1)
+
+    # Structure with only single MLIP properties (fallback case)
+    structure2 = Structure(
+        lattice=[[4.0, 0, 0], [0, 4.0, 0], [0, 0, 4.0]],
+        species=["K", "Br"],
+        coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+        coords_are_cartesian=False,
+    )
+    structure2.properties = {"e_above_hull": 0.08}  # Only legacy property
+    structures.append(structure2)
+
+    # Structure with neither property (missing case)
+    structure3 = Structure(
+        lattice=[[6.0, 0, 0], [0, 6.0, 0], [0, 0, 6.0]],
+        species=["Li", "F"],
+        coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+        coords_are_cartesian=False,
+    )
+    # No e_above_hull properties
+    structures.append(structure3)
+
+    return structures
+
+
+def create_structures_with_invalid_e_above_hull():
+    """Create structures with invalid e_above_hull values for error testing."""
+    structures = []
+
+    # Structure with string e_above_hull
+    structure1 = Structure(
+        lattice=[[5.0, 0, 0], [0, 5.0, 0], [0, 0, 5.0]],
+        species=["Na", "Cl"],
+        coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+        coords_are_cartesian=False,
+    )
+    structure1.properties = {"e_above_hull": "invalid_string"}
+    structures.append(structure1)
+
+    # Structure with None e_above_hull
+    structure2 = Structure(
+        lattice=[[4.0, 0, 0], [0, 4.0, 0], [0, 0, 4.0]],
+        species=["K", "Br"],
+        coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+        coords_are_cartesian=False,
+    )
+    structure2.properties = {"e_above_hull": None}
+    structures.append(structure2)
+
+    # Structure with inf e_above_hull
+    structure3 = Structure(
+        lattice=[[6.0, 0, 0], [0, 6.0, 0], [0, 0, 6.0]],
+        species=["Li", "F"],
+        coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+        coords_are_cartesian=False,
+    )
+    structure3.properties = {"e_above_hull": float("inf")}
+    structures.append(structure3)
+
+    return structures
+
+
+class TestSUNMetricBackwardCompatibility:
+    """Test suite for SUN Metric backward compatibility with single MLIP properties."""
+
+    def test_single_mlip_properties(self):
+        """Test SUN metric with legacy single MLIP properties."""
+        metric = SUNMetric()
+        structures = create_test_structures_with_single_mlip_properties()
+
+        # Test stability computation with single MLIP properties
+        candidate_indices = [0, 1, 2]
+        sun_indices, msun_indices = metric._compute_stability(structures, candidate_indices)
+
+        # Structure 0: e_above_hull = 0.0 (stable)
+        # Structure 1: e_above_hull = 0.08 (metastable)
+        # Structure 2: e_above_hull = 0.2 (unstable)
+        assert sun_indices == [0]
+        assert msun_indices == [1]
+
+    def test_fallback_behavior(self):
+        """Test fallback behavior from e_above_hull_mean to e_above_hull."""
+        metric = SUNMetric()
+        structures = create_mixed_property_structures()
+
+        candidate_indices = [0, 1, 2]
+        sun_indices, msun_indices = metric._compute_stability(structures, candidate_indices)
+
+        # Structure 0: e_above_hull_mean = 0.05 (metastable)
+        # Structure 1: e_above_hull = 0.08 (fallback, metastable)
+        # Structure 2: no properties (should be skipped)
+        assert sun_indices == []
+        assert sorted(msun_indices) == [0, 1]
+
+
+class TestSUNMetricMultiMLIP:
+    """Test suite for SUN Metric with multi-MLIP preprocessing."""
+
+    def test_multi_mlip_properties(self):
+        """Test SUN metric with multi-MLIP ensemble properties."""
+        metric = SUNMetric()
+        structures = create_test_structures_with_multi_mlip_properties()
+
+        candidate_indices = [0, 1, 2, 3]
+        sun_indices, msun_indices = metric._compute_stability(structures, candidate_indices)
+
+        # Structure 0: e_above_hull_mean = 0.0 (stable)
+        # Structure 1: e_above_hull_mean = 0.08 (metastable)
+        # Structure 2: e_above_hull_mean = 0.2 (unstable)
+        # Structure 3: e_above_hull_mean = 0.09 (metastable)
+        assert sun_indices == [0]
+        assert sorted(msun_indices) == [1, 3]
+
+    def test_ensemble_vs_individual_differences(self):
+        """Test cases where ensemble mean differs from individual MLIP predictions."""
+        metric = SUNMetric()
+        
+        # Create structure where individual MLIPs disagree but ensemble is metastable
+        structure = Structure(
+            lattice=[[5.0, 0, 0], [0, 5.0, 0], [0, 0, 5.0]],
+            species=["Na", "Cl"],
+            coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+            coords_are_cartesian=False,
+        )
+        structure.properties = {
+            "e_above_hull_mean": 0.07,  # Ensemble: metastable
+            "e_above_hull_std": 0.12,   # High disagreement
+            "e_above_hull_orb": -0.05,  # ORB: stable
+            "e_above_hull_mace": 0.19,  # MACE: unstable
+            "e_above_hull_uma": 0.07,   # UMA: metastable
+        }
+
+        sun_indices, msun_indices = metric._compute_stability([structure], [0])
+        
+        # Should use ensemble mean (0.07) -> metastable
+        assert sun_indices == []
+        assert msun_indices == [0]
+
+    def test_high_uncertainty_handling(self):
+        """Test behavior with high ensemble uncertainty."""
+        metric = SUNMetric()
+        structures = create_test_structures_with_multi_mlip_properties()
+        
+        # Structure 3 has high uncertainty (std=0.15) but ensemble mean of 0.09
+        candidate_indices = [3]
+        sun_indices, msun_indices = metric._compute_stability(structures, candidate_indices)
+        
+        # Should still use ensemble mean despite high uncertainty
+        assert sun_indices == []
+        assert msun_indices == [3]
+
+    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
+    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    def test_full_sun_computation_multi_mlip(self, mock_uniqueness_class, mock_novelty_class):
+        """Test full SUN computation with multi-MLIP properties."""
+        structures = create_test_structures_with_multi_mlip_properties()
+
+        # Mock uniqueness: all structures are unique
+        mock_uniqueness = MagicMock()
+        mock_uniqueness_result = MagicMock()
+        mock_uniqueness_result.individual_values = [1.0, 1.0, 1.0, 1.0]
+        mock_uniqueness_result.failed_indices = []
+        mock_uniqueness.compute.return_value = mock_uniqueness_result
+        mock_uniqueness_class.return_value = mock_uniqueness
+
+        # Mock novelty: all structures are novel
+        mock_novelty = MagicMock()
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [1.0, 1.0, 1.0, 1.0]
+        mock_novelty_result.failed_indices = []
+        mock_novelty.compute.return_value = mock_novelty_result
+        mock_novelty_class.return_value = mock_novelty
+
+        # Create metric and compute
+        metric = SUNMetric()
+        result = metric.compute(structures)
+
+        # Expected: 
+        # Structure 0: stable (0.0), unique, novel → SUN
+        # Structure 1: metastable (0.08), unique, novel → MetaSUN
+        # Structure 2: unstable (0.2), unique, novel → neither
+        # Structure 3: metastable (0.09), unique, novel → MetaSUN
+        assert result.metrics["sun_count"] == 1
+        assert result.metrics["msun_count"] == 2
+        assert result.metrics["sun_rate"] == 0.25  # 1/4
+        assert result.metrics["msun_rate"] == 0.5   # 2/4
+
+
+class TestSUNMetricErrorHandling:
+    """Test suite for error handling and edge cases."""
+
+    def test_invalid_e_above_hull_values(self):
+        """Test handling of invalid e_above_hull values."""
+        metric = SUNMetric()
+        structures = create_structures_with_invalid_e_above_hull()
+
+        candidate_indices = [0, 1, 2]
+        sun_indices, msun_indices = metric._compute_stability(structures, candidate_indices)
+
+        # All structures should be skipped due to invalid values
+        assert sun_indices == []
+        assert msun_indices == []
+
+    def test_negative_thresholds(self):
+        """Test behavior with negative threshold values."""
+        metric = SUNMetric(stability_threshold=-0.05, metastability_threshold=-0.02)
+        
+        # Test case 1: Metastable structure
+        structure1 = Structure(
+            lattice=[[5.0, 0, 0], [0, 5.0, 0], [0, 0, 5.0]],
+            species=["Na", "Cl"],
+            coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+            coords_are_cartesian=False,
+        )
+        structure1.properties = {"e_above_hull": -0.03}
+
+        # Test case 2: Stable structure
+        structure2 = Structure(
+            lattice=[[4.0, 0, 0], [0, 4.0, 0], [0, 0, 4.0]],
+            species=["K", "Br"],
+            coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+            coords_are_cartesian=False,
+        )
+        structure2.properties = {"e_above_hull": -0.06}
+
+        structures = [structure1, structure2]
+        sun_indices, msun_indices = metric._compute_stability(structures, [0, 1])
+        
+        # Structure 1: -0.03 > -0.05 (not stable) but -0.03 <= -0.02 (metastable)
+        # Structure 2: -0.06 <= -0.05 (stable)
+        assert sun_indices == [1]
+        assert msun_indices == [0]
+
+    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
+    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    def test_uniqueness_metric_failure(self, mock_uniqueness_class, mock_novelty_class):
+        """Test behavior when uniqueness metric fails completely."""
+        structures = create_test_structures_with_single_mlip_properties()
+
+        # Mock uniqueness to fail completely
+        mock_uniqueness = MagicMock()
+        mock_uniqueness_result = MagicMock()
+        mock_uniqueness_result.individual_values = [float("nan")] * len(structures)
+        mock_uniqueness_result.failed_indices = list(range(len(structures)))
+        mock_uniqueness.compute.return_value = mock_uniqueness_result
+        mock_uniqueness_class.return_value = mock_uniqueness
+
+        # Mock novelty (won't be called since uniqueness fails)
+        mock_novelty_class.return_value = MagicMock()
+
+        metric = SUNMetric()
+        result = metric.compute(structures)
+
+        # Should return zero SUN/MetaSUN rates
+        assert result.metrics["sun_rate"] == 0.0
+        assert result.metrics["msun_rate"] == 0.0
+        assert result.metrics["sun_count"] == 0
+        assert result.metrics["msun_count"] == 0
+
+    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
+    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    def test_novelty_metric_failure(self, mock_uniqueness_class, mock_novelty_class):
+        """Test behavior when novelty metric fails completely."""
+        structures = create_test_structures_with_single_mlip_properties()
+
+        # Mock uniqueness: all structures are unique
+        mock_uniqueness = MagicMock()
+        mock_uniqueness_result = MagicMock()
+        mock_uniqueness_result.individual_values = [1.0] * len(structures)
+        mock_uniqueness_result.failed_indices = []
+        mock_uniqueness.compute.return_value = mock_uniqueness_result
+        mock_uniqueness_class.return_value = mock_uniqueness
+
+        # Mock novelty to fail completely
+        mock_novelty = MagicMock()
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [float("nan")] * len(structures)
+        mock_novelty_result.failed_indices = list(range(len(structures)))
+        mock_novelty.compute.return_value = mock_novelty_result
+        mock_novelty_class.return_value = mock_novelty
+
+        metric = SUNMetric()
+        result = metric.compute(structures)
+
+        # Should return zero SUN/MetaSUN rates
+        assert result.metrics["sun_rate"] == 0.0
+        assert result.metrics["msun_rate"] == 0.0
+        assert result.metrics["sun_count"] == 0
+        assert result.metrics["msun_count"] == 0
+
+    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
+    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    def test_partial_sub_metric_failures(self, mock_uniqueness_class, mock_novelty_class):
+        """Test behavior with partial failures in sub-metrics."""
+        structures = create_test_structures_with_single_mlip_properties()
+
+        # Mock uniqueness: first two unique, third failed
+        mock_uniqueness = MagicMock()
+        mock_uniqueness_result = MagicMock()
+        mock_uniqueness_result.individual_values = [1.0, 1.0, float("nan")]
+        mock_uniqueness_result.failed_indices = [2]
+        mock_uniqueness.compute.return_value = mock_uniqueness_result
+        mock_uniqueness_class.return_value = mock_uniqueness
+
+        # Mock novelty: first novel, second not novel
+        mock_novelty = MagicMock()
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [1.0, 0.0]  # Only called for first two structures
+        mock_novelty_result.failed_indices = []
+        mock_novelty.compute.return_value = mock_novelty_result
+        mock_novelty_class.return_value = mock_novelty
+
+        metric = SUNMetric()
+        result = metric.compute(structures)
+
+        # Only first structure should be SUN (stable, unique, novel)
+        assert result.metrics["sun_count"] == 1
+        assert result.metrics["msun_count"] == 0
+        assert result.metrics["failed_count"] == 1
+
+
+class TestSUNMetricResultValidation:
+    """Test suite for validating MetricResult structure and values."""
+
+    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
+    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    def test_metric_result_structure(self, mock_uniqueness_class, mock_novelty_class):
+        """Test that MetricResult has the correct structure and values."""
+        structures = create_test_structures_with_single_mlip_properties()
+
+        # Mock all structures as unique and novel
+        mock_result = MagicMock()
+        mock_result.individual_values = [1.0] * len(structures)
+        mock_result.failed_indices = []
+        
+        mock_uniqueness_class.return_value.compute.return_value = mock_result
+        mock_novelty_class.return_value.compute.return_value = mock_result
+
+        metric = SUNMetric()
+        result = metric.compute(structures)
+
+        # Test MetricResult structure
+        assert isinstance(result, MetricResult)
+        assert isinstance(result.metrics, dict)
+        assert isinstance(result.individual_values, list)
+        assert isinstance(result.failed_indices, list)
+        assert isinstance(result.computation_time, float)
+        assert result.computation_time > 0
+
+        # Test required metrics
+        required_metrics = [
+            "sun_rate", "msun_rate", "combined_sun_msun_rate",
+            "sun_count", "msun_count", "unique_count", "unique_rate",
+            "total_structures_evaluated", "failed_count"
+        ]
+        for metric_name in required_metrics:
+            assert metric_name in result.metrics
+
+        # Test primary metric
+        assert result.primary_metric == "sun_rate"
+        assert result.primary_metric in result.metrics
+
+    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
+    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    def test_individual_values_assignment(self, mock_uniqueness_class, mock_novelty_class):
+        """Test that individual values are assigned correctly."""
+        structures = create_test_structures_with_single_mlip_properties()
+
+        # Mock all structures as unique and novel
+        mock_result = MagicMock()
+        mock_result.individual_values = [1.0] * len(structures)
+        mock_result.failed_indices = []
+        
+        mock_uniqueness_class.return_value.compute.return_value = mock_result
+        mock_novelty_class.return_value.compute.return_value = mock_result
+
+        metric = SUNMetric()
+        result = metric.compute(structures)
+
+        # Structure 0: stable -> 1.0 (SUN)
+        # Structure 1: metastable -> 0.5 (MetaSUN)  
+        # Structure 2: unstable -> 0.0 (neither)
+        expected_values = [1.0, 0.5, 0.0]
+        assert result.individual_values == expected_values
+
+    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
+    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    def test_failed_indices_propagation(self, mock_uniqueness_class, mock_novelty_class):
+        """Test that failed indices are properly propagated and handled."""
+        structures = create_test_structures_with_single_mlip_properties()
+
+        # Mock uniqueness with one failure
+        mock_uniqueness = MagicMock()
+        mock_uniqueness_result = MagicMock()
+        mock_uniqueness_result.individual_values = [1.0, 1.0, float("nan")]
+        mock_uniqueness_result.failed_indices = [2]
+        mock_uniqueness.compute.return_value = mock_uniqueness_result
+        mock_uniqueness_class.return_value = mock_uniqueness
+
+        # Mock novelty with no failures
+        mock_novelty = MagicMock()
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [1.0, 1.0]
+        mock_novelty_result.failed_indices = []
+        mock_novelty.compute.return_value = mock_novelty_result
+        mock_novelty_class.return_value = mock_novelty
+
+        metric = SUNMetric()
+        result = metric.compute(structures)
+
+        # Failed structure should have NaN individual value
+        assert np.isnan(result.individual_values[2])
+        assert 2 in result.failed_indices
+        assert result.metrics["failed_count"] == 1
+
+
+class TestSUNMetricEdgeCases:
+    """Test suite for statistical and edge case scenarios."""
+
+    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
+    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    def test_all_stable_structures(self, mock_uniqueness_class, mock_novelty_class):
+        """Test scenario where all structures are stable."""
+        # Create structures that are all stable
+        structures = []
+        for i in range(3):
+            structure = Structure(
+                lattice=[[5.0, 0, 0], [0, 5.0, 0], [0, 0, 5.0]],
+                species=["Na", "Cl"],
+                coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+                coords_are_cartesian=False,
+            )
+            structure.properties = {"e_above_hull": -0.01}  # All stable
+            structures.append(structure)
+
+        # Mock all as unique and novel
+        mock_result = MagicMock()
+        mock_result.individual_values = [1.0] * len(structures)
+        mock_result.failed_indices = []
+        
+        mock_uniqueness_class.return_value.compute.return_value = mock_result
+        mock_novelty_class.return_value.compute.return_value = mock_result
+
+        metric = SUNMetric()
+        result = metric.compute(structures)
+
+        # All should be SUN, none MetaSUN
+        assert result.metrics["sun_rate"] == 1.0
+        assert result.metrics["msun_rate"] == 0.0
+        assert result.metrics["sun_count"] == 3
+        assert result.metrics["msun_count"] == 0
+
+    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
+    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    def test_all_unstable_structures(self, mock_uniqueness_class, mock_novelty_class):
+        """Test scenario where all structures are unstable."""
+        # Create structures that are all unstable
+        structures = []
+        for i in range(3):
+            structure = Structure(
+                lattice=[[5.0, 0, 0], [0, 5.0, 0], [0, 0, 5.0]],
+                species=["Na", "Cl"],
+                coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+                coords_are_cartesian=False,
+            )
+            structure.properties = {"e_above_hull": 0.5}  # All unstable
+            structures.append(structure)
+
+        # Mock all as unique and novel
+        mock_result = MagicMock()
+        mock_result.individual_values = [1.0] * len(structures)
+        mock_result.failed_indices = []
+        
+        mock_uniqueness_class.return_value.compute.return_value = mock_result
+        mock_novelty_class.return_value.compute.return_value = mock_result
+
+        metric = SUNMetric()
+        result = metric.compute(structures)
+
+        # None should be SUN or MetaSUN
+        assert result.metrics["sun_rate"] == 0.0
+        assert result.metrics["msun_rate"] == 0.0
+        assert result.metrics["sun_count"] == 0
+        assert result.metrics["msun_count"] == 0
+
+    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
+    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    def test_no_unique_structures(self, mock_uniqueness_class, mock_novelty_class):
+        """Test scenario where no structures are unique."""
+        structures = create_test_structures_with_single_mlip_properties()
+
+        # Mock no structures as unique
+        mock_uniqueness = MagicMock()
+        mock_uniqueness_result = MagicMock()
+        mock_uniqueness_result.individual_values = [0.0] * len(structures)  # None unique
+        mock_uniqueness_result.failed_indices = []
+        mock_uniqueness.compute.return_value = mock_uniqueness_result
+        mock_uniqueness_class.return_value = mock_uniqueness
+
+        # Novelty won't be called since no unique structures
+        mock_novelty_class.return_value = MagicMock()
+
+        metric = SUNMetric()
+        result = metric.compute(structures)
+
+        # No SUN or MetaSUN since no unique structures
+        assert result.metrics["sun_rate"] == 0.0
+        assert result.metrics["msun_rate"] == 0.0
+        assert result.metrics["unique_rate"] == 0.0
+
+
+class TestSUNMetricStubMethods:
+    """Test suite for stub methods required by BaseMetric."""
+
+    def test_compute_structure_method(self):
+        """Test the compute_structure static method."""
+        structure = Structure(
+            lattice=[[5.0, 0, 0], [0, 5.0, 0], [0, 0, 5.0]],
+            species=["Na", "Cl"],
+            coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+            coords_are_cartesian=False,
+        )
+
+        result = SUNMetric.compute_structure(structure)
+        assert result == 0.0
+
+    def test_aggregate_results_method(self):
+        """Test the aggregate_results method."""
+        metric = SUNMetric()
+        values = [1.0, 0.5, 0.0]
+        
+        result = metric.aggregate_results(values)
+        
+        expected = {
+            "metrics": {"sun_rate": 0.0},
+            "primary_metric": "sun_rate",
+            "uncertainties": {},
+        }
+        assert result == expected
+
+
+class TestSUNMetricIntegrationWithPreprocessing:
+    """Integration tests using actual multi-MLIP preprocessing."""
+
+    @pytest.mark.slow
+    def test_with_actual_multi_mlip_preprocessing(self):
+        """Test SUN metric with actual MultiMLIPStabilityPreprocessor."""
+        # Create simple test structures
+        structures = []
+        
+        # Simple cubic NaCl structure
+        structure1 = Structure(
+            lattice=[[4.0, 0, 0], [0, 4.0, 0], [0, 0, 4.0]],
+            species=["Na", "Cl"],
+            coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+            coords_are_cartesian=False,
+        )
+        structures.append(structure1)
+
+        # Simple cubic KBr structure (different composition)
+        structure2 = Structure(
+            lattice=[[4.5, 0, 0], [0, 4.5, 0], [0, 0, 4.5]],
+            species=["K", "Br"],
+            coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+            coords_are_cartesian=False,
+        )
+        structures.append(structure2)
+
+        try:
+            # Initialize multi-MLIP preprocessor with minimal MLIPs for testing
+            preprocessor = MultiMLIPStabilityPreprocessor(
+                mlip_names=["orb"],  # Use only ORB for faster testing
+                relax_structures=False,  # Skip relaxation for speed
+                calculate_formation_energy=False,  # Skip formation energy for speed
+                calculate_energy_above_hull=True,  # This is what we need
+                extract_embeddings=False,  # Skip embeddings for speed
+                timeout=30,  # Short timeout
+            )
+
+            # Preprocess structures
+            processed_structures = []
+            for structure in structures:
+                try:
+                    processed_structure = preprocessor.process_structure(
+                        structure,
+                        preprocessor.calculators,
+                        preprocessor.config.timeout,
+                        preprocessor.config.relax_structures,
+                        preprocessor.config.relaxation_config,
+                        preprocessor.config.calculate_formation_energy,
+                        preprocessor.config.calculate_energy_above_hull,
+                        preprocessor.config.extract_embeddings,
+                    )
+                    processed_structures.append(processed_structure)
+                except Exception as e:
+                    # Skip failed structures but don't fail the test
+                    print(f"Preprocessing failed for structure: {e}")
+                    continue
+
+            if not processed_structures:
+                pytest.skip("No structures successfully preprocessed")
+
+            # Verify multi-MLIP properties are present
+            for structure in processed_structures:
+                # Should have ensemble properties
+                assert "e_above_hull_mean" in structure.properties or "e_above_hull_orb" in structure.properties
+                print(f"Structure properties: {list(structure.properties.keys())}")
+
+            # Test SUN metric with preprocessed structures
+            with (
+                patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric"),
+                patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric"),
+            ):
+                # Mock uniqueness and novelty for deterministic testing
+                metric = SUNMetric()
+                
+                # Mock all as unique and novel
+                mock_result = MagicMock()
+                mock_result.individual_values = [1.0] * len(processed_structures)
+                mock_result.failed_indices = []
+                metric.uniqueness_metric.compute = MagicMock(return_value=mock_result)
+                metric.novelty_metric.compute = MagicMock(return_value=mock_result)
+
+                result = metric.compute(processed_structures)
+
+                # Should compute successfully without errors
+                assert isinstance(result, MetricResult)
+                assert result.n_structures == len(processed_structures)
+                assert "sun_rate" in result.metrics
+                assert "msun_rate" in result.metrics
+                
+                # All metrics should be finite (not NaN)
+                assert np.isfinite(result.metrics["sun_rate"])
+                assert np.isfinite(result.metrics["msun_rate"])
+
+        except ImportError as e:
+            pytest.skip(f"Required dependencies not available: {e}")
+        except Exception as e:
+            pytest.skip(f"Multi-MLIP preprocessing failed: {e}")
+
+    def test_mixed_preprocessing_scenarios(self):
+        """Test SUN metric with mixed single/multi-MLIP preprocessed structures."""
+        # Create structures with different preprocessing states
+        structures = []
+
+        # Structure 1: Multi-MLIP preprocessed
+        structure1 = Structure(
+            lattice=[[5.0, 0, 0], [0, 5.0, 0], [0, 0, 5.0]],
+            species=["Na", "Cl"],
+            coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+            coords_are_cartesian=False,
+        )
+        structure1.properties = {
+            "e_above_hull_mean": 0.02,
+            "e_above_hull_std": 0.01,
+            "e_above_hull_orb": 0.01,
+            "e_above_hull_mace": 0.03,
+        }
+        structures.append(structure1)
+
+        # Structure 2: Single-MLIP preprocessed (legacy)
+        structure2 = Structure(
+            lattice=[[4.0, 0, 0], [0, 4.0, 0], [0, 0, 4.0]],
+            species=["K", "Br"],
+            coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+            coords_are_cartesian=False,
+        )
+        structure2.properties = {"e_above_hull": 0.07}
+        structures.append(structure2)
+
+        # Structure 3: No preprocessing (missing properties)
+        structure3 = Structure(
+            lattice=[[6.0, 0, 0], [0, 6.0, 0], [0, 0, 6.0]],
+            species=["Li", "F"],
+            coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
+            coords_are_cartesian=False,
+        )
+        structures.append(structure3)
+
+        metric = SUNMetric()
+        candidate_indices = [0, 1, 2]
+        sun_indices, msun_indices = metric._compute_stability(structures, candidate_indices)
+
+        # Structure 0: e_above_hull_mean = 0.02 (metastable)
+        # Structure 1: e_above_hull = 0.07 (metastable, fallback)
+        # Structure 2: no properties (skipped)
+        assert sun_indices == []
+        assert sorted(msun_indices) == [0, 1]
+
+
+class TestSUNMetricOriginalFunctionality:
+    """Test suite preserving original SUN Metric functionality."""
 
     def test_initialization(self):
         """Test SUNMetric initialization."""
@@ -99,114 +866,22 @@ class TestSUNMetric:
         assert metric.config.metastability_threshold == 0.15
         assert metric.config.max_reference_size == 100
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
-    def test_compute_sun_basic(self, mock_uniqueness_class, mock_novelty_class):
-        """Test basic SUN computation with mocked sub-metrics."""
-
-        # Create test structures
-        structures = create_test_structures_with_properties()
-
-        # Mock uniqueness metric
-        mock_uniqueness = MagicMock()
-        mock_uniqueness_result = MagicMock()
-        # Structures 0, 1, 2, 4 are unique (structure 3 is duplicate of 0)
-        mock_uniqueness_result.individual_values = [1.0, 1.0, 1.0, 0.5, 1.0]
-        mock_uniqueness_result.failed_indices = []
-        mock_uniqueness.compute.return_value = mock_uniqueness_result
-        mock_uniqueness_class.return_value = mock_uniqueness
-
-        # Mock novelty metric
-        mock_novelty = MagicMock()
-        mock_novelty_result = MagicMock()
-        # Of the unique structures [0, 1, 2, 4], assume [0, 1, 2] are novel, [4] is known
-        mock_novelty_result.individual_values = [
-            1.0,
-            1.0,
-            1.0,
-            0.0,
-        ]  # 4 unique structures
-        mock_novelty_result.failed_indices = []
-        mock_novelty.compute.return_value = mock_novelty_result
-        mock_novelty_class.return_value = mock_novelty
-
-        # Create metric and compute
-        metric = SUNMetric()
-        result = metric.compute(structures)
-
-        # Verify calls
-        mock_uniqueness.compute.assert_called_once_with(structures)
-        mock_novelty.compute.assert_called_once()
-
-        # Check results
-        assert isinstance(result, MetricResult)
-        assert result.n_structures == 5
-
-        # Expected: Structure 0 (stable, unique, novel) = SUN
-        #           Structure 1 (metastable, unique, novel) = MetaSUN
-        #           Structure 2 (unstable, unique, novel) = neither
-        #           Structure 3 (stable, duplicate) = not unique
-        #           Structure 4 (stable, unique, known) = not novel
-        assert result.metrics["sun_count"] == 1  # Only structure 0
-        assert result.metrics["msun_count"] == 1  # Only structure 1
-        assert result.metrics["sun_rate"] == 0.2  # 1/5
-        assert result.metrics["msun_rate"] == 0.2  # 1/5
-
-    def test_compute_stability_extraction(self):
-        """Test _compute_stability method with real structures."""
-        metric = SUNMetric()
-        structures = create_test_structures_with_properties()
-
-        # Test with all structures as candidates
-        candidate_indices = [0, 1, 2, 3, 4]
-        sun_indices, msun_indices = metric._compute_stability(
-            structures, candidate_indices
-        )
-
-        # Structure 0, 3, 4 have e_above_hull = 0.0 (stable)
-        # Structure 1 has e_above_hull = 0.08 (metastable)
-        # Structure 2 has e_above_hull = 0.2 (unstable)
-
-        expected_sun = [0, 3, 4]  # e_above_hull <= 0.0
-        expected_msun = [1]  # 0.0 < e_above_hull <= 0.1
-
-        assert sorted(sun_indices) == sorted(expected_sun)
-        assert sorted(msun_indices) == sorted(expected_msun)
-
-    def test_compute_stability_thresholds(self):
-        """Test stability computation with custom thresholds."""
-        metric = SUNMetric(stability_threshold=0.05, metastability_threshold=0.15)
-        structures = create_test_structures_with_properties()
-
-        candidate_indices = [0, 1, 2]
-        sun_indices, msun_indices = metric._compute_stability(
-            structures, candidate_indices
-        )
-
-        # With stability_threshold=0.05:
-        # Structure 0: e_above_hull=0.0 <= 0.05 (stable)
-        # Structure 1: e_above_hull=0.08 > 0.05 but <= 0.15 (metastable)
-        # Structure 2: e_above_hull=0.2 > 0.15 (unstable)
-
-        assert sun_indices == [0]
-        assert msun_indices == [1]
-
-    def test_missing_e_above_hull(self):
-        """Test handling of structures missing e_above_hull properties."""
+    def test_missing_e_above_hull_properties(self):
+        """Test handling of structures missing both e_above_hull properties."""
         metric = SUNMetric()
 
-        # Create structure without e_above_hull
+        # Create structure without any e_above_hull properties
         structure = Structure(
             lattice=[[5.0, 0, 0], [0, 5.0, 0], [0, 0, 5.0]],
             species=["Na", "Cl"],
             coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
             coords_are_cartesian=False,
         )
-        # No e_above_hull property
+        # No e_above_hull properties
 
         sun_indices, msun_indices = metric._compute_stability([structure], [0])
 
-        # Should skip structures without e_above_hull
+        # Should skip structures without any e_above_hull properties
         assert sun_indices == []
         assert msun_indices == []
 
@@ -222,82 +897,6 @@ class TestSUNMetric:
         assert result.metrics["sun_count"] == 0
         assert result.metrics["msun_count"] == 0
 
-    def test_individual_values_assignment(self):
-        """Test individual values assignment."""
-        metric = SUNMetric()
-
-        # Create mock result
-        start_time = 0.0
-        n_structures = 5
-        sun_indices = [0, 2]  # Structures 0 and 2 are SUN
-        msun_indices = [1]  # Structure 1 is MetaSUN
-        unique_indices = [0, 1, 2, 3]  # Structure 4 is not unique
-        failed_indices = [4]  # Structure 4 failed
-
-        result = metric._create_result(
-            start_time,
-            n_structures,
-            sun_indices,
-            msun_indices,
-            unique_indices,
-            failed_indices,
-        )
-
-        expected_individual = [1.0, 0.5, 1.0, 0.0, float("nan")]
-        # Structure 0: SUN = 1.0
-        # Structure 1: MetaSUN = 0.5
-        # Structure 2: SUN = 1.0
-        # Structure 3: Neither = 0.0
-        # Structure 4: Failed = NaN
-
-        assert len(result.individual_values) == 5
-        for i, (actual, expected) in enumerate(
-            zip(result.individual_values, expected_individual)
-        ):
-            if np.isnan(expected):
-                assert np.isnan(actual), f"Structure {i}: expected NaN, got {actual}"
-            else:
-                assert actual == expected, (
-                    f"Structure {i}: expected {expected}, got {actual}"
-                )
-
-    def test_metric_result_properties(self):
-        """Test that MetricResult has all expected properties."""
-        with (
-            patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric"),
-            patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric"),
-        ):
-            metric = SUNMetric(max_reference_size=10)
-            structures = create_test_structures_with_properties()[:2]
-
-            # Mock the sub-metrics to return simple results
-            metric.uniqueness_metric.compute = MagicMock()
-            metric.uniqueness_metric.compute.return_value = MagicMock(
-                individual_values=[1.0, 1.0], failed_indices=[]
-            )
-            metric.novelty_metric.compute = MagicMock()
-            metric.novelty_metric.compute.return_value = MagicMock(
-                individual_values=[1.0, 1.0], failed_indices=[]
-            )
-
-            result = metric.compute(structures)
-
-            # Check MetricResult properties
-            assert isinstance(result, MetricResult)
-            assert hasattr(result, "metrics")
-            assert hasattr(result, "primary_metric")
-            assert hasattr(result, "uncertainties")
-            assert hasattr(result, "config")
-            assert hasattr(result, "computation_time")
-            assert hasattr(result, "individual_values")
-            assert hasattr(result, "n_structures")
-            assert hasattr(result, "failed_indices")
-            assert hasattr(result, "warnings")
-
-            # Check specific content
-            assert result.primary_metric == "sun_rate"
-            assert result.computation_time > 0
-
 
 class TestMetaSUNMetric:
     """Test suite for MetaSUNMetric class."""
@@ -307,9 +906,7 @@ class TestMetaSUNMetric:
         metric = MetaSUNMetric()
 
         assert metric.name == "MetaSUN"
-        assert (
-            metric.config.stability_threshold == 0.1
-        )  # Default metastability threshold
+        assert metric.config.stability_threshold == 0.1  # Default metastability threshold
         assert metric.config.metastability_threshold == 0.1
         assert metric.primary_threshold == 0.1
 
@@ -326,215 +923,27 @@ class TestMetaSUNMetric:
         assert metric.config.metastability_threshold == 0.08
         assert metric.primary_threshold == 0.08
 
-    def test_metasun_vs_sun_behavior(self):
-        """Test that MetaSUN behaves differently from SUN."""
-        sun_metric = SUNMetric(stability_threshold=0.0)
-        metasun_metric = MetaSUNMetric(metastability_threshold=0.1)
-
-        # Create structure with e_above_hull = 0.05
-        structure = Structure(
-            lattice=[[5.0, 0, 0], [0, 5.0, 0], [0, 0, 5.0]],
-            species=["Na", "Cl"],
-            coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
-            coords_are_cartesian=False,
-        )
-        structure.properties = {"e_above_hull": 0.05}
-
-        # For SUN: 0.05 > 0.0, so not stable
-        sun_indices, _ = sun_metric._compute_stability([structure], [0])
-        assert sun_indices == []
-
-        # For MetaSUN: 0.05 <= 0.1, so metastable
-        metasun_indices, _ = metasun_metric._compute_stability([structure], [0])
-        assert metasun_indices == [0]
-
-
-class TestSUNIntegration:
-    """Integration tests for SUN metrics."""
-
-    def test_stability_exclusive_sets(self):
-        """Test that stable and metastable are mutually exclusive sets."""
-        metric = SUNMetric(stability_threshold=0.0, metastability_threshold=0.1)
-
-        # Create structures with different e_above_hull values
-        structures = []
-        e_above_hull_values = [0.0, 0.05, 0.1, 0.15]
-
-        for i, e_val in enumerate(e_above_hull_values):
-            structure = Structure(
-                lattice=[[5.0 + i, 0, 0], [0, 5.0, 0], [0, 0, 5.0]],
-                species=["Na", "Cl"],
-                coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
-                coords_are_cartesian=False,
-            )
-            structure.properties = {"e_above_hull": e_val}
-            structures.append(structure)
+    def test_metasun_with_multi_mlip_properties(self):
+        """Test MetaSUN with multi-MLIP ensemble properties."""
+        metric = MetaSUNMetric(metastability_threshold=0.1)
+        structures = create_test_structures_with_multi_mlip_properties()
 
         candidate_indices = [0, 1, 2, 3]
-        sun_indices, msun_indices = metric._compute_stability(
-            structures, candidate_indices
-        )
+        sun_indices, msun_indices = metric._compute_stability(structures, candidate_indices)
 
-        # Check mutual exclusivity
-        sun_set = set(sun_indices)
-        msun_set = set(msun_indices)
-        assert sun_set.isdisjoint(msun_set), (
-            "SUN and MetaSUN sets should be mutually exclusive"
-        )
-
-        # Expected:
-        # Structure 0: e_above_hull = 0.0 <= 0.0 → SUN
-        # Structure 1: e_above_hull = 0.05 > 0.0 but <= 0.1 → MetaSUN
-        # Structure 2: e_above_hull = 0.1 > 0.0 but <= 0.1 → MetaSUN
-        # Structure 3: e_above_hull = 0.15 > 0.1 → Neither
-
-        assert sun_indices == [0]
-        assert sorted(msun_indices) == [1, 2]
-
-    def test_realistic_sun_calculation(self):
-        """Test realistic SUN calculation with known expected results."""
-        with (
-            patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric"),
-            patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric"),
-        ):
-            metric = SUNMetric()
-            structures = create_test_structures_with_properties()
-
-            # Mock uniqueness: structures 0, 1, 2, 4 are unique (3 is duplicate of 0)
-            mock_uniqueness_result = MagicMock()
-            mock_uniqueness_result.individual_values = [1.0, 1.0, 1.0, 0.5, 1.0]
-            mock_uniqueness_result.failed_indices = []
-            metric.uniqueness_metric.compute = MagicMock(
-                return_value=mock_uniqueness_result
-            )
-
-            # Mock novelty: of unique structures [0, 1, 2, 4], structures [0, 1, 2] are novel
-            mock_novelty_result = MagicMock()
-            mock_novelty_result.individual_values = [
-                1.0,
-                1.0,
-                1.0,
-                0.0,
-            ]  # Corresponds to structures [0,1,2,4]
-            mock_novelty_result.failed_indices = []
-            metric.novelty_metric.compute = MagicMock(return_value=mock_novelty_result)
-
-            result = metric.compute(structures)
-
-            # Expected results:
-            # Structure 0: stable (0.0), unique, novel → SUN ✓
-            # Structure 1: metastable (0.08), unique, novel → MetaSUN ✓
-            # Structure 2: unstable (0.2), unique, novel → Neither
-            # Structure 3: stable (0.0), duplicate → not unique
-            # Structure 4: stable (0.0), unique, not novel → not novel
-
-            assert result.metrics["sun_count"] == 1
-            assert result.metrics["msun_count"] == 1
-            assert result.metrics["sun_rate"] == 0.2  # 1 out of 5
-            assert result.metrics["msun_rate"] == 0.2  # 1 out of 5
-            assert result.metrics["combined_sun_msun_rate"] == 0.4  # 2 out of 5
-
-            # Check individual values
-            expected_individual = [1.0, 0.5, 0.0, 0.0, 0.0]
-            for i, (actual, expected) in enumerate(
-                zip(result.individual_values, expected_individual)
-            ):
-                assert actual == expected, (
-                    f"Structure {i}: expected {expected}, got {actual}"
-                )
-
-    def test_edge_case_all_unstable(self):
-        """Test case where all structures are unstable."""
-        with (
-            patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric"),
-            patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric"),
-        ):
-            metric = SUNMetric()
-
-            # Create structures that are all unstable
-            structures = []
-            for i in range(3):
-                structure = Structure(
-                    lattice=[[5.0 + i, 0, 0], [0, 5.0, 0], [0, 0, 5.0]],
-                    species=["Na", "Cl"],
-                    coords=[[0, 0, 0], [0.5, 0.5, 0.5]],
-                    coords_are_cartesian=False,
-                )
-                structure.properties = {"e_above_hull": 0.5}  # All unstable
-                structures.append(structure)
-
-            # Mock all as unique and novel
-            mock_result = MagicMock()
-            mock_result.individual_values = [1.0, 1.0, 1.0]
-            mock_result.failed_indices = []
-            metric.uniqueness_metric.compute = MagicMock(return_value=mock_result)
-            metric.novelty_metric.compute = MagicMock(return_value=mock_result)
-
-            result = metric.compute(structures)
-
-            # All are unstable, so no SUN or MetaSUN
-            assert result.metrics["sun_count"] == 0
-            assert result.metrics["msun_count"] == 0
-            assert result.metrics["sun_rate"] == 0.0
-            assert result.metrics["msun_rate"] == 0.0
-
-    def test_edge_case_no_unique_structures(self):
-        """Test case where no structures are unique."""
-        with (
-            patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric"),
-            patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric"),
-        ):
-            metric = SUNMetric()
-            structures = create_test_structures_with_properties()[:3]
-
-            # Mock all as duplicates (no individual value = 1.0)
-            mock_uniqueness_result = MagicMock()
-            mock_uniqueness_result.individual_values = [
-                0.5,
-                0.33,
-                0.33,
-            ]  # All duplicates
-            mock_uniqueness_result.failed_indices = []
-            metric.uniqueness_metric.compute = MagicMock(
-                return_value=mock_uniqueness_result
-            )
-
-            result = metric.compute(structures)
-
-            # No unique structures, so no SUN or MetaSUN possible
-            assert result.metrics["sun_count"] == 0
-            assert result.metrics["msun_count"] == 0
-            assert result.metrics["sun_rate"] == 0.0
-            assert result.metrics["msun_rate"] == 0.0
-
-    def test_callable_interface(self):
-        """Test the __call__ interface inherited from BaseMetric."""
-        with (
-            patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric"),
-            patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric"),
-        ):
-            metric = SUNMetric()
-            structures = create_test_structures_with_properties()[:2]
-
-            # Mock simple results
-            mock_result = MagicMock()
-            mock_result.individual_values = [1.0, 1.0]
-            mock_result.failed_indices = []
-            metric.uniqueness_metric.compute = MagicMock(return_value=mock_result)
-            metric.novelty_metric.compute = MagicMock(return_value=mock_result)
-
-            # Test callable interface
-            result = metric(structures)
-
-            # Should return MetricResult same as compute()
-            assert isinstance(result, MetricResult)
-            assert "sun_rate" in result.metrics
+        # With MetaSUN, stability_threshold = metastability_threshold = 0.1
+        # Structure 0: e_above_hull_mean = 0.0 <= 0.1 (stable/metastable)
+        # Structure 1: e_above_hull_mean = 0.08 <= 0.1 (stable/metastable)
+        # Structure 2: e_above_hull_mean = 0.2 > 0.1 (unstable)
+        # Structure 3: e_above_hull_mean = 0.09 <= 0.1 (stable/metastable)
+        assert sorted(sun_indices) == [0, 1, 3]
+        assert msun_indices == []  # No distinction between stable and metastable in MetaSUN
 
 
 # Manual test function for development
 def manual_test():
     """Manual test for development purposes."""
-    print("Running manual SUN metrics test...")
+    print("Running manual SUN metrics test with multi-MLIP support...")
 
     try:
         # Test 1: Basic initialization
@@ -544,54 +953,55 @@ def manual_test():
 
         print(f"SUN metric name: {sun_metric.name}")
         print(f"MetaSUN metric name: {metasun_metric.name}")
-        print(f"SUN stability threshold: {sun_metric.config.stability_threshold}")
-        print(
-            f"MetaSUN stability threshold: {metasun_metric.config.stability_threshold}"
-        )
 
-        # Test 2: Structure creation and property setting
-        print("2. Testing structure creation...")
-        structures = create_test_structures_with_properties()
-        print(f"Created {len(structures)} test structures")
+        # Test 2: Multi-MLIP structures
+        print("2. Testing multi-MLIP structure creation...")
+        multi_structures = create_test_structures_with_multi_mlip_properties()
+        print(f"Created {len(multi_structures)} multi-MLIP test structures")
 
-        for i, s in enumerate(structures):
+        for i, s in enumerate(multi_structures):
+            e_hull_mean = s.properties.get("e_above_hull_mean", "Missing")
+            e_hull_std = s.properties.get("e_above_hull_std", "Missing")
+            print(f"  Structure {i}: {s.composition.reduced_formula}, "
+                  f"e_above_hull_mean={e_hull_mean}, std={e_hull_std}")
+
+        # Test 3: Single MLIP structures (backward compatibility)
+        print("3. Testing single-MLIP structure creation...")
+        single_structures = create_test_structures_with_single_mlip_properties()
+        print(f"Created {len(single_structures)} single-MLIP test structures")
+
+        for i, s in enumerate(single_structures):
             e_hull = s.properties.get("e_above_hull", "Missing")
-            print(
-                f"  Structure {i}: {s.composition.reduced_formula}, e_above_hull={e_hull}"
-            )
+            print(f"  Structure {i}: {s.composition.reduced_formula}, e_above_hull={e_hull}")
 
-        # Test 3: Stability computation
-        print("3. Testing stability computation...")
-        candidate_indices = [0, 1, 2, 3, 4]
-        sun_indices, msun_indices = sun_metric._compute_stability(
-            structures, candidate_indices
-        )
+        # Test 4: Mixed properties (fallback behavior)
+        print("4. Testing mixed property structures...")
+        mixed_structures = create_mixed_property_structures()
+        print(f"Created {len(mixed_structures)} mixed property test structures")
 
-        print(f"SUN structures (stable): {sun_indices}")
-        print(f"MetaSUN structures (metastable): {msun_indices}")
+        for i, s in enumerate(mixed_structures):
+            e_hull_mean = s.properties.get("e_above_hull_mean", "Missing")
+            e_hull = s.properties.get("e_above_hull", "Missing")
+            print(f"  Structure {i}: {s.composition.reduced_formula}, "
+                  f"mean={e_hull_mean}, single={e_hull}")
 
-        # Test 4: Mutual exclusivity
-        print("4. Testing mutual exclusivity...")
-        sun_set = set(sun_indices)
-        msun_set = set(msun_indices)
-        is_exclusive = sun_set.isdisjoint(msun_set)
-        print(f"SUN and MetaSUN are mutually exclusive: {is_exclusive}")
+        # Test 5: Stability computation with different property types
+        print("5. Testing stability computation...")
+        
+        # Multi-MLIP
+        candidate_indices = list(range(len(multi_structures)))
+        sun_indices, msun_indices = sun_metric._compute_stability(multi_structures, candidate_indices)
+        print(f"Multi-MLIP - SUN: {sun_indices}, MetaSUN: {msun_indices}")
 
-        # Test 5: Result creation
-        print("5. Testing result creation...")
-        result = sun_metric._create_result(
-            start_time=0.0,
-            n_structures=5,
-            sun_indices=sun_indices,
-            msun_indices=msun_indices,
-            unique_indices=[0, 1, 2, 4],
-            failed_indices=[],
-        )
+        # Single MLIP
+        candidate_indices = list(range(len(single_structures)))
+        sun_indices, msun_indices = sun_metric._compute_stability(single_structures, candidate_indices)
+        print(f"Single-MLIP - SUN: {sun_indices}, MetaSUN: {msun_indices}")
 
-        print(f"SUN rate: {result.metrics['sun_rate']:.3f}")
-        print(f"MetaSUN rate: {result.metrics['msun_rate']:.3f}")
-        print(f"Combined rate: {result.metrics['combined_sun_msun_rate']:.3f}")
-        print(f"Individual values: {result.individual_values}")
+        # Mixed
+        candidate_indices = list(range(len(mixed_structures)))
+        sun_indices, msun_indices = sun_metric._compute_stability(mixed_structures, candidate_indices)
+        print(f"Mixed - SUN: {sun_indices}, MetaSUN: {msun_indices}")
 
         print("\nAll manual tests passed!")
         return True

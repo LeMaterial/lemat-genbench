@@ -1,0 +1,21 @@
+type: sun
+
+# SUN (Stable, Unique, Novel) Benchmark Configuration
+description: "SUN Benchmark for evaluating structures that are Stable, Unique, and Novel"
+version: "0.1.0"
+
+# Core SUN configuration
+include_metasun: true                    # Whether to evaluate MetaSUN (metastable) alongside SUN
+
+# Stability thresholds (eV/atom)
+stability_threshold: 0.0                # Energy above hull threshold for stability (SUN)
+metastability_threshold: 0.1            # Energy above hull threshold for metastability (MetaSUN)
+
+# Reference dataset configuration for novelty evaluation
+reference_dataset: "LeMaterial/LeMat-Bulk"
+reference_config: "compatible_pbe"
+fingerprint_method: "bawl"              # Method for structure fingerprinting (uniqueness & novelty)
+
+# Performance and caching settings
+cache_reference: true                   # Cache reference dataset fingerprints for speed
+max_reference_size: null                # Maximum reference structures (null = use all)
