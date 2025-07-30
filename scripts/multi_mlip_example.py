@@ -65,7 +65,7 @@ def example_custom_configuration():
         },
         "uma": {
             "task": "omat",  # Default  
-            "device": "CPU"
+            "device": "cpu"
         }
     }
     

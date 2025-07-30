@@ -25,6 +25,7 @@ class DistributionBenchmark(BaseBenchmark):
     def __init__(
         self,
         reference_df: pd.DataFrame,
+        mlips: list[str],
         name: str = "DistributionBenchmark",
         description: str | None = None,
         metadata: Dict[str, Any] | None = None,
@@ -75,7 +76,9 @@ class DistributionBenchmark(BaseBenchmark):
         )
 
         # Initialize the MFrechetDistanceMD metric
-        FrechetDistance_metric = FrechetDistance(reference_df=reference_df)
+
+        FrechetDistance_metric = FrechetDistance(reference_df=reference_df,
+                                                 mlips = mlips)
 
         # add to evaluator config
         evaluator_configs["FrechetDistance"] = EvaluatorConfig(
@@ -151,8 +154,8 @@ if __name__ == "__main__":
     from lematerial_forgebench.preprocess.distribution_preprocess import (
         DistributionPreprocessor,
     )
-    from lematerial_forgebench.preprocess.universal_stability_preprocess import (
-        UniversalStabilityPreprocessor,
+    from lematerial_forgebench.preprocess.multi_mlip_preprocess import (
+        MultiMLIPStabilityPreprocessor,
     )
 
     with open("data/full_reference_df.pkl", "rb") as f:
@@ -164,93 +167,112 @@ if __name__ == "__main__":
         test.get_structure("LiFePO4"),
     ]
 
+    mlips = ["orb", "mace", "uma"]
+
     distribution_preprocessor = DistributionPreprocessor()
     dist_preprocessor_result = distribution_preprocessor(structures)
     timeout = 60
     output_dfs = {}
 
-    for mlip in ["orb", "mace", "uma", "equiformer"]:
-        try:
-            stability_preprocessor = UniversalStabilityPreprocessor(
-                model_name=mlip, relax_structures=False, timeout=timeout
-            )
-            stability_preprocessor_result = stability_preprocessor(structures)
+    mlip_configs = {
+        "orb": {
+            "model_type": "orb_v3_conservative_inf_omat",  # Default
+            "device": "cpu"
+        },
+        "mace": {
+            "model_type": "mp",  # Default
+            "device": "cpu"
+        },
+        "uma": {
+            "task": "omat",  # Default  
+            "device": "cpu"
+        }
+    }
 
-            final_processed_structures = []
+    preprocessor = MultiMLIPStabilityPreprocessor(
+        mlip_names=["orb", "mace", "uma"],
+        mlip_configs=mlip_configs,
+        relax_structures=True,
+        relaxation_config={"fmax": 0.01, "steps": 300},  # Tighter convergence
+        calculate_formation_energy=True,
+        calculate_energy_above_hull=True,
+        extract_embeddings=True,
+        timeout=120,  # Longer timeout
+        )
 
-            for ind in range(0, len(dist_preprocessor_result.processed_structures)):
-                combined_structure = dist_preprocessor_result.processed_structures[ind]
-                for entry in stability_preprocessor_result.processed_structures[
+    stability_preprocessor_result = preprocessor(structures)
+    final_processed_structures = []
+
+    for ind in range(0, len(dist_preprocessor_result.processed_structures)):
+        combined_structure = dist_preprocessor_result.processed_structures[ind]
+        for entry in stability_preprocessor_result.processed_structures[
+            ind
+        ].properties.keys():
+            combined_structure.properties[entry] = (
+                stability_preprocessor_result.processed_structures[
                     ind
-                ].properties.keys():
-                    combined_structure.properties[entry] = (
-                        stability_preprocessor_result.processed_structures[
-                            ind
-                        ].properties[entry]
-                    )
-                final_processed_structures.append(combined_structure)
+                ].properties[entry]
+            )
+        final_processed_structures.append(combined_structure)
 
-            preprocessor_result = PreprocessorResult(
-                processed_structures=final_processed_structures,
-                config={
-                    "stability_preprocessor_config": stability_preprocessor_result.config,
-                    "distribution_preprocessor_config": dist_preprocessor_result.config,
-                },
-                computation_time={
-                    "stability_preprocessor_computation_time": stability_preprocessor_result.computation_time,
-                    "distribution_preprocessor_computation_time": dist_preprocessor_result.computation_time,
-                },
-                n_input_structures=stability_preprocessor_result.n_input_structures,
-                failed_indices={
-                    "stability_preprocessor_failed_indices": stability_preprocessor_result.failed_indices,
-                    "distribution_preprocessor_failed_indices": dist_preprocessor_result.failed_indices,
-                },
-                warnings={
-                    "stability_preprocessor_warnings": stability_preprocessor_result.warnings,
-                    "distribution_preprocessor_warnings": dist_preprocessor_result.warnings,
-                },
-            )
+    preprocessor_result = PreprocessorResult(
+        processed_structures=final_processed_structures,
+        config={
+            "stability_preprocessor_config": stability_preprocessor_result.config,
+            "distribution_preprocessor_config": dist_preprocessor_result.config,
+        },
+        computation_time={
+            "stability_preprocessor_computation_time": stability_preprocessor_result.computation_time,
+            "distribution_preprocessor_computation_time": dist_preprocessor_result.computation_time,
+        },
+        n_input_structures=stability_preprocessor_result.n_input_structures,
+        failed_indices={
+            "stability_preprocessor_failed_indices": stability_preprocessor_result.failed_indices,
+            "distribution_preprocessor_failed_indices": dist_preprocessor_result.failed_indices,
+        },
+        warnings={
+            "stability_preprocessor_warnings": stability_preprocessor_result.warnings,
+            "distribution_preprocessor_warnings": dist_preprocessor_result.warnings,
+        },
+    )
 
-            benchmark = DistributionBenchmark(reference_df=test_lemat)
-            benchmark_result = benchmark.evaluate(
-                preprocessor_result.processed_structures
-            )
+    benchmark = DistributionBenchmark(reference_df=test_lemat,
+                                        mlips = mlips)
+    benchmark_result = benchmark.evaluate(
+        preprocessor_result.processed_structures
+    )
 
-            print("JSDistance")
-            print(
-                benchmark_result.evaluator_results["JSDistance"]["metric_results"][
-                    "JSDistance"
-                ].metrics
-            )
-            print(
-                "Average JSDistance: "
-                + str(
-                    benchmark_result.evaluator_results["JSDistance"]["JSDistance_value"]
-                )
-            )
-            print("MMD")
-            print(
-                benchmark_result.evaluator_results["MMD"]["metric_results"][
-                    "MMD"
-                ].metrics
-            )
-            print(
-                "Average MMD: "
-                + str(benchmark_result.evaluator_results["MMD"]["MMD_value"])
-            )
-            print(mlip + " FrechetDistance")
-            print(
-                benchmark_result.evaluator_results["FrechetDistance"]["metric_results"][
-                    "FrechetDistance"
-                ].metrics
-            )
-            print(
-                "Average Frechet Distance: "
-                + str(
-                    benchmark_result.evaluator_results["FrechetDistance"][
-                        "FrechetDistance_value"
-                    ]
-                )
-            )
-        except (ImportError, ValueError):
-            pass
+    print("JSDistance")
+    print(
+        benchmark_result.evaluator_results["JSDistance"]["metric_results"][
+            "JSDistance"
+        ].metrics
+    )
+    print(
+        "Average JSDistance: "
+        + str(
+            benchmark_result.evaluator_results["JSDistance"]["JSDistance_value"]
+        )
+    )
+    print("MMD")
+    print(
+        benchmark_result.evaluator_results["MMD"]["metric_results"][
+            "MMD"
+        ].metrics
+    )
+    print(
+        "Average MMD: "
+        + str(benchmark_result.evaluator_results["MMD"]["MMD_value"])
+    )
+    print("Avg FrechetDistance")
+    print(
+        benchmark_result.evaluator_results["FrechetDistance"]["metric_results"][
+            "FrechetDistance"
+        ].metrics
+    )
+    print(
+        "Uncertianty Frechet Distance: "
+        + str(
+            benchmark_result.evaluator_results["FrechetDistance"]["metric_results"]["FrechetDistance"].uncertainties
+        )
+    )

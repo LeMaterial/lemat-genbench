@@ -4,7 +4,7 @@ import pickle
 import pandas as pd
 
 if __name__ == "__main__":
-    mlips = ["orb", "mace"]
+    mlips = ["orb", "mace", "uma"]
 
     dir_name = "test_small_lematbulk"
     composition_path = "data/sample_lematbulk.pkl"

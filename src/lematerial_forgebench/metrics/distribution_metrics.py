@@ -22,6 +22,7 @@ from typing import Any, Dict
 
 import numpy as np
 import pandas as pd
+from pydantic import Field
 from pymatgen.core import Structure
 
 from lematerial_forgebench.metrics.base import BaseMetric, MetricConfig, MetricResult
@@ -377,7 +378,7 @@ class FrechetDistanceConfig(MetricConfig):
     reference_df : pandas dataframe
         dataframe with reference data to compare to the input sample of crystals
     """
-
+    mlips: list[str] = Field(default_factory=lambda: ["orb", "mace", "uma"])
     reference_df: pd.DataFrame | str = "LeMaterial/LeMat-Bulk"
 
 
@@ -385,6 +386,7 @@ class FrechetDistance(BaseMetric):
     def __init__(
         self,
         reference_df: pd.DataFrame,
+        mlips: list[str],
         name: str | None = None,
         description: str | None = None,
         n_jobs: int = 1,
@@ -399,49 +401,55 @@ class FrechetDistance(BaseMetric):
             name=self.config.name,
             description=self.config.description,
             n_jobs=self.config.n_jobs,
+            mlips=mlips,
             reference_df=reference_df,
         )
 
     def _get_compute_attributes(self) -> dict[str, Any]:
         """Get the attributes for the compute_structure method."""
-        return {"reference_df": self.config.reference_df}
+        return {"reference_df": self.config.reference_df,
+                "mlips": self.config.mlips}
 
     def compute(self, structures: list[Structure], **compute_args: Any) -> MetricResult:
         """Compute the similarity of a sample of structures to a target distribution."""
         start_time = time.time()
-
-        all_properties = [
-            structure.properties.get("graph_embedding", {}) for structure in structures
-        ]
         reference_df = compute_args.get("reference_df")
+        distances = []
+        for mlip in compute_args.get("mlips"):
+            print(mlip)
+            all_properties = [
+                structure.properties.get("graph_embedding_"+mlip, {}) for structure in structures
+            ]
 
-        if "ORB" in structures[0].properties.get("mlip_model"):
-            reference_column = "OrbGraphEmbeddings"
-        if "MACE" in structures[0].properties.get("mlip_model"):
-            reference_column = "MaceGraphEmbeddings"
-        if "UMA" in structures[0].properties.get("mlip_model"):
-            reference_column = "UmaGraphEmbeddings"
-        if "Equiformer" in structures[0].properties.get("mlip_model"):
-            reference_column = "EquiformerGraphEmbeddings"
+            if mlip == 'orb':
+                reference_column = "OrbGraphEmbeddings"
+            if mlip == 'mace':
+                reference_column = "MaceGraphEmbeddings"
+            if mlip == 'uma':
+                reference_column = "UmaGraphEmbeddings"
+            if mlip == 'equiformer':
+                reference_column = "EquiformerGraphEmbeddings"
 
-        reference_embeddings = reference_df[reference_column]
+            reference_embeddings = reference_df[reference_column]
 
-        if reference_df is None:
-            raise ValueError(
-                "a `reference_df` arg is required to compute the FrechetDistance"
-            )
+            if reference_df is None:
+                raise ValueError(
+                    "a `reference_df` arg is required to compute the FrechetDistance"
+                )
 
+            frechetdist = compute_frechetdist(reference_embeddings, all_properties)
+            distances.append(frechetdist)
+        
         dist_metrics = {}
-
-        frechetdist = compute_frechetdist(reference_embeddings, all_properties)
-        dist_metrics["FrechetDistance"] = frechetdist
+        dist_metrics["FrechetDistanceMean"] = np.mean(distances)
 
         end_time = time.time()
 
         return MetricResult(
             metrics=dist_metrics,
-            primary_metric="FrechetDistance",
-            uncertainties={},
+            primary_metric="FrechetDistanceMean",
+            uncertainties={"FrechetDistanceStd": np.std(distances), 
+                           "FrechetDistancesFull": distances},
             config=self.config,
             computation_time=end_time - start_time,
             n_structures=len(structures),
@@ -498,9 +506,10 @@ if __name__ == "__main__":
     from lematerial_forgebench.preprocess.distribution_preprocess import (
         DistributionPreprocessor,
     )
-    from lematerial_forgebench.preprocess.universal_stability_preprocess import (
-        UniversalStabilityPreprocessor,
+    from lematerial_forgebench.preprocess.multi_mlip_preprocess import (
+        MultiMLIPStabilityPreprocessor,
     )
+    
 
     with open("data/full_reference_df.pkl", "rb") as f:
         test_lemat = pickle.load(f)
@@ -528,21 +537,40 @@ if __name__ == "__main__":
     )
     print(metric_result.metrics)
 
-    mlips = ["orb", "mace"]
-    for mlip in mlips:
-        metric = FrechetDistance(reference_df=test_lemat)
+    mlip_configs = {
+        "orb": {
+            "model_type": "orb_v3_conservative_inf_omat",  # Default
+            "device": "cpu"
+        },
+        "mace": {
+            "model_type": "mp",  # Default
+            "device": "cpu"
+        },
+        "uma": {
+            "task": "omat",  # Default  
+            "device": "cpu"
+        }
+    }
 
-        timeout = 60  # seconds to timeout for each MLIP run
-        stability_preprocessor = UniversalStabilityPreprocessor(
-            model_name=mlip,
-            timeout=timeout,
-            relax_structures=False,
+    preprocessor = MultiMLIPStabilityPreprocessor(
+        mlip_names=["orb", "mace", "uma"],
+        mlip_configs=mlip_configs,
+        relax_structures=True,
+        relaxation_config={"fmax": 0.01, "steps": 300},  # Tighter convergence
+        calculate_formation_energy=True,
+        calculate_energy_above_hull=True,
+        extract_embeddings=True,
+        timeout=120,  # Longer timeout
         )
 
-        stability_preprocessor_result = stability_preprocessor(structures)
+    metric = FrechetDistance(reference_df=test_lemat, mlips = ["orb", "mace", "uma"])
 
-        default_args = metric._get_compute_attributes()
-        metric_result = metric(
-            stability_preprocessor_result.processed_structures, **default_args
-        )
-        print(mlip + " " + str(metric_result.metrics))
+    stability_preprocessor_result = preprocessor(structures)
+
+    default_args = metric._get_compute_attributes()
+    metric_result = metric(
+        stability_preprocessor_result.processed_structures, **default_args
+    )
+    
+    print("Frechet Distance")
+    print(metric_result.metrics, metric_result.uncertainties)

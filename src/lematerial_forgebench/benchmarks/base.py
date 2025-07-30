@@ -44,6 +44,7 @@ class BenchmarkConfig:
     evaluator_configs: dict[str, EvaluatorConfig]
     metadata: dict[str, any] | None = None
     reference_df: pd.DataFrame | None = None
+    mlips: list[str] | None = None 
 
 
 @dataclass
@@ -94,6 +95,7 @@ class BaseBenchmark(ABC):
         evaluator_configs: dict[str, EvaluatorConfig],
         metadata: dict[str, any] | None = None,
         reference_df: pd.DataFrame | None = None,
+        mlips: list[str] | None = None,
     ):
         self.config = BenchmarkConfig(
             name=name,
@@ -101,6 +103,7 @@ class BaseBenchmark(ABC):
             evaluator_configs=evaluator_configs,
             metadata=metadata or {},
             reference_df=reference_df,
+            mlips=mlips,
         )
 
         # Create evaluators from configs

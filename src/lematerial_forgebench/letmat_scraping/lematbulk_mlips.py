@@ -135,8 +135,11 @@ def process_item_action(dataset, stability_processors, batch_size=32):
 if __name__ == "__main__":
     import pandas as pd
 
-    full_dataset = True
-    vals_spacing = 100000
+    full_dataset = False
+    vals_spacing = 100
+    vals = np.arange(
+            0, 1000, vals_spacing
+    )
     batch_size = 8
     dir_name = "test_small_lematbulk"
 
@@ -145,7 +148,7 @@ if __name__ == "__main__":
     split = "train"
     dataset = load_dataset(dataset_name, name=name, split=split, streaming=False)
 
-    mlips = ["orb", "mace"]
+    mlips = ["uma"]
 
     timeout = 60  # seconds, for one MLIP calculation
 
@@ -154,7 +157,7 @@ if __name__ == "__main__":
             raise ValueError
         orb_stability_preprocessor = UniversalStabilityPreprocessor(
             model_name="orb",
-            model_config={"device": "cuda"},
+            model_config={"device": "cpu"},
             timeout=timeout,
             relax_structures=False,
         )
@@ -167,7 +170,7 @@ if __name__ == "__main__":
             raise ValueError
         mace_stability_preprocessor = UniversalStabilityPreprocessor(
             model_name="mace",
-            model_config={"device": "cuda"},
+            model_config={"device": "cpu"},
             timeout=timeout,
             relax_structures=False,
         )
@@ -180,7 +183,7 @@ if __name__ == "__main__":
             raise ValueError
         uma_stability_preprocessor = UniversalStabilityPreprocessor(
             model_name="uma",
-            model_config={"device": "cuda"},
+            model_config={"device": "cpu"},
             timeout=timeout,
             relax_structures=False,
         )
@@ -193,7 +196,7 @@ if __name__ == "__main__":
             raise ValueError
         equiformer_stability_preprocessor = UniversalStabilityPreprocessor(
             model_name="equiformer",
-            model_config={"device": "cuda"},
+            model_config={"device": "cpu"},
             timeout=timeout,
             relax_structures=False,
         )
