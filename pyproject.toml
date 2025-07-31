@@ -32,7 +32,7 @@ dependencies = [
 ]
 
 [project.scripts]
-lematerial-forgebench = "lemat_genbench.cli:main"
+lemat-genbench = "lemat_genbench.cli:main"
 
 [build-system]
 requires = ["hatchling"]
