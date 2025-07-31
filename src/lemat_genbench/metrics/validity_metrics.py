@@ -11,12 +11,6 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 import numpy as np
-from lemat_genbench.metrics.base import BaseMetric, MetricConfig, MetricResult
-from lemat_genbench.utils.logging import logger
-from lemat_genbench.utils.oxidation_state import (
-    compositional_oxi_state_guesses,
-    get_inequivalent_site_info,
-)
 from pymatgen.analysis.bond_valence import BVAnalyzer, calculate_bv_sum
 from pymatgen.analysis.local_env import (
     CrystalNN,
@@ -27,6 +21,13 @@ from pymatgen.core import Composition
 from pymatgen.core.periodic_table import Element
 from pymatgen.core.structure import Structure
 from pymatgen.io.cif import CifParser, CifWriter
+
+from lemat_genbench.metrics.base import BaseMetric, MetricConfig, MetricResult
+from lemat_genbench.utils.logging import logger
+from lemat_genbench.utils.oxidation_state import (
+    compositional_oxi_state_guesses,
+    get_inequivalent_site_info,
+)
 
 
 @dataclass
@@ -970,10 +971,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
             # IMPORTANT NOTE - CIF files will sometimes load primitive cells and sometimes conventional cells.
             # This is assuming the initial file is a conventional cell. If this IS NOT THE CASE, amend the input structure
             # to be a conventional cell.
-            print(structure.composition.reduced_formula)
-            print(recovered_structure.composition.reduced_formula)
-            print(len(structure))
-            print(len(recovered_structure))
+
 
             if (
                 structure.composition.reduced_formula
@@ -982,12 +980,12 @@ class PhysicalPlausibilityMetric(BaseMetric):
             ):
                 checks_passed += 1
             elif len(structure) == len(recovered_structure.to_conventional()):
-                checks_passed += 1
+                    checks_passed += 1 
             else:
                 logger.debug(
                     f"Format check failed: original={structure.composition}, "
                     f"recovered={recovered_structure.composition}"
-                )
+                    )
 
         # Check 4: Symmetry check
         if check_symmetry:

@@ -6,10 +6,11 @@ from pathlib import Path
 from typing import Any, List, Optional, TypeVar
 
 import pandas as pd
-from lemat_genbench.data.structure import format_structures
-from lemat_genbench.utils.logging import logger
 from pymatgen.core.structure import Structure
 from tqdm import tqdm
+
+from lemat_genbench.data.structure import format_structures
+from lemat_genbench.utils.logging import logger
 
 PreprocessorClassVar = TypeVar("PreprocessorClassVar", bound="BasePreprocessor")
 

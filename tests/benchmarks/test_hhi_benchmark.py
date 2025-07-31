@@ -1,7 +1,8 @@
 """Fixed tests for HHI benchmark - addressing the three failing test cases."""
 
-from lemat_genbench.benchmarks.hhi_benchmark import HHIBenchmark
 from pymatgen.util.testing import PymatgenTest
+
+from lemat_genbench.benchmarks.hhi_benchmark import HHIBenchmark
 
 
 def create_test_structures():

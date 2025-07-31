@@ -13,12 +13,13 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+from pymatgen.core import Composition, Structure
+
 from lemat_genbench.metrics.base import (
     BaseMetric,
     MetricConfig,
     MetricResult,
 )
-from pymatgen.core import Composition, Structure
 
 
 def _load_hhi_data():

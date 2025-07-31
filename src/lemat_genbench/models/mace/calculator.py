@@ -1,5 +1,7 @@
 """MACE model calculator implementation with comprehensive e3nn serialization fixes."""
 
+from pymatgen.core.structure import Structure
+
 from lemat_genbench.models.base import (
     BaseMLIPCalculator,
     CalculationResult,
@@ -9,7 +11,6 @@ from lemat_genbench.models.base import (
 )
 from lemat_genbench.models.mace.embeddings import MACEEmbeddingExtractor
 from lemat_genbench.utils.logging import logger
-from pymatgen.core.structure import Structure
 
 try:
     from mace.calculators import MACECalculator as MACEASECalculator

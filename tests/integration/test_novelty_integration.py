@@ -5,9 +5,10 @@ novelty evaluation using actual BAWL fingerprinting.
 """
 
 import pytest
+from pymatgen.core.structure import Structure
+
 from lemat_genbench.metrics.base import MetricResult
 from lemat_genbench.metrics.novelty_metric import NoveltyMetric
-from pymatgen.core.structure import Structure
 
 
 def create_definitely_novel_structures():

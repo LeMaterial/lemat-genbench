@@ -1,8 +1,9 @@
 """MACE embedding extraction utilities."""
 
 import numpy as np
-from lemat_genbench.models.base import BaseEmbeddingExtractor
 from pymatgen.core.structure import Structure
+
+from lemat_genbench.models.base import BaseEmbeddingExtractor
 
 
 class MACEEmbeddingExtractor(BaseEmbeddingExtractor):

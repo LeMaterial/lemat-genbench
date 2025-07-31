@@ -11,11 +11,12 @@ from typing import Any, Dict, Tuple, Union
 import numpy as np
 import torch
 from ase import Atoms
+from pymatgen.core.structure import Structure
+
 from lemat_genbench.preprocess.reference_energies import (
     get_energy_above_hull,
     get_formation_energy_from_composition_energy,
 )
-from pymatgen.core.structure import Structure
 
 
 @dataclass

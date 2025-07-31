@@ -2,6 +2,8 @@
 
 from copy import deepcopy
 
+from pymatgen.core.structure import Structure
+
 from lemat_genbench.models.base import (
     BaseMLIPCalculator,
     CalculationResult,
@@ -13,7 +15,6 @@ from lemat_genbench.models.uma.embeddings import (
     UMAEmbeddingExtractor,
 )
 from lemat_genbench.utils.logging import logger
-from pymatgen.core.structure import Structure
 
 try:
     from fairchem.core import pretrained_mlip

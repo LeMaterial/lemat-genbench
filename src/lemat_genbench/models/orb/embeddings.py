@@ -4,8 +4,9 @@ from typing import Union
 
 import numpy as np
 import torch
-from lemat_genbench.models.base import BaseEmbeddingExtractor
 from pymatgen.core.structure import Structure
+
+from lemat_genbench.models.base import BaseEmbeddingExtractor
 
 try:
     from orb_models.forcefield import atomic_system

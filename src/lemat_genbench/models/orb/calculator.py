@@ -1,5 +1,7 @@
 """ORB model calculator implementation."""
 
+from pymatgen.core.structure import Structure
+
 from lemat_genbench.models.base import (
     BaseMLIPCalculator,
     CalculationResult,
@@ -9,7 +11,6 @@ from lemat_genbench.models.base import (
 )
 from lemat_genbench.models.orb.embeddings import ORBEmbeddingExtractor
 from lemat_genbench.utils.logging import logger
-from pymatgen.core.structure import Structure
 
 try:
     from orb_models.forcefield import pretrained

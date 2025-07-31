@@ -9,8 +9,8 @@ from scipy.spatial.distance import cdist, jensenshannon
 def safe_float(value):
     """Currently a no-op function.
 
-    This is a placeholder for a function that will safely convert a value to a float,
-    handling None and NaN.
+    This is a placeholder for a function that will safely convert a value to a 
+    float, handling None and NaN.
     """
     return value
 

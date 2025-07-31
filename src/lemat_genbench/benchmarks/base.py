@@ -13,12 +13,13 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
 import pandas as pd
+from pymatgen.core.structure import Structure
+
 from lemat_genbench.evaluator import (
     EvaluationResult,
     EvaluatorConfig,
     MetricEvaluator,
 )
-from pymatgen.core.structure import Structure
 
 
 @dataclass

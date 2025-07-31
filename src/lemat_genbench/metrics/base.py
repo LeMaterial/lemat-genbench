@@ -8,9 +8,10 @@ from typing import Any, List, TypeVar
 
 import numpy as np
 import pandas as pd
+from pymatgen.core.structure import Structure
+
 from lemat_genbench.data.structure import format_structures
 from lemat_genbench.utils.logging import logger
-from pymatgen.core.structure import Structure
 
 warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
 warnings.filterwarnings("ignore", category=FutureWarning)

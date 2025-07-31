@@ -2,6 +2,8 @@
 
 import numpy as np
 import pytest
+from pymatgen.core import Structure
+
 from lemat_genbench.metrics.base import MetricResult
 from lemat_genbench.metrics.hhi_metrics import (
     BaseHHIMetric,
@@ -10,7 +12,6 @@ from lemat_genbench.metrics.hhi_metrics import (
     _load_hhi_data,
     compound_hhi,
 )
-from pymatgen.core import Structure
 
 
 def create_test_structures():

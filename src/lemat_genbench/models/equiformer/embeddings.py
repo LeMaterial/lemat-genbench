@@ -2,10 +2,10 @@
 
 import numpy as np
 import torch
-from lemat_genbench.models.base import BaseEmbeddingExtractor
+from fairchem.core.datasets import data_list_collater
 from pymatgen.core.structure import Structure
 
-from fairchem.core.datasets import data_list_collater
+from lemat_genbench.models.base import BaseEmbeddingExtractor
 
 
 class EquiformerEmbeddingExtractor(BaseEmbeddingExtractor):

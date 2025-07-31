@@ -3,12 +3,13 @@ import json
 import numpy as np
 import pandas as pd
 from datasets import load_dataset
+from pymatgen.core import Composition
+from tqdm import tqdm
+
 from lemat_genbench.utils.distribution_utils import (
     generate_probabilities,
     one_hot_encode_composition,
 )
-from pymatgen.core import Composition
-from tqdm import tqdm
 
 if __name__ == "__main__":
     dataset_name = "Lematerial/LeMat-Bulk"
