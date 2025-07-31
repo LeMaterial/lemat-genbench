@@ -5,14 +5,14 @@ import pickle
 import pytest
 from pymatgen.util.testing import PymatgenTest
 
-from lematerial_forgebench.benchmarks.distribution_benchmark import (
+from lemat_genbench.benchmarks.distribution_benchmark import (
     DistributionBenchmark,
 )
-from lematerial_forgebench.preprocess.base import PreprocessorResult
-from lematerial_forgebench.preprocess.distribution_preprocess import (
+from lemat_genbench.preprocess.base import PreprocessorResult
+from lemat_genbench.preprocess.distribution_preprocess import (
     DistributionPreprocessor,
 )
-from lematerial_forgebench.preprocess.multi_mlip_preprocess import (
+from lemat_genbench.preprocess.multi_mlip_preprocess import (
     MultiMLIPStabilityPreprocessor,
 )
 
@@ -36,20 +36,19 @@ def reference_data():
 
     return reference_df
 
+
 @pytest.fixture
 def mlips():
     "create MLIP list"
     mlips = ["orb", "mace", "uma"]
-    
-    return mlips 
+
+    return mlips
 
 
 def test_initialization(reference_data, mlips):
     """Test initialization with default parameters."""
 
-
-    benchmark = DistributionBenchmark(reference_df=reference_data,
-                                        mlips=mlips)
+    benchmark = DistributionBenchmark(reference_df=reference_data, mlips=mlips)
 
     # Check name and properties
     assert benchmark.config.name == "DistributionBenchmark"
@@ -61,12 +60,13 @@ def test_initialization(reference_data, mlips):
     assert "MMD" in benchmark.evaluators
     assert "FrechetDistance" in benchmark.evaluators
 
+
 def test_custom_initialization(reference_data, mlips):
     """Test initialization with custom parameters."""
 
     benchmark = DistributionBenchmark(
         reference_df=reference_data,
-        mlips=mlips, 
+        mlips=mlips,
         name="Custom Benchmark",
         description="Custom description",
         metadata={"test_key": "test_value"},
@@ -77,6 +77,7 @@ def test_custom_initialization(reference_data, mlips):
     assert benchmark.config.description == "Custom description"
     assert benchmark.config.metadata["test_key"] == "test_value"
 
+
 def test_evaluate(valid_structures, reference_data, mlips):
     """Test benchmark evaluation on structures."""
 
@@ -86,16 +87,16 @@ def test_evaluate(valid_structures, reference_data, mlips):
     mlip_configs = {
         "orb": {
             "model_type": "orb_v3_conservative_inf_omat",  # Default
-            "device": "cpu"
+            "device": "cpu",
         },
         "mace": {
             "model_type": "mp",  # Default
-            "device": "cpu"
+            "device": "cpu",
         },
         "uma": {
-            "task": "omat",  # Default  
-            "device": "cpu"
-        }
+            "task": "omat",  # Default
+            "device": "cpu",
+        },
     }
 
     preprocessor = MultiMLIPStabilityPreprocessor(
@@ -107,7 +108,7 @@ def test_evaluate(valid_structures, reference_data, mlips):
         calculate_energy_above_hull=True,
         extract_embeddings=True,
         timeout=120,  # Longer timeout
-        )
+    )
 
     stability_preprocessor_result = preprocessor(valid_structures)
     final_processed_structures = []
@@ -118,9 +119,9 @@ def test_evaluate(valid_structures, reference_data, mlips):
             ind
         ].properties.keys():
             combined_structure.properties[entry] = (
-                stability_preprocessor_result.processed_structures[
-                    ind
-                ].properties[entry]
+                stability_preprocessor_result.processed_structures[ind].properties[
+                    entry
+                ]
             )
         final_processed_structures.append(combined_structure)
 
@@ -145,8 +146,7 @@ def test_evaluate(valid_structures, reference_data, mlips):
         },
     )
 
-    benchmark = DistributionBenchmark(reference_df=reference_data,
-                                        mlips = mlips)
+    benchmark = DistributionBenchmark(reference_df=reference_data, mlips=mlips)
     result = benchmark.evaluate(preprocessor_result.processed_structures)
 
     # Check result format

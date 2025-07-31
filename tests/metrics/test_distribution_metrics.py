@@ -6,15 +6,15 @@ import numpy as np
 import pytest
 from pymatgen.util.testing import PymatgenTest
 
-from lematerial_forgebench.metrics.distribution_metrics import (
+from lemat_genbench.metrics.distribution_metrics import (
     MMD,
     FrechetDistance,
     JSDistance,
 )
-from lematerial_forgebench.preprocess.distribution_preprocess import (
+from lemat_genbench.preprocess.distribution_preprocess import (
     DistributionPreprocessor,
 )
-from lematerial_forgebench.preprocess.multi_mlip_preprocess import (
+from lemat_genbench.preprocess.multi_mlip_preprocess import (
     MultiMLIPStabilityPreprocessor,
 )
 
@@ -83,41 +83,40 @@ def test_MMD_metric(valid_structures, reference_data):
     for val in values:
         assert 0.0 <= val <= 1.0
 
+
 def test_FrechetDistance_metric(valid_structures, reference_data):
     """Test MMD_metric on valid structures."""
     mlip_configs = {
-            "orb": {
-                "model_type": "orb_v3_conservative_inf_omat",  # Default
-                "device": "cpu"
-            },
-            "mace": {
-                "model_type": "mp",  # Default
-                "device": "cpu"
-            },
-            "uma": {
-                "task": "omat",  # Default  
-                "device": "cpu"
-            }
-        }
+        "orb": {
+            "model_type": "orb_v3_conservative_inf_omat",  # Default
+            "device": "cpu",
+        },
+        "mace": {
+            "model_type": "mp",  # Default
+            "device": "cpu",
+        },
+        "uma": {
+            "task": "omat",  # Default
+            "device": "cpu",
+        },
+    }
     preprocessor = MultiMLIPStabilityPreprocessor(
-            mlip_names=["orb", "mace", "uma"],
-            mlip_configs=mlip_configs,
-            relax_structures=True,
-            relaxation_config={"fmax": 0.01, "steps": 300},  # Tighter convergence
-            calculate_formation_energy=True,
-            calculate_energy_above_hull=True,
-            extract_embeddings=True,
-            timeout=120,  # Longer timeout
-            )
+        mlip_names=["orb", "mace", "uma"],
+        mlip_configs=mlip_configs,
+        relax_structures=True,
+        relaxation_config={"fmax": 0.01, "steps": 300},  # Tighter convergence
+        calculate_formation_energy=True,
+        calculate_energy_above_hull=True,
+        extract_embeddings=True,
+        timeout=120,  # Longer timeout
+    )
 
-    metric = FrechetDistance(reference_df=reference_data, mlips = ["orb", "mace", "uma"])
+    metric = FrechetDistance(reference_df=reference_data, mlips=["orb", "mace", "uma"])
 
     stability_preprocessor_result = preprocessor(valid_structures)
 
     default_args = metric._get_compute_attributes()
-    result = metric(
-        stability_preprocessor_result.processed_structures, **default_args
-    )
+    result = metric(stability_preprocessor_result.processed_structures, **default_args)
 
     # Check computation didn't fail
     assert len(result.failed_indices) == 0
