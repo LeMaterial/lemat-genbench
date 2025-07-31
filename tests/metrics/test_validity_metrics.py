@@ -2,16 +2,15 @@
 
 import numpy as np
 import pytest
-from pymatgen.core.structure import Structure
-from pymatgen.util.testing import PymatgenTest
-
-from lematerial_forgebench.metrics.validity_metrics import (
+from lemat_genbench.metrics.validity_metrics import (
     ChargeNeutralityMetric,
     CompositeValidityMetric,
     CoordinationEnvironmentMetric,
     MinimumInteratomicDistanceMetric,
     PhysicalPlausibilityMetric,
 )
+from pymatgen.core.structure import Structure
+from pymatgen.util.testing import PymatgenTest
 
 
 @pytest.fixture

@@ -1,8 +1,7 @@
 """Fixed tests for HHI benchmark - addressing the three failing test cases."""
 
+from lemat_genbench.benchmarks.hhi_benchmark import HHIBenchmark
 from pymatgen.util.testing import PymatgenTest
-
-from lematerial_forgebench.benchmarks.hhi_benchmark import HHIBenchmark
 
 
 def create_test_structures():
@@ -11,7 +10,7 @@ def create_test_structures():
     structures = [
         test.get_structure("Si"),
         test.get_structure("LiFePO4"),
-        test.get_structure("CsCl"),  
+        test.get_structure("CsCl"),
     ]
     return structures
 
@@ -31,7 +30,7 @@ class TestHHIBenchmark:
         assert len(result.evaluator_results) == 2
         assert "hhi_production" in result.evaluator_results
         assert "hhi_reserve" in result.evaluator_results
-        
+
         # Check final scores exist
         assert "hhi_production_mean" in result.final_scores
         assert "hhi_reserve_mean" in result.final_scores
@@ -40,7 +39,7 @@ class TestHHIBenchmark:
         # Check score types (should be float or NaN)
         for score_name in [
             "hhi_production_mean",
-            "hhi_reserve_mean", 
+            "hhi_reserve_mean",
             "hhi_combined_mean",
         ]:
             score_value = result.final_scores[score_name]
@@ -75,7 +74,7 @@ class TestHHIBenchmark:
             "hhi_production": {"combined_value": 4.0},
         }
         scores = benchmark.aggregate_evaluator_results(partial_results)
-        
+
         assert scores["hhi_production_mean"] == 4.0
         assert scores["hhi_reserve_mean"] is None
         assert scores["hhi_combined_mean"] == 4.0  # Should use available value
@@ -97,8 +96,4 @@ class TestHHIBenchmark:
         assert "hhi_reserve" in benchmark.evaluators
 
         # Check weights are normalized
-        assert (
-            abs(
-                benchmark.production_weight + benchmark.reserve_weight - 1.0
-            ) < 1e-6
-        )
+        assert abs(benchmark.production_weight + benchmark.reserve_weight - 1.0) < 1e-6

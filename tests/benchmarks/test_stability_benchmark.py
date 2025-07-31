@@ -1,11 +1,10 @@
 """Tests for stability benchmark."""
 
-from pymatgen.util.testing import PymatgenTest
-
-from lematerial_forgebench.benchmarks.stability_benchmark import StabilityBenchmark
-from lematerial_forgebench.preprocess.universal_stability_preprocess import (
+from lemat_genbench.benchmarks.stability_benchmark import StabilityBenchmark
+from lemat_genbench.preprocess.universal_stability_preprocess import (
     UniversalStabilityPreprocessor,
 )
+from pymatgen.util.testing import PymatgenTest
 
 """Tests for stability benchmark."""
 

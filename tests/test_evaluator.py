@@ -1,9 +1,8 @@
 import numpy as np
 import pytest
+from lemat_genbench.evaluator import MetricEvaluator
+from lemat_genbench.metrics.base import BaseMetric
 from pymatgen.core.structure import Structure
-
-from lematerial_forgebench.evaluator import MetricEvaluator
-from lematerial_forgebench.metrics.base import BaseMetric
 
 
 class DummyMetricA(BaseMetric):

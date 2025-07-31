@@ -1,12 +1,11 @@
 """Tests for stability metrics implementation."""
 
 import pytest
-from pymatgen.util.testing import PymatgenTest
-
-from lematerial_forgebench.metrics.stability_metrics import (
+from lemat_genbench.metrics.stability_metrics import (
     MetastabilityMetric,
     StabilityMetric,
 )
+from pymatgen.util.testing import PymatgenTest
 
 
 @pytest.fixture

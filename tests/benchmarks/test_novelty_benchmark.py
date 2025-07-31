@@ -4,12 +4,11 @@ import math
 from unittest.mock import Mock, patch
 
 import pytest
+from lemat_genbench.benchmarks.novelty_benchmark import NoveltyBenchmark
+from lemat_genbench.metrics.base import MetricResult
+from lemat_genbench.metrics.novelty_metric import NoveltyMetric
 from pymatgen.core.structure import Structure
 from pymatgen.util.testing import PymatgenTest
-
-from lematerial_forgebench.benchmarks.novelty_benchmark import NoveltyBenchmark
-from lematerial_forgebench.metrics.base import MetricResult
-from lematerial_forgebench.metrics.novelty_metric import NoveltyMetric
 
 
 def create_test_structures():
@@ -77,9 +76,7 @@ class TestNoveltyBenchmark:
         assert benchmark.config.name == "Custom Novelty Benchmark"
         assert benchmark.config.description == "Custom description"
         assert benchmark.config.metadata["test_key"] == "test_value"
-        assert (
-            benchmark.config.metadata["reference_dataset"] == "custom/dataset"
-        )
+        assert benchmark.config.metadata["reference_dataset"] == "custom/dataset"
         assert benchmark.config.metadata["reference_config"] == "custom_config"
         assert benchmark.config.metadata["max_reference_size"] == 100
 
@@ -125,9 +122,7 @@ class TestNoveltyBenchmark:
         nr = result.final_scores["novelty_ratio"]
         ns = result.final_scores["novelty_score"]
         assert nr == ns
-        assert isinstance(
-            result.final_scores["novel_structures_count"], (int, float)
-        )
+        assert isinstance(result.final_scores["novel_structures_count"], (int, float))
         assert isinstance(
             result.final_scores["total_structures_evaluated"], (int, float)
         )
