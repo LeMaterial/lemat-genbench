@@ -307,8 +307,8 @@ class TestSUNMetricMultiMLIP:
         assert sun_indices == []
         assert msun_indices == [3]
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_full_sun_computation_multi_mlip(
         self, mock_uniqueness_class, mock_novelty_class
     ):
@@ -393,8 +393,8 @@ class TestSUNMetricErrorHandling:
         assert sun_indices == [1]
         assert msun_indices == [0]
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_uniqueness_metric_failure(self, mock_uniqueness_class, mock_novelty_class):
         """Test behavior when uniqueness metric fails completely."""
         structures = create_test_structures_with_single_mlip_properties()
@@ -419,8 +419,8 @@ class TestSUNMetricErrorHandling:
         assert result.metrics["sun_count"] == 0
         assert result.metrics["msun_count"] == 0
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_novelty_metric_failure(self, mock_uniqueness_class, mock_novelty_class):
         """Test behavior when novelty metric fails completely."""
         structures = create_test_structures_with_single_mlip_properties()
@@ -450,8 +450,8 @@ class TestSUNMetricErrorHandling:
         assert result.metrics["sun_count"] == 0
         assert result.metrics["msun_count"] == 0
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_partial_sub_metric_failures(
         self, mock_uniqueness_class, mock_novelty_class
     ):
@@ -489,8 +489,8 @@ class TestSUNMetricErrorHandling:
 class TestSUNMetricResultValidation:
     """Test suite for validating MetricResult structure and values."""
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_metric_result_structure(self, mock_uniqueness_class, mock_novelty_class):
         """Test that MetricResult has the correct structure and values."""
         structures = create_test_structures_with_single_mlip_properties()
@@ -533,8 +533,8 @@ class TestSUNMetricResultValidation:
         assert result.primary_metric == "sun_rate"
         assert result.primary_metric in result.metrics
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_individual_values_assignment(
         self, mock_uniqueness_class, mock_novelty_class
     ):
@@ -558,8 +558,8 @@ class TestSUNMetricResultValidation:
         expected_values = [1.0, 0.5, 0.0]
         assert result.individual_values == expected_values
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_failed_indices_propagation(
         self, mock_uniqueness_class, mock_novelty_class
     ):
@@ -594,8 +594,8 @@ class TestSUNMetricResultValidation:
 class TestSUNMetricEdgeCases:
     """Test suite for statistical and edge case scenarios."""
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_all_stable_structures(self, mock_uniqueness_class, mock_novelty_class):
         """Test scenario where all structures are stable."""
         # Create structures that are all stable
@@ -627,8 +627,8 @@ class TestSUNMetricEdgeCases:
         assert result.metrics["sun_count"] == 3
         assert result.metrics["msun_count"] == 0
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_all_unstable_structures(self, mock_uniqueness_class, mock_novelty_class):
         """Test scenario where all structures are unstable."""
         # Create structures that are all unstable
@@ -660,8 +660,8 @@ class TestSUNMetricEdgeCases:
         assert result.metrics["sun_count"] == 0
         assert result.metrics["msun_count"] == 0
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_no_unique_structures(self, mock_uniqueness_class, mock_novelty_class):
         """Test scenario where no structures are unique."""
         structures = create_test_structures_with_single_mlip_properties()
@@ -790,8 +790,8 @@ class TestSUNMetricIntegrationWithPreprocessing:
 
             # Test SUN metric with preprocessed structures
             with (
-                patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric"),
-                patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric"),
+                patch("lemat_genbench.metrics.sun_metric.NoveltyMetric"),
+                patch("lemat_genbench.metrics.sun_metric.UniquenessMetric"),
             ):
                 # Mock uniqueness and novelty for deterministic testing
                 metric = SUNMetric()

@@ -12,9 +12,9 @@ import numpy as np
 from func_timeout import FunctionTimedOut, func_timeout
 from pymatgen.core import Structure
 
-from lematerial_forgebench.models.registry import get_calculator, list_available_models
-from lematerial_forgebench.preprocess.base import BasePreprocessor, PreprocessorConfig
-from lematerial_forgebench.utils.logging import logger
+from lemat_genbench.models.registry import get_calculator, list_available_models
+from lemat_genbench.preprocess.base import BasePreprocessor, PreprocessorConfig
+from lemat_genbench.utils.logging import logger
 
 
 @dataclass

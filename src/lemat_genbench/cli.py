@@ -18,6 +18,9 @@ from lemat_genbench.benchmarks.novelty_benchmark import (
     NoveltyBenchmark,
 )
 from lemat_genbench.benchmarks.sun_benchmark import SUNBenchmark
+from lemat_genbench.benchmarks.uniqueness_benchmark import (
+    UniquenessBenchmark,
+)
 from lemat_genbench.benchmarks.validity_benchmark import (
     ValidityBenchmark,
 )
@@ -28,10 +31,7 @@ from lemat_genbench.metrics.validity_metrics import (
     MinimumInteratomicDistanceMetric,
     PhysicalPlausibilityMetric,
 )
-from lematerial_forgebench.benchmarks.uniqueness_benchmark import (
-    UniquenessBenchmark,
-)
-from lematerial_forgebench.utils.logging import logger
+from lemat_genbench.utils.logging import logger
 
 CONFIGS_DIR = Path(__file__).parent.parent / "config"
 

@@ -5,8 +5,8 @@ from unittest.mock import Mock, patch
 
 from pymatgen.core.structure import Structure
 
-from lematerial_forgebench.benchmarks.sun_benchmark import SUNBenchmark
-from lematerial_forgebench.metrics.sun_metric import MetaSUNMetric, SUNMetric
+from lemat_genbench.benchmarks.sun_benchmark import SUNBenchmark
+from lemat_genbench.metrics.sun_metric import MetaSUNMetric, SUNMetric
 
 
 def create_test_structures():
@@ -164,13 +164,17 @@ class TestSUNBenchmark:
 
         # Check MetaSUN evaluator
         metasun_evaluator = benchmark.evaluators["metasun"]
-        assert metasun_evaluator.config.name == "metasun"  # Name is set to the key in the dict
+        assert (
+            metasun_evaluator.config.name == "metasun"
+        )  # Name is set to the key in the dict
         assert "metasun" in metasun_evaluator.metrics
         assert isinstance(metasun_evaluator.metrics["metasun"], MetaSUNMetric)
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
-    def test_aggregate_evaluator_results_basic(self, mock_uniqueness_class, mock_novelty_class):
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
+    def test_aggregate_evaluator_results_basic(
+        self, mock_uniqueness_class, mock_novelty_class
+    ):
         """Test basic result aggregation."""
         benchmark = SUNBenchmark(include_metasun=False)
 
@@ -208,9 +212,11 @@ class TestSUNBenchmark:
         assert final_scores["total_structures_evaluated"] == 4
         assert final_scores["failed_count"] == 0
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
-    def test_aggregate_evaluator_results_with_metasun(self, mock_uniqueness_class, mock_novelty_class):
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
+    def test_aggregate_evaluator_results_with_metasun(
+        self, mock_uniqueness_class, mock_novelty_class
+    ):
         """Test result aggregation with both SUN and MetaSUN evaluators."""
         benchmark = SUNBenchmark(include_metasun=True)
 
@@ -296,8 +302,8 @@ class TestSUNBenchmark:
         assert final_scores["sun_count"] == 3
         assert final_scores["total_structures_evaluated"] == 10
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_full_evaluation_mocked(self, mock_uniqueness_class, mock_novelty_class):
         """Test full benchmark evaluation with mocked sub-metrics."""
         # Mock uniqueness: all structures are unique
@@ -347,19 +353,22 @@ class TestSUNBenchmark:
         structures.append(structure)
 
         # This should not crash, but might return NaN values
-        with patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric"), \
-             patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric"):
+        with (
+            patch("lemat_genbench.metrics.sun_metric.NoveltyMetric"),
+            patch("lemat_genbench.metrics.sun_metric.UniquenessMetric"),
+        ):
             result = benchmark.evaluate(structures)
             assert result is not None
-
 
 
 class TestSUNBenchmarkIntegration:
     """Integration tests for SUNBenchmark with real metric components."""
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
-    def test_with_multi_mlip_structures(self, mock_uniqueness_class, mock_novelty_class):
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
+    def test_with_multi_mlip_structures(
+        self, mock_uniqueness_class, mock_novelty_class
+    ):
         """Test benchmark with multi-MLIP preprocessed structures."""
         # Mock all structures as unique and novel
         mock_result = Mock()
@@ -379,8 +388,8 @@ class TestSUNBenchmarkIntegration:
         assert "sun_rate" in result.final_scores
         assert result.metadata["n_structures"] == 2
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_benchmark_consistency(self, mock_uniqueness_class, mock_novelty_class):
         """Test that benchmark results are consistent across multiple runs."""
         # Mock deterministic results
@@ -405,15 +414,15 @@ class TestSUNBenchmarkIntegration:
     def test_benchmark_with_empty_structures(self):
         """Test benchmark behavior with empty structure list."""
         benchmark = SUNBenchmark()
-        
+
         result = benchmark.evaluate([])
 
         # Should handle empty input gracefully
         assert result is not None
         assert result.metadata["n_structures"] == 0
 
-    @patch("lematerial_forgebench.metrics.sun_metric.NoveltyMetric")
-    @patch("lematerial_forgebench.metrics.sun_metric.UniquenessMetric")
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_benchmark_scaling(self, mock_uniqueness_class, mock_novelty_class):
         """Test benchmark performance with larger structure sets."""
         # Mock results for larger set
@@ -426,7 +435,7 @@ class TestSUNBenchmarkIntegration:
         mock_novelty_class.return_value.compute.return_value = mock_result
 
         benchmark = SUNBenchmark(include_metasun=False)
-        
+
         # Create larger set of structures
         structures = []
         for i in range(n_structures):
@@ -503,9 +512,10 @@ def manual_test():
     except Exception as e:
         print(f"Manual test failed: {e}")
         import traceback
+
         traceback.print_exc()
         return False
 
 
 if __name__ == "__main__":
-    manual_test() 
+    manual_test()
