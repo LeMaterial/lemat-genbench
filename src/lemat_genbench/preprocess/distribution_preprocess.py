@@ -1,11 +1,12 @@
 from dataclasses import dataclass
 
+from pymatgen.core import Structure
+
 from lemat_genbench.preprocess.base import BasePreprocessor, PreprocessorConfig
 from lemat_genbench.utils.distribution_utils import (
     map_space_group_to_crystal_system,
     one_hot_encode_composition,
 )
-from pymatgen.core import Structure
 
 
 @dataclass
