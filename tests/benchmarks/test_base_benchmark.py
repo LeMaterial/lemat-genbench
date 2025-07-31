@@ -4,9 +4,10 @@ from typing import Any
 
 import numpy as np
 import pytest
+from pymatgen.core.structure import Lattice, Structure
+
 from lemat_genbench.benchmarks.base import BaseBenchmark, EvaluatorConfig
 from lemat_genbench.metrics import BaseMetric
-from pymatgen.core.structure import Lattice, Structure
 
 
 class DummyMetric(BaseMetric):

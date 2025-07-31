@@ -4,11 +4,12 @@ import math
 from unittest.mock import Mock, patch
 
 import pytest
+from pymatgen.core.structure import Structure
+from pymatgen.util.testing import PymatgenTest
+
 from lemat_genbench.benchmarks.novelty_benchmark import NoveltyBenchmark
 from lemat_genbench.metrics.base import MetricResult
 from lemat_genbench.metrics.novelty_metric import NoveltyMetric
-from pymatgen.core.structure import Structure
-from pymatgen.util.testing import PymatgenTest
 
 
 def create_test_structures():

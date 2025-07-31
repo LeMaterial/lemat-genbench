@@ -4,9 +4,10 @@ import traceback
 
 import numpy as np
 import pytest
+from pymatgen.core.structure import Structure
+
 from lemat_genbench.metrics.base import MetricResult
 from lemat_genbench.metrics.novelty_metric import NoveltyMetric
-from pymatgen.core.structure import Structure
 
 NOVELTY_TESTS_AVAILABLE = True
 

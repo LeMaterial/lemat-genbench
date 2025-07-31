@@ -3,10 +3,11 @@ from dataclasses import dataclass
 
 import numpy as np
 from datasets import load_dataset
+from pymatgen.core import Structure
+
 from lemat_genbench.preprocess.universal_stability_preprocess import (
     UniversalStabilityPreprocessor,
 )
-from pymatgen.core import Structure
 
 
 @dataclass

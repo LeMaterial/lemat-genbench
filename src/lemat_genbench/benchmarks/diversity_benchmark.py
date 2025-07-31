@@ -7,6 +7,7 @@ structures.
 from typing import Any, Dict
 
 import numpy as np
+
 from lemat_genbench.benchmarks.base import BaseBenchmark
 from lemat_genbench.evaluator import EvaluationResult, EvaluatorConfig
 from lemat_genbench.metrics.diversity_metric import (

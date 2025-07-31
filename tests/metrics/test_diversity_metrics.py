@@ -5,6 +5,8 @@ Note: Diversity Assumes stable Materials, and ignores unstable or invalid materi
 
 import pandas as pd
 import pytest
+from pymatgen.core import Structure
+
 from lemat_genbench.metrics.base import MetricResult
 from lemat_genbench.metrics.diversity_metric import (
     ElementDiversityMetric,
@@ -12,7 +14,6 @@ from lemat_genbench.metrics.diversity_metric import (
     SiteNumberComponentMetric,
     SpaceGroupDiversityMetric,
 )
-from pymatgen.core import Structure
 
 trial_data_file_path = "data/trial_data/lemat_sample.pkl"
 

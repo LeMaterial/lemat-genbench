@@ -11,11 +11,12 @@ from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 
 import numpy as np
+from pymatgen.core.structure import Structure
+
 from lemat_genbench.metrics.base import BaseMetric, MetricConfig, MetricResult
 from lemat_genbench.metrics.novelty_metric import NoveltyMetric
 from lemat_genbench.metrics.uniqueness_metric import UniquenessMetric
 from lemat_genbench.utils.logging import logger
-from pymatgen.core.structure import Structure
 
 warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -465,11 +466,12 @@ class MetaSUNMetric(SUNMetric):
 if __name__ == "__main__":
     import warnings
 
+    from pymatgen.util.testing import PymatgenTest
+
     from lemat_genbench.metrics.sun_metric import SUNMetric
     from lemat_genbench.preprocess.universal_stability_preprocess import (
         UniversalStabilityPreprocessor,
     )
-    from pymatgen.util.testing import PymatgenTest
 
     warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
     warnings.filterwarnings(

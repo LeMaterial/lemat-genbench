@@ -2,6 +2,12 @@
 
 import tempfile
 
+from pymatgen.core import Structure
+from pymatgen.entries.compatibility import MaterialsProject2020Compatibility
+from pymatgen.entries.computed_entries import ComputedStructureEntry
+from pymatgen.io.vasp.inputs import Incar, Poscar
+from pymatgen.io.vasp.sets import MPRelaxSet
+
 from lemat_genbench.models.registry import get_calculator
 from lemat_genbench.utils.logging import logger
 from lemat_genbench.utils.relaxers.registry import (
@@ -9,11 +15,6 @@ from lemat_genbench.utils.relaxers.registry import (
     RelaxationResult,
     register_relaxer,
 )
-from pymatgen.core import Structure
-from pymatgen.entries.compatibility import MaterialsProject2020Compatibility
-from pymatgen.entries.computed_entries import ComputedStructureEntry
-from pymatgen.io.vasp.inputs import Incar, Poscar
-from pymatgen.io.vasp.sets import MPRelaxSet
 
 
 class BaseVASPRelaxer(BaseRelaxer):

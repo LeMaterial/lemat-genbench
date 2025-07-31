@@ -2,8 +2,9 @@ import json
 from pathlib import Path
 
 import pandas as pd
-from lemat_genbench.utils.logging import logger
 from pymatgen.core import Structure
+
+from lemat_genbench.utils.logging import logger
 
 
 def format_structures(

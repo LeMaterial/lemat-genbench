@@ -1,5 +1,7 @@
 """Equiformer v2 model calculator implementation."""
 
+from pymatgen.core.structure import Structure
+
 from lemat_genbench.models.base import (
     BaseMLIPCalculator,
     CalculationResult,
@@ -11,7 +13,6 @@ from lemat_genbench.models.equiformer.embeddings import (
     EquiformerEmbeddingExtractor,
 )
 from lemat_genbench.utils.logging import logger
-from pymatgen.core.structure import Structure
 
 try:
     from fairchem.core import OCPCalculator as EquiformerASECalculator

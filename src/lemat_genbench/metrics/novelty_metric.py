@@ -11,11 +11,12 @@ from typing import Any, Dict, List, Optional, Set
 
 import numpy as np
 from datasets import load_dataset
-from lemat_genbench.metrics.base import BaseMetric, MetricConfig
-from lemat_genbench.utils.logging import logger
 from material_hasher.hasher.bawl import BAWLHasher
 from pymatgen.analysis.local_env import EconNN
 from pymatgen.core.structure import Structure
+
+from lemat_genbench.metrics.base import BaseMetric, MetricConfig
+from lemat_genbench.utils.logging import logger
 
 warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
 warnings.filterwarnings("ignore", category=FutureWarning)

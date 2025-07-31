@@ -27,6 +27,9 @@ from dataclasses import dataclass
 from typing import Any, Dict
 
 import numpy as np
+from pymatgen.core.structure import Structure
+from scipy.special import rel_entr
+
 from lemat_genbench.metrics import BaseMetric
 from lemat_genbench.metrics.base import MetricConfig
 from lemat_genbench.utils.diversity_utils import (
@@ -34,8 +37,6 @@ from lemat_genbench.utils.diversity_utils import (
     compute_vendi_score_with_uncertainty,
 )
 from lemat_genbench.utils.logging import logger
-from pymatgen.core.structure import Structure
-from scipy.special import rel_entr
 
 """
 -------------------------------------------------------------------------------

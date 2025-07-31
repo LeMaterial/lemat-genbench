@@ -8,9 +8,10 @@ import time
 from dataclasses import dataclass
 
 import numpy as np
+from pymatgen.core.structure import Structure
+
 from lemat_genbench.metrics.base import BaseMetric, MetricConfig, MetricResult
 from lemat_genbench.utils.logging import logger
-from pymatgen.core.structure import Structure
 
 
 @dataclass

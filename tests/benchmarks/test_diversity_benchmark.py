@@ -1,9 +1,10 @@
 """Tests for validity benchmark."""
 
+from pymatgen.util.testing import PymatgenTest
+
 from lemat_genbench.benchmarks.diversity_benchmark import (
     DiversityBenchmark,
 )
-from pymatgen.util.testing import PymatgenTest
 
 
 class TestDiversityBenchmark:

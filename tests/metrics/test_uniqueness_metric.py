@@ -4,9 +4,10 @@ import traceback
 
 import numpy as np
 import pytest
+from pymatgen.core.structure import Structure
+
 from lemat_genbench.metrics.base import MetricResult
 from lemat_genbench.metrics.uniqueness_metric import UniquenessMetric
-from pymatgen.core.structure import Structure
 
 
 def create_test_structures():
