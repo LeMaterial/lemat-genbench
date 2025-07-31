@@ -1,6 +1,6 @@
 # Copyright 2025 Entalpic
 [project]
-name = "lematerial-forgebench"
+name = "lemat-genbench"
 version = "0.1.0"
 description = "Benchmark and metrics materials generative models"
 readme = "README.md"
