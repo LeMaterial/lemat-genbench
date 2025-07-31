@@ -4,10 +4,9 @@ import traceback
 
 import numpy as np
 import pytest
+from lemat_genbench.metrics.base import MetricResult
+from lemat_genbench.metrics.uniqueness_metric import UniquenessMetric
 from pymatgen.core.structure import Structure
-
-from lematerial_forgebench.metrics.base import MetricResult
-from lematerial_forgebench.metrics.uniqueness_metric import UniquenessMetric
 
 
 def create_test_structures():

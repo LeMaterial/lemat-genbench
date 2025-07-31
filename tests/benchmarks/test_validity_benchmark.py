@@ -1,9 +1,8 @@
 """Tests for validity benchmark."""
 
+from lemat_genbench.benchmarks.validity_benchmark import ValidityBenchmark
 from pymatgen.core.structure import Structure
 from pymatgen.util.testing import PymatgenTest
-
-from lematerial_forgebench.benchmarks.validity_benchmark import ValidityBenchmark
 
 
 class TestValidityBenchmark:

@@ -2,9 +2,8 @@ from typing import Any
 
 import numpy as np
 import pytest
+from lemat_genbench.metrics.base import BaseMetric, MetricResult
 from pymatgen.core.structure import Structure
-
-from lematerial_forgebench.metrics.base import BaseMetric, MetricResult
 
 
 class CountAtomsMetric(BaseMetric):

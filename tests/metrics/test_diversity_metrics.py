@@ -1,19 +1,18 @@
 """
-Unit Test File for Diversity Metrics. File path at src/lematerial_forgebench/metrics/diversity_metric.py
+Unit Test File for Diversity Metrics. File path at src/lemat_genbench/metrics/diversity_metric.py
 Note: Diversity Assumes stable Materials, and ignores unstable or invalid materials
 """
 
 import pandas as pd
 import pytest
-from pymatgen.core import Structure
-
-from lematerial_forgebench.metrics.base import MetricResult
-from lematerial_forgebench.metrics.diversity_metric import (
+from lemat_genbench.metrics.base import MetricResult
+from lemat_genbench.metrics.diversity_metric import (
     ElementDiversityMetric,
     PhysicalSizeComponentMetric,
     SiteNumberComponentMetric,
     SpaceGroupDiversityMetric,
 )
+from pymatgen.core import Structure
 
 trial_data_file_path = "data/trial_data/lemat_sample.pkl"
 

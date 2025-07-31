@@ -168,7 +168,7 @@ cython_debug/
 
 # PyTorch Lightning
 lightning_logs/
-src/lematerial_forgebench/.DS_Store
+src/lemat_genbench/.DS_Store
 
 # Ignore .gz
 *.gz

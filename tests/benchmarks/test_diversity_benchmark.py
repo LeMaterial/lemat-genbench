@@ -1,11 +1,9 @@
 """Tests for validity benchmark."""
 
-
-from pymatgen.util.testing import PymatgenTest
-
-from lematerial_forgebench.benchmarks.diversity_benchmark import (
+from lemat_genbench.benchmarks.diversity_benchmark import (
     DiversityBenchmark,
 )
+from pymatgen.util.testing import PymatgenTest
 
 
 class TestDiversityBenchmark:
@@ -54,4 +52,3 @@ class TestDiversityBenchmark:
         assert "space_group_diversity" in result.final_scores
         assert "site_number_diversity" in result.final_scores
         assert "physical_size_diversity" in result.final_scores
-

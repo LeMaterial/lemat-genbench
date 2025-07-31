@@ -1320,7 +1320,7 @@ wheels = [
 ]
 
 [[package]]
-name = "lematerial-forgebench"
+name = "lemat-genbench"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

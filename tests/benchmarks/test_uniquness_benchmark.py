@@ -4,14 +4,13 @@ import math
 from unittest.mock import Mock, patch
 
 import pytest
-from pymatgen.core.structure import Structure
-from pymatgen.util.testing import PymatgenTest
-
-from lematerial_forgebench.benchmarks.uniqueness_benchmark import (
+from lemat_genbench.benchmarks.uniqueness_benchmark import (
     UniquenessBenchmark,
 )
-from lematerial_forgebench.metrics.base import MetricResult
-from lematerial_forgebench.metrics.uniqueness_metric import UniquenessMetric
+from lemat_genbench.metrics.base import MetricResult
+from lemat_genbench.metrics.uniqueness_metric import UniquenessMetric
+from pymatgen.core.structure import Structure
+from pymatgen.util.testing import PymatgenTest
 
 
 def create_test_structures():

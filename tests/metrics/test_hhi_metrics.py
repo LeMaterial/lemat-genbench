@@ -2,16 +2,15 @@
 
 import numpy as np
 import pytest
-from pymatgen.core import Structure
-
-from lematerial_forgebench.metrics.base import MetricResult
-from lematerial_forgebench.metrics.hhi_metrics import (
+from lemat_genbench.metrics.base import MetricResult
+from lemat_genbench.metrics.hhi_metrics import (
     BaseHHIMetric,
     HHIProductionMetric,
     HHIReserveMetric,
     _load_hhi_data,
     compound_hhi,
 )
+from pymatgen.core import Structure
 
 
 def create_test_structures():
@@ -246,10 +245,7 @@ class TestHHIProductionMetric:
 
         # Check that individual values are also in the metrics dictionary
         assert "individual_hhi_values" in result.metrics
-        assert (
-            result.metrics["individual_hhi_values"]
-            == result.individual_values
-        )
+        assert result.metrics["individual_hhi_values"] == result.individual_values
         assert len(result.metrics["individual_hhi_values"]) == len(structures)
 
         # Verify individual values are accessible both ways
@@ -308,9 +304,7 @@ class TestHHIProductionMetric:
         structures = create_test_structures()
 
         # Get individual values with structures
-        structure_values = metric.get_individual_values_with_structures(
-            structures
-        )
+        structure_values = metric.get_individual_values_with_structures(structures)
 
         # Should have same number as input structures (assuming no failures)
         assert len(structure_values) == len(structures)
@@ -390,9 +384,7 @@ class TestCompoundHHIFunction:
         assert abs(result - expected) < 1e-6
 
         # Test without scaling
-        result_unscaled = compound_hhi(
-            "NaCl", hhi_production, scale_to_0_10=False
-        )
+        result_unscaled = compound_hhi("NaCl", hhi_production, scale_to_0_10=False)
         expected_unscaled = (hhi_production["Na"] + hhi_production["Cl"]) / 2
         assert abs(result_unscaled - expected_unscaled) < 1e-6
 
@@ -438,7 +430,7 @@ class TestErrorHandling:
 
     def test_missing_element_handling(self):
         """
-        Test that missing elements are assigned maximum HHI 
+        Test that missing elements are assigned maximum HHI
         value instead of erroring.
         """
         # Create a mock HHI table missing some elements
@@ -510,9 +502,7 @@ class TestErrorHandling:
         assert abs(result - 10.0) < 1e-6
 
         # Test unscaled
-        result_unscaled = compound_hhi(
-            "NaCl", mock_hhi_table, scale_to_0_10=False
-        )
+        result_unscaled = compound_hhi("NaCl", mock_hhi_table, scale_to_0_10=False)
         assert abs(result_unscaled - 10000.0) < 1e-6
 
         # Test mixed (some elements present, some missing)
