@@ -593,3 +593,7 @@ if __name__ == "__main__":
         import traceback
 
         traceback.print_exc()
+
+
+# Alias for backward compatibility and expected import name
+MultiMLIPStabilityBenchmark = StabilityBenchmark

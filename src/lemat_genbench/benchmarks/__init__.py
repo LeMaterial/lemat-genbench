@@ -8,7 +8,7 @@ Each benchmark represents a different aspect of quality assessment.
 from .base import BaseBenchmark, BenchmarkConfig, BenchmarkResult
 from .distribution_benchmark import DistributionBenchmark
 from .hhi_benchmark import HHIBenchmark
-from .multi_mlip_stability_benchmark import MultiMLIPStabilityBenchmark
+from .multi_mlip_stability_benchmark import StabilityBenchmark
 from .novelty_benchmark import NoveltyBenchmark
 from .sun_benchmark import SUNBenchmark
 from .uniqueness_benchmark import UniquenessBenchmark
@@ -22,9 +22,9 @@ __all__ = [
     # Benchmark implementations
     "DistributionBenchmark",
     "HHIBenchmark",
-    "MultiMLIPStabilityBenchmark",
     "NoveltyBenchmark", 
     "SUNBenchmark",
+    "StabilityBenchmark",
     "UniquenessBenchmark",
     "ValidityBenchmark",
 ]
