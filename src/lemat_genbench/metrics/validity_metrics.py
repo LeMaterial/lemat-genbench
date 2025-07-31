@@ -11,12 +11,6 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 import numpy as np
-from lemat_genbench.metrics.base import BaseMetric, MetricConfig, MetricResult
-from lemat_genbench.utils.logging import logger
-from lemat_genbench.utils.oxidation_state import (
-    compositional_oxi_state_guesses,
-    get_inequivalent_site_info,
-)
 from pymatgen.analysis.bond_valence import BVAnalyzer, calculate_bv_sum
 from pymatgen.analysis.local_env import (
     CrystalNN,
@@ -27,6 +21,13 @@ from pymatgen.core import Composition
 from pymatgen.core.periodic_table import Element
 from pymatgen.core.structure import Structure
 from pymatgen.io.cif import CifParser, CifWriter
+
+from lematerial_forgebench.metrics.base import BaseMetric, MetricConfig, MetricResult
+from lematerial_forgebench.utils.logging import logger
+from lematerial_forgebench.utils.oxidation_state import (
+    compositional_oxi_state_guesses,
+    get_inequivalent_site_info,
+)
 
 
 @dataclass
@@ -975,6 +976,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
             print(len(structure))
             print(len(recovered_structure))
 
+
             if (
                 structure.composition.reduced_formula
                 == recovered_structure.composition.reduced_formula
@@ -982,7 +984,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
             ):
                 checks_passed += 1
             elif len(structure) == len(recovered_structure.to_conventional()):
-                checks_passed += 1
+                    checks_passed += 1 
             else:
                 logger.debug(
                     f"Format check failed: original={structure.composition}, "
