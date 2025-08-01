@@ -10,6 +10,9 @@ from pathlib import Path
 import click
 import yaml
 
+from lemat_genbench.benchmarks.diversity_benchmark import (
+    DiversityBenchmark,
+)
 from lemat_genbench.benchmarks.hhi_benchmark import HHIBenchmark
 from lemat_genbench.benchmarks.multi_mlip_stability_benchmark import (
     StabilityBenchmark as MultiMLIPStabilityBenchmark,
@@ -178,6 +181,36 @@ def load_benchmark_config(config_name: str) -> dict:
         }
         with open(config_path, "w") as f:
             yaml.dump(multi_mlip_stability_config, f, default_flow_style=False)
+
+    # Add Diversity config creation
+    if not config_path.exists() and config_path.name == "diversity.yaml":
+        diversity_config = {
+            "type": "diversity",
+            "description": "Diversity Benchmark for Materials Generation - evaluates structural diversity across multiple dimensions",
+            "version": "0.1.0",
+            "metric_configs": {
+                "element_diversity": {
+                    "reference_element_space": 118,
+                },
+                "space_group_diversity": {
+                    "reference_space_group_space": 230,
+                },
+                "physical_size_diversity": {
+                    "density_bin_size": 0.5,
+                    "lattice_bin_size": 0.5,
+                    "packing_factor_bin_size": 0.05,
+                },
+                "site_number_diversity": {
+                    # No additional parameters needed
+                },
+            },
+            "metadata": {
+                "reference": "Diversity metrics for evaluating structural variety in generated materials",
+                "use_case": "Assessing whether generated structures explore diverse chemical and structural space",
+            },
+        }
+        with open(config_path, "w") as f:
+            yaml.dump(diversity_config, f, default_flow_style=False)
 
     if not config_path.exists():
         raise click.ClickException(
@@ -361,10 +394,21 @@ def main(input: str, config_name: str, output: str):
                 },
             )
 
+        elif benchmark_type == "diversity":
+            # Create diversity benchmark from config
+            benchmark = DiversityBenchmark(
+                name=config.get("name", "DiversityBenchmark"),
+                description=config.get("description"),
+                metadata={
+                    "version": config.get("version", "0.1.0"),
+                    **(config.get("metadata", {})),
+                },
+            )
+
         else:
             raise ValueError(
                 f"Unknown benchmark type: {benchmark_type}. "
-                "Available types: validity, multi_mlip_stability, uniqueness, novelty, hhi, sun"
+                "Available types: validity, multi_mlip_stability, uniqueness, novelty, hhi, sun, diversity"
             )
 
         # Run benchmark

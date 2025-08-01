@@ -1,0 +1,33 @@
+type: diversity
+description: "Diversity Benchmark for Materials Generation - evaluates structural diversity across multiple dimensions"
+version: "0.1.0"
+
+# Metric configurations for diversity evaluation
+metric_configs:
+  element_diversity:
+    reference_element_space: 118  # Total number of elements to consider for coverage calculation
+    
+  space_group_diversity:
+    reference_space_group_space: 230  # Total number of space groups (230 in 3D)
+    
+  physical_size_diversity:
+    density_bin_size: 0.5  # Bin size for density histogram (g/cm³)
+    lattice_bin_size: 0.5  # Bin size for lattice parameter histograms (Å)
+    packing_factor_bin_size: 0.05  # Bin size for packing factor histogram
+    
+  site_number_diversity:
+    # No additional parameters needed for site number diversity
+    
+# Metadata
+metadata:
+  reference: "Diversity metrics for evaluating structural variety in generated materials"
+  use_case: "Assessing whether generated structures explore diverse chemical and structural space"
+  metrics_included:
+    - "Element diversity: Shannon entropy of elemental composition distribution"
+    - "Space group diversity: Shannon entropy of space group distribution" 
+    - "Site number diversity: Shannon entropy of site count distribution"
+    - "Physical size diversity: Combined diversity of density, lattice parameters, and packing factors"
+  notes:
+    - "Returns 4 separate diversity scores rather than a single combined score"
+    - "Higher scores indicate greater diversity in the respective structural dimension"
+    - "Physical size diversity combines density, lattice parameter, and packing factor diversity"
