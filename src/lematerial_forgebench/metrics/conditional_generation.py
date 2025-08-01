@@ -84,6 +84,8 @@ class DiscreteTargetMetric(BaseMetric):
     def value_extractor(structure: Structure) -> Any:
         """Extract the relevant discrete value from a structure.
 
+        Used by :meth:`compute_structure` to extract the relevant discrete value from a structure.
+
         This method must be implemented by subclasses.
         """
         raise NotImplementedError("Subclasses must implement value_extractor")
@@ -230,7 +232,11 @@ class ContinuousTargetMetric(BaseMetric):
         return cls.DISTANCE_METRICS[distance_metric](value, target_value)
 
     def aggregate_results(self, values: list[float]) -> Dict[str, Any]:
-        """Aggregate results into final metric values."""
+        """Aggregate results into final metric values.
+
+        Expects ``values`` to represent a list of *distance* values, typically
+        computed by :meth:`compute_structure`.
+        """
         valid_values = [v for v in values if not np.isnan(v)]
 
         if not valid_values:
