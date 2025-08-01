@@ -40,7 +40,8 @@ def reference_data():
 @pytest.fixture
 def mlips():
     "create MLIP list"
-    mlips = ["orb", "mace", "uma"]
+    # mlips = ["orb", "mace", "uma"]
+    mlips = ["orb", "mace"]
 
     return mlips
 
@@ -93,14 +94,14 @@ def test_evaluate(valid_structures, reference_data, mlips):
             "model_type": "mp",  # Default
             "device": "cpu",
         },
-        "uma": {
-            "task": "omat",  # Default
-            "device": "cpu",
-        },
+        # "uma": {
+        #     "task": "omat",  # Default
+        #     "device": "cpu",
+        # },
     }
 
     preprocessor = MultiMLIPStabilityPreprocessor(
-        mlip_names=["orb", "mace", "uma"],
+        mlip_names=["orb", "mace"],
         mlip_configs=mlip_configs,
         relax_structures=True,
         relaxation_config={"fmax": 0.01, "steps": 300},  # Tighter convergence

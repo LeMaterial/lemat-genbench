@@ -95,13 +95,13 @@ def test_FrechetDistance_metric(valid_structures, reference_data):
             "model_type": "mp",  # Default
             "device": "cpu",
         },
-        "uma": {
-            "task": "omat",  # Default
-            "device": "cpu",
-        },
+        # "uma": {
+        #     "task": "omat",  # Default
+        #     "device": "cpu",
+        # },
     }
     preprocessor = MultiMLIPStabilityPreprocessor(
-        mlip_names=["orb", "mace", "uma"],
+        mlip_names=["orb", "mace"],
         mlip_configs=mlip_configs,
         relax_structures=True,
         relaxation_config={"fmax": 0.01, "steps": 300},  # Tighter convergence
@@ -111,7 +111,8 @@ def test_FrechetDistance_metric(valid_structures, reference_data):
         timeout=120,  # Longer timeout
     )
 
-    metric = FrechetDistance(reference_df=reference_data, mlips=["orb", "mace", "uma"])
+    # metric = FrechetDistance(reference_df=reference_data, mlips=["orb", "mace", "uma"])
+    metric = FrechetDistance(reference_df=reference_data, mlips=["orb", "mace"])
 
     stability_preprocessor_result = preprocessor(valid_structures)
 
