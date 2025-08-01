@@ -207,13 +207,13 @@ def frechet_distance(
 def compute_frechetdist(reference_data, generated_crystals):
 
     X = np.stack(reference_data, axis = 0)
-    mu1 = np.mean(X, axis = 0) # mean generated distribution 
+    mu1 = np.mean(X, axis = 0) # mean reference distribution
 
     Y = np.stack(generated_crystals, axis = 0)
-    mu2 = np.mean(Y, axis = 0) # mean reference distribution
+    mu2 = np.mean(Y, axis = 0) # mean generated distribution 
 
-    sigma1 = np.cov(X, rowvar = False) # covariance matrix generated distribution 
-    sigma2 = np.cov(Y, rowvar = False) # covariance matrix reference distribution
+    sigma1 = np.cov(X, rowvar = False) # covariance matrix reference distribution 
+    sigma2 = np.cov(Y, rowvar = False) # covariance matrix generated distribution
 
 
     distance = frechet_distance(mu1=mu1, mu2=mu2, sigma1=sigma1, sigma2=sigma2)
