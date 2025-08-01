@@ -208,7 +208,7 @@ def build_oxi_dict(df):
     oxi_dict = {}
     for i in range(0, len(df)):
         row = df.iloc[i]
-        if row.ValencesCalculated == True:
+        if row.ValencesCalculated:
             for key, value in np.asarray(
                 [row.Sites["species"], row.Sites["multiplicities"]]
             ).T:
