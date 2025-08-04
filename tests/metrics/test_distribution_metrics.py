@@ -56,7 +56,7 @@ def test_MMD_metric(valid_structures):
     distribution_preprocessor = DistributionPreprocessor()
     preprocessor_result = distribution_preprocessor(valid_structures)
 
-    metric = MMD()  # Uses default lightweight reference file
+    metric = MMD()  # Uses default 15K sample file
     result = metric.compute(
         preprocessor_result.processed_structures, **metric._get_compute_attributes()
     )

@@ -182,13 +182,13 @@ def gaussian_kernel(x, y, sigma=1.0):
     return np.exp(-pairwise_dists / (2 * sigma**2))
 
 
-def compute_mmd(generated_crystals, crystal_param, reference_values_file="data/lematbulk_mmd_values.pkl", sigma=1.0, max_reference_samples=15000):
+def compute_mmd(generated_crystals, crystal_param, reference_values_file="data/lematbulk_mmd_values_15k.pkl", sigma=1.0):
     """
-    Compute MMD using pre-computed reference values with reproducible sampling.
+    Compute MMD using pre-computed 15K reference sample for reproducible results.
     
-    Uses a fixed 15K sample (created with seed=42) from the full 5.3M LeMat-Bulk dataset
-    for reproducible and efficient MMD computation. The sample indices are stored in
-    data/lematbulk_mmd_sample_indices_15k.npy for consistency across runs.
+    Uses a fixed 15K sample from the full 5.3M LeMat-Bulk dataset for reproducible and
+    efficient MMD computation. The sample was created using seed=42 and stored in a
+    lightweight pickle file (0.3MB vs 122MB original).
     
     Parameters
     ----------
@@ -197,12 +197,9 @@ def compute_mmd(generated_crystals, crystal_param, reference_values_file="data/l
     crystal_param : str
         Property name (Volume, Density(g/cm^3), Density(atoms/A^3))
     reference_values_file : str
-        Path to pickle file containing pre-computed reference values
+        Path to pickle file containing 15K sampled reference values
     sigma : float
         Gaussian kernel bandwidth parameter
-    max_reference_samples : int
-        Maximum number of reference samples to use. Default 15,000 uses the
-        pre-computed reproducible sample for optimal accuracy and performance.
         
     Returns
     -------
@@ -211,10 +208,8 @@ def compute_mmd(generated_crystals, crystal_param, reference_values_file="data/l
         
     Notes
     -----
-    For reproducibility, this function uses a fixed 15K sample (indices stored in
-    data/lematbulk_mmd_sample_indices_15k.npy) created with numpy seed=42 from the
-    full 5,335,299 LeMat-Bulk samples. This ensures consistent results across runs
-    while maintaining statistical validity.
+    Uses a fixed 15K sample created from indices with numpy seed=42 from the
+    full 5,335,299 LeMat-Bulk samples. This ensures consistent, fast results.
     """
     import pickle
     
@@ -223,40 +218,21 @@ def compute_mmd(generated_crystals, crystal_param, reference_values_file="data/l
         generated_crystals[crystal_param].to_numpy()
     ).T
     
-    # Load pre-computed reference values
+    # Load pre-computed 15K reference sample
     try:
         with open(reference_values_file, "rb") as file:
-            all_reference_values = pickle.load(file)
+            reference_data = pickle.load(file)
         
-        if crystal_param not in all_reference_values:
-            raise ValueError(f"Property '{crystal_param}' not found in reference values")
+        if crystal_param not in reference_data:
+            raise ValueError(f"Property '{crystal_param}' not found in reference data. Available: {list(reference_data.keys())}")
             
-        reference_values = all_reference_values[crystal_param]
-        
-        # Use reproducible sampling for default 15K samples
-        if len(reference_values) > max_reference_samples and max_reference_samples == 15000:
-            try:
-                # Load pre-computed reproducible sample indices (created with seed=42)
-                sample_indices_file = "data/lematbulk_mmd_sample_indices_15k.npy"
-                ref_indices = np.load(sample_indices_file)
-                reference_values = reference_values[ref_indices]
-            except FileNotFoundError:
-                # Fallback to random sampling if indices file not found
-                np.random.seed(42)  # Use same seed as pre-computed indices
-                ref_indices = np.random.choice(len(reference_values), max_reference_samples, replace=False)
-                reference_values = reference_values[ref_indices]
-        elif len(reference_values) > max_reference_samples:
-            # For non-default sample sizes, use random sampling
-            np.random.seed(42)  # For reproducibility
-            ref_indices = np.random.choice(len(reference_values), max_reference_samples, replace=False)
-            reference_values = reference_values[ref_indices]
-        
+        reference_values = reference_data[crystal_param]
         reference_data_dist = np.atleast_2d(reference_values).T
         
     except FileNotFoundError:
         raise FileNotFoundError(
             f"Reference values file not found: {reference_values_file}. "
-            f"Please run the distribution reference statistics computation first."
+            f"This should be a 15K sample created from the full MMD dataset."
         )
 
     # Compute MMD using Gaussian kernels
@@ -266,6 +242,9 @@ def compute_mmd(generated_crystals, crystal_param, reference_values_file="data/l
 
     mmd = np.mean(k_xx) + np.mean(k_yy) - 2 * np.mean(k_xy)
     return mmd
+
+
+
 
 def frechet_distance(
     mu1: np.ndarray,

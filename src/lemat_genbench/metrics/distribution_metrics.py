@@ -214,10 +214,10 @@ class MMDConfig(MetricConfig):
     Parameters
     ----------
     reference_values_file : str
-        Path to pickle file containing pre-computed reference values
+        Path to pickle file containing 15K sampled reference values
     """
 
-    reference_values_file: str = "data/lematbulk_mmd_values.pkl"
+    reference_values_file: str = "data/lematbulk_mmd_values_15k.pkl"
 
 
 class MMD(BaseMetric):
@@ -227,10 +227,13 @@ class MMD(BaseMetric):
     between two samples of crystal structures and determines the degree of similarity
     between those two distributions using kernel methods.
 
+    Uses a fixed 15K sample from the LeMat-Bulk dataset for fast, reproducible results.
+    The sample was pre-computed using seed=42 and stored in a lightweight pickle file.
+
     Parameters
     ----------
     reference_values_file : str, optional
-        Path to pickle file containing pre-computed reference values
+        Path to pickle file containing 15K sampled reference values
     name : str, optional
         Name of the metric
     description : str, optional
@@ -241,7 +244,7 @@ class MMD(BaseMetric):
 
     def __init__(
         self,
-        reference_values_file: str = "data/lematbulk_mmd_values.pkl",
+        reference_values_file: str = "data/lematbulk_mmd_values_15k.pkl",
         name: str | None = None,
         description: str | None = None,
         n_jobs: int = 1,
@@ -264,7 +267,7 @@ class MMD(BaseMetric):
         return {"reference_values_file": self.config.reference_values_file}
 
     def compute(self, structures: list[Structure], **compute_args: Any) -> MetricResult:
-        """Compute MMD using pre-computed reference values.
+        """Compute MMD using 15K sampled reference values.
 
         Parameters
         ----------
@@ -272,7 +275,7 @@ class MMD(BaseMetric):
             List of structures with distribution_properties in their properties dict
         **compute_args : Any
             Optional: reference_values_file
-            Path to pickle file containing pre-computed reference values
+            Path to pickle file containing 15K sampled reference values
 
         Returns
         -------
@@ -296,8 +299,8 @@ class MMD(BaseMetric):
         mmd_properties = ["Volume", "Density(g/cm^3)", "Density(atoms/A^3)"]
 
         # Sample generated data if too large (for computational efficiency)
-        if len(df_all_properties) > 10000:
-            strut_ints = np.random.randint(0, len(df_all_properties), 10000)
+        if len(df_all_properties) > 15000:
+            strut_ints = np.random.randint(0, len(df_all_properties), 15000)
             df_sample = df_all_properties.iloc[strut_ints]
         else:
             df_sample = df_all_properties
@@ -350,7 +353,7 @@ class MMD(BaseMetric):
         Parameters
         ----------
         values : dict[str, float]
-            Jensen-Shannon Distance values for each structural property.
+            MMD values for each structural property.
 
         Returns
         -------
@@ -554,8 +557,8 @@ if __name__ == "__main__":
     js_result = js_metric(processed.processed_structures, **js_metric._get_compute_attributes())
     print("JSDistance:", js_result.metrics)
 
-    # Test MMD with lightweight reference files
-    mmd_metric = MMD()  # Uses default lightweight reference file
+    # Test MMD with 15K sampled reference values
+    mmd_metric = MMD()  # Uses default 15K sample file
     mmd_result = mmd_metric(processed.processed_structures, **mmd_metric._get_compute_attributes())
     print("MMD:", mmd_result.metrics)
 

@@ -26,12 +26,12 @@ class DistributionBenchmark(BaseBenchmark):
         mlips: list[str],
         cache_dir: str = "./data",
         js_distributions_file: str = "data/lematbulk_jsdistance_distributions.json",
-        mmd_values_file: str = "data/lematbulk_mmd_values.pkl",
+        mmd_values_file: str = "data/lematbulk_mmd_values_15k.pkl",
         name: str = "DistributionBenchmark",
         description: str | None = None,
         metadata: Dict[str, Any] | None = None,
     ):
-        """Initialize the distribution benchmark with lightweight reference files.
+        """Initialize the distribution benchmark.
 
         Parameters
         ----------
@@ -42,7 +42,7 @@ class DistributionBenchmark(BaseBenchmark):
         js_distributions_file : str
             Path to JSON file containing pre-computed JSDistance reference distributions
         mmd_values_file : str
-            Path to pickle file containing pre-computed MMD reference values
+            Path to pickle file containing 15K sampled MMD reference values
         name : str
             Name of the benchmark.
         description : str, optional
@@ -69,7 +69,7 @@ class DistributionBenchmark(BaseBenchmark):
             )
         }
 
-        # Initialize the MMD metric with lightweight reference file
+        # Initialize the MMD metric with 15K sampled reference file
         MMD_metric = MMD(reference_values_file=mmd_values_file)
 
         # add to evaluator config

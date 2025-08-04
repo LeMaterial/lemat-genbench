@@ -1,0 +1,55 @@
+type: distribution
+
+# MLIP models for Fréchet distance computation
+mlips:
+  - orb
+  - mace
+  - uma
+
+# File paths for reference data
+cache_dir: "./data"                                                # Directory containing cached reference statistics for Fréchet distance
+js_distributions_file: "data/lematbulk_jsdistance_distributions.json"  # Pre-computed JSDistance reference distributions
+mmd_values_file: "data/lematbulk_mmd_values_15k.pkl"             # 15K sampled MMD reference values (fast loading)
+
+# Additional configuration options
+description: "Distribution Benchmark for Materials Generation - evaluates similarity to reference distributions"
+version: "0.1.0"
+
+# Metric-specific configurations (optional overrides)
+metric_configs:
+  js_distance:
+    # Uses categorical distributions: SpaceGroup, CrystalSystem, CompositionCounts, Composition
+    properties_evaluated:
+      - "SpaceGroup"
+      - "CrystalSystem" 
+      - "CompositionCounts"
+      - "Composition"
+  
+  mmd:
+    # Uses continuous distributions: Volume, Density(g/cm^3), Density(atoms/A^3)
+    # Uses pre-sampled 15K reference values for fast, reproducible results
+    properties_evaluated:
+      - "Volume"
+      - "Density(g/cm^3)"
+      - "Density(atoms/A^3)"
+    
+  frechet_distance:
+    # Uses graph embeddings from MLIPs
+    models_evaluated:
+      - "orb"
+      - "mace" 
+      - "uma"
+
+# Metadata
+metadata:
+  reference: "Distribution similarity metrics for evaluating generated materials against reference datasets"
+  use_case: "Assessing whether generated structures follow realistic distributions of structural properties"
+  metrics_included:
+    - "Jensen-Shannon Distance: Compares categorical distributions (space groups, compositions)"
+    - "Maximum Mean Discrepancy (MMD): Compares continuous distributions (volume, density)"
+    - "Fréchet Distance: Compares embedding distributions from machine learning potentials"
+  notes:
+    - "Returns 3 separate distribution similarity scores"
+    - "Lower scores indicate better similarity to reference distributions"
+    - "MMD uses pre-sampled 15K reference values (0.3MB file) for fast, reproducible results"
+    - "Fréchet distance requires pre-computed reference statistics and MLIP embeddings"

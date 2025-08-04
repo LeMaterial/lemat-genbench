@@ -10,6 +10,9 @@ from pathlib import Path
 import click
 import yaml
 
+from lemat_genbench.benchmarks.distribution_benchmark import (
+    DistributionBenchmark,
+)
 from lemat_genbench.benchmarks.diversity_benchmark import (
     DiversityBenchmark,
 )
@@ -181,6 +184,24 @@ def load_benchmark_config(config_name: str) -> dict:
         }
         with open(config_path, "w") as f:
             yaml.dump(multi_mlip_stability_config, f, default_flow_style=False)
+
+    # Add Distribution config creation
+    if not config_path.exists() and config_path.name == "distribution.yaml":
+        distribution_config = {
+            "type": "distribution",
+            "mlips": ["orb", "mace", "uma"],
+            "cache_dir": "./data",
+            "js_distributions_file": "data/lematbulk_jsdistance_distributions.json",
+            "mmd_values_file": "data/lematbulk_mmd_values_15k.pkl",
+            "description": "Distribution Benchmark for Materials Generation - evaluates similarity to reference distributions",
+            "version": "0.1.0",
+            "metadata": {
+                "reference": "Distribution similarity metrics for evaluating generated materials against reference datasets",
+                "use_case": "Assessing whether generated structures follow realistic distributions of structural properties",
+            },
+        }
+        with open(config_path, "w") as f:
+            yaml.dump(distribution_config, f, default_flow_style=False)
 
     # Add Diversity config creation
     if not config_path.exists() and config_path.name == "diversity.yaml":
@@ -394,6 +415,25 @@ def main(input: str, config_name: str, output: str):
                 },
             )
 
+        elif benchmark_type == "distribution":
+            # Create distribution benchmark from config
+            benchmark = DistributionBenchmark(
+                mlips=config.get("mlips", ["orb", "mace", "uma"]),
+                cache_dir=config.get("cache_dir", "./data"),
+                js_distributions_file=config.get(
+                    "js_distributions_file", "data/lematbulk_jsdistance_distributions.json"
+                ),
+                mmd_values_file=config.get(
+                    "mmd_values_file", "data/lematbulk_mmd_values_15k.pkl"
+                ),
+                name=config.get("name", "DistributionBenchmark"),
+                description=config.get("description"),
+                metadata={
+                    "version": config.get("version", "0.1.0"),
+                    **(config.get("metadata", {})),
+                },
+            )
+
         elif benchmark_type == "diversity":
             # Create diversity benchmark from config
             benchmark = DiversityBenchmark(
@@ -408,7 +448,7 @@ def main(input: str, config_name: str, output: str):
         else:
             raise ValueError(
                 f"Unknown benchmark type: {benchmark_type}. "
-                "Available types: validity, multi_mlip_stability, uniqueness, novelty, hhi, sun, diversity"
+                "Available types: validity, multi_mlip_stability, uniqueness, novelty, hhi, sun, diversity, distribution"
             )
 
         # Run benchmark
