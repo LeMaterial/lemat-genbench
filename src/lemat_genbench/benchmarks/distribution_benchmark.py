@@ -6,7 +6,6 @@ This module implements a benchmark that compares two distributions of crystal st
 from typing import Any, Dict
 
 import numpy as np
-import pandas as pd
 
 from lemat_genbench.benchmarks.base import BaseBenchmark
 from lemat_genbench.evaluator import EvaluationResult, EvaluatorConfig
@@ -24,23 +23,26 @@ class DistributionBenchmark(BaseBenchmark):
 
     def __init__(
         self,
-        reference_df: pd.DataFrame,
         mlips: list[str],
         cache_dir: str = "./data",
+        js_distributions_file: str = "data/lematbulk_jsdistance_distributions.json",
+        mmd_values_file: str = "data/lematbulk_mmd_values.pkl",
         name: str = "DistributionBenchmark",
         description: str | None = None,
         metadata: Dict[str, Any] | None = None,
     ):
-        """Initialize the distribution benchmark.
+        """Initialize the distribution benchmark with lightweight reference files.
 
         Parameters
         ----------
-        reference_df : pd.DataFrame
-            Reference dataset for comparison (used by JSDistance and MMD)
         mlips : list[str]
             List of MLIP models to use for Fréchet distance
         cache_dir : str
             Directory containing pre-computed reference statistics for Fréchet distance
+        js_distributions_file : str
+            Path to JSON file containing pre-computed JSDistance reference distributions
+        mmd_values_file : str
+            Path to pickle file containing pre-computed MMD reference values
         name : str
             Name of the benchmark.
         description : str, optional
@@ -54,8 +56,8 @@ class DistributionBenchmark(BaseBenchmark):
                 "crystals to a reference distribution."
             )
 
-        # Initialize the JSDistance metric
-        JSDistance_metric = JSDistance(reference_df=reference_df)
+        # Initialize the JSDistance metric with lightweight reference file
+        JSDistance_metric = JSDistance(reference_distributions_file=js_distributions_file)
         # Set up evaluator configs
         evaluator_configs = {
             "JSDistance": EvaluatorConfig(
@@ -67,8 +69,8 @@ class DistributionBenchmark(BaseBenchmark):
             )
         }
 
-        # Initialize the MMD metric
-        MMD_metric = MMD(reference_df=reference_df)
+        # Initialize the MMD metric with lightweight reference file
+        MMD_metric = MMD(reference_values_file=mmd_values_file)
 
         # add to evaluator config
         evaluator_configs["MMD"] = EvaluatorConfig(
@@ -151,8 +153,6 @@ class DistributionBenchmark(BaseBenchmark):
 
 
 if __name__ == "__main__":
-    import pickle
-
     from pymatgen.util.testing import PymatgenTest
 
     from lemat_genbench.preprocess.base import PreprocessorResult
@@ -162,9 +162,6 @@ if __name__ == "__main__":
     from lemat_genbench.preprocess.multi_mlip_preprocess import (
         MultiMLIPStabilityPreprocessor,
     )
-
-    with open("data/full_reference_df.pkl", "rb") as f:
-        test_lemat = pickle.load(f)
     test = PymatgenTest()
 
     structures = [
@@ -241,7 +238,7 @@ if __name__ == "__main__":
         },
     )
 
-    benchmark = DistributionBenchmark(reference_df=test_lemat, mlips=mlips, cache_dir="./data")
+    benchmark = DistributionBenchmark(mlips=mlips, cache_dir="./data")
     benchmark_result = benchmark.evaluate(preprocessor_result.processed_structures)
 
     print("JSDistance")

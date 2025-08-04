@@ -1,7 +1,5 @@
 """Tests for validity metrics implementation."""
 
-import pickle
-
 import numpy as np
 import pytest
 from pymatgen.util.testing import PymatgenTest
@@ -30,23 +28,14 @@ def valid_structures():
     return structures
 
 
-@pytest.fixture
-def reference_data():
-    "create reference dataset"
-    with open("data/full_reference_df.pkl", "rb") as f:
-        reference_df = pickle.load(f)
-
-    return reference_df
-
-
-def test_JSDistance_metric(valid_structures, reference_data):
+def test_JSDistance_metric(valid_structures):
     """Test JSDistance_metric on valid structures."""
     distribution_preprocessor = DistributionPreprocessor()
     preprocessor_result = distribution_preprocessor(valid_structures)
 
-    metric = JSDistance(reference_data)
+    metric = JSDistance()  # Uses default lightweight reference file
     result = metric.compute(
-        preprocessor_result.processed_structures, reference_df=reference_data
+        preprocessor_result.processed_structures, **metric._get_compute_attributes()
     )
 
     # Check computation didn't fail
@@ -62,14 +51,14 @@ def test_JSDistance_metric(valid_structures, reference_data):
         assert 0.0 <= val <= 1.0
 
 
-def test_MMD_metric(valid_structures, reference_data):
+def test_MMD_metric(valid_structures):
     """Test MMD_metric on valid structures."""
     distribution_preprocessor = DistributionPreprocessor()
     preprocessor_result = distribution_preprocessor(valid_structures)
 
-    metric = MMD(reference_data)
+    metric = MMD()  # Uses default lightweight reference file
     result = metric.compute(
-        preprocessor_result.processed_structures, reference_df=reference_data
+        preprocessor_result.processed_structures, **metric._get_compute_attributes()
     )
     # Check computation didn't fail
     assert len(result.failed_indices) == 0
@@ -84,7 +73,7 @@ def test_MMD_metric(valid_structures, reference_data):
         assert 0.0 <= val <= 1.0
 
 
-def test_FrechetDistance_metric(valid_structures, reference_data):
+def test_FrechetDistance_metric(valid_structures):
     """Test MMD_metric on valid structures."""
     mlip_configs = {
         "orb": {

@@ -1,7 +1,5 @@
 """Tests for validity benchmark."""
 
-import pickle
-
 import pytest
 from pymatgen.util.testing import PymatgenTest
 
@@ -28,13 +26,7 @@ def valid_structures():
     return structures
 
 
-@pytest.fixture
-def reference_data():
-    "create reference dataset"
-    with open("data/full_reference_df.pkl", "rb") as f:
-        reference_df = pickle.load(f)
-
-    return reference_df
+# Reference data fixture removed - now using lightweight reference files
 
 
 @pytest.fixture
@@ -46,10 +38,10 @@ def mlips():
     return mlips
 
 
-def test_initialization(reference_data, mlips):
+def test_initialization(mlips):
     """Test initialization with default parameters."""
 
-    benchmark = DistributionBenchmark(reference_df=reference_data, mlips=mlips, cache_dir="./data")
+    benchmark = DistributionBenchmark(mlips=mlips, cache_dir="./data")
 
     # Check name and properties
     assert benchmark.config.name == "DistributionBenchmark"
@@ -62,11 +54,10 @@ def test_initialization(reference_data, mlips):
     assert "FrechetDistance" in benchmark.evaluators
 
 
-def test_custom_initialization(reference_data, mlips):
+def test_custom_initialization(mlips):
     """Test initialization with custom parameters."""
 
     benchmark = DistributionBenchmark(
-        reference_df=reference_data,
         mlips=mlips,
         name="Custom Benchmark",
         description="Custom description",
@@ -79,7 +70,7 @@ def test_custom_initialization(reference_data, mlips):
     assert benchmark.config.metadata["test_key"] == "test_value"
 
 
-def test_evaluate(valid_structures, reference_data, mlips):
+def test_evaluate(valid_structures, mlips):
     """Test benchmark evaluation on structures."""
 
     distribution_preprocessor = DistributionPreprocessor()
@@ -147,7 +138,7 @@ def test_evaluate(valid_structures, reference_data, mlips):
         },
     )
 
-    benchmark = DistributionBenchmark(reference_df=reference_data, mlips=mlips, cache_dir="./data")
+    benchmark = DistributionBenchmark(mlips=mlips, cache_dir="./data")
     result = benchmark.evaluate(preprocessor_result.processed_structures)
 
     # Check result format

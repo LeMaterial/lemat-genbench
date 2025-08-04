@@ -1,0 +1,48 @@
+{
+  "total_structures": 5335299,
+  "properties": [
+    "LeMatID",
+    "Volume",
+    "Density(g/cm^3)",
+    "Density(atoms/A^3)",
+    "SpaceGroup",
+    "CrystalSystem",
+    "CompositionCounts",
+    "Composition"
+  ],
+  "discrete_properties": {
+    "SpaceGroup": {
+      "min": 1,
+      "max": 230,
+      "unique_count": 228
+    },
+    "CrystalSystem": {
+      "min": 1,
+      "max": 7,
+      "unique_count": 7
+    }
+  },
+  "continuous_properties": {
+    "Volume": {
+      "min": 5.555268682795992,
+      "max": 20090.90640762975,
+      "mean": 234.04963650203297,
+      "std": 277.8311705426885,
+      "median": 150.7373776951186
+    },
+    "Density(g/cm^3)": {
+      "min": 0.02,
+      "max": 26.57,
+      "mean": 7.310449165079594,
+      "std": 3.2358631964409037,
+      "median": 7.07
+    },
+    "Density(atoms/A^3)": {
+      "min": 0.0,
+      "max": 0.37,
+      "mean": 0.0475573833818873,
+      "std": 0.019219030652742927,
+      "median": 0.04
+    }
+  }
+}

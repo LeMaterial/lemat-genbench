@@ -1,0 +1,10 @@
+{
+  "description": "Fixed 15K sample indices for reproducible MMD computation",
+  "total_samples": 5335299,
+  "sample_size": 15000,
+  "random_seed": 42,
+  "created_date": "2025-08-04T21:21:34.914791",
+  "sampling_method": "numpy.random.choice without replacement",
+  "purpose": "Reproducible MMD reference sampling for lemat-genbench",
+  "statistical_validity": "Random sample preserves distribution properties"
+}

@@ -40,11 +40,11 @@ class JSDistanceConfig(MetricConfig):
 
     Parameters
     ----------
-    reference_df : pandas dataframe
-        dataframe with reference data to compare to the input sample of crystals
+    reference_distributions_file : str
+        Path to JSON file containing pre-computed reference distributions
     """
 
-    reference_df: pd.DataFrame | str = "LeMaterial/LeMat-Bulk"
+    reference_distributions_file: str = "data/lematbulk_jsdistance_distributions.json"
 
 
 class JSDistance(BaseMetric):
@@ -57,9 +57,8 @@ class JSDistance(BaseMetric):
 
     Parameters
     ----------
-    reference_df : pandas dataframe
-        dataframe with reference data to compare to the input sample of crystals
-        This dataframe is calculated by "src/lemat_genbench/preprocess/distribution_preprocess.py"
+    reference_distributions_file : str, optional
+        Path to JSON file containing pre-computed reference distributions
     name : str, optional
         Name of the metric
     description : str, optional
@@ -70,55 +69,43 @@ class JSDistance(BaseMetric):
 
     def __init__(
         self,
-        reference_df: pd.DataFrame,
+        reference_distributions_file: str = "data/lematbulk_jsdistance_distributions.json",
         name: str | None = None,
         description: str | None = None,
         n_jobs: int = 1,
     ):
         super().__init__(
-            name=name or "Distribution",
+            name=name or "JSDistance",
             description=description
-            or "Measures distance between two reference distributions",
+            or "Measures Jensen-Shannon distance between generated and reference distributions",
             n_jobs=n_jobs,
         )
         self.config = JSDistanceConfig(
             name=self.config.name,
             description=self.config.description,
             n_jobs=self.config.n_jobs,
-            reference_df=reference_df,
+            reference_distributions_file=reference_distributions_file,
         )
 
     def _get_compute_attributes(self) -> dict[str, Any]:
         """Get the attributes for the compute_structure method."""
-        return {"reference_df": self.config.reference_df}
+        return {"reference_distributions_file": self.config.reference_distributions_file}
 
     def compute(self, structures: list[Structure], **compute_args: Any) -> MetricResult:
-        """Compute the similarity of the structure to a target distribution.
-
-        Important
-        ---------
-        This metric expects a `reference_df` to be passed to the `compute_structure` method.
-        The `reference_df` is a pandas dataframe that contains
+        """Compute Jensen-Shannon distance using pre-computed reference distributions.
 
         Parameters
         ----------
-        structure : Structure
-            Contains the values of the structural properties of interest for
-            each of the structures in the distribution. This dataframe is
-            calculated by "src/lemat_genbench/preprocess/distribution_preprocess.py"
-            which specifies the format, column names etc used here for compatibility with
-            the reference datasets. When changing the reference dataset, ensure the
-            column names etc correspond to those found in the above script.
+        structures : list[Structure]
+            List of structures with distribution_properties in their properties dict
         **compute_args : Any
-            Required: reference_df
-            Optional: None
-            This is used to pass the reference dataframe to the compute_structure method.
+            Optional: reference_distributions_file
+            Path to JSON file containing pre-computed reference distributions
 
         Returns
         -------
-        dict
-            Jensen-Shannon Distances, where the keys are the structural property
-            and the values are the JS Distances.
+        MetricResult
+            Jensen-Shannon distances for each property and average
         """
 
         start_time = time.time()
@@ -128,40 +115,43 @@ class JSDistance(BaseMetric):
         ]
 
         df_all_properties = pd.DataFrame(all_properties)
-        reference_df = compute_args.get("reference_df")
-        if reference_df is None:
-            raise ValueError(
-                "a `reference_df` arg is required to compute the JSDistance"
-            )
+        reference_distributions_file = compute_args.get(
+            "reference_distributions_file", 
+            self.config.reference_distributions_file
+        )
 
-        quantities = list(df_all_properties.columns)
+        # Define properties that JSDistance processes (non-float64 types)
+        js_properties = {
+            "SpaceGroup": np.int64,
+            "CrystalSystem": np.int64, 
+            "CompositionCounts": np.ndarray,
+            "Composition": np.ndarray
+        }
+
         dist_metrics = {}
-        for quant in quantities:
-            if quant in reference_df.columns:
-                if isinstance(reference_df[quant].iloc[0], np.float64):
-                    pass
-                else:
+        warnings = []
+        
+        # Process each property that JSDistance handles
+        for prop, metric_type in js_properties.items():
+            if prop in df_all_properties.columns:
+                try:
                     js = compute_jensen_shannon_distance(
-                        reference_df,
                         df_all_properties,
-                        quant,
-                        metric_type=type(reference_df[quant].iloc[0]),
+                        prop,
+                        metric_type,
+                        reference_distributions_file
                     )
-                    dist_metrics[quant] = js
+                    dist_metrics[prop] = js
+                except Exception as e:
+                    warnings.append(f"Failed to compute JSDistance for {prop}: {str(e)}")
 
-        for quant in ["CompositionCounts", "Composition"]:
-            js = compute_jensen_shannon_distance(
-                reference_df,
-                df_all_properties,
-                quant,
-                metric_type=type(df_all_properties[quant].iloc[0]),
-            )
-            dist_metrics[quant] = js
+        if not dist_metrics:
+            raise ValueError("No valid Jensen-Shannon distances computed for any property")
 
         end_time = time.time()
         computation_time = end_time - start_time
 
-        # This metric is used by default for ranking and comparison purposes
+        # Compute average Jensen-Shannon distance
         dist_metrics["Average_Jensen_Shannon_Distance"] = np.mean(
             list(dist_metrics.values())
         )
@@ -175,7 +165,7 @@ class JSDistance(BaseMetric):
             n_structures=len(structures),
             individual_values=None,  # Grouped metric
             failed_indices=[],
-            warnings=[],
+            warnings=warnings,
         )
 
     @staticmethod
@@ -223,60 +213,71 @@ class MMDConfig(MetricConfig):
 
     Parameters
     ----------
-    reference_df : pandas dataframe
-        dataframe with reference data to compare to the input sample of crystals
+    reference_values_file : str
+        Path to pickle file containing pre-computed reference values
     """
 
-    reference_df: pd.DataFrame | str = "LeMaterial/LeMat-Bulk"
+    reference_values_file: str = "data/lematbulk_mmd_values.pkl"
 
 
 class MMD(BaseMetric):
     """Calculate MMD between two distributions.
 
-    This metric compares a set of distribution wide properties (crystal system,
-    space group, elemental composition, lattice constants, and wykoff positions)
+    This metric compares continuous distribution properties (volume, densities)
     between two samples of crystal structures and determines the degree of similarity
-    between those two distributions for the particular structural property.
+    between those two distributions using kernel methods.
 
+    Parameters
+    ----------
+    reference_values_file : str, optional
+        Path to pickle file containing pre-computed reference values
+    name : str, optional
+        Name of the metric
+    description : str, optional
+        Description of the metric
+    n_jobs : int, optional
+        Number of jobs to run in parallel
     """
 
     def __init__(
         self,
-        reference_df: pd.DataFrame,
+        reference_values_file: str = "data/lematbulk_mmd_values.pkl",
         name: str | None = None,
         description: str | None = None,
         n_jobs: int = 1,
     ):
         super().__init__(
-            name=name or "Distribution",
+            name=name or "MMD",
             description=description
-            or "Measures distance between two reference distributions",
+            or "Measures Maximum Mean Discrepancy between generated and reference distributions",
             n_jobs=n_jobs,
         )
         self.config = MMDConfig(
             name=self.config.name,
             description=self.config.description,
             n_jobs=self.config.n_jobs,
-            reference_df=reference_df,
+            reference_values_file=reference_values_file,
         )
 
     def _get_compute_attributes(self) -> dict[str, Any]:
         """Get the attributes for the compute_structure method."""
-        return {"reference_df": self.config.reference_df}
+        return {"reference_values_file": self.config.reference_values_file}
 
     def compute(self, structures: list[Structure], **compute_args: Any) -> MetricResult:
-        """Compute the similarity of a sample of structures to a target distribution.
+        """Compute MMD using pre-computed reference values.
 
         Parameters
         ----------
         structures : list[Structure]
-            A list of pymatgen Structure objects to evaluate.
-
+            List of structures with distribution_properties in their properties dict
+        **compute_args : Any
+            Optional: reference_values_file
+            Path to pickle file containing pre-computed reference values
 
         Returns
         -------
-        dict[str, float]
-            MMD values for each structural property.
+        MetricResult
+            MMD values for each continuous property and average
         """
         start_time = time.time()
         np.random.seed(32)
@@ -286,37 +287,43 @@ class MMD(BaseMetric):
             for structure in structures
         ]
         df_all_properties = pd.DataFrame(all_properties)
-        reference_df = compute_args.get("reference_df")
-        if reference_df is None:
-            raise ValueError("a `reference_df` arg is required to compute the MMD")
+        reference_values_file = compute_args.get(
+            "reference_values_file", 
+            self.config.reference_values_file
+        )
 
-        if len(reference_df) > 10000:
-            ref_ints = np.random.randint(0, len(reference_df), 10000)
-            ref_sample_df = reference_df.iloc[ref_ints]
-        else:
-            ref_sample_df = reference_df
+        # Define properties that MMD processes (continuous/non-int64 types)
+        mmd_properties = ["Volume", "Density(g/cm^3)", "Density(atoms/A^3)"]
+
+        # Sample generated data if too large (for computational efficiency)
         if len(df_all_properties) > 10000:
             strut_ints = np.random.randint(0, len(df_all_properties), 10000)
-            strut_sample_df = df_all_properties.iloc[strut_ints]
+            df_sample = df_all_properties.iloc[strut_ints]
         else:
-            strut_sample_df = df_all_properties
-        dist_metrics = {}
-        quantities = strut_sample_df.columns
-        for quant in quantities:
-            if quant in ref_sample_df.columns:
-                if isinstance(ref_sample_df[quant].iloc[0], np.int64):
-                    pass
-                else:
-                    try:
-                        mmd = compute_mmd(ref_sample_df, strut_sample_df, quant)
-                        dist_metrics[quant] = mmd
+            df_sample = df_all_properties
 
-                        dist_metrics[quant] = mmd
-                    except ValueError:
-                        pass
+        dist_metrics = {}
+        warnings = []
+        
+        # Process each property that MMD handles
+        for prop in mmd_properties:
+            if prop in df_sample.columns:
+                try:
+                    mmd = compute_mmd(
+                        df_sample,
+                        prop,
+                        reference_values_file
+                    )
+                    dist_metrics[prop] = mmd
+                except Exception as e:
+                    warnings.append(f"Failed to compute MMD for {prop}: {str(e)}")
+
+        if not dist_metrics:
+            raise ValueError("No valid MMD values computed for any property")
 
         end_time = time.time()
 
+        # Compute average MMD
         dist_metrics["Average_MMD"] = np.mean(list(dist_metrics.values()))
 
         return MetricResult(
@@ -328,7 +335,7 @@ class MMD(BaseMetric):
             n_structures=len(structures),
             individual_values=None,  # Grouped metric
             failed_indices=[],
-            warnings=[],
+            warnings=warnings,
         )
 
     @staticmethod
@@ -529,7 +536,6 @@ class FrechetDistance(BaseMetric):
 
 
 if __name__ == "__main__":
-    import pickle
 
     from pymatgen.util.testing import PymatgenTest
 
@@ -537,23 +543,19 @@ if __name__ == "__main__":
         DistributionPreprocessor,
     )
 
-    # Load test data
-    with open("data/full_reference_df.pkl", "rb") as f:
-        test_lemat = pickle.load(f)
-    
     test = PymatgenTest()
     structures = [test.get_structure("Si"), test.get_structure("LiFePO4")]
 
-    # Test JSDistance
+    # Test JSDistance with lightweight reference files
     preprocessor = DistributionPreprocessor()
     processed = preprocessor(structures)
     
-    js_metric = JSDistance(reference_df=test_lemat)
+    js_metric = JSDistance()  # Uses default lightweight reference file
     js_result = js_metric(processed.processed_structures, **js_metric._get_compute_attributes())
     print("JSDistance:", js_result.metrics)
 
-    # Test MMD
-    mmd_metric = MMD(reference_df=test_lemat)
+    # Test MMD with lightweight reference files
+    mmd_metric = MMD()  # Uses default lightweight reference file
     mmd_result = mmd_metric(processed.processed_structures, **mmd_metric._get_compute_attributes())
     print("MMD:", mmd_result.metrics)
 
