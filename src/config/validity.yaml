@@ -3,7 +3,7 @@ type: validity
 # Weights for different validity components
 charge_weight: 0.25
 distance_weight: 0.25
-coordination_weight: 0.25
+# coordination_weight: 0.25
 plausibility_weight: 0.25
 
 # Additional configuration options

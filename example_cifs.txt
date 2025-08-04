@@ -1,0 +1,7 @@
+# Example CIF files list for benchmark testing
+# One CIF file path per line
+# Lines starting with # are ignored
+
+notebooks/CsBr.cif
+notebooks/NiO.cif
+notebooks/CoNi.cif 

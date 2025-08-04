@@ -85,7 +85,7 @@ def load_benchmark_config(config_name: str) -> dict:
             "type": "validity",
             "charge_weight": 0.25,
             "distance_weight": 0.25,
-            "coordination_weight": 0.25,
+            # "coordination_weight": 0.25,
             "plausibility_weight": 0.25,
             "description": "Validity Benchmark for Materials Generation",
             "version": "0.1.0",
@@ -328,7 +328,7 @@ def main(input: str, config_name: str, output: str):
             benchmark = ValidityBenchmark(
                 charge_weight=config.get("charge_weight", 0.25),
                 distance_weight=config.get("distance_weight", 0.25),
-                coordination_weight=config.get("coordination_weight", 0.25),
+                # coordination_weight=config.get("coordination_weight", 0.25),
                 plausibility_weight=config.get("plausibility_weight", 0.25),
                 name=config.get("name", "ValidityBenchmark"),
                 description=config.get("description"),

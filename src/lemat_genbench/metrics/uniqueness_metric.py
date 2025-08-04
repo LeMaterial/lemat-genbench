@@ -149,6 +149,7 @@ class UniquenessMetric(BaseMetric):
     def compute(
         self,
         structures: list[Structure],
+        **kwargs,
     ) -> "MetricResult":
         """Compute the uniqueness metric on a batch of structures.
 
@@ -180,7 +181,7 @@ class UniquenessMetric(BaseMetric):
                 for idx, structure in enumerate(structures):
                     try:
                         fingerprint = self._compute_structure_fingerprint(
-                            structure, **compute_args
+                            structure, compute_args["fingerprinter"]
                         )
                         if fingerprint is not None:
                             fingerprints.append(fingerprint)

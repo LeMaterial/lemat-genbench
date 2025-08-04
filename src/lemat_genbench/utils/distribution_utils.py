@@ -66,11 +66,23 @@ def map_space_group_to_crystal_system(space_group: int):
 def one_hot_encode_composition(composition):
     one_hot_counts = np.zeros(118)
     one_hot_bool = np.zeros(118)
+    
     for element in composition.elements:
-        one_hot_bool[int(Element(element).number) - 1] = 1
-        one_hot_counts[int(Element(element).number) - 1] = composition.as_dict()[
-            element.as_dict()["element"]
-        ]
+        # Handle charged species by extracting the base element
+        if hasattr(element, 'element'):
+            # For charged species like Cs+, Ni2+, extract the base element
+            base_element = element.element
+        else:
+            # For neutral elements
+            base_element = element
+        
+        # Get the element number and count directly from composition
+        element_number = int(Element(base_element).number) - 1
+        element_count = composition[base_element]  # This gets the count directly
+        
+        one_hot_bool[element_number] = 1
+        one_hot_counts[element_number] = element_count
+    
     return [one_hot_counts, one_hot_bool]
 
 
