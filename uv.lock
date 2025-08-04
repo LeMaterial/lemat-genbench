@@ -1,5 +1,4 @@
 version = 1
-revision = 1
 requires-python = ">=3.11"
 resolution-markers = [
     "python_full_version >= '3.13' and sys_platform == 'win32'",
@@ -1336,6 +1335,7 @@ dependencies = [
     { name = "numpy" },
     { name = "orb-models" },
     { name = "pandas" },
+    { name = "psutil" },
     { name = "pyarrow" },
     { name = "pymatgen" },
     { name = "pytest" },
@@ -1383,6 +1383,7 @@ requires-dist = [
     { name = "numpy", specifier = ">=1.26.4" },
     { name = "orb-models", specifier = ">=0.5.1" },
     { name = "pandas", specifier = ">=2.2.3" },
+    { name = "psutil", specifier = ">=7.0.0" },
     { name = "pyarrow", specifier = ">=19.0.1" },
     { name = "pymatgen", specifier = ">=2025.4.20" },
     { name = "pytest", specifier = ">=8.3.5" },

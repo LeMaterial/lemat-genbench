@@ -49,7 +49,7 @@ def mlips():
 def test_initialization(reference_data, mlips):
     """Test initialization with default parameters."""
 
-    benchmark = DistributionBenchmark(reference_df=reference_data, mlips=mlips)
+    benchmark = DistributionBenchmark(reference_df=reference_data, mlips=mlips, cache_dir="./data")
 
     # Check name and properties
     assert benchmark.config.name == "DistributionBenchmark"
@@ -147,7 +147,7 @@ def test_evaluate(valid_structures, reference_data, mlips):
         },
     )
 
-    benchmark = DistributionBenchmark(reference_df=reference_data, mlips=mlips)
+    benchmark = DistributionBenchmark(reference_df=reference_data, mlips=mlips, cache_dir="./data")
     result = benchmark.evaluate(preprocessor_result.processed_structures)
 
     # Check result format

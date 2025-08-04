@@ -27,9 +27,10 @@ from pymatgen.core import Structure
 
 from lemat_genbench.metrics.base import BaseMetric, MetricConfig, MetricResult
 from lemat_genbench.utils.distribution_utils import (
-    compute_frechetdist,
+    compute_frechetdist_with_cache,
     compute_jensen_shannon_distance,
     compute_mmd,
+    load_reference_stats_cache,
 )
 
 
@@ -375,27 +376,29 @@ class FrechetDistanceConfig(MetricConfig):
 
     Parameters
     ----------
-    reference_df : pandas dataframe
-        dataframe with reference data to compare to the input sample of crystals
+    cache_dir : str
+        Directory containing pre-computed reference statistics (mu and sigma)
+    mlips : list[str]
+        List of MLIP models to compute Fréchet distance for
     """
 
     mlips: list[str] = Field(default_factory=lambda: ["orb", "mace", "uma"])
-    reference_df: pd.DataFrame | str = "LeMaterial/LeMat-Bulk"
+    cache_dir: str = "./data"
 
 
 class FrechetDistance(BaseMetric):
     def __init__(
         self,
-        reference_df: pd.DataFrame,
         mlips: list[str],
+        cache_dir: str = "./data",
         name: str | None = None,
         description: str | None = None,
         n_jobs: int = 1,
     ):
         super().__init__(
-            name=name or "Distribution",
+            name=name or "FrechetDistance",
             description=description
-            or "Measures distance between two reference distributions",
+            or "Measures Fréchet distance between generated and reference distributions using pre-computed statistics",
             n_jobs=n_jobs,
         )
         self.config = FrechetDistanceConfig(
@@ -403,43 +406,65 @@ class FrechetDistance(BaseMetric):
             description=self.config.description,
             n_jobs=self.config.n_jobs,
             mlips=mlips,
-            reference_df=reference_df,
+            cache_dir=cache_dir,
         )
+        
+        # Load cached reference statistics (required)
+        self.reference_stats = load_reference_stats_cache(cache_dir, mlips)
+        if not self.reference_stats:
+            raise ValueError(
+                f"Could not load cached reference statistics from {cache_dir}. "
+                f"Please run 'uv run scripts/compute_reference_stats.py --cache-dir {cache_dir}' first."
+            )
 
     def _get_compute_attributes(self) -> dict[str, Any]:
         """Get the attributes for the compute_structure method."""
-        return {"reference_df": self.config.reference_df, "mlips": self.config.mlips}
+        return {
+            "mlips": self.config.mlips,
+            "reference_stats": self.reference_stats,
+        }
 
     def compute(self, structures: list[Structure], **compute_args: Any) -> MetricResult:
-        """Compute the similarity of a sample of structures to a target distribution."""
+        """Compute Fréchet distance using pre-computed reference statistics."""
         start_time = time.time()
-        reference_df = compute_args.get("reference_df")
+        reference_stats = compute_args.get("reference_stats")
+        mlips = compute_args.get("mlips", [])
+        
         distances = []
-        for mlip in compute_args.get("mlips"):
-            print(mlip)
+        warnings = []
+        
+        for mlip in mlips:
+            # Get generated embeddings
             all_properties = [
-                structure.properties.get("graph_embedding_" + mlip, {})
+                structure.properties.get(f"graph_embedding_{mlip}", {})
                 for structure in structures
             ]
+            
+            # Skip if no embeddings found
+            if not all_properties or all(emb is None or (hasattr(emb, '__len__') and len(emb) == 0) for emb in all_properties):
+                warnings.append(f"No embeddings found for model {mlip}")
+                continue
+            
+            try:
+                # Use cached statistics (required)
+                if reference_stats and mlip in reference_stats:
+                    cached_stats = reference_stats[mlip]
+                    frechetdist = compute_frechetdist_with_cache(
+                        cached_stats["mu"], 
+                        cached_stats["sigma"], 
+                        all_properties
+                    )
+                    distances.append(frechetdist)
+                else:
+                    warnings.append(f"No cached statistics found for model {mlip}")
+                    continue
+                
+            except Exception as e:
+                warnings.append(f"Failed to compute Fréchet distance for {mlip}: {str(e)}")
+                continue
 
-            if mlip == "orb":
-                reference_column = "OrbGraphEmbeddings"
-            if mlip == "mace":
-                reference_column = "MaceGraphEmbeddings"
-            if mlip == "uma":
-                reference_column = "UmaGraphEmbeddings"
-            if mlip == "equiformer":
-                reference_column = "EquiformerGraphEmbeddings"
-
-            reference_embeddings = reference_df[reference_column]
-
-            if reference_df is None:
-                raise ValueError(
-                    "a `reference_df` arg is required to compute the FrechetDistance"
-                )
-
-            frechetdist = compute_frechetdist(reference_embeddings, all_properties)
-            distances.append(frechetdist)
+        if not distances:
+            raise ValueError("No valid Fréchet distances computed for any model")
 
         dist_metrics = {}
         dist_metrics["FrechetDistanceMean"] = np.mean(distances)
@@ -450,15 +475,16 @@ class FrechetDistance(BaseMetric):
             metrics=dist_metrics,
             primary_metric="FrechetDistanceMean",
             uncertainties={
-                "FrechetDistanceStd": np.std(distances),
+                "FrechetDistanceStd": np.std(distances) if len(distances) > 1 else 0.0,
                 "FrechetDistancesFull": distances,
+                "n_models_computed": len(distances),
             },
             config=self.config,
             computation_time=end_time - start_time,
             n_structures=len(structures),
             individual_values=None,  # Grouped metric
             failed_indices=[],
-            warnings=[],
+            warnings=warnings,
         )
 
     @staticmethod
@@ -510,70 +536,97 @@ if __name__ == "__main__":
     from lemat_genbench.preprocess.distribution_preprocess import (
         DistributionPreprocessor,
     )
-    from lemat_genbench.preprocess.multi_mlip_preprocess import (
-        MultiMLIPStabilityPreprocessor,
-    )
 
+    # Load test data
     with open("data/full_reference_df.pkl", "rb") as f:
         test_lemat = pickle.load(f)
+    
     test = PymatgenTest()
+    structures = [test.get_structure("Si"), test.get_structure("LiFePO4")]
 
-    structures = [
-        test.get_structure("Si"),
-        test.get_structure("LiFePO4"),
-    ]
+    # Test JSDistance
+    preprocessor = DistributionPreprocessor()
+    processed = preprocessor(structures)
+    
+    js_metric = JSDistance(reference_df=test_lemat)
+    js_result = js_metric(processed.processed_structures, **js_metric._get_compute_attributes())
+    print("JSDistance:", js_result.metrics)
 
-    distribution_preprocessor = DistributionPreprocessor()
-    distribution_preprocessor_result = distribution_preprocessor(structures)
+    # Test MMD
+    mmd_metric = MMD(reference_df=test_lemat)
+    mmd_result = mmd_metric(processed.processed_structures, **mmd_metric._get_compute_attributes())
+    print("MMD:", mmd_result.metrics)
 
-    metric = JSDistance(reference_df=test_lemat)
-    default_args = metric._get_compute_attributes()
-    metric_result = metric(
-        distribution_preprocessor_result.processed_structures, **default_args
-    )
-    print(metric_result.metrics)
-
-    metric = MMD(reference_df=test_lemat)
-    default_args = metric._get_compute_attributes()
-    metric_result = metric(
-        distribution_preprocessor_result.processed_structures, **default_args
-    )
-    print(metric_result.metrics)
-
-    mlip_configs = {
-        "orb": {
-            "model_type": "orb_v3_conservative_inf_omat",  # Default
-            "device": "cpu",
-        },
-        "mace": {
-            "model_type": "mp",  # Default
-            "device": "cpu",
-        },
-        "uma": {
-            "task": "omat",  # Default
-            "device": "cpu",
-        },
-    }
-
-    preprocessor = MultiMLIPStabilityPreprocessor(
-        mlip_names=["orb", "mace", "uma"],
-        mlip_configs=mlip_configs,
-        relax_structures=True,
-        relaxation_config={"fmax": 0.01, "steps": 300},  # Tighter convergence
-        calculate_formation_energy=True,
-        calculate_energy_above_hull=True,
-        extract_embeddings=True,
-        timeout=120,  # Longer timeout
-    )
-
-    metric = FrechetDistance(reference_df=test_lemat, mlips=["orb", "mace", "uma"])
-
-    stability_preprocessor_result = preprocessor(structures)
-
-    default_args = metric._get_compute_attributes()
-    metric_result = metric(
-        stability_preprocessor_result.processed_structures, **default_args
-    )
-
-    print("Frechet Distance")
-    print(metric_result.metrics, metric_result.uncertainties)
+    # Test FrechetDistance with cache for all 3 models
+    print("\n" + "="*50)
+    print("TESTING FRÉCHET DISTANCE (ALL 3 MODELS)")
+    print("="*50)
+    
+    try:
+        # Initialize FrechetDistance for all 3 models
+        frechet_metric = FrechetDistance(mlips=["uma", "orb", "mace"], cache_dir="./data")
+        print("✅ FrechetDistance metric created successfully")
+        print(f"📊 Loaded cache for models: {list(frechet_metric.reference_stats.keys())}")
+        
+        # Generate real embeddings using MultiMLIPStabilityPreprocessor
+        from lemat_genbench.preprocess.multi_mlip_preprocess import (
+            MultiMLIPStabilityPreprocessor,
+        )
+        
+        print("🔧 Setting up MLIP preprocessor...")
+        mlip_configs = {
+            "orb": {"model_type": "orb_v3_conservative_inf_omat", "device": "cpu"},
+            "mace": {"model_type": "mp", "device": "cpu"},
+            "uma": {"task": "omat", "device": "cpu"},
+        }
+        
+        mlip_preprocessor = MultiMLIPStabilityPreprocessor(
+            mlip_names=["uma", "orb", "mace"],
+            mlip_configs=mlip_configs,
+            relax_structures=False,  # Skip relaxation for faster demo
+            extract_embeddings=True,
+            timeout=60,
+        )
+        
+        print(f"🧮 Computing embeddings for {len(structures)} structures...")
+        print("   (This may take 1-2 minutes...)")
+        
+        # Generate embeddings
+        mlip_result = mlip_preprocessor(structures)
+        print(f"✅ Generated embeddings for {len(mlip_result.processed_structures)} structures")
+        
+        # Debug: Check available embeddings
+        print("\n🔍 Available embeddings in processed structures:")
+        for i, structure in enumerate(mlip_result.processed_structures):
+            embedding_keys = [key for key in structure.properties.keys() if 'embedding' in key.lower()]
+            print(f"   Structure {i}: {embedding_keys}")
+        
+        print("\n🔬 Computing Fréchet distance for all models...")
+        
+        # Compute Fréchet distance
+        result = frechet_metric(mlip_result.processed_structures, **frechet_metric._get_compute_attributes())
+        
+        print("\n📈 FRÉCHET DISTANCE RESULTS:")
+        print(f"   • Mean Distance: {result.metrics['FrechetDistanceMean']:.4f}")
+        print(f"   • Std Deviation: {result.uncertainties['FrechetDistanceStd']:.4f}")
+        print(f"   • Individual Distances: {[f'{d:.4f}' for d in result.uncertainties['FrechetDistancesFull']]}")
+        print(f"   • Models Successfully Computed: {result.uncertainties['n_models_computed']}/3")
+        print(f"   • Total Computation Time: {result.computation_time:.3f} seconds")
+        
+        if result.warnings:
+            print("\n⚠️  Warnings:")
+            for warning in result.warnings:
+                print(f"     • {warning}")
+        
+        # Show per-model breakdown if available
+        if len(result.uncertainties['FrechetDistancesFull']) > 1:
+            models = ["uma", "orb", "mace"][:len(result.uncertainties['FrechetDistancesFull'])]
+            print("\n📊 Per-Model Breakdown:")
+            for model, distance in zip(models, result.uncertainties['FrechetDistancesFull']):
+                print(f"   • {model.upper()}: {distance:.4f}")
+                
+    except Exception as e:
+        print(f"❌ Error: {e}")
+        print("💡 Make sure you have:")
+        print("   1. Computed reference statistics: uv run scripts/compute_reference_stats.py --cache-dir ./data")
+        print("   2. Installed MLIP dependencies: uv add orb_models")

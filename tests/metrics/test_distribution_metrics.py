@@ -111,8 +111,8 @@ def test_FrechetDistance_metric(valid_structures, reference_data):
         timeout=120,  # Longer timeout
     )
 
-    # metric = FrechetDistance(reference_df=reference_data, mlips=["orb", "mace", "uma"])
-    metric = FrechetDistance(reference_df=reference_data, mlips=["orb", "mace"])
+    # metric = FrechetDistance(mlips=["orb", "mace", "uma"], cache_dir="./data")
+    metric = FrechetDistance(mlips=["orb", "mace"], cache_dir="./data")
 
     stability_preprocessor_result = preprocessor(valid_structures)
 

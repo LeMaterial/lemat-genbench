@@ -1,0 +1,10 @@
+{
+  "dataset_version": "LeMat-GenBench-5335K-samples",
+  "models": [
+    "uma",
+    "orb",
+    "mace"
+  ],
+  "computed_at": "2025-08-04T16:53:20",
+  "method": "direct_computation"
+}

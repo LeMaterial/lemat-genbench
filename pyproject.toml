@@ -29,6 +29,7 @@ dependencies = [
     "torch-sparse==0.6.18+pt26cu124; sys_platform != 'darwin'",
     "torch-cluster==1.6.3+pt26cu124; sys_platform != 'darwin'",
     "torch-spline-conv==1.2.2+pt26cu124; sys_platform != 'darwin'",
+    "psutil>=7.0.0",
 ]
 
 [project.scripts]

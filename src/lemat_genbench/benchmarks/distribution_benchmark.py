@@ -26,6 +26,7 @@ class DistributionBenchmark(BaseBenchmark):
         self,
         reference_df: pd.DataFrame,
         mlips: list[str],
+        cache_dir: str = "./data",
         name: str = "DistributionBenchmark",
         description: str | None = None,
         metadata: Dict[str, Any] | None = None,
@@ -34,11 +35,14 @@ class DistributionBenchmark(BaseBenchmark):
 
         Parameters
         ----------
+        reference_df : pd.DataFrame
+            Reference dataset for comparison (used by JSDistance and MMD)
+        mlips : list[str]
+            List of MLIP models to use for Fréchet distance
+        cache_dir : str
+            Directory containing pre-computed reference statistics for Fréchet distance
         name : str
             Name of the benchmark.
-        distribution_functions : list[str], optional
-            A list of strings containing the distribution functions to compare. If none,
-            defaults to all currently encoded.
         description : str, optional
             Description of the benchmark.
         metadata : dict, optional
@@ -75,9 +79,11 @@ class DistributionBenchmark(BaseBenchmark):
             aggregation_method="weighted_mean",
         )
 
-        # Initialize the MFrechetDistanceMD metric
-
-        FrechetDistance_metric = FrechetDistance(reference_df=reference_df, mlips=mlips)
+        # Initialize the FrechetDistance metric
+        FrechetDistance_metric = FrechetDistance(
+            mlips=mlips,
+            cache_dir=cache_dir,
+        )
 
         # add to evaluator config
         evaluator_configs["FrechetDistance"] = EvaluatorConfig(
@@ -235,7 +241,7 @@ if __name__ == "__main__":
         },
     )
 
-    benchmark = DistributionBenchmark(reference_df=test_lemat, mlips=mlips)
+    benchmark = DistributionBenchmark(reference_df=test_lemat, mlips=mlips, cache_dir="./data")
     benchmark_result = benchmark.evaluate(preprocessor_result.processed_structures)
 
     print("JSDistance")
