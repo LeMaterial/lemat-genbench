@@ -174,6 +174,19 @@ uv run scripts/run_benchmarks.py --cifs my_structures.txt --config comprehensive
 - **`--name`**: Name for this benchmark run (required)
 - **`--families`**: Specific benchmark families to run (optional, defaults to all)
 
+### Available Benchmark Families
+
+| Family | Description | Computational Cost |
+|--------|-------------|-------------------|
+| `validity` | Fundamental structure validation (charge, distance, plausibility) | Low |
+| `distribution` | Distribution similarity (JSD, MMD, Fréchet distance) | Medium |
+| `diversity` | Structural diversity (element, space group, site number, physical) | Low |
+| `novelty` | Novelty vs. LeMat-Bulk reference dataset | Medium |
+| `uniqueness` | Internal uniqueness within generated set | Low |
+| `stability` | Thermodynamic stability (formation energy, e_above_hull) | High |
+| `hhi` | Supply risk assessment (production/reserve concentration) | Low |
+| `sun` | Composite metric (Stability + Uniqueness + Novelty) | High |
+
 ### Available Configurations
 
 - `comprehensive.yaml` - All benchmark families (default)
@@ -185,6 +198,40 @@ uv run scripts/run_benchmarks.py --cifs my_structures.txt --config comprehensive
 - `stability.yaml` - Stability metrics only
 - `hhi.yaml` - HHI metrics only
 - `sun.yaml` - SUN metrics only
+
+### Running Specific Benchmark Families
+
+#### Single Family
+```bash
+# Run only validity checks
+uv run scripts/run_benchmarks.py --cifs structures/ --families validity --name validity_only
+
+# Run only stability analysis
+uv run scripts/run_benchmarks.py --cifs structures/ --families stability --name stability_only
+```
+
+#### Multiple Families (2-3 families)
+```bash
+# Run validity and novelty (low + medium cost)
+uv run scripts/run_benchmarks.py --cifs structures/ --families validity novelty --name validity_novelty
+
+# Run diversity, uniqueness, and HHI (all low cost)
+uv run scripts/run_benchmarks.py --cifs structures/ --families diversity uniqueness hhi --name diversity_analysis
+
+# Run distribution and stability (medium + high cost)
+uv run scripts/run_benchmarks.py --cifs structures/ --families distribution stability --name distribution_stability
+
+# Run novelty, uniqueness, and SUN (medium + low + high cost)
+uv run scripts/run_benchmarks.py --cifs structures/ --families novelty uniqueness sun --name novelty_sun
+```
+
+#### All Families (Default)
+```bash
+# Run all benchmark families
+uv run scripts/run_benchmarks.py --cifs structures/ --name full_analysis
+# or explicitly specify all families
+uv run scripts/run_benchmarks.py --cifs structures/ --families validity distribution diversity novelty uniqueness stability hhi sun --name explicit_full
+```
 
 ## 📁 Output
 
