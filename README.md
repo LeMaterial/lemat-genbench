@@ -12,6 +12,12 @@ cd lemat-genbench
 # Install dependencies
 uv sync
 
+# On macOS/Linux:
+source .venv/bin/activate
+
+# On Windows:
+.venv\Scripts\activate
+
 # Set up UMA access (required for stability and distribution benchmarks)
 huggingface-cli login
 
