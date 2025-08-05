@@ -1,4 +1,4 @@
-# LeMat-GenBench: Material Generation Benchmarking Framework
+# LeMat-GenBench: Benchmark for generative models for materials
 
 A comprehensive benchmarking framework for evaluating material generation models across multiple metrics including validity, distribution, diversity, novelty, uniqueness, and stability.
 
@@ -82,42 +82,53 @@ The UMA model is gated and requires special access. Follow these steps:
 ## 📊 Benchmark Metrics
 
 ### 1. **Validity Metrics**
-- **Charge Neutrality**: Ensures structures are charge-balanced
-- **Distance Checks**: Validates atomic distances and coordination
-- **Physical Plausibility**: Checks for realistic bond lengths and angles
+- **Charge Neutrality**: Ensures structures are charge-balanced using oxidation state analysis and bond valence calculations
+- **Minimum Interatomic Distance**: Validates that atomic distances exceed minimum thresholds based on atomic radii
+- **Coordination Environment**: Checks if coordination numbers match expected values for each element
+- **Physical Plausibility**: Validates density, lattice parameters, crystallographic format, and symmetry
 
 ### 2. **Distribution Metrics**
-- **Jensen-Shannon Distance (JSD)**: Compares categorical distributions (space groups, crystal systems)
-- **Maximum Mean Discrepancy (MMD)**: Compares continuous distributions (volume, density, etc.)
-- **Fréchet Distance**: Compares embedding distributions from MLIPs
+- **Jensen-Shannon Distance (JSD)**: Measures similarity of categorical properties (space groups, crystal systems, elemental compositions) between generated and reference materials
+- **Maximum Mean Discrepancy (MMD)**: Measures similarity of continuous properties (volume, density) between generated and reference materials using kernel methods
+- **Fréchet Distance**: Measures similarity of learned structural representations (embeddings) from MLIPs (ORB, MACE, UMA) between generated and reference materials
 
 **⚠️ Important Caveat**: MMD calculations use a **15K sample** from LeMat-Bulk dataset due to computational complexity. The full dataset contains ~5M structures, but using the entire dataset would be computationally infeasible.
 
 ### 3. **Diversity Metrics**
-- **Embedding-based diversity**: Measures structural diversity using MLIP embeddings
-- **Composition diversity**: Analyzes chemical composition variety
+- **Element Diversity**: Measures variety of chemical elements used across generated structures using Vendi scores and Shannon entropy
+- **Space Group Diversity**: Measures variety of crystal symmetries (space groups) present in generated structures
+- **Site Number Diversity**: Measures variety in the number of atomic sites per structure
+- **Physical Size Diversity**: Measures variety in physical properties (density, lattice parameters, packing factor) compared to uniform distribution
 
 ### 4. **Novelty Metrics**
-- **BAWL fingerprinting**: Compares against LeMat-Bulk reference dataset
-- **Structural novelty**: Identifies structures not present in training data
+- **Novelty Ratio**: Fraction of generated structures NOT present in LeMat-Bulk reference dataset
+- **BAWL Fingerprinting**: Uses BAWL structure hashing to efficiently compare against ~5M known materials
+- **Reference Comparison**: Measures how many structures are truly novel vs. known materials
 
 ### 5. **Uniqueness Metrics**
-- **Structural uniqueness**: Measures fraction of unique structures in generated set
-- **Fingerprint-based**: Uses BAWL hashing for efficient comparison
+- **Uniqueness Ratio**: Fraction of unique structures within the generated set (internal diversity)
+- **BAWL Fingerprinting**: Uses BAWL structure hashing to identify duplicate structures efficiently
+- **Duplicate Detection**: Counts and reports duplicate structures within the generated set
 
 ### 6. **Stability Metrics**
-- **Formation Energy**: Calculated using multiple MLIPs (ORB, MACE, UMA)
-- **Energy Above Hull**: Thermodynamic stability assessment
-- **Ensemble Predictions**: Combines multiple MLIP predictions for robustness
+- **Stability Ratio**: Fraction of structures with energy above hull ≤ 0 eV/atom (thermodynamically stable)
+- **Metastability Ratio**: Fraction of structures with energy above hull ≤ 0.1 eV/atom (metastable)
+- **Mean E_Above_Hull**: Average energy above hull across multiple MLIPs (ORB, MACE, UMA)
+- **Formation Energy**: Average formation energy across multiple MLIPs (ORB, MACE, UMA)
+- **Relaxation Stability**: RMSE between original and relaxed atomic positions
+- **Ensemble Statistics**: Mean and standard deviation across MLIP predictions for uncertainty quantification
 
 **⚠️ Important Caveat**: Energy above hull calculations may fail for charged species (e.g., Cs+, Br-) as phase diagrams expect neutral compounds.
 
 ### 7. **HHI (Herfindahl-Hirschman Index)**
-- **Concentration analysis**: Measures diversity in chemical compositions
+- **Production HHI**: Measures supply risk based on concentration of element production sources (market concentration)
+- **Reserve HHI**: Measures long-term supply risk based on concentration of element reserves (geographic distribution)
 
 ### 8. **SUN (Stability, Uniqueness, Novelty)**
-- **Composite metric**: Combines stability, uniqueness, and novelty scores
-- **MetaSUN**: Advanced version with additional weighting
+- **SUN Rate**: Fraction of structures that are simultaneously stable (e_above_hull ≤ 0), unique, and novel
+- **MetaSUN Rate**: Fraction of structures that are simultaneously metastable (e_above_hull ≤ 0.1), unique, and novel
+- **Combined Rate**: Fraction of structures that are either stable or metastable, unique, and novel
+- **Efficient Computation**: Uses hierarchical filtering (uniqueness → novelty → stability) for optimal performance
 
 ## 🏃‍♂️ Usage
 
