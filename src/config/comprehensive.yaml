@@ -50,5 +50,5 @@ metadata:
   notes:
     - "Runs all benchmark families by default for comprehensive evaluation"
     - "Use --families argument to specify only specific families"
-    - "Available families: validity, distribution, diversity, novelty, uniqueness, hhi, sun, multi_mlip_stability"
+    - "Available families: validity, distribution, diversity, novelty, uniqueness, hhi, sun, stability"
     - "Automatically runs appropriate preprocessors based on selected families" 

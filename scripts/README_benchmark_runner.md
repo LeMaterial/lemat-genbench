@@ -23,6 +23,9 @@ uv run scripts/run_benchmarks.py --cifs my_structures.txt --config distribution 
 
 # Run all families using comprehensive config (default behavior)
 uv run scripts/run_benchmarks.py --cifs my_structures.txt --config comprehensive --name full_eval
+
+# Use a directory containing CIF files
+uv run scripts/run_benchmarks.py --cifs /path/to/cif/directory --config comprehensive --name directory_run
 ```
 
 ### Advanced Usage
@@ -37,7 +40,7 @@ uv run scripts/run_benchmarks.py --cifs structures.txt --config comprehensive --
 
 ## Input Format
 
-### CIF Files List
+### Option 1: CIF Files List
 Create a text file with one CIF file path per line:
 
 ```txt
@@ -48,6 +51,16 @@ path/to/structure3.cif
 ```
 
 Lines starting with `#` are ignored as comments.
+
+### Option 2: Directory of CIF Files
+Simply point to a directory containing CIF files:
+
+```bash
+# The script will automatically find all .cif files in the directory
+uv run scripts/run_benchmarks.py --cifs /path/to/cif/directory --config comprehensive --name my_run
+```
+
+The script will recursively search for all `.cif` files in the specified directory.
 
 ## Configuration Files
 
@@ -60,7 +73,7 @@ The script uses YAML configuration files from `src/config/`:
 - `uniqueness.yaml` - Uniqueness benchmark settings
 - `hhi.yaml` - HHI benchmark settings
 - `sun.yaml` - SUN benchmark settings
-- `multi_mlip_stability.yaml` - Multi-MLIP stability settings
+- `stability.yaml` - Multi-MLIP stability settings
 - `comprehensive.yaml` - Settings for all benchmark families
 
 ## Preprocessor Logic
@@ -70,13 +83,13 @@ The script automatically determines which preprocessors to run:
 | Benchmark Family | Preprocessors Required |
 |------------------|------------------------|
 | `validity` | None |
-| `distribution` | Distribution preprocessor |
+| `distribution` | Distribution preprocessor, Multi-MLIP (embeddings only) |
 | `diversity` | Multi-MLIP (embeddings only) |
-| `novelty` | Multi-MLIP (embeddings only) |
-| `uniqueness` | Multi-MLIP (embeddings only) |
+| `novelty` | None |
+| `uniqueness` | None |
 | `hhi` | None |
 | `sun` | Multi-MLIP (stability + embeddings) |
-| `multi_mlip_stability` | Multi-MLIP (stability + embeddings) |
+| `stability` | Multi-MLIP (stability + embeddings) |
 
 ## Output
 
@@ -117,7 +130,7 @@ Example: `my_run_validity_20241204_143022.json`
 - **`uniqueness`**: Uniqueness within generated structures using BAWL fingerprints
 - **`hhi`**: Herfindahl-Hirschman Index for supply risk assessment
 - **`sun`**: Stable, Unique, and Novel structures evaluation
-- **`multi_mlip_stability`**: Multi-MLIP ensemble stability predictions
+- **`stability`**: Multi-MLIP ensemble stability predictions
 
 ## Examples
 

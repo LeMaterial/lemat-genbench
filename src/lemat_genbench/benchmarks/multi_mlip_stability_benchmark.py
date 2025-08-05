@@ -170,7 +170,7 @@ class StabilityBenchmark(BaseBenchmark):
         # Create benchmark metadata
         benchmark_metadata = {
             "version": "0.1.0",
-            "category": "multi_mlip_stability",
+            "category": "stability",
             "use_ensemble": use_ensemble,
             "mlip_names": self.mlip_names,
             "metastable_threshold": metastable_threshold,

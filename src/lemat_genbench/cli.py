@@ -165,9 +165,9 @@ def load_benchmark_config(config_name: str) -> dict:
             yaml.dump(sun_config, f, default_flow_style=False)
 
     # Add Multi-MLIP Stability config creation
-    if not config_path.exists() and config_path.name == "multi_mlip_stability.yaml":
-        multi_mlip_stability_config = {
-            "type": "multi_mlip_stability",
+    if not config_path.exists() and config_path.name == "stability.yaml":
+        stability_config = {
+            "type": "stability",
             "description": "Multi-MLIP Stability Benchmark with Ensemble Predictions",
             "version": "0.1.0",
             "use_ensemble": True,
@@ -183,7 +183,7 @@ def load_benchmark_config(config_name: str) -> dict:
             },
         }
         with open(config_path, "w") as f:
-            yaml.dump(multi_mlip_stability_config, f, default_flow_style=False)
+            yaml.dump(stability_config, f, default_flow_style=False)
 
     # Add Distribution config creation
     if not config_path.exists() and config_path.name == "distribution.yaml":
@@ -338,7 +338,7 @@ def main(input: str, config_name: str, output: str):
                 },
             )
 
-        elif benchmark_type == "multi_mlip_stability":
+        elif benchmark_type == "stability":
             # Create multi-MLIP stability benchmark from config
             benchmark = MultiMLIPStabilityBenchmark(
                 config=config,
@@ -448,7 +448,7 @@ def main(input: str, config_name: str, output: str):
         else:
             raise ValueError(
                 f"Unknown benchmark type: {benchmark_type}. "
-                "Available types: validity, multi_mlip_stability, uniqueness, novelty, hhi, sun, diversity, distribution"
+                "Available types: validity, stability, uniqueness, novelty, hhi, sun, diversity, distribution"
             )
 
         # Run benchmark

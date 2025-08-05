@@ -199,7 +199,7 @@ class TestStabilityBenchmarkInitialization:
         # Check metadata structure
         metadata = benchmark.config.metadata
         assert metadata["version"] == "0.1.0"
-        assert metadata["category"] == "multi_mlip_stability"
+        assert metadata["category"] == "stability"
         assert metadata["use_ensemble"] is True
         assert metadata["mlip_names"] == ["orb", "mace", "uma"]
 

@@ -61,15 +61,64 @@ def build_formation_energy_reference_file():
 def get_formation_energy_from_composition_energy(
     total_energy, composition, functional="pbe"
 ):
-    element_chem_pot = json.load(
-        open(os.path.join(CURRENT_FOLDER, "element_chem_pot.json"))
-    )
+    element_chem_pot_file = os.path.join(CURRENT_FOLDER, "element_chem_pot.json")
+    
+    if not os.path.exists(element_chem_pot_file):
+        raise FileNotFoundError(
+            f"Reference energy file not found: {element_chem_pot_file}. "
+            "Run build_formation_energy_reference_file() first."
+        )
+    
+    with open(element_chem_pot_file) as f:
+        element_chem_pot = json.load(f)
+    
     try:
         res = 0
+        # Handle charged species by converting to neutral elements
+        neutral_composition_dict = {}
+        missing_elements = []
+        
+        for element, count in composition.as_dict().items():
+            # Handle charged species by extracting the base element
+            # element can be a string like 'Cs+' or a Species object
+            if isinstance(element, str):
+                # For string-based charged species like 'Cs+', 'Ni2+', extract the base element
+                if '+' in element or '-' in element:
+                    # Extract the base element (everything before the charge)
+                    base_element = element.rstrip('+-0123456789')
+                else:
+                    base_element = element
+            elif hasattr(element, 'element'):
+                # For Species objects, extract the base element
+                base_element = element.element
+            else:
+                # For neutral elements
+                base_element = element
+
+            # Check if reference energy is available
+            if base_element not in element_chem_pot:
+                missing_elements.append(base_element)
+                continue
+                
+            if functional not in element_chem_pot[base_element]:
+                raise ValueError(
+                    f"Functional '{functional}' not available for element '{base_element}'"
+                )
+            
+            # Use neutral element for chemical potential lookup
+            if base_element not in neutral_composition_dict:
+                neutral_composition_dict[base_element] = 0
+            neutral_composition_dict[base_element] += count
+
+        if missing_elements:
+            raise ValueError(
+                f"Missing reference energies for elements: {missing_elements}"
+            )
+        
         res = total_energy - sum(
             [
                 element_chem_pot[k][functional] * v
-                for k, v in composition.as_dict().items()
+                for k, v in neutral_composition_dict.items()
             ]
         )
         return res / len(composition)
@@ -81,7 +130,28 @@ def get_formation_energy_from_composition_energy(
 def one_hot_encode_composition(elements):
     one_hot = np.zeros(118)
     for element in elements:
-        one_hot[int(Element(element).number) - 1] = 1
+        try:
+            # Handle charged species by extracting the base element
+            if isinstance(element, str):
+                # For string-based charged species like 'Cs+', 'Ni2+', extract the base element
+                if '+' in element or '-' in element:
+                    # Extract the base element (everything before the charge)
+                    base_element = element.rstrip('+-0123456789')
+                else:
+                    base_element = element
+            elif hasattr(element, 'element'):
+                # For Species objects, extract the base element
+                base_element = element.element
+            else:
+                # For neutral elements
+                base_element = element
+            
+            # Validate element and get atomic number
+            element_obj = Element(base_element)
+            one_hot[int(element_obj.number) - 1] = 1
+        except ValueError as e:
+            print(f"Warning: Invalid element '{element}': {e}")
+            continue
     return one_hot
 
 
@@ -94,50 +164,120 @@ def process_chunk(chunk):
 
 @lru_cache(maxsize=None)
 def _retrieve_df():
-    dataset = load_dataset("Entalpic/LeMaterial-Above-Hull-dataset")
-    dataset = pd.DataFrame(dataset["dataset"])
-    return dataset
+    try:
+        dataset = load_dataset("Entalpic/LeMaterial-Above-Hull-dataset")
+        dataset = pd.DataFrame(dataset["dataset"])
+        return dataset
+    except Exception as e:
+        raise RuntimeError(f"Failed to load reference dataset: {e}") from e
 
 
 @lru_cache(maxsize=None)
 def _retrieve_matrix():
-    composition_matrix = load_dataset(
-        "Entalpic/LeMaterial-Above-Hull-composition_matrix"
-    )
-    composition_matrix = composition_matrix["composition_matrix"]
-    composition_df = composition_matrix.to_pandas()
-    composition_df.drop("Unnamed: 0", axis=1, inplace=True)
-    composition_array = composition_df.to_numpy()
-    return composition_array
+    try:
+        composition_matrix = load_dataset(
+            "Entalpic/LeMaterial-Above-Hull-composition_matrix"
+        )
+        composition_matrix = composition_matrix["composition_matrix"]
+        composition_df = composition_matrix.to_pandas()
+        composition_df.drop("Unnamed: 0", axis=1, inplace=True)
+        composition_array = composition_df.to_numpy()
+        return composition_array
+    except Exception as e:
+        raise RuntimeError(f"Failed to load composition matrix: {e}") from e
 
 
 def filter_df(df, matrix, composition):
-    structure_vector = one_hot_encode_composition(composition.elements).reshape(-1, 1)
-    forbidden_elements = 1 - structure_vector
-    intersection_elements = df.loc[(matrix @ forbidden_elements) == 0]
-
-    return intersection_elements
+    try:
+        structure_vector = one_hot_encode_composition(composition.elements).reshape(-1, 1)
+        forbidden_elements = 1 - structure_vector
+        intersection_elements = df.loc[(matrix @ forbidden_elements) == 0]
+        
+        if intersection_elements.empty:
+            print(f"Warning: No reference structures found for composition {composition.formula}")
+        
+        return intersection_elements
+    except Exception as e:
+        raise ValueError(f"Failed to filter reference dataset: {e}") from e
 
 
 def get_energy_above_hull(total_energy, composition):
-    intersection_elements = filter_df(_retrieve_df(), _retrieve_matrix(), composition)
+    """Calculate energy above hull from total energy and composition.
+    
+    This function properly handles charged species by converting them
+    to neutral elements before creating PDEntry objects.
+    
+    Parameters
+    ----------
+    total_energy : float
+        Total energy in eV
+    composition : Composition
+        Pymatgen composition object (may contain charged species)
+        
+    Returns
+    -------
+    float
+        Energy above hull in eV/atom (intensive property, normalized per atom)
+        
+    Notes
+    -----
+    Pymatgen's get_decomp_and_e_above_hull() always returns eV/atom,
+    making this an intensive property like formation energy.
+    This follows Materials Project conventions.
+    """
 
-    # Create PDEntries from the filtered DataFrame
-    pd_entries = [
-        PDEntry(Composition(row["chemical_formula_descriptive"]), row["energy"])
-        for _, row in intersection_elements.iterrows()
-    ]
+    try:
+        intersection_elements = filter_df(_retrieve_df(), _retrieve_matrix(), composition)
 
-    if not pd_entries:
+        # Create PDEntries from the filtered DataFrame
+        pd_entries = [
+            PDEntry(Composition(row["chemical_formula_descriptive"]), row["energy"])
+            for _, row in intersection_elements.iterrows()
+        ]
+
+        if not pd_entries:
+            raise ValueError(
+                f"No entries found in dataset containing any of the elements in: {composition.elements}"
+            )
+
+        # Construct phase diagram
+        pd = PhaseDiagram(pd_entries)
+
+        # Convert charged species to neutral composition for PDEntry creation
+        # This follows the same logic as get_formation_energy_from_composition_energy
+        neutral_composition_dict = {}
+        for element, count in composition.as_dict().items():
+            # Handle charged species by extracting the base element
+            if isinstance(element, str):
+                # For string-based charged species like 'Cs+', 'Ni2+', extract the base element
+                if '+' in element or '-' in element:
+                    # Extract the base element (everything before the charge)
+                    base_element = element.rstrip('+-0123456789')
+                else:
+                    base_element = element
+            elif hasattr(element, 'element'):
+                # For Species objects, extract the base element
+                base_element = element.element
+            else:
+                # For neutral elements
+                base_element = element
+            
+            # Use neutral element for PDEntry creation
+            if base_element not in neutral_composition_dict:
+                neutral_composition_dict[base_element] = 0
+            neutral_composition_dict[base_element] += count
+
+        # Create neutral composition object
+        neutral_composition = Composition(neutral_composition_dict)
+
+        # Compute energy above hull using neutral composition
+        entry = PDEntry(neutral_composition, total_energy)
+        e_above_hull = pd.get_decomp_and_e_above_hull(entry, allow_negative=True)[1]
+
+        # Return energy above hull in eV (extensive property, following standard conventions)
+        return e_above_hull
+        
+    except Exception as e:
         raise ValueError(
-            f"No entries found in dataset containing any of the elements in: {composition.elements}"
-        )
-
-    # Construct phase diagram
-    pd = PhaseDiagram(pd_entries)
-
-    # Compute energy above hull
-    entry = PDEntry(composition, total_energy)
-    e_above_hull = pd.get_decomp_and_e_above_hull(entry, allow_negative=True)[1]
-
-    return e_above_hull
+            f"Failed to compute energy above hull for {composition.formula}: {str(e)}"
+        ) from e

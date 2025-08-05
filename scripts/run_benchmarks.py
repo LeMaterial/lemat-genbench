@@ -43,19 +43,54 @@ from lemat_genbench.preprocess.multi_mlip_preprocess import (
 from lemat_genbench.utils.logging import logger
 
 
-def load_cif_files(cifs_file: str) -> List[str]:
-    """Load list of CIF file paths from a text file."""
-    with open(cifs_file, "r") as f:
-        cif_paths = [
-            line.strip() for line in f if line.strip() and not line.startswith("#")
-        ]
+def load_cif_files(input_path: str) -> List[str]:
+    """Load list of CIF file paths from a text file or directory.
+    
+    Parameters
+    ----------
+    input_path : str
+        Path to either:
+        - A text file containing CIF file paths (one per line)
+        - A directory containing CIF files
+        
+    Returns
+    -------
+    List[str]
+        List of CIF file paths
+    """
+    input_path_obj = Path(input_path)
+    
+    if input_path_obj.is_dir():
+        # Directory mode: find all CIF files in the directory
+        logger.info(f"Scanning directory for CIF files: {input_path}")
+        cif_paths = []
+        
+        # Find all .cif files in the directory (recursive)
+        for cif_file in input_path_obj.rglob("*.cif"):
+            cif_paths.append(str(cif_file))
+        
+        if not cif_paths:
+            raise FileNotFoundError(f"No CIF files found in directory: {input_path}")
+        
+        logger.info(f"Found {len(cif_paths)} CIF files in directory")
+        return cif_paths
+        
+    elif input_path_obj.is_file():
+        # File mode: read CIF paths from text file
+        logger.info(f"Loading CIF file list from: {input_path}")
+        with open(input_path, "r") as f:
+            cif_paths = [
+                line.strip() for line in f if line.strip() and not line.startswith("#")
+            ]
 
-    # Validate that files exist
-    missing_files = [path for path in cif_paths if not Path(path).exists()]
-    if missing_files:
-        raise FileNotFoundError(f"Missing CIF files: {missing_files}")
+        # Validate that files exist
+        missing_files = [path for path in cif_paths if not Path(path).exists()]
+        if missing_files:
+            raise FileNotFoundError(f"Missing CIF files: {missing_files}")
 
-    return cif_paths
+        return cif_paths
+    else:
+        raise FileNotFoundError(f"Path does not exist: {input_path}")
 
 
 def load_benchmark_config(config_name: str) -> Dict[str, Any]:
@@ -84,7 +119,7 @@ def create_preprocessor_config(benchmark_families: List[str]) -> Dict[str, Any]:
     for family in benchmark_families:
         if family in ["distribution", "jsdistance", "mmd", "frechet"]:
             config["distribution"] = True
-        if family in ["stability", "multi_mlip_stability", "sun"]:
+        if family in ["stability", "sun"]:
             config["stability"] = True
         if family in ["diversity", "frechet"]:
             config["embeddings"] = True
@@ -212,7 +247,7 @@ def run_benchmarks(structures, benchmark_families: List[str], config: Dict[str, 
                     include_metasun=config.get("include_metasun", True),
                 )
 
-            elif family == "multi_mlip_stability":
+            elif family == "stability":
                 benchmark = MultiMLIPStabilityBenchmark(config=config)
 
             else:
@@ -271,7 +306,7 @@ def main():
     """Main function to run benchmarks."""
     parser = argparse.ArgumentParser(description="Run material generation benchmarks")
     parser.add_argument(
-        "--cifs", required=True, help="Path to text file containing CIF file paths"
+        "--cifs", required=True, help="Path to text file containing CIF file paths OR directory containing CIF files"
     )
     parser.add_argument(
         "--config",
@@ -312,7 +347,7 @@ def main():
                 "uniqueness", 
                 "hhi", 
                 "sun", 
-                "multi_mlip_stability"
+                "stability"
             ]
             logger.info(f"Using all benchmark families: {benchmark_families}")
 
