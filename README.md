@@ -40,7 +40,16 @@ uv run scripts/run_benchmarks.py --cifs notebooks --config comprehensive --name 
    uv sync
    ```
 
-3. **Set up UMA model access (required for stability and distribution benchmarks):**
+3. **Activate the virtual environment:**
+   ```bash
+   # On macOS/Linux:
+   source .venv/bin/activate
+   
+   # On Windows:
+   .venv\Scripts\activate
+   ```
+
+4. **Set up UMA model access (required for stability and distribution benchmarks):**
    ```bash
    # Request access to UMA model on HuggingFace
    # Visit: https://huggingface.co/facebook/UMA
