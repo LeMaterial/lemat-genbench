@@ -285,10 +285,25 @@ uv run scripts/run_benchmarks.py --cifs structures.txt --config comprehensive --
 
 ## 📚 References
 
-- **LeMat-Bulk Dataset**: [HuggingFace](https://huggingface.co/datasets/LeMaterial/LeMat-Bulk)
-- **UMA Model**: [HuggingFace](https://huggingface.co/facebook/UMA)
-- **ORB Models**: [GitHub](https://github.com/orbital-materials/orb-models)
-- **MACE Models**: [GitHub](https://github.com/ACEsuit/mace)
+### Datasets
+- **LeMat-Bulk Dataset**: [HuggingFace](https://huggingface.co/datasets/LeMaterial/LeMat-Bulk) - Siron, Martin, et al. "LeMat-Bulk: aggregating, and de-duplicating quantum chemistry materials databases." AI for Accelerated Materials Design-ICLR 2025.
+
+### MLIP Models
+- **UMA Model**: [HuggingFace](https://huggingface.co/facebook/UMA) - Wood, Brandon M., et al. "UMA: A Family of Universal Models for Atoms." arXiv preprint arXiv:2506.23971 (2025).
+- **ORB Models**: [GitHub](https://github.com/orbital-materials/orb-models) - Rhodes, Benjamin, et al. "Orb-v3: atomistic simulation at scale." arXiv preprint arXiv:2504.06231 (2025).
+- **MACE Models**: [GitHub](https://github.com/ACEsuit/mace) - Batatia, Ilyes, et al. "MACE: Higher order equivariant message passing neural networks for fast and accurate force fields." Advances in neural information processing systems 35 (2022): 11423-11436.
+### Core Metrics and Methods
+
+#### Distribution Metrics
+- **Fréchet Distance**: [FCD Implementation](https://github.com/bioinf-jku/FCD/blob/master/fcd/utils.py) - Measures similarity between embedding distributions
+- **Maximum Mean Discrepancy (MMD)**: [Gretton et al. (2012)](https://jmlr.org/papers/v13/gretton12a.html) - Gretton, Arthur, et al. "A kernel two-sample test." The journal of machine learning research 13.1 (2012): 723-773.
+- **Jensen-Shannon Distance**: [Lin (1991)](https://ieeexplore.ieee.org/document/86638) - Lin, Jianhua. "Divergence measures based on the Shannon entropy." IEEE Transactions on Information theory 37.1 (2002): 145-151.
+
+#### Diversity Metrics
+- **Vendi Score**: [Friedman & Dieng (2023)](https://arxiv.org/abs/2210.02410) - Friedman, Dan, and Adji Bousso Dieng. "The vendi score: A diversity evaluation metric for machine learning." arXiv preprint arXiv:2210.02410 (2022).
+
+#### Supply Risk Metrics
+- **Herfindahl-Hirschman Index (HHI)**: [Mansouri Tehrani, Aria, et al](https://link.springer.com/article/10.1007/s40192-017-0085-4) - Mansouri Tehrani, Aria, et al. "Balancing mechanical properties and sustainability in the search for superhard materials." Integrating materials and manufacturing innovation 6.1 (2017): 1-8.
 
 ## 📄 License
 
