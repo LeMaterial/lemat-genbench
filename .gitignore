@@ -182,3 +182,6 @@ data/*_embeddings.npy
 # Large data files - distribution properties  
 data/lematbulk_full_distribution_properties.pkl
 data/lematbulk_mmd_values.pkl 
+
+# Local testing
+submissions/
