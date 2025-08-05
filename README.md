@@ -276,10 +276,10 @@ uv run scripts/run_benchmarks.py --cifs structures.txt --config comprehensive --
 
 - **LeMat-Bulk Dataset**: [HuggingFace](https://huggingface.co/datasets/LeMaterial/LeMat-Bulk)
 - **UMA Model**: [HuggingFace](https://huggingface.co/facebook/UMA)
-- **ORB Models**: [GitHub](https://github.com/Open-Catalyst-Project/Open-Catalyst-Project)
+- **ORB Models**: [GitHub](https://github.com/orbital-materials/orb-models)
 - **MACE Models**: [GitHub](https://github.com/ACEsuit/mace)
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License - see the [LICENSE](LICENSE) file for details.
 
