@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """
-Compute reference statistics (mu, sigma) for Fréchet distance from LeMat-GenBench-embeddings dataset.
+Compute reference statistics (mu, sigma) for Fréchet distance from
+LeMat-GenBench-embeddings dataset.
 
 This script loads the full dataset and computes mean and covariance matrices
-for each model's embeddings using direct computation with memory-efficient processing for large models.
+for each model's embeddings using direct computation with memory-efficient
+processing for large models.
 
 Usage:
-    uv run python scripts/compute_reference_stats.py --cache-dir ./data --models mace orb uma
-    
+    uv run scripts/compute_reference_stats.py --cache-dir ./data --models mace orb uma
+
 Requirements:
     uv add datasets psutil
 """
@@ -45,40 +47,39 @@ def main():
         help="Directory to save computed statistics (default: ./data)"
     )
 
-    
     args = parser.parse_args()
-    
+
     print("=" * 60)
     print("Computing Reference Statistics for Fréchet Distance")
     print("=" * 60)
     print(f"Dataset: {args.dataset_name}")
     print(f"Models: {args.models}")
     print(f"Cache directory: {args.cache_dir}")
-    print( "Method: Direct computation with memory-efficient processing")
+    print("Method: Direct computation with memory-efficient processing")
     print()
-    
+
     # Ensure cache directory exists
     Path(args.cache_dir).mkdir(parents=True, exist_ok=True)
-    
+
     # Start computation
     start_time = time.time()
-    
+
     try:
         stats = compute_reference_stats_direct(
             dataset_name=args.dataset_name,
             model_names=args.models,
             cache_dir=args.cache_dir
         )
-        
+
         end_time = time.time()
         duration = end_time - start_time
-        
+
         print("\n" + "=" * 60)
         print("COMPUTATION COMPLETED!")
         print("=" * 60)
         print(f"Total time: {duration:.1f} seconds ({duration/60:.1f} minutes)")
         print()
-        
+
         # Print summary
         for model_name, model_stats in stats.items():
             mu_shape = model_stats["mu"].shape
@@ -88,7 +89,7 @@ def main():
             print(f"  Covariance shape: {sigma_shape}")
             print(f"  Memory usage: ~{(mu_shape[0] * 4 + sigma_shape[0] * sigma_shape[1] * 4) / 1024:.1f} KB")
             print()
-        
+
         print(f"Statistics saved to: {args.cache_dir}")
         print("\nFiles created:")
         cache_path = Path(args.cache_dir)
@@ -100,11 +101,11 @@ def main():
                 sigma_size = sigma_file.stat().st_size / 1024
                 print(f"  {model_name}_mu.npy ({mu_size:.1f} KB)")
                 print(f"  {model_name}_sigma.npy ({sigma_size:.1f} KB)")
-        
+
         metadata_file = cache_path / "metadata.json"
         if metadata_file.exists():
             print(f"  metadata.json ({metadata_file.stat().st_size} bytes)")
-            
+
     except Exception as e:
         print(f"\nERROR: {e}")
         print("Make sure you have the required libraries installed:")
