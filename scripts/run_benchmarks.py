@@ -121,7 +121,7 @@ def create_preprocessor_config(benchmark_families: List[str]) -> Dict[str, Any]:
             config["distribution"] = True
         if family in ["stability", "sun"]:
             config["stability"] = True
-        if family in ["diversity", "frechet"]:
+        if family in ["frechet", "distribution"]:  # Distribution includes Frechet distance
             config["embeddings"] = True
 
     return config
@@ -162,7 +162,7 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any]):
             mlip_names=["orb", "mace", "uma"],
             mlip_configs=mlip_configs,
             relax_structures=relax_structures,
-            relaxation_config={"fmax": 0.02, "steps": 500},
+            relaxation_config={"fmax": 0.05, "steps": 100},
             calculate_formation_energy=relax_structures,
             calculate_energy_above_hull=relax_structures,
             extract_embeddings=extract_embeddings,

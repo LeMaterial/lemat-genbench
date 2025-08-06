@@ -1,17 +1,17 @@
 # generated using pymatgen
-data_Ni2O3
+data_Si
 _symmetry_space_group_name_H-M   'P 1'
-_cell_length_a   2.68157499
-_cell_length_b   2.68157430
-_cell_length_c   40.02764893
-_cell_angle_alpha   90.00000250
-_cell_angle_beta   90.00000250
-_cell_angle_gamma   119.99999886
+_cell_length_a   3.84019793
+_cell_length_b   3.84019899
+_cell_length_c   3.84019793
+_cell_angle_alpha   119.99999086
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   60.00000914
 _symmetry_Int_Tables_number   1
-_chemical_formula_structural   Ni2O3
-_chemical_formula_sum   'Ni8 O12'
-_cell_volume   249.27027910
-_cell_formula_units_Z   4
+_chemical_formula_structural   Si
+_chemical_formula_sum   Si2
+_cell_volume   40.04479464
+_cell_formula_units_Z   2
 loop_
  _symmetry_equiv_pos_site_id
  _symmetry_equiv_pos_as_xyz
@@ -24,23 +24,5 @@ loop_
  _atom_site_fract_y
  _atom_site_fract_z
  _atom_site_occupancy
-  Ni  Ni0  1  0.00000000  0.00000000  0.13559365  1.0
-  Ni  Ni1  1  0.00000000  0.00000000  0.63559365  1.0
-  Ni  Ni2  1  0.50000000  0.50000000  0.49192405  1.0
-  Ni  Ni3  1  0.00000000  0.50000000  0.49192405  1.0
-  Ni  Ni4  1  0.50000000  0.00000000  0.99192399  1.0
-  Ni  Ni5  1  0.50000000  0.00000000  0.49192405  1.0
-  Ni  Ni6  1  0.50000000  0.50000000  0.99192399  1.0
-  Ni  Ni7  1  0.00000000  0.50000000  0.99192399  1.0
-  O  O8  1  0.66195750  0.13967592  0.11615956  1.0
-  O  O9  1  0.66195750  0.52228159  0.61615956  1.0
-  O  O10  1  0.52228159  0.66195750  0.11615956  1.0
-  O  O11  1  0.33804250  0.86032408  0.11615956  1.0
-  O  O12  1  0.47771841  0.13967592  0.61615956  1.0
-  O  O13  1  0.52228159  0.86032408  0.61615956  1.0
-  O  O14  1  0.13967592  0.47771841  0.11615956  1.0
-  O  O15  1  0.33804250  0.47771841  0.61615956  1.0
-  O  O16  1  0.86032408  0.52228159  0.11615956  1.0
-  O  O17  1  0.47771841  0.33804250  0.11615956  1.0
-  O  O18  1  0.13967592  0.66195750  0.61615956  1.0
-  O  O19  1  0.86032408  0.33804250  0.61615956  1.0
+  Si  Si0  1  0.00000000  0.00000000  0.00000000  1
+  Si  Si1  1  0.08327723  0.05551816  0.08327723  1
