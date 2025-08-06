@@ -18,12 +18,12 @@ import argparse
 import gc
 import json
 import sys
-import psutil
-import torch
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List
 
+import psutil
+import torch
 import yaml
 
 # Add src to path for imports
@@ -94,7 +94,7 @@ def clear_mlip_models():
                     if 'cache' in attr_name.lower() or 'model' in attr_name.lower():
                         try:
                             delattr(module, attr_name)
-                        except:
+                        except (AttributeError, TypeError):
                             pass
         
         logger.debug("🧹 MLIP models cleared from memory")
