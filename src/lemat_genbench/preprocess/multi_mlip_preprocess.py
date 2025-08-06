@@ -50,7 +50,7 @@ class MultiMLIPStabilityPreprocessorConfig(PreprocessorConfig):
     calculate_formation_energy: bool = True
     calculate_energy_above_hull: bool = True
     extract_embeddings: bool = True
-    timeout: int = 60
+    timeout: int = 300
 
 
 class MultiMLIPStabilityPreprocessor(BasePreprocessor):
@@ -95,7 +95,7 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
         calculate_formation_energy: bool = True,
         calculate_energy_above_hull: bool = True,
         extract_embeddings: bool = True,
-        timeout: int = 60,
+        timeout: int = 300,
         name: str = None,
         description: str = None,
         n_jobs: int = 1,

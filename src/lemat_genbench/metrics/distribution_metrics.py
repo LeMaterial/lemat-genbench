@@ -590,7 +590,7 @@ if __name__ == "__main__":
             mlip_configs=mlip_configs,
             relax_structures=False,  # Skip relaxation for faster demo
             extract_embeddings=True,
-            timeout=60,
+            timeout=300,
         )
         
         print(f"🧮 Computing embeddings for {len(structures)} structures...")

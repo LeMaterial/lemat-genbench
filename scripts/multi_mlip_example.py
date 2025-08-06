@@ -80,7 +80,7 @@ def example_custom_configuration():
         calculate_formation_energy=True,
         calculate_energy_above_hull=True,
         extract_embeddings=True,
-        timeout=120,  # Longer timeout
+        timeout=300,  # Longer timeout
     )
 
     # Test with a single structure

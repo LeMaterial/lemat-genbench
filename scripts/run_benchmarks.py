@@ -166,7 +166,7 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any]):
             calculate_formation_energy=relax_structures,
             calculate_energy_above_hull=relax_structures,
             extract_embeddings=extract_embeddings,
-            timeout=60,
+            timeout=300,
         )
 
         mlip_result = mlip_preprocessor(processed_structures)

@@ -150,7 +150,7 @@ if __name__ == "__main__":
 
     mlips = ["uma"]
 
-    timeout = 60  # seconds, for one MLIP calculation
+    timeout = 300  # seconds, for one MLIP calculation
 
     try:
         if "orb" not in mlips:
