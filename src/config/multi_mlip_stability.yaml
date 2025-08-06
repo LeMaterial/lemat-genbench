@@ -39,8 +39,8 @@ preprocessor_config:
       device: cpu
   relax_structures: true
   relaxation_config:
-    fmax: 0.05
-    steps: 100
+    fmax: 0.1
+    steps: 50
   calculate_formation_energy: true
   calculate_energy_above_hull: true
   extract_embeddings: true

@@ -6,11 +6,13 @@ It provides ensemble statistics and uncertainty quantification by combining
 results from multiple MLIPs.
 """
 
+import gc
 import warnings
 from dataclasses import dataclass, field
 from typing import Any, Dict, List
 
 import numpy as np
+import torch
 from func_timeout import FunctionTimedOut, func_timeout
 from pymatgen.core import Structure
 
@@ -59,6 +61,26 @@ def _create_clean_structure_copy(structure):
         clean_structure.properties = _detach_tensors(structure.properties)
     
     return clean_structure
+
+
+def _clear_worker_memory():
+    """Clear memory in worker processes."""
+    # Run garbage collection
+    gc.collect()
+    
+    # Clear PyTorch cache if available
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+    
+    # Note: We do NOT clear the model cache here to maintain caching across structures
+    # The models should persist in memory for the lifetime of the worker process
+
+
+def _clear_model_cache():
+    """Clear the process-local model cache (use sparingly)."""
+    global _PROCESS_MODEL_CACHE
+    _PROCESS_MODEL_CACHE.clear()
+    logger.debug("🧹 Model cache cleared")
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # Process-local model cache (each worker process gets its own models)
@@ -143,7 +165,7 @@ class MultiMLIPStabilityPreprocessorConfig(PreprocessorConfig):
     mlip_configs: Dict[str, Dict[str, Any]] = field(default_factory=dict)
     relax_structures: bool = True
     relaxation_config: Dict[str, Any] = field(
-        default_factory=lambda: {"fmax": 0.05, "steps": 100}
+        default_factory=lambda: {"fmax": 0.1, "steps": 50}
     )
     calculate_formation_energy: bool = True
     calculate_energy_above_hull: bool = True
@@ -204,7 +226,7 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
         if mlip_configs is None:
             mlip_configs = {}
         if relaxation_config is None:
-            relaxation_config = {"fmax": 0.05, "steps": 100}
+            relaxation_config = {"fmax": 0.1, "steps": 50}
 
         # Handle n_jobs=-1 to use all CPU cores
         if n_jobs == -1:
@@ -393,6 +415,9 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
 
             # Create a clean copy of the structure before returning (for multiprocessing serialization)
             clean_structure = _create_clean_structure_copy(structure)
+
+            # Clear memory in worker process
+            _clear_worker_memory()
 
             return clean_structure
 

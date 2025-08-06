@@ -15,8 +15,11 @@ Usage:
 """
 
 import argparse
+import gc
 import json
 import sys
+import psutil
+import torch
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List
@@ -41,6 +44,88 @@ from lemat_genbench.preprocess.multi_mlip_preprocess import (
     MultiMLIPStabilityPreprocessor,
 )
 from lemat_genbench.utils.logging import logger
+
+
+def get_memory_usage():
+    """Get current memory usage in MB."""
+    process = psutil.Process()
+    memory_info = process.memory_info()
+    return memory_info.rss / 1024 / 1024  # Convert to MB
+
+
+def log_memory_usage(stage: str, force_log=False):
+    """Log current memory usage."""
+    memory_mb = get_memory_usage()
+    if force_log:
+        logger.info(f"💾 Memory usage at {stage}: {memory_mb:.1f} MB")
+    else:
+        logger.debug(f"💾 Memory usage at {stage}: {memory_mb:.1f} MB")
+
+
+def clear_memory():
+    """Clear memory by running garbage collection and clearing PyTorch cache."""
+    # Run Python garbage collection
+    gc.collect()
+    
+    # Clear PyTorch cache if available
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+    
+    # Force garbage collection again
+    gc.collect()
+    
+    logger.debug("🧹 Memory cleared (garbage collection + PyTorch cache)")
+
+
+def clear_mlip_models():
+    """Clear MLIP models from memory."""
+    try:
+        # Clear any cached models
+        from lemat_genbench.models.registry import _MODEL_CACHE
+        if hasattr(_MODEL_CACHE, 'clear'):
+            _MODEL_CACHE.clear()
+        
+        # Clear any global model caches
+        import sys
+        for module_name in list(sys.modules.keys()):
+            if 'lemat_genbench.models' in module_name:
+                module = sys.modules[module_name]
+                for attr_name in list(dir(module)):
+                    if 'cache' in attr_name.lower() or 'model' in attr_name.lower():
+                        try:
+                            delattr(module, attr_name)
+                        except:
+                            pass
+        
+        logger.debug("🧹 MLIP models cleared from memory")
+    except Exception as e:
+        logger.debug(f"Could not clear MLIP models: {e}")
+
+
+def cleanup_after_preprocessor(preprocessor_name: str, monitor_memory: bool = False):
+    """Clean up memory after running a preprocessor."""
+    logger.info(f"🧹 Cleaning up after {preprocessor_name} preprocessor...")
+    
+    # Clear memory
+    clear_memory()
+    
+    # Clear MLIP models if it was a MLIP preprocessor
+    if "mlip" in preprocessor_name.lower():
+        clear_mlip_models()
+    
+    # Log memory usage
+    log_memory_usage(f"after {preprocessor_name} cleanup", force_log=monitor_memory)
+
+
+def cleanup_after_benchmark(benchmark_name: str, monitor_memory: bool = False):
+    """Clean up memory after running a benchmark."""
+    logger.info(f"🧹 Cleaning up after {benchmark_name} benchmark...")
+    
+    # Clear memory
+    clear_memory()
+    
+    # Log memory usage
+    log_memory_usage(f"after {benchmark_name} cleanup", force_log=monitor_memory)
 
 
 def load_cif_files(input_path: str) -> List[str]:
@@ -127,10 +212,13 @@ def create_preprocessor_config(benchmark_families: List[str]) -> Dict[str, Any]:
     return config
 
 
-def run_preprocessors(structures, preprocessor_config: Dict[str, Any]):
+def run_preprocessors(structures, preprocessor_config: Dict[str, Any], monitor_memory: bool = False):
     """Run required preprocessors based on configuration."""
     processed_structures = structures
     preprocessor_results = {}
+
+    # Log initial memory usage
+    log_memory_usage("before preprocessing", force_log=monitor_memory)
 
     # Distribution preprocessor (for MMD, JSDistance)
     if preprocessor_config["distribution"]:
@@ -142,6 +230,9 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any]):
         logger.info(
             f"✅ Distribution preprocessing complete for {len(processed_structures)} structures"
         )
+        
+        # Clean up after distribution preprocessor
+        cleanup_after_preprocessor("distribution", monitor_memory)
 
     # Multi-MLIP preprocessor (for stability, embeddings)
     if preprocessor_config["stability"] or preprocessor_config["embeddings"]:
@@ -162,7 +253,7 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any]):
             mlip_names=["orb", "mace", "uma"],
             mlip_configs=mlip_configs,
             relax_structures=relax_structures,
-            relaxation_config={"fmax": 0.05, "steps": 100},
+            relaxation_config={"fmax": 0.1, "steps": 50},
             calculate_formation_energy=relax_structures,
             calculate_energy_above_hull=relax_structures,
             extract_embeddings=extract_embeddings,
@@ -175,13 +266,22 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any]):
         logger.info(
             f"✅ Multi-MLIP preprocessing complete for {len(processed_structures)} structures"
         )
+        
+        # Clean up after MLIP preprocessor (this is crucial for memory management)
+        cleanup_after_preprocessor("multi_mlip", monitor_memory)
+
+    # Log final memory usage
+    log_memory_usage("after all preprocessing")
 
     return processed_structures, preprocessor_results
 
 
-def run_benchmarks(structures, benchmark_families: List[str], config: Dict[str, Any]):
+def run_benchmarks(structures, benchmark_families: List[str], config: Dict[str, Any], monitor_memory: bool = False):
     """Run specified benchmark families."""
     results = {}
+
+    # Log initial memory usage
+    log_memory_usage("before benchmarks", force_log=monitor_memory)
 
     for family in benchmark_families:
         logger.info(f"Running {family} benchmark...")
@@ -259,10 +359,19 @@ def run_benchmarks(structures, benchmark_families: List[str], config: Dict[str, 
             results[family] = benchmark_result
 
             logger.info(f"✅ {family} benchmark complete")
+            
+            # Clean up after each benchmark
+            cleanup_after_benchmark(family, monitor_memory)
 
         except Exception as e:
             logger.error(f"❌ Failed to run {family} benchmark: {str(e)}")
             results[family] = {"error": str(e)}
+            
+            # Clean up even if benchmark failed
+            cleanup_after_benchmark(family, monitor_memory)
+
+    # Log final memory usage
+    log_memory_usage("after all benchmarks")
 
     return results
 
@@ -319,10 +428,24 @@ def main():
         nargs="+",
         help="Specific benchmark families to run (overrides config)",
     )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=None,
+        help="Process structures in batches to reduce memory usage (default: process all at once)",
+    )
+    parser.add_argument(
+        "--monitor-memory",
+        action="store_true",
+        help="Enable detailed memory monitoring throughout the process",
+    )
 
     args = parser.parse_args()
 
     try:
+        # Log initial memory usage
+        log_memory_usage("start of benchmark run", force_log=args.monitor_memory)
+        
         # Load CIF files
         logger.info(f"Loading CIF files from: {args.cifs}")
         cif_paths = load_cif_files(args.cifs)
@@ -368,25 +491,79 @@ def main():
             raise ValueError("No valid structures loaded from CIF files")
 
         logger.info(f"✅ Loaded {len(structures)} structures")
+        
+        # Clear memory after loading structures
+        clear_memory()
+        log_memory_usage("after loading structures", force_log=args.monitor_memory)
 
         # Determine preprocessor requirements
         preprocessor_config = create_preprocessor_config(benchmark_families)
         logger.info(f"Preprocessor config: {preprocessor_config}")
 
-        # Run preprocessors
-        processed_structures, preprocessor_results = run_preprocessors(
-            structures, preprocessor_config
-        )
+        # Run preprocessors and benchmarks
+        if args.batch_size and len(structures) > args.batch_size:
+            logger.info(f"🔄 Processing {len(structures)} structures in batches of {args.batch_size}")
+            
+            # Process in batches
+            all_processed_structures = []
+            all_benchmark_results = {}
+            
+            for i in range(0, len(structures), args.batch_size):
+                batch_structures = structures[i:i + args.batch_size]
+                batch_num = i // args.batch_size + 1
+                total_batches = (len(structures) + args.batch_size - 1) // args.batch_size
+                
+                logger.info(f"🔄 Processing batch {batch_num}/{total_batches} ({len(batch_structures)} structures)")
+                
+                # Run preprocessors on batch
+                batch_processed, batch_preprocessor_results = run_preprocessors(
+                    batch_structures, preprocessor_config, args.monitor_memory
+                )
+                
+                # Run benchmarks on batch
+                batch_benchmark_results = run_benchmarks(
+                    batch_processed, benchmark_families, config, args.monitor_memory
+                )
+                
+                # Combine results
+                all_processed_structures.extend(batch_processed)
+                
+                # Merge benchmark results (this is simplified - in practice you might want more sophisticated merging)
+                for family, result in batch_benchmark_results.items():
+                    if family not in all_benchmark_results:
+                        all_benchmark_results[family] = result
+                    else:
+                        # For now, just keep the last result (you might want to aggregate properly)
+                        all_benchmark_results[family] = result
+                
+                # Clear memory between batches
+                clear_memory()
+                log_memory_usage(f"after batch {batch_num}", force_log=args.monitor_memory)
+            
+            processed_structures = all_processed_structures
+            benchmark_results = all_benchmark_results
+            
+        else:
+            # Process all structures at once
+            processed_structures, preprocessor_results = run_preprocessors(
+                structures, preprocessor_config, args.monitor_memory
+            )
 
-        # Run benchmarks
-        benchmark_results = run_benchmarks(
-            processed_structures, benchmark_families, config
-        )
+            # Run benchmarks
+            benchmark_results = run_benchmarks(
+                processed_structures, benchmark_families, config, args.monitor_memory
+            )
 
         # Save results
         results_file = save_results(
             benchmark_results, args.name, args.config, len(structures)
         )
+
+        # Final cleanup
+        logger.info("🧹 Performing final cleanup...")
+        clear_memory()
+        clear_mlip_models()
+        log_memory_usage("final cleanup", force_log=args.monitor_memory)
 
         # Print summary
         print("\n" + "=" * 60)

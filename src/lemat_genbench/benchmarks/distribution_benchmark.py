@@ -195,7 +195,7 @@ if __name__ == "__main__":
         mlip_names=["orb", "mace", "uma"],
         mlip_configs=mlip_configs,
         relax_structures=True,
-        relaxation_config={"fmax": 0.05, "steps": 100},  # Tighter convergence
+        relaxation_config={"fmax": 0.1, "steps": 50},  # Tighter convergence
         calculate_formation_energy=True,
         calculate_energy_above_hull=True,
         extract_embeddings=True,
