@@ -219,33 +219,33 @@ uv run scripts/run_benchmarks.py --cifs my_structures.txt --config comprehensive
 #### Single Family
 ```bash
 # Run only validity checks
-uv run scripts/run_benchmarks.py --cifs structures/ --families validity --name validity_only
+uv run scripts/run_benchmarks.py --cifs structures/ --config validity --families validity --name validity_only
 
 # Run only stability analysis
-uv run scripts/run_benchmarks.py --cifs structures/ --families stability --name stability_only
+uv run scripts/run_benchmarks.py --cifs structures/ --config stability --families stability --name stability_only
 ```
 
 #### Multiple Families (2-3 families)
 ```bash
 # Run validity and novelty (low + medium cost)
-uv run scripts/run_benchmarks.py --cifs structures/ --families validity novelty --name validity_novelty
+uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --families validity novelty --name validity_novelty
 
 # Run diversity, uniqueness, and HHI (all low cost)
-uv run scripts/run_benchmarks.py --cifs structures/ --families diversity uniqueness hhi --name diversity_analysis
+uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --families diversity uniqueness hhi --name diversity_analysis
 
 # Run distribution and stability (medium + high cost)
-uv run scripts/run_benchmarks.py --cifs structures/ --families distribution stability --name distribution_stability
+uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --families distribution stability --name distribution_stability
 
 # Run novelty, uniqueness, and SUN (medium + low + high cost)
-uv run scripts/run_benchmarks.py --cifs structures/ --families novelty uniqueness sun --name novelty_sun
+uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --families novelty uniqueness sun --name novelty_sun
 ```
 
 #### All Families (Default)
 ```bash
 # Run all benchmark families
-uv run scripts/run_benchmarks.py --cifs structures/ --name full_analysis
+uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --name full_analysis
 # or explicitly specify all families
-uv run scripts/run_benchmarks.py --cifs structures/ --families validity distribution diversity novelty uniqueness stability hhi sun --name explicit_full
+uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --families validity distribution diversity novelty uniqueness stability hhi sun --name explicit_full
 ```
 
 ## 📁 Output
@@ -331,7 +331,7 @@ uv run scripts/run_benchmarks.py --cifs structures.txt --config comprehensive --
 2. **Memory Issues:**
    ```bash
    # Run fewer families at once
-   uv run scripts/run_benchmarks.py --cifs structures/ --families validity --name memory_test
+   uv run scripts/run_benchmarks.py --cifs structures/ --config validity --families validity --name memory_test
    ```
 
 3. **Timeout Errors:**
