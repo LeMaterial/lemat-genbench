@@ -145,7 +145,9 @@ class BaseMLIPCalculator(ABC):
             Relaxed structure and final calculation result
         """
         from ase.filters import FrechetCellFilter
-        from ase.optimize import FIRE
+
+        # from ase.optimize import FIRE
+        from ase.optimize import BFGSLineSearch
         from pymatgen.io.ase import AseAtomsAdaptor
 
         # Convert to ASE atoms
@@ -156,7 +158,8 @@ class BaseMLIPCalculator(ABC):
         atoms.calc = calc
 
         # Relax structure
-        dyn = FIRE(FrechetCellFilter(atoms), logfile=None)
+        # dyn = FIRE(FrechetCellFilter(atoms), logfile=None)
+        dyn = BFGSLineSearch(FrechetCellFilter(atoms), logfile=None)
         dyn.run(fmax=fmax, steps=steps)
 
         # Get final results

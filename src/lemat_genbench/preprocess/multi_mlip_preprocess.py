@@ -1,20 +1,140 @@
 """Multi-MLIP stability preprocessor for robust metric calculation.
 
-This module provides a preprocessor that can use multiple MLIPs simultaneously
-to calculate stability metrics and provide statistical robustness through
-ensemble predictions.
+This module implements a preprocessor that uses multiple MLIPs (Machine Learning
+Interatomic Potentials) to calculate stability-related properties for structures.
+It provides ensemble statistics and uncertainty quantification by combining
+results from multiple MLIPs.
 """
 
+import gc
+import warnings
 from dataclasses import dataclass, field
 from typing import Any, Dict, List
 
 import numpy as np
+import torch
 from func_timeout import FunctionTimedOut, func_timeout
 from pymatgen.core import Structure
 
-from lemat_genbench.models.registry import get_calculator, list_available_models
+from lemat_genbench.models.registry import get_calculator
 from lemat_genbench.preprocess.base import BasePreprocessor, PreprocessorConfig
 from lemat_genbench.utils.logging import logger
+
+# Suppress warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.filterwarnings("ignore", category=FutureWarning)
+
+def _detach_tensors(obj):
+    """Recursively detach PyTorch tensors to make them serializable for multiprocessing."""
+    import torch
+    
+    if isinstance(obj, torch.Tensor):
+        return obj.detach().cpu().numpy()
+    elif isinstance(obj, dict):
+        return {key: _detach_tensors(value) for key, value in obj.items()}
+    elif isinstance(obj, list):
+        return [_detach_tensors(item) for item in obj]
+    elif isinstance(obj, tuple):
+        return tuple(_detach_tensors(item) for item in obj)
+    elif hasattr(obj, 'properties') and hasattr(obj.properties, 'items'):
+        # Handle pymatgen Structure objects
+        for key, value in obj.properties.items():
+            obj.properties[key] = _detach_tensors(value)
+        return obj
+    else:
+        return obj
+
+def _create_clean_structure_copy(structure):
+    """Create a clean copy of a Structure object without any tensors."""
+    from pymatgen.core import Structure
+    
+    # Create a new structure with the same lattice and sites
+    clean_structure = Structure(
+        lattice=structure.lattice,
+        species=[site.specie for site in structure],
+        coords=[site.coords for site in structure],
+        coords_are_cartesian=False
+    )
+    
+    # Copy properties but detach any tensors
+    if hasattr(structure, 'properties') and structure.properties:
+        clean_structure.properties = _detach_tensors(structure.properties)
+    
+    return clean_structure
+
+
+def _clear_worker_memory():
+    """Clear memory in worker processes."""
+    # Run garbage collection
+    gc.collect()
+    
+    # Clear PyTorch cache if available
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+    
+    # Note: We do NOT clear the model cache here to maintain caching across structures
+    # The models should persist in memory for the lifetime of the worker process
+
+
+def _clear_model_cache():
+    """Clear the process-local model cache (use sparingly)."""
+    global _PROCESS_MODEL_CACHE
+    _PROCESS_MODEL_CACHE.clear()
+    logger.debug("🧹 Model cache cleared")
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+# Process-local model cache (each worker process gets its own models)
+_PROCESS_MODEL_CACHE = {}
+
+def _get_process_model_cache():
+    """Get the process-local model cache."""
+    return _PROCESS_MODEL_CACHE
+
+def _get_or_create_calculator(mlip_name: str, mlip_config: Dict[str, Any]):
+    """Get calculator from process cache or create if not exists."""
+    cache = _get_process_model_cache()
+    
+    cache_key = f"{mlip_name}_{hash(str(mlip_config))}"
+    
+    if cache_key not in cache:
+        logger.info(f"Loading {mlip_name} model in worker process...")
+        cache[cache_key] = get_calculator(mlip_name, **mlip_config)
+        logger.info(f"✅ {mlip_name} model loaded in worker")
+    else:
+        logger.debug(f"Using cached {mlip_name} model in worker")
+    
+    return cache[cache_key]
+
+def _initialize_worker_models(mlip_names: List[str], mlip_configs: Dict[str, Dict[str, Any]]):
+    """Initialize models in the main process (for logging only)."""
+    logger.info("Models will be loaded in each worker process as needed...")
+    
+    for mlip_name in mlip_names:
+        try:
+            mlip_config = mlip_configs.get(mlip_name, {})
+
+            # Use specific default configurations for each MLIP
+            if mlip_name == "mace":
+                default_config = {"model_type": "mp", "device": "cpu"}
+            elif mlip_name == "orb":
+                default_config = {
+                    "model_type": "orb_v3_conservative_inf_omat",
+                    "device": "cpu",
+                }
+            elif mlip_name == "uma":
+                default_config = {"task": "omat", "device": "cpu"}
+            else:
+                default_config = {"device": "cpu"}
+
+            # Merge user config with defaults (user config takes precedence)
+            final_config = {**default_config, **mlip_config}
+            
+            logger.info(f"Will load {mlip_name} with config: {final_config}")
+            
+        except Exception as e:
+            logger.error(f"Failed to configure {mlip_name} model: {str(e)}")
+    
+    logger.info(f"✅ Model configuration ready for {len(mlip_names)} models")
 
 
 @dataclass
@@ -45,7 +165,7 @@ class MultiMLIPStabilityPreprocessorConfig(PreprocessorConfig):
     mlip_configs: Dict[str, Dict[str, Any]] = field(default_factory=dict)
     relax_structures: bool = True
     relaxation_config: Dict[str, Any] = field(
-        default_factory=lambda: {"fmax": 0.02, "steps": 500}
+        default_factory=lambda: {"fmax": 0.1, "steps": 50}
     )
     calculate_formation_energy: bool = True
     calculate_energy_above_hull: bool = True
@@ -98,7 +218,7 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
         timeout: int = 300,
         name: str = None,
         description: str = None,
-        n_jobs: int = 1,
+        n_jobs: int = 4,  # Use 4 cores to balance speed and memory
     ):
         # Set defaults
         if mlip_names is None:
@@ -106,7 +226,13 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
         if mlip_configs is None:
             mlip_configs = {}
         if relaxation_config is None:
-            relaxation_config = {"fmax": 0.02, "steps": 500}
+            relaxation_config = {"fmax": 0.1, "steps": 50}
+
+        # Handle n_jobs=-1 to use all CPU cores
+        if n_jobs == -1:
+            import multiprocessing
+            n_jobs = multiprocessing.cpu_count()
+            logger.info(f"Using all available CPU cores: {n_jobs}")
 
         super().__init__(
             name=name or f"MultiMLIPStabilityPreprocessor_{'-'.join(mlip_names)}",
@@ -129,48 +255,14 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
             timeout=timeout,
         )
 
-        # Create calculators for each MLIP
-        self.calculators = {}
-        for mlip_name in self.config.mlip_names:
-            try:
-                mlip_config = self.config.mlip_configs.get(mlip_name, {})
-
-                # Use specific default configurations for each MLIP
-                if mlip_name == "mace":
-                    default_config = {"model_type": "mp", "device": "cpu"}
-                elif mlip_name == "orb":
-                    default_config = {
-                        "model_type": "orb_v3_conservative_inf_omat",
-                        "device": "cpu",
-                    }
-                elif mlip_name == "uma":
-                    default_config = {"task": "omat", "device": "cpu"}
-                else:
-                    default_config = {"device": "cpu"}
-
-                # Merge user config with defaults (user config takes precedence)
-                final_config = {**default_config, **mlip_config}
-
-                self.calculators[mlip_name] = get_calculator(mlip_name, **final_config)
-                logger.info(
-                    f"Successfully initialized {mlip_name} calculator with config: {final_config}"
-                )
-            except Exception as e:
-                logger.error(f"Failed to initialize {mlip_name} calculator: {str(e)}")
-                available_models = list_available_models()
-                logger.info(f"Available models: {available_models}")
-
-        if not self.calculators:
-            raise ValueError(
-                "No calculators could be initialized. Check MLIP configurations."
-            )
-
-        logger.info(f"Initialized calculators for: {list(self.calculators.keys())}")
+        # Configure models (will be loaded in each worker process)
+        _initialize_worker_models(self.config.mlip_names, self.config.mlip_configs)
 
     def _get_process_attributes(self) -> Dict[str, Any]:
         """Get the attributes for the process_structure method."""
         return {
-            "calculators": self.calculators,
+            "mlip_names": self.config.mlip_names,
+            "mlip_configs": self.config.mlip_configs,
             "timeout": self.config.timeout,
             "relax_structures": self.config.relax_structures,
             "relaxation_config": self.config.relaxation_config,
@@ -182,7 +274,8 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
     @staticmethod
     def process_structure(
         structure: Structure,
-        calculators: Dict[str, Any],
+        mlip_names: List[str],
+        mlip_configs: Dict[str, Dict[str, Any]],
         timeout: int,
         relax_structures: bool,
         relaxation_config: Dict[str, Any],
@@ -196,8 +289,10 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
         ----------
         structure : Structure
             A pymatgen Structure object to process
-        calculators : Dict[str, Any]
-            Dictionary of MLIP calculators
+        mlip_names : List[str]
+            List of MLIP names to use
+        mlip_configs : Dict[str, Dict[str, Any]]
+            Configuration for each MLIP
         timeout : int
             Timeout per MLIP calculation
         relax_structures : bool
@@ -217,6 +312,33 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
             The processed Structure with calculated properties from all MLIPs
         """
         try:
+            # Create calculators locally to avoid pickling issues
+            calculators = {}
+            for mlip_name in mlip_names:
+                try:
+                    mlip_config = mlip_configs.get(mlip_name, {})
+
+                    # Use specific default configurations for each MLIP
+                    if mlip_name == "mace":
+                        default_config = {"model_type": "mp", "device": "cpu"}
+                    elif mlip_name == "orb":
+                        default_config = {
+                            "model_type": "orb_v3_conservative_inf_omat",
+                            "device": "cpu",
+                        }
+                    elif mlip_name == "uma":
+                        default_config = {"task": "omat", "device": "cpu"}
+                    else:
+                        default_config = {"device": "cpu"}
+
+                    # Merge user config with defaults (user config takes precedence)
+                    final_config = {**default_config, **mlip_config}
+
+                    calculators[mlip_name] = _get_or_create_calculator(mlip_name, final_config)
+                except Exception as e:
+                    logger.warning(f"Failed to get calculator for {mlip_name}: {str(e)}")
+                    continue
+
             # Storage for results from each MLIP
             mlip_results = {}
 
@@ -291,7 +413,13 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
             # Calculate and store ensemble statistics
             _calculate_ensemble_statistics(structure, scalar_metrics, vector_metrics)
 
-            return structure
+            # Create a clean copy of the structure before returning (for multiprocessing serialization)
+            clean_structure = _create_clean_structure_copy(structure)
+
+            # Clear memory in worker process
+            _clear_worker_memory()
+
+            return clean_structure
 
         except Exception as e:
             logger.error(f"Failed to process structure {structure.formula}: {str(e)}")
@@ -319,14 +447,14 @@ def _process_single_mlip(
 
         # Calculate basic energy and forces
         energy_result = calculator.calculate_energy_forces(structure)
-        results["energy"] = energy_result.energy
-        results["forces"] = energy_result.forces
+        results["energy"] = _detach_tensors(energy_result.energy)
+        results["forces"] = _detach_tensors(energy_result.forces)
 
         # Calculate formation energy if requested
         if calculate_formation_energy:
             try:
                 formation_energy = calculator.calculate_formation_energy(structure)
-                results["formation_energy"] = formation_energy
+                results["formation_energy"] = _detach_tensors(formation_energy)
                 logger.debug(
                     f"[{mlip_name}] Formation energy: {formation_energy:.3f} eV/atom for {structure.formula}"
                 )
@@ -340,7 +468,7 @@ def _process_single_mlip(
         if calculate_energy_above_hull:
             try:
                 e_above_hull = calculator.calculate_energy_above_hull(structure)
-                results["e_above_hull"] = e_above_hull
+                results["e_above_hull"] = _detach_tensors(e_above_hull)
                 logger.debug(
                     f"[{mlip_name}] E_above_hull: {e_above_hull:.3f} eV/atom for {structure.formula}"
                 )
@@ -354,8 +482,8 @@ def _process_single_mlip(
         if extract_embeddings:
             try:
                 embeddings = calculator.extract_embeddings(structure)
-                results["node_embeddings"] = embeddings.node_embeddings
-                results["graph_embedding"] = embeddings.graph_embedding
+                results["node_embeddings"] = _detach_tensors(embeddings.node_embeddings)
+                results["graph_embedding"] = _detach_tensors(embeddings.graph_embedding)
             except Exception as e:
                 logger.warning(
                     f"[{mlip_name}] Failed to extract embeddings for {structure.formula}: {str(e)}"
@@ -373,10 +501,11 @@ def _process_single_mlip(
                 # Calculate RMSE between original and relaxed positions
                 rmse = _calculate_rmse(structure, relaxed_structure)
 
-                # Store relaxation results
-                results["relaxed_structure"] = relaxed_structure
+                # Store relaxation results - create clean copy of relaxed structure
+                relaxed_structure_clean = _create_clean_structure_copy(relaxed_structure)
+                results["relaxed_structure"] = relaxed_structure_clean
                 results["relaxation_rmse"] = rmse
-                results["relaxation_energy"] = relaxation_result.energy
+                results["relaxation_energy"] = _detach_tensors(relaxation_result.energy)
                 results["relaxation_steps"] = relaxation_result.metadata.get(
                     "relaxation_steps", None
                 )
@@ -391,7 +520,7 @@ def _process_single_mlip(
                         relaxed_formation_energy = (
                             calculator.calculate_formation_energy(relaxed_structure)
                         )
-                        results["relaxed_formation_energy"] = relaxed_formation_energy
+                        results["relaxed_formation_energy"] = _detach_tensors(relaxed_formation_energy)
                     except Exception as e:
                         logger.warning(
                             f"[{mlip_name}] Failed to compute relaxed formation_energy: {str(e)}"
@@ -403,7 +532,7 @@ def _process_single_mlip(
                         relaxed_e_above_hull = calculator.calculate_energy_above_hull(
                             relaxed_structure
                         )
-                        results["relaxed_e_above_hull"] = relaxed_e_above_hull
+                        results["relaxed_e_above_hull"] = _detach_tensors(relaxed_e_above_hull)
                     except Exception as e:
                         logger.warning(
                             f"[{mlip_name}] Failed to compute relaxed e_above_hull: {str(e)}"
