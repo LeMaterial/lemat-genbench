@@ -1,16 +1,16 @@
 # generated using pymatgen
-data_TaPd3
+data_MgCuSe2
 _symmetry_space_group_name_H-M   'P 1'
-_cell_length_a   4.60756207
-_cell_length_b   5.49378109
-_cell_length_c   5.51877451
-_cell_angle_alpha   119.90021515
-_cell_angle_beta   90.07157135
-_cell_angle_gamma   90.35408783
+_cell_length_a   5.61939812
+_cell_length_b   5.61162043
+_cell_length_c   6.94540358
+_cell_angle_alpha   114.13748169
+_cell_angle_beta   114.06951904
+_cell_angle_gamma   90.27812195
 _symmetry_Int_Tables_number   1
-_chemical_formula_structural   TaPd3
-_chemical_formula_sum   'Ta2 Pd6'
-_cell_volume   121.09826476
+_chemical_formula_structural   MgCuSe2
+_chemical_formula_sum   'Mg2 Cu2 Se4'
+_cell_volume   178.57493414
 _cell_formula_units_Z   2
 loop_
  _symmetry_equiv_pos_site_id
@@ -24,11 +24,11 @@ loop_
  _atom_site_fract_y
  _atom_site_fract_z
  _atom_site_occupancy
-  Ta  Ta0  1  2.36151446  3.00219185  -0.20100811  1
-  Ta  Ta1  1  0.16990416  1.61444543  2.78216556  1
-  Pd  Pd2  1  0.10168470  3.83433998  -0.77229436  1
-  Pd  Pd3  1  0.13809021  3.96566196  1.40276962  1
-  Pd  Pd4  1  2.44885532  0.89897700  2.77996996  1
-  Pd  Pd5  1  0.15770813  3.80982299  -2.05242070  1
-  Pd  Pd6  1  2.46113994  0.92979619  4.87032490  1
-  Pd  Pd7  1  0.24787186  1.57012535  0.41301365  1
+  Mg  Mg0  1  1.77854753  1.41786163  -1.27767730  1
+  Mg  Mg1  1  0.13751548  2.76108497  2.13415622  1
+  Cu  Cu2  1  3.21517262  0.25662027  2.15683472  1
+  Cu  Cu3  1  3.65496929  3.85987128  -3.35825517  1
+  Se  Se4  1  2.25021600  2.21254339  3.11804649  1
+  Se  Se5  1  3.82162030  0.83230739  -0.24236276  1
+  Se  Se6  1  0.69067035  3.47282562  -0.21354895  1
+  Se  Se7  1  4.10466811  4.73438449  0.87325932  1

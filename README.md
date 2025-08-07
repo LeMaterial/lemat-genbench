@@ -339,6 +339,15 @@ uv run scripts/run_benchmarks.py --cifs structures.txt --config comprehensive --
    - Use faster MLIP models (ORB instead of UMA)
    - Increase timeout in configuration
 
+4. **Private Dataset Access Error:**
+   ```bash
+   # Error: 'Entalpic/LeMaterial-Above-Hull-dataset' doesn't exist on the Hub
+   # Solution: Download datasets locally (one-time setup)
+   uv run scripts/download_above_hull_datasets.py
+   ```
+   
+   This downloads the required datasets to `data/` folder for local access.
+
 ### Getting Help
 
 - Check the [scripts documentation](scripts/README_benchmark_runner.md)

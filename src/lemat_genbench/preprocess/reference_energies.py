@@ -165,6 +165,17 @@ def process_chunk(chunk):
 @lru_cache(maxsize=None)
 def _retrieve_df():
     try:
+        # Try to load from local file first - fix path to point to root data folder
+        local_path = os.path.join(CURRENT_FOLDER, "..", "..", "..", "data", "lematbulk_above_hull_dataset.pkl")
+        
+        if os.path.exists(local_path):
+            dataset = pd.read_pickle(local_path)
+            # Convert numpy arrays in elements column to lists for compatibility
+            if 'elements' in dataset.columns:
+                dataset['elements'] = dataset['elements'].apply(lambda x: x.tolist() if hasattr(x, 'tolist') else x)
+            return dataset
+        
+        # Fallback to HuggingFace Hub if local file doesn't exist
         dataset = load_dataset("Entalpic/LeMaterial-Above-Hull-dataset")
         dataset = pd.DataFrame(dataset["dataset"])
         return dataset
@@ -175,6 +186,17 @@ def _retrieve_df():
 @lru_cache(maxsize=None)
 def _retrieve_matrix():
     try:
+        # Try to load from local file first - fix path to point to root data folder
+        local_path = os.path.join(CURRENT_FOLDER, "..", "..", "..", "data", "lematbulk_above_hull_composition_matrix.pkl")
+        
+        if os.path.exists(local_path):
+            composition_array = pd.read_pickle(local_path)
+            # If it's a DataFrame, convert to numpy array
+            if isinstance(composition_array, pd.DataFrame):
+                composition_array = composition_array.to_numpy()
+            return composition_array
+        
+        # Fallback to HuggingFace Hub if local file doesn't exist
         composition_matrix = load_dataset(
             "Entalpic/LeMaterial-Above-Hull-composition_matrix"
         )
