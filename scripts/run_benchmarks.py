@@ -178,6 +178,68 @@ def load_cif_files(input_path: str) -> List[str]:
         raise FileNotFoundError(f"Path does not exist: {input_path}")
 
 
+def load_structures_from_csv(csv_path: str) -> List:
+    """Load structures from a CSV file containing structure data.
+    
+    Parameters
+    ----------
+    csv_path : str
+        Path to CSV file containing structures
+        
+    Returns
+    -------
+    List
+        List of pymatgen Structure objects
+    """
+    import json
+
+    import pandas as pd
+    from pymatgen.core import Structure
+    
+    logger.info(f"Loading structures from CSV: {csv_path}")
+    
+    # Read CSV file
+    df = pd.read_csv(csv_path)
+    
+    # Check for structure column (try different possible names)
+    structure_column = None
+    for col_name in ['structure', 'LeMatStructs', 'cif_string']:
+        if col_name in df.columns:
+            structure_column = col_name
+            break
+    
+    if structure_column is None:
+        raise ValueError("CSV file must contain a 'structure', 'LeMatStructs', or 'cif_string' column")
+    
+    structures = []
+    for idx, row in df.iterrows():
+        try:
+            structure_data = row[structure_column]
+            
+            # Try to parse as JSON first (for pymatgen Structure dict format)
+            if isinstance(structure_data, str) and structure_data.strip().startswith('{'):
+                try:
+                    structure_dict = json.loads(structure_data)
+                    structure = Structure.from_dict(structure_dict)
+                except json.JSONDecodeError:
+                    # If not valid JSON, try as CIF string
+                    structure = Structure.from_str(structure_data, fmt='cif')
+            else:
+                # Try as CIF string
+                structure = Structure.from_str(structure_data, fmt='cif')
+            
+            structures.append(structure)
+            logger.info(f"✅ Loaded structure {idx + 1} from CSV")
+        except Exception as e:
+            logger.warning(f"Failed to load structure {idx + 1} from CSV: {str(e)}")
+    
+    if not structures:
+        raise ValueError("No valid structures loaded from CSV file")
+    
+    logger.info(f"✅ Loaded {len(structures)} structures from CSV")
+    return structures
+
+
 def load_benchmark_config(config_name: str) -> Dict[str, Any]:
     """Load benchmark configuration from YAML file."""
     config_dir = Path(__file__).parent.parent / "src" / "config"
@@ -415,7 +477,10 @@ def main():
     """Main function to run benchmarks."""
     parser = argparse.ArgumentParser(description="Run material generation benchmarks")
     parser.add_argument(
-        "--cifs", required=True, help="Path to text file containing CIF file paths OR directory containing CIF files"
+        "--cifs", help="Path to text file containing CIF file paths OR directory containing CIF files"
+    )
+    parser.add_argument(
+        "--csv", help="Path to CSV file containing structures in LeMatStructs column"
     )
     parser.add_argument(
         "--config",
@@ -442,21 +507,50 @@ def main():
 
     args = parser.parse_args()
 
+    # Validate input arguments
+    if not args.cifs and not args.csv:
+        parser.error("Either --cifs or --csv must be provided")
+    if args.cifs and args.csv:
+        parser.error("Only one of --cifs or --csv can be provided")
+
     try:
         # Log initial memory usage
         log_memory_usage("start of benchmark run", force_log=args.monitor_memory)
         
-        # Load CIF files
-        logger.info(f"Loading CIF files from: {args.cifs}")
-        cif_paths = load_cif_files(args.cifs)
-        logger.info(f"✅ Loaded {len(cif_paths)} CIF files")
+        # Load structures based on input type
+        if args.csv:
+            # Load structures from CSV
+            structures = load_structures_from_csv(args.csv)
+        else:
+            # Load CIF files
+            logger.info(f"Loading CIF files from: {args.cifs}")
+            cif_paths = load_cif_files(args.cifs)
+            logger.info(f"✅ Loaded {len(cif_paths)} CIF files")
+
+            # Load structures from CIF files
+            logger.info("Converting CIF files to structures...")
+            structures = []
+            for cif_path in cif_paths:
+                try:
+                    # Load CIF file using pymatgen
+                    from pymatgen.core import Structure
+                    structure = Structure.from_file(cif_path)
+                    structures.append(structure)
+                    logger.info(f"✅ Loaded structure from {cif_path}")
+                except Exception as e:
+                    logger.warning(f"Failed to load {cif_path}: {str(e)}")
+
+            if not structures:
+                raise ValueError("No valid structures loaded from CIF files")
+
+        logger.info(f"✅ Loaded {len(structures)} structures")
 
         # Load benchmark configuration
         logger.info(f"Loading benchmark configuration: {args.config}")
         config = load_benchmark_config(args.config)
         logger.info(f"✅ Loaded configuration: {config.get('type', 'unknown')}")
 
-                # Determine benchmark families to run
+        # Determine benchmark families to run
         if args.families:
             benchmark_families = args.families
             logger.info(f"Using specified families: {benchmark_families}")
@@ -473,24 +567,6 @@ def main():
                 "stability"
             ]
             logger.info(f"Using all benchmark families: {benchmark_families}")
-
-        # Load structures from CIF files
-        logger.info("Converting CIF files to structures...")
-        structures = []
-        for cif_path in cif_paths:
-            try:
-                # Load CIF file using pymatgen
-                from pymatgen.core import Structure
-                structure = Structure.from_file(cif_path)
-                structures.append(structure)
-                logger.info(f"✅ Loaded structure from {cif_path}")
-            except Exception as e:
-                logger.warning(f"Failed to load {cif_path}: {str(e)}")
-
-        if not structures:
-            raise ValueError("No valid structures loaded from CIF files")
-
-        logger.info(f"✅ Loaded {len(structures)} structures")
         
         # Clear memory after loading structures
         clear_memory()

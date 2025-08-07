@@ -158,6 +158,12 @@ uv run scripts/run_benchmarks.py --cifs structures.txt --config comprehensive --
 
 # Use a file list instead of directory
 uv run scripts/run_benchmarks.py --cifs my_structures.txt --config comprehensive --name file_list_run
+
+# Load structures from CSV file
+uv run scripts/run_benchmarks.py --csv my_structures.csv --config comprehensive --name csv_benchmark
+
+# Run specific families on CSV input
+uv run scripts/run_benchmarks.py --csv structures.csv --config comprehensive --families validity diversity --name csv_quick_test
 ```
 
 ### Input Formats
@@ -182,9 +188,33 @@ Then run:
 uv run scripts/run_benchmarks.py --cifs my_structures.txt --config comprehensive --name my_run
 ```
 
+#### Option 3: CSV File with Structures
+Load structures directly from a CSV file containing structure data:
+
+```bash
+# Load from CSV file
+uv run scripts/run_benchmarks.py --csv my_structures.csv --config comprehensive --name my_csv_run
+```
+
+**CSV Format Requirements:**
+- Must contain a column named `structure`, `LeMatStructs`, or `cif_string`
+- The structure column should contain either:
+  - **JSON strings** (pymatgen Structure dictionaries) - recommended
+  - **CIF strings** (CIF format text)
+
+**Example CSV format:**
+```csv
+material_id,structure,other_metadata
+0,"{""@module"": ""pymatgen.core.structure"", ""@class"": ""Structure"", ""lattice"": {...}, ""sites"": [...]}",metadata1
+1,"{""@module"": ""pymatgen.core.structure"", ""@class"": ""Structure"", ""lattice"": {...}, ""sites"": [...]}",metadata2
+```
+
+**Note:** You can only use one input method at a time (`--cifs` OR `--csv`, not both).
+
 ### Configuration Options
 
-- **`--cifs`**: Path to directory or file list (required)
+- **`--cifs`**: Path to directory or file list (use with `--cifs` OR `--csv`)
+- **`--csv`**: Path to CSV file containing structures (use with `--cifs` OR `--csv`)
 - **`--config`**: Configuration name (default: `comprehensive`)
 - **`--name`**: Name for this benchmark run (required)
 - **`--families`**: Specific benchmark families to run (optional, defaults to all)
@@ -291,6 +321,18 @@ uv run scripts/run_benchmarks.py --cifs my_structures/ --config stability --name
 ### Custom Benchmark Selection
 ```bash
 uv run scripts/run_benchmarks.py --cifs structures.txt --config comprehensive --families validity novelty uniqueness --name custom_analysis
+```
+
+### CSV Input Examples
+```bash
+# Quick validation of CSV structures
+uv run scripts/run_benchmarks.py --csv my_structures.csv --config validity --name csv_validity
+
+# Full analysis of CSV structures
+uv run scripts/run_benchmarks.py --csv generated_structures.csv --config comprehensive --name csv_full_analysis
+
+# Distribution analysis only
+uv run scripts/run_benchmarks.py --csv structures.csv --config distribution --families distribution --name csv_distribution
 ```
 
 ## ⚠️ Important Notes
