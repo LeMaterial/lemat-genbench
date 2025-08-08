@@ -5,10 +5,8 @@ This script shows how to use the new parallelization optimizations
 in the run_benchmarks.py script for improved performance.
 """
 
-import subprocess
-import sys
-import os
 from pathlib import Path
+
 
 def run_optimized_benchmark_example():
     """Run an example benchmark with optimized settings."""

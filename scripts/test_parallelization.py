@@ -3,7 +3,6 @@
 
 import logging
 import time
-from pathlib import Path
 
 import numpy as np
 from pymatgen.core import Structure
