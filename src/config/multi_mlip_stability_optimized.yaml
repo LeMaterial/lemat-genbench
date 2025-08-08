@@ -1,0 +1,71 @@
+type: multi_mlip_stability
+
+# Ensemble configuration
+use_ensemble: true                   # Whether to use ensemble mean values or individual MLIP results
+mlip_names:
+  - orb
+  - mace
+  - uma
+
+# Metastability threshold
+metastable_threshold: 0.1            # E_above_hull threshold for metastability (eV/atom)
+
+# Additional configuration options
+description: "Optimized Multi-MLIP Stability Benchmark with Parallel Processing"
+version: "0.2.0"
+
+# Ensemble-specific configurations
+ensemble_config:
+  min_mlips_required: 2              # Minimum MLIPs needed for ensemble statistics (used by metrics)
+
+# Individual MLIP configurations (if use_ensemble: false)
+individual_mlip_config:
+  use_all_available: true            # Use all available MLIP results
+  require_all_mlips: false           # Don't require all MLIPs to succeed (include partial results)
+  fallback_to_single: true           # Allow single-MLIP results if others failed
+
+# Optimized preprocessor configuration
+preprocessor_config:
+  model_name: multi_mlip
+  mlip_configs:
+    orb:
+      model_type: orb_v3_conservative_inf_omat
+      device: cpu
+    mace:
+      model_type: mp
+      device: cpu
+    uma:
+      task: omat
+      device: cpu
+  relax_structures: true
+  relaxation_config:
+    fmax: 0.1
+    steps: 50
+  calculate_formation_energy: true
+  calculate_energy_above_hull: true
+  extract_embeddings: true
+  timeout: 300
+  # NEW: Parallelization settings
+  parallel_mlips: true               # Enable parallel MLIP processing within each structure
+  max_mlip_workers: 3               # Maximum workers for MLIP parallelization
+  n_jobs: 4                         # Number of parallel processes for structure processing
+
+# Performance optimization settings
+performance_config:
+  enable_parallel_mlips: true        # Enable MLIP parallelization
+  optimize_memory_usage: true        # Enable memory optimizations
+  reduce_tensor_operations: true     # Minimize tensor detaching operations
+  cache_models_per_process: true     # Cache models in each worker process
+
+# Reporting configuration
+reporting:
+  include_individual_mlip_results: true    # Show per-model results alongside ensemble results
+  include_uncertainty_analysis: true       # Include std deviation in results
+  include_ensemble_summary: true           # Include ensemble quality summary
+  include_performance_metrics: true        # Include timing and memory usage metrics
+
+# Benchmarking configuration
+benchmarking:
+  enable_performance_tracking: true   # Track processing times
+  log_memory_usage: true             # Log memory usage during processing
+  report_speedup_metrics: true       # Report parallelization speedup
