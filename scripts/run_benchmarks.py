@@ -363,91 +363,91 @@ def run_benchmarks(structures, benchmark_families: List[str], config: Dict[str, 
             logger.info(f"Running {family} benchmark...")
             start_time = time.time()
 
-        try:
-            if family == "validity":
-                benchmark = ValidityBenchmark(
-                    charge_weight=config.get("charge_weight", 0.33),
-                    distance_weight=config.get("distance_weight", 0.33),
-                    plausibility_weight=config.get("plausibility_weight", 0.34),
-                )
+            try:
+                if family == "validity":
+                    benchmark = ValidityBenchmark(
+                        charge_weight=config.get("charge_weight", 0.33),
+                        distance_weight=config.get("distance_weight", 0.33),
+                        plausibility_weight=config.get("plausibility_weight", 0.34),
+                    )
 
-            elif family == "distribution":
-                benchmark = DistributionBenchmark(
-                    mlips=config.get("mlips", ["orb", "mace", "uma"]),
-                    cache_dir=config.get("cache_dir", "./data"),
-                    js_distributions_file=config.get(
-                        "js_distributions_file",
-                        "data/lematbulk_jsdistance_distributions.json",
-                    ),
-                    mmd_values_file=config.get(
-                        "mmd_values_file", "data/lematbulk_mmd_values_15k.pkl"
-                    ),
-                )
+                elif family == "distribution":
+                    benchmark = DistributionBenchmark(
+                        mlips=config.get("mlips", ["orb", "mace", "uma"]),
+                        cache_dir=config.get("cache_dir", "./data"),
+                        js_distributions_file=config.get(
+                            "js_distributions_file",
+                            "data/lematbulk_jsdistance_distributions.json",
+                        ),
+                        mmd_values_file=config.get(
+                            "mmd_values_file", "data/lematbulk_mmd_values_15k.pkl"
+                        ),
+                    )
 
-            elif family == "diversity":
-                benchmark = DiversityBenchmark()
+                elif family == "diversity":
+                    benchmark = DiversityBenchmark()
 
-            elif family == "novelty":
-                benchmark = NoveltyBenchmark(
-                    reference_dataset=config.get(
-                        "reference_dataset", "LeMaterial/LeMat-Bulk"
-                    ),
-                    reference_config=config.get("reference_config", "compatible_pbe"),
-                    fingerprint_method=config.get("fingerprint_method", "bawl"),
-                    cache_reference=config.get("cache_reference", True),
-                    max_reference_size=config.get("max_reference_size", None),
-                )
+                elif family == "novelty":
+                    benchmark = NoveltyBenchmark(
+                        reference_dataset=config.get(
+                            "reference_dataset", "LeMaterial/LeMat-Bulk"
+                        ),
+                        reference_config=config.get("reference_config", "compatible_pbe"),
+                        fingerprint_method=config.get("fingerprint_method", "bawl"),
+                        cache_reference=config.get("cache_reference", True),
+                        max_reference_size=config.get("max_reference_size", None),
+                    )
 
-            elif family == "uniqueness":
-                benchmark = UniquenessBenchmark(
-                    fingerprint_method=config.get("fingerprint_method", "bawl"),
-                )
+                elif family == "uniqueness":
+                    benchmark = UniquenessBenchmark(
+                        fingerprint_method=config.get("fingerprint_method", "bawl"),
+                    )
 
-            elif family == "hhi":
-                benchmark = HHIBenchmark(
-                    production_weight=config.get("production_weight", 0.25),
-                    reserve_weight=config.get("reserve_weight", 0.75),
-                    scale_to_0_10=config.get("scale_to_0_10", True),
-                )
+                elif family == "hhi":
+                    benchmark = HHIBenchmark(
+                        production_weight=config.get("production_weight", 0.25),
+                        reserve_weight=config.get("reserve_weight", 0.75),
+                        scale_to_0_10=config.get("scale_to_0_10", True),
+                    )
 
-            elif family == "sun":
-                benchmark = SUNBenchmark(
-                    stability_threshold=config.get("stability_threshold", 0.0),
-                    metastability_threshold=config.get("metastability_threshold", 0.1),
-                    reference_dataset=config.get(
-                        "reference_dataset", "LeMaterial/LeMat-Bulk"
-                    ),
-                    reference_config=config.get("reference_config", "compatible_pbe"),
-                    fingerprint_method=config.get("fingerprint_method", "bawl"),
-                    cache_reference=config.get("cache_reference", True),
-                    max_reference_size=config.get("max_reference_size", None),
-                    include_metasun=config.get("include_metasun", True),
-                )
+                elif family == "sun":
+                    benchmark = SUNBenchmark(
+                        stability_threshold=config.get("stability_threshold", 0.0),
+                        metastability_threshold=config.get("metastability_threshold", 0.1),
+                        reference_dataset=config.get(
+                            "reference_dataset", "LeMaterial/LeMat-Bulk"
+                        ),
+                        reference_config=config.get("reference_config", "compatible_pbe"),
+                        fingerprint_method=config.get("fingerprint_method", "bawl"),
+                        cache_reference=config.get("cache_reference", True),
+                        max_reference_size=config.get("max_reference_size", None),
+                        include_metasun=config.get("include_metasun", True),
+                    )
 
-            elif family == "stability":
-                benchmark = MultiMLIPStabilityBenchmark(config=config)
-            else:
-                logger.warning(f"Unknown benchmark family: {family}")
-                pbar.set_postfix({"status": "skipped"})
-                raise ValueError(f"Unknown benchmark family: {family}")
+                elif family == "stability":
+                    benchmark = MultiMLIPStabilityBenchmark(config=config)
+                else:
+                    logger.warning(f"Unknown benchmark family: {family}")
+                    pbar.set_postfix({"status": "skipped"})
+                    raise ValueError(f"Unknown benchmark family: {family}")
 
-            # Run the benchmark
-            benchmark_result = benchmark.evaluate(structures)
-            results[family] = benchmark_result
+                # Run the benchmark
+                benchmark_result = benchmark.evaluate(structures)
+                results[family] = benchmark_result
 
-            elapsed_time = time.time() - start_time
-            logger.info(f"✅ {family} benchmark complete in {elapsed_time:.1f}s")
-            
-            # Clean up after each benchmark
-            cleanup_after_benchmark(family, monitor_memory)
+                elapsed_time = time.time() - start_time
+                logger.info(f"✅ {family} benchmark complete in {elapsed_time:.1f}s")
+                
+                # Clean up after each benchmark
+                cleanup_after_benchmark(family, monitor_memory)
 
-        except Exception as e:
-            elapsed_time = time.time() - start_time
-            logger.error(f"❌ Failed to run {family} benchmark after {elapsed_time:.1f}s: {str(e)}")
-            results[family] = {"error": str(e)}
-            
-            # Clean up even if benchmark failed
-            cleanup_after_benchmark(family, monitor_memory)
+            except Exception as e:
+                elapsed_time = time.time() - start_time
+                logger.error(f"❌ Failed to run {family} benchmark after {elapsed_time:.1f}s: {str(e)}")
+                results[family] = {"error": str(e)}
+                
+                # Clean up even if benchmark failed
+                cleanup_after_benchmark(family, monitor_memory)
 
     # Log final memory usage
     log_memory_usage("after all benchmarks")
