@@ -76,7 +76,7 @@ class ChargeNeutralityMetric(BaseMetric):
         strict: bool = False,
         name: str | None = None,
         description: str | None = None,
-        lower_is_better: bool = True,
+        lower_is_better: bool = False,
         n_jobs: int = 1,
     ):
         super().__init__(
@@ -106,8 +106,8 @@ class ChargeNeutralityMetric(BaseMetric):
 
     @staticmethod
     def compute_structure(
-        structure: Structure, tolerance: float, strict: bool, bv_analyzer: BVAnalyzer
-    ) -> float:
+    structure: Structure, tolerance: float, strict: bool, bv_analyzer: BVAnalyzer
+) -> float:
         """Compute the deviation from charge neutrality for a structure.
 
         Parameters
@@ -151,16 +151,14 @@ class ChargeNeutralityMetric(BaseMetric):
             print(
                 "Valid structure - Metallic structure with a bond valence equal to zero for all atoms"
             )
-            return 1.0
+            return 0.0  # Perfectly charge neutral (metallic)
         except ValueError:
-            # this means the bv_sum calculation has predicted this structure is NOT metallic. Therefore, we can try and assign oxidation states using PMG's
-            # oxidation state functions, which do not return oxidation states for metallic structures.
             logger.warning(
                 "the bond valence sum calculation yielded values that were not zero meaning this is not predicted to be a metallic structure"
             )
 
             try:
-                # Try to determine oxidation states - good first pass, if this can be done within pymatgen, it will almost certainly be a structure that is charge balanced
+                # Try to determine oxidation states
                 structure_with_oxi = bv_analyzer.get_oxi_state_decorated_structure(
                     structure
                 )
@@ -168,16 +166,10 @@ class ChargeNeutralityMetric(BaseMetric):
                     site.specie.oxi_state for site in structure_with_oxi.sites
                 )
                 print(
-                    "Valid structure - charge balanced based on Pymatgen's get_oxi_state_decorated_structure function, which almost always returns "
-                    "reasonable oxidation states"
+                    "Valid structure - charge balanced based on Pymatgen's get_oxi_state_decorated_structure function"
                 )
-                if charge_sum == 0.0:
-                    return 1.0
-                else:
-                    return 0.0
+                return abs(charge_sum)  # Return actual absolute deviation
             except ValueError:
-                # get_oxi_state_decorated_structure fails when structures and compositions are outside the distribution of the Materials Project.
-                # We will now need to determine if this composition has the ability to be charged balanced using a reasonable combination of oxidation states.
                 logger.warning(
                     "Could not determine oxidation states using get_oxi_state_decorated_structure"
                 )
@@ -199,19 +191,17 @@ class ChargeNeutralityMetric(BaseMetric):
                 )
                 print(
                     "Most valid oxidation state and score based on composition",
-                    output[1][0],
-                    output[2][0],
+                    output[1][0] if len(output[1]) > 0 else "None",
+                    output[2][0] if len(output[2]) > 0 else "None",
                 )
                 try:
                     score = output[2][0]
                     if score > 0.001:
-                        return 1.0
+                        return 0.0  # Assume charge neutral (reasonable composition)
                     else:
-                        return float(
-                            0.0
-                        )  # TODO decide on a function to make this continuous based on LeMatBulk statistics (and scale with other metrics!)
+                        return 10.0  # Large deviation penalty (unreasonable composition)
                 except IndexError:
-                    return float(0.0)
+                    return 10.0  # Large deviation penalty (no valid assignments)
 
     def aggregate_results(self, values: list[float]) -> Dict[str, Any]:
         """Aggregate results into final metric values.
@@ -234,13 +224,14 @@ class ChargeNeutralityMetric(BaseMetric):
                     "charge_neutrality_error": float("nan"),
                     "charge_neutral_ratio": 0.0,
                 },
-                "primary_metric": "charge_neutrality_error",
+                "primary_metric": "charge_neutral_ratio",
                 "uncertainties": {},
             }
 
-        # Count how many structures are within tolerance
-        charge_neutral_ratio = sum(valid_values) / len(valid_values)
-        # Calculate mean absolute deviation
+        # Count how many structures are within tolerance (actually using tolerance now!)
+        charge_neutral_ratio = sum(1 for v in valid_values if v <= self.config.tolerance) / len(valid_values)
+        
+        # Calculate mean absolute deviation (now meaningful as actual deviations)
         mean_abs_deviation = np.mean(valid_values)
 
         return {
@@ -248,14 +239,13 @@ class ChargeNeutralityMetric(BaseMetric):
                 "charge_neutrality_error": mean_abs_deviation,
                 "charge_neutral_ratio": charge_neutral_ratio,
             },
-            "primary_metric": "charge_neutrality_error",
+            "primary_metric": "charge_neutral_ratio",
             "uncertainties": {
-                "charge_neutrality_error": {
+                "charge_neutrality_std": {
                     "std": np.std(valid_values) if len(valid_values) > 1 else 0.0
                 }
             },
         }
-
 
 @dataclass
 class MinimumInteratomicDistanceConfig(MetricConfig):
