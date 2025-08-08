@@ -279,7 +279,7 @@ class BasePreprocessor(ABC):
                 self.config.n_jobs <= 1 or n_input <= 1
             ):  # Also run serially for single structure
                 # Serial computation
-                for idx, structure in enumerate(tqdm(structures)):
+                for idx, structure in enumerate(tqdm(structures, desc="Processing structures (serial)", unit="structure")):
                     try:
                         processed_structure = self.process_structure(
                             structure, **process_args
@@ -313,30 +313,33 @@ class BasePreprocessor(ABC):
                     ]
 
                     current_original_idx_offset = 0
-                    for future in futures:
-                        (
-                            batch_processed_structures_or_nones,
-                            failed_indices_in_batch,
-                            warnings_for_batch,
-                        ) = future.result()
+                    # Add progress bar for parallel processing
+                    with tqdm(total=len(batches), desc=f"Processing batches ({num_workers} workers)", unit="batch") as pbar:
+                        for future in futures:
+                            (
+                                batch_processed_structures_or_nones,
+                                failed_indices_in_batch,
+                                warnings_for_batch,
+                            ) = future.result()
 
-                        for i, struct_or_none in enumerate(
-                            batch_processed_structures_or_nones
-                        ):
-                            original_idx = current_original_idx_offset + i
-                            if original_idx < n_input:  # Boundary check
-                                all_results_with_nones[original_idx] = struct_or_none
+                            for i, struct_or_none in enumerate(
+                                batch_processed_structures_or_nones
+                            ):
+                                original_idx = current_original_idx_offset + i
+                                if original_idx < n_input:  # Boundary check
+                                    all_results_with_nones[original_idx] = struct_or_none
 
-                        global_failed_indices.extend(
-                            [
-                                current_original_idx_offset + i
-                                for i in failed_indices_in_batch
-                            ]
-                        )
-                        global_warnings.extend(warnings_for_batch)
-                        current_original_idx_offset += len(
-                            batch_processed_structures_or_nones
-                        )
+                            global_failed_indices.extend(
+                                [
+                                    current_original_idx_offset + i
+                                    for i in failed_indices_in_batch
+                                ]
+                            )
+                            global_warnings.extend(warnings_for_batch)
+                            current_original_idx_offset += len(
+                                batch_processed_structures_or_nones
+                            )
+                            pbar.update(1)
 
             # Filter out Nones to get successfully processed structures
             final_processed_structures = [

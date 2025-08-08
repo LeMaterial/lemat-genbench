@@ -18,6 +18,7 @@ import argparse
 import gc
 import json
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List
@@ -25,6 +26,7 @@ from typing import Any, Dict, List
 import psutil
 import torch
 import yaml
+from tqdm import tqdm
 
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
@@ -285,12 +287,14 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], monitor_m
     # Distribution preprocessor (for MMD, JSDistance)
     if preprocessor_config["distribution"]:
         logger.info("Running distribution preprocessor...")
+        start_time = time.time()
         dist_preprocessor = DistributionPreprocessor()
         dist_result = dist_preprocessor(processed_structures)
         processed_structures = dist_result.processed_structures
         preprocessor_results["distribution"] = dist_result
+        elapsed_time = time.time() - start_time
         logger.info(
-            f"✅ Distribution preprocessing complete for {len(processed_structures)} structures"
+            f"✅ Distribution preprocessing complete for {len(processed_structures)} structures in {elapsed_time:.1f}s"
         )
         
         # Clean up after distribution preprocessor
@@ -299,6 +303,7 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], monitor_m
     # Multi-MLIP preprocessor (for stability, embeddings)
     if preprocessor_config["stability"] or preprocessor_config["embeddings"]:
         logger.info("Running Multi-MLIP preprocessor...")
+        start_time = time.time()
 
         # Configure MLIP models
         mlip_configs = {
@@ -311,6 +316,9 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], monitor_m
         extract_embeddings = preprocessor_config["embeddings"]
         relax_structures = preprocessor_config["stability"]
 
+        # Show progress for MLIP model loading
+        logger.info("🔄 Initializing MLIP models (this may take 1-2 minutes)...")
+        
         mlip_preprocessor = MultiMLIPStabilityPreprocessor(
             mlip_names=["orb", "mace", "uma"],
             mlip_configs=mlip_configs,
@@ -322,11 +330,14 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], monitor_m
             timeout=300,
         )
 
+        # Add progress bar for structure processing
+        logger.info(f"🔄 Processing {len(processed_structures)} structures with MLIP models...")
         mlip_result = mlip_preprocessor(processed_structures)
         processed_structures = mlip_result.processed_structures
         preprocessor_results["multi_mlip"] = mlip_result
+        elapsed_time = time.time() - start_time
         logger.info(
-            f"✅ Multi-MLIP preprocessing complete for {len(processed_structures)} structures"
+            f"✅ Multi-MLIP preprocessing complete for {len(processed_structures)} structures in {elapsed_time:.1f}s"
         )
         
         # Clean up after MLIP preprocessor (this is crucial for memory management)
@@ -345,8 +356,12 @@ def run_benchmarks(structures, benchmark_families: List[str], config: Dict[str, 
     # Log initial memory usage
     log_memory_usage("before benchmarks", force_log=monitor_memory)
 
-    for family in benchmark_families:
-        logger.info(f"Running {family} benchmark...")
+    # Add progress bar for benchmarks
+    with tqdm(benchmark_families, desc="Running benchmarks", unit="benchmark") as pbar:
+        for family in pbar:
+            pbar.set_description(f"Running {family} benchmark")
+            logger.info(f"Running {family} benchmark...")
+            start_time = time.time()
 
         try:
             if family == "validity":
@@ -411,22 +426,24 @@ def run_benchmarks(structures, benchmark_families: List[str], config: Dict[str, 
 
             elif family == "stability":
                 benchmark = MultiMLIPStabilityBenchmark(config=config)
-
             else:
                 logger.warning(f"Unknown benchmark family: {family}")
-                continue
+                pbar.set_postfix({"status": "skipped"})
+                raise ValueError(f"Unknown benchmark family: {family}")
 
             # Run the benchmark
             benchmark_result = benchmark.evaluate(structures)
             results[family] = benchmark_result
 
-            logger.info(f"✅ {family} benchmark complete")
+            elapsed_time = time.time() - start_time
+            logger.info(f"✅ {family} benchmark complete in {elapsed_time:.1f}s")
             
             # Clean up after each benchmark
             cleanup_after_benchmark(family, monitor_memory)
 
         except Exception as e:
-            logger.error(f"❌ Failed to run {family} benchmark: {str(e)}")
+            elapsed_time = time.time() - start_time
+            logger.error(f"❌ Failed to run {family} benchmark after {elapsed_time:.1f}s: {str(e)}")
             results[family] = {"error": str(e)}
             
             # Clean up even if benchmark failed
@@ -530,15 +547,19 @@ def main():
             # Load structures from CIF files
             logger.info("Converting CIF files to structures...")
             structures = []
-            for cif_path in cif_paths:
-                try:
-                    # Load CIF file using pymatgen
-                    from pymatgen.core import Structure
-                    structure = Structure.from_file(cif_path)
-                    structures.append(structure)
-                    logger.info(f"✅ Loaded structure from {cif_path}")
-                except Exception as e:
-                    logger.warning(f"Failed to load {cif_path}: {str(e)}")
+            
+            # Add progress bar for structure loading
+            with tqdm(cif_paths, desc="Loading CIF structures", unit="file") as pbar:
+                for cif_path in pbar:
+                    try:
+                        # Load CIF file using pymatgen
+                        from pymatgen.core import Structure
+                        structure = Structure.from_file(cif_path)
+                        structures.append(structure)
+                        pbar.set_postfix({"loaded": len(structures), "failed": len(cif_paths) - len(structures)})
+                    except Exception as e:
+                        logger.warning(f"Failed to load {cif_path}: {str(e)}")
+                        pbar.set_postfix({"loaded": len(structures), "failed": len(cif_paths) - len(structures)})
 
             if not structures:
                 raise ValueError("No valid structures loaded from CIF files")
