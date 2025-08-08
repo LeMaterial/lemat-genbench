@@ -274,7 +274,8 @@ def create_preprocessor_config(benchmark_families: List[str]) -> Dict[str, Any]:
     return config
 
 
-def run_preprocessors(structures, preprocessor_config: Dict[str, Any], monitor_memory: bool = False):
+def run_preprocessors(structures, preprocessor_config: Dict[str, Any], monitor_memory: bool = False, 
+                     parallel_mlips: bool = True, max_mlip_workers: int = 3, n_jobs: int = 4):
     """Run required preprocessors based on configuration."""
     processed_structures = structures
     preprocessor_results = {}
@@ -299,6 +300,12 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], monitor_m
     # Multi-MLIP preprocessor (for stability, embeddings)
     if preprocessor_config["stability"] or preprocessor_config["embeddings"]:
         logger.info("Running Multi-MLIP preprocessor...")
+        
+        # Log optimization settings
+        if parallel_mlips:
+            logger.info(f"🚀 Using optimized parallelization: {max_mlip_workers} MLIP workers, {n_jobs} structure processes")
+        else:
+            logger.info("🐌 Using sequential MLIP processing (optimizations disabled)")
 
         # Configure MLIP models
         mlip_configs = {
@@ -320,6 +327,9 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], monitor_m
             calculate_energy_above_hull=relax_structures,
             extract_embeddings=extract_embeddings,
             timeout=300,
+            parallel_mlips=parallel_mlips,
+            max_mlip_workers=max_mlip_workers,
+            n_jobs=n_jobs,
         )
 
         mlip_result = mlip_preprocessor(processed_structures)
@@ -504,6 +514,29 @@ def main():
         action="store_true",
         help="Enable detailed memory monitoring throughout the process",
     )
+    parser.add_argument(
+        "--parallel-mlips",
+        action="store_true",
+        default=True,
+        help="Enable parallel MLIP processing within each structure (default: True)",
+    )
+    parser.add_argument(
+        "--no-parallel-mlips",
+        action="store_true",
+        help="Disable parallel MLIP processing (use sequential processing)",
+    )
+    parser.add_argument(
+        "--max-mlip-workers",
+        type=int,
+        default=3,
+        help="Maximum number of workers for MLIP parallelization (default: 3)",
+    )
+    parser.add_argument(
+        "--n-jobs",
+        type=int,
+        default=4,
+        help="Number of parallel processes for structure processing (default: 4)",
+    )
 
     args = parser.parse_args()
 
@@ -512,6 +545,18 @@ def main():
         parser.error("Either --cifs or --csv must be provided")
     if args.cifs and args.csv:
         parser.error("Only one of --cifs or --csv can be provided")
+    
+    # Validate optimization parameters
+    if args.max_mlip_workers < 1:
+        parser.error("--max-mlip-workers must be at least 1")
+    if args.n_jobs < 1:
+        parser.error("--n-jobs must be at least 1")
+    
+    # Handle parallel MLIP settings
+    if args.no_parallel_mlips:
+        logger.info("⚠️  Parallel MLIP processing disabled (using sequential processing)")
+    else:
+        logger.info(f"🚀 Parallel MLIP processing enabled with {args.max_mlip_workers} workers")
 
     try:
         # Log initial memory usage
@@ -593,7 +638,10 @@ def main():
                 
                 # Run preprocessors on batch
                 batch_processed, batch_preprocessor_results = run_preprocessors(
-                    batch_structures, preprocessor_config, args.monitor_memory
+                    batch_structures, preprocessor_config, args.monitor_memory,
+                    parallel_mlips=not args.no_parallel_mlips,
+                    max_mlip_workers=args.max_mlip_workers,
+                    n_jobs=args.n_jobs
                 )
                 
                 # Run benchmarks on batch
@@ -622,7 +670,10 @@ def main():
         else:
             # Process all structures at once
             processed_structures, preprocessor_results = run_preprocessors(
-                structures, preprocessor_config, args.monitor_memory
+                structures, preprocessor_config, args.monitor_memory,
+                parallel_mlips=not args.no_parallel_mlips,
+                max_mlip_workers=args.max_mlip_workers,
+                n_jobs=args.n_jobs
             )
 
             # Run benchmarks
@@ -648,6 +699,10 @@ def main():
         print(f"📁 Results saved to: {results_file}")
         print(f"📊 Structures processed: {len(structures)}")
         print(f"🔧 Benchmark families: {benchmark_families}")
+        print("🚀 Optimization settings:")
+        print(f"   - Parallel MLIPs: {'Enabled' if not args.no_parallel_mlips else 'Disabled'}")
+        print(f"   - MLIP workers: {args.max_mlip_workers}")
+        print(f"   - Structure processes: {args.n_jobs}")
         print(f"⏱️  Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         print("=" * 60)
 
