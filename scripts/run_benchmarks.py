@@ -180,7 +180,7 @@ def load_cif_files(input_path: str) -> List[str]:
         raise FileNotFoundError(f"Path does not exist: {input_path}")
 
 
-def load_structures_from_csv(csv_path: str, respect_validity_flags: bool = True) -> List:
+def load_structures_from_wycoff_csv(csv_path: str, respect_validity_flags: bool = True) -> List:
     """Load structures from a CSV file with proper validation handling.
     
     This function handles the different validation behaviors between Structure.from_file()
@@ -208,10 +208,10 @@ def load_structures_from_csv(csv_path: str, respect_validity_flags: bool = True)
     Examples
     --------
     # Match Structure.from_file() behavior (using pre-computed validity flags)
-    structures = load_structures_from_csv("data.csv", respect_validity_flags=True)
+    structures = load_structures_from_wycoff_csv("data.csv", respect_validity_flags=True)
     
     # Load everything possible (permissive, ignores validity flags)
-    structures = load_structures_from_csv("data.csv", respect_validity_flags=False)
+    structures = load_structures_from_wycoff_csv("data.csv", respect_validity_flags=False)
     """
     import json
 
@@ -603,7 +603,7 @@ def main():
         # Load structures based on input type
         if args.csv:
             # Load structures from CSV
-            structures = load_structures_from_csv(args.csv)
+            structures = load_structures_from_wycoff_csv(args.csv)
         else:
             # Load CIF files
             logger.info(f"Loading CIF files from: {args.cifs}")
