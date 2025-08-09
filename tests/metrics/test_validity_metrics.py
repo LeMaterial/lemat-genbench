@@ -60,7 +60,7 @@ def test_charge_neutrality_metric(valid_structures):
     # Check result structure
     assert "charge_neutrality_error" in result.metrics
     assert "charge_neutral_ratio" in result.metrics
-    assert result.primary_metric == "charge_neutrality_error"
+    assert result.primary_metric == "charge_neutral_ratio"
 
     # Check values
     assert not np.isnan(result.metrics["charge_neutrality_error"])
