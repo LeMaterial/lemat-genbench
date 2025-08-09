@@ -45,7 +45,6 @@ def _detach_tensors(obj):
 
 def _create_clean_structure_copy(structure):
     """Create a clean copy of a Structure object without any tensors."""
-    from pymatgen.core import Structure
     
     # Use pymatgen's built-in copy method for safety
     clean_structure = structure.copy()
