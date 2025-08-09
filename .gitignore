@@ -185,5 +185,6 @@ data/lematbulk_mmd_values.pkl
 
 # Local testing
 submissions/
+final_results/
 
 dummy.csv

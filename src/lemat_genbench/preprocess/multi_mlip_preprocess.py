@@ -16,7 +16,6 @@ import torch
 from func_timeout import FunctionTimedOut, func_timeout
 from pymatgen.core import Structure
 
-from lemat_genbench.models.registry import get_calculator
 from lemat_genbench.preprocess.base import BasePreprocessor, PreprocessorConfig
 from lemat_genbench.utils.logging import logger
 
@@ -48,17 +47,12 @@ def _create_clean_structure_copy(structure):
     """Create a clean copy of a Structure object without any tensors."""
     from pymatgen.core import Structure
     
-    # Create a new structure with the same lattice and sites
-    clean_structure = Structure(
-        lattice=structure.lattice,
-        species=[site.specie for site in structure],
-        coords=[site.coords for site in structure],
-        coords_are_cartesian=False
-    )
+    # Use pymatgen's built-in copy method for safety
+    clean_structure = structure.copy()
     
-    # Copy properties but detach any tensors
-    if hasattr(structure, 'properties') and structure.properties:
-        clean_structure.properties = _detach_tensors(structure.properties)
+    # Only clean the properties, leave everything else intact
+    if hasattr(clean_structure, 'properties') and clean_structure.properties:
+        clean_structure.properties = _detach_tensors(clean_structure.properties)
     
     return clean_structure
 
@@ -92,6 +86,7 @@ def _get_process_model_cache():
 
 def _get_or_create_calculator(mlip_name: str, mlip_config: Dict[str, Any]):
     """Get calculator from process cache or create if not exists."""
+    from lemat_genbench.models.registry import get_calculator
     cache = _get_process_model_cache()
     
     cache_key = f"{mlip_name}_{hash(str(mlip_config))}"
