@@ -1,12 +1,40 @@
 """Tests for SUN (Stable, Unique, Novel) benchmark."""
 
 import math
-from unittest.mock import Mock, patch
+from unittest.mock import MagicMock, Mock, patch
 
 from pymatgen.core.structure import Structure
 
 from lemat_genbench.benchmarks.sun_benchmark import SUNBenchmark
 from lemat_genbench.metrics.sun_metric import MetaSUNMetric, SUNMetric
+
+
+def create_mock_uniqueness_result(structures, individual_values, failed_indices=None):
+    """Helper function to create properly mocked uniqueness results with fingerprints."""
+    if failed_indices is None:
+        failed_indices = []
+    
+    mock_result = MagicMock()
+    mock_result.individual_values = individual_values
+    mock_result.failed_indices = failed_indices
+    
+    # Add fingerprints attribute that the implementation expects
+    # For testing, we'll create unique fingerprints for unique structures
+    # and identical fingerprints for duplicate structures
+    fingerprints = []
+    for i, val in enumerate(individual_values):
+        if i not in failed_indices:
+            if val == 1.0:
+                # Unique structure gets unique fingerprint
+                fingerprints.append(f"unique_fp_{i}")
+            else:
+                # Duplicate structure gets shared fingerprint
+                # Use the reciprocal to identify groups (e.g., val=0.5 means 2 duplicates)
+                group_size = int(round(1.0 / val)) if val > 0 else 1
+                fingerprints.append(f"dup_fp_group{group_size}")
+    
+    mock_result.fingerprints = fingerprints
+    return mock_result
 
 
 def create_test_structures():
@@ -306,24 +334,25 @@ class TestSUNBenchmark:
     @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_full_evaluation_mocked(self, mock_uniqueness_class, mock_novelty_class):
         """Test full benchmark evaluation with mocked sub-metrics."""
-        # Mock uniqueness: all structures are unique
-        mock_uniqueness = Mock()
-        mock_uniqueness_result = Mock()
-        mock_uniqueness_result.individual_values = [1.0, 1.0, 1.0]
-        mock_uniqueness_result.failed_indices = []
+        structures = create_test_structures()
+
+        # Mock uniqueness: all structures are unique using helper function
+        mock_uniqueness = MagicMock()
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [1.0, 1.0, 1.0], []
+        )
         mock_uniqueness.compute.return_value = mock_uniqueness_result
         mock_uniqueness_class.return_value = mock_uniqueness
 
         # Mock novelty: all structures are novel
-        mock_novelty = Mock()
-        mock_novelty_result = Mock()
+        mock_novelty = MagicMock()
+        mock_novelty_result = MagicMock()
         mock_novelty_result.individual_values = [1.0, 1.0, 1.0]
         mock_novelty_result.failed_indices = []
         mock_novelty.compute.return_value = mock_novelty_result
         mock_novelty_class.return_value = mock_novelty
 
         benchmark = SUNBenchmark(include_metasun=False)
-        structures = create_test_structures()
 
         result = benchmark.evaluate(structures)
 
@@ -370,16 +399,20 @@ class TestSUNBenchmarkIntegration:
         self, mock_uniqueness_class, mock_novelty_class
     ):
         """Test benchmark with multi-MLIP preprocessed structures."""
-        # Mock all structures as unique and novel
-        mock_result = Mock()
-        mock_result.individual_values = [1.0, 1.0]
-        mock_result.failed_indices = []
+        structures = create_test_structures_with_multi_mlip()
 
-        mock_uniqueness_class.return_value.compute.return_value = mock_result
-        mock_novelty_class.return_value.compute.return_value = mock_result
+        # Mock all structures as unique and novel using helper function
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [1.0, 1.0], []
+        )
+        mock_uniqueness_class.return_value.compute.return_value = mock_uniqueness_result
+
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [1.0, 1.0]
+        mock_novelty_result.failed_indices = []
+        mock_novelty_class.return_value.compute.return_value = mock_novelty_result
 
         benchmark = SUNBenchmark()
-        structures = create_test_structures_with_multi_mlip()
 
         result = benchmark.evaluate(structures)
 
@@ -392,16 +425,20 @@ class TestSUNBenchmarkIntegration:
     @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_benchmark_consistency(self, mock_uniqueness_class, mock_novelty_class):
         """Test that benchmark results are consistent across multiple runs."""
-        # Mock deterministic results
-        mock_result = Mock()
-        mock_result.individual_values = [1.0, 1.0, 1.0]
-        mock_result.failed_indices = []
+        structures = create_test_structures()
 
-        mock_uniqueness_class.return_value.compute.return_value = mock_result
-        mock_novelty_class.return_value.compute.return_value = mock_result
+        # Mock deterministic results using helper function
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [1.0, 1.0, 1.0], []
+        )
+        mock_uniqueness_class.return_value.compute.return_value = mock_uniqueness_result
+
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [1.0, 1.0, 1.0]
+        mock_novelty_result.failed_indices = []
+        mock_novelty_class.return_value.compute.return_value = mock_novelty_result
 
         benchmark = SUNBenchmark(include_metasun=False)
-        structures = create_test_structures()
 
         # Run benchmark multiple times
         result1 = benchmark.evaluate(structures)
@@ -427,14 +464,6 @@ class TestSUNBenchmarkIntegration:
         """Test benchmark performance with larger structure sets."""
         # Mock results for larger set
         n_structures = 50
-        mock_result = Mock()
-        mock_result.individual_values = [1.0] * n_structures
-        mock_result.failed_indices = []
-
-        mock_uniqueness_class.return_value.compute.return_value = mock_result
-        mock_novelty_class.return_value.compute.return_value = mock_result
-
-        benchmark = SUNBenchmark(include_metasun=False)
 
         # Create larger set of structures
         structures = []
@@ -448,6 +477,18 @@ class TestSUNBenchmarkIntegration:
             )
             structure.properties = {"e_above_hull": 0.0}  # All stable
             structures.append(structure)
+
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [1.0] * n_structures, []
+        )
+        mock_uniqueness_class.return_value.compute.return_value = mock_uniqueness_result
+
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [1.0] * n_structures
+        mock_novelty_result.failed_indices = []
+        mock_novelty_class.return_value.compute.return_value = mock_novelty_result
+
+        benchmark = SUNBenchmark(include_metasun=False)
 
         result = benchmark.evaluate(structures)
 
@@ -505,6 +546,16 @@ def manual_test():
         assert final_scores["sun_count"] == 1
 
         print("Result aggregation working correctly!")
+
+        # Test 5: Mock helper function
+        print("5. Testing mock helper function...")
+        mock_result = create_mock_uniqueness_result(
+            ["s1", "s2", "s3"], 
+            [1.0, 0.5, 1.0], 
+            []
+        )
+        print(f"Mock fingerprints: {mock_result.fingerprints}")
+        print(f"Has fingerprints: {hasattr(mock_result, 'fingerprints')}")
 
         print("\nAll manual tests passed!")
         return True

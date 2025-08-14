@@ -1,16 +1,16 @@
 # generated using pymatgen
-data_TaPd3
+data_Si
 _symmetry_space_group_name_H-M   'P 1'
-_cell_length_a   4.60756207
-_cell_length_b   5.49378109
-_cell_length_c   5.51877451
-_cell_angle_alpha   119.90021515
-_cell_angle_beta   90.07157135
-_cell_angle_gamma   90.35408783
+_cell_length_a   3.84019793
+_cell_length_b   3.84019899
+_cell_length_c   3.84019793
+_cell_angle_alpha   119.99999086
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   60.00000914
 _symmetry_Int_Tables_number   1
-_chemical_formula_structural   TaPd3
-_chemical_formula_sum   'Ta2 Pd6'
-_cell_volume   121.09826476
+_chemical_formula_structural   Si
+_chemical_formula_sum   Si2
+_cell_volume   40.04479464
 _cell_formula_units_Z   2
 loop_
  _symmetry_equiv_pos_site_id
@@ -24,11 +24,5 @@ loop_
  _atom_site_fract_y
  _atom_site_fract_z
  _atom_site_occupancy
-  Ta  Ta0  1  0.51764375  0.63039684  0.27694124  1.0
-  Ta  Ta1  1  0.03962475  0.33899942  0.67239159  1.0
-  Pd  Pd2  1  0.02859959  0.80513036  0.25962296  1.0
-  Pd  Pd3  1  0.03672451  0.83270520  0.66743582  1.0
-  Pd  Pd4  1  0.53301764  0.18876617  0.59795755  1.0
-  Pd  Pd5  1  0.04071686  0.79998231  0.02512252  1.0
-  Pd  Pd6  1  0.53573632  0.19523755  0.97994328  1.0
-  Pd  Pd7  1  0.05647096  0.32969314  0.23850158  1.0
+  Si  Si0  1  0.00000000  0.00000000  0.00000000  1
+  Si  Si1  1  0.08327723  0.05551816  0.08327723  1

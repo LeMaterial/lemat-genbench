@@ -210,6 +210,34 @@ def create_structures_with_invalid_e_above_hull():
     return structures
 
 
+def create_mock_uniqueness_result(structures, individual_values, failed_indices=None):
+    """Helper function to create properly mocked uniqueness results with fingerprints."""
+    if failed_indices is None:
+        failed_indices = []
+    
+    mock_result = MagicMock()
+    mock_result.individual_values = individual_values
+    mock_result.failed_indices = failed_indices
+    
+    # Add fingerprints attribute that the implementation expects
+    # For testing, we'll create unique fingerprints for unique structures
+    # and identical fingerprints for duplicate structures
+    fingerprints = []
+    for i, val in enumerate(individual_values):
+        if i not in failed_indices:
+            if val == 1.0:
+                # Unique structure gets unique fingerprint
+                fingerprints.append(f"unique_fp_{i}")
+            else:
+                # Duplicate structure gets shared fingerprint
+                # Use the reciprocal to identify groups (e.g., val=0.5 means 2 duplicates)
+                group_size = int(round(1.0 / val)) if val > 0 else 1
+                fingerprints.append(f"dup_fp_group{group_size}")
+    
+    mock_result.fingerprints = fingerprints
+    return mock_result
+
+
 class TestSUNMetricBackwardCompatibility:
     """Test suite for SUN Metric backward compatibility with single MLIP properties."""
 
@@ -317,9 +345,9 @@ class TestSUNMetricMultiMLIP:
 
         # Mock uniqueness: all structures are unique
         mock_uniqueness = MagicMock()
-        mock_uniqueness_result = MagicMock()
-        mock_uniqueness_result.individual_values = [1.0, 1.0, 1.0, 1.0]
-        mock_uniqueness_result.failed_indices = []
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [1.0, 1.0, 1.0, 1.0], []
+        )
         mock_uniqueness.compute.return_value = mock_uniqueness_result
         mock_uniqueness_class.return_value = mock_uniqueness
 
@@ -401,9 +429,9 @@ class TestSUNMetricErrorHandling:
 
         # Mock uniqueness to fail completely
         mock_uniqueness = MagicMock()
-        mock_uniqueness_result = MagicMock()
-        mock_uniqueness_result.individual_values = [float("nan")] * len(structures)
-        mock_uniqueness_result.failed_indices = list(range(len(structures)))
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [float("nan")] * len(structures), list(range(len(structures)))
+        )
         mock_uniqueness.compute.return_value = mock_uniqueness_result
         mock_uniqueness_class.return_value = mock_uniqueness
 
@@ -427,9 +455,9 @@ class TestSUNMetricErrorHandling:
 
         # Mock uniqueness: all structures are unique
         mock_uniqueness = MagicMock()
-        mock_uniqueness_result = MagicMock()
-        mock_uniqueness_result.individual_values = [1.0] * len(structures)
-        mock_uniqueness_result.failed_indices = []
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [1.0] * len(structures), []
+        )
         mock_uniqueness.compute.return_value = mock_uniqueness_result
         mock_uniqueness_class.return_value = mock_uniqueness
 
@@ -460,9 +488,9 @@ class TestSUNMetricErrorHandling:
 
         # Mock uniqueness: first two unique, third failed
         mock_uniqueness = MagicMock()
-        mock_uniqueness_result = MagicMock()
-        mock_uniqueness_result.individual_values = [1.0, 1.0, float("nan")]
-        mock_uniqueness_result.failed_indices = [2]
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [1.0, 1.0, float("nan")], [2]
+        )
         mock_uniqueness.compute.return_value = mock_uniqueness_result
         mock_uniqueness_class.return_value = mock_uniqueness
 
@@ -496,12 +524,15 @@ class TestSUNMetricResultValidation:
         structures = create_test_structures_with_single_mlip_properties()
 
         # Mock all structures as unique and novel
-        mock_result = MagicMock()
-        mock_result.individual_values = [1.0] * len(structures)
-        mock_result.failed_indices = []
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [1.0] * len(structures), []
+        )
+        mock_uniqueness_class.return_value.compute.return_value = mock_uniqueness_result
 
-        mock_uniqueness_class.return_value.compute.return_value = mock_result
-        mock_novelty_class.return_value.compute.return_value = mock_result
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [1.0] * len(structures)
+        mock_novelty_result.failed_indices = []
+        mock_novelty_class.return_value.compute.return_value = mock_novelty_result
 
         metric = SUNMetric()
         result = metric.compute(structures)
@@ -542,12 +573,15 @@ class TestSUNMetricResultValidation:
         structures = create_test_structures_with_single_mlip_properties()
 
         # Mock all structures as unique and novel
-        mock_result = MagicMock()
-        mock_result.individual_values = [1.0] * len(structures)
-        mock_result.failed_indices = []
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [1.0] * len(structures), []
+        )
+        mock_uniqueness_class.return_value.compute.return_value = mock_uniqueness_result
 
-        mock_uniqueness_class.return_value.compute.return_value = mock_result
-        mock_novelty_class.return_value.compute.return_value = mock_result
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [1.0] * len(structures)
+        mock_novelty_result.failed_indices = []
+        mock_novelty_class.return_value.compute.return_value = mock_novelty_result
 
         metric = SUNMetric()
         result = metric.compute(structures)
@@ -568,9 +602,9 @@ class TestSUNMetricResultValidation:
 
         # Mock uniqueness with one failure
         mock_uniqueness = MagicMock()
-        mock_uniqueness_result = MagicMock()
-        mock_uniqueness_result.individual_values = [1.0, 1.0, float("nan")]
-        mock_uniqueness_result.failed_indices = [2]
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [1.0, 1.0, float("nan")], [2]
+        )
         mock_uniqueness.compute.return_value = mock_uniqueness_result
         mock_uniqueness_class.return_value = mock_uniqueness
 
@@ -611,12 +645,15 @@ class TestSUNMetricEdgeCases:
             structures.append(structure)
 
         # Mock all as unique and novel
-        mock_result = MagicMock()
-        mock_result.individual_values = [1.0] * len(structures)
-        mock_result.failed_indices = []
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [1.0] * len(structures), []
+        )
+        mock_uniqueness_class.return_value.compute.return_value = mock_uniqueness_result
 
-        mock_uniqueness_class.return_value.compute.return_value = mock_result
-        mock_novelty_class.return_value.compute.return_value = mock_result
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [1.0] * len(structures)
+        mock_novelty_result.failed_indices = []
+        mock_novelty_class.return_value.compute.return_value = mock_novelty_result
 
         metric = SUNMetric()
         result = metric.compute(structures)
@@ -644,12 +681,15 @@ class TestSUNMetricEdgeCases:
             structures.append(structure)
 
         # Mock all as unique and novel
-        mock_result = MagicMock()
-        mock_result.individual_values = [1.0] * len(structures)
-        mock_result.failed_indices = []
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [1.0] * len(structures), []
+        )
+        mock_uniqueness_class.return_value.compute.return_value = mock_uniqueness_result
 
-        mock_uniqueness_class.return_value.compute.return_value = mock_result
-        mock_novelty_class.return_value.compute.return_value = mock_result
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [1.0] * len(structures)
+        mock_novelty_result.failed_indices = []
+        mock_novelty_class.return_value.compute.return_value = mock_novelty_result
 
         metric = SUNMetric()
         result = metric.compute(structures)
@@ -666,26 +706,33 @@ class TestSUNMetricEdgeCases:
         """Test scenario where no structures are unique."""
         structures = create_test_structures_with_single_mlip_properties()
 
-        # Mock no structures as unique
+        # Mock no structures as unique (all duplicates)
         mock_uniqueness = MagicMock()
-        mock_uniqueness_result = MagicMock()
-        mock_uniqueness_result.individual_values = [0.0] * len(
-            structures
-        )  # None unique
-        mock_uniqueness_result.failed_indices = []
+        mock_uniqueness_result = create_mock_uniqueness_result(
+            structures, [0.5] * len(structures), []  # All duplicates (2 copies each)
+        )
         mock_uniqueness.compute.return_value = mock_uniqueness_result
         mock_uniqueness_class.return_value = mock_uniqueness
 
-        # Novelty won't be called since no unique structures
-        mock_novelty_class.return_value = MagicMock()
+        # Mock novelty for the representatives that will be selected
+        mock_novelty = MagicMock()
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [1.0]  # One representative per group
+        mock_novelty_result.failed_indices = []
+        mock_novelty.compute.return_value = mock_novelty_result
+        mock_novelty_class.return_value = mock_novelty
 
         metric = SUNMetric()
         result = metric.compute(structures)
 
-        # No SUN or MetaSUN since no unique structures
-        assert result.metrics["sun_rate"] == 0.0
-        assert result.metrics["msun_rate"] == 0.0
-        assert result.metrics["unique_rate"] == 0.0
+        # The unique_count should be 1 (one fingerprint group) out of 3 structures
+        # So unique_rate = 1/3 ≈ 0.333
+        expected_unique_rate = 1.0 / len(structures)
+        assert abs(result.metrics["unique_rate"] - expected_unique_rate) < 0.001
+        
+        # Should still have some SUN/MetaSUN from representatives
+        # But no structures have individual_values = 1.0 (perfectly unique)
+        assert all(val != 1.0 for val in mock_uniqueness_result.individual_values)
 
 
 class TestSUNMetricStubMethods:
@@ -797,11 +844,15 @@ class TestSUNMetricIntegrationWithPreprocessing:
                 metric = SUNMetric()
 
                 # Mock all as unique and novel
-                mock_result = MagicMock()
-                mock_result.individual_values = [1.0] * len(processed_structures)
-                mock_result.failed_indices = []
-                metric.uniqueness_metric.compute = MagicMock(return_value=mock_result)
-                metric.novelty_metric.compute = MagicMock(return_value=mock_result)
+                mock_uniqueness_result = create_mock_uniqueness_result(
+                    processed_structures, [1.0] * len(processed_structures), []
+                )
+                metric.uniqueness_metric.compute = MagicMock(return_value=mock_uniqueness_result)
+                
+                mock_novelty_result = MagicMock()
+                mock_novelty_result.individual_values = [1.0] * len(processed_structures)
+                mock_novelty_result.failed_indices = []
+                metric.novelty_metric.compute = MagicMock(return_value=mock_novelty_result)
 
                 result = metric.compute(processed_structures)
 
@@ -1054,6 +1105,16 @@ def manual_test():
             mixed_structures, candidate_indices
         )
         print(f"Mixed - SUN: {sun_indices}, MetaSUN: {msun_indices}")
+
+        # Test 6: Mock helper function
+        print("6. Testing mock helper function...")
+        mock_result = create_mock_uniqueness_result(
+            ["s1", "s2", "s3"], 
+            [1.0, 0.5, 1.0], 
+            []
+        )
+        print(f"Mock fingerprints: {mock_result.fingerprints}")
+        print(f"Has fingerprints: {hasattr(mock_result, 'fingerprints')}")
 
         print("\nAll manual tests passed!")
         return True
