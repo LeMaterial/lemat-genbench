@@ -176,6 +176,14 @@ class SUNMetric(BaseMetric):
             logger.info("Computing uniqueness...")
             uniqueness_result = self.uniqueness_metric.compute(structures)
 
+            # Get the unique fingerprints to calculate proper unique count
+            if hasattr(uniqueness_result, 'fingerprints') and uniqueness_result.fingerprints:
+                unique_fingerprints = set(uniqueness_result.fingerprints)
+                unique_count = len(unique_fingerprints)
+            else:
+                # Fallback: calculate from metrics if fingerprints not available
+                unique_count = uniqueness_result.metrics.get("unique_structures_count", 0)
+
             # Select structures for further processing:
             # 1. All unique structures (individual_values = 1.0)
             # 2. One representative from each duplicate group (individual_values < 1.0)
@@ -190,7 +198,7 @@ class SUNMetric(BaseMetric):
                     n_structures,
                     [],
                     [],
-                    [],
+                    unique_count,
                     uniqueness_result.failed_indices,
                 )
 
@@ -203,11 +211,23 @@ class SUNMetric(BaseMetric):
             novelty_result = self.novelty_metric.compute(selected_structures)
 
             # Identify which selected structures are novel (individual_values = 1.0 means novel)
-            novel_among_selected_indices = [
-                selected_indices[i]
-                for i, val in enumerate(novelty_result.individual_values)
-                if not np.isnan(val) and val == 1.0
-            ]
+            # FIXED: Properly handle index mapping between novelty results and 
+            # original structure indices
+            novel_among_selected_indices = []
+            
+            # The novelty_result.individual_values corresponds 1:1 with the 
+            # selected_structures we passed
+            # So novelty_result.individual_values[i] corresponds to 
+            # selected_indices[i]
+            for i, val in enumerate(novelty_result.individual_values):
+                # Check if this novelty computation was successful and structure 
+                # is novel
+                if (i not in novelty_result.failed_indices and 
+                    not np.isnan(val) and 
+                    val == 1.0):
+                    # Map back to original structure index
+                    original_structure_idx = selected_indices[i]
+                    novel_among_selected_indices.append(original_structure_idx)
 
             if not novel_among_selected_indices:
                 logger.info("No novel structures among selected structures")
@@ -216,8 +236,10 @@ class SUNMetric(BaseMetric):
                     n_structures,
                     [],
                     [],
-                    [],
-                    uniqueness_result.failed_indices + novelty_result.failed_indices,
+                    unique_count,
+                    uniqueness_result.failed_indices + [
+                        selected_indices[i] for i in novelty_result.failed_indices
+                    ],
                 )
 
             logger.info(
@@ -236,23 +258,17 @@ class SUNMetric(BaseMetric):
 
             # Combine all failed indices
             all_failed_indices = list(
-                set(uniqueness_result.failed_indices + novelty_result.failed_indices)
+                set(uniqueness_result.failed_indices + [
+                    selected_indices[i] for i in novelty_result.failed_indices
+                ])
             )
-
-            # For unique_indices in result, count all structures that passed uniqueness computation
-            # (sync with original uniqueness implementation)
-            unique_indices = [
-                i
-                for i, val in enumerate(uniqueness_result.individual_values)
-                if not np.isnan(val)  # All non-failed structures, not just perfectly unique ones
-            ]
 
             return self._create_result(
                 start_time,
                 n_structures,
                 sun_indices,
                 msun_indices,
-                unique_indices,  # Still report truly unique structures
+                unique_count,  # Correct unique count from fingerprints
                 all_failed_indices,
             )
 
@@ -374,7 +390,7 @@ class SUNMetric(BaseMetric):
         n_structures: int,
         sun_indices: List[int],
         msun_indices: List[int],
-        unique_indices: List[int],
+        unique_count: int,  # Now properly calculated from fingerprints
         failed_indices: List[int],
     ) -> MetricResult:
         """Create MetricResult from computed indices."""
@@ -397,7 +413,7 @@ class SUNMetric(BaseMetric):
                 individual_values[idx] = float("nan")
 
         # Calculate additional metrics
-        unique_rate = len(unique_indices) / n_structures if n_structures > 0 else 0.0
+        unique_rate = unique_count / n_structures if n_structures > 0 else 0.0
         total_sun_msun = len(sun_indices) + len(msun_indices)
         combined_rate = total_sun_msun / n_structures if n_structures > 0 else 0.0
 
@@ -407,7 +423,7 @@ class SUNMetric(BaseMetric):
             "combined_sun_msun_rate": combined_rate,
             "sun_count": len(sun_indices),
             "msun_count": len(msun_indices),
-            "unique_count": len(unique_indices),
+            "unique_count": unique_count,  # Now correctly calculated from unique fingerprints
             "unique_rate": unique_rate,
             "total_structures_evaluated": n_structures,
             "failed_count": len(failed_indices),

@@ -166,6 +166,8 @@ class UniquenessMetric(BaseMetric):
         -------
         MetricResult
             Object containing the uniqueness metrics and computation metadata.
+            The result will have a custom 'fingerprints' attribute containing
+            the computed fingerprints for successful structures.
         """
 
         start_time = time.time()
@@ -235,7 +237,7 @@ class UniquenessMetric(BaseMetric):
 
         except Exception as e:
             logger.error("Failed to compute uniqueness metric", exc_info=True)
-            return MetricResult(
+            result = MetricResult(
                 metrics={self.name: float("nan")},
                 primary_metric=self.name,
                 uncertainties={},
@@ -249,15 +251,19 @@ class UniquenessMetric(BaseMetric):
                     for _ in range(len(structures))
                 ],
             )
+            # Add empty fingerprints on failure
+            result.fingerprints = []
+            return result
 
         # Create individual values for consistency with base class
         # For uniqueness, individual values don't make as much sense,
-        # but we'll assign 1.0 to unique structures and proportional values to duplicates
+        # but we'll assign 1.0 to unique structures and proportional values to 
+        # duplicates
         individual_values = self._assign_individual_values(
             structures, fingerprints, failed_indices
         )
 
-        return MetricResult(
+        result = MetricResult(
             metrics=result_dict["metrics"],
             primary_metric=result_dict["primary_metric"],
             uncertainties=result_dict["uncertainties"],
@@ -268,6 +274,10 @@ class UniquenessMetric(BaseMetric):
             failed_indices=failed_indices,
             warnings=warnings,
         )
+        
+        # Add fingerprints as custom attribute (no base class modification needed)
+        result.fingerprints = fingerprints
+        return result
 
     @staticmethod
     def _compute_batch_fingerprints(
