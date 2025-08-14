@@ -1,4 +1,4 @@
-"""Tests for SUN (Stable, Unique, Novel) metrics implementation - FIXED VERSION."""
+"""Tests for SUN (Stable, Unique, Novel) metrics implementation."""
 
 import traceback
 from unittest.mock import MagicMock, patch
@@ -219,7 +219,7 @@ def create_mock_uniqueness_result(structures, individual_values, failed_indices=
     mock_result.individual_values = individual_values
     mock_result.failed_indices = failed_indices
     
-    # Add fingerprints attribute that the new implementation expects
+    # Add fingerprints attribute that the implementation expects
     # For testing, we'll create unique fingerprints for unique structures
     # and identical fingerprints for duplicate structures
     fingerprints = []

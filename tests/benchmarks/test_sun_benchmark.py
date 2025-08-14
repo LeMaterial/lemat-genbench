@@ -1,4 +1,4 @@
-"""Tests for SUN (Stable, Unique, Novel) benchmark - FIXED VERSION."""
+"""Tests for SUN (Stable, Unique, Novel) benchmark."""
 
 import math
 from unittest.mock import MagicMock, Mock, patch
@@ -18,7 +18,9 @@ def create_mock_uniqueness_result(structures, individual_values, failed_indices=
     mock_result.individual_values = individual_values
     mock_result.failed_indices = failed_indices
     
-    # Add fingerprints attribute that the new implementation expects
+    # Add fingerprints attribute that the implementation expects
+    # For testing, we'll create unique fingerprints for unique structures
+    # and identical fingerprints for duplicate structures
     fingerprints = []
     for i, val in enumerate(individual_values):
         if i not in failed_indices:
@@ -27,6 +29,7 @@ def create_mock_uniqueness_result(structures, individual_values, failed_indices=
                 fingerprints.append(f"unique_fp_{i}")
             else:
                 # Duplicate structure gets shared fingerprint
+                # Use the reciprocal to identify groups (e.g., val=0.5 means 2 duplicates)
                 group_size = int(round(1.0 / val)) if val > 0 else 1
                 fingerprints.append(f"dup_fp_group{group_size}")
     
