@@ -1,1 +1,2 @@
 data/unique_fingerprints.pkl filter=lfs diff=lfs merge=lfs -text
+data/combined_fingerprints.parquet filter=lfs diff=lfs merge=lfs -text
