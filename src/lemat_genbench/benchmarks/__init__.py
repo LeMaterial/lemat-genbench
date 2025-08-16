@@ -10,6 +10,14 @@ from .distribution_benchmark import DistributionBenchmark
 from .hhi_benchmark import HHIBenchmark
 from .multi_mlip_stability_benchmark import StabilityBenchmark
 from .novelty_benchmark import NoveltyBenchmark
+from .novelty_new_benchmark import (
+    AugmentedNoveltyBenchmark,
+    create_augmented_novelty_benchmark,
+    create_computation_based_novelty_benchmark,
+    create_high_precision_novelty_benchmark,
+    create_property_based_novelty_benchmark,
+    create_robust_novelty_benchmark,
+)
 from .sun_benchmark import SUNBenchmark
 from .uniqueness_benchmark import UniquenessBenchmark
 from .validity_benchmark import ValidityBenchmark
@@ -22,9 +30,16 @@ __all__ = [
     # Benchmark implementations
     "DistributionBenchmark",
     "HHIBenchmark",
-    "NoveltyBenchmark", 
+    "NoveltyBenchmark",
+    "AugmentedNoveltyBenchmark",  # New enhanced novelty benchmark
     "SUNBenchmark",
     "StabilityBenchmark",
     "UniquenessBenchmark",
     "ValidityBenchmark",
+    # Factory functions for enhanced novelty benchmark
+    "create_augmented_novelty_benchmark",
+    "create_computation_based_novelty_benchmark",
+    "create_high_precision_novelty_benchmark", 
+    "create_property_based_novelty_benchmark",
+    "create_robust_novelty_benchmark",
 ]
