@@ -191,3 +191,8 @@ dummy.csv
 
 data/reference_fingerprints/
 data/reference_fingerprints_new/
+data/augmented_fingerprints/fingerprint_mapping.json
+data/augmented_fingerprints/fingerprint_mapping.pkl
+data/augmented_fingerprints/structure_index.csv
+data/augmented_fingerprints/unique_fingerprints.pkl
+data/augmented_fingerprints/unique_fingerprints.txt
