@@ -1,0 +1,73 @@
+type: "novelty_new"
+description: "Enhanced Novelty Benchmark using Augmented Fingerprinting for Materials Generation"
+version: "0.2.0"
+
+# Fingerprinting configuration
+fingerprinting_method: "augmented"
+fingerprint_source: "auto"  # Options: "property", "compute", "auto"
+
+# Reference dataset configuration
+reference_fingerprints_path: null  # Uses default: "data/augmented_fingerprints"
+reference_dataset_name: "LeMat-Bulk"
+
+# Crystallographic analysis parameters
+symprec: 0.01
+angle_tolerance: 5.0
+fallback_to_computation: true
+
+# Benchmark configuration variants
+variants:
+  default:
+    description: "Standard augmented novelty benchmark"
+    fingerprint_source: "auto"
+    symprec: 0.01
+    angle_tolerance: 5.0
+    fallback_to_computation: true
+    
+  property_only:
+    description: "Uses only preprocessed fingerprints from structure properties"
+    fingerprint_source: "property"
+    fallback_to_computation: false
+    
+  computation_only:
+    description: "Computes fingerprints on-demand"
+    fingerprint_source: "compute"
+    fallback_to_computation: true
+    
+  robust:
+    description: "Robust settings with relaxed tolerances"
+    fingerprint_source: "auto"
+    symprec: 0.1
+    angle_tolerance: 10.0
+    fallback_to_computation: true
+    
+  high_precision:
+    description: "High precision with strict tolerances"
+    fingerprint_source: "auto"
+    symprec: 0.001
+    angle_tolerance: 1.0
+    fallback_to_computation: true
+
+# Performance settings
+cache_reference: true
+parallel_processing: true
+
+# Output metrics
+metrics:
+  primary: "novelty_score"
+  additional:
+    - "novel_structures_count"
+    - "total_structures_evaluated"
+    - "total_structures_attempted"
+    - "fingerprinting_success_rate"
+    - "novelty_ratio"
+
+# Expected ranges for validation
+validation:
+  novelty_score:
+    min: 0.0
+    max: 1.0
+  fingerprinting_success_rate:
+    min: 0.0
+    max: 1.0
+    expected_min: 0.8  # Expect high success rate
