@@ -188,3 +188,6 @@ submissions/
 final_results/
 
 dummy.csv
+
+data/reference_fingerprints/
+data/reference_fingerprints_new/
