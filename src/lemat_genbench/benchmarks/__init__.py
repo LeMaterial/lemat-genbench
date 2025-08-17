@@ -20,6 +20,14 @@ from .novelty_new_benchmark import (
     create_robust_novelty_benchmark,
 )
 from .sun_benchmark import SUNBenchmark
+from .sun_new_benchmark import (
+    SUNNewBenchmark,
+    create_computation_based_sun_benchmark,
+    create_high_precision_sun_benchmark,
+    create_property_based_sun_benchmark,
+    create_robust_sun_benchmark,
+    create_sun_new_benchmark,
+)
 from .uniqueness_benchmark import UniquenessBenchmark
 from .uniqueness_new_benchmark import UniquenessNewBenchmark
 from .validity_benchmark import ValidityBenchmark
@@ -36,6 +44,7 @@ __all__ = [
     "NoveltyBenchmark",
     "AugmentedNoveltyBenchmark",  # New enhanced novelty benchmark
     "SUNBenchmark",
+    "SUNNewBenchmark",
     "StabilityBenchmark",
     "UniquenessBenchmark",
     "UniquenessNewBenchmark",
@@ -46,4 +55,10 @@ __all__ = [
     "create_high_precision_novelty_benchmark", 
     "create_property_based_novelty_benchmark",
     "create_robust_novelty_benchmark",
+    # Factory functions for enhanced SUN benchmark
+    "create_sun_new_benchmark",
+    "create_computation_based_sun_benchmark",
+    "create_high_precision_sun_benchmark",
+    "create_property_based_sun_benchmark",
+    "create_robust_sun_benchmark",
 ]
