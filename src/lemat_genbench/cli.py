@@ -32,12 +32,6 @@ from lemat_genbench.benchmarks.validity_benchmark import (
     ValidityBenchmark,
 )
 from lemat_genbench.data.structure import format_structures
-from lemat_genbench.metrics.validity_metrics import (
-    ChargeNeutralityMetric,
-    CoordinationEnvironmentMetric,
-    MinimumInteratomicDistanceMetric,
-    PhysicalPlausibilityMetric,
-)
 from lemat_genbench.utils.logging import logger
 
 CONFIGS_DIR = Path(__file__).parent.parent / "config"
@@ -84,19 +78,16 @@ def load_benchmark_config(config_name: str) -> dict:
     if not config_path.exists() and config_path.name == "validity.yaml":
         validity_config = {
             "type": "validity",
-            "charge_weight": 0.25,
-            "distance_weight": 0.25,
-            "plausibility_weight": 0.25,
             "description": "Validity Benchmark for Materials Generation",
-            "version": "0.1.0",
-            "metric_configs": {
-                "charge_neutrality": {"tolerance": 0.1, "strict": False},
-                "interatomic_distance": {"scaling_factor": 0.5},
-                "coordination_environment": {
-                    "nn_method": "crystalnn",
-                    "tolerance": 0.2,
-                },
-            },
+            "version": "0.2.0",
+            # Individual metric configurations
+            "charge_tolerance": 0.1,
+            "distance_scaling": 0.5,
+            "min_density": 1.0,
+            "max_density": 25.0,
+            "check_format": True,
+            "check_symmetry": True,
+            # Note: No weights needed - overall validity is intersection of all checks
         }
         with open(config_path, "w") as f:
             yaml.dump(validity_config, f, default_flow_style=False)
@@ -263,9 +254,12 @@ def load_benchmark_config(config_name: str) -> dict:
                 "validity": {
                     "weight": 0.2,
                     "config": {
-                        "charge_weight": 0.25,
-                        "distance_weight": 0.25,
-                        "plausibility_weight": 0.25,
+                        "charge_tolerance": 0.1,
+                        "distance_scaling": 0.5,
+                        "min_density": 1.0,
+                        "max_density": 25.0,
+                        "check_format": True,
+                        "check_symmetry": True,
                     },
                 },
                 "distribution": {
@@ -389,36 +383,29 @@ def main(input: str, config_name: str, output: str):
         benchmark_type = config.get("type", "example")
 
         if benchmark_type == "validity":
-            # Get metric-specific configs if available
-            metric_configs = config.get("metric_configs", {})
+            # Extract validity parameters (no weights needed)
+            charge_tolerance = config.get("charge_tolerance", 0.1)
+            distance_scaling = config.get("distance_scaling", 0.5)
+            min_density = config.get("min_density", 1.0)
+            max_density = config.get("max_density", 25.0)
+            check_format = config.get("check_format", True)
+            check_symmetry = config.get("check_symmetry", True)
 
-            # Extract charge neutrality config
-            charge_config = metric_configs.get("charge_neutrality", {})
-            charge_tolerance = charge_config.get("tolerance", 0.1)
-            charge_strict = charge_config.get("strict", False)
-
-            # Extract interatomic distance config
-            distance_config = metric_configs.get("interatomic_distance", {})
-            distance_scaling = distance_config.get("scaling_factor", 0.5)
-
-            # Extract coordination environment config
-            coord_config = metric_configs.get("coordination_environment", {})
-            coord_nn_method = coord_config.get("nn_method", "crystalnn")
-            coord_tolerance = coord_config.get("tolerance", 0.2)
-
-            # Create custom metrics with configuration
-            ChargeNeutralityMetric(tolerance=charge_tolerance, strict=charge_strict)
-
-            MinimumInteratomicDistanceMetric(scaling_factor=distance_scaling)
-
-            CoordinationEnvironmentMetric(
-                nn_method=coord_nn_method, tolerance=coord_tolerance
+            # Create benchmark with new validity logic
+            benchmark = ValidityBenchmark(
+                charge_tolerance=charge_tolerance,
+                distance_scaling=distance_scaling,
+                min_density=min_density,
+                max_density=max_density,
+                check_format=check_format,
+                check_symmetry=check_symmetry,
+                name=config.get("name", "ValidityBenchmark"),
+                description=config.get("description"),
+                metadata={
+                    "version": config.get("version", "0.2.0"),
+                    "config": config,
+                },
             )
-
-            PhysicalPlausibilityMetric()
-
-            # Create benchmark with custom metrics
-            benchmark = ValidityBenchmark()
 
         elif benchmark_type == "distribution":
             benchmark = DistributionBenchmark()

@@ -2,11 +2,16 @@ type: comprehensive
 
 # This config runs all benchmark families by default
 # Use --families argument to specify only specific families
+# Validity benchmark and preprocessor are ALWAYS run automatically
 
-# Validity benchmark settings
-charge_weight: 0.33
-distance_weight: 0.33
-plausibility_weight: 0.34
+# Validity benchmark settings (always run - updated to match new implementation)
+validity_settings:
+  charge_tolerance: 0.1
+  distance_scaling: 0.5
+  min_density: 1.0
+  max_density: 25.0
+  check_format: true
+  check_symmetry: true
 
 # Distribution benchmark settings
 mlips: ["orb", "mace", "uma"]
@@ -43,12 +48,14 @@ individual_mlip_config:
 
 # Metadata
 description: "Comprehensive benchmark configuration for running multiple metric families"
-version: "0.1.0"
+version: "0.2.0"
 metadata:
   reference: "Comprehensive evaluation of material generation models"
   use_case: "Full evaluation across validity, distribution, novelty, uniqueness, and stability metrics"
   notes:
+    - "Validity benchmark and preprocessor are ALWAYS run automatically"
     - "Runs all benchmark families by default for comprehensive evaluation"
-    - "Use --families argument to specify only specific families"
-    - "Available families: validity, distribution, diversity, novelty, uniqueness, hhi, sun, stability"
-    - "Automatically runs appropriate preprocessors based on selected families" 
+    - "Use --families argument to specify only specific families (excluding validity)"
+    - "Available families: distribution, diversity, novelty, uniqueness, hhi, sun, stability"
+    - "Automatically runs appropriate preprocessors based on selected families"
+    - "Updated validity settings to match new implementation structure"

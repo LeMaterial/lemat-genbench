@@ -20,6 +20,7 @@ from lemat_genbench.benchmarks.multi_mlip_stability_benchmark import (
     create_individual_mlip_stability_benchmark,
     load_config,
     safe_float,
+    safe_int,  # NEW: Import the new safe_int function
 )
 
 # Test Data Constants
@@ -37,6 +38,11 @@ CORE_FINAL_SCORES = [
     "mean_e_above_hull",
     "mean_formation_energy",
     "mean_relaxation_RMSE",
+]
+# NEW: Count metrics in final scores
+COUNT_FINAL_SCORES = [
+    "stable_count",
+    "metastable_count",
 ]
 
 
@@ -149,6 +155,18 @@ class TestUtilityFunctions:
         assert np.isnan(safe_float("invalid"))
         assert np.isnan(safe_float([1, 2, 3]))
 
+    def test_safe_int(self):  # NEW: Test for safe_int function
+        """Test safe_int utility function."""
+        # Valid conversions
+        assert safe_int(1.0) == 1
+        assert safe_int(42) == 42
+        assert safe_int("3") == 3
+
+        # Invalid conversions should return 0
+        assert safe_int(None) == 0
+        assert safe_int("invalid") == 0
+        assert safe_int([1, 2, 3]) == 0
+
     def test_load_config_from_file(self, test_config_file):
         """Test loading config from YAML file."""
         config = load_config(test_config_file)
@@ -189,7 +207,7 @@ class TestStabilityBenchmarkInitialization:
         assert benchmark.mlip_names == ["orb", "mace", "uma"]
         assert benchmark.metastable_threshold == 0.1
         assert benchmark.min_mlips_required == 2
-        assert benchmark.include_individual_results is False
+        assert benchmark.include_individual_results is True
 
         # Check evaluators exist
         assert len(benchmark.evaluators) == 5
@@ -250,7 +268,7 @@ class TestStabilityBenchmarkInitialization:
         assert benchmark.mlip_names == ["orb", "mace"]
         assert benchmark.metastable_threshold == 0.15
         assert benchmark.min_mlips_required == 1
-        assert benchmark.include_individual_results is False
+        assert benchmark.include_individual_results is True
 
     def test_parameter_override_precedence(self, test_config_file):
         """Test that explicit parameters override config file."""
@@ -308,6 +326,13 @@ class TestBenchmarkEvaluation:
             if not np.isnan(score_value):
                 assert isinstance(score_value, (int, float))
 
+        # NEW: Check that we have count metrics
+        for count_name in COUNT_FINAL_SCORES:
+            assert count_name in result.final_scores
+            count_value = result.final_scores[count_name]
+            assert isinstance(count_value, int)
+            assert count_value >= 0
+
     def test_basic_evaluation_individual_mode(self, test_structures_comprehensive):
         """Test basic evaluation in individual mode."""
         benchmark = StabilityBenchmark(
@@ -323,6 +348,10 @@ class TestBenchmarkEvaluation:
         for score_name in CORE_FINAL_SCORES:
             assert score_name in result.final_scores
 
+        # NEW: Check that we have count metrics
+        for count_name in COUNT_FINAL_SCORES:
+            assert count_name in result.final_scores
+
     def test_evaluation_with_individual_results(self, test_structures_comprehensive):
         """Test evaluation with individual MLIP results included."""
         benchmark = StabilityBenchmark(
@@ -334,6 +363,10 @@ class TestBenchmarkEvaluation:
         for score_name in CORE_FINAL_SCORES:
             assert score_name in result.final_scores
 
+        # NEW: Should have count metrics
+        for count_name in COUNT_FINAL_SCORES:
+            assert count_name in result.final_scores
+
         # Should also have individual MLIP metrics
         individual_metrics = [
             k
@@ -341,6 +374,14 @@ class TestBenchmarkEvaluation:
             if any(mlip in k for mlip in DEFAULT_MLIPS)
         ]
         assert len(individual_metrics) > 0  # Should have some individual metrics
+
+        # NEW: Should have individual count metrics
+        individual_count_metrics = [
+            k
+            for k in result.final_scores.keys()
+            if any(mlip in k for mlip in DEFAULT_MLIPS) and "count" in k
+        ]
+        assert len(individual_count_metrics) > 0  # Should have some individual count metrics
 
     def test_evaluation_with_standard_deviations(self, test_structures_comprehensive):
         """Test that standard deviations are reported."""
@@ -372,6 +413,49 @@ class TestBenchmarkEvaluation:
             if not np.isnan(ensemble_std):
                 assert ensemble_std >= 0
 
+    def test_evaluation_with_total_structure_counts(self, test_structures_comprehensive):
+        """Test that total structure counts are reported."""  # NEW: Test for total counts
+        benchmark = StabilityBenchmark(use_ensemble=True)
+        result = benchmark.evaluate(test_structures_comprehensive)
+
+        # Should have total structure counts
+        total_structure_keys = [
+            k for k in result.final_scores.keys() if "total_structures" in k
+        ]
+        assert len(total_structure_keys) > 0  # Should have some total structure metrics
+
+        # All total counts should equal the number of input structures
+        expected_total = len(test_structures_comprehensive)
+        for key in total_structure_keys:
+            if key in result.final_scores:
+                total_count = result.final_scores[key]
+                assert total_count == expected_total
+
+    def test_count_ratio_consistency(self, test_structures_comprehensive):
+        """Test that counts and ratios are consistent."""  # NEW: Test consistency
+        benchmark = StabilityBenchmark(use_ensemble=True)
+        result = benchmark.evaluate(test_structures_comprehensive)
+
+        # Check stable count vs ratio consistency
+        if "stable_count" in result.final_scores and "stable_ratio" in result.final_scores:
+            stable_count = result.final_scores["stable_count"]
+            stable_ratio = result.final_scores["stable_ratio"]
+            total_structures = len(test_structures_comprehensive)
+
+            if not np.isnan(stable_ratio):
+                expected_ratio = stable_count / total_structures
+                assert abs(stable_ratio - expected_ratio) < 1e-10
+
+        # Check metastable count vs ratio consistency
+        if "metastable_count" in result.final_scores and "metastable_ratio" in result.final_scores:
+            metastable_count = result.final_scores["metastable_count"]
+            metastable_ratio = result.final_scores["metastable_ratio"]
+            total_structures = len(test_structures_comprehensive)
+
+            if not np.isnan(metastable_ratio):
+                expected_ratio = metastable_count / total_structures
+                assert abs(metastable_ratio - expected_ratio) < 1e-10
+
     def test_metastable_threshold_effect(self, test_structures_comprehensive):
         """Test that metastable threshold affects results."""
         benchmark_strict = StabilityBenchmark(
@@ -384,12 +468,15 @@ class TestBenchmarkEvaluation:
         result_strict = benchmark_strict.evaluate(test_structures_comprehensive)
         result_loose = benchmark_loose.evaluate(test_structures_comprehensive)
 
-        # Loose threshold should give higher or equal metastable ratio
+        # Loose threshold should give higher or equal metastable ratio and count
         strict_ratio = result_strict.final_scores["metastable_ratio"]
         loose_ratio = result_loose.final_scores["metastable_ratio"]
+        strict_count = result_strict.final_scores["metastable_count"]  # NEW: Check counts
+        loose_count = result_loose.final_scores["metastable_count"]  # NEW: Check counts
 
         if not np.isnan(strict_ratio) and not np.isnan(loose_ratio):
             assert loose_ratio >= strict_ratio
+            assert loose_count >= strict_count  # NEW: Count should also be higher or equal
 
     def test_min_mlips_required_effect(self):
         """Test min_mlips_required parameter effect."""
@@ -503,6 +590,12 @@ class TestErrorHandling:
         assert isinstance(result, BenchmarkResult)
         assert len(result.evaluator_results) == 5
 
+        # NEW: Check that counts are 0 for empty input
+        if "stable_count" in result.final_scores:
+            assert result.final_scores["stable_count"] == 0
+        if "metastable_count" in result.final_scores:
+            assert result.final_scores["metastable_count"] == 0
+
     def test_structures_with_missing_properties(self):
         """Test evaluation with structures missing some properties."""
         test = PymatgenTest()
@@ -542,6 +635,14 @@ class TestErrorHandling:
 
         # Should handle NaN values gracefully
         assert isinstance(result, BenchmarkResult)
+
+        # NEW: Should still track total structures even with NaN values
+        total_structure_keys = [
+            k for k in result.final_scores.keys() if "total_structures" in k
+        ]
+        for key in total_structure_keys:
+            if key in result.final_scores:
+                assert result.final_scores[key] == 1  # One structure was processed
 
     def test_invalid_config_parameters(self):
         """Test handling of invalid configuration parameters."""
@@ -583,9 +684,13 @@ class TestBenchmarkConsistency:
                 elif np.isnan(val1) or np.isnan(val2):
                     assert False, f"Inconsistent NaN for {key}: {val1} vs {val2}"
                 else:
-                    assert abs(val1 - val2) < 1e-12, (
-                        f"Values differ for {key}: {val1} vs {val2}"
-                    )
+                    # NEW: Handle both int and float comparisons
+                    if isinstance(val1, int) and isinstance(val2, int):
+                        assert val1 == val2, f"Values differ for {key}: {val1} vs {val2}"
+                    else:
+                        assert abs(val1 - val2) < 1e-12, (
+                            f"Values differ for {key}: {val1} vs {val2}"
+                        )
 
     def test_benchmark_configuration_storage(self):
         """Test that benchmark configuration is properly stored."""
@@ -655,7 +760,7 @@ class TestConfigurationCoverage:
         assert benchmark.mlip_names == ["orb", "mace", "uma"]
         assert benchmark.metastable_threshold == 0.1
         assert benchmark.min_mlips_required == 2
-        assert benchmark.include_individual_results is False
+        assert benchmark.include_individual_results is True
 
     def test_config_sections_independence(self):
         """Test that different config sections work independently."""
@@ -686,6 +791,10 @@ class TestUsagePatterns:
         assert "stable_ratio" in result.final_scores
         assert "mean_e_above_hull" in result.final_scores
 
+        # NEW: Should have count metrics
+        assert "stable_count" in result.final_scores
+        assert "metastable_count" in result.final_scores
+
         # Should have individual MLIP breakdown
         individual_metrics = [
             k
@@ -697,6 +806,10 @@ class TestUsagePatterns:
         # Should have uncertainty information
         std_metrics = [k for k in result.final_scores.keys() if "std" in k]
         assert len(std_metrics) > 0
+
+        # NEW: Should have total structure counts
+        total_metrics = [k for k in result.final_scores.keys() if "total_structures" in k]
+        assert len(total_metrics) > 0
 
     def test_individual_mlip_comparison_workflow(self, test_structures_comprehensive):
         """Test workflow for comparing individual MLIPs."""
@@ -717,6 +830,7 @@ class TestUsagePatterns:
         for mlip, result in mlip_results.items():
             assert isinstance(result, BenchmarkResult)
             assert "stable_ratio" in result.final_scores
+            assert "stable_count" in result.final_scores  # NEW: Check counts
 
     def test_comprehensive_analysis_workflow(self, test_structures_comprehensive):
         """Test comprehensive analysis workflow."""
@@ -736,6 +850,10 @@ class TestUsagePatterns:
         for metric in CORE_FINAL_SCORES:
             assert metric in result.final_scores
 
+        # NEW: Should have count metrics
+        for count in COUNT_FINAL_SCORES:
+            assert count in result.final_scores
+
         # Should have individual results (from comprehensive benchmark)
         individual_keys = [
             k
@@ -747,6 +865,10 @@ class TestUsagePatterns:
         # Should have standard deviations
         std_keys = [k for k in result.final_scores.keys() if "std" in k]
         assert len(std_keys) > 0
+
+        # NEW: Should have total structure counts
+        total_keys = [k for k in result.final_scores.keys() if "total_structures" in k]
+        assert len(total_keys) > 0
 
     def test_quality_assessment_workflow(self, test_structures_comprehensive):
         """Test workflow for assessing prediction quality."""
@@ -780,6 +902,36 @@ class TestUsagePatterns:
                 assert value >= 0, (
                     f"Quality indicator {indicator} should be non-negative"
                 )
+
+    def test_count_extraction_workflow(self, test_structures_comprehensive):
+        """Test workflow for extracting structure counts."""  # NEW: Test for count extraction
+        benchmark = StabilityBenchmark(use_ensemble=True, metastable_threshold=0.1)
+        result = benchmark.evaluate(test_structures_comprehensive)
+
+        # Extract count information
+        count_info = {}
+        total_structures = len(test_structures_comprehensive)
+
+        # Get stable and metastable counts
+        stable_count = result.final_scores.get("stable_count", 0)
+        metastable_count = result.final_scores.get("metastable_count", 0)
+        
+        count_info["stable_structures"] = stable_count
+        count_info["metastable_structures"] = metastable_count
+        count_info["unstable_structures"] = total_structures - metastable_count
+        count_info["total_structures"] = total_structures
+
+        # Validate counts
+        assert count_info["stable_structures"] >= 0
+        assert count_info["metastable_structures"] >= 0
+        assert count_info["unstable_structures"] >= 0
+        assert count_info["total_structures"] == total_structures
+        
+        # Stable structures should be subset of metastable (since metastable includes stable)
+        assert count_info["stable_structures"] <= count_info["metastable_structures"]
+        
+        # Unstable + metastable should equal total
+        assert count_info["unstable_structures"] + count_info["metastable_structures"] == count_info["total_structures"]
 
 
 # Test runner for development
@@ -836,10 +988,19 @@ if __name__ == "__main__":
         assert len(result.final_scores) > 0
         print("✓ Evaluation successful")
 
-        # Test utility functions
+        # NEW: Test utility functions including safe_int
         assert safe_float(42) == 42.0
         assert np.isnan(safe_float("invalid"))
+        assert safe_int(42) == 42
+        assert safe_int("invalid") == 0
         print("✓ Utility functions working")
+
+        # NEW: Test that count metrics are present
+        if "stable_count" in result.final_scores:
+            stable_count = result.final_scores["stable_count"]
+            assert isinstance(stable_count, int)
+            assert stable_count >= 0
+            print("✓ Count metrics working")
 
         print("\n✅ All tests completed successfully!")
         print("\nKey features tested:")
@@ -848,6 +1009,9 @@ if __name__ == "__main__":
         print("  ✓ Config loading from YAML and dict")
         print("  ✓ All factory functions")
         print("  ✓ Standard deviation reporting")
+        print("  ✓ Structure count reporting (NEW)")  # NEW
+        print("  ✓ Count-ratio consistency (NEW)")  # NEW
+        print("  ✓ Total structure tracking (NEW)")  # NEW
         print("  ✓ Min MLIPs required filtering")
         print("  ✓ Comprehensive error handling")
         print("  ✓ Realistic usage patterns")

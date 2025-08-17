@@ -232,7 +232,7 @@ class TestStabilityMetric:
         assert metric.use_ensemble is True
         assert metric.mlip_names == ["orb", "mace", "uma"]
         assert metric.min_mlips_required == 2
-        assert metric.include_individual_results is False
+        assert metric.include_individual_results is True
 
     def test_initialization_custom(self):
         """Test custom initialization."""
@@ -257,6 +257,8 @@ class TestStabilityMetric:
         assert isinstance(result, MetricResult)
         assert result.primary_metric == "stable_ratio"
         assert "stable_ratio" in result.metrics
+        assert "stable_count" in result.metrics  # NEW: Check for count
+        assert "total_structures_evaluated" in result.metrics  # NEW: Check for total
         assert 0.0 <= result.metrics["stable_ratio"] <= 1.0
         assert "mean_e_above_hull" in result.metrics
         assert "std_e_above_hull" in result.metrics
@@ -269,6 +271,8 @@ class TestStabilityMetric:
         assert isinstance(result, MetricResult)
         assert result.primary_metric == "stable_ratio"
         assert "stable_ratio" in result.metrics
+        assert "stable_count" in result.metrics  # NEW: Check for count
+        assert "total_structures_evaluated" in result.metrics  # NEW: Check for total
         assert 0.0 <= result.metrics["stable_ratio"] <= 1.0
 
     def test_include_individual_results_ensemble_mode(
@@ -280,12 +284,14 @@ class TestStabilityMetric:
 
         # Should have ensemble metrics
         assert "stable_ratio" in result.metrics
+        assert "stable_count" in result.metrics  # NEW: Check for count
         assert "mean_e_above_hull" in result.metrics
         assert "std_e_above_hull" in result.metrics
 
         # Should also have individual MLIP metrics
         for mlip_name in DEFAULT_MLIPS:
             assert f"stable_ratio_{mlip_name}" in result.metrics
+            assert f"stable_count_{mlip_name}" in result.metrics  # NEW: Check for individual counts
             assert f"mean_e_above_hull_{mlip_name}" in result.metrics
             assert f"std_e_above_hull_{mlip_name}" in result.metrics
 
@@ -298,10 +304,33 @@ class TestStabilityMetric:
 
         # Should have aggregated metrics
         assert "stable_ratio" in result.metrics
+        assert "stable_count" in result.metrics  # NEW: Check for count
 
         # Should have individual MLIP metrics
         assert "stable_ratio_orb" in result.metrics
         assert "stable_ratio_mace" in result.metrics
+        assert "stable_count_orb" in result.metrics  # NEW: Check for individual counts
+        assert "stable_count_mace" in result.metrics  # NEW: Check for individual counts
+
+    def test_count_calculations(self, test_structures_with_multi_mlip_properties):
+        """Test that count calculations are correct."""
+        metric = StabilityMetric(use_ensemble=True)
+        result = metric.compute(test_structures_with_multi_mlip_properties)
+
+        # Structure 1: mean ≈ -0.0047 (stable, ≤ 0)
+        # Structure 2: mean = 0.097 (unstable, > 0)
+        # Structure 3: mean = 0.277 (unstable, > 0)
+        # Expected stable_count = 1, total = 3
+        expected_stable_count = 1
+        expected_total = 3
+        
+        actual_stable_count = result.metrics["stable_count"]
+        actual_total = result.metrics["total_structures_evaluated"]
+        actual_stable_ratio = result.metrics["stable_ratio"]
+
+        assert actual_stable_count == expected_stable_count
+        assert actual_total == expected_total
+        assert abs(actual_stable_ratio - (expected_stable_count / expected_total)) < 0.05
 
     def test_ensemble_uncertainty_reporting(self, test_structures_high_disagreement):
         """Test ensemble uncertainty reporting."""
@@ -403,6 +432,8 @@ class TestMetastabilityMetric:
         assert isinstance(result, MetricResult)
         assert result.primary_metric == "metastable_ratio"
         assert "metastable_ratio" in result.metrics
+        assert "metastable_count" in result.metrics  # NEW: Check for count
+        assert "total_structures_evaluated" in result.metrics  # NEW: Check for total
         assert 0.0 <= result.metrics["metastable_ratio"] <= 1.0
 
     def test_metastable_ratio_calculation(
@@ -415,11 +446,14 @@ class TestMetastabilityMetric:
         # Structure 1: mean ≈ -0.0047 (≤ 0.1, metastable)
         # Structure 2: mean = 0.097 (≤ 0.1, metastable)
         # Structure 3: mean = 0.277 (> 0.1, not metastable)
-        # Expected metastable_ratio = 2/3 ≈ 0.667
+        # Expected metastable_ratio = 2/3 ≈ 0.667, metastable_count = 2
         expected_ratio = 2 / 3
+        expected_count = 2
         actual_ratio = result.metrics["metastable_ratio"]
+        actual_count = result.metrics["metastable_count"]
 
         assert abs(actual_ratio - expected_ratio) < 0.05
+        assert actual_count == expected_count
 
     def test_threshold_variation(self, test_structures_with_multi_mlip_properties):
         """Test metastability with different thresholds."""
@@ -433,10 +467,14 @@ class TestMetastabilityMetric:
         )
         result_loose = metric_loose.compute(test_structures_with_multi_mlip_properties)
 
-        # Loose threshold should give higher metastable ratio
+        # Loose threshold should give higher metastable ratio and count
         assert (
             result_loose.metrics["metastable_ratio"]
             >= result_strict.metrics["metastable_ratio"]
+        )
+        assert (
+            result_loose.metrics["metastable_count"]
+            >= result_strict.metrics["metastable_count"]
         )
 
     def test_include_individual_results(
@@ -448,9 +486,10 @@ class TestMetastabilityMetric:
         )
         result = metric.compute(test_structures_with_multi_mlip_properties)
 
-        # Should have individual MLIP results
+        # Should have individual MLIP results including counts
         for mlip_name in DEFAULT_MLIPS:
             assert f"metastable_ratio_{mlip_name}" in result.metrics
+            assert f"metastable_count_{mlip_name}" in result.metrics  # NEW: Check for individual counts
 
 
 class TestE_HullMetric:
@@ -465,6 +504,7 @@ class TestE_HullMetric:
         assert result.primary_metric == "mean_e_above_hull"
         assert "mean_e_above_hull" in result.metrics
         assert "std_e_above_hull" in result.metrics
+        assert "total_structures_evaluated" in result.metrics  # NEW: Check for total
 
     def test_mean_calculation_accuracy(
         self, test_structures_with_multi_mlip_properties
@@ -481,8 +521,10 @@ class TestE_HullMetric:
         ]
         expected_mean = np.mean(expected_values)
         actual_mean = result.metrics["mean_e_above_hull"]
+        actual_total = result.metrics["total_structures_evaluated"]
 
         assert abs(actual_mean - expected_mean) < 0.01
+        assert actual_total == 3  # NEW: Check total count
 
     def test_lower_is_better_setting(self):
         """Test that lower_is_better is correctly set."""
@@ -514,6 +556,7 @@ class TestFormationEnergyMetric:
         assert result.primary_metric == "mean_formation_energy"
         assert "mean_formation_energy" in result.metrics
         assert "std_formation_energy" in result.metrics
+        assert "total_structures_evaluated" in result.metrics  # NEW: Check for total
 
     def test_ensemble_vs_individual_modes(
         self, test_structures_with_multi_mlip_properties
@@ -534,6 +577,9 @@ class TestFormationEnergyMetric:
         # Both should produce valid results
         assert not np.isnan(result_ensemble.metrics["mean_formation_energy"])
         assert not np.isnan(result_individual.metrics["mean_formation_energy"])
+        # Both should have total count
+        assert "total_structures_evaluated" in result_ensemble.metrics
+        assert "total_structures_evaluated" in result_individual.metrics
 
     def test_include_individual_results(
         self, test_structures_with_multi_mlip_properties
@@ -562,6 +608,7 @@ class TestRelaxationStabilityMetric:
         assert result.primary_metric == "mean_relaxation_RMSE"
         assert "mean_relaxation_RMSE" in result.metrics
         assert "std_relaxation_RMSE" in result.metrics
+        assert "total_structures_evaluated" in result.metrics  # NEW: Check for total
 
     def test_rmse_value_ranges(self, test_structures_with_multi_mlip_properties):
         """Test that RMSE values are positive and reasonable."""
@@ -651,6 +698,9 @@ class TestMetricCompatibility:
             assert (
                 results[0].metrics["stable_ratio"] == results[i].metrics["stable_ratio"]
             )
+            assert (
+                results[0].metrics["stable_count"] == results[i].metrics["stable_count"]  # NEW: Check count reproducibility
+            )
 
 
 class TestEdgeCases:
@@ -672,6 +722,9 @@ class TestEdgeCases:
         # Should handle gracefully and return NaN
         assert isinstance(result, MetricResult)
         assert np.isnan(result.individual_values[0]["value"])
+        # Should still have count metrics set to 0
+        assert result.metrics.get("stable_count", 0) == 0
+        assert result.metrics.get("total_structures_evaluated", 0) == 1
 
     def test_extreme_threshold_values(self, test_structures_with_multi_mlip_properties):
         """Test behavior with extreme min_mlips_required values."""
@@ -682,6 +735,8 @@ class TestEdgeCases:
         # Should return NaN for all structures (not enough MLIPs)
         for val in result.individual_values:
             assert np.isnan(val["value"])
+        # Should still track total structures
+        assert result.metrics.get("total_structures_evaluated", 0) == 3
 
     def test_duplicate_mlip_names(self, test_structures_with_multi_mlip_properties):
         """Test handling of duplicate MLIP names."""
@@ -779,6 +834,9 @@ class TestIntegrationPatterns:
             assert isinstance(result, MetricResult)
             assert not np.isnan(result.metrics[result.primary_metric])
 
+            # Should have total structures count
+            assert "total_structures_evaluated" in result.metrics or "n_valid_structures" in result.metrics
+
             # Should have individual MLIP results
             for mlip_name in DEFAULT_MLIPS:
                 individual_metric_key = f"{result.primary_metric}_{mlip_name}"
@@ -812,6 +870,12 @@ class TestIntegrationPatterns:
         # Results should be in reasonable relationship
         assert 0.0 <= ensemble_result.metrics["stable_ratio"] <= 1.0
         assert 0.0 <= individual_result.metrics["stable_ratio"] <= 1.0
+
+        # Both should have counts
+        assert "stable_count" in ensemble_result.metrics
+        assert "stable_count" in individual_result.metrics
+        assert "total_structures_evaluated" in ensemble_result.metrics
+        assert "total_structures_evaluated" in individual_result.metrics
 
 
 # Test runner for development
@@ -882,6 +946,16 @@ if __name__ == "__main__":
                 primary_value = result.metrics[result.primary_metric]
                 print(f"✓ {metric_name}: {result.primary_metric} = {primary_value:.4f}")
 
+                # Check for count metrics where applicable
+                if "stable" in metric_name.lower() or "metastable" in metric_name.lower():
+                    count_key = result.primary_metric.replace("ratio", "count")
+                    if count_key in result.metrics:
+                        print(f"  {count_key} = {result.metrics[count_key]}")
+
+                # Check for total structures
+                if "total_structures_evaluated" in result.metrics:
+                    print(f"  total_structures_evaluated = {result.metrics['total_structures_evaluated']}")
+
                 # Check for individual MLIP results
                 individual_metrics = [
                     k for k in result.metrics.keys() if any(mlip in k for mlip in mlips)
@@ -911,6 +985,7 @@ if __name__ == "__main__":
 
         print("\n✓ All tests completed successfully!")
         print("Multi-MLIP stability metrics implementation validated!")
+        print("NEW: Count metrics added for stable and metastable structures!")
 
     except Exception as e:
         print(f"✗ Test validation failed: {e}")
