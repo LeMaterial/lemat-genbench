@@ -1,0 +1,8 @@
+type: "uniqueness_new"
+description: "New Uniqueness Benchmark for Materials Generation using Augmented Fingerprints"
+version: "0.1.0"
+
+# Fingerprinting configuration
+fingerprint_source: "auto"  # Options: "auto", "compute", "property"
+symprec: 0.01
+angle_tolerance: 5.0
