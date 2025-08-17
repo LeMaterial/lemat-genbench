@@ -103,7 +103,7 @@ class StabilityMetric(BaseMetric):
         Specific MLIPs to use if not using ensemble
     min_mlips_required : int, default=2
         Minimum MLIPs required for ensemble statistics
-    include_individual_results : bool, default=False
+    include_individual_results : bool, default=True
         Whether to include individual MLIP results in output
     name : str, optional
         Custom name for the metric
@@ -120,7 +120,7 @@ class StabilityMetric(BaseMetric):
         use_ensemble: bool = True,
         mlip_names: Optional[List[str]] = None,
         min_mlips_required: int = 2,
-        include_individual_results: bool = False,
+        include_individual_results: bool = True,
         name: str = None,
         description: str = None,
         lower_is_better: bool = False,
@@ -163,7 +163,7 @@ class StabilityMetric(BaseMetric):
         mlip_names = compute_args.get("mlip_names", ["orb", "mace", "uma"])
         min_mlips_required = compute_args.get("min_mlips_required", 2)
         include_individual_results = compute_args.get(
-            "include_individual_results", False
+            "include_individual_results", True
         )
 
         result = {}
@@ -232,7 +232,7 @@ class StabilityMetric(BaseMetric):
         uncertainties = {}
 
         if len(e_above_hull_values) > 0:
-            # Calculate stable ratio (structures with e_above_hull <= 0)
+            # Calculate stable ratio and count (structures with e_above_hull <= 0)
             stable_count = np.sum(e_above_hull_values <= 0)
             stable_ratio = stable_count / len(values)  # Use total count including NaN
 
@@ -244,9 +244,11 @@ class StabilityMetric(BaseMetric):
             metrics.update(
                 {
                     "stable_ratio": stable_ratio,
+                    "stable_count": int(stable_count),  # Add count
                     "mean_e_above_hull": mean_e_above_hull,
                     "std_e_above_hull": std_e_above_hull,
                     "n_valid_structures": n_valid_structures,
+                    "total_structures_evaluated": len(values),  # Add total count
                 }
             )
 
@@ -260,9 +262,11 @@ class StabilityMetric(BaseMetric):
             metrics.update(
                 {
                     "stable_ratio": np.nan,
+                    "stable_count": 0,  # Add count
                     "mean_e_above_hull": np.nan,
                     "std_e_above_hull": np.nan,
                     "n_valid_structures": 0,
+                    "total_structures_evaluated": len(values),  # Add total count
                 }
             )
 
@@ -274,16 +278,18 @@ class StabilityMetric(BaseMetric):
                 mlip_valid = mlip_array[~np.isnan(mlip_array)]
 
                 if len(mlip_valid) > 0:
-                    # Calculate stable ratio for this MLIP
+                    # Calculate stable ratio and count for this MLIP
                     mlip_stable_count = np.sum(mlip_valid <= 0)
                     mlip_stable_ratio = mlip_stable_count / len(mlip_values)
 
                     metrics[f"stable_ratio_{mlip_name}"] = mlip_stable_ratio
+                    metrics[f"stable_count_{mlip_name}"] = int(mlip_stable_count)  # Add count
                     metrics[f"mean_e_above_hull_{mlip_name}"] = np.mean(mlip_valid)
                     metrics[f"std_e_above_hull_{mlip_name}"] = np.std(mlip_valid)
                     metrics[f"n_valid_structures_{mlip_name}"] = len(mlip_valid)
                 else:
                     metrics[f"stable_ratio_{mlip_name}"] = np.nan
+                    metrics[f"stable_count_{mlip_name}"] = 0  # Add count
                     metrics[f"mean_e_above_hull_{mlip_name}"] = np.nan
                     metrics[f"std_e_above_hull_{mlip_name}"] = np.nan
                     metrics[f"n_valid_structures_{mlip_name}"] = 0
@@ -314,7 +320,7 @@ class MetastabilityMetric(BaseMetric):
         mlip_names: Optional[List[str]] = None,
         metastable_threshold: float = 0.1,
         min_mlips_required: int = 2,
-        include_individual_results: bool = False,
+        include_individual_results: bool = True,
         name: str = None,
         description: str = None,
         lower_is_better: bool = False,
@@ -364,17 +370,19 @@ class MetastabilityMetric(BaseMetric):
         uncertainties = {}
 
         if len(e_above_hull_values) > 0:
-            # Calculate metastable ratio
+            # Calculate metastable ratio and count
             metastable_count = np.sum(e_above_hull_values <= self.metastable_threshold)
             metastable_ratio = metastable_count / len(values)
 
             metrics.update(
                 {
                     "metastable_ratio": metastable_ratio,
+                    "metastable_count": int(metastable_count),  # Add count
                     "mean_e_above_hull": np.mean(e_above_hull_values),
                     "std_e_above_hull": np.std(e_above_hull_values),
                     "n_valid_structures": len(e_above_hull_values),
                     "metastable_threshold": self.metastable_threshold,
+                    "total_structures_evaluated": len(values),  # Add total count
                 }
             )
 
@@ -388,10 +396,12 @@ class MetastabilityMetric(BaseMetric):
             metrics.update(
                 {
                     "metastable_ratio": np.nan,
+                    "metastable_count": 0,  # Add count
                     "mean_e_above_hull": np.nan,
                     "std_e_above_hull": np.nan,
                     "n_valid_structures": 0,
                     "metastable_threshold": self.metastable_threshold,
+                    "total_structures_evaluated": len(values),  # Add total count
                 }
             )
 
@@ -409,6 +419,7 @@ class MetastabilityMetric(BaseMetric):
                     mlip_metastable_ratio = mlip_metastable_count / len(mlip_values)
 
                     metrics[f"metastable_ratio_{mlip_name}"] = mlip_metastable_ratio
+                    metrics[f"metastable_count_{mlip_name}"] = int(mlip_metastable_count)  # Add count
                     metrics[f"mean_e_above_hull_{mlip_name}"] = np.mean(mlip_valid)
                     metrics[f"std_e_above_hull_{mlip_name}"] = np.std(mlip_valid)
 
@@ -427,7 +438,7 @@ class E_HullMetric(BaseMetric):
         use_ensemble: bool = True,
         mlip_names: Optional[List[str]] = None,
         min_mlips_required: int = 2,
-        include_individual_results: bool = False,
+        include_individual_results: bool = True,
         name: str = None,
         description: str = None,
         lower_is_better: bool = True,
@@ -477,6 +488,7 @@ class E_HullMetric(BaseMetric):
                     "mean_e_above_hull": np.mean(e_above_hull_values),
                     "std_e_above_hull": np.std(e_above_hull_values),
                     "n_valid_structures": len(e_above_hull_values),
+                    "total_structures_evaluated": len(values),  # Add total count
                 }
             )
         else:
@@ -485,6 +497,7 @@ class E_HullMetric(BaseMetric):
                     "mean_e_above_hull": np.nan,
                     "std_e_above_hull": np.nan,
                     "n_valid_structures": 0,
+                    "total_structures_evaluated": len(values),  # Add total count
                 }
             )
 
@@ -516,7 +529,7 @@ class FormationEnergyMetric(BaseMetric):
         use_ensemble: bool = True,
         mlip_names: Optional[List[str]] = None,
         min_mlips_required: int = 2,
-        include_individual_results: bool = False,
+        include_individual_results: bool = True,
         name: str = None,
         description: str = None,
         lower_is_better: bool = True,
@@ -553,7 +566,7 @@ class FormationEnergyMetric(BaseMetric):
         mlip_names = compute_args.get("mlip_names", ["orb", "mace", "uma"])
         min_mlips_required = compute_args.get("min_mlips_required", 2)
         include_individual_results = compute_args.get(
-            "include_individual_results", False
+            "include_individual_results", True
         )
 
         result = {}
@@ -619,6 +632,7 @@ class FormationEnergyMetric(BaseMetric):
                     "mean_formation_energy": np.mean(formation_energy_values),
                     "std_formation_energy": np.std(formation_energy_values),
                     "n_valid_structures": len(formation_energy_values),
+                    "total_structures_evaluated": len(values),  # Add total count
                 }
             )
         else:
@@ -627,6 +641,7 @@ class FormationEnergyMetric(BaseMetric):
                     "mean_formation_energy": np.nan,
                     "std_formation_energy": np.nan,
                     "n_valid_structures": 0,
+                    "total_structures_evaluated": len(values),  # Add total count
                 }
             )
 
@@ -660,7 +675,7 @@ class RelaxationStabilityMetric(BaseMetric):
         use_ensemble: bool = True,
         mlip_names: Optional[List[str]] = None,
         min_mlips_required: int = 2,
-        include_individual_results: bool = False,
+        include_individual_results: bool = True,
         name: str = None,
         description: str = None,
         lower_is_better: bool = True,
@@ -697,7 +712,7 @@ class RelaxationStabilityMetric(BaseMetric):
         mlip_names = compute_args.get("mlip_names", ["orb", "mace", "uma"])
         min_mlips_required = compute_args.get("min_mlips_required", 2)
         include_individual_results = compute_args.get(
-            "include_individual_results", False
+            "include_individual_results", True
         )
 
         result = {}
@@ -763,6 +778,7 @@ class RelaxationStabilityMetric(BaseMetric):
                     "mean_relaxation_RMSE": np.mean(rmse_values),
                     "std_relaxation_RMSE": np.std(rmse_values),
                     "n_valid_structures": len(rmse_values),
+                    "total_structures_evaluated": len(values),  # Add total count
                 }
             )
         else:
@@ -771,6 +787,7 @@ class RelaxationStabilityMetric(BaseMetric):
                     "mean_relaxation_RMSE": np.nan,
                     "std_relaxation_RMSE": np.nan,
                     "n_valid_structures": 0,
+                    "total_structures_evaluated": len(values),  # Add total count
                 }
             )
 

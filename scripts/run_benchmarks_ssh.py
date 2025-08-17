@@ -5,15 +5,17 @@ Comprehensive benchmark runner for material generation evaluation using enhanced
 This script:
 1. Takes a list of CIF files as input
 2. Loads a configuration specifying which benchmark families to run
-3. Runs appropriate preprocessors based on benchmark requirements (including augmented fingerprint)
-4. Computes all specified metrics using enhanced novelty_new, uniqueness_new, and sun_new benchmarks
-5. Saves results to JSON files in the results_new/ directory
+3. ALWAYS runs validity benchmark and preprocessor first (mandatory)
+4. Filters to only valid structures for subsequent processing
+5. Runs appropriate preprocessors based on benchmark requirements (including augmented fingerprint)
+6. Computes all specified metrics using enhanced novelty_new, uniqueness_new, and sun_new benchmarks
+7. Saves results to JSON files in the results_new/ directory
 
 This version is optimized for high-core SSH environments with smart batching.
 
 Usage:
-    uv run scripts/run_benchmarks_ssh_new.py --cifs path/to/cifs.txt --config comprehensive_new --name my_run
-    uv run scripts/run_benchmarks_ssh_new.py --cifs path/to/cifs.txt --config comprehensive_new --name test_run
+    uv run scripts/run_benchmarks_ssh.py --cifs path/to/cifs.txt --config comprehensive_new --name my_run
+    uv run scripts/run_benchmarks_ssh.py --cifs path/to/cifs.txt --config comprehensive_new --name test_run
 """
 
 import argparse
@@ -50,6 +52,7 @@ from lemat_genbench.preprocess.distribution_preprocess import DistributionPrepro
 from lemat_genbench.preprocess.multi_mlip_preprocess import (
     MultiMLIPStabilityPreprocessor,
 )
+from lemat_genbench.preprocess.validity_preprocess import ValidityPreprocessor
 from lemat_genbench.utils.logging import logger
 
 
@@ -328,8 +331,12 @@ def load_benchmark_config(config_name: str) -> Dict[str, Any]:
 
 
 def create_preprocessor_config(benchmark_families: List[str]) -> Dict[str, Any]:
-    """Create preprocessor configuration based on required benchmark families."""
+    """Create preprocessor configuration based on required benchmark families.
+    
+    Note: validity preprocessing is ALWAYS included regardless of families.
+    """
     config = {
+        "validity": True,  # ALWAYS run validity preprocessing
         "distribution": False,
         "stability": False,
         "embeddings": False,
@@ -351,17 +358,131 @@ def create_preprocessor_config(benchmark_families: List[str]) -> Dict[str, Any]:
     return config
 
 
-def run_preprocessors(structures, preprocessor_config: Dict[str, Any], config: Dict[str, Any], monitor_memory: bool = False):
-    """Optimized preprocessor with smart batching for high-core systems."""
-    processed_structures = structures
+def run_validity_preprocessing_and_filtering(structures, config: Dict[str, Any], monitor_memory: bool = False):
+    """Run validity benchmark and preprocessing, then filter to valid structures only.
+    
+    Returns
+    -------
+    tuple
+        (validity_benchmark_result, valid_structures, validity_filtering_metadata)
+    """
+    # Log initial memory usage
+    log_memory_usage("before validity processing", force_log=monitor_memory)
+    
+    n_total_structures = len(structures)
+    logger.info(f"🔍 Starting MANDATORY validity processing for {n_total_structures} structures...")
+    
+    # Step 1: Run validity benchmark on ALL structures
+    logger.info("🔍 Running MANDATORY validity benchmark on ALL structures...")
+    start_time = time.time()
+    
+    validity_settings = config.get("validity_settings", {})
+    validity_benchmark = ValidityBenchmark(
+        charge_tolerance=validity_settings.get("charge_tolerance", 0.1),
+        distance_scaling=validity_settings.get("distance_scaling", 0.5),
+        min_density=validity_settings.get("min_density", 1.0),
+        max_density=validity_settings.get("max_density", 25.0),
+        check_format=validity_settings.get("check_format", True),
+        check_symmetry=validity_settings.get("check_symmetry", True),
+    )
+    
+    validity_benchmark_result = validity_benchmark.evaluate(structures)
+    
+    elapsed_time = time.time() - start_time
+    logger.info(f"✅ MANDATORY validity benchmark complete for {n_total_structures} structures in {elapsed_time:.1f}s")
+    
+    # Clean up after validity benchmark
+    cleanup_after_benchmark("validity", monitor_memory)
+    
+    # Step 2: Run validity preprocessor on ALL structures - HIGH PARALLELIZATION
+    logger.info("🔍 Running MANDATORY validity preprocessor on ALL structures with high parallelization...")
+    start_time = time.time()
+    
+    charge_tolerance = validity_settings.get("charge_tolerance", 0.1)
+    distance_scaling = validity_settings.get("distance_scaling", 0.5)
+    min_density = validity_settings.get("min_density", 1.0)
+    max_density = validity_settings.get("max_density", 25.0)
+    check_format = validity_settings.get("check_format", True)
+    check_symmetry = validity_settings.get("check_symmetry", True)
+    
+    validity_preprocessor = ValidityPreprocessor(
+        charge_tolerance=charge_tolerance,
+        distance_scaling_factor=distance_scaling,
+        plausibility_min_density=min_density,
+        plausibility_max_density=max_density,
+        plausibility_check_format=check_format,
+        plausibility_check_symmetry=check_symmetry,
+    )
+    
+    # Create source IDs for tracking
+    structure_sources = [f"structure_{i}" for i in range(len(structures))]
+    validity_preprocessor_result = validity_preprocessor.run(structures, structure_sources=structure_sources)
+    processed_structures = validity_preprocessor_result.processed_structures
+    
+    elapsed_time = time.time() - start_time
+    logger.info(f"✅ MANDATORY validity preprocessing complete for {len(processed_structures)} structures in {elapsed_time:.1f}s")
+    
+    # Clean up after validity preprocessor
+    cleanup_after_preprocessor("validity", monitor_memory)
+    
+    # Step 3: Filter to only valid structures
+    logger.info("🔍 Filtering to valid structures only...")
+    
+    valid_structures = []
+    valid_structure_ids = []
+    valid_structure_sources = []
+    
+    for structure in processed_structures:
+        is_valid = structure.properties.get("overall_valid", False)
+        if is_valid:
+            valid_structures.append(structure)
+            valid_structure_ids.append(structure.properties.get("structure_id", "unknown"))
+            valid_structure_sources.append(structure.properties.get("original_source", "unknown"))
+    
+    n_valid_structures = len(valid_structures)
+    n_invalid_structures = n_total_structures - n_valid_structures
+    
+    # Log filtering results
+    logger.info(f"✅ Filtering complete: {n_valid_structures} valid structures out of {n_total_structures} total")
+    logger.info(f"📊 Valid: {n_valid_structures}, Invalid: {n_invalid_structures}")
+    
+    if n_valid_structures == 0:
+        logger.warning("⚠️  No valid structures found! All subsequent benchmarks will be skipped.")
+    
+    # Create filtering metadata
+    validity_filtering_metadata = {
+        "total_input_structures": n_total_structures,
+        "valid_structures": n_valid_structures,
+        "invalid_structures": n_invalid_structures,
+        "validity_rate": n_valid_structures / n_total_structures if n_total_structures > 0 else 0.0,
+        "valid_structure_ids": valid_structure_ids,
+        "valid_structure_sources": valid_structure_sources,
+    }
+    
+    # Log final memory usage
+    log_memory_usage("after validity filtering", force_log=monitor_memory)
+    
+    return validity_benchmark_result, valid_structures, validity_filtering_metadata
+
+
+def run_remaining_preprocessors(valid_structures, preprocessor_config: Dict[str, Any], config: Dict[str, Any], monitor_memory: bool = False):
+    """Optimized preprocessor with smart batching for high-core systems on valid structures only.
+    
+    Note: validity preprocessing is already complete.
+    """
+    processed_structures = valid_structures
     preprocessor_results = {}
+    
+    if len(valid_structures) == 0:
+        logger.warning("⚠️  No valid structures to preprocess. Skipping remaining preprocessors.")
+        return processed_structures, preprocessor_results
 
     # Log initial memory usage
-    log_memory_usage("before preprocessing", force_log=monitor_memory)
+    log_memory_usage("before remaining preprocessing", force_log=monitor_memory)
 
     # Augmented fingerprint preprocessor (for novelty_new, uniqueness_new, sun_new) - HIGH PRIORITY
     if preprocessor_config["augmented_fingerprint"]:
-        logger.info("Running augmented fingerprint preprocessor with high parallelization...")
+        logger.info(f"Running augmented fingerprint preprocessor with high parallelization on {len(processed_structures)} valid structures...")
         start_time = time.time()
         
         # Get augmented fingerprint settings from config
@@ -370,24 +491,17 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], config: D
         angle_tolerance = aug_fp_settings.get("angle_tolerance", 5.0)
         include_fallback_properties = aug_fp_settings.get("include_fallback_properties", True)
         
-        # High parallelization for augmented fingerprint processing (CPU-intensive)
-        n_structures = len(processed_structures)
-        n_jobs = min(16, max(4, n_structures // 25))  # Scale workers for fingerprint computation
-        
-        logger.info(f"🔄 Using {n_jobs} workers for augmented fingerprint computation")
-        
         aug_fp_preprocessor = AugmentedFingerprintPreprocessor(
             symprec=symprec,
             angle_tolerance=angle_tolerance,
             include_fallback_properties=include_fallback_properties,
-            n_jobs=n_jobs,
         )
         aug_fp_result = aug_fp_preprocessor(processed_structures)
         processed_structures = aug_fp_result.processed_structures
         preprocessor_results["augmented_fingerprint"] = aug_fp_result
         elapsed_time = time.time() - start_time
         logger.info(
-            f"✅ Augmented fingerprint preprocessing complete for {len(processed_structures)} structures in {elapsed_time:.1f}s"
+            f"✅ Augmented fingerprint preprocessing complete for {len(processed_structures)} valid structures in {elapsed_time:.1f}s"
         )
         
         # Clean up after augmented fingerprint preprocessor
@@ -395,7 +509,7 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], config: D
 
     # Distribution preprocessor (for MMD, JSDistance)
     if preprocessor_config["distribution"]:
-        logger.info("Running distribution preprocessor...")
+        logger.info(f"Running distribution preprocessor on {len(processed_structures)} valid structures...")
         start_time = time.time()
         dist_preprocessor = DistributionPreprocessor()
         dist_result = dist_preprocessor(processed_structures)
@@ -403,7 +517,7 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], config: D
         preprocessor_results["distribution"] = dist_result
         elapsed_time = time.time() - start_time
         logger.info(
-            f"✅ Distribution preprocessing complete for {len(processed_structures)} structures in {elapsed_time:.1f}s"
+            f"✅ Distribution preprocessing complete for {len(processed_structures)} valid structures in {elapsed_time:.1f}s"
         )
         
         # Clean up after distribution preprocessor
@@ -411,7 +525,7 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], config: D
 
     # Multi-MLIP preprocessor with SMART BATCHING
     if preprocessor_config["stability"] or preprocessor_config["embeddings"]:
-        logger.info("Running Multi-MLIP preprocessor with optimized batching...")
+        logger.info(f"Running Multi-MLIP preprocessor with optimized batching on {len(processed_structures)} valid structures...")
         start_time = time.time()
 
         # Configure MLIP models
@@ -433,8 +547,8 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], config: D
         optimal_batch_size = max(40, n_structures // 20)  # At least 40 structures per batch
         n_workers = min(20, max(4, n_structures // optimal_batch_size))  # Scale workers based on data
         
-        logger.info(f"🔄 Optimized settings: {n_workers} workers, batch size ~{optimal_batch_size}")
-        logger.info("🔄 Initializing MLIP models (this may take 1-2 minutes)...")
+        logger.info(f"🔥 Optimized settings: {n_workers} workers, batch size ~{optimal_batch_size}")
+        logger.info("🔥 Initializing MLIP models (this may take 1-2 minutes)...")
         
         mlip_preprocessor = MultiMLIPStabilityPreprocessor(
             mlip_names=["orb", "mace", "uma"],
@@ -450,7 +564,7 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], config: D
 
         # Process in smart batches if we have many structures
         if n_structures > 200:
-            logger.info(f"🔄 Processing {n_structures} structures in optimized batches...")
+            logger.info(f"🔥 Processing {n_structures} valid structures in optimized batches...")
             
             all_processed = []
             batch_size = optimal_batch_size
@@ -460,7 +574,7 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], config: D
                 batch_num = i // batch_size + 1
                 total_batches = (n_structures + batch_size - 1) // batch_size
                 
-                logger.info(f"🔄 Processing batch {batch_num}/{total_batches} ({len(batch)} structures)")
+                logger.info(f"🔥 Processing batch {batch_num}/{total_batches} ({len(batch)} valid structures)")
                 
                 try:
                     batch_result = mlip_preprocessor(batch)
@@ -471,55 +585,63 @@ def run_preprocessors(structures, preprocessor_config: Dict[str, Any], config: D
                     
                 except Exception as e:
                     logger.error(f"❌ Batch {batch_num} failed: {str(e)}")
-                    logger.info("🔄 Continuing with original structures for this batch...")
+                    logger.info("🔥 Continuing with original structures for this batch...")
                     all_processed.extend(batch)
             
             processed_structures = all_processed
             
         else:
             # For smaller datasets, process all at once
-            logger.info(f"🔄 Processing {len(processed_structures)} structures with MLIP models...")
+            logger.info(f"🔥 Processing {len(processed_structures)} valid structures with MLIP models...")
             mlip_result = mlip_preprocessor(processed_structures)
             processed_structures = mlip_result.processed_structures
             
         preprocessor_results["multi_mlip"] = {"status": "completed"}
         elapsed_time = time.time() - start_time
         logger.info(
-            f"✅ Multi-MLIP preprocessing complete for {len(processed_structures)} structures in {elapsed_time:.1f}s"
+            f"✅ Multi-MLIP preprocessing complete for {len(processed_structures)} valid structures in {elapsed_time:.1f}s"
         )
         
         # Clean up after MLIP preprocessor
         cleanup_after_preprocessor("multi_mlip", monitor_memory)
 
     # Log final memory usage
-    log_memory_usage("after all preprocessing")
+    log_memory_usage("after remaining preprocessing")
 
     return processed_structures, preprocessor_results
 
 
-def run_benchmarks(structures, benchmark_families: List[str], config: Dict[str, Any], monitor_memory: bool = False):
-    """Run specified benchmark families using enhanced benchmarks."""
+def run_remaining_benchmarks(valid_structures, benchmark_families: List[str], config: Dict[str, Any], monitor_memory: bool = False):
+    """Run remaining benchmark families on valid structures only.
+    
+    Note: validity benchmark is already complete.
+    """
     results = {}
+    
+    if len(valid_structures) == 0:
+        logger.warning("⚠️  No valid structures to benchmark. Skipping remaining benchmarks.")
+        return results
 
     # Log initial memory usage
-    log_memory_usage("before benchmarks", force_log=monitor_memory)
+    log_memory_usage("before remaining benchmarks", force_log=monitor_memory)
 
+    # Filter out validity from families since it's already done
+    remaining_families = [f for f in benchmark_families if f != "validity"]
+    
+    if not remaining_families:
+        logger.info("No remaining benchmarks to run.")
+        return results
+    
     # Add progress bar for benchmarks
-    with tqdm(benchmark_families, desc="Running benchmarks", unit="benchmark") as pbar:
+    with tqdm(remaining_families, desc="Running remaining benchmarks", unit="benchmark") as pbar:
         for family in pbar:
             pbar.set_description(f"Running {family} benchmark")
-            logger.info(f"Running {family} benchmark...")
+            
+            logger.info(f"Running {family} benchmark on {len(valid_structures)} valid structures...")
             start_time = time.time()
 
             try:
-                if family == "validity":
-                    benchmark = ValidityBenchmark(
-                        charge_weight=config.get("charge_weight", 0.33),
-                        distance_weight=config.get("distance_weight", 0.33),
-                        plausibility_weight=config.get("plausibility_weight", 0.34),
-                    )
-
-                elif family == "distribution":
+                if family == "distribution":
                     benchmark = DistributionBenchmark(
                         mlips=config.get("mlips", ["orb", "mace", "uma"]),
                         cache_dir=config.get("cache_dir", "./data"),
@@ -588,11 +710,11 @@ def run_benchmarks(structures, benchmark_families: List[str], config: Dict[str, 
                     raise ValueError(f"Unknown benchmark family: {family}")
 
                 # Run the benchmark
-                benchmark_result = benchmark.evaluate(structures)
+                benchmark_result = benchmark.evaluate(valid_structures)
                 results[family] = benchmark_result
 
                 elapsed_time = time.time() - start_time
-                logger.info(f"✅ {family} benchmark complete in {elapsed_time:.1f}s")
+                logger.info(f"✅ {family} benchmark complete for {len(valid_structures)} valid structures in {elapsed_time:.1f}s")
                 
                 # Clean up after each benchmark
                 cleanup_after_benchmark(family, monitor_memory)
@@ -606,13 +728,18 @@ def run_benchmarks(structures, benchmark_families: List[str], config: Dict[str, 
                 cleanup_after_benchmark(family, monitor_memory)
 
     # Log final memory usage
-    log_memory_usage("after all benchmarks")
+    log_memory_usage("after remaining benchmarks")
 
     return results
 
 
 def save_results(
-    results: Dict[str, Any], run_name: str, config_name: str, n_structures: int
+    validity_result: Dict[str, Any], 
+    remaining_results: Dict[str, Any], 
+    validity_filtering_metadata: Dict[str, Any],
+    run_name: str, 
+    config_name: str, 
+    n_total_structures: int
 ):
     """Save benchmark results to JSON file."""
     # Create results directory
@@ -626,16 +753,22 @@ def save_results(
     filename = f"{run_name}_{config_name}_{timestamp}.json"
     filepath = results_dir / filename
 
+    # Combine all results
+    all_results = {"validity": validity_result}
+    all_results.update(remaining_results)
+
     # Prepare results data
     output_data = {
         "run_info": {
             "run_name": run_name,
             "config_name": config_name,
             "timestamp": timestamp,
-            "n_structures": n_structures,
-            "benchmark_families": list(results.keys()),
+            "n_structures": n_total_structures,  # Keep original structure count
+            "benchmark_families": list(all_results.keys()),
+            "validity_mandatory": True,  # Flag to indicate validity was mandatory
         },
-        "results": results,
+        "validity_filtering": validity_filtering_metadata,
+        "results": all_results,
     }
 
     # Save to JSON
@@ -648,7 +781,7 @@ def save_results(
 
 def main():
     """Main function to run benchmarks."""
-    parser = argparse.ArgumentParser(description="Run material generation benchmarks with enhanced novelty/uniqueness/SUN (SSH-optimized)")
+    parser = argparse.ArgumentParser(description="Run material generation benchmarks with enhanced novelty/uniqueness/SUN (SSH-optimized, validity ALWAYS mandatory)")
     parser.add_argument(
         "--cifs", help="Path to text file containing CIF file paths OR directory containing CIF files"
     )
@@ -664,7 +797,7 @@ def main():
     parser.add_argument(
         "--families",
         nargs="+",
-        help="Specific benchmark families to run (overrides config)",
+        help="Specific benchmark families to run (validity is ALWAYS run regardless)",
     )
     parser.add_argument(
         "--batch-size",
@@ -720,7 +853,8 @@ def main():
             if not structures:
                 raise ValueError("No valid structures loaded from CIF files")
 
-        logger.info(f"✅ Loaded {len(structures)} structures")
+        n_total_structures = len(structures)
+        logger.info(f"✅ Loaded {n_total_structures} structures")
 
         # Load benchmark configuration
         logger.info(f"Loading benchmark configuration: {args.config}")
@@ -734,7 +868,6 @@ def main():
         else:
             # Default to enhanced benchmark families for comprehensive evaluation
             benchmark_families = [
-                "validity", 
                 "distribution", 
                 "diversity", 
                 "novelty_new",  # Enhanced novelty benchmark
@@ -745,71 +878,59 @@ def main():
             ]
             logger.info(f"Using enhanced benchmark families: {benchmark_families}")
         
+        # Important note about validity
+        logger.info("🔍 NOTE: Validity benchmark and preprocessor are MANDATORY and will ALWAYS run first")
+        logger.info("🔍 NOTE: Only valid structures will be used for subsequent benchmarks")
+        
         # Clear memory after loading structures
         clear_memory()
         log_memory_usage("after loading structures", force_log=args.monitor_memory)
 
-        # Determine preprocessor requirements
+        # Step 1: Run validity processing and filtering
+        validity_result, valid_structures, validity_filtering_metadata = run_validity_preprocessing_and_filtering(
+            structures, config, args.monitor_memory
+        )
+
+        # Check if we have valid structures to continue
+        if len(valid_structures) == 0:
+            logger.error("❌ No valid structures found. Cannot continue with remaining benchmarks.")
+            
+            # Save results with empty remaining benchmarks
+            results_file = save_results(
+                validity_result, {}, validity_filtering_metadata, args.name, args.config, n_total_structures
+            )
+            
+            # Print summary
+            print("\n" + "=" * 60)
+            print("⚠️  BENCHMARK RUN COMPLETE (NO VALID STRUCTURES)")
+            print("=" * 60)
+            print(f"📁 Results saved to: {results_file}")
+            print(f"📊 Total structures: {n_total_structures}")
+            print("📊 Valid structures: 0")
+            print("🔧 Only validity benchmark completed")
+            print("=" * 60)
+            return
+
+        # Step 2: Determine preprocessor requirements for remaining benchmarks
         preprocessor_config = create_preprocessor_config(benchmark_families)
-        logger.info(f"Preprocessor config: {preprocessor_config}")
+        # Remove validity since it's already done
+        preprocessor_config["validity"] = False
+        logger.info(f"Remaining preprocessor config: {preprocessor_config}")
 
-        # Run preprocessors and benchmarks
-        if args.batch_size and len(structures) > args.batch_size:
-            logger.info(f"🔄 Processing {len(structures)} structures in batches of {args.batch_size}")
-            
-            # Process in batches
-            all_processed_structures = []
-            all_benchmark_results = {}
-            
-            for i in range(0, len(structures), args.batch_size):
-                batch_structures = structures[i:i + args.batch_size]
-                batch_num = i // args.batch_size + 1
-                total_batches = (len(structures) + args.batch_size - 1) // args.batch_size
-                
-                logger.info(f"🔄 Processing batch {batch_num}/{total_batches} ({len(batch_structures)} structures)")
-                
-                # Run preprocessors on batch
-                batch_processed, batch_preprocessor_results = run_preprocessors(
-                    batch_structures, preprocessor_config, config, args.monitor_memory
-                )
-                
-                # Run benchmarks on batch
-                batch_benchmark_results = run_benchmarks(
-                    batch_processed, benchmark_families, config, args.monitor_memory
-                )
-                
-                # Combine results
-                all_processed_structures.extend(batch_processed)
-                
-                # Merge benchmark results (this is simplified - in practice you might want more sophisticated merging)
-                for family, result in batch_benchmark_results.items():
-                    if family not in all_benchmark_results:
-                        all_benchmark_results[family] = result
-                    else:
-                        # For now, just keep the last result (you might want to aggregate properly)
-                        all_benchmark_results[family] = result
-                
-                # Clear memory between batches
-                clear_memory()
-                log_memory_usage(f"after batch {batch_num}", force_log=args.monitor_memory)
-            
-            processed_structures = all_processed_structures
-            benchmark_results = all_benchmark_results
-            
-        else:
-            # Process all structures at once
-            processed_structures, preprocessor_results = run_preprocessors(
-                structures, preprocessor_config, config, args.monitor_memory
-            )
+        # Step 3: Run remaining preprocessors on valid structures only
+        processed_valid_structures, preprocessor_results = run_remaining_preprocessors(
+            valid_structures, preprocessor_config, config, args.monitor_memory
+        )
 
-            # Run benchmarks
-            benchmark_results = run_benchmarks(
-                processed_structures, benchmark_families, config, args.monitor_memory
-            )
+        # Step 4: Run remaining benchmarks on valid structures only
+        remaining_benchmark_results = run_remaining_benchmarks(
+            processed_valid_structures, benchmark_families, config, args.monitor_memory
+        )
 
         # Save results
         results_file = save_results(
-            benchmark_results, args.name, args.config, len(structures)
+            validity_result, remaining_benchmark_results, validity_filtering_metadata, 
+            args.name, args.config, n_total_structures
         )
 
         # Final cleanup
@@ -823,17 +944,25 @@ def main():
         print("🎉 BENCHMARK RUN COMPLETE")
         print("=" * 60)
         print(f"📁 Results saved to: {results_file}")
-        print(f"📊 Structures processed: {len(structures)}")
-        print(f"🔧 Benchmark families: {benchmark_families}")
+        print(f"📊 Total structures processed: {n_total_structures}")
+        print(f"📊 Valid structures: {validity_filtering_metadata['valid_structures']}")
+        print(f"📊 Invalid structures: {validity_filtering_metadata['invalid_structures']}")
+        print(f"📊 Validity rate: {validity_filtering_metadata['validity_rate']:.1%}")
+        print(f"🔧 Benchmark families: {['validity (ALL structures)'] + [f'{family} (valid structures only)' for family in benchmark_families if family != 'validity']}")
         print(f"⏰ Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         print("=" * 60)
 
         # Print key results
-        for family, result in benchmark_results.items():
+        all_results = {"validity": validity_result}
+        all_results.update(remaining_benchmark_results)
+        
+        for family, result in all_results.items():
             if isinstance(result, dict) and "error" in result:
-                print(f"❌ {family}: {result['error']}")
+                scope = "ALL structures" if family == "validity" else "valid structures only"
+                print(f"❌ {family} ({scope}): {result['error']}")
             else:
-                print(f"✅ {family}: Completed successfully")
+                scope = "ALL structures (MANDATORY)" if family == "validity" else "valid structures only"
+                print(f"✅ {family} ({scope}): Completed successfully")
 
     except Exception as e:
         logger.error(f"Benchmark run failed: {str(e)}")

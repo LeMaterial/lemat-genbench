@@ -32,6 +32,16 @@ def safe_float(value: Any) -> float:
         return np.nan
 
 
+def safe_int(value: Any) -> int:
+    """Safely convert value to int, returning 0 for None."""
+    if value is None:
+        return 0
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return 0
+
+
 def load_config(config_path: Union[str, Path, Dict[str, Any]]) -> Dict[str, Any]:
     """Load configuration from file or dict.
 
@@ -78,7 +88,7 @@ class StabilityBenchmark(BaseBenchmark):
         Energy above hull threshold for metastability classification (eV/atom)
     min_mlips_required : int, default=2
         Minimum MLIPs required for ensemble statistics
-    include_individual_results : bool, default=False
+    include_individual_results : bool, default=True
         Whether to include individual MLIP results alongside ensemble results
     name : str, default="StabilityBenchmark"
         Name of the benchmark
@@ -95,7 +105,7 @@ class StabilityBenchmark(BaseBenchmark):
         mlip_names: Optional[List[str]] = None,
         metastable_threshold: float = None,
         min_mlips_required: int = None,
-        include_individual_results: bool = None,
+        include_individual_results: bool = True,
         name: str = "StabilityBenchmark",
         description: str = None,
         metadata: Dict[str, Any] = None,
@@ -132,7 +142,7 @@ class StabilityBenchmark(BaseBenchmark):
             include_individual_results = (
                 include_individual_results
                 if include_individual_results is not None
-                else reporting_config.get("include_individual_mlip_results", False)
+                else reporting_config.get("include_individual_mlip_results", True)
             )
 
         # Set defaults if still None
@@ -145,7 +155,7 @@ class StabilityBenchmark(BaseBenchmark):
         include_individual_results = (
             include_individual_results
             if include_individual_results is not None
-            else False
+            else True
         )
 
         # Store configuration
@@ -282,11 +292,17 @@ class StabilityBenchmark(BaseBenchmark):
             )
             if stability_metric_result:
                 stability_metrics = stability_metric_result.metrics
+                final_scores["stable_count"] = safe_int(  # Add count
+                    stability_metrics.get("stable_count")
+                )
                 final_scores["stability_mean_e_above_hull"] = safe_float(
                     stability_metrics.get("mean_e_above_hull")
                 )
                 final_scores["stability_std_e_above_hull"] = safe_float(
                     stability_metrics.get("std_e_above_hull")
+                )
+                final_scores["stability_total_structures"] = safe_int(  # Add total count
+                    stability_metrics.get("total_structures_evaluated")
                 )
 
                 # Add ensemble uncertainty if available
@@ -301,6 +317,19 @@ class StabilityBenchmark(BaseBenchmark):
                 metastability_results.get("combined_value")
             )
 
+            # Extract metastability count
+            metastability_metric_result = metastability_results.get(
+                "metric_results", {}
+            ).get("metastability")
+            if metastability_metric_result:
+                metastability_metrics = metastability_metric_result.metrics
+                final_scores["metastable_count"] = safe_int(  # Add count
+                    metastability_metrics.get("metastable_count")
+                )
+                final_scores["metastability_total_structures"] = safe_int(  # Add total count
+                    metastability_metrics.get("total_structures_evaluated")
+                )
+
         e_hull_results = evaluator_results.get("mean_e_above_hull")
         if e_hull_results:
             final_scores["mean_e_above_hull"] = safe_float(
@@ -314,6 +343,9 @@ class StabilityBenchmark(BaseBenchmark):
                 e_hull_metrics = e_hull_metric_result.metrics
                 final_scores["e_hull_std"] = safe_float(
                     e_hull_metrics.get("std_e_above_hull")
+                )
+                final_scores["e_hull_total_structures"] = safe_int(  # Add total count
+                    e_hull_metrics.get("total_structures_evaluated")
                 )
 
         formation_energy_results = evaluator_results.get("formation_energy")
@@ -330,6 +362,9 @@ class StabilityBenchmark(BaseBenchmark):
                 final_scores["formation_energy_std"] = safe_float(
                     fe_metrics.get("std_formation_energy")
                 )
+                final_scores["formation_energy_total_structures"] = safe_int(  # Add total count
+                    fe_metrics.get("total_structures_evaluated")
+                )
 
         relaxation_stability_results = evaluator_results.get("relaxation_stability")
         if relaxation_stability_results:
@@ -345,6 +380,9 @@ class StabilityBenchmark(BaseBenchmark):
                 final_scores["relaxation_RMSE_std"] = safe_float(
                     rs_metrics.get("std_relaxation_RMSE")
                 )
+                final_scores["relaxation_stability_total_structures"] = safe_int(  # Add total count
+                    rs_metrics.get("total_structures_evaluated")
+                )
 
         # Add individual MLIP results if requested
         if self.include_individual_results:
@@ -354,13 +392,19 @@ class StabilityBenchmark(BaseBenchmark):
                     if metric_result:
                         metrics = metric_result.metrics
 
-                        # Extract individual MLIP metrics
+                        # Extract individual MLIP metrics including counts
                         for mlip_name in self.mlip_names:
                             for metric_key, metric_value in metrics.items():
                                 if metric_key.endswith(f"_{mlip_name}"):
-                                    final_scores[f"{evaluator_name}_{metric_key}"] = (
-                                        safe_float(metric_value)
-                                    )
+                                    # Handle both float and int values appropriately
+                                    if "count" in metric_key:
+                                        final_scores[f"{evaluator_name}_{metric_key}"] = (
+                                            safe_int(metric_value)
+                                        )
+                                    else:
+                                        final_scores[f"{evaluator_name}_{metric_key}"] = (
+                                            safe_float(metric_value)
+                                        )
 
         return final_scores
 
@@ -456,12 +500,14 @@ def example_config_based_evaluation():
     #
     # Access results:
     # stable_ratio = result.final_scores["stable_ratio"]
+    # stable_count = result.final_scores["stable_count"]  # NEW: count of stable structures
+    # metastable_count = result.final_scores["metastable_count"]  # NEW: count of metastable structures
     # mean_e_hull = result.final_scores["mean_e_above_hull"]
     # e_hull_std = result.final_scores["e_hull_std"]
     #
     # If include_individual_results=True:
     # orb_stable_ratio = result.final_scores["stability_stable_ratio_orb"]
-    # mace_mean_e_hull = result.final_scores["mean_e_above_hull_mean_e_above_hull_mace"]
+    # orb_stable_count = result.final_scores["stability_stable_count_orb"]  # NEW: per-MLIP counts
 
     return benchmark
 
@@ -575,6 +621,7 @@ if __name__ == "__main__":
         print("  ✓ Configurable individual MLIP result inclusion")
         print("  ✓ Uses all config sections meaningfully")
         print("  ✓ Reports standard deviations at structure and sample levels")
+        print("  ✓ Reports structure counts alongside ratios")  # NEW
         print("  ✓ Comprehensive factory functions")
         print("  ✓ Config file and programmatic configuration support")
 
@@ -586,7 +633,7 @@ if __name__ == "__main__":
         )
         print("  4. Comprehensive: create_comprehensive_benchmark() (shows both)")
         print("  5. Run benchmark.evaluate(structures) on preprocessed structures")
-        print("  6. Access metrics from result.final_scores (includes std deviations)")
+        print("  6. Access metrics from result.final_scores (includes counts and std deviations)")  # UPDATED
 
     except Exception as e:
         print(f"✗ Test failed: {e}")
