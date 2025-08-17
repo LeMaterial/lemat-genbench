@@ -101,6 +101,7 @@ ipython_config.py
 
 # Benchmark results
 results/
+results_new/
 
 # poetry
 #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
@@ -186,6 +187,7 @@ data/lematbulk_mmd_values.pkl
 # Local testing
 submissions/
 final_results/
+final_results_new/
 
 dummy.csv
 
