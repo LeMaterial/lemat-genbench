@@ -1,0 +1,111 @@
+type: "sun_new"
+description: "Enhanced SUN Benchmark using Augmented Fingerprinting for Materials Generation"
+version: "0.2.0"
+
+# Core SUN configuration
+include_metasun: true                    # Whether to evaluate MetaSUN (metastable) alongside SUN
+
+# Stability thresholds (eV/atom)
+stability_threshold: 0.0                # Energy above hull threshold for stability (SUN)
+metastability_threshold: 0.1            # Energy above hull threshold for metastability (MetaSUN)
+
+# Fingerprinting configuration
+fingerprinting_method: "augmented"
+fingerprint_source: "auto"              # Options: "property", "compute", "auto"
+
+# Reference dataset configuration for novelty evaluation
+reference_fingerprints_path: null       # Uses default: "data/augmented_fingerprints"
+reference_dataset_name: "LeMat-Bulk"
+
+# Crystallographic analysis parameters
+symprec: 0.01
+angle_tolerance: 5.0
+fallback_to_computation: true
+
+# Benchmark configuration variants
+variants:
+  default:
+    description: "Standard augmented SUN benchmark"
+    fingerprint_source: "auto"
+    symprec: 0.01
+    angle_tolerance: 5.0
+    fallback_to_computation: true
+    include_metasun: true
+    
+  property_only:
+    description: "Uses only preprocessed fingerprints from structure properties"
+    fingerprint_source: "property"
+    fallback_to_computation: false
+    include_metasun: true
+    
+  computation_only:
+    description: "Computes fingerprints on-demand"
+    fingerprint_source: "compute"
+    fallback_to_computation: true
+    include_metasun: true
+    
+  robust:
+    description: "Robust settings with relaxed tolerances"
+    fingerprint_source: "auto"
+    symprec: 0.1
+    angle_tolerance: 10.0
+    fallback_to_computation: true
+    include_metasun: true
+    
+  high_precision:
+    description: "High precision with strict tolerances"
+    fingerprint_source: "auto"
+    symprec: 0.001
+    angle_tolerance: 1.0
+    fallback_to_computation: true
+    include_metasun: true
+
+  sun_only:
+    description: "SUN evaluation only (no MetaSUN)"
+    fingerprint_source: "auto"
+    include_metasun: false
+
+# Performance and caching settings
+cache_reference: true                   # Cache reference dataset fingerprints for speed
+parallel_processing: true
+
+# Output metrics
+metrics:
+  primary: "sun_rate"
+  additional:
+    - "sun_count"
+    - "msun_rate"
+    - "msun_count"
+    - "combined_sun_msun_rate"
+    - "unique_count"
+    - "unique_rate"
+    - "total_structures_evaluated"
+    - "failed_count"
+
+# Expected ranges for validation
+validation:
+  sun_rate:
+    min: 0.0
+    max: 1.0
+  msun_rate:
+    min: 0.0
+    max: 1.0
+  unique_rate:
+    min: 0.0
+    max: 1.0
+  combined_sun_msun_rate:
+    min: 0.0
+    max: 1.0
+    description: "Should be sum of sun_rate and msun_rate"
+
+# Thresholds for different stability levels
+stability_levels:
+  stable:
+    threshold: 0.0
+    description: "Structures with e_above_hull <= 0.0 eV/atom"
+  metastable:
+    threshold: 0.1
+    description: "Structures with 0.0 < e_above_hull <= 0.1 eV/atom"
+  unstable:
+    threshold: "inf"
+    description: "Structures with e_above_hull > 0.1 eV/atom"

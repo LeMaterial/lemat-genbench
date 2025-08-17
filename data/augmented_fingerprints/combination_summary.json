@@ -1,0 +1,53 @@
+{
+  "combination_timestamp": "2025-08-16 22:17:14",
+  "source_directory": "data/reference_fingerprints_new",
+  "output_directory": "data/augmented_fingerprints",
+  "statistics": {
+    "total_structures_processed": 5335299,
+    "successful_structures": "5335299",
+    "failed_structures": "0",
+    "success_rate_percent": 100.0,
+    "unique_fingerprints_count": 4719106,
+    "uniqueness_rate_percent": 88.45063791176464
+  },
+  "original_processing_summary": {
+    "dataset_name": "LeMaterial/LeMat-Bulk",
+    "config_name": "compatible_pbe",
+    "processing_parameters": {
+      "symprec": 0.01,
+      "angle_tolerance": 5.0,
+      "save_crystallographic_data": true
+    },
+    "total_processed": 5335299,
+    "successful_count": 5335299,
+    "failed_count": 0,
+    "crystallographic_analysis_failures": 0,
+    "fingerprint_generation_failures": 0,
+    "unique_fingerprints": 4719106,
+    "duplicate_fingerprints": 616193,
+    "success_rate": 1.0,
+    "uniqueness_rate": 0.8845063791176464,
+    "processing_time_hours": 9.542484999100367,
+    "avg_time_per_structure": 0.00643880427259303,
+    "processing_methods": {
+      "direct_fingerprinting": 5335299,
+      "enhanced_analysis": 0,
+      "failed": 0
+    },
+    "enumeration_statistics": {
+      "average_per_structure": 18.977275125536543,
+      "max_enumerations": 50,
+      "min_enumerations": 1,
+      "total_enumerations": 101249437
+    },
+    "error_categories": {},
+    "created_at": "2025-08-16 16:58:12",
+    "output_directory": "data/reference_fingerprints_new"
+  },
+  "files_created": {
+    "combined_dataset": "lemat_bulk_fingerprints_combined.parquet",
+    "unique_fingerprints": "unique_fingerprints.pkl",
+    "fingerprint_mapping": "fingerprint_mapping.pkl",
+    "structure_index": "structure_index.parquet"
+  }
+}

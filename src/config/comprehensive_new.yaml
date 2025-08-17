@@ -1,0 +1,80 @@
+type: comprehensive
+
+# This config runs all benchmark families by default
+# Use --families argument to specify only specific families
+
+# Validity benchmark settings
+charge_weight: 0.33
+distance_weight: 0.33
+plausibility_weight: 0.34
+
+# Distribution benchmark settings
+mlips: ["orb", "mace", "uma"]
+cache_dir: "./data"
+js_distributions_file: "data/lematbulk_jsdistance_distributions.json"
+mmd_values_file: "data/lematbulk_mmd_values_15k.pkl"
+
+# Enhanced novelty settings (novelty_new)
+novelty_new_settings:
+  fingerprint_source: "auto"
+  reference_fingerprints_path: null
+  reference_dataset_name: "LeMat-Bulk"
+  symprec: 0.01
+  angle_tolerance: 5.0
+  fallback_to_computation: true
+
+# Enhanced uniqueness settings (uniqueness_new)
+uniqueness_new_settings:
+  fingerprint_source: "auto"
+  symprec: 0.01
+  angle_tolerance: 5.0
+
+# Enhanced SUN benchmark settings (sun_new)
+sun_new_settings:
+  stability_threshold: 0.0
+  metastability_threshold: 0.1
+  include_metasun: true
+  fingerprint_source: "auto"
+  reference_fingerprints_path: null
+  reference_dataset_name: "LeMat-Bulk"
+  symprec: 0.01
+  angle_tolerance: 5.0
+  fallback_to_computation: true
+
+# HHI benchmark settings
+hhi_settings:
+  production_weight: 0.25
+  reserve_weight: 0.75
+  scale_to_0_10: true
+
+# Multi-MLIP stability settings
+stability_settings:
+  use_ensemble: true
+  metastable_threshold: 0.1
+  ensemble_config:
+    min_mlips_required: 2
+  individual_mlip_config:
+    use_all_available: true
+    require_all_mlips: false
+    fallback_to_single: true
+
+# Preprocessor settings for augmented fingerprint
+augmented_fingerprint_settings:
+  symprec: 0.01
+  angle_tolerance: 5.0
+  include_fallback_properties: true
+  n_jobs: 1
+
+# Metadata
+description: "Comprehensive benchmark configuration using enhanced novelty_new, uniqueness_new, and sun_new benchmarks"
+version: "0.2.0"
+metadata:
+  reference: "Enhanced evaluation of material generation models using augmented fingerprinting"
+  use_case: "Full evaluation across validity, distribution, novelty_new, uniqueness_new, and stability metrics"
+  notes:
+    - "Uses enhanced benchmarks: novelty_new, uniqueness_new, sun_new with augmented fingerprinting"
+    - "Runs all benchmark families by default for comprehensive evaluation"
+    - "Use --families argument to specify only specific families"
+    - "Available families: validity, distribution, diversity, novelty_new, uniqueness_new, hhi, sun_new, stability"
+    - "Automatically runs appropriate preprocessors based on selected families"
+    - "Requires augmented fingerprint preprocessing for novelty_new, uniqueness_new, and sun_new"

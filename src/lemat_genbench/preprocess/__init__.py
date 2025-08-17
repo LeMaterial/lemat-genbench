@@ -1,5 +1,12 @@
 """Preprocessing module for LeMaterial-ForgeBench."""
 
+from .augmented_fingerprint_preprocess import (
+    AugmentedFingerprintPreprocessor,
+    create_augmented_fingerprint_preprocessor,
+    create_high_precision_fingerprint_preprocessor,
+    create_robust_fingerprint_preprocessor,
+)
+from .distribution_preprocess import DistributionPreprocessor
 from .multi_mlip_preprocess import (
     MultiMLIPStabilityPreprocessor,
     create_all_mlip_preprocessor,
@@ -7,17 +14,17 @@ from .multi_mlip_preprocess import (
     create_orb_mace_uma_preprocessor,
 )
 
-# Add other existing imports here as well
-# For example, if you have other preprocessors:
-# from .universal_stability_preprocess import UniversalStabilityPreprocessor
-# from .distribution_preprocess import DistributionPreprocessor
-
 __all__ = [
+    # Multi-MLIP preprocessor
     "MultiMLIPStabilityPreprocessor",
     "create_multi_mlip_preprocessor",
     "create_orb_mace_uma_preprocessor",
     "create_all_mlip_preprocessor",
-    # Add other preprocessors to __all__ as well
-    # "UniversalStabilityPreprocessor",
-    # "DistributionPreprocessor",
+    # Distribution preprocessor
+    "DistributionPreprocessor",
+    # Augmented fingerprint preprocessor
+    "AugmentedFingerprintPreprocessor",
+    "create_augmented_fingerprint_preprocessor",
+    "create_high_precision_fingerprint_preprocessor",
+    "create_robust_fingerprint_preprocessor",
 ]

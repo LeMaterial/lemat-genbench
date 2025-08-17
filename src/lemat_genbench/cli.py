@@ -1,7 +1,8 @@
-"""Command line interface for running benchmarks.
+"""Command line interface for running benchmarks with enhanced metrics.
 
 This module provides a CLI for running material generation benchmarks
-using configuration files.
+using configuration files. This version uses the new enhanced benchmarks
+(novelty_new, uniqueness_new, sun_new) while retaining other existing benchmarks.
 """
 
 import os
@@ -20,12 +21,12 @@ from lemat_genbench.benchmarks.hhi_benchmark import HHIBenchmark
 from lemat_genbench.benchmarks.multi_mlip_stability_benchmark import (
     StabilityBenchmark as MultiMLIPStabilityBenchmark,
 )
-from lemat_genbench.benchmarks.novelty_benchmark import (
-    NoveltyBenchmark,
+from lemat_genbench.benchmarks.novelty_new_benchmark import (
+    AugmentedNoveltyBenchmark,
 )
-from lemat_genbench.benchmarks.sun_benchmark import SUNBenchmark
-from lemat_genbench.benchmarks.uniqueness_benchmark import (
-    UniquenessBenchmark,
+from lemat_genbench.benchmarks.sun_new_benchmark import SUNNewBenchmark
+from lemat_genbench.benchmarks.uniqueness_new_benchmark import (
+    UniquenessNewBenchmark,
 )
 from lemat_genbench.benchmarks.validity_benchmark import (
     ValidityBenchmark,
@@ -85,7 +86,6 @@ def load_benchmark_config(config_name: str) -> dict:
             "type": "validity",
             "charge_weight": 0.25,
             "distance_weight": 0.25,
-            # "coordination_weight": 0.25,
             "plausibility_weight": 0.25,
             "description": "Validity Benchmark for Materials Generation",
             "version": "0.1.0",
@@ -101,29 +101,89 @@ def load_benchmark_config(config_name: str) -> dict:
         with open(config_path, "w") as f:
             yaml.dump(validity_config, f, default_flow_style=False)
 
-    if not config_path.exists() and config_path.name == "uniqueness.yaml":
-        uniqueness_config = {
-            "type": "uniqueness",
-            "description": "Uniqueness Benchmark for Materials Generation",
+    # Create uniqueness_new config if needed
+    if not config_path.exists() and config_path.name == "uniqueness_new.yaml":
+        uniqueness_new_config = {
+            "type": "uniqueness_new",
+            "description": "Enhanced Uniqueness Benchmark using Augmented Fingerprints",
             "version": "0.1.0",
-            "fingerprint_method": "bawl",
+            "fingerprint_source": "auto",
+            "symprec": 0.01,
+            "angle_tolerance": 5.0,
         }
         with open(config_path, "w") as f:
-            yaml.dump(uniqueness_config, f, default_flow_style=False)
+            yaml.dump(uniqueness_new_config, f, default_flow_style=False)
 
-    if not config_path.exists() and config_path.name == "novelty.yaml":
-        novelty_config = {
-            "type": "novelty",
-            "description": "Novelty Benchmark for Materials Generation",
-            "version": "0.1.0",
-            "reference_dataset": "LeMaterial/LeMat-Bulk",
-            "reference_config": "compatible_pbe",
-            "fingerprint_method": "bawl",
-            "cache_reference": True,
-            "max_reference_size": None,
+    # Create novelty_new config if needed
+    if not config_path.exists() and config_path.name == "novelty_new.yaml":
+        novelty_new_config = {
+            "type": "novelty_new",
+            "description": "Enhanced Novelty Benchmark using Augmented Fingerprints",
+            "version": "0.2.0",
+            "fingerprinting_method": "augmented",
+            "fingerprint_source": "auto",
+            "reference_fingerprints_path": None,
+            "reference_dataset_name": "LeMat-Bulk",
+            "symprec": 0.01,
+            "angle_tolerance": 5.0,
+            "fallback_to_computation": True,
+            "variants": {
+                "default": {
+                    "description": "Standard augmented novelty benchmark",
+                    "fingerprint_source": "auto",
+                    "symprec": 0.01,
+                    "angle_tolerance": 5.0,
+                    "fallback_to_computation": True,
+                },
+                "property_only": {
+                    "description": "Uses only preprocessed fingerprints",
+                    "fingerprint_source": "property",
+                    "fallback_to_computation": False,
+                },
+                "computation_only": {
+                    "description": "Computes fingerprints on-demand",
+                    "fingerprint_source": "compute",
+                    "fallback_to_computation": True,
+                },
+            },
         }
         with open(config_path, "w") as f:
-            yaml.dump(novelty_config, f, default_flow_style=False)
+            yaml.dump(novelty_new_config, f, default_flow_style=False)
+
+    # Create sun_new config if needed
+    if not config_path.exists() and config_path.name == "sun_new.yaml":
+        sun_new_config = {
+            "type": "sun_new",
+            "description": "Enhanced SUN Benchmark using Augmented Fingerprinting",
+            "version": "0.2.0",
+            "include_metasun": True,
+            "stability_threshold": 0.0,
+            "metastability_threshold": 0.1,
+            "fingerprinting_method": "augmented",
+            "fingerprint_source": "auto",
+            "reference_fingerprints_path": None,
+            "reference_dataset_name": "LeMat-Bulk",
+            "symprec": 0.01,
+            "angle_tolerance": 5.0,
+            "fallback_to_computation": True,
+            "variants": {
+                "default": {
+                    "description": "Standard augmented SUN benchmark",
+                    "fingerprint_source": "auto",
+                    "symprec": 0.01,
+                    "angle_tolerance": 5.0,
+                    "fallback_to_computation": True,
+                    "include_metasun": True,
+                },
+                "sun_only": {
+                    "description": "SUN evaluation only (no MetaSUN)",
+                    "fingerprint_source": "auto",
+                    "include_metasun": False,
+                },
+            },
+        }
+        with open(config_path, "w") as f:
+            yaml.dump(sun_new_config, f, default_flow_style=False)
 
     # Add HHI config creation
     if not config_path.exists() and config_path.name == "hhi.yaml":
@@ -146,96 +206,121 @@ def load_benchmark_config(config_name: str) -> dict:
         with open(config_path, "w") as f:
             yaml.dump(hhi_config, f, default_flow_style=False)
 
-    # Add SUN config creation
-    if not config_path.exists() and config_path.name == "sun.yaml":
-        sun_config = {
-            "type": "sun",
-            "description": "SUN Benchmark for evaluating structures that are Stable, Unique, and Novel",
-            "version": "0.1.0",
-            "include_metasun": True,
-            "stability_threshold": 0.0,
-            "metastability_threshold": 0.1,
-            "reference_dataset": "LeMaterial/LeMat-Bulk",
-            "reference_config": "compatible_pbe",
-            "fingerprint_method": "bawl",
-            "cache_reference": True,
-            "max_reference_size": None,
-        }
-        with open(config_path, "w") as f:
-            yaml.dump(sun_config, f, default_flow_style=False)
-
-    # Add Multi-MLIP Stability config creation
-    if not config_path.exists() and config_path.name == "stability.yaml":
-        stability_config = {
-            "type": "stability",
-            "description": "Multi-MLIP Stability Benchmark with Ensemble Predictions",
-            "version": "0.1.0",
-            "use_ensemble": True,
-            "mlip_names": ["orb", "mace", "uma"],
-            "metastable_threshold": 0.1,
-            "ensemble_config": {
-                "min_mlips_required": 2,
-            },
-            "individual_mlip_config": {
-                "use_all_available": True,
-                "require_all_mlips": False,
-                "fallback_to_single": True,
-            },
-        }
-        with open(config_path, "w") as f:
-            yaml.dump(stability_config, f, default_flow_style=False)
-
-    # Add Distribution config creation
+    # Add distribution config creation
     if not config_path.exists() and config_path.name == "distribution.yaml":
         distribution_config = {
             "type": "distribution",
-            "mlips": ["orb", "mace", "uma"],
-            "cache_dir": "./data",
-            "js_distributions_file": "data/lematbulk_jsdistance_distributions.json",
-            "mmd_values_file": "data/lematbulk_mmd_values_15k.pkl",
-            "description": "Distribution Benchmark for Materials Generation - evaluates similarity to reference distributions",
+            "description": "Distribution Benchmark for Materials Generation",
             "version": "0.1.0",
-            "metadata": {
-                "reference": "Distribution similarity metrics for evaluating generated materials against reference datasets",
-                "use_case": "Assessing whether generated structures follow realistic distributions of structural properties",
+            "embeddings": {
+                "models": ["mace"],
+                "num_samples": 1000,
+                "normalize": True,
+            },
+            "metrics": {
+                "frechet_distance": {"weight": 0.4},
+                "mmd": {"weight": 0.4},
+                "jensen_shannon": {"weight": 0.2},
             },
         }
         with open(config_path, "w") as f:
             yaml.dump(distribution_config, f, default_flow_style=False)
 
-    # Add Diversity config creation
+    # Add diversity config creation
     if not config_path.exists() and config_path.name == "diversity.yaml":
         diversity_config = {
             "type": "diversity",
-            "description": "Diversity Benchmark for Materials Generation - evaluates structural diversity across multiple dimensions",
+            "description": "Diversity Benchmark for Materials Generation",
             "version": "0.1.0",
-            "metric_configs": {
-                "element_diversity": {
-                    "reference_element_space": 118,
-                },
-                "space_group_diversity": {
-                    "reference_space_group_space": 230,
-                },
-                "physical_size_diversity": {
-                    "density_bin_size": 0.5,
-                    "lattice_bin_size": 0.5,
-                    "packing_factor_bin_size": 0.05,
-                },
-                "site_number_diversity": {
-                    # No additional parameters needed
-                },
-            },
-            "metadata": {
-                "reference": "Diversity metrics for evaluating structural variety in generated materials",
-                "use_case": "Assessing whether generated structures explore diverse chemical and structural space",
-            },
+            "element_weight": 0.25,
+            "space_group_weight": 0.25,
+            "site_number_weight": 0.25,
+            "physical_size_weight": 0.25,
         }
         with open(config_path, "w") as f:
             yaml.dump(diversity_config, f, default_flow_style=False)
 
+    # Add multi_mlip_stability config creation
+    if not config_path.exists() and config_path.name == "multi_mlip_stability.yaml":
+        stability_config = {
+            "type": "multi_mlip_stability",
+            "description": "Multi-MLIP Stability Benchmark for Materials Generation",
+            "version": "0.1.0",
+            "models": ["mace", "orb"],
+            "formation_energy_weight": 0.5,
+            "e_above_hull_weight": 0.5,
+        }
+        with open(config_path, "w") as f:
+            yaml.dump(stability_config, f, default_flow_style=False)
+
+    # Create comprehensive config if needed
+    if not config_path.exists() and config_path.name == "comprehensive.yaml":
+        comprehensive_config = {
+            "type": "comprehensive",
+            "description": "Comprehensive Benchmark Suite with Enhanced Metrics",
+            "version": "0.2.0",
+            "benchmarks": {
+                "validity": {
+                    "weight": 0.2,
+                    "config": {
+                        "charge_weight": 0.25,
+                        "distance_weight": 0.25,
+                        "plausibility_weight": 0.25,
+                    },
+                },
+                "distribution": {
+                    "weight": 0.15,
+                    "config": {
+                        "embeddings": {"models": ["mace"], "num_samples": 1000},
+                        "metrics": {
+                            "frechet_distance": {"weight": 0.4},
+                            "mmd": {"weight": 0.4},
+                            "jensen_shannon": {"weight": 0.2},
+                        },
+                    },
+                },
+                "diversity": {
+                    "weight": 0.15,
+                    "config": {
+                        "element_weight": 0.25,
+                        "space_group_weight": 0.25,
+                        "site_number_weight": 0.25,
+                        "physical_size_weight": 0.25,
+                    },
+                },
+                "uniqueness_new": {
+                    "weight": 0.15,
+                    "config": {
+                        "fingerprint_source": "auto",
+                        "symprec": 0.01,
+                        "angle_tolerance": 5.0,
+                    },
+                },
+                "novelty_new": {
+                    "weight": 0.15,
+                    "config": {
+                        "fingerprint_source": "auto",
+                        "symprec": 0.01,
+                        "angle_tolerance": 5.0,
+                    },
+                },
+                "sun_new": {
+                    "weight": 0.2,
+                    "config": {
+                        "include_metasun": True,
+                        "fingerprint_source": "auto",
+                        "symprec": 0.01,
+                        "angle_tolerance": 5.0,
+                    },
+                },
+            },
+        }
+        with open(config_path, "w") as f:
+            yaml.dump(comprehensive_config, f, default_flow_style=False)
+
     if not config_path.exists():
-        raise click.ClickException(
-            f"Config '{config_path}' not found. "
+        raise FileNotFoundError(
+            f"Config file not found: {config_path}. "
             "Available configs in standard directory: "
             + ", ".join(f.stem for f in CONFIGS_DIR.glob("*.yaml"))
         )
@@ -271,14 +356,22 @@ def save_results(results: dict, output_path: str):
     "-o",
     type=click.Path(),
     help="Path to save results",
-    default="results/benchmark_results.yaml",
+    default="results/benchmark_results_new.yaml",
 )
 def main(input: str, config_name: str, output: str):
-    """Run a benchmark on structures using the specified configuration.
+    """Run a benchmark on structures using the specified configuration with enhanced metrics.
 
-    STRUCTURES_CSV: Path to CSV file containing structures to evaluate
-    CONFIG_NAME: Name of the benchmark configuration (e.g. 'example' for
-    example.yaml) or path to a config file
+    INPUT: Path to CSV file containing structures to evaluate or directory with CIF files
+    CONFIG_NAME: Name of the benchmark configuration (e.g. 'novelty_new' for
+    novelty_new.yaml) or path to a config file
+
+    This CLI uses enhanced benchmarks:
+    - novelty_new: Enhanced novelty evaluation using augmented fingerprints
+    - uniqueness_new: Enhanced uniqueness evaluation using augmented fingerprints  
+    - sun_new: Enhanced SUN benchmark using augmented fingerprinting
+    
+    Other benchmarks (validity, distribution, diversity, hhi, multi_mlip_stability) 
+    remain unchanged.
     """
     try:
         # Load structures
@@ -325,147 +418,113 @@ def main(input: str, config_name: str, output: str):
             PhysicalPlausibilityMetric()
 
             # Create benchmark with custom metrics
-            benchmark = ValidityBenchmark(
-                charge_weight=config.get("charge_weight", 0.25),
-                distance_weight=config.get("distance_weight", 0.25),
-                # coordination_weight=config.get("coordination_weight", 0.25),
-                plausibility_weight=config.get("plausibility_weight", 0.25),
-                name=config.get("name", "ValidityBenchmark"),
-                description=config.get("description"),
-                metadata={
-                    "version": config.get("version", "0.1.0"),
-                    "metric_configs": metric_configs,
-                },
-            )
-
-        elif benchmark_type == "stability":
-            # Create multi-MLIP stability benchmark from config
-            benchmark = MultiMLIPStabilityBenchmark(
-                config=config,
-                name=config.get("name", "MultiMLIPStabilityBenchmark"),
-                description=config.get("description"),
-                metadata={
-                    "version": config.get("version", "0.1.0"),
-                    **(config.get("metadata", {})),
-                },
-            )
-
-        elif benchmark_type == "uniqueness":
-            # Create uniqueness benchmark from config
-            benchmark = UniquenessBenchmark(
-                fingerprint_method=config.get("fingerprint_method", "bawl"),
-                name=config.get("name", "UniquenessBenchmark"),
-                description=config.get("description"),
-                metadata={
-                    "version": config.get("version", "0.1.0"),
-                    **(config.get("metadata", {})),
-                },
-            )
-
-        elif benchmark_type == "novelty":
-            # Create novelty benchmark from config
-            benchmark = NoveltyBenchmark(
-                reference_dataset=config.get(
-                    "reference_dataset", "LeMaterial/LeMat-Bulk"
-                ),
-                reference_config=config.get("reference_config", "compatible_pbe"),
-                fingerprint_method=config.get("fingerprint_method", "bawl"),
-                cache_reference=config.get("cache_reference", True),
-                max_reference_size=config.get("max_reference_size", None),
-                name=config.get("name", "NoveltyBenchmark"),
-                description=config.get("description"),
-                metadata={
-                    "version": config.get("version", "0.1.0"),
-                    **(config.get("metadata", {})),
-                },
-            )
-
-        elif benchmark_type == "hhi":
-            # Create HHI benchmark from config
-            benchmark = HHIBenchmark(
-                production_weight=config.get("production_weight", 0.25),
-                reserve_weight=config.get("reserve_weight", 0.75),
-                scale_to_0_10=config.get("scale_to_0_10", True),
-                name=config.get("name", "HHIBenchmark"),
-                description=config.get("description"),
-                metadata={
-                    "version": config.get("version", "0.1.0"),
-                    **(config.get("metadata", {})),
-                },
-            )
-
-        elif benchmark_type == "sun":
-            # Create SUN benchmark from config
-            benchmark = SUNBenchmark(
-                stability_threshold=config.get("stability_threshold", 0.0),
-                metastability_threshold=config.get("metastability_threshold", 0.1),
-                reference_dataset=config.get(
-                    "reference_dataset", "LeMaterial/LeMat-Bulk"
-                ),
-                reference_config=config.get("reference_config", "compatible_pbe"),
-                fingerprint_method=config.get("fingerprint_method", "bawl"),
-                cache_reference=config.get("cache_reference", True),
-                max_reference_size=config.get("max_reference_size", None),
-                include_metasun=config.get("include_metasun", True),
-                name=config.get("name", "SUNBenchmark"),
-                description=config.get("description"),
-                metadata={
-                    "version": config.get("version", "0.1.0"),
-                    **(config.get("metadata", {})),
-                },
-            )
+            benchmark = ValidityBenchmark()
 
         elif benchmark_type == "distribution":
-            # Create distribution benchmark from config
-            benchmark = DistributionBenchmark(
-                mlips=config.get("mlips", ["orb", "mace", "uma"]),
-                cache_dir=config.get("cache_dir", "./data"),
-                js_distributions_file=config.get(
-                    "js_distributions_file", "data/lematbulk_jsdistance_distributions.json"
-                ),
-                mmd_values_file=config.get(
-                    "mmd_values_file", "data/lematbulk_mmd_values_15k.pkl"
-                ),
-                name=config.get("name", "DistributionBenchmark"),
-                description=config.get("description"),
-                metadata={
-                    "version": config.get("version", "0.1.0"),
-                    **(config.get("metadata", {})),
-                },
-            )
+            benchmark = DistributionBenchmark()
 
         elif benchmark_type == "diversity":
-            # Create diversity benchmark from config
-            benchmark = DiversityBenchmark(
-                name=config.get("name", "DiversityBenchmark"),
-                description=config.get("description"),
-                metadata={
-                    "version": config.get("version", "0.1.0"),
-                    **(config.get("metadata", {})),
-                },
+            benchmark = DiversityBenchmark()
+
+        elif benchmark_type == "hhi":
+            benchmark = HHIBenchmark()
+
+        elif benchmark_type == "multi_mlip_stability":
+            benchmark = MultiMLIPStabilityBenchmark()
+
+        # Enhanced benchmarks using new implementations
+        elif benchmark_type == "uniqueness_new":
+            # Extract configuration parameters
+            fingerprint_source = config.get("fingerprint_source", "auto")
+            symprec = config.get("symprec", 0.01)
+            angle_tolerance = config.get("angle_tolerance", 5.0)
+
+            benchmark = UniquenessNewBenchmark(
+                fingerprint_source=fingerprint_source,
+                symprec=symprec,
+                angle_tolerance=angle_tolerance,
+            )
+
+        elif benchmark_type == "novelty_new":
+            # Extract configuration parameters
+            fingerprint_source = config.get("fingerprint_source", "auto")
+            reference_fingerprints_path = config.get("reference_fingerprints_path")
+            reference_dataset_name = config.get("reference_dataset_name", "LeMat-Bulk")
+            symprec = config.get("symprec", 0.01)
+            angle_tolerance = config.get("angle_tolerance", 5.0)
+            fallback_to_computation = config.get("fallback_to_computation", True)
+
+            benchmark = AugmentedNoveltyBenchmark(
+                fingerprint_source=fingerprint_source,
+                reference_fingerprints_path=reference_fingerprints_path,
+                reference_dataset_name=reference_dataset_name,
+                symprec=symprec,
+                angle_tolerance=angle_tolerance,
+                fallback_to_computation=fallback_to_computation,
+            )
+
+        elif benchmark_type == "sun_new":
+            # Extract configuration parameters
+            include_metasun = config.get("include_metasun", True)
+            stability_threshold = config.get("stability_threshold", 0.0)
+            metastability_threshold = config.get("metastability_threshold", 0.1)
+            fingerprint_source = config.get("fingerprint_source", "auto")
+            reference_fingerprints_path = config.get("reference_fingerprints_path")
+            reference_dataset_name = config.get("reference_dataset_name", "LeMat-Bulk")
+            symprec = config.get("symprec", 0.01)
+            angle_tolerance = config.get("angle_tolerance", 5.0)
+            fallback_to_computation = config.get("fallback_to_computation", True)
+
+            benchmark = SUNNewBenchmark(
+                stability_threshold=stability_threshold,
+                metastability_threshold=metastability_threshold,
+                reference_fingerprints_path=reference_fingerprints_path,
+                reference_dataset_name=reference_dataset_name,
+                fingerprint_source=fingerprint_source,
+                symprec=symprec,
+                angle_tolerance=angle_tolerance,
+                fallback_to_computation=fallback_to_computation,
+                include_metasun=include_metasun,
             )
 
         else:
-            raise ValueError(
-                f"Unknown benchmark type: {benchmark_type}. "
-                "Available types: validity, stability, uniqueness, novelty, hhi, sun, diversity, distribution"
-            )
+            logger.error(f"Unknown benchmark type: {benchmark_type}")
+            return
 
         # Run benchmark
-        logger.info("Running benchmark evaluation")
-        results = benchmark.evaluate(structures=structures)
+        logger.info(f"Running {benchmark_type} benchmark on {len(structures)} structures")
+        results = benchmark.evaluate(structures)
 
         # Save results
         logger.info(f"Saving results to {output}")
-        save_results(results.__dict__, output)
-
-        click.echo("\nBenchmark Results Summary:")
-        for score_name, score in results.final_scores.items():
-            click.echo(f"{score_name}: {score:.3f}")
+        
+        # Convert results to dictionary format for saving
+        results_dict = {
+            "benchmark_type": benchmark_type,
+            "config": config,
+            "final_scores": results.final_scores,
+            "evaluator_results": results.evaluator_results,
+            "metadata": results.metadata,
+        }
+        
+        save_results(results_dict, output)
+        
+        logger.info("Benchmark completed successfully")
+        
+        # Print summary
+        print(f"\n{'='*50}")
+        print("Benchmark Results Summary")
+        print(f"{'='*50}")
+        print(f"Benchmark Type: {benchmark_type}")
+        print(f"Structures Evaluated: {len(structures)}")
+        print("Final Scores:")
+        for metric, score in results.final_scores.items():
+            print(f"  {metric}: {score:.4f}")
+        print(f"Results saved to: {output}")
 
     except Exception as e:
-        logger.error("Benchmark execution failed", exc_info=True)
-        raise click.ClickException(str(e))
+        logger.error(f"Error running benchmark: {e}")
+        raise
 
 
 if __name__ == "__main__":
