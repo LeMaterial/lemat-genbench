@@ -1,30 +1,37 @@
-"""Validity benchmark for material structures.
+"""Fixed validity benchmark for material structures.
 
 This module implements a benchmark that evaluates the validity of
 generated material structures using fundamental validity criteria.
+The benchmark reports ratios and counts for interpretability.
 """
 
 from typing import Any, Dict
 
 from lemat_genbench.benchmarks.base import BaseBenchmark
-from lemat_genbench.evaluator import EvaluationResult, EvaluatorConfig
+from lemat_genbench.evaluator import EvaluatorConfig
 from lemat_genbench.metrics.validity_metrics import (
     ChargeNeutralityMetric,
-    CompositeValidityMetric,
     MinimumInteratomicDistanceMetric,
+    OverallValidityMetric,
     PhysicalPlausibilityMetric,
 )
 
 
 class ValidityBenchmark(BaseBenchmark):
-    """Benchmark for evaluating the validity of generated material structures."""
+    """Benchmark for evaluating the validity of generated material structures.
+    
+    Reports validity ratios for each individual metric and overall validity.
+    Overall validity requires passing ALL individual checks.
+    """
 
     def __init__(
         self,
-        charge_weight: float = 0.25,
-        distance_weight: float = 0.25,
-        # coordination_weight: float = 0.25,
-        plausibility_weight: float = 0.25,
+        charge_tolerance: float = 0.1,
+        distance_scaling: float = 0.5,
+        min_density: float = 1.0,
+        max_density: float = 25.0,
+        check_format: bool = True,
+        check_symmetry: bool = True,
         name: str = "ValidityBenchmark",
         description: str | None = None,
         metadata: Dict[str, Any] | None = None,
@@ -33,151 +40,135 @@ class ValidityBenchmark(BaseBenchmark):
             description = (
                 "Evaluates the validity of crystal structures based on physical and "
                 "chemical principles including charge neutrality, interatomic distances, "
-                "coordination environments, and physical plausibility."
+                "and physical plausibility. Reports ratios and counts for interpretability."
             )
 
-        # Initialize metrics
-        charge_metric = ChargeNeutralityMetric()
-        distance_metric = MinimumInteratomicDistanceMetric()
-        # coordination_metric = CoordinationEnvironmentMetric()
-        plausibility_metric = PhysicalPlausibilityMetric()
+        # Initialize individual metrics
+        charge_metric = ChargeNeutralityMetric(tolerance=charge_tolerance)
+        distance_metric = MinimumInteratomicDistanceMetric(scaling_factor=distance_scaling)
+        plausibility_metric = PhysicalPlausibilityMetric(
+            min_density=min_density,
+            max_density=max_density,
+            check_format=check_format,
+            check_symmetry=check_symmetry,
+        )
+        overall_metric = OverallValidityMetric(
+            charge_tolerance=charge_tolerance,
+            distance_scaling=distance_scaling,
+            min_density=min_density,
+            max_density=max_density,
+            check_format=check_format,
+            check_symmetry=check_symmetry,
+        )
 
-        # Set up evaluators - pass the metric objects, not their configs
+        # Set up evaluators - each metric gets its own evaluator
         evaluator_configs = {
             "charge_neutrality": EvaluatorConfig(
                 name="Charge Neutrality",
                 description="Evaluates charge balance in structures",
-                metrics={
-                    "charge_neutrality": charge_metric
-                },  # Pass metric object, not config
+                metrics={"charge_neutrality": charge_metric},
                 weights={"charge_neutrality": 1.0},
                 aggregation_method="weighted_mean",
             ),
             "interatomic_distance": EvaluatorConfig(
                 name="Interatomic Distance",
                 description="Evaluates minimum distances between atoms",
-                metrics={
-                    "min_distance": distance_metric
-                },  # Pass metric object, not config
+                metrics={"min_distance": distance_metric},
                 weights={"min_distance": 1.0},
                 aggregation_method="weighted_mean",
             ),
-            # "coordination_environment": EvaluatorConfig(
-            #     name="Coordination Environment",
-            #     description="Evaluates chemical bonding environments",
-            #     metrics={
-            #         "coordination": coordination_metric
-            #     },  # Pass metric object, not config
-            #     weights={"coordination": 1.0},
-            #     aggregation_method="weighted_mean",
-            # ),
             "physical_plausibility": EvaluatorConfig(
                 name="Physical Plausibility",
-                description="Evaluates basic physical properties",
-                metrics={
-                    "plausibility": plausibility_metric
-                },  # Pass metric object, not config
+                description="Evaluates physical plausibility of structures",
+                metrics={"plausibility": plausibility_metric},
                 weights={"plausibility": 1.0},
                 aggregation_method="weighted_mean",
             ),
             "overall_validity": EvaluatorConfig(
                 name="Overall Validity",
-                description="Combined validity score",
-                metrics={
-                    "composite": CompositeValidityMetric(
-                        metrics={
-                            "charge_neutrality": charge_metric,
-                            "min_distance": distance_metric,
-                            # "coordination": coordination_metric,
-                            "physical_plausibility": plausibility_metric,
-                        },
-                        weights={
-                            "charge_neutrality": charge_weight,
-                            "min_distance": distance_weight,
-                            # "coordination": coordination_weight,
-                            "physical_plausibility": plausibility_weight,
-                        },
-                    )
-                },
-                weights={"composite": 1.0},
+                description="Overall validity requiring all checks to pass",
+                metrics={"overall": overall_metric},
+                weights={"overall": 1.0},
                 aggregation_method="weighted_mean",
             ),
-        }
-
-        # Create benchmark metadata
-        benchmark_metadata = {
-            "version": "0.1.0",
-            "category": "validity",
-            "weights": {
-                "charge_neutrality": charge_weight,
-                "interatomic_distance": distance_weight,
-                # "coordination_environment": coordination_weight,
-                "physical_plausibility": plausibility_weight,
-            },
-            **(metadata or {}),
         }
 
         super().__init__(
             name=name,
             description=description,
             evaluator_configs=evaluator_configs,
-            metadata=benchmark_metadata,
+            metadata=metadata,
         )
 
     def aggregate_evaluator_results(
-        self, evaluator_results: Dict[str, EvaluationResult]
-    ) -> Dict[str, float]:
-        """Aggregate results from multiple evaluators into final scores.
-
-        For the validity benchmark, we use the overall validity score as the
-        primary result, and include individual component scores.
-
-        Parameters
-        ----------
-        evaluator_results : dict[str, EvaluationResult]
-            Results from each evaluator.
-
-        Returns
-        -------
-        dict[str, float]
-            Final aggregated scores.
+        self, evaluator_results: dict[str, dict]
+    ) -> dict[str, float]:
+        """Aggregate results from individual validity evaluators.
+        
+        Returns ratios and counts for each validity check and overall validity.
         """
-        # Extract overall validity score
-        overall_score = evaluator_results.get("overall_validity", {}).get(
-            "combined_value", 0.0
-        )
+        final_scores = {}
+        
+        # Helper function to safely extract metric values
+        def extract_metric_value(evaluator_name: str, metric_key: str, default=0.0):
+            try:
+                evaluator_result = evaluator_results.get(evaluator_name, {})
+                metric_results = evaluator_result.get("metric_results", {})
+                
+                # The metric_results should contain metric objects with .metrics attribute
+                for metric_name, metric_result in metric_results.items():
+                    if hasattr(metric_result, 'metrics'):
+                        return metric_result.metrics.get(metric_key, default)
+                    elif isinstance(metric_result, dict):
+                        return metric_result.get(metric_key, default)
+                return default
+            except Exception:
+                return default
+        
+        # Extract total structures count (should be same for all)
+        total_structures = extract_metric_value("charge_neutrality", "total_structures", 0)
+        if total_structures == 0:
+            total_structures = extract_metric_value("interatomic_distance", "total_structures", 0)
+        if total_structures == 0:
+            total_structures = extract_metric_value("physical_plausibility", "total_structures", 0)
+        if total_structures == 0:
+            total_structures = extract_metric_value("overall_validity", "total_structures", 0)
+        
+        # Extract individual metric results
+        charge_ratio = extract_metric_value("charge_neutrality", "charge_neutral_ratio", 0.0)
+        charge_count = extract_metric_value("charge_neutrality", "charge_neutral_count", 0)
+        avg_charge_deviation = extract_metric_value("charge_neutrality", "avg_charge_deviation", float("nan"))
+        
+        distance_ratio = extract_metric_value("interatomic_distance", "distance_valid_ratio", 0.0)
+        distance_count = extract_metric_value("interatomic_distance", "distance_valid_count", 0)
+        
+        plausibility_ratio = extract_metric_value("physical_plausibility", "plausibility_valid_ratio", 0.0)
+        plausibility_count = extract_metric_value("physical_plausibility", "plausibility_valid_count", 0)
+        
+        overall_ratio = extract_metric_value("overall_validity", "overall_valid_ratio", 0.0)
+        overall_count = extract_metric_value("overall_validity", "overall_valid_count", 0)
+        
+        # Compile final scores
+        final_scores.update({
+            # Individual metric ratios and counts
+            "charge_neutrality_ratio": charge_ratio,
+            "charge_neutrality_count": int(charge_count),
+            "avg_charge_deviation": avg_charge_deviation,
+            
+            "interatomic_distance_ratio": distance_ratio,
+            "interatomic_distance_count": int(distance_count),
+            
+            "physical_plausibility_ratio": plausibility_ratio,
+            "physical_plausibility_count": int(plausibility_count),
+            
+            # Overall validity (intersection of all)
+            "overall_validity_ratio": overall_ratio,
+            "overall_validity_count": int(overall_count),
+            
+            # Summary statistics
+            "total_structures": int(total_structures),
+            "any_invalid_count": int(total_structures - overall_count) if total_structures > 0 else 0,
+            "any_invalid_ratio": (total_structures - overall_count) / total_structures if total_structures > 0 else 0.0,
+        })
 
-        # Extract individual component scores
-        charge_score = evaluator_results.get("charge_neutrality", {}).get(
-            "combined_value", 0.0
-        )
-        distance_score = evaluator_results.get("interatomic_distance", {}).get(
-            "combined_value", 0.0
-        )
-        # coordination_score = evaluator_results.get("coordination_environment", {}).get(
-        #     "combined_value", 0.0
-        # )
-        plausibility_score = evaluator_results.get("physical_plausibility", {}).get(
-            "combined_value", 0.0
-        )
-
-        # Get the number of structures with perfect validity
-        overall_validity_ratio = evaluator_results.get("overall_validity", {})
-        overall_validity_ratio = overall_validity_ratio.get("metric_results", {})
-        overall_validity_ratio = overall_validity_ratio.get("composite", {})
-        if isinstance(overall_validity_ratio, dict):
-            overall_validity_ratio = overall_validity_ratio.get("metrics", {})
-        else:
-            overall_validity_ratio = overall_validity_ratio.metrics
-        overall_validity_ratio = overall_validity_ratio.get(
-            "valid_structures_ratio", 0.0
-        )
-
-        return {
-            "overall_validity_score": overall_score,
-            "charge_neutrality_score": charge_score,
-            "interatomic_distance_score": distance_score,
-            # "coordination_environment_score": coordination_score,
-            "physical_plausibility_score": plausibility_score,
-            "valid_structures_ratio": overall_validity_ratio,
-        }
+        return final_scores

@@ -1,24 +1,9 @@
 type: validity
-
-# Weights for different validity components
-charge_weight: 0.25
-distance_weight: 0.25
-# coordination_weight: 0.25
-plausibility_weight: 0.25
-
-# Additional configuration options
-description: "Fundamental Validity Benchmark for Materials Generation"
-version: "0.1.0"
-
-# Metric-specific configurations
-metric_configs:
-  charge_neutrality:
-    tolerance: 0.1
-    strict: false
-
-  interatomic_distance:
-    scaling_factor: 0.5
-
-  coordination_environment:
-    nn_method: "crystalnn"
-    tolerance: 0.2
+description: "Validity Benchmark for Materials Generation"
+version: "0.2.0"
+charge_tolerance: 0.1
+distance_scaling: 0.5
+min_density: 1.0
+max_density: 25.0
+check_format: true
+check_symmetry: true
