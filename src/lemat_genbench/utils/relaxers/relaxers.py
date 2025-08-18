@@ -86,7 +86,7 @@ class MLIPRelaxer(BaseVASPRelaxer):
             Additional parameters (fmax, steps, etc.)
         """
         self.calculator = calculator
-        self.fmax = kwargs.get("fmax", 0.1)
+        self.fmax = kwargs.get("fmax", 0.02)
         self.steps = kwargs.get("steps", 50)
 
     def relax(self, structure: Structure, relax: bool = True) -> RelaxationResult:

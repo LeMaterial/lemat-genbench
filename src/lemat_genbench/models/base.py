@@ -126,7 +126,7 @@ class BaseMLIPCalculator(ABC):
         pass
 
     def relax_structure(
-        self, structure: Structure, fmax: float = 0.02, steps: int = 500
+        self, structure: Structure, fmax: float = 0.02, steps: int = 50
     ) -> Tuple[Structure, CalculationResult]:
         """Relax a structure using the MLIP.
 

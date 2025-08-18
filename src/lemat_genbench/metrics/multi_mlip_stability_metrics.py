@@ -283,7 +283,9 @@ class StabilityMetric(BaseMetric):
                     mlip_stable_ratio = mlip_stable_count / len(mlip_values)
 
                     metrics[f"stable_ratio_{mlip_name}"] = mlip_stable_ratio
-                    metrics[f"stable_count_{mlip_name}"] = int(mlip_stable_count)  # Add count
+                    metrics[f"stable_count_{mlip_name}"] = int(
+                        mlip_stable_count
+                    )  # Add count
                     metrics[f"mean_e_above_hull_{mlip_name}"] = np.mean(mlip_valid)
                     metrics[f"std_e_above_hull_{mlip_name}"] = np.std(mlip_valid)
                     metrics[f"n_valid_structures_{mlip_name}"] = len(mlip_valid)
@@ -419,7 +421,9 @@ class MetastabilityMetric(BaseMetric):
                     mlip_metastable_ratio = mlip_metastable_count / len(mlip_values)
 
                     metrics[f"metastable_ratio_{mlip_name}"] = mlip_metastable_ratio
-                    metrics[f"metastable_count_{mlip_name}"] = int(mlip_metastable_count)  # Add count
+                    metrics[f"metastable_count_{mlip_name}"] = int(
+                        mlip_metastable_count
+                    )  # Add count
                     metrics[f"mean_e_above_hull_{mlip_name}"] = np.mean(mlip_valid)
                     metrics[f"std_e_above_hull_{mlip_name}"] = np.std(mlip_valid)
 
