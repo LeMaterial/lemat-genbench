@@ -589,10 +589,13 @@ def run_remaining_preprocessors(
         start_time = time.time()
 
         # Configure MLIP models
+        device = (
+            torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+        )
         mlip_configs = {
-            "orb": {"model_type": "orb_v3_conservative_inf_omat", "device": "cuda"},
-            "mace": {"model_type": "mp", "device": "cuda"},
-            "uma": {"task": "omat", "device": "cuda"},
+            "orb": {"model_type": "orb_v3_conservative_inf_omat", "device": device},
+            "mace": {"model_type": "mp", "device": device},
+            "uma": {"task": "omat", "device": device},
         }
 
         # Determine what to extract based on requirements
