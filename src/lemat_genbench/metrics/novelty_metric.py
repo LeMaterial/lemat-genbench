@@ -11,10 +11,15 @@ from typing import Any, Dict, List, Optional, Set
 
 import numpy as np
 from datasets import load_dataset
-from material_hasher.hasher.bawl import BAWLHasher
-from pymatgen.analysis.local_env import EconNN
-from pymatgen.core.structure import Structure
+from pymatgen.core import Structure
+from tqdm import tqdm
 
+from lemat_genbench.fingerprinting.encode_compositions import (
+    filter_df,
+    get_all_compositions,
+    lematbulk_item_to_structure,
+)
+from lemat_genbench.fingerprinting.utils import get_fingerprint, get_fingerprinter
 from lemat_genbench.metrics.base import BaseMetric, MetricConfig
 from lemat_genbench.utils.logging import logger
 
@@ -96,6 +101,7 @@ class NoveltyMetric(BaseMetric):
         description: str | None = None,
         lower_is_better: bool = False,
         n_jobs: int = 1,
+        verbose: bool = False,
     ):
         super().__init__(
             name=name or "Novelty",
@@ -103,6 +109,7 @@ class NoveltyMetric(BaseMetric):
             or "Measures fraction of structures not present in reference dataset",
             lower_is_better=lower_is_better,
             n_jobs=n_jobs,
+            verbose=verbose,
         )
 
         self.config = NoveltyConfig(
@@ -121,46 +128,37 @@ class NoveltyMetric(BaseMetric):
         self._init_fingerprinter()
 
         # Cache for reference fingerprints
-        self._reference_fingerprints: Optional[Set[str]] = None
+        self._dataset_information: Optional[Set[str]] = None
         self._reference_loaded = False
 
     def _init_fingerprinter(self) -> None:
         """Initialize the fingerprinting method."""
-        if self.config.fingerprint_method.lower() == "bawl":
-            self.fingerprinter = BAWLHasher(
-                graphing_algorithm="WL",
-                bonding_algorithm=EconNN,
-                bonding_kwargs={
-                    "tol": 0.2,
-                    "cutoff": 10,
-                    "use_fictive_radius": True,
-                },
-                include_composition=True,
-                symmetry_labeling="SPGLib",
-                shorten_hash=False,
-            )
-        else:
+
+        try:
+            self.fingerprinter = get_fingerprinter(self.config.fingerprint_method)
+        except ValueError as e:
             raise ValueError(
                 f"Unknown fingerprint method: {self.config.fingerprint_method}. "
-                "Currently supported: 'bawl'"
-            )
+                "Currently supported: 'bawl', 'short-bawl', 'structure-matcher'"
+            ) from e
 
-    def _load_reference_dataset(self) -> Set[str]:
+    def _load_reference_dataset(self) -> dict[str, Any]:
         """Load and fingerprint the reference dataset.
 
         Returns
         -------
-        Set[str]
-            Set of fingerprints from the reference dataset.
+        dict[str, Any]
+            Dictionary containing reference dataset information.
         """
-        if self._reference_fingerprints is not None and self._reference_loaded:
-            return self._reference_fingerprints
+        if self._dataset_information is not None and self._reference_loaded:
+            return self._dataset_information
 
         logger.info(
             f"Loading reference dataset: {self.config.reference_dataset} "
             f"(config: {self.config.reference_config})"
         )
 
+        dataset_information = {}
         try:
             # Load the dataset
             dataset = load_dataset(
@@ -178,20 +176,62 @@ class NoveltyMetric(BaseMetric):
             logger.info(f"Loaded {len(dataset)} structures from reference dataset")
 
             # Check if fingerprints are already available in the dataset
-            if "entalpic_fingerprint" in dataset.column_names:
+            if (
+                "entalpic_fingerprint" in dataset.column_names
+                and "bawl" in self.config.fingerprint_method.lower()
+            ):
                 logger.info("Using pre-computed BAWL fingerprints from dataset")
                 fingerprints = set(dataset["entalpic_fingerprint"])
                 # Filter out any None or empty fingerprints
                 fingerprints = {fp for fp in fingerprints if fp and fp.strip()}
-            else:
+                if "short-bawl" in self.config.fingerprint_method.lower():
+                    fingerprints = {
+                        f"{fp.split('_')[0]}_{fp.split('_')[2]}" for fp in fingerprints
+                    }
+
+                dataset_information["fingerprints"] = fingerprints
+
+                logger.info(
+                    f"Loaded {len(fingerprints)} unique fingerprints from reference dataset"
+                )
+
+            elif self.config.fingerprint_method.lower() in ["structure-matcher"]:
+                df = dataset.select_columns(
+                    ["immutable_id", "chemical_formula_descriptive"]
+                ).to_pandas()
+                df = df.set_index("immutable_id")
+                df["index_number"] = np.arange(len(df))
+
+                dataset = load_dataset(
+                    "LeMaterial/LeMat-Bulk",
+                    "compatible_pbe",
+                    split="train",
+                    columns=[
+                        "elements",
+                        "immutable_id",
+                        "chemical_formula_descriptive",
+                        "energy",
+                        "species_at_sites",
+                        "cartesian_site_positions",
+                        "lattice_vectors",
+                    ],
+                )
+
+                all_compositions = get_all_compositions()
+
+                dataset_information["dataset_dataframe"] = df
+                dataset_information["all_compositions"] = all_compositions
+                dataset_information["dataset"] = dataset
+
+            elif hasattr(self.fingerprinter, "get_material_hash"):
                 logger.info("Computing fingerprints for reference dataset structures")
                 fingerprints = set()
 
-                for i, row in enumerate(dataset):
+                for i, row in tqdm(enumerate(dataset)):
                     try:
                         # Convert dataset row to pymatgen Structure
                         structure = self._row_to_structure(row)
-                        fingerprint = self.fingerprinter.get_material_hash(structure)
+                        fingerprint = get_fingerprint(structure, self.fingerprinter)
                         if fingerprint:
                             fingerprints.add(fingerprint)
                     except Exception as e:
@@ -204,15 +244,17 @@ class NoveltyMetric(BaseMetric):
                             f"Processed {i + 1}/{len(dataset)} reference structures"
                         )
 
-            logger.info(
-                f"Loaded {len(fingerprints)} unique fingerprints from reference dataset"
-            )
+                dataset_information["fingerprints"] = fingerprints
+
+                logger.info(
+                    f"Loaded {len(fingerprints)} unique fingerprints from reference dataset"
+                )
 
             if self.config.cache_reference:
-                self._reference_fingerprints = fingerprints
+                self._dataset_information = dataset_information
                 self._reference_loaded = True
 
-            return fingerprints
+            return dataset_information
 
         except Exception as e:
             logger.error(f"Failed to load reference dataset: {str(e)}")
@@ -251,18 +293,20 @@ class NoveltyMetric(BaseMetric):
     def _get_compute_attributes(self) -> Dict[str, Any]:
         """Get the attributes for the compute_structure method."""
         # Load reference fingerprints once
-        reference_fingerprints = self._load_reference_dataset()
+        dataset_information = self._load_reference_dataset()
 
         return {
-            "reference_fingerprints": reference_fingerprints,
+            "dataset_information": dataset_information,
             "fingerprinter": self.fingerprinter,
+            "verbose": self.verbose,
         }
 
     @staticmethod
     def compute_structure(
         structure: Structure,
-        reference_fingerprints: Set[str],
+        dataset_information: dict[str, Any],
         fingerprinter: Any,
+        verbose: bool = False,
     ) -> float:
         """Check if a structure is novel compared to the reference dataset.
 
@@ -270,10 +314,12 @@ class NoveltyMetric(BaseMetric):
         ----------
         structure : Structure
             A pymatgen Structure object to evaluate.
-        reference_fingerprints : Set[str]
-            Set of fingerprints from the reference dataset.
+        dataset_information : dict[str, Any]
+            Dictionary of fingerprints from the reference dataset.
         fingerprinter : Any
             Fingerprinting method object.
+        verbose: bool
+            If True, print detailed information about the novelty check process.
 
         Returns
         -------
@@ -281,15 +327,39 @@ class NoveltyMetric(BaseMetric):
             1.0 if the structure is novel (not in reference), 0.0 otherwise.
         """
         try:
-            # Get fingerprint for the structure
-            fingerprint = fingerprinter.get_material_hash(structure)
+            # Get fingerprint for the structure, using cached value if available
+            fingerprint = get_fingerprint(structure, fingerprinter)
 
-            if not fingerprint:
-                logger.warning("Could not compute fingerprint for structure")
-                return float("nan")
+            if hasattr(fingerprinter, "get_material_hash"):
+                if not fingerprint:
+                    logger.warning("Could not compute fingerprint for structure")
+                    return float("nan")
 
-            # Check if fingerprint is in reference set
-            is_novel = fingerprint not in reference_fingerprints
+                # Check if fingerprint is in reference set
+                is_novel = fingerprint not in dataset_information["fingerprints"]
+
+            else:
+                # For comparison-based matchers
+                df_filtered = filter_df(
+                    dataset_information["dataset_dataframe"],
+                    dataset_information["all_compositions"],
+                    structure,
+                )
+                dataset_select = dataset_information["dataset"].select(
+                    dataset_information["dataset_dataframe"].loc[df_filtered.index][
+                        "index_number"
+                    ]
+                )
+                is_equivalent = False
+
+                for item in tqdm(dataset_select, disable=not verbose):
+                    ref_structure = lematbulk_item_to_structure(item)
+                    _is_equivalent = fingerprinter.is_equivalent(
+                        structure, ref_structure
+                    )
+                    is_equivalent = is_equivalent or _is_equivalent
+
+                is_novel = not is_equivalent
 
             return 1.0 if is_novel else 0.0
 

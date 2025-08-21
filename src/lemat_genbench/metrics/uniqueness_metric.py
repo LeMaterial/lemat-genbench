@@ -9,9 +9,7 @@ import warnings
 from dataclasses import dataclass
 from typing import Any, Dict, List
 
-import ot
 from pymatgen.core import Structure
-from scipy.spatial.distance import cdist
 from tqdm import tqdm
 
 from lemat_genbench.fingerprinting.utils import get_fingerprint, get_fingerprinter
@@ -23,33 +21,6 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings(
     "ignore", category=DeprecationWarning, message=r".*__array__.*copy.*"
 )
-
-
-def emd_distance(pdd_Q, pdd_S):
-    weights_S = pdd_S[:, 0].copy()  # First column contains the weights
-    distances_S = pdd_S[
-        :, 1:
-    ].copy()  # The rest of the columns are the distance vectors
-
-    # For structure Q
-    weights_Q = pdd_Q[:, 0].copy()
-    distances_Q = pdd_Q[:, 1:].copy()
-
-    # --- Step 3: Compute the cost matrix M ---
-    # The cost matrix M[i, j] stores the cost of moving "earth" from row i of S
-    # to row j of Q. The paper specifies using the L-infinity distance.
-    # L-infinity norm is also called the Chebyshev distance.
-
-    # cdist computes the distance between each pair of rows from distances_S and distances_Q
-    # metric='chebyshev' corresponds to the L-infinity norm: max(|x_i - y_i|)
-    M = cdist(distances_S, distances_Q, metric="chebyshev")
-
-    # --- Step 4: Compute the Earth Mover's Distance ---
-    # ot.emd2 computes the EMD value given the weights and the cost matrix.
-    # The '2' in emd2 signifies that it returns only the final distance value (cost).
-    emd_distance = ot.emd2(weights_S, weights_Q, M)
-
-    return emd_distance
 
 
 @dataclass
@@ -125,7 +96,7 @@ class UniquenessMetric(BaseMetric):
         except ValueError as e:
             raise ValueError(
                 f"Unknown fingerprint method: {self.config.fingerprint_method}. "
-                "Currently supported: 'bawl', 'short-bawl', 'structure-matcher', 'pdd'"
+                "Currently supported: 'bawl', 'short-bawl', 'structure-matcher'"
             ) from e
 
     def _get_compute_attributes(self) -> Dict[str, Any]:
@@ -188,41 +159,6 @@ class UniquenessMetric(BaseMetric):
         compute_args = self._get_compute_attributes()
 
         try:
-            if "pdd" in self.config.fingerprint_method.lower():
-                fingerprinter = compute_args["fingerprinter"]
-                all_hashes = [
-                    fingerprinter.get_material_hash(structure)
-                    for structure in structures
-                ]
-                threshold = 0.15
-                count_unique = 0
-
-                individual_values = []
-                for i, structure1 in enumerate(all_hashes):
-                    is_unique = True
-                    min_distance = float("inf")
-                    for j, structure2 in enumerate(all_hashes):
-                        if i < j and structure2.shape[0] == structure1.shape[0]:
-                            distance = emd_distance(structure1, structure2)
-                            if distance <= threshold:
-                                is_unique = False
-                            min_distance = min(min_distance, distance)
-                    individual_values.append(min_distance)
-                    if is_unique:
-                        count_unique += 1
-
-                return MetricResult(
-                    metrics={self.name: count_unique / len(structures)},
-                    primary_metric=self.name,
-                    uncertainties={},
-                    config=self.config,
-                    computation_time=time.time() - start_time,
-                    n_structures=len(structures),
-                    individual_values=individual_values,
-                    failed_indices=failed_indices,
-                    warnings=warnings,
-                )
-
             if "structure-matcher" in self.config.fingerprint_method.lower():
                 fingerprinter = compute_args["fingerprinter"]
                 count_unique = 0
