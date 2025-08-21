@@ -184,7 +184,8 @@ class NoveltyMetric(BaseMetric):
                 fingerprints = set(dataset["entalpic_fingerprint"])
                 # Filter out any None or empty fingerprints
                 fingerprints = {fp for fp in fingerprints if fp and fp.strip()}
-                if "short-bawl" in self.config.fingerprint_method.lower():
+
+                if "short" in self.config.fingerprint_method.lower():
                     fingerprints = {
                         f"{fp.split('_')[0]}_{fp.split('_')[2]}" for fp in fingerprints
                     }
