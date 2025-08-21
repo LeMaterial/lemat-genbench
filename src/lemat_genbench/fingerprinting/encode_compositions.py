@@ -15,19 +15,19 @@ def one_hot_encode_composition(elements):
     return one_hot
 
 
-def process_chunk(chunk):
-    one_hot_compositions = []
-    for elements in tqdm(chunk):
-        one_hot_compositions.append(one_hot_encode_composition(elements))
-    return one_hot_compositions
-
-
 dataset = load_dataset(
     "LeMaterial/LeMat-Bulk",
     "compatible_pbe",
     split="train",
     columns=["elements", "immutable_id", "chemical_formula_descriptive", "energy"],
 )
+
+
+def process_chunk(chunk):
+    one_hot_compositions = []
+    for elements in tqdm(chunk):
+        one_hot_compositions.append(one_hot_encode_composition(elements))
+    return one_hot_compositions
 
 
 def lematbulk_item_to_structure(item: dict) -> Structure:
@@ -59,7 +59,7 @@ def get_all_compositions(num_processes=1):
     df = df.set_index("immutable_id")
 
     try:
-        all_compositions = np.load("data/all_compositions.npy")
+        all_compositions = np.load("data/all_compositions.npz")
     except FileNotFoundError:
         elements_list = df["elements"].tolist()
         chunk_size = len(elements_list) // num_processes
@@ -77,7 +77,6 @@ def get_all_compositions(num_processes=1):
                 )
             )
 
-        breakpoint()
         all_compositions = np.concatenate(results)
         all_compositions = csr_matrix(all_compositions)
         scipy.sparse.save_npz("data/all_compositions.npz", all_compositions)
@@ -85,7 +84,7 @@ def get_all_compositions(num_processes=1):
     return all_compositions
 
 
-all_compositions = get_all_compositions()
+all_compositions = get_all_compositions(num_processes=1)
 
 
 def filter_df(df, all_compositions, structure):
