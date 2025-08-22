@@ -784,7 +784,7 @@ def save_results(
 ):
     """Save benchmark results to JSON file."""
     # Create results directory
-    results_dir = Path(__file__).parent.parent / "results"
+    results_dir = Path(__file__).parent.parent / "results_final"
     results_dir.mkdir(exist_ok=True)
 
     # Create timestamp
