@@ -478,7 +478,7 @@ class PhysicalPlausibilityConfig(MetricConfig):
 
     Parameters
     ----------
-    min_density : float, default=1.0
+    min_density : float, default=0.01
         Minimum allowed density in g/cm³.
     max_density : float, default=25.0
         Maximum allowed density in g/cm³.
@@ -488,7 +488,7 @@ class PhysicalPlausibilityConfig(MetricConfig):
         Whether to check space group validity.
     """
 
-    min_density: float = 1.0
+    min_density: float = 0.01
     max_density: float = 25.0
     check_format: bool = True
     check_symmetry: bool = True
@@ -499,7 +499,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
     def __init__(
         self,
-        min_density: float = 1.0,
+        min_density: float = 0.01,
         max_density: float = 25.0,
         check_format: bool = True,
         check_symmetry: bool = True,
@@ -544,7 +544,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
         float
             1.0 if structure passes all plausibility checks, 0.0 otherwise.
         """
-        min_density = compute_args.get("min_density", 1.0)
+        min_density = compute_args.get("min_density", 0.01)
         max_density = compute_args.get("max_density", 25.0)
         check_format = compute_args.get("check_format", True)
         check_symmetry = compute_args.get("check_symmetry", True)
@@ -665,7 +665,7 @@ class OverallValidityMetric(BaseMetric):
         self,
         charge_tolerance: float = 0.1,
         distance_scaling: float = 0.5,
-        min_density: float = 1.0,
+        min_density: float = 0.01,
         max_density: float = 25.0,
         check_format: bool = True,
         check_symmetry: bool = True,
@@ -719,7 +719,7 @@ class OverallValidityMetric(BaseMetric):
         # Extract parameters
         charge_tolerance = compute_args.get("charge_tolerance", 0.1)
         distance_scaling = compute_args.get("distance_scaling", 0.5)
-        min_density = compute_args.get("min_density", 1.0)
+        min_density = compute_args.get("min_density", 0.01)
         max_density = compute_args.get("max_density", 25.0)
         check_format = compute_args.get("check_format", True)
         check_symmetry = compute_args.get("check_symmetry", True)

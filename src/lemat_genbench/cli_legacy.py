@@ -82,7 +82,7 @@ def load_benchmark_config(config_name: str) -> dict:
             # Individual metric configurations - no weights needed
             "charge_tolerance": 0.1,
             "distance_scaling": 0.5,
-            "min_density": 1.0,
+            "min_density": 0.01,
             "max_density": 25.0,
             "check_format": True,
             "check_symmetry": True,
@@ -288,7 +288,7 @@ def main(input: str, config_name: str, output: str):
             # Extract validity parameters (no weights needed in new implementation)
             charge_tolerance = config.get("charge_tolerance", 0.1)
             distance_scaling = config.get("distance_scaling", 0.5)
-            min_density = config.get("min_density", 1.0)
+            min_density = config.get("min_density", 0.01)
             max_density = config.get("max_density", 25.0)
             check_format = config.get("check_format", True)
             check_symmetry = config.get("check_symmetry", True)
