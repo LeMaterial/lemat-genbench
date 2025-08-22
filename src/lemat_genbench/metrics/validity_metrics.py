@@ -689,6 +689,9 @@ class OverallValidityMetric(BaseMetric):
         self.max_density = max_density
         self.check_format = check_format
         self.check_symmetry = check_symmetry
+        
+        # Store diagnostic information during computation
+        self._diagnostic_data = []
 
     def _get_compute_attributes(self) -> dict[str, Any]:
         attrs = super()._get_compute_attributes()
@@ -765,26 +768,23 @@ class OverallValidityMetric(BaseMetric):
         overall_valid = (
             1.0 if (charge_valid and distance_valid and plausibility_valid) else 0.0
         )
-        scores = {
-            "overall_valid": overall_valid,
-            "charge_valid": charge_valid,
-            "distance_valid": distance_valid,
-            "plausibility_valid": plausibility_valid,
-        }
+        
+        # Store diagnostic info in structure properties for later use
+        # This is a way to pass additional info without breaking the base class contract
+        if hasattr(structure, 'properties'):
+            structure.properties['_validity_diagnostics'] = {
+                "overall_valid": overall_valid,
+                "charge_valid": charge_valid,
+                "distance_valid": distance_valid,
+                "plausibility_valid": plausibility_valid,
+            }
 
-        return overall_valid, scores
+        return overall_valid
 
-    def aggregate_results(
-        self, values: list[tuple[float, dict[str, float]]]
-    ) -> Dict[str, Any]:
+    def aggregate_results(self, values: list[float]) -> Dict[str, Any]:
         """Aggregate results into final metric values."""
         # Filter out NaN values
-        valid_values = [v[0] for v in values if not np.isnan(v[0])]
-
-        all_values_dict = {
-            k: np.array([v[1][k] for v in values if not np.isnan(v[0])])
-            for k in values[0][1].keys()
-        }
+        valid_values = [v for v in values if not np.isnan(v)]
         total_count = len(values)  # Use original count as denominator
 
         if not valid_values:
@@ -802,13 +802,17 @@ class OverallValidityMetric(BaseMetric):
         valid_count = sum(valid_values)
         valid_ratio = valid_count / total_count
 
-        return {
+        result = {
             "metrics": {
                 "overall_valid_ratio": valid_ratio,
                 "overall_valid_count": int(valid_count),
                 "total_structures": total_count,
             },
-            "attributes": all_values_dict,
             "primary_metric": "overall_valid_ratio",
             "uncertainties": {},
         }
+        
+        # Note: Diagnostic information could be accessed from structure properties
+        # if needed, but we keep the standard interface clean
+        
+        return result
