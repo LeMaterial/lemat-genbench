@@ -19,6 +19,14 @@ from .crystallographic_analyzer import (
     lematbulk_item_to_structure,
     structure_to_crystallographic_dict,
 )
+from .encode_compositions import (
+    filter_df,
+    get_all_compositions,
+    lematbulk_item_to_structure,
+    one_hot_encode_composition,
+    process_chunk,
+)
+from .utils import get_fingerprint, get_fingerprinter
 
 __all__ = [
     # Crystallographic analysis
@@ -33,4 +41,12 @@ __all__ = [
     "record_to_relaxed_AFLOW_fingerprint",
     "record_to_strict_AFLOW_fingerprint",
     "get_augmented_fingerprint",
+    # Composition encoding
+    "get_all_compositions",
+    "filter_df",
+    "one_hot_encode_composition",
+    "process_chunk",
+    # Fingerprinting utilities
+    "get_fingerprint",
+    "get_fingerprinter",
 ]

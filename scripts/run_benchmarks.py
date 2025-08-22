@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """
-Comprehensive benchmark runner for material generation evaluation using enhanced benchmarks.
+Comprehensive benchmark runner for material generation evaluation.
 
 This script:
 1. Takes a list of CIF files as input
 2. Loads a configuration specifying which benchmark families to run
 3. ALWAYS runs validity benchmark and preprocessor first (mandatory)
 4. Filters to only valid structures for subsequent processing
-5. Runs appropriate preprocessors based on benchmark requirements (including augmented fingerprint)
-6. Computes all specified metrics using enhanced novelty_new, uniqueness_new, and sun_new benchmarks
-7. Saves results to JSON files in the results_new/ directory
+5. Runs appropriate preprocessors based on benchmark requirements (fingerprint for BAWL/short-BAWL)
+6. Computes all specified metrics using original novelty, uniqueness, and sun benchmarks
+7. Saves results to JSON files in the results/ directory
 
 Usage:
-    uv run scripts/run_benchmarks.py --cifs path/to/cifs.txt --config comprehensive_new --name my_run
-    uv run scripts/run_benchmarks.py --cifs path/to/cifs.txt --config comprehensive_new --name test_run
+    uv run scripts/run_benchmarks.py --cifs path/to/cifs.txt --config comprehensive --name my_run
+    uv run scripts/run_benchmarks.py --cifs path/to/cifs.txt --config comprehensive --name test_run
 """
 
 import argparse
@@ -40,14 +40,11 @@ from lemat_genbench.benchmarks.multi_mlip_stability_benchmark import (
     StabilityBenchmark as MultiMLIPStabilityBenchmark,
 )
 from lemat_genbench.benchmarks.novelty_benchmark import NoveltyBenchmark
-from lemat_genbench.benchmarks.novelty_new_benchmark import AugmentedNoveltyBenchmark
-from lemat_genbench.benchmarks.sun_new_benchmark import SUNNewBenchmark
-from lemat_genbench.benchmarks.uniqueness_benchmark import UniquenessBenchmark
-from lemat_genbench.benchmarks.uniqueness_new_benchmark import UniquenessNewBenchmark
-from lemat_genbench.benchmarks.validity_benchmark import ValidityBenchmark
-from lemat_genbench.preprocess.augmented_fingerprint_preprocess import (
-    AugmentedFingerprintPreprocessor,
+from lemat_genbench.benchmarks.sun_benchmark import (
+    SUNBenchmark,  # Updated SUN benchmark
 )
+from lemat_genbench.benchmarks.uniqueness_benchmark import UniquenessBenchmark
+from lemat_genbench.benchmarks.validity_benchmark import ValidityBenchmark
 from lemat_genbench.preprocess.distribution_preprocess import DistributionPreprocessor
 from lemat_genbench.preprocess.fingerprint_preprocess import FingerprintPreprocessor
 from lemat_genbench.preprocess.multi_mlip_preprocess import (
@@ -353,17 +350,25 @@ def load_benchmark_config(config_name: str) -> Dict[str, Any]:
     return config
 
 
-def create_preprocessor_config(benchmark_families: List[str]) -> Dict[str, Any]:
+def create_preprocessor_config(
+    benchmark_families: List[str], fingerprint_method: str = "short-bawl"
+) -> Dict[str, Any]:
     """Create preprocessor configuration based on required benchmark families.
 
     Note: validity preprocessing is ALWAYS included regardless of families.
+    
+    Parameters
+    ----------
+    benchmark_families : List[str]
+        List of benchmark families to run
+    fingerprint_method : str, default="short-bawl"
+        Fingerprinting method to use. Determines if fingerprint preprocessing is needed.
     """
     config = {
         "validity": True,  # ALWAYS run validity preprocessing
         "distribution": False,
         "stability": False,
         "embeddings": False,
-        "augmented_fingerprint": False,
         "fingerprint": False,
     }
 
@@ -371,19 +376,18 @@ def create_preprocessor_config(benchmark_families: List[str]) -> Dict[str, Any]:
     for family in benchmark_families:
         if family in ["distribution", "jsdistance", "mmd", "frechet"]:
             config["distribution"] = True
-        if family in ["stability", "sun_new"]:
+        if family in ["stability", "sun"]:
             config["stability"] = True
         if family in [
             "frechet",
             "distribution",
         ]:  # Distribution includes Frechet distance
             config["embeddings"] = True
-        # Enhanced benchmarks need augmented fingerprint preprocessing
-        if family in ["novelty_new", "uniqueness_new", "sun_new"]:
-            config["augmented_fingerprint"] = True
-
+        # Original benchmarks need fingerprint preprocessing (unless using structure matcher)
         if family in ["novelty", "uniqueness", "sun"]:
-            config["fingerprint"] = True
+            # Only run fingerprint preprocessor for BAWL/short-BAWL methods
+            if fingerprint_method.lower() not in ["structure-matcher"]:
+                config["fingerprint"] = True
 
     return config
 
@@ -537,38 +541,27 @@ def run_remaining_preprocessors(
     # Log initial memory usage
     log_memory_usage("before remaining preprocessing", force_log=monitor_memory)
 
-    # Augmented fingerprint preprocessor (for novelty_new, uniqueness_new, sun_new)
-    if preprocessor_config["augmented_fingerprint"]:
+    # Fingerprint preprocessor (for BAWL/short-BAWL methods only)
+    if preprocessor_config["fingerprint"]:
         logger.info(
-            f"Running augmented fingerprint preprocessor on {len(processed_structures)} valid structures..."
+            f"Running fingerprint preprocessor on {len(processed_structures)} valid structures..."
         )
         start_time = time.time()
 
-        # Get augmented fingerprint settings from config
-        aug_fp_settings = config.get("augmented_fingerprint_settings", {})
-        symprec = aug_fp_settings.get("symprec", 0.01)
-        angle_tolerance = aug_fp_settings.get("angle_tolerance", 5.0)
-        include_fallback_properties = aug_fp_settings.get(
-            "include_fallback_properties", True
+        fingerprint_method = config.get("fingerprint_method", "short-bawl")
+        fingerprint_preprocessor = FingerprintPreprocessor(
+            fingerprint_method=fingerprint_method
         )
-        n_jobs = aug_fp_settings.get("n_jobs", 1)
-
-        aug_fp_preprocessor = AugmentedFingerprintPreprocessor(
-            symprec=symprec,
-            angle_tolerance=angle_tolerance,
-            include_fallback_properties=include_fallback_properties,
-            n_jobs=n_jobs,
-        )
-        aug_fp_result = aug_fp_preprocessor(processed_structures)
-        processed_structures = aug_fp_result.processed_structures
-        preprocessor_results["augmented_fingerprint"] = aug_fp_result
+        fingerprint_result = fingerprint_preprocessor(processed_structures)
+        processed_structures = fingerprint_result.processed_structures
+        preprocessor_results["fingerprint"] = fingerprint_result
         elapsed_time = time.time() - start_time
         logger.info(
-            f"✅ Augmented fingerprint preprocessing complete for {len(processed_structures)} valid structures in {elapsed_time:.1f}s"
+            f"✅ Fingerprint preprocessing complete for {len(processed_structures)} valid structures in {elapsed_time:.1f}s"
         )
 
-        # Clean up after augmented fingerprint preprocessor
-        cleanup_after_preprocessor("augmented_fingerprint", monitor_memory)
+        # Clean up after fingerprint preprocessor
+        cleanup_after_preprocessor("fingerprint", monitor_memory)
 
     # Distribution preprocessor (for MMD, JSDistance)
     if preprocessor_config["distribution"]:
@@ -638,26 +631,6 @@ def run_remaining_preprocessors(
         # Clean up after MLIP preprocessor (this is crucial for memory management)
         cleanup_after_preprocessor("multi_mlip", monitor_memory)
 
-    # Fingerprint preprocessor
-    if preprocessor_config["fingerprint"]:
-        logger.info(
-            f"Running fingerprint preprocessor on {len(processed_structures)} valid structures..."
-        )
-        start_time = time.time()
-        fingerprint_preprocessor = FingerprintPreprocessor(
-            fingerprint_method=config.get("fingerprint_method", "short-bawl")
-        )
-        fingerprint_result = fingerprint_preprocessor(processed_structures)
-        processed_structures = fingerprint_result.processed_structures
-        preprocessor_results["fingerprint"] = fingerprint_result
-        elapsed_time = time.time() - start_time
-        logger.info(
-            f"✅ Fingerprint preprocessing complete for {len(processed_structures)} valid structures in {elapsed_time:.1f}s"
-        )
-
-        # Clean up after fingerprint preprocessor
-        cleanup_after_preprocessor("fingerprint", monitor_memory)
-
     # Log final memory usage
     log_memory_usage("after remaining preprocessing")
 
@@ -721,28 +694,8 @@ def run_remaining_benchmarks(
                 elif family == "diversity":
                     benchmark = DiversityBenchmark()
 
-                elif family == "novelty_new":
-                    # Use enhanced novelty benchmark with augmented fingerprints
-                    novelty_settings = config.get("novelty_new_settings", {})
-                    benchmark = AugmentedNoveltyBenchmark(
-                        fingerprint_source=novelty_settings.get(
-                            "fingerprint_source", "auto"
-                        ),
-                        reference_fingerprints_path=novelty_settings.get(
-                            "reference_fingerprints_path"
-                        ),
-                        reference_dataset_name=novelty_settings.get(
-                            "reference_dataset_name", "LeMat-Bulk"
-                        ),
-                        symprec=novelty_settings.get("symprec", 0.01),
-                        angle_tolerance=novelty_settings.get("angle_tolerance", 5.0),
-                        fallback_to_computation=novelty_settings.get(
-                            "fallback_to_computation", True
-                        ),
-                    )
-
                 elif family == "novelty":
-                    # Use legacy novelty benchmark without augmented fingerprints
+                    # Use original novelty benchmark
                     novelty_settings = config.get("novelty_settings", {})
                     benchmark = NoveltyBenchmark(
                         fingerprint_method=config.get(
@@ -752,24 +705,13 @@ def run_remaining_benchmarks(
                     )
 
                 elif family == "uniqueness":
-                    # Use legacy uniqueness benchmark without augmented fingerprints
+                    # Use original uniqueness benchmark
                     uniqueness_settings = config.get("uniqueness_settings", {})
                     benchmark = UniquenessBenchmark(
                         fingerprint_method=config.get(
                             "fingerprint_method", "short-bawl"
                         ),
                         n_jobs=1,
-                    )
-
-                elif family == "uniqueness_new":
-                    # Use enhanced uniqueness benchmark with augmented fingerprints
-                    uniqueness_settings = config.get("uniqueness_new_settings", {})
-                    benchmark = UniquenessNewBenchmark(
-                        fingerprint_source=uniqueness_settings.get(
-                            "fingerprint_source", "auto"
-                        ),
-                        symprec=uniqueness_settings.get("symprec", 0.01),
-                        angle_tolerance=uniqueness_settings.get("angle_tolerance", 5.0),
                     )
 
                 elif family == "hhi":
@@ -780,31 +722,20 @@ def run_remaining_benchmarks(
                         scale_to_0_10=hhi_settings.get("scale_to_0_10", True),
                     )
 
-                elif family == "sun_new":
-                    # Use enhanced SUN benchmark with augmented fingerprints
-                    sun_settings = config.get("sun_new_settings", {})
-                    benchmark = SUNNewBenchmark(
+                elif family == "sun":
+                    # Use updated SUN benchmark with hierarchical order
+                    sun_settings = config.get("sun_settings", {})
+                    benchmark = SUNBenchmark(
                         stability_threshold=sun_settings.get(
                             "stability_threshold", 0.0
                         ),
                         metastability_threshold=sun_settings.get(
                             "metastability_threshold", 0.1
                         ),
+                        fingerprint_method=config.get(
+                            "fingerprint_method", "short-bawl"
+                        ),
                         include_metasun=sun_settings.get("include_metasun", True),
-                        fingerprint_source=sun_settings.get(
-                            "fingerprint_source", "auto"
-                        ),
-                        reference_fingerprints_path=sun_settings.get(
-                            "reference_fingerprints_path"
-                        ),
-                        reference_dataset_name=sun_settings.get(
-                            "reference_dataset_name", "LeMat-Bulk"
-                        ),
-                        symprec=sun_settings.get("symprec", 0.01),
-                        angle_tolerance=sun_settings.get("angle_tolerance", 5.0),
-                        fallback_to_computation=sun_settings.get(
-                            "fallback_to_computation", True
-                        ),
                     )
 
                 elif family == "stability":
@@ -853,7 +784,7 @@ def save_results(
 ):
     """Save benchmark results to JSON file."""
     # Create results directory
-    results_dir = Path(__file__).parent.parent / "results_new"
+    results_dir = Path(__file__).parent.parent / "results"
     results_dir.mkdir(exist_ok=True)
 
     # Create timestamp
@@ -892,7 +823,7 @@ def save_results(
 def main():
     """Main function to run benchmarks."""
     parser = argparse.ArgumentParser(
-        description="Run material generation benchmarks with enhanced novelty/uniqueness/SUN (validity ALWAYS mandatory)"
+        description="Run material generation benchmarks with original novelty/uniqueness/SUN (validity ALWAYS mandatory)"
     )
     parser.add_argument(
         "--cifs",
@@ -904,13 +835,19 @@ def main():
     parser.add_argument(
         "--config",
         required=True,
-        help="Benchmark configuration name (e.g., comprehensive_new, validity)",
+        help="Benchmark configuration name (e.g., comprehensive, validity)",
     )
     parser.add_argument("--name", required=True, help="Name for this benchmark run")
     parser.add_argument(
         "--families",
         nargs="+",
         help="Specific benchmark families to run (validity is ALWAYS run regardless)",
+    )
+    parser.add_argument(
+        "--fingerprint-method",
+        default="short-bawl",
+        choices=["bawl", "short-bawl", "structure-matcher", "pdd"],
+        help="Fingerprinting method to use (default: short-bawl)",
     )
     parser.add_argument(
         "--batch-size",
@@ -983,26 +920,28 @@ def main():
         # Load benchmark configuration
         logger.info(f"Loading benchmark configuration: {args.config}")
         config = load_benchmark_config(args.config)
+        
+        # Add fingerprint method to config
+        config["fingerprint_method"] = args.fingerprint_method
         logger.info(f"✅ Loaded configuration: {config.get('type', 'unknown')}")
+        logger.info(f"🔍 Using fingerprint method: {args.fingerprint_method}")
 
         # Determine benchmark families to run
         if args.families:
             benchmark_families = args.families
             logger.info(f"Using specified families: {benchmark_families}")
         else:
-            # Default to enhanced benchmark families for comprehensive evaluation
+            # Default to original benchmark families for comprehensive evaluation
             benchmark_families = [
                 "distribution",
                 "diversity",
-                "novelty_new",  # Enhanced novelty benchmark
-                "novelty",
-                "uniqueness",  # Legacy uniqueness benchmark
-                "uniqueness_new",  # Enhanced uniqueness benchmark
+                "novelty",  # Original novelty benchmark
+                "uniqueness",  # Original uniqueness benchmark
                 "hhi",
-                "sun_new",  # Enhanced SUN benchmark
+                "sun",  # Updated SUN benchmark with hierarchical order
                 "stability",
             ]
-            logger.info(f"Using enhanced benchmark families: {benchmark_families}")
+            logger.info(f"Using benchmark families: {benchmark_families}")
 
         # Important note about validity
         logger.info(
@@ -1011,6 +950,16 @@ def main():
         logger.info(
             "🔍 NOTE: Only valid structures will be used for subsequent benchmarks"
         )
+        
+        # Note about fingerprinting
+        if args.fingerprint_method == "structure-matcher":
+            logger.info(
+                "🔍 NOTE: Using structure-matcher - fingerprint preprocessor will be skipped"
+            )
+        else:
+            logger.info(
+                f"🔍 NOTE: Using {args.fingerprint_method} - fingerprint preprocessor will run for novelty/uniqueness/SUN"
+            )
 
         # Clear memory after loading structures
         clear_memory()
@@ -1051,7 +1000,9 @@ def main():
             return
 
         # Step 2: Determine preprocessor requirements for remaining benchmarks
-        preprocessor_config = create_preprocessor_config(benchmark_families)
+        preprocessor_config = create_preprocessor_config(
+            benchmark_families, args.fingerprint_method
+        )
         # Remove validity since it's already done
         preprocessor_config["validity"] = False
         logger.info(f"Remaining preprocessor config: {preprocessor_config}")
@@ -1093,7 +1044,7 @@ def main():
             f"📊 Invalid structures: {validity_filtering_metadata['invalid_structures']}"
         )
         print(f"📊 Validity rate: {validity_filtering_metadata['validity_rate']:.1%}")
-        print(remaining_benchmark_results)
+        print(f"🔍 Fingerprint method: {args.fingerprint_method}")
         print(
             f"🔧 Benchmark families: {['validity (ALL structures)'] + [f'{family} (valid structures only)' for family in benchmark_families if family != 'validity']}"
         )

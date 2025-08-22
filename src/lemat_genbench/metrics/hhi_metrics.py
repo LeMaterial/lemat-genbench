@@ -85,6 +85,8 @@ class BaseHHIMetric(BaseMetric, ABC):
         description: str | None = None,
         scale_to_0_10: bool = True,
         n_jobs: int = 1,
+        timeout: int | None = None,  # Add timeout parameter
+        verbose: bool = False,       # Add verbose parameter
     ):
         """Initialize HHI metric with element lookup table.
 
@@ -100,13 +102,30 @@ class BaseHHIMetric(BaseMetric, ABC):
             If True, divide by 1000 to get 0-10 scale.
         n_jobs : int, default=1
             Number of parallel jobs to run.
+        timeout : int, optional
+            Maximum time in seconds for computing a single structure.
+        verbose : bool, default=False
+            Whether to print detailed logs during computation.
         """
-        self.hhi_table = hhi_table
-        self.config = HHIMetricConfig(
+        # Call the parent BaseMetric constructor FIRST
+        super().__init__(
             name=name or self.__class__.__name__,
             description=description,
             lower_is_better=True,  # Lower HHI indicates less concentration risk
             n_jobs=n_jobs,
+            timeout=timeout,
+            verbose=verbose,
+        )
+        
+        # Now set HHI-specific attributes
+        self.hhi_table = hhi_table
+        
+        # Update the config with HHI-specific settings
+        self.config = HHIMetricConfig(
+            name=self.config.name,
+            description=self.config.description,
+            lower_is_better=self.config.lower_is_better,
+            n_jobs=self.config.n_jobs,
             scale_to_0_10=scale_to_0_10,
         )
 
@@ -375,6 +394,8 @@ class HHIProductionMetric(BaseHHIMetric):
         description: str | None = None,
         scale_to_0_10: bool = True,
         n_jobs: int = 1,
+        timeout: int | None = None,  # Add timeout parameter
+        verbose: bool = False,       # Add verbose parameter
     ):
         """Initialize HHI Production metric.
 
@@ -388,6 +409,10 @@ class HHIProductionMetric(BaseHHIMetric):
             If True, divide by 1000 to get 0-10 scale.
         n_jobs : int, default=1
             Number of parallel jobs to run.
+        timeout : int, optional
+            Maximum time in seconds for computing a single structure.
+        verbose : bool, default=False
+            Whether to print detailed logs during computation.
         """
         hhi_production, _ = _load_hhi_data()
 
@@ -402,6 +427,8 @@ class HHIProductionMetric(BaseHHIMetric):
             ),
             scale_to_0_10=scale_to_0_10,
             n_jobs=n_jobs,
+            timeout=timeout,      # Pass timeout to parent
+            verbose=verbose,      # Pass verbose to parent
         )
 
 
@@ -423,6 +450,8 @@ class HHIReserveMetric(BaseHHIMetric):
         description: str | None = None,
         scale_to_0_10: bool = True,
         n_jobs: int = 1,
+        timeout: int | None = None,  # Add timeout parameter
+        verbose: bool = False,       # Add verbose parameter
     ):
         """Initialize HHI Reserve metric.
 
@@ -436,6 +465,10 @@ class HHIReserveMetric(BaseHHIMetric):
             If True, divide by 1000 to get 0-10 scale.
         n_jobs : int, default=1
             Number of parallel jobs to run.
+        timeout : int, optional
+            Maximum time in seconds for computing a single structure.
+        verbose : bool, default=False
+            Whether to print detailed logs during computation.
         """
         _, hhi_reserve = _load_hhi_data()
 
@@ -450,6 +483,8 @@ class HHIReserveMetric(BaseHHIMetric):
             ),
             scale_to_0_10=scale_to_0_10,
             n_jobs=n_jobs,
+            timeout=timeout,      # Pass timeout to parent
+            verbose=verbose,      # Pass verbose to parent
         )
 
 

@@ -1,8 +1,8 @@
-"""Command line interface for running benchmarks with enhanced metrics.
+"""Command line interface for running benchmarks.
 
 This module provides a CLI for running material generation benchmarks
-using configuration files. This version uses the new enhanced benchmarks
-(novelty_new, uniqueness_new, sun_new) while retaining other existing benchmarks.
+using configuration files. This version uses the original benchmarks
+that are currently available and working.
 """
 
 import os
@@ -21,13 +21,11 @@ from lemat_genbench.benchmarks.hhi_benchmark import HHIBenchmark
 from lemat_genbench.benchmarks.multi_mlip_stability_benchmark import (
     StabilityBenchmark as MultiMLIPStabilityBenchmark,
 )
-from lemat_genbench.benchmarks.novelty_new_benchmark import (
-    AugmentedNoveltyBenchmark,
-)
-from lemat_genbench.benchmarks.sun_new_benchmark import SUNNewBenchmark
-from lemat_genbench.benchmarks.uniqueness_new_benchmark import (
-    UniquenessNewBenchmark,
-)
+
+# Use original benchmarks that are currently working
+from lemat_genbench.benchmarks.novelty_benchmark import NoveltyBenchmark
+from lemat_genbench.benchmarks.sun_benchmark import SUNBenchmark
+from lemat_genbench.benchmarks.uniqueness_benchmark import UniquenessBenchmark
 from lemat_genbench.benchmarks.validity_benchmark import (
     ValidityBenchmark,
 )
@@ -92,89 +90,47 @@ def load_benchmark_config(config_name: str) -> dict:
         with open(config_path, "w") as f:
             yaml.dump(validity_config, f, default_flow_style=False)
 
-    # Create uniqueness_new config if needed
-    if not config_path.exists() and config_path.name == "uniqueness_new.yaml":
-        uniqueness_new_config = {
-            "type": "uniqueness_new",
-            "description": "Enhanced Uniqueness Benchmark using Augmented Fingerprints",
+    # Create uniqueness config if needed (using original benchmark)
+    if not config_path.exists() and config_path.name == "uniqueness.yaml":
+        uniqueness_config = {
+            "type": "uniqueness",
+            "description": "Uniqueness Benchmark using BAWL/short-BAWL fingerprints",
             "version": "0.1.0",
-            "fingerprint_source": "auto",
-            "symprec": 0.01,
-            "angle_tolerance": 5.0,
+            "fingerprint_method": "short-bawl",
+            "n_jobs": 1,
         }
         with open(config_path, "w") as f:
-            yaml.dump(uniqueness_new_config, f, default_flow_style=False)
+            yaml.dump(uniqueness_config, f, default_flow_style=False)
 
-    # Create novelty_new config if needed
-    if not config_path.exists() and config_path.name == "novelty_new.yaml":
-        novelty_new_config = {
-            "type": "novelty_new",
-            "description": "Enhanced Novelty Benchmark using Augmented Fingerprints",
-            "version": "0.2.0",
-            "fingerprinting_method": "augmented",
-            "fingerprint_source": "auto",
-            "reference_fingerprints_path": None,
-            "reference_dataset_name": "LeMat-Bulk",
-            "symprec": 0.01,
-            "angle_tolerance": 5.0,
-            "fallback_to_computation": True,
-            "variants": {
-                "default": {
-                    "description": "Standard augmented novelty benchmark",
-                    "fingerprint_source": "auto",
-                    "symprec": 0.01,
-                    "angle_tolerance": 5.0,
-                    "fallback_to_computation": True,
-                },
-                "property_only": {
-                    "description": "Uses only preprocessed fingerprints",
-                    "fingerprint_source": "property",
-                    "fallback_to_computation": False,
-                },
-                "computation_only": {
-                    "description": "Computes fingerprints on-demand",
-                    "fingerprint_source": "compute",
-                    "fallback_to_computation": True,
-                },
-            },
+    # Create novelty config if needed (using original benchmark)
+    if not config_path.exists() and config_path.name == "novelty.yaml":
+        novelty_config = {
+            "type": "novelty",
+            "description": "Novelty Benchmark using BAWL/short-BAWL fingerprints",
+            "version": "0.1.0",
+            "fingerprint_method": "short-bawl",
+            "reference_dataset": "LeMaterial/LeMat-Bulk",
+            "reference_config": "compatible_pbe",
+            "cache_reference": True,
+            "max_reference_size": None,
+            "n_jobs": 1,
         }
         with open(config_path, "w") as f:
-            yaml.dump(novelty_new_config, f, default_flow_style=False)
+            yaml.dump(novelty_config, f, default_flow_style=False)
 
-    # Create sun_new config if needed
-    if not config_path.exists() and config_path.name == "sun_new.yaml":
-        sun_new_config = {
-            "type": "sun_new",
-            "description": "Enhanced SUN Benchmark using Augmented Fingerprinting",
-            "version": "0.2.0",
-            "include_metasun": True,
+    # Create sun config if needed (using original benchmark)
+    if not config_path.exists() and config_path.name == "sun.yaml":
+        sun_config = {
+            "type": "sun",
+            "description": "SUN Benchmark using BAWL/short-BAWL fingerprints",
+            "version": "0.1.0",
             "stability_threshold": 0.0,
             "metastability_threshold": 0.1,
-            "fingerprinting_method": "augmented",
-            "fingerprint_source": "auto",
-            "reference_fingerprints_path": None,
-            "reference_dataset_name": "LeMat-Bulk",
-            "symprec": 0.01,
-            "angle_tolerance": 5.0,
-            "fallback_to_computation": True,
-            "variants": {
-                "default": {
-                    "description": "Standard augmented SUN benchmark",
-                    "fingerprint_source": "auto",
-                    "symprec": 0.01,
-                    "angle_tolerance": 5.0,
-                    "fallback_to_computation": True,
-                    "include_metasun": True,
-                },
-                "sun_only": {
-                    "description": "SUN evaluation only (no MetaSUN)",
-                    "fingerprint_source": "auto",
-                    "include_metasun": False,
-                },
-            },
+            "fingerprint_method": "short-bawl",
+            "include_metasun": True,
         }
         with open(config_path, "w") as f:
-            yaml.dump(sun_new_config, f, default_flow_style=False)
+            yaml.dump(sun_config, f, default_flow_style=False)
 
     # Add HHI config creation
     if not config_path.exists() and config_path.name == "hhi.yaml":
@@ -203,16 +159,10 @@ def load_benchmark_config(config_name: str) -> dict:
             "type": "distribution",
             "description": "Distribution Benchmark for Materials Generation",
             "version": "0.1.0",
-            "embeddings": {
-                "models": ["mace"],
-                "num_samples": 1000,
-                "normalize": True,
-            },
-            "metrics": {
-                "frechet_distance": {"weight": 0.4},
-                "mmd": {"weight": 0.4},
-                "jensen_shannon": {"weight": 0.2},
-            },
+            "mlips": ["orb", "mace", "uma"],
+            "cache_dir": "./data",
+            "js_distributions_file": "data/lematbulk_jsdistance_distributions.json",
+            "mmd_values_file": "data/lematbulk_mmd_values_15k.pkl",
         }
         with open(config_path, "w") as f:
             yaml.dump(distribution_config, f, default_flow_style=False)
@@ -244,11 +194,11 @@ def load_benchmark_config(config_name: str) -> dict:
         with open(config_path, "w") as f:
             yaml.dump(stability_config, f, default_flow_style=False)
 
-    # Create comprehensive config if needed
+    # Create comprehensive config if needed (using original benchmarks)
     if not config_path.exists() and config_path.name == "comprehensive.yaml":
         comprehensive_config = {
             "type": "comprehensive",
-            "description": "Comprehensive Benchmark Suite with Enhanced Metrics",
+            "description": "Comprehensive Benchmark Suite using Original Benchmarks",
             "version": "0.2.0",
             "benchmarks": {
                 "validity": {
@@ -265,12 +215,10 @@ def load_benchmark_config(config_name: str) -> dict:
                 "distribution": {
                     "weight": 0.15,
                     "config": {
-                        "embeddings": {"models": ["mace"], "num_samples": 1000},
-                        "metrics": {
-                            "frechet_distance": {"weight": 0.4},
-                            "mmd": {"weight": 0.4},
-                            "jensen_shannon": {"weight": 0.2},
-                        },
+                        "mlips": ["orb", "mace", "uma"],
+                        "cache_dir": "./data",
+                        "js_distributions_file": "data/lematbulk_jsdistance_distributions.json",
+                        "mmd_values_file": "data/lematbulk_mmd_values_15k.pkl",
                     },
                 },
                 "diversity": {
@@ -282,29 +230,30 @@ def load_benchmark_config(config_name: str) -> dict:
                         "physical_size_weight": 0.25,
                     },
                 },
-                "uniqueness_new": {
+                "uniqueness": {
                     "weight": 0.15,
                     "config": {
-                        "fingerprint_source": "auto",
-                        "symprec": 0.01,
-                        "angle_tolerance": 5.0,
+                        "fingerprint_method": "short-bawl",
+                        "n_jobs": 1,
                     },
                 },
-                "novelty_new": {
+                "novelty": {
                     "weight": 0.15,
                     "config": {
-                        "fingerprint_source": "auto",
-                        "symprec": 0.01,
-                        "angle_tolerance": 5.0,
+                        "fingerprint_method": "short-bawl",
+                        "reference_dataset": "LeMaterial/LeMat-Bulk",
+                        "reference_config": "compatible_pbe",
+                        "cache_reference": True,
+                        "n_jobs": 1,
                     },
                 },
-                "sun_new": {
+                "sun": {
                     "weight": 0.2,
                     "config": {
+                        "stability_threshold": 0.0,
+                        "metastability_threshold": 0.1,
+                        "fingerprint_method": "short-bawl",
                         "include_metasun": True,
-                        "fingerprint_source": "auto",
-                        "symprec": 0.01,
-                        "angle_tolerance": 5.0,
                     },
                 },
             },
@@ -350,22 +299,24 @@ def save_results(results: dict, output_path: str):
     "-o",
     type=click.Path(),
     help="Path to save results",
-    default="results/benchmark_results_new.yaml",
+    default="results/benchmark_results.yaml",
 )
 def main(input: str, config_name: str, output: str):
-    """Run a benchmark on structures using the specified configuration with enhanced metrics.
+    """Run a benchmark on structures using the specified configuration.
 
     INPUT: Path to CSV file containing structures to evaluate or directory with CIF files
-    CONFIG_NAME: Name of the benchmark configuration (e.g. 'novelty_new' for
-    novelty_new.yaml) or path to a config file
+    CONFIG_NAME: Name of the benchmark configuration (e.g. 'novelty' for
+    novelty.yaml) or path to a config file
 
-    This CLI uses enhanced benchmarks:
-    - novelty_new: Enhanced novelty evaluation using augmented fingerprints
-    - uniqueness_new: Enhanced uniqueness evaluation using augmented fingerprints  
-    - sun_new: Enhanced SUN benchmark using augmented fingerprinting
-    
-    Other benchmarks (validity, distribution, diversity, hhi, multi_mlip_stability) 
-    remain unchanged.
+    This CLI uses the original benchmarks that are currently working:
+    - novelty: Original novelty evaluation using BAWL/short-BAWL fingerprints
+    - uniqueness: Original uniqueness evaluation using BAWL/short-BAWL fingerprints  
+    - sun: Original SUN benchmark using BAWL/short-BAWL fingerprints
+    - validity: Validity benchmark for structure validation
+    - distribution: Distribution similarity evaluation
+    - diversity: Diversity metrics evaluation
+    - hhi: Supply risk assessment
+    - multi_mlip_stability: Multi-MLIP stability evaluation
     """
     try:
         # Load structures
@@ -391,7 +342,7 @@ def main(input: str, config_name: str, output: str):
             check_format = config.get("check_format", True)
             check_symmetry = config.get("check_symmetry", True)
 
-            # Create benchmark with new validity logic
+            # Create benchmark with validity logic
             benchmark = ValidityBenchmark(
                 charge_tolerance=charge_tolerance,
                 distance_scaling=distance_scaling,
@@ -408,69 +359,82 @@ def main(input: str, config_name: str, output: str):
             )
 
         elif benchmark_type == "distribution":
-            benchmark = DistributionBenchmark()
+            # Extract distribution parameters
+            mlips = config.get("mlips", ["orb", "mace", "uma"])
+            cache_dir = config.get("cache_dir", "./data")
+            js_distributions_file = config.get(
+                "js_distributions_file",
+                "data/lematbulk_jsdistance_distributions.json",
+            )
+            mmd_values_file = config.get(
+                "mmd_values_file", "data/lematbulk_mmd_values_15k.pkl"
+            )
+
+            benchmark = DistributionBenchmark(
+                mlips=mlips,
+                cache_dir=cache_dir,
+                js_distributions_file=js_distributions_file,
+                mmd_values_file=mmd_values_file,
+            )
 
         elif benchmark_type == "diversity":
             benchmark = DiversityBenchmark()
 
         elif benchmark_type == "hhi":
-            benchmark = HHIBenchmark()
+            # Extract HHI parameters
+            production_weight = config.get("production_weight", 0.25)
+            reserve_weight = config.get("reserve_weight", 0.75)
+            scale_to_0_10 = config.get("scale_to_0_10", True)
+
+            benchmark = HHIBenchmark(
+                production_weight=production_weight,
+                reserve_weight=reserve_weight,
+                scale_to_0_10=scale_to_0_10,
+            )
 
         elif benchmark_type == "multi_mlip_stability":
             benchmark = MultiMLIPStabilityBenchmark()
 
-        # Enhanced benchmarks using new implementations
-        elif benchmark_type == "uniqueness_new":
+        # Original benchmarks
+        elif benchmark_type == "uniqueness":
             # Extract configuration parameters
-            fingerprint_source = config.get("fingerprint_source", "auto")
-            symprec = config.get("symprec", 0.01)
-            angle_tolerance = config.get("angle_tolerance", 5.0)
+            fingerprint_method = config.get("fingerprint_method", "short-bawl")
+            n_jobs = config.get("n_jobs", 1)
 
-            benchmark = UniquenessNewBenchmark(
-                fingerprint_source=fingerprint_source,
-                symprec=symprec,
-                angle_tolerance=angle_tolerance,
+            benchmark = UniquenessBenchmark(
+                fingerprint_method=fingerprint_method,
+                n_jobs=n_jobs,
             )
 
-        elif benchmark_type == "novelty_new":
+        elif benchmark_type == "novelty":
             # Extract configuration parameters
-            fingerprint_source = config.get("fingerprint_source", "auto")
-            reference_fingerprints_path = config.get("reference_fingerprints_path")
-            reference_dataset_name = config.get("reference_dataset_name", "LeMat-Bulk")
-            symprec = config.get("symprec", 0.01)
-            angle_tolerance = config.get("angle_tolerance", 5.0)
-            fallback_to_computation = config.get("fallback_to_computation", True)
+            fingerprint_method = config.get("fingerprint_method", "short-bawl")
+            reference_dataset = config.get("reference_dataset", "LeMaterial/LeMat-Bulk")
+            reference_config = config.get("reference_config", "compatible_pbe")
+            cache_reference = config.get("cache_reference", True)
+            max_reference_size = config.get("max_reference_size", None)
+            n_jobs = config.get("n_jobs", 1)
 
-            benchmark = AugmentedNoveltyBenchmark(
-                fingerprint_source=fingerprint_source,
-                reference_fingerprints_path=reference_fingerprints_path,
-                reference_dataset_name=reference_dataset_name,
-                symprec=symprec,
-                angle_tolerance=angle_tolerance,
-                fallback_to_computation=fallback_to_computation,
+            benchmark = NoveltyBenchmark(
+                fingerprint_method=fingerprint_method,
+                reference_dataset=reference_dataset,
+                reference_config=reference_config,
+                cache_reference=cache_reference,
+                max_reference_size=max_reference_size,
+                n_jobs=n_jobs,
             )
 
-        elif benchmark_type == "sun_new":
+        elif benchmark_type == "sun":
             # Extract configuration parameters
-            include_metasun = config.get("include_metasun", True)
             stability_threshold = config.get("stability_threshold", 0.0)
             metastability_threshold = config.get("metastability_threshold", 0.1)
-            fingerprint_source = config.get("fingerprint_source", "auto")
-            reference_fingerprints_path = config.get("reference_fingerprints_path")
-            reference_dataset_name = config.get("reference_dataset_name", "LeMat-Bulk")
-            symprec = config.get("symprec", 0.01)
-            angle_tolerance = config.get("angle_tolerance", 5.0)
-            fallback_to_computation = config.get("fallback_to_computation", True)
+            fingerprint_method = config.get("fingerprint_method", "short-bawl")
+            include_metasun = config.get("include_metasun", True)
 
-            benchmark = SUNNewBenchmark(
+            benchmark = SUNBenchmark(
                 stability_threshold=stability_threshold,
                 metastability_threshold=metastability_threshold,
-                reference_fingerprints_path=reference_fingerprints_path,
-                reference_dataset_name=reference_dataset_name,
-                fingerprint_source=fingerprint_source,
-                symprec=symprec,
-                angle_tolerance=angle_tolerance,
-                fallback_to_computation=fallback_to_computation,
+                fingerprint_method=fingerprint_method,
                 include_metasun=include_metasun,
             )
 
