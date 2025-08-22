@@ -2,16 +2,18 @@ import time
 import warnings
 from abc import ABC, abstractmethod
 from concurrent.futures import ProcessPoolExecutor
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, List, TypeVar
 
 import numpy as np
 import pandas as pd
 from pymatgen.core.structure import Structure
+from tqdm import tqdm
 
 from lemat_genbench.data.structure import format_structures
 from lemat_genbench.utils.logging import logger
+from lemat_genbench.utils.timeout import timeout_context
 
 warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -97,6 +99,8 @@ class MetricResult:
         The indices of the structures that failed to compute.
     warnings : list[str]
         The warnings generated during the computation.
+    attributes: dict[str, Any]
+        Additional attributes related to the metric computation.
     """
 
     metrics: dict[str, float]
@@ -108,6 +112,7 @@ class MetricResult:
     individual_values: list[float]
     failed_indices: list[int]
     warnings: list[str]
+    attributes: dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self):
         """Validate the metric result and initialize empty dictionaries if None."""
@@ -148,6 +153,17 @@ class BaseMetric(ABC):
         Whether lower values of this metric indicate better performance.
     n_jobs : int, default=1
         Number of parallel jobs to run.
+    batch_size : int | None, optional
+        Size of the batches to split the structures into for parallel computation.
+        If None, will be inferred from the number of structures and workers. Note that in
+        some cases, it's more useful to have a smaller batch size to avoid ending up with a
+        workers that gets structures which take a long time to compute on.
+    timeout : int | None, optional
+        Maximum time in seconds allowed for computing a single structure.
+        If None, no timeout is applied. If a computation exceeds this time,
+        it will be terminated and marked as failed.
+    verbose: bool, default=False
+        Whether to print detailed logs during computation.
 
     Notes
     -----
@@ -161,6 +177,9 @@ class BaseMetric(ABC):
         description: str | None = None,
         lower_is_better: bool = False,
         n_jobs: int = 1,
+        batch_size: int | None = None,
+        timeout: int | None = None,
+        verbose: bool = False,
     ):
         self.config = MetricConfig(
             name=name or self.__class__.__name__,
@@ -168,6 +187,9 @@ class BaseMetric(ABC):
             lower_is_better=lower_is_better,
             n_jobs=n_jobs,
         )
+        self.batch_size = batch_size
+        self.timeout = timeout
+        self.verbose = verbose
 
     @property
     def name(self) -> str:
@@ -263,10 +285,18 @@ class BaseMetric(ABC):
         individual_values = []
         failed_indices = []
         warnings = []
+        verbose = "verbose" in compute_args and compute_args["verbose"]
+        timeout_seconds = compute_args.get("timeout", None)
+
         try:
-            for idx, structure in enumerate(structures):
+            for idx, structure in tqdm(
+                enumerate(structures), total=len(structures), disable=not verbose
+            ):
                 try:
-                    value = metric_class.compute_structure(structure, **compute_args)
+                    with timeout_context(timeout_seconds):
+                        value = metric_class.compute_structure(
+                            structure, **compute_args
+                        )
                     individual_values.append(value)
                 except Exception as e:
                     failed_indices.append(idx)
@@ -314,7 +344,12 @@ class BaseMetric(ABC):
         -------
         dict[str, Any]
         """
-        return {}
+        attributes = {}
+        if self.timeout is not None:
+            attributes["timeout"] = self.timeout
+        if self.verbose:
+            attributes["verbose"] = self.verbose
+        return attributes
 
     def compute(
         self,
@@ -345,7 +380,8 @@ class BaseMetric(ABC):
                 # Serial computation
                 for idx, structure in enumerate(structures):
                     try:
-                        value = self.compute_structure(structure, **compute_args)
+                        with timeout_context(self.timeout):
+                            value = self.compute_structure(structure, **compute_args)
                         values.append(value)
                     except Exception as e:
                         failed_indices.append(idx)
@@ -358,7 +394,9 @@ class BaseMetric(ABC):
                             exc_info=True,
                         )
             else:
-                batch_size = max(1, len(structures) // self.config.n_jobs)
+                batch_size = self.batch_size or max(
+                    1, len(structures) // self.config.n_jobs
+                )
                 batches = self._split_into_batches(structures, batch_size)
 
                 with ProcessPoolExecutor(max_workers=self.config.n_jobs) as executor:
@@ -427,6 +465,7 @@ class BaseMetric(ABC):
             metrics=result_dict["metrics"],
             primary_metric=result_dict["primary_metric"],
             uncertainties=result_dict["uncertainties"],
+            attributes=result_dict.get("attributes", {}),
             config=self.config,
             computation_time=time.time() - start_time,
             n_structures=len(structures),

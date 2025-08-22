@@ -118,11 +118,13 @@ The UMA model is gated and requires special access. Follow these steps:
 ### 4. **Novelty Metrics**
 - **Novelty Ratio**: Fraction of generated structures NOT present in LeMat-Bulk reference dataset
 - **BAWL Fingerprinting**: Uses BAWL structure hashing to efficiently compare against ~5M known materials
+- **Structure Matcher**: Alternative method using pymatgen StructureMatcher for structural comparison
 - **Reference Comparison**: Measures how many structures are truly novel vs. known materials
 
 ### 5. **Uniqueness Metrics**
 - **Uniqueness Ratio**: Fraction of unique structures within the generated set (internal diversity)
 - **BAWL Fingerprinting**: Uses BAWL structure hashing to identify duplicate structures efficiently
+- **Structure Matcher**: Alternative method using pymatgen StructureMatcher for structural comparison
 - **Duplicate Detection**: Counts and reports duplicate structures within the generated set
 
 ### 6. **Stability Metrics**
@@ -164,6 +166,13 @@ uv run scripts/run_benchmarks.py --csv my_structures.csv --config comprehensive 
 
 # Run specific families on CSV input
 uv run scripts/run_benchmarks.py --csv structures.csv --config comprehensive --families validity diversity --name csv_quick_test
+
+# Use structure-matcher for fingerprinting (alternative to BAWL)
+uv run scripts/run_benchmarks.py \
+  --cifs submissions/test \
+  --config comprehensive_structure_matcher \
+  --name test_run_structure_matcher \
+  --fingerprint-method structure-matcher
 ```
 
 ### Input Formats
@@ -218,6 +227,7 @@ material_id,structure,other_metadata
 - **`--config`**: Configuration name (default: `comprehensive`)
 - **`--name`**: Name for this benchmark run (required)
 - **`--families`**: Specific benchmark families to run (optional, defaults to all)
+- **`--fingerprint-method`**: Fingerprinting method to use (`bawl`, `short-bawl`, `structure-matcher`, `pdd`)
 
 ### Available Benchmark Families
 
@@ -234,7 +244,9 @@ material_id,structure,other_metadata
 
 ### Available Configurations
 
-- `comprehensive.yaml` - All benchmark families (default)
+- `comprehensive.yaml` - All benchmark families using BAWL fingerprinting (default)
+- `comprehensive_structure_matcher.yaml` - All benchmark families using structure-matcher
+- `comprehensive_new.yaml` - Enhanced benchmarks with augmented fingerprinting
 - `validity.yaml` - Validity metrics only
 - `distribution.yaml` - Distribution metrics only
 - `diversity.yaml` - Diversity metrics only
@@ -243,6 +255,15 @@ material_id,structure,other_metadata
 - `stability.yaml` - Stability metrics only
 - `hhi.yaml` - HHI metrics only
 - `sun.yaml` - SUN metrics only
+
+### Fingerprinting Methods
+
+| Method | Description | Speed | Memory Usage |
+|--------|-------------|-------|--------------|
+| `bawl` | Full BAWL fingerprinting | Fast | Low |
+| `short-bawl` | Shortened BAWL fingerprinting (default) | Fast | Low |
+| `structure-matcher` | PyMatGen StructureMatcher comparison | Slow | High |
+| `pdd` | Packing density descriptor | Medium | Medium |
 
 ### Running Specific Benchmark Families
 
@@ -276,6 +297,24 @@ uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --fam
 uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --name full_analysis
 # or explicitly specify all families
 uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --families validity distribution diversity novelty uniqueness stability hhi sun --name explicit_full
+```
+
+#### Using Structure-Matcher for Better Accuracy
+```bash
+# Use structure-matcher instead of BAWL fingerprinting for more accurate structural comparison
+uv run scripts/run_benchmarks.py \
+  --cifs submissions/test \
+  --config comprehensive_structure_matcher \
+  --name test_run_structure_matcher \
+  --fingerprint-method structure-matcher
+
+# Run specific families with structure-matcher
+uv run scripts/run_benchmarks.py \
+  --cifs structures/ \
+  --config comprehensive \
+  --families novelty uniqueness \
+  --name novelty_uniqueness_matcher \
+  --fingerprint-method structure-matcher
 ```
 
 ## 📁 Output
@@ -335,12 +374,26 @@ uv run scripts/run_benchmarks.py --csv generated_structures.csv --config compreh
 uv run scripts/run_benchmarks.py --csv structures.csv --config distribution --families distribution --name csv_distribution
 ```
 
+### High-Performance SSH Examples
+```bash
+# Use SSH-optimized script for large datasets
+uv run scripts/run_benchmarks_ssh.py --cifs large_dataset/ --config comprehensive --name large_run
+
+# Structure-matcher with SSH optimization
+uv run scripts/run_benchmarks_ssh.py \
+  --cifs submissions/large_test \
+  --config comprehensive_structure_matcher \
+  --name large_test_structure_matcher \
+  --fingerprint-method structure-matcher
+```
+
 ## ⚠️ Important Notes
 
 ### Computational Requirements
 - **MMD Reference Sample**: Uses 15K samples from LeMat-Bulk for computational efficiency
 - **MLIP Models**: Requires significant computational resources for stability benchmarks
 - **Memory Usage**: Large structure sets may require substantial RAM
+- **Structure-Matcher**: More accurate but computationally expensive than BAWL fingerprinting
 
 ### Model Access
 - **UMA Model**: Requires HuggingFace access approval
@@ -356,8 +409,10 @@ uv run scripts/run_benchmarks.py --csv structures.csv --config distribution --fa
 - **Small Sets**: Use `--families` to run only needed benchmarks
 - **Large Sets**: Consider running benchmarks separately for memory efficiency
 - **Caching**: Models are cached locally for faster subsequent runs
+- **SSH Optimization**: Use `run_benchmarks_ssh.py` for high-core environments
+- **Fingerprinting**: Use `structure-matcher` for accuracy, `short-bawl` for speed
 
-## 🐛 Troubleshooting
+## 🛠 Troubleshooting
 
 ### Common Issues
 
@@ -390,6 +445,11 @@ uv run scripts/run_benchmarks.py --csv structures.csv --config distribution --fa
    
    This downloads the required datasets to `data/` folder for local access.
 
+5. **Structure-Matcher Performance:**
+   - Structure-matcher is more accurate but much slower than BAWL
+   - Consider using for smaller datasets or when accuracy is critical
+   - Use SSH-optimized script for large datasets
+
 ### Getting Help
 
 - Check the [scripts documentation](scripts/README_benchmark_runner.md)
@@ -405,6 +465,7 @@ uv run scripts/run_benchmarks.py --csv structures.csv --config distribution --fa
 - **UMA Model**: [HuggingFace](https://huggingface.co/facebook/UMA) - Wood, Brandon M., et al. "UMA: A Family of Universal Models for Atoms." arXiv preprint arXiv:2506.23971 (2025).
 - **ORB Models**: [GitHub](https://github.com/orbital-materials/orb-models) - Rhodes, Benjamin, et al. "Orb-v3: atomistic simulation at scale." arXiv preprint arXiv:2504.06231 (2025).
 - **MACE Models**: [GitHub](https://github.com/ACEsuit/mace) - Batatia, Ilyes, et al. "MACE: Higher order equivariant message passing neural networks for fast and accurate force fields." Advances in neural information processing systems 35 (2022): 11423-11436.
+
 ### Core Metrics and Methods
 
 #### Distribution Metrics
@@ -421,4 +482,3 @@ uv run scripts/run_benchmarks.py --csv structures.csv --config distribution --fa
 ## 📄 License
 
 This project is licensed under the Apache License - see the [LICENSE](LICENSE) file for details.
-

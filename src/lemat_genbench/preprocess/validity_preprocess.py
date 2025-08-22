@@ -65,7 +65,7 @@ class ValidityPreprocessorConfig(PreprocessorConfig):
     charge_tolerance: float = 0.1
     charge_strict: bool = False
     distance_scaling_factor: float = 0.5
-    plausibility_min_density: float = 1.0
+    plausibility_min_density: float = 0.01
     plausibility_max_density: float = 25.0
     plausibility_check_format: bool = True
     plausibility_check_symmetry: bool = True
@@ -119,7 +119,7 @@ class ValidityPreprocessor(BasePreprocessor):
         Whether to require determinable oxidation states for all atoms.
     distance_scaling_factor : float, default=0.5
         Factor to scale minimum interatomic distances.
-    plausibility_min_density : float, default=1.0
+    plausibility_min_density : float, default=0.01
         Minimum plausible density in g/cm³.
     plausibility_max_density : float, default=25.0
         Maximum plausible density in g/cm³.
@@ -156,7 +156,7 @@ class ValidityPreprocessor(BasePreprocessor):
         charge_tolerance: float = 0.1,
         charge_strict: bool = False,
         distance_scaling_factor: float = 0.5,
-        plausibility_min_density: float = 1.0,
+        plausibility_min_density: float = 0.01,
         plausibility_max_density: float = 25.0,
         plausibility_check_format: bool = True,
         plausibility_check_symmetry: bool = True,

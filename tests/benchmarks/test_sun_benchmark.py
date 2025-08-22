@@ -1,4 +1,7 @@
-"""Tests for SUN (Stable, Unique, Novel) benchmark."""
+"""Tests for SUN (Stable, Unique, Novel) benchmark.
+
+Updated to match the new hierarchical computation order and current implementation.
+"""
 
 import math
 from unittest.mock import MagicMock, Mock, patch
@@ -198,24 +201,26 @@ class TestSUNBenchmark:
         assert "metasun" in metasun_evaluator.metrics
         assert isinstance(metasun_evaluator.metrics["metasun"], MetaSUNMetric)
 
-    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
-    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
-    def test_aggregate_evaluator_results_basic(
-        self, mock_uniqueness_class, mock_novelty_class
-    ):
+    def test_aggregate_evaluator_results_basic(self):
         """Test basic result aggregation."""
         benchmark = SUNBenchmark(include_metasun=False)
 
-        # Mock the SUN metric results
+        # Mock the SUN metric results to match current hierarchical implementation
         mock_sun_metric_result = Mock()
         mock_sun_metric_result.metrics = {
             "sun_rate": 0.25,
             "sun_count": 1,
-            "msun_rate": 0.5,
-            "msun_count": 2,
-            "combined_sun_msun_rate": 0.75,
-            "unique_count": 3,
-            "unique_rate": 1.0,
+            "msun_rate": 0.25,
+            "msun_count": 1,
+            "combined_sun_msun_rate": 0.5,
+            "stable_count": 1,
+            "metastable_count": 1,
+            "stable_rate": 0.25,
+            "metastable_rate": 0.25,
+            "unique_in_stable_count": 1,
+            "unique_in_metastable_count": 1,
+            "unique_in_stable_rate": 1.0,
+            "unique_in_metastable_rate": 1.0,
             "total_structures_evaluated": 4,
             "failed_count": 0,
         }
@@ -229,22 +234,24 @@ class TestSUNBenchmark:
 
         final_scores = benchmark.aggregate_evaluator_results(evaluator_results)
 
-        # Check that all metrics are properly extracted
+        # Check that all hierarchical metrics are properly extracted
         assert final_scores["sun_rate"] == 0.25
         assert final_scores["sun_count"] == 1
-        assert final_scores["msun_rate"] == 0.5
-        assert final_scores["msun_count"] == 2
-        assert final_scores["combined_sun_msun_rate"] == 0.75
-        assert final_scores["unique_count"] == 3
-        assert final_scores["unique_rate"] == 1.0
+        assert final_scores["msun_rate"] == 0.25
+        assert final_scores["msun_count"] == 1
+        assert final_scores["combined_sun_msun_rate"] == 0.5
+        assert final_scores["stable_count"] == 1
+        assert final_scores["metastable_count"] == 1
+        assert final_scores["stable_rate"] == 0.25
+        assert final_scores["metastable_rate"] == 0.25
+        assert final_scores["unique_in_stable_count"] == 1
+        assert final_scores["unique_in_metastable_count"] == 1
+        assert final_scores["unique_in_stable_rate"] == 1.0
+        assert final_scores["unique_in_metastable_rate"] == 1.0
         assert final_scores["total_structures_evaluated"] == 4
         assert final_scores["failed_count"] == 0
 
-    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
-    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
-    def test_aggregate_evaluator_results_with_metasun(
-        self, mock_uniqueness_class, mock_novelty_class
-    ):
+    def test_aggregate_evaluator_results_with_metasun(self):
         """Test result aggregation with both SUN and MetaSUN evaluators."""
         benchmark = SUNBenchmark(include_metasun=True)
 
@@ -288,6 +295,7 @@ class TestSUNBenchmark:
         assert final_scores["sun_count"] == 1
 
         # Check MetaSUN metrics
+        assert final_scores["metasun_primary_rate"] == 0.5
         assert final_scores["metasun_rate"] == 0.5
         assert final_scores["metasun_count"] == 2
 
@@ -330,6 +338,125 @@ class TestSUNBenchmark:
         assert final_scores["sun_count"] == 3
         assert final_scores["total_structures_evaluated"] == 10
 
+    def test_hierarchical_indices_extraction(self):
+        """Test that hierarchical indices are properly extracted."""
+        benchmark = SUNBenchmark(include_metasun=False)
+
+        # Mock metric result with hierarchical indices
+        mock_metric_result = Mock()
+        mock_metric_result.metrics = {"sun_rate": 0.25, "sun_count": 1}
+        mock_metric_result.sun_indices = [0]
+        mock_metric_result.msun_indices = [1]
+        mock_metric_result.stable_indices = [0, 2]
+        mock_metric_result.metastable_indices = [1, 3]
+        mock_metric_result.stable_unique_indices = [0]
+        mock_metric_result.metastable_unique_indices = [1]
+
+        mock_evaluator_result = {
+            "combined_value": 0.25,
+            "metric_results": {"sun": mock_metric_result},
+        }
+
+        evaluator_results = {"sun": mock_evaluator_result}
+
+        final_scores = benchmark.aggregate_evaluator_results(evaluator_results)
+
+        # Check that indices are extracted
+        assert final_scores["sun_indices"] == [0]
+        assert final_scores["msun_indices"] == [1]
+        assert final_scores["stable_indices"] == [0, 2]
+        assert final_scores["metastable_indices"] == [1, 3]
+        assert final_scores["stable_unique_indices"] == [0]
+        assert final_scores["metastable_unique_indices"] == [1]
+
+    def test_get_structure_indices(self):
+        """Test the convenience method for extracting structure indices."""
+        benchmark = SUNBenchmark()
+
+        # Mock metric result with indices
+        mock_metric_result = Mock()
+        mock_metric_result.sun_indices = [0]
+        mock_metric_result.msun_indices = [1]
+        mock_metric_result.stable_indices = [0, 2]
+        mock_metric_result.metastable_indices = [1, 3]
+        mock_metric_result.stable_unique_indices = [0]
+        mock_metric_result.metastable_unique_indices = [1]
+
+        mock_evaluator_result = {
+            "combined_value": 0.25,
+            "metric_results": {"sun": mock_metric_result},
+        }
+
+        evaluator_results = {"sun": mock_evaluator_result}
+
+        indices = benchmark.get_structure_indices(evaluator_results)
+
+        assert indices["sun_indices"] == [0]
+        assert indices["msun_indices"] == [1]
+        assert indices["stable_indices"] == [0, 2]
+        assert indices["metastable_indices"] == [1, 3]
+        assert indices["stable_unique_indices"] == [0]
+        assert indices["metastable_unique_indices"] == [1]
+
+    def test_get_hierarchical_summary(self):
+        """Test the hierarchical summary method."""
+        benchmark = SUNBenchmark()
+
+        # Mock comprehensive results
+        mock_metric_result = Mock()
+        mock_metric_result.metrics = {
+            "sun_rate": 0.1,
+            "msun_rate": 0.1,
+            "combined_sun_msun_rate": 0.2,
+            "total_structures_evaluated": 10,
+            "stable_count": 2,
+            "metastable_count": 3,
+            "stable_rate": 0.2,
+            "metastable_rate": 0.3,
+            "unique_in_stable_count": 2,
+            "unique_in_metastable_count": 2,
+            "unique_in_stable_rate": 1.0,
+            "unique_in_metastable_rate": 0.67,
+            "sun_count": 1,
+            "msun_count": 1,
+        }
+
+        mock_evaluator_result = {
+            "combined_value": 0.1,
+            "metric_results": {"sun": mock_metric_result},
+        }
+
+        evaluator_results = {"sun": mock_evaluator_result}
+
+        summary = benchmark.get_hierarchical_summary(evaluator_results)
+
+        # Check summary structure
+        assert summary["total_structures"] == 10
+        assert "filtering_stages" in summary
+        assert "final_metrics" in summary
+        assert "filtering_efficiency" in summary
+
+        # Check filtering stages
+        stages = summary["filtering_stages"]
+        assert stages["1_stability"]["stable_count"] == 2
+        assert stages["1_stability"]["metastable_count"] == 3
+        assert stages["2_uniqueness"]["unique_in_stable_count"] == 2
+        assert stages["2_uniqueness"]["unique_in_metastable_count"] == 2
+        assert stages["3_novelty"]["sun_count"] == 1
+        assert stages["3_novelty"]["msun_count"] == 1
+
+        # Check final metrics
+        final = summary["final_metrics"]
+        assert final["sun_rate"] == 0.1
+        assert final["msun_rate"] == 0.1
+        assert final["combined_sun_msun_rate"] == 0.2
+
+        # Check filtering efficiency
+        efficiency = summary["filtering_efficiency"]
+        assert efficiency["stability_survival_rate"] == 0.5  # (2+3)/10
+        assert efficiency["uniqueness_survival_rate"] == 0.4  # (2+2)/10
+        assert efficiency["novelty_survival_rate"] == 0.2  # (1+1)/10
+
     @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
     @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
     def test_full_evaluation_mocked(self, mock_uniqueness_class, mock_novelty_class):
@@ -338,18 +465,27 @@ class TestSUNBenchmark:
 
         # Mock uniqueness: all structures are unique using helper function
         mock_uniqueness = MagicMock()
-        mock_uniqueness_result = create_mock_uniqueness_result(
-            structures, [1.0, 1.0, 1.0], []
-        )
-        mock_uniqueness.compute.return_value = mock_uniqueness_result
+        
+        def mock_uniqueness_compute(input_structures):
+            n_structs = len(input_structures)
+            return create_mock_uniqueness_result(
+                input_structures, [1.0] * n_structs, []
+            )
+        
+        mock_uniqueness.compute.side_effect = mock_uniqueness_compute
         mock_uniqueness_class.return_value = mock_uniqueness
 
         # Mock novelty: all structures are novel
         mock_novelty = MagicMock()
-        mock_novelty_result = MagicMock()
-        mock_novelty_result.individual_values = [1.0, 1.0, 1.0]
-        mock_novelty_result.failed_indices = []
-        mock_novelty.compute.return_value = mock_novelty_result
+        
+        def mock_novelty_compute(input_structures):
+            n_structs = len(input_structures)
+            mock_result = MagicMock()
+            mock_result.individual_values = [1.0] * n_structs
+            mock_result.failed_indices = []
+            return mock_result
+            
+        mock_novelty.compute.side_effect = mock_novelty_compute
         mock_novelty_class.return_value = mock_novelty
 
         benchmark = SUNBenchmark(include_metasun=False)
@@ -402,15 +538,28 @@ class TestSUNBenchmarkIntegration:
         structures = create_test_structures_with_multi_mlip()
 
         # Mock all structures as unique and novel using helper function
-        mock_uniqueness_result = create_mock_uniqueness_result(
-            structures, [1.0, 1.0], []
-        )
-        mock_uniqueness_class.return_value.compute.return_value = mock_uniqueness_result
+        mock_uniqueness = MagicMock()
+        
+        def mock_uniqueness_compute(input_structures):
+            n_structs = len(input_structures)
+            return create_mock_uniqueness_result(
+                input_structures, [1.0] * n_structs, []
+            )
+        
+        mock_uniqueness.compute.side_effect = mock_uniqueness_compute
+        mock_uniqueness_class.return_value = mock_uniqueness
 
-        mock_novelty_result = MagicMock()
-        mock_novelty_result.individual_values = [1.0, 1.0]
-        mock_novelty_result.failed_indices = []
-        mock_novelty_class.return_value.compute.return_value = mock_novelty_result
+        mock_novelty = MagicMock()
+        
+        def mock_novelty_compute(input_structures):
+            n_structs = len(input_structures)
+            mock_result = MagicMock()
+            mock_result.individual_values = [1.0] * n_structs
+            mock_result.failed_indices = []
+            return mock_result
+            
+        mock_novelty.compute.side_effect = mock_novelty_compute
+        mock_novelty_class.return_value = mock_novelty
 
         benchmark = SUNBenchmark()
 
@@ -428,15 +577,28 @@ class TestSUNBenchmarkIntegration:
         structures = create_test_structures()
 
         # Mock deterministic results using helper function
-        mock_uniqueness_result = create_mock_uniqueness_result(
-            structures, [1.0, 1.0, 1.0], []
-        )
-        mock_uniqueness_class.return_value.compute.return_value = mock_uniqueness_result
+        mock_uniqueness = MagicMock()
+        
+        def mock_uniqueness_compute(input_structures):
+            n_structs = len(input_structures)
+            return create_mock_uniqueness_result(
+                input_structures, [1.0] * n_structs, []
+            )
+        
+        mock_uniqueness.compute.side_effect = mock_uniqueness_compute
+        mock_uniqueness_class.return_value = mock_uniqueness
 
-        mock_novelty_result = MagicMock()
-        mock_novelty_result.individual_values = [1.0, 1.0, 1.0]
-        mock_novelty_result.failed_indices = []
-        mock_novelty_class.return_value.compute.return_value = mock_novelty_result
+        mock_novelty = MagicMock()
+        
+        def mock_novelty_compute(input_structures):
+            n_structs = len(input_structures)
+            mock_result = MagicMock()
+            mock_result.individual_values = [1.0] * n_structs
+            mock_result.failed_indices = []
+            return mock_result
+            
+        mock_novelty.compute.side_effect = mock_novelty_compute
+        mock_novelty_class.return_value = mock_novelty
 
         benchmark = SUNBenchmark(include_metasun=False)
 
@@ -478,15 +640,28 @@ class TestSUNBenchmarkIntegration:
             structure.properties = {"e_above_hull": 0.0}  # All stable
             structures.append(structure)
 
-        mock_uniqueness_result = create_mock_uniqueness_result(
-            structures, [1.0] * n_structures, []
-        )
-        mock_uniqueness_class.return_value.compute.return_value = mock_uniqueness_result
+        mock_uniqueness = MagicMock()
+        
+        def mock_uniqueness_compute(input_structures):
+            n_structs = len(input_structures)
+            return create_mock_uniqueness_result(
+                input_structures, [1.0] * n_structs, []
+            )
+        
+        mock_uniqueness.compute.side_effect = mock_uniqueness_compute
+        mock_uniqueness_class.return_value = mock_uniqueness
 
-        mock_novelty_result = MagicMock()
-        mock_novelty_result.individual_values = [1.0] * n_structures
-        mock_novelty_result.failed_indices = []
-        mock_novelty_class.return_value.compute.return_value = mock_novelty_result
+        mock_novelty = MagicMock()
+        
+        def mock_novelty_compute(input_structures):
+            n_structs = len(input_structures)
+            mock_result = MagicMock()
+            mock_result.individual_values = [1.0] * n_structs
+            mock_result.failed_indices = []
+            return mock_result
+            
+        mock_novelty.compute.side_effect = mock_novelty_compute
+        mock_novelty_class.return_value = mock_novelty
 
         benchmark = SUNBenchmark(include_metasun=False)
 
@@ -495,6 +670,37 @@ class TestSUNBenchmarkIntegration:
         # Should handle larger sets efficiently
         assert result is not None
         assert result.metadata["n_structures"] == n_structures
+
+    @patch("lemat_genbench.metrics.sun_metric.NoveltyMetric")
+    @patch("lemat_genbench.metrics.sun_metric.UniquenessMetric")
+    def test_benchmark_version_and_metadata(self, mock_uniqueness_class, mock_novelty_class):
+        """Test that benchmark has correct version and metadata for new implementation."""
+        benchmark = SUNBenchmark()
+
+        # Check version is updated for hierarchical implementation
+        assert benchmark.config.metadata["version"] == "0.2.0"
+        assert benchmark.config.metadata["computation_order"] == "Stability → Uniqueness → Novelty"
+        assert benchmark.config.metadata["supports_structure_matcher"] is True
+
+        structures = create_test_structures()
+
+        # Mock minimal results
+        mock_uniqueness = MagicMock()
+        mock_uniqueness.compute.return_value = create_mock_uniqueness_result([], [1.0], [])
+        mock_uniqueness_class.return_value = mock_uniqueness
+
+        mock_novelty = MagicMock()
+        mock_novelty_result = MagicMock()
+        mock_novelty_result.individual_values = [1.0]
+        mock_novelty_result.failed_indices = []
+        mock_novelty.compute.return_value = mock_novelty_result
+        mock_novelty_class.return_value = mock_novelty
+
+        result = benchmark.evaluate(structures)
+
+        # Check result metadata
+        assert result.metadata["benchmark_name"] == "SUNBenchmark"
+        assert "computation_order" in str(result.metadata)
 
 
 # Manual test function for development
@@ -508,6 +714,8 @@ def manual_test():
         sun_benchmark = SUNBenchmark()
 
         print(f"SUN benchmark name: {sun_benchmark.config.name}")
+        print(f"Benchmark version: {sun_benchmark.config.metadata['version']}")
+        print(f"Computation order: {sun_benchmark.config.metadata['computation_order']}")
 
         # Test 2: Structure creation
         print("2. Testing structure creation...")
@@ -524,8 +732,8 @@ def manual_test():
 
         print("Evaluators configured correctly!")
 
-        # Test 4: Result aggregation
-        print("4. Testing result aggregation...")
+        # Test 4: Result aggregation with hierarchical metrics
+        print("4. Testing hierarchical result aggregation...")
         mock_results = {
             "sun": {
                 "combined_value": 0.25,
@@ -534,6 +742,12 @@ def manual_test():
                         "metrics": {
                             "sun_rate": 0.25,
                             "sun_count": 1,
+                            "msun_rate": 0.25,
+                            "msun_count": 1,
+                            "stable_count": 2,
+                            "metastable_count": 2,
+                            "unique_in_stable_count": 1,
+                            "unique_in_metastable_count": 1,
                             "total_structures_evaluated": 4,
                         }
                     }
@@ -544,11 +758,22 @@ def manual_test():
         final_scores = sun_benchmark.aggregate_evaluator_results(mock_results)
         assert final_scores["sun_rate"] == 0.25
         assert final_scores["sun_count"] == 1
+        assert final_scores["stable_count"] == 2
+        assert final_scores["unique_in_stable_count"] == 1
 
-        print("Result aggregation working correctly!")
+        print("Hierarchical result aggregation working correctly!")
 
-        # Test 5: Mock helper function
-        print("5. Testing mock helper function...")
+        # Test 5: Hierarchical summary
+        print("5. Testing hierarchical summary...")
+        summary = sun_benchmark.get_hierarchical_summary(mock_results)
+        assert "filtering_stages" in summary
+        assert "filtering_efficiency" in summary
+        assert summary["total_structures"] == 4
+
+        print("Hierarchical summary working correctly!")
+
+        # Test 6: Mock helper function
+        print("6. Testing mock helper function...")
         mock_result = create_mock_uniqueness_result(
             ["s1", "s2", "s3"], 
             [1.0, 0.5, 1.0], 

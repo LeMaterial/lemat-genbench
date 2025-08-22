@@ -7,6 +7,7 @@ results from multiple MLIPs.
 """
 
 import gc
+import multiprocessing
 import warnings
 from dataclasses import dataclass, field
 from typing import Any, Dict, List
@@ -19,14 +20,17 @@ from pymatgen.core import Structure
 from lemat_genbench.preprocess.base import BasePreprocessor, PreprocessorConfig
 from lemat_genbench.utils.logging import logger
 
+multiprocessing.set_start_method("spawn", force=True)
+
 # Suppress warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 
+
 def _detach_tensors(obj):
     """Recursively detach PyTorch tensors to make them serializable for multiprocessing."""
     import torch
-    
+
     if isinstance(obj, torch.Tensor):
         return obj.detach().cpu().numpy()
     elif isinstance(obj, dict):
@@ -35,7 +39,7 @@ def _detach_tensors(obj):
         return [_detach_tensors(item) for item in obj]
     elif isinstance(obj, tuple):
         return tuple(_detach_tensors(item) for item in obj)
-    elif hasattr(obj, 'properties') and hasattr(obj.properties, 'items'):
+    elif hasattr(obj, "properties") and hasattr(obj.properties, "items"):
         # Handle pymatgen Structure objects
         for key, value in obj.properties.items():
             obj.properties[key] = _detach_tensors(value)
@@ -43,16 +47,17 @@ def _detach_tensors(obj):
     else:
         return obj
 
+
 def _create_clean_structure_copy(structure):
     """Create a clean copy of a Structure object without any tensors."""
-    
+
     # Use pymatgen's built-in copy method for safety
     clean_structure = structure.copy()
-    
+
     # Only clean the properties, leave everything else intact
-    if hasattr(clean_structure, 'properties') and clean_structure.properties:
+    if hasattr(clean_structure, "properties") and clean_structure.properties:
         clean_structure.properties = _detach_tensors(clean_structure.properties)
-    
+
     return clean_structure
 
 
@@ -60,11 +65,11 @@ def _clear_worker_memory():
     """Clear memory in worker processes."""
     # Run garbage collection
     gc.collect()
-    
+
     # Clear PyTorch cache if available
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
-    
+
     # Note: We do NOT clear the model cache here to maintain caching across structures
     # The models should persist in memory for the lifetime of the worker process
 
@@ -74,35 +79,43 @@ def _clear_model_cache():
     global _PROCESS_MODEL_CACHE
     _PROCESS_MODEL_CACHE.clear()
     logger.debug("🧹 Model cache cleared")
+
+
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # Process-local model cache (each worker process gets its own models)
 _PROCESS_MODEL_CACHE = {}
 
+
 def _get_process_model_cache():
     """Get the process-local model cache."""
     return _PROCESS_MODEL_CACHE
 
+
 def _get_or_create_calculator(mlip_name: str, mlip_config: Dict[str, Any]):
     """Get calculator from process cache or create if not exists."""
     from lemat_genbench.models.registry import get_calculator
+
     cache = _get_process_model_cache()
-    
+
     cache_key = f"{mlip_name}_{hash(str(mlip_config))}"
-    
+
     if cache_key not in cache:
         logger.info(f"Loading {mlip_name} model in worker process...")
         cache[cache_key] = get_calculator(mlip_name, **mlip_config)
         logger.info(f"✅ {mlip_name} model loaded in worker")
     else:
         logger.debug(f"Using cached {mlip_name} model in worker")
-    
+
     return cache[cache_key]
 
-def _initialize_worker_models(mlip_names: List[str], mlip_configs: Dict[str, Dict[str, Any]]):
+
+def _initialize_worker_models(
+    mlip_names: List[str], mlip_configs: Dict[str, Dict[str, Any]]
+):
     """Initialize models in the main process (for logging only)."""
     logger.info("Models will be loaded in each worker process as needed...")
-    
+
     for mlip_name in mlip_names:
         try:
             mlip_config = mlip_configs.get(mlip_name, {})
@@ -122,12 +135,12 @@ def _initialize_worker_models(mlip_names: List[str], mlip_configs: Dict[str, Dic
 
             # Merge user config with defaults (user config takes precedence)
             final_config = {**default_config, **mlip_config}
-            
+
             logger.info(f"Will load {mlip_name} with config: {final_config}")
-            
+
         except Exception as e:
             logger.error(f"Failed to configure {mlip_name} model: {str(e)}")
-    
+
     logger.info(f"✅ Model configuration ready for {len(mlip_names)} models")
 
 
@@ -159,7 +172,7 @@ class MultiMLIPStabilityPreprocessorConfig(PreprocessorConfig):
     mlip_configs: Dict[str, Dict[str, Any]] = field(default_factory=dict)
     relax_structures: bool = True
     relaxation_config: Dict[str, Any] = field(
-        default_factory=lambda: {"fmax": 0.1, "steps": 50}
+        default_factory=lambda: {"fmax": 0.02, "steps": 50}
     )
     calculate_formation_energy: bool = True
     calculate_energy_above_hull: bool = True
@@ -220,11 +233,10 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
         if mlip_configs is None:
             mlip_configs = {}
         if relaxation_config is None:
-            relaxation_config = {"fmax": 0.1, "steps": 50}
+            relaxation_config = {"fmax": 0.02, "steps": 50}
 
         # Handle n_jobs=-1 to use all CPU cores
         if n_jobs == -1:
-            import multiprocessing
             n_jobs = multiprocessing.cpu_count()
             logger.info(f"Using all available CPU cores: {n_jobs}")
 
@@ -328,9 +340,13 @@ class MultiMLIPStabilityPreprocessor(BasePreprocessor):
                     # Merge user config with defaults (user config takes precedence)
                     final_config = {**default_config, **mlip_config}
 
-                    calculators[mlip_name] = _get_or_create_calculator(mlip_name, final_config)
+                    calculators[mlip_name] = _get_or_create_calculator(
+                        mlip_name, final_config
+                    )
                 except Exception as e:
-                    logger.warning(f"Failed to get calculator for {mlip_name}: {str(e)}")
+                    logger.warning(
+                        f"Failed to get calculator for {mlip_name}: {str(e)}"
+                    )
                     continue
 
             # Storage for results from each MLIP
@@ -496,7 +512,9 @@ def _process_single_mlip(
                 rmse = _calculate_rmse(structure, relaxed_structure)
 
                 # Store relaxation results - create clean copy of relaxed structure
-                relaxed_structure_clean = _create_clean_structure_copy(relaxed_structure)
+                relaxed_structure_clean = _create_clean_structure_copy(
+                    relaxed_structure
+                )
                 results["relaxed_structure"] = relaxed_structure_clean
                 results["relaxation_rmse"] = rmse
                 results["relaxation_energy"] = _detach_tensors(relaxation_result.energy)
@@ -514,7 +532,9 @@ def _process_single_mlip(
                         relaxed_formation_energy = (
                             calculator.calculate_formation_energy(relaxed_structure)
                         )
-                        results["relaxed_formation_energy"] = _detach_tensors(relaxed_formation_energy)
+                        results["relaxed_formation_energy"] = _detach_tensors(
+                            relaxed_formation_energy
+                        )
                     except Exception as e:
                         logger.warning(
                             f"[{mlip_name}] Failed to compute relaxed formation_energy: {str(e)}"
@@ -526,7 +546,9 @@ def _process_single_mlip(
                         relaxed_e_above_hull = calculator.calculate_energy_above_hull(
                             relaxed_structure
                         )
-                        results["relaxed_e_above_hull"] = _detach_tensors(relaxed_e_above_hull)
+                        results["relaxed_e_above_hull"] = _detach_tensors(
+                            relaxed_e_above_hull
+                        )
                     except Exception as e:
                         logger.warning(
                             f"[{mlip_name}] Failed to compute relaxed e_above_hull: {str(e)}"

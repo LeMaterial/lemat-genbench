@@ -9,10 +9,10 @@ import warnings
 from dataclasses import dataclass
 from typing import Any, Dict, List
 
-from material_hasher.hasher.bawl import BAWLHasher
-from pymatgen.analysis.local_env import EconNN
-from pymatgen.core.structure import Structure
+from pymatgen.core import Structure
+from tqdm import tqdm
 
+from lemat_genbench.fingerprinting.utils import get_fingerprint, get_fingerprinter
 from lemat_genbench.metrics.base import BaseMetric, MetricConfig, MetricResult
 from lemat_genbench.utils.logging import logger
 
@@ -91,24 +91,13 @@ class UniquenessMetric(BaseMetric):
 
     def _init_fingerprinter(self) -> None:
         """Initialize the fingerprinting method."""
-        if self.config.fingerprint_method.lower() == "bawl":
-            self.fingerprinter = BAWLHasher(
-                graphing_algorithm="WL",
-                bonding_algorithm=EconNN,
-                bonding_kwargs={
-                    "tol": 0.2,
-                    "cutoff": 10,
-                    "use_fictive_radius": True,
-                },
-                include_composition=True,
-                symmetry_labeling="SPGLib",
-                shorten_hash=False,
-            )
-        else:
+        try:
+            self.fingerprinter = get_fingerprinter(self.config.fingerprint_method)
+        except ValueError as e:
             raise ValueError(
                 f"Unknown fingerprint method: {self.config.fingerprint_method}. "
-                "Currently supported: 'bawl'"
-            )
+                "Currently supported: 'bawl', 'short-bawl', 'structure-matcher'"
+            ) from e
 
     def _get_compute_attributes(self) -> Dict[str, Any]:
         """Get the attributes for the compute_structure method."""
@@ -135,16 +124,8 @@ class UniquenessMetric(BaseMetric):
         str | None
             Fingerprint string if successful, None if failed.
         """
-        try:
-            # Get fingerprint for the structure
-            fingerprint = fingerprinter.get_material_hash(structure)
-            return fingerprint
-        except Exception as e:
-            # Log the specific error and structure details for debugging
-            logger.warning(
-                f"Error computing fingerprint for structure {structure.composition.reduced_formula}: {str(e)}"
-            )
-            return None
+        # Use the common get_fingerprint function that checks for cached values
+        return get_fingerprint(structure, fingerprinter)
 
     def compute(
         self,
@@ -178,9 +159,56 @@ class UniquenessMetric(BaseMetric):
         compute_args = self._get_compute_attributes()
 
         try:
-            if self.config.n_jobs <= 1:
-                # Serial computation
-                for idx, structure in enumerate(structures):
+            if "structure-matcher" in self.config.fingerprint_method.lower():
+                fingerprinter = compute_args["fingerprinter"]
+                count_unique = 0
+
+                individual_values = []
+                for i, structure1 in tqdm(
+                    enumerate(structures),
+                    total=len(structures),
+                    disable=not self.verbose,
+                ):
+                    is_unique = True
+                    # min_distance = float("inf")
+                    for j, structure2 in enumerate(structures):
+                        if i < j:
+                            is_equivalent = fingerprinter.is_equivalent(
+                                structure1, structure2
+                            )
+                            # similarity = fingerprinter.get_similarity_score(structure1, structure2)
+                            # distance = 1 - similarity
+                            # min_distance = min(min_distance, distance)
+                            if is_equivalent:
+                                is_unique = False
+                    # individual_values.append(min_distance)
+                    if is_unique:
+                        count_unique += 1
+
+                return MetricResult(
+                    metrics={
+                        self.name: count_unique / len(structures),           # Fraction
+                        "unique_structures_count": count_unique,             # ✅ Add count
+                        "total_structures_evaluated": len(structures),
+                        "duplicate_structures_count": len(structures) - count_unique,
+                        "failed_fingerprinting_count": 0,  # Structure matcher doesn't have failures like fingerprinting
+                    },
+                    primary_metric=self.name,
+                    uncertainties={},
+                    config=self.config,
+                    computation_time=time.time() - start_time,
+                    n_structures=len(structures),
+                    individual_values=individual_values,
+                    failed_indices=failed_indices,
+                    warnings=warnings,
+                )
+
+            else:
+                for idx, structure in tqdm(
+                    enumerate(structures),
+                    total=len(structures),
+                    disable=not self.verbose,
+                ):
                     try:
                         fingerprint = self._compute_structure_fingerprint(
                             structure, compute_args["fingerprinter"]
@@ -201,39 +229,36 @@ class UniquenessMetric(BaseMetric):
                             f"Failed to compute fingerprint for structure {idx}",
                             exc_info=True,
                         )
-            else:
-                # Parallel computation
-                from concurrent.futures import ProcessPoolExecutor
 
-                batch_size = max(1, len(structures) // self.config.n_jobs)
-                batches = self._split_into_batches(structures, batch_size)
+                # Calculate uniqueness metrics
+                result_dict = self._calculate_uniqueness_metrics(
+                    fingerprints, len(structures), len(failed_indices)
+                )
 
-                with ProcessPoolExecutor(max_workers=self.config.n_jobs) as executor:
-                    futures = [
-                        executor.submit(
-                            self._compute_batch_fingerprints, batch, compute_args
-                        )
-                        for batch in batches
-                    ]
+                # Create individual values for consistency with base class
+                # For uniqueness, individual values don't make as much sense,
+                # but we'll assign 1.0 to unique structures and proportional values to
+                # duplicates
+                individual_values = self._assign_individual_values(
+                    structures, fingerprints, failed_indices
+                )
 
-                    current_idx = 0
-                    for future in futures:
-                        batch_fingerprints, failed_batch_indices, batch_warnings = (
-                            future.result()
-                        )
-                        fingerprints.extend(batch_fingerprints)
-                        failed_indices.extend(
-                            [current_idx + i for i in failed_batch_indices]
-                        )
-                        warnings.extend(batch_warnings)
-                        current_idx += len(batch_fingerprints) + len(
-                            failed_batch_indices
-                        )
+                result = MetricResult(
+                    metrics=result_dict["metrics"],
+                    primary_metric=result_dict["primary_metric"],
+                    uncertainties=result_dict["uncertainties"],
+                    config=self.config,
+                    computation_time=time.time() - start_time,
+                    n_structures=len(structures),
+                    individual_values=individual_values,
+                    failed_indices=failed_indices,
+                    warnings=warnings,
+                )
 
-            # Calculate uniqueness metrics
-            result_dict = self._calculate_uniqueness_metrics(
-                fingerprints, len(structures), len(failed_indices)
-            )
+                # Add fingerprints as custom attribute (no base class modification needed)
+                result.fingerprints = fingerprints
+
+                return result
 
         except Exception as e:
             logger.error("Failed to compute uniqueness metric", exc_info=True)
@@ -253,85 +278,18 @@ class UniquenessMetric(BaseMetric):
             )
             # Add empty fingerprints on failure
             result.fingerprints = []
+
             return result
-
-        # Create individual values for consistency with base class
-        # For uniqueness, individual values don't make as much sense,
-        # but we'll assign 1.0 to unique structures and proportional values to 
-        # duplicates
-        individual_values = self._assign_individual_values(
-            structures, fingerprints, failed_indices
-        )
-
-        result = MetricResult(
-            metrics=result_dict["metrics"],
-            primary_metric=result_dict["primary_metric"],
-            uncertainties=result_dict["uncertainties"],
-            config=self.config,
-            computation_time=time.time() - start_time,
-            n_structures=len(structures),
-            individual_values=individual_values,
-            failed_indices=failed_indices,
-            warnings=warnings,
-        )
-        
-        # Add fingerprints as custom attribute (no base class modification needed)
-        result.fingerprints = fingerprints
-        return result
 
     @staticmethod
     def _compute_batch_fingerprints(
         structures: list[Structure],
         compute_args: dict[str, Any],
     ) -> tuple[List[str], List[int], List[str]]:
-        """Compute fingerprints for a batch of structures.
-
-        Parameters
-        ----------
-        structures : list[Structure]
-            Batch of structures to process.
-        compute_args : dict[str, Any]
-            Additional keyword arguments for the compute_structure method.
-
-        Returns
-        -------
-        tuple[List[str], List[int], List[str]]
-            Tuple containing:
-            - List of fingerprints for successful structures.
-            - List of indices of the structures that failed to compute.
-            - List of warnings for failed structures.
-        """
-        fingerprints = []
-        failed_indices = []
-        warnings = []
-
-        try:
-            for idx, structure in enumerate(structures):
-                try:
-                    fingerprint = UniquenessMetric._compute_structure_fingerprint(
-                        structure, **compute_args
-                    )
-                    if fingerprint is not None:
-                        fingerprints.append(fingerprint)
-                    else:
-                        failed_indices.append(idx)
-                        warnings.append("Failed to compute fingerprint")
-                except Exception as e:
-                    failed_indices.append(idx)
-                    warnings.append(str(e))
-
-            return fingerprints, failed_indices, warnings
-
-        except Exception as e:
-            logger.error("Failed to compute fingerprints for batch", exc_info=True)
-            return (
-                [],
-                [i for i in range(len(structures))],
-                [
-                    f"Batch computation failure: {str(e)}"
-                    for _ in range(len(structures))
-                ],
-            )
+        raise NotImplementedError(
+            "UniquenessMetric does not support batch fingerprint computation. "
+            "Use the compute method to evaluate a set of structures."
+        )
 
     def _calculate_uniqueness_metrics(
         self, fingerprints: List[str], total_structures: int, failed_count: int
@@ -457,7 +415,10 @@ class UniquenessMetric(BaseMetric):
         float
             Always returns 0.0 as this method is not used directly.
         """
-        return 0.0
+        raise NotImplementedError(
+            "UniquenessMetric does not support individual structure evaluation. "
+            "Use the compute method to evaluate a set of structures."
+        )
 
     def aggregate_results(self, values: List[float]) -> Dict[str, Any]:
         """Aggregate results into final metric values.

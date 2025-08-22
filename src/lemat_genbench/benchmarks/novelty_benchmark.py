@@ -32,6 +32,7 @@ class NoveltyBenchmark(BaseBenchmark):
         name: str = "NoveltyBenchmark",
         description: str | None = None,
         metadata: Dict[str, Any] | None = None,
+        n_jobs: int = 1,
     ):
         """Initialize the novelty benchmark.
 
@@ -68,6 +69,7 @@ class NoveltyBenchmark(BaseBenchmark):
             fingerprint_method=fingerprint_method,
             cache_reference=cache_reference,
             max_reference_size=max_reference_size,
+            n_jobs=n_jobs,
         )
 
         # Set up evaluator configs

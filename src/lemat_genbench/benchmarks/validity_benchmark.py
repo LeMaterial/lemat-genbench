@@ -28,7 +28,7 @@ class ValidityBenchmark(BaseBenchmark):
         self,
         charge_tolerance: float = 0.1,
         distance_scaling: float = 0.5,
-        min_density: float = 1.0,
+        min_density: float = 0.01,
         max_density: float = 25.0,
         check_format: bool = True,
         check_symmetry: bool = True,

@@ -28,6 +28,7 @@ class UniquenessBenchmark(BaseBenchmark):
         name: str = "UniquenessBenchmark",
         description: str | None = None,
         metadata: Dict[str, Any] | None = None,
+        n_jobs: int = 1,
     ):
         """Initialize the uniqueness benchmark.
 
@@ -53,6 +54,7 @@ class UniquenessBenchmark(BaseBenchmark):
         # Initialize the uniqueness metric
         uniqueness_metric = UniquenessMetric(
             fingerprint_method=fingerprint_method,
+            n_jobs=n_jobs,
         )
 
         # Set up evaluator configs

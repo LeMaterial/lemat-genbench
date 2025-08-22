@@ -1,0 +1,104 @@
+type: comprehensive
+
+# This config runs all benchmark families using structure-matcher comparison
+# Use --families argument to specify only specific families
+# Validity benchmark and preprocessor are ALWAYS run automatically
+
+# Validity benchmark settings (always run - updated to match new implementation)
+validity_settings:
+  charge_tolerance: 0.1
+  distance_scaling: 0.5
+  min_density: 0.01
+  max_density: 25.0
+  check_format: true
+  check_symmetry: true
+
+# Distribution benchmark settings
+mlips: ["orb", "mace", "uma"]
+cache_dir: "./data"
+js_distributions_file: "data/lematbulk_jsdistance_distributions.json"
+mmd_values_file: "data/lematbulk_mmd_values_15k.pkl"
+
+# Fingerprinting method configuration
+fingerprint_method: "structure-matcher"
+
+# Novelty benchmark settings (using structure-matcher)
+novelty_settings:
+  reference_dataset: "LeMaterial/LeMat-Bulk"
+  reference_config: "compatible_pbe"
+  cache_reference: true
+  max_reference_size: null
+  n_jobs: 1
+  tolerance: 0.1
+
+# Uniqueness benchmark settings (using structure-matcher)
+uniqueness_settings:
+  n_jobs: 1
+  tolerance: 0.1
+
+# SUN benchmark settings (using structure-matcher)
+sun_settings:
+  stability_threshold: 0.0
+  metastability_threshold: 0.1
+  include_metasun: true
+  reference_dataset: "LeMaterial/LeMat-Bulk"
+  reference_config: "compatible_pbe"
+  cache_reference: true
+  max_reference_size: null
+  tolerance: 0.1
+
+# HHI benchmark settings
+hhi_settings:
+  production_weight: 0.25
+  reserve_weight: 0.75
+  scale_to_0_10: true
+
+# Multi-MLIP stability settings
+stability_settings:
+  use_ensemble: true
+  metastable_threshold: 0.1
+  ensemble_config:
+    min_mlips_required: 2
+  individual_mlip_config:
+    use_all_available: true
+    require_all_mlips: false
+    fallback_to_single: true
+
+
+# Metadata
+description: "Comprehensive benchmark configuration using pymatgen structure matcher"
+version: "1.0.0"
+metadata:
+  reference: "Comprehensive evaluation using direct structure comparison"
+  use_case: "Full evaluation across validity, distribution, novelty, uniqueness, and stability metrics using structure matching"
+  fingerprinting_method: "structure-matcher"
+  preprocessing_required: false
+  notes:
+    - "Validity benchmark and preprocessor are ALWAYS run automatically"
+    - "Uses pymatgen structure matcher for novelty, uniqueness, and SUN metrics"
+    - "NO fingerprint preprocessing required - works directly with structure objects"
+    - "Runs all benchmark families by default for comprehensive evaluation"
+    - "Use --families argument to specify only specific families (excluding validity)"
+    - "Available families: distribution, diversity, novelty, uniqueness, hhi, sun, stability"
+    - "Automatically skips fingerprint preprocessor for novelty/uniqueness/SUN benchmarks"
+    - "Most accurate structural comparison but computationally intensive"
+  performance_characteristics:
+    - "No preprocessing: direct structure comparison"
+    - "High accuracy: considers crystallographic equivalence"
+    - "Memory efficient: no fingerprint storage required"
+    - "Computationally intensive: O(n²) comparison complexity"
+  recommended_usage:
+    - "Small to medium datasets (<500 structures)"
+    - "When highest accuracy is required"
+    - "Research applications requiring precise structural equivalence"
+    - "Validation of fingerprinting methods"
+    - "High-stakes materials discovery where false positives/negatives are costly"
+  limitations:
+    - "Slower than fingerprinting methods for large datasets"
+    - "Not suitable for very large structure sets (>1000 structures)"
+    - "Comparison time scales quadratically with dataset size"
+  accuracy_benefits:
+    - "Considers crystallographic symmetry operations"
+    - "Accounts for supercell relationships"
+    - "Handles different unit cell choices"
+    - "Robust to numerical precision differences"

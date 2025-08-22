@@ -50,12 +50,12 @@ class ChargeNeutralityConfig(MetricConfig):
 
 class ChargeNeutralityMetric(BaseMetric):
     """Metric to evaluate charge neutrality of crystal structures.
-    
+
     Uses the original three-step approach:
     1. Bond valence analysis for metallic structures
     2. Pymatgen oxidation state determination
     3. Compositional oxidation state guessing
-    
+
     Returns binary validity based on tolerance and tracks charge deviations.
     """
 
@@ -74,7 +74,7 @@ class ChargeNeutralityMetric(BaseMetric):
             lower_is_better=False,  # Higher ratio = better
             n_jobs=n_jobs,
         )
-        
+
         # Override with custom config
         self.config = ChargeNeutralityConfig(
             tolerance=tolerance,
@@ -96,10 +96,10 @@ class ChargeNeutralityMetric(BaseMetric):
     @staticmethod
     def compute_structure(structure: Structure, **compute_args: Any) -> float:
         """Compute charge deviation from neutrality for a single structure.
-        
+
         Returns the absolute deviation from charge neutrality.
         This will be used to determine binary validity in aggregation.
-        
+
         Returns
         -------
         float
@@ -116,11 +116,13 @@ class ChargeNeutralityMetric(BaseMetric):
             count = 0
             for site_index in sites["sites"]:
                 nn_list = get_neighbors_of_site_with_index(structure, site_index)
-                bvs.append([
-                    sites["species"][count],
-                    calculate_bv_sum(structure[site_index], nn_list),
-                    sites["multiplicities"][count],
-                ])
+                bvs.append(
+                    [
+                        sites["species"][count],
+                        calculate_bv_sum(structure[site_index], nn_list),
+                        sites["multiplicities"][count],
+                    ]
+                )
                 count += 1
 
             # Check if all bond valence sums are ~0 (metallic structure)
@@ -143,50 +145,116 @@ class ChargeNeutralityMetric(BaseMetric):
 
         # Step 2: Pymatgen oxidation state determination
         try:
-            structure_with_oxi = bv_analyzer.get_oxi_state_decorated_structure(structure)
+            structure_with_oxi = bv_analyzer.get_oxi_state_decorated_structure(
+                structure
+            )
             charge_sum = sum(site.specie.oxi_state for site in structure_with_oxi.sites)
             logger.debug(
                 "Valid structure - charge balanced based on Pymatgen's get_oxi_state_decorated_structure function"
             )
             return abs(charge_sum)  # Return actual absolute deviation
         except ValueError:
-            logger.debug("Could not determine oxidation states using get_oxi_state_decorated_structure")
+            logger.debug(
+                "Could not determine oxidation states using get_oxi_state_decorated_structure"
+            )
 
         # Step 3: Compositional oxidation state guessing
         try:
             comp = Composition(structure.composition)
             here = Path(__file__).resolve().parent
             three_up = here.parents[2]
-            
+
             try:
                 with open(three_up / "data" / "oxi_state_mapping.json", "r") as f:
                     oxi_state_mapping = json.load(f)
             except FileNotFoundError:
                 # Fallback to default oxidation state mapping
                 oxi_state_mapping = {
-                    "H": [-1, 1], "Li": [1], "Be": [2], "B": [3], "C": [-4, 2, 4],
-                    "N": [-3, 3, 5], "O": [-2], "F": [-1], "Na": [1], "Mg": [2],
-                    "Al": [3], "Si": [4], "P": [3, 5], "S": [-2, 4, 6], "Cl": [-1],
-                    "K": [1], "Ca": [2], "Sc": [3], "Ti": [2, 3, 4], "V": [2, 3, 4, 5],
-                    "Cr": [2, 3, 6], "Mn": [2, 3, 4, 7], "Fe": [2, 3], "Co": [2, 3],
-                    "Ni": [2], "Cu": [1, 2], "Zn": [2], "Ga": [3], "Ge": [2, 4],
-                    "As": [3, 5], "Se": [-2, 4, 6], "Br": [-1], "Rb": [1], "Sr": [2],
-                    "Y": [3], "Zr": [4], "Nb": [3, 5], "Mo": [3, 4, 5, 6], "Tc": [4, 7],
-                    "Ru": [3, 4], "Rh": [3], "Pd": [2, 4], "Ag": [1], "Cd": [2],
-                    "In": [3], "Sn": [2, 4], "Sb": [3, 5], "Te": [-2, 4, 6], "I": [-1],
-                    "Cs": [1], "Ba": [2], "La": [3], "Ce": [3, 4], "Pr": [3], "Nd": [3],
-                    "Pm": [3], "Sm": [2, 3], "Eu": [2, 3], "Gd": [3], "Tb": [3, 4],
-                    "Dy": [3], "Ho": [3], "Er": [3], "Tm": [3], "Yb": [2, 3], "Lu": [3],
-                    "Hf": [4], "Ta": [5], "W": [4, 6], "Re": [4, 7], "Os": [4, 8],
-                    "Ir": [3, 4], "Pt": [2, 4], "Au": [1, 3], "Hg": [1, 2], "Tl": [1, 3],
-                    "Pb": [2, 4], "Bi": [3, 5]
+                    "H": [-1, 1],
+                    "Li": [1],
+                    "Be": [2],
+                    "B": [3],
+                    "C": [-4, 2, 4],
+                    "N": [-3, 3, 5],
+                    "O": [-2],
+                    "F": [-1],
+                    "Na": [1],
+                    "Mg": [2],
+                    "Al": [3],
+                    "Si": [4],
+                    "P": [3, 5],
+                    "S": [-2, 4, 6],
+                    "Cl": [-1],
+                    "K": [1],
+                    "Ca": [2],
+                    "Sc": [3],
+                    "Ti": [2, 3, 4],
+                    "V": [2, 3, 4, 5],
+                    "Cr": [2, 3, 6],
+                    "Mn": [2, 3, 4, 7],
+                    "Fe": [2, 3],
+                    "Co": [2, 3],
+                    "Ni": [2],
+                    "Cu": [1, 2],
+                    "Zn": [2],
+                    "Ga": [3],
+                    "Ge": [2, 4],
+                    "As": [3, 5],
+                    "Se": [-2, 4, 6],
+                    "Br": [-1],
+                    "Rb": [1],
+                    "Sr": [2],
+                    "Y": [3],
+                    "Zr": [4],
+                    "Nb": [3, 5],
+                    "Mo": [3, 4, 5, 6],
+                    "Tc": [4, 7],
+                    "Ru": [3, 4],
+                    "Rh": [3],
+                    "Pd": [2, 4],
+                    "Ag": [1],
+                    "Cd": [2],
+                    "In": [3],
+                    "Sn": [2, 4],
+                    "Sb": [3, 5],
+                    "Te": [-2, 4, 6],
+                    "I": [-1],
+                    "Cs": [1],
+                    "Ba": [2],
+                    "La": [3],
+                    "Ce": [3, 4],
+                    "Pr": [3],
+                    "Nd": [3],
+                    "Pm": [3],
+                    "Sm": [2, 3],
+                    "Eu": [2, 3],
+                    "Gd": [3],
+                    "Tb": [3, 4],
+                    "Dy": [3],
+                    "Ho": [3],
+                    "Er": [3],
+                    "Tm": [3],
+                    "Yb": [2, 3],
+                    "Lu": [3],
+                    "Hf": [4],
+                    "Ta": [5],
+                    "W": [4, 6],
+                    "Re": [4, 7],
+                    "Os": [4, 8],
+                    "Ir": [3, 4],
+                    "Pt": [2, 4],
+                    "Au": [1, 3],
+                    "Hg": [1, 2],
+                    "Tl": [1, 3],
+                    "Pb": [2, 4],
+                    "Bi": [3, 5],
                 }
-            
+
             oxi_states_override = {}
             for e in comp.elements:
                 if str(e) in oxi_state_mapping:
                     oxi_states_override[str(e)] = oxi_state_mapping[str(e)]
-            
+
             output = compositional_oxi_state_guesses(
                 comp,
                 all_oxi_states=False,
@@ -194,13 +262,13 @@ class ChargeNeutralityMetric(BaseMetric):
                 target_charge=0,
                 oxi_states_override=oxi_states_override,
             )
-            
+
             logger.debug(
                 f"Most valid oxidation state and score based on composition: "
                 f"{output[1][0] if len(output[1]) > 0 else 'None'}, "
                 f"{output[2][0] if len(output[2]) > 0 else 'None'}"
             )
-            
+
             try:
                 score = output[2][0]
                 if score > 0.001:
@@ -209,7 +277,7 @@ class ChargeNeutralityMetric(BaseMetric):
                     return 10.0  # Large deviation penalty (unreasonable composition)
             except IndexError:
                 return 10.0  # Large deviation penalty (no valid assignments)
-                
+
         except Exception as e:
             logger.debug(f"Compositional oxidation state guessing failed: {str(e)}")
             return 10.0  # Large penalty for failed analysis
@@ -230,7 +298,7 @@ class ChargeNeutralityMetric(BaseMetric):
         # Filter out NaN values
         valid_values = [v for v in values if not np.isnan(v)]
         total_count = len(values)  # Use original count as denominator
-        
+
         if not valid_values:
             return {
                 "metrics": {
@@ -244,9 +312,11 @@ class ChargeNeutralityMetric(BaseMetric):
             }
 
         # Count charge neutral structures (within tolerance)
-        charge_neutral_count = sum(1 for v in valid_values if v <= self.config.tolerance)
+        charge_neutral_count = sum(
+            1 for v in valid_values if v <= self.config.tolerance
+        )
         charge_neutral_ratio = charge_neutral_count / total_count
-        
+
         # Calculate average deviation
         avg_deviation = np.mean(valid_values)
 
@@ -296,7 +366,7 @@ class MinimumInteratomicDistanceMetric(BaseMetric):
             lower_is_better=False,  # Higher ratio = better
             n_jobs=n_jobs,
         )
-        
+
         # Override with custom config
         self.config = MinimumInteratomicDistanceConfig(
             scaling_factor=scaling_factor,
@@ -305,12 +375,12 @@ class MinimumInteratomicDistanceMetric(BaseMetric):
             lower_is_better=False,
             n_jobs=n_jobs,
         )
-        
+
         # Initialize default element radii
         self.element_radii = {
             str(el): el.atomic_radius or 1.0  # Default to 1.0 if None
             for el in Element
-            if hasattr(el, 'atomic_radius')
+            if hasattr(el, "atomic_radius")
         }
 
     def _get_compute_attributes(self) -> dict[str, Any]:
@@ -322,7 +392,7 @@ class MinimumInteratomicDistanceMetric(BaseMetric):
     @staticmethod
     def compute_structure(structure: Structure, **compute_args: Any) -> float:
         """Compute minimum interatomic distance validity for a single structure.
-        
+
         Returns
         -------
         float
@@ -330,7 +400,7 @@ class MinimumInteratomicDistanceMetric(BaseMetric):
         """
         scaling_factor = compute_args.get("scaling_factor", 0.5)
         element_radii = compute_args.get("element_radii", {})
-        
+
         # Get all pairs of sites
         all_distances = structure.distance_matrix
         n_sites = len(structure)
@@ -356,7 +426,9 @@ class MinimumInteratomicDistanceMetric(BaseMetric):
                 element_j = str(structure[j].specie)
 
                 # Sum of atomic radii with scaling
-                min_dist = (0.7 + element_radii[element_i] + element_radii[element_j]) * scaling_factor
+                min_dist = (
+                    0.7 + element_radii[element_i] + element_radii[element_j]
+                ) * scaling_factor
                 actual_dist = all_distances[i, j]
 
                 if actual_dist < min_dist:
@@ -373,7 +445,7 @@ class MinimumInteratomicDistanceMetric(BaseMetric):
         # Filter out NaN values
         valid_values = [v for v in values if not np.isnan(v)]
         total_count = len(values)  # Use original count as denominator
-        
+
         if not valid_values:
             return {
                 "metrics": {
@@ -406,7 +478,7 @@ class PhysicalPlausibilityConfig(MetricConfig):
 
     Parameters
     ----------
-    min_density : float, default=1.0
+    min_density : float, default=0.01
         Minimum allowed density in g/cm³.
     max_density : float, default=25.0
         Maximum allowed density in g/cm³.
@@ -416,7 +488,7 @@ class PhysicalPlausibilityConfig(MetricConfig):
         Whether to check space group validity.
     """
 
-    min_density: float = 1.0
+    min_density: float = 0.01
     max_density: float = 25.0
     check_format: bool = True
     check_symmetry: bool = True
@@ -427,7 +499,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
     def __init__(
         self,
-        min_density: float = 1.0,
+        min_density: float = 0.01,
         max_density: float = 25.0,
         check_format: bool = True,
         check_symmetry: bool = True,
@@ -442,7 +514,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
             lower_is_better=False,  # Higher ratio = better
             n_jobs=n_jobs,
         )
-        
+
         # Override with custom config
         self.config = PhysicalPlausibilityConfig(
             min_density=min_density,
@@ -466,20 +538,20 @@ class PhysicalPlausibilityMetric(BaseMetric):
     @staticmethod
     def compute_structure(structure: Structure, **compute_args: Any) -> float:
         """Compute physical plausibility for a single structure.
-        
+
         Returns
         -------
         float
             1.0 if structure passes all plausibility checks, 0.0 otherwise.
         """
-        min_density = compute_args.get("min_density", 1.0)
+        min_density = compute_args.get("min_density", 0.01)
         max_density = compute_args.get("max_density", 25.0)
         check_format = compute_args.get("check_format", True)
         check_symmetry = compute_args.get("check_symmetry", True)
-        
+
         checks_passed = 0
         total_checks = 2  # density + lattice checks are always done
-        
+
         # 1. Density check
         try:
             density = structure.density
@@ -492,18 +564,22 @@ class PhysicalPlausibilityMetric(BaseMetric):
                 )
         except Exception as e:
             logger.debug(f"Could not compute density: {str(e)}")
-        
+
         # 2. Lattice check
         try:
             lattice = structure.lattice
             volume = lattice.volume
             a, b, c = lattice.abc
             alpha, beta, gamma = lattice.angles
-            
+
             # Check reasonable ranges
-            if (volume > 1.0 and  # Volume > 1 Å³
-                all(1.0 <= param <= 100.0 for param in [a, b, c]) and  # Parameters 1-100 Å
-                all(0 < angle < 180 for angle in [alpha, beta, gamma])):  # Angles 0-180°
+            if (
+                volume > 1.0  # Volume > 1 Å³
+                and all(
+                    1.0 <= param <= 100.0 for param in [a, b, c]
+                )  # Parameters 1-100 Å
+                and all(0 < angle < 180 for angle in [alpha, beta, gamma])
+            ):  # Angles 0-180°
                 checks_passed += 1
             else:
                 logger.debug(
@@ -512,7 +588,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
                 )
         except Exception as e:
             logger.debug(f"Could not validate lattice: {str(e)}")
-        
+
         # 3. Format check (optional)
         if check_format:
             total_checks += 1
@@ -524,7 +600,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
                 checks_passed += 1
             except Exception as e:
                 logger.debug(f"Format check failed: {str(e)}")
-        
+
         # 4. Symmetry check (optional)
         if check_symmetry:
             total_checks += 1
@@ -534,12 +610,16 @@ class PhysicalPlausibilityMetric(BaseMetric):
                 if 1 <= space_group_number <= 230:
                     checks_passed += 1
                 else:
-                    logger.debug(f"Symmetry check failed: spacegroup={space_group_number}")
+                    logger.debug(
+                        f"Symmetry check failed: spacegroup={space_group_number}"
+                    )
             except Exception as e:
                 logger.debug(f"Symmetry check failed: {str(e)}")
-        
-        logger.debug(f"Physical plausibility checks passed: {checks_passed}/{total_checks}")
-        
+
+        logger.debug(
+            f"Physical plausibility checks passed: {checks_passed}/{total_checks}"
+        )
+
         # Return 1.0 if ALL checks passed, 0.0 otherwise
         return 1.0 if checks_passed == total_checks else 0.0
 
@@ -548,7 +628,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
         # Filter out NaN values
         valid_values = [v for v in values if not np.isnan(v)]
         total_count = len(values)  # Use original count as denominator
-        
+
         if not valid_values:
             return {
                 "metrics": {
@@ -577,7 +657,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
 class OverallValidityMetric(BaseMetric):
     """Metric that combines all validity checks into overall validity assessment.
-    
+
     A structure is considered overall valid only if it passes ALL individual validity checks.
     """
 
@@ -585,21 +665,23 @@ class OverallValidityMetric(BaseMetric):
         self,
         charge_tolerance: float = 0.1,
         distance_scaling: float = 0.5,
-        min_density: float = 1.0,
+        min_density: float = 0.01,
         max_density: float = 25.0,
         check_format: bool = True,
         check_symmetry: bool = True,
         name: str = "OverallValidity",
         description: str = "Overall validity based on all individual checks",
         n_jobs: int = 1,
+        verbose: bool = False,
     ):
         super().__init__(
             name=name,
             description=description,
             lower_is_better=False,  # Higher ratio = better
             n_jobs=n_jobs,
+            verbose=verbose,
         )
-        
+
         # Store parameters for individual metrics
         self.charge_tolerance = charge_tolerance
         self.distance_scaling = distance_scaling
@@ -607,57 +689,68 @@ class OverallValidityMetric(BaseMetric):
         self.max_density = max_density
         self.check_format = check_format
         self.check_symmetry = check_symmetry
+        
+        # Store diagnostic information during computation
+        self._diagnostic_data = []
 
     def _get_compute_attributes(self) -> dict[str, Any]:
+        attrs = super()._get_compute_attributes()
         return {
+            **attrs,
             "charge_tolerance": self.charge_tolerance,
             "distance_scaling": self.distance_scaling,
             "min_density": self.min_density,
             "max_density": self.max_density,
             "check_format": self.check_format,
             "check_symmetry": self.check_symmetry,
+            "verbose": self.verbose,
         }
 
     @staticmethod
     def compute_structure(structure: Structure, **compute_args: Any) -> float:
         """Compute overall validity for a single structure.
-        
+
         Returns
         -------
         float
             1.0 if structure passes ALL validity checks, 0.0 otherwise.
         """
+
         # Extract parameters
         charge_tolerance = compute_args.get("charge_tolerance", 0.1)
         distance_scaling = compute_args.get("distance_scaling", 0.5)
-        min_density = compute_args.get("min_density", 1.0)
+        min_density = compute_args.get("min_density", 0.01)
         max_density = compute_args.get("max_density", 25.0)
         check_format = compute_args.get("check_format", True)
         check_symmetry = compute_args.get("check_symmetry", True)
-        
+
         # Check charge neutrality
         try:
             charge_deviation = ChargeNeutralityMetric.compute_structure(
-                structure, 
+                structure,
                 tolerance=charge_tolerance,
                 strict=False,
-                bv_analyzer=BVAnalyzer()
+                bv_analyzer=BVAnalyzer(),
             )
             charge_valid = charge_deviation <= charge_tolerance
         except Exception:
             charge_valid = False
-        
+
         # Check interatomic distances
         try:
             distance_score = MinimumInteratomicDistanceMetric.compute_structure(
                 structure,
                 scaling_factor=distance_scaling,
-                element_radii={str(el): el.atomic_radius or 1.0 for el in Element if hasattr(el, 'atomic_radius')}
+                element_radii={
+                    str(el): el.atomic_radius or 1.0
+                    for el in Element
+                    if hasattr(el, "atomic_radius")
+                },
             )
             distance_valid = distance_score >= 0.999  # Essentially 1.0
         except Exception:
             distance_valid = False
-        
+
         # Check physical plausibility
         try:
             plausibility_score = PhysicalPlausibilityMetric.compute_structure(
@@ -665,15 +758,27 @@ class OverallValidityMetric(BaseMetric):
                 min_density=min_density,
                 max_density=max_density,
                 check_format=check_format,
-                check_symmetry=check_symmetry
+                check_symmetry=check_symmetry,
             )
             plausibility_valid = plausibility_score >= 0.999  # Essentially 1.0
         except Exception:
             plausibility_valid = False
-        
+
         # Overall valid only if ALL checks pass
-        overall_valid = 1.0 if (charge_valid and distance_valid and plausibility_valid) else 0.0
+        overall_valid = (
+            1.0 if (charge_valid and distance_valid and plausibility_valid) else 0.0
+        )
         
+        # Store diagnostic info in structure properties for later use
+        # This is a way to pass additional info without breaking the base class contract
+        if hasattr(structure, 'properties'):
+            structure.properties['_validity_diagnostics'] = {
+                "overall_valid": overall_valid,
+                "charge_valid": charge_valid,
+                "distance_valid": distance_valid,
+                "plausibility_valid": plausibility_valid,
+            }
+
         return overall_valid
 
     def aggregate_results(self, values: list[float]) -> Dict[str, Any]:
@@ -681,7 +786,7 @@ class OverallValidityMetric(BaseMetric):
         # Filter out NaN values
         valid_values = [v for v in values if not np.isnan(v)]
         total_count = len(values)  # Use original count as denominator
-        
+
         if not valid_values:
             return {
                 "metrics": {
@@ -697,7 +802,7 @@ class OverallValidityMetric(BaseMetric):
         valid_count = sum(valid_values)
         valid_ratio = valid_count / total_count
 
-        return {
+        result = {
             "metrics": {
                 "overall_valid_ratio": valid_ratio,
                 "overall_valid_count": int(valid_count),
@@ -706,3 +811,8 @@ class OverallValidityMetric(BaseMetric):
             "primary_metric": "overall_valid_ratio",
             "uncertainties": {},
         }
+        
+        # Note: Diagnostic information could be accessed from structure properties
+        # if needed, but we keep the standard interface clean
+        
+        return result

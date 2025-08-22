@@ -140,7 +140,7 @@ def test_overall_validity_metric(valid_structures, invalid_structures):
     metric = OverallValidityMetric(
         charge_tolerance=0.1,
         distance_scaling=0.5,
-        min_density=1.0,
+        min_density=0.01,
         max_density=25.0,
         check_format=False,  # Skip for speed
         check_symmetry=False,

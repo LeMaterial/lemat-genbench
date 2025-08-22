@@ -44,7 +44,7 @@ class BenchmarkConfig:
     evaluator_configs: dict[str, EvaluatorConfig]
     metadata: dict[str, any] | None = None
     reference_df: pd.DataFrame | None = None
-    mlips: list[str] | None = None 
+    mlips: list[str] | None = None
 
 
 @dataclass

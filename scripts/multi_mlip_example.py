@@ -76,7 +76,7 @@ def example_custom_configuration():
         mlip_names=["orb", "mace", "uma"],
         mlip_configs=mlip_configs,
         relax_structures=True,
-        relaxation_config={"fmax": 0.01, "steps": 300},  # Tighter convergence
+        relaxation_config={"fmax": 0.02, "steps": 300},  # Tighter convergence
         calculate_formation_energy=True,
         calculate_energy_above_hull=True,
         extract_embeddings=True,

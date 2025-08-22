@@ -57,7 +57,9 @@ class DistributionBenchmark(BaseBenchmark):
             )
 
         # Initialize the JSDistance metric with lightweight reference file
-        JSDistance_metric = JSDistance(reference_distributions_file=js_distributions_file)
+        JSDistance_metric = JSDistance(
+            reference_distributions_file=js_distributions_file
+        )
         # Set up evaluator configs
         evaluator_configs = {
             "JSDistance": EvaluatorConfig(
@@ -162,6 +164,7 @@ if __name__ == "__main__":
     from lemat_genbench.preprocess.multi_mlip_preprocess import (
         MultiMLIPStabilityPreprocessor,
     )
+
     test = PymatgenTest()
 
     structures = [
@@ -195,7 +198,7 @@ if __name__ == "__main__":
         mlip_names=["orb", "mace", "uma"],
         mlip_configs=mlip_configs,
         relax_structures=True,
-        relaxation_config={"fmax": 0.1, "steps": 50},  # Tighter convergence
+        relaxation_config={"fmax": 0.02, "steps": 50},  # Tighter convergence
         calculate_formation_energy=True,
         calculate_energy_above_hull=True,
         extract_embeddings=True,
