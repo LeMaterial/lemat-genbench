@@ -706,7 +706,7 @@ def run_remaining_benchmarks(
 
                 elif family == "uniqueness":
                     # Use original uniqueness benchmark
-                    uniqueness_settings = config.get("uniqueness_settings", {})
+                    _ = config.get("uniqueness_settings", {})
                     benchmark = UniquenessBenchmark(
                         fingerprint_method=config.get(
                             "fingerprint_method", "short-bawl"

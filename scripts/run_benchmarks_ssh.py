@@ -558,7 +558,7 @@ def run_remaining_preprocessors(valid_structures, preprocessor_config: Dict[str,
             mlip_names=["orb", "mace", "uma"],
             mlip_configs=mlip_configs,
             relax_structures=relax_structures,
-            relaxation_config={"fmax": 0.1, "steps": 50},
+            relaxation_config={"fmax": 0.02, "steps": 50},
             calculate_formation_energy=relax_structures,
             calculate_energy_above_hull=relax_structures,
             extract_embeddings=extract_embeddings,
@@ -671,7 +671,7 @@ def run_remaining_benchmarks(valid_structures, benchmark_families: List[str], co
 
                 elif family == "uniqueness":
                     # Use original uniqueness benchmark
-                    uniqueness_settings = config.get("uniqueness_settings", {})
+                    _ = config.get("uniqueness_settings", {})
                     benchmark = UniquenessBenchmark(
                         fingerprint_method=config.get("fingerprint_method", "short-bawl"),
                         n_jobs=1,

@@ -22,7 +22,6 @@ from .crystallographic_analyzer import (
 from .encode_compositions import (
     filter_df,
     get_all_compositions,
-    lematbulk_item_to_structure,
     one_hot_encode_composition,
     process_chunk,
 )

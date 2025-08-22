@@ -22,7 +22,9 @@ def main():
     
     try:
         # Import the module with better error handling
-        from lemat_genbench.fingerprinting.encode_compositions import get_all_compositions
+        from lemat_genbench.fingerprinting.encode_compositions import (
+            get_all_compositions,
+        )
         
         # Create data directory
         data_dir = Path("data")
