@@ -186,7 +186,13 @@ class UniquenessMetric(BaseMetric):
                         count_unique += 1
 
                 return MetricResult(
-                    metrics={self.name: count_unique / len(structures)},
+                    metrics={
+                        self.name: count_unique / len(structures),           # Fraction
+                        "unique_structures_count": count_unique,             # ✅ Add count
+                        "total_structures_evaluated": len(structures),
+                        "duplicate_structures_count": len(structures) - count_unique,
+                        "failed_fingerprinting_count": 0,  # Structure matcher doesn't have failures like fingerprinting
+                    },
                     primary_metric=self.name,
                     uncertainties={},
                     config=self.config,
