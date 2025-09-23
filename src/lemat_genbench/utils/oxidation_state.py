@@ -1,8 +1,9 @@
 import json
+import math
 from collections import defaultdict
 from itertools import combinations_with_replacement, product
 from pathlib import Path
-import math
+
 import numpy as np
 from pymatgen.core.periodic_table import Element, Species
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer

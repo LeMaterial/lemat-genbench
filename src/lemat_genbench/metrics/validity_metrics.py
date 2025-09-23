@@ -834,7 +834,7 @@ def lematbulk_item_to_structure(item: dict):
 
 if __name__ == "__main__":
     from datasets import load_dataset
-    from tqdm import tqdm 
+    from tqdm import tqdm
 
     dataset_name = "Lematerial/LeMat-Bulk"
     name = "compatible_pbe"
