@@ -26,7 +26,6 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 import psutil
-import torch
 import yaml
 from tqdm import tqdm
 

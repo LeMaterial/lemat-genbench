@@ -177,6 +177,9 @@ src/lemat_genbench/.DS_Store
 # Ignore .gz
 *.gz
 
+# Ignore .cif
+*.cif
+
 # Large data files - embeddings
 data/*_embeddings.npy
 
