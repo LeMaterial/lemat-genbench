@@ -129,7 +129,7 @@ def compositional_oxi_state_guesses(
                 if oxid_sum not in el_sums[idx]:
                     el_sums[idx].append(oxid_sum)
 
-                if all_oxi_states == False:
+                if not all_oxi_states:
                     # Determine how probable is this combo?
                     scores = []
                     for o in oxid_combo:
