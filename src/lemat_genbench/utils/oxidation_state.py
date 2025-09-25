@@ -170,7 +170,7 @@ def compositional_oxi_state_guesses(
                         
             all_sols.append(sol)
             
-            if all_oxi_states == False:
+            if not all_oxi_states:
                 # Determine the score for this solution
                 scores = []
                 for idx, v in enumerate(x):
