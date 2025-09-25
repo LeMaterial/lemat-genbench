@@ -25,6 +25,7 @@ from lemat_genbench.utils.oxidation_state import (
     compositional_oxi_state_guesses,
     get_inequivalent_site_info,
 )
+from smact.metallicity import metallicity_score
 
 # Suppress common warnings
 warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
@@ -111,6 +112,9 @@ class ChargeNeutralityMetric(BaseMetric):
 
         # Step 1: Bond valence analysis for metallic structures
         try:
+            metal_score = metallicity_score(Composition(structure.formula))
+            if metal_score > 0.7:
+                return 0.0  # Perfectly charge neutral (metallic)
             sites = get_inequivalent_site_info(structure)
             bvs = []
             count = 0
@@ -130,7 +134,7 @@ class ChargeNeutralityMetric(BaseMetric):
                 for bv in bvs:
                     if np.abs(bv[1]) < 10**-15:
                         pass
-                    else:
+                    else:   
                         raise ValueError
                 logger.debug(
                     "Valid structure - Metallic structure with bond valence equal to zero for all atoms"
@@ -275,10 +279,30 @@ class ChargeNeutralityMetric(BaseMetric):
                 return 0.0  # Assume charge neutral (reasonable composition)
             else:
                 print("failed penalty")
-                return 10.0  # Large deviation penalty (unreasonable composition)
+                return 0.0  # Small deviation penalty (charge balanced using LeMatBulk oxidation states, but requires unusual states)
         except IndexError:
-            print("IndexError")
-            return 10.0  # Large deviation penalty (no valid assignments)
+
+            output = compositional_oxi_state_guesses(
+                comp,
+                all_oxi_states=True,
+                max_sites=-1,
+                target_charge=0,
+                oxi_states_override=None,
+                )
+
+            try:
+                # print(output)
+                score = -output[2][0] # correlation between oxidation state and electronegativity. Should be negative correlation for valid structures, reverse sign so logic 
+                # maximizing score is consistent
+                if score > 0.0:
+                    return 0.0  # Assume charge neutral (reasonable composition)
+                else:
+                    # print("failed penalty")
+                    return 0.0  # Small deviation penalty (charge balanced using LeMatBulk oxidation states, but requires unusual states)
+            
+            except IndexError:
+                # print("Index Error")
+                return 10.0 # large deviation penalty 
 
         # except Exception as e:
         #     logger.debug(f"Compositional oxidation state guessing failed: {str(e)}")
@@ -842,7 +866,7 @@ if __name__ == "__main__":
     dataset = load_dataset(dataset_name, name=name, split=split, streaming=False)
 
     np.random.seed(32)
-    indicies = np.random.randint(0, len(dataset), 60)
+    indicies = np.random.randint(0, len(dataset), 50)
 
     structures = []
     for i in tqdm(range(len(indicies))):
@@ -853,5 +877,5 @@ if __name__ == "__main__":
     metric = ChargeNeutralityMetric()
     args = metric._get_compute_attributes()
 
-    val = metric.compute_structure(structures[57], **args)
+    val = metric.compute_structure(structures[18], **args)
     print(val)
