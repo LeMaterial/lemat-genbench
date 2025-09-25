@@ -1,24 +1,9 @@
 import json
-import math
 import re
 from collections import defaultdict
-from itertools import combinations_with_replacement, product
-from pathlib import Path
 
 import numpy as np
-import pandas as pd
-import smact
-from pymatgen.core import Composition, Element, Species
 from smact.utils.oxidation import ICSD24OxStatesFilter
-
-from lemat_genbench.utils.oxidation_state import (
-    build_oxi_dict,
-    build_oxi_dict_probs,
-    build_oxi_state_map,
-    build_sorted_oxi_dict,
-)
-import smact
-from smact.screening import smact_filter, smact_validity
 
 
 def build_icsd_oxi_state_mapping(icsd_dict):

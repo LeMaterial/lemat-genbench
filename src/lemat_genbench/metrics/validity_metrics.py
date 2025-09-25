@@ -18,6 +18,7 @@ from pymatgen.core.periodic_table import Element
 from pymatgen.core.structure import Structure
 from pymatgen.io.cif import CifWriter
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
+from smact.metallicity import metallicity_score
 
 from lemat_genbench.metrics.base import BaseMetric, MetricConfig
 from lemat_genbench.utils.logging import logger
@@ -25,7 +26,6 @@ from lemat_genbench.utils.oxidation_state import (
     compositional_oxi_state_guesses,
     get_inequivalent_site_info,
 )
-from smact.metallicity import metallicity_score
 
 # Suppress common warnings
 warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")

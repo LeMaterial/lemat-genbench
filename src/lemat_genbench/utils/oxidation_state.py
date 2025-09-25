@@ -8,6 +8,7 @@ import numpy as np
 from pymatgen.core.periodic_table import Element, Species
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 
+
 def electronegativity_correlation(
         elements: list[str],
         oxidation_states: list[int]
