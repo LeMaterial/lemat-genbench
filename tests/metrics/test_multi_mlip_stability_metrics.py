@@ -14,6 +14,10 @@ from lemat_genbench.metrics.multi_mlip_stability_metrics import (
     FormationEnergyMetric,
     MetastabilityMetric,
     RelaxationStabilityMetric,
+    RelaxedE_HullMetric,
+    RelaxedFormationEnergyMetric,
+    RelaxedMetastabilityMetric,
+    RelaxedStabilityMetric,
     StabilityMetric,
     extract_ensemble_value,
     extract_individual_values,
@@ -40,16 +44,25 @@ def test_structures_with_multi_mlip_properties():
             "e_above_hull": {"orb": -0.01, "mace": -0.005, "uma": 0.001},
             "formation_energy": {"orb": -2.1, "mace": -2.05, "uma": -2.08},
             "relaxation_rmse": {"orb": 0.015, "mace": 0.018, "uma": 0.020},
+            # Relaxed properties (typically more stable after relaxation)
+            "relaxed_e_above_hull": {"orb": -0.02, "mace": -0.015, "uma": -0.005},
+            "relaxed_formation_energy": {"orb": -2.2, "mace": -2.15, "uma": -2.18},
         },
         {  # Structure 2: Mixed stability predictions (metastable/unstable)
             "e_above_hull": {"orb": 0.08, "mace": 0.12, "uma": 0.09},
             "formation_energy": {"orb": -1.2, "mace": -1.1, "uma": -1.3},
             "relaxation_rmse": {"orb": 0.025, "mace": 0.030, "uma": 0.022},
+            # Relaxed properties (slightly more stable after relaxation)
+            "relaxed_e_above_hull": {"orb": 0.05, "mace": 0.08, "uma": 0.06},
+            "relaxed_formation_energy": {"orb": -1.3, "mace": -1.2, "uma": -1.4},
         },
         {  # Structure 3: Unstable according to all MLIPs
             "e_above_hull": {"orb": 0.25, "mace": 0.30, "uma": 0.28},
             "formation_energy": {"orb": 0.5, "mace": 0.6, "uma": 0.4},
             "relaxation_rmse": {"orb": 0.040, "mace": 0.045, "uma": 0.038},
+            # Relaxed properties (still unstable but slightly better)
+            "relaxed_e_above_hull": {"orb": 0.20, "mace": 0.25, "uma": 0.22},
+            "relaxed_formation_energy": {"orb": 0.3, "mace": 0.4, "uma": 0.2},
         },
     ]
 
@@ -65,9 +78,16 @@ def test_structures_with_multi_mlip_properties():
             structure.properties[f"relaxation_rmse_{mlip_name}"] = data[
                 "relaxation_rmse"
             ][mlip_name]
+            # Add relaxed properties
+            structure.properties[f"relaxed_e_above_hull_{mlip_name}"] = data[
+                "relaxed_e_above_hull"
+            ][mlip_name]
+            structure.properties[f"relaxed_formation_energy_{mlip_name}"] = data[
+                "relaxed_formation_energy"
+            ][mlip_name]
 
         # Calculate and add ensemble statistics (as done by MultiMLIPStabilityPreprocessor)
-        for property_base in ["e_above_hull", "formation_energy", "relaxation_rmse"]:
+        for property_base in ["e_above_hull", "formation_energy", "relaxation_rmse", "relaxed_e_above_hull", "relaxed_formation_energy"]:
             values = [data[property_base][mlip] for mlip in DEFAULT_MLIPS]
             structure.properties[f"{property_base}_mean"] = np.mean(values)
             structure.properties[f"{property_base}_std"] = np.std(values)
@@ -992,3 +1012,319 @@ if __name__ == "__main__":
         import traceback
 
         traceback.print_exc()
+
+
+class TestRelaxedStabilityMetric:
+    """Test suite for RelaxedStabilityMetric."""
+
+    def test_initialization_default(self):
+        """Test default initialization."""
+        metric = RelaxedStabilityMetric()
+        assert metric.name == "RelaxedStabilityMetric"
+        assert "relaxed_e_above_hull" in metric.description
+        assert metric.use_ensemble is True
+        assert metric.mlip_names == ["orb", "mace", "uma"]
+
+    def test_initialization_custom(self):
+        """Test custom initialization."""
+        metric = RelaxedStabilityMetric(
+            use_ensemble=False,
+            mlip_names=["orb", "mace"],
+            min_mlips_required=1,
+            include_individual_results=False,
+            name="CustomRelaxedStability",
+        )
+        assert metric.name == "CustomRelaxedStability"
+        assert metric.use_ensemble is False
+        assert metric.mlip_names == ["orb", "mace"]
+        assert metric.min_mlips_required == 1
+        assert metric.include_individual_results is False
+
+    def test_ensemble_mode_basic(self, test_structures_with_multi_mlip_properties):
+        """Test basic functionality in ensemble mode."""
+        metric = RelaxedStabilityMetric(use_ensemble=True)
+        result = metric.compute(test_structures_with_multi_mlip_properties)
+
+        # Check that we get the expected metrics
+        assert "stable_ratio" in result.metrics
+        assert "stable_count" in result.metrics
+        assert "mean_e_above_hull" in result.metrics
+        assert "std_e_above_hull" in result.metrics
+
+        # Check that values are reasonable
+        assert 0 <= result.metrics["stable_ratio"] <= 1
+        assert result.metrics["stable_count"] >= 0
+        assert result.metrics["total_structures_evaluated"] == len(
+            test_structures_with_multi_mlip_properties
+        )
+
+    def test_individual_mode_basic(self, test_structures_with_multi_mlip_properties):
+        """Test basic functionality in individual mode."""
+        metric = RelaxedStabilityMetric(use_ensemble=False, mlip_names=["orb", "mace"])
+        result = metric.compute(test_structures_with_multi_mlip_properties)
+
+        # Check that we get the expected metrics
+        assert "stable_ratio" in result.metrics
+        assert "stable_count" in result.metrics
+        assert "mean_e_above_hull" in result.metrics
+
+        # Check individual MLIP results
+        assert "stable_ratio_orb" in result.metrics
+        assert "stable_ratio_mace" in result.metrics
+
+    def test_compute_structure_ensemble_mode(
+        self, test_structures_with_multi_mlip_properties
+    ):
+        """Test compute_structure method in ensemble mode."""
+        structure = test_structures_with_multi_mlip_properties[0]
+        result = RelaxedStabilityMetric.compute_structure(
+            structure,
+            use_ensemble=True,
+            mlip_names=["orb", "mace", "uma"],
+            min_mlips_required=2,
+            include_individual_results=True,
+        )
+
+        # Check that we get the expected keys
+        assert "value" in result
+        assert "std" in result
+        assert "value_orb" in result
+        assert "value_mace" in result
+        assert "value_uma" in result
+
+    def test_compute_structure_individual_mode(
+        self, test_structures_with_multi_mlip_properties
+    ):
+        """Test compute_structure method in individual mode."""
+        structure = test_structures_with_multi_mlip_properties[0]
+        result = RelaxedStabilityMetric.compute_structure(
+            structure,
+            use_ensemble=False,
+            mlip_names=["orb", "mace"],
+            min_mlips_required=1,
+            include_individual_results=True,
+        )
+
+        # Check that we get the expected keys
+        assert "value" in result
+        assert "std" in result
+        assert "value_orb" in result
+        assert "value_mace" in result
+
+    def test_uses_relaxed_properties(self, test_structures_with_multi_mlip_properties):
+        """Test that the metric uses relaxed properties."""
+        structure = test_structures_with_multi_mlip_properties[0]
+        
+        # Ensure structure has both unrelaxed and relaxed properties
+        structure.properties["e_above_hull_mean"] = 0.1
+        structure.properties["relaxed_e_above_hull_mean"] = 0.05
+        
+        result = RelaxedStabilityMetric.compute_structure(
+            structure,
+            use_ensemble=True,
+            mlip_names=["orb", "mace", "uma"],
+            min_mlips_required=2,
+            include_individual_results=True,
+        )
+
+        # The result should use the relaxed value (0.05), not the unrelaxed (0.1)
+        assert result["value"] == 0.05
+
+
+class TestRelaxedMetastabilityMetric:
+    """Test suite for RelaxedMetastabilityMetric."""
+
+    def test_initialization_default(self):
+        """Test default initialization."""
+        metric = RelaxedMetastabilityMetric()
+        assert metric.name == "RelaxedMetastabilityMetric"
+        assert "relaxed_e_above_hull" in metric.description
+        assert metric.metastable_threshold == 0.1
+
+    def test_initialization_custom(self):
+        """Test custom initialization."""
+        metric = RelaxedMetastabilityMetric(
+            metastable_threshold=0.05,
+            name="CustomRelaxedMetastability",
+        )
+        assert metric.name == "CustomRelaxedMetastability"
+        assert metric.metastable_threshold == 0.05
+
+    def test_basic_functionality(self, test_structures_with_multi_mlip_properties):
+        """Test basic functionality."""
+        metric = RelaxedMetastabilityMetric(metastable_threshold=0.1)
+        result = metric.compute(test_structures_with_multi_mlip_properties)
+
+        # Check that we get the expected metrics
+        assert "metastable_ratio" in result.metrics
+        assert "metastable_count" in result.metrics
+        assert "mean_e_above_hull" in result.metrics
+
+        # Check that values are reasonable
+        assert 0 <= result.metrics["metastable_ratio"] <= 1
+        assert result.metrics["metastable_count"] >= 0
+
+    def test_uses_relaxed_properties(self, test_structures_with_multi_mlip_properties):
+        """Test that the metric uses relaxed properties."""
+        structure = test_structures_with_multi_mlip_properties[0]
+        
+        # Ensure structure has both unrelaxed and relaxed properties
+        structure.properties["e_above_hull_mean"] = 0.15
+        structure.properties["relaxed_e_above_hull_mean"] = 0.08
+        
+        result = RelaxedMetastabilityMetric.compute_structure(
+            structure,
+            use_ensemble=True,
+            mlip_names=["orb", "mace", "uma"],
+            min_mlips_required=2,
+            include_individual_results=True,
+        )
+
+        # The result should use the relaxed value (0.08), not the unrelaxed (0.15)
+        assert result["value"] == 0.08
+
+
+class TestRelaxedE_HullMetric:
+    """Test suite for RelaxedE_HullMetric."""
+
+    def test_initialization_default(self):
+        """Test default initialization."""
+        metric = RelaxedE_HullMetric()
+        assert metric.name == "RelaxedE_HullMetric"
+        assert "relaxed_e_above_hull" in metric.description
+        assert metric.lower_is_better is True
+
+    def test_basic_functionality(self, test_structures_with_multi_mlip_properties):
+        """Test basic functionality."""
+        metric = RelaxedE_HullMetric()
+        result = metric.compute(test_structures_with_multi_mlip_properties)
+
+        # Check that we get the expected metrics
+        assert "mean_e_above_hull" in result.metrics
+        assert "std_e_above_hull" in result.metrics
+        assert "n_valid_structures" in result.metrics
+
+    def test_uses_relaxed_properties(self, test_structures_with_multi_mlip_properties):
+        """Test that the metric uses relaxed properties."""
+        structure = test_structures_with_multi_mlip_properties[0]
+        
+        # Ensure structure has both unrelaxed and relaxed properties
+        structure.properties["e_above_hull_mean"] = 0.2
+        structure.properties["relaxed_e_above_hull_mean"] = 0.1
+        
+        result = RelaxedE_HullMetric.compute_structure(
+            structure,
+            use_ensemble=True,
+            mlip_names=["orb", "mace", "uma"],
+            min_mlips_required=2,
+            include_individual_results=True,
+        )
+
+        # The result should use the relaxed value (0.1), not the unrelaxed (0.2)
+        assert result["value"] == 0.1
+
+
+class TestRelaxedFormationEnergyMetric:
+    """Test suite for RelaxedFormationEnergyMetric."""
+
+    def test_initialization_default(self):
+        """Test default initialization."""
+        metric = RelaxedFormationEnergyMetric()
+        assert metric.name == "RelaxedFormationEnergyMetric"
+        assert "relaxed_formation_energy" in metric.description
+        assert metric.lower_is_better is True
+
+    def test_basic_functionality(self, test_structures_with_multi_mlip_properties):
+        """Test basic functionality."""
+        metric = RelaxedFormationEnergyMetric()
+        result = metric.compute(test_structures_with_multi_mlip_properties)
+
+        # Check that we get the expected metrics
+        assert "mean_formation_energy" in result.metrics
+        assert "std_formation_energy" in result.metrics
+        assert "n_valid_structures" in result.metrics
+
+    def test_uses_relaxed_properties(self, test_structures_with_multi_mlip_properties):
+        """Test that the metric uses relaxed properties."""
+        structure = test_structures_with_multi_mlip_properties[0]
+        
+        # Ensure structure has both unrelaxed and relaxed properties
+        structure.properties["formation_energy_mean"] = -2.0
+        structure.properties["relaxed_formation_energy_mean"] = -2.5
+        
+        result = RelaxedFormationEnergyMetric.compute_structure(
+            structure,
+            use_ensemble=True,
+            mlip_names=["orb", "mace", "uma"],
+            min_mlips_required=2,
+            include_individual_results=True,
+        )
+
+        # The result should use the relaxed value (-2.5), not the unrelaxed (-2.0)
+        assert result["value"] == -2.5
+
+
+class TestRelaxedMetricsIntegration:
+    """Integration tests for all relaxed metrics."""
+
+    def test_all_relaxed_metrics_together(self, test_structures_with_multi_mlip_properties):
+        """Test all relaxed metrics working together."""
+        # Create all relaxed metrics
+        relaxed_stability = RelaxedStabilityMetric()
+        relaxed_metastability = RelaxedMetastabilityMetric()
+        relaxed_e_hull = RelaxedE_HullMetric()
+        relaxed_formation_energy = RelaxedFormationEnergyMetric()
+
+        # Compute results
+        stability_result = relaxed_stability.compute(test_structures_with_multi_mlip_properties)
+        metastability_result = relaxed_metastability.compute(test_structures_with_multi_mlip_properties)
+        e_hull_result = relaxed_e_hull.compute(test_structures_with_multi_mlip_properties)
+        formation_energy_result = relaxed_formation_energy.compute(test_structures_with_multi_mlip_properties)
+
+        # Check that all results are valid
+        assert stability_result.primary_metric == "stable_ratio"
+        assert metastability_result.primary_metric == "metastable_ratio"
+        assert e_hull_result.primary_metric == "mean_e_above_hull"
+        assert formation_energy_result.primary_metric == "mean_formation_energy"
+
+        # Check that all metrics have reasonable values
+        for result in [stability_result, metastability_result, e_hull_result, formation_energy_result]:
+            assert result.n_structures == len(test_structures_with_multi_mlip_properties)
+            assert result.computation_time > 0
+
+    def test_relaxed_vs_unrelaxed_comparison(self, test_structures_with_multi_mlip_properties):
+        """Test comparison between relaxed and unrelaxed metrics."""
+        # Create both relaxed and unrelaxed metrics
+        relaxed_stability = RelaxedStabilityMetric()
+        unrelaxed_stability = StabilityMetric()
+
+        # Compute results
+        relaxed_result = relaxed_stability.compute(test_structures_with_multi_mlip_properties)
+        unrelaxed_result = unrelaxed_stability.compute(test_structures_with_multi_mlip_properties)
+
+        # Both should have the same structure
+        assert relaxed_result.primary_metric == unrelaxed_result.primary_metric
+        assert len(relaxed_result.individual_values) == len(unrelaxed_result.individual_values)
+
+        # The values might be different due to relaxation effects
+        # This is expected and shows that relaxation can change stability
+        print(f"Relaxed stable ratio: {relaxed_result.metrics['stable_ratio']:.3f}")
+        print(f"Unrelaxed stable ratio: {unrelaxed_result.metrics['stable_ratio']:.3f}")
+
+    def test_individual_mlip_results_consistency(self, test_structures_with_multi_mlip_properties):
+        """Test that individual MLIP results are consistent across relaxed metrics."""
+        metric = RelaxedStabilityMetric(include_individual_results=True)
+        result = metric.compute(test_structures_with_multi_mlip_properties)
+
+        # Check that individual MLIP results are present
+        for mlip in ["orb", "mace", "uma"]:
+            assert f"stable_ratio_{mlip}" in result.metrics
+            assert f"mean_e_above_hull_{mlip}" in result.metrics
+            assert f"stable_count_{mlip}" in result.metrics
+
+        # Check that individual results are reasonable
+        for mlip in ["orb", "mace", "uma"]:
+            ratio = result.metrics[f"stable_ratio_{mlip}"]
+            count = result.metrics[f"stable_count_{mlip}"]
+            assert 0 <= ratio <= 1
+            assert count >= 0

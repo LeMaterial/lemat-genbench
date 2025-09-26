@@ -815,3 +815,298 @@ class RelaxationStabilityMetric(BaseMetric):
                 }
             },
         }
+
+
+class RelaxedStabilityMetric(StabilityMetric):
+    """Post-relaxation stability metric using relaxed_e_above_hull values.
+    
+    This metric evaluates structure stability after relaxation by using
+    relaxed_e_above_hull values instead of unrelaxed e_above_hull values.
+    It inherits all functionality from StabilityMetric but uses relaxed properties.
+    
+    Parameters
+    ----------
+    use_ensemble : bool, default=True
+        Whether to use ensemble mean values or individual MLIP results
+    mlip_names : List[str], optional
+        Specific MLIPs to use if not using ensemble
+    min_mlips_required : int, default=2
+        Minimum MLIPs required for ensemble statistics
+    include_individual_results : bool, default=True
+        Whether to include individual MLIP results in output
+    name : str, optional
+        Custom name for the metric
+    description : str, optional
+        Description of what the metric evaluates
+    lower_is_better : bool, default=False
+        Whether lower values indicate better stability
+    n_jobs : int, default=1
+        Number of parallel jobs
+    """
+
+    def __init__(
+        self,
+        use_ensemble: bool = True,
+        mlip_names: Optional[List[str]] = None,
+        min_mlips_required: int = 2,
+        include_individual_results: bool = True,
+        name: str = None,
+        description: str = None,
+        lower_is_better: bool = False,
+        n_jobs: int = 1,
+    ):
+        super().__init__(
+            use_ensemble=use_ensemble,
+            mlip_names=mlip_names,
+            min_mlips_required=min_mlips_required,
+            include_individual_results=include_individual_results,
+            name=name or "RelaxedStabilityMetric",
+            description=description
+            or "Evaluates structure stability after relaxation using relaxed_e_above_hull predictions",
+            lower_is_better=lower_is_better,
+            n_jobs=n_jobs,
+        )
+
+    @staticmethod
+    def compute_structure(
+        structure: Structure, **compute_args: Any
+    ) -> Dict[str, float]:
+        """Extract relaxed_e_above_hull values from multi-MLIP structure properties.
+
+        Returns
+        -------
+        Dict[str, float]
+            Dictionary containing the primary value and optionally individual values and std
+        """
+        use_ensemble = compute_args.get("use_ensemble", True)
+        mlip_names = compute_args.get("mlip_names", ["orb", "mace", "uma"])
+        min_mlips_required = compute_args.get("min_mlips_required", 2)
+        include_individual_results = compute_args.get(
+            "include_individual_results", True
+        )
+
+        result = {}
+
+        try:
+            if use_ensemble:
+                # Use ensemble statistics for relaxed properties
+                mean_value, std_value = extract_ensemble_value(
+                    structure, "relaxed_e_above_hull", min_mlips_required
+                )
+                result["value"] = mean_value
+                result["std"] = std_value
+
+                # Include individual results if requested
+                if include_individual_results:
+                    individual_values = extract_individual_values(
+                        structure, mlip_names, "relaxed_e_above_hull"
+                    )
+                    result.update(
+                        {
+                            f"value_{mlip}": val
+                            for mlip, val in individual_values.items()
+                        }
+                    )
+            else:
+                # Use individual MLIP results for relaxed properties
+                individual_values = extract_individual_values(
+                    structure, mlip_names, "relaxed_e_above_hull"
+                )
+
+                # Calculate mean across available individual values
+                valid_values = [
+                    val for val in individual_values.values() if not np.isnan(val)
+                ]
+                if valid_values:
+                    result["value"] = np.mean(valid_values)
+                    result["std"] = (
+                        np.std(valid_values) if len(valid_values) > 1 else 0.0
+                    )
+                else:
+                    result["value"] = np.nan
+                    result["std"] = np.nan
+
+                # Always include individual results in individual mode
+                result.update(
+                    {f"value_{mlip}": val for mlip, val in individual_values.items()}
+                )
+
+        except Exception as e:
+            logger.error(f"Failed to extract relaxed_e_above_hull: {str(e)}")
+            result["value"] = np.nan
+            result["std"] = np.nan
+
+        return result
+
+
+class RelaxedMetastabilityMetric(MetastabilityMetric):
+    """Post-relaxation metastability metric using relaxed_e_above_hull values.
+    
+    This metric evaluates structure metastability after relaxation by using
+    relaxed_e_above_hull values instead of unrelaxed e_above_hull values.
+    """
+
+    def __init__(
+        self,
+        use_ensemble: bool = True,
+        mlip_names: Optional[List[str]] = None,
+        metastable_threshold: float = 0.1,
+        min_mlips_required: int = 2,
+        include_individual_results: bool = True,
+        name: str = None,
+        description: str = None,
+        lower_is_better: bool = False,
+        n_jobs: int = 1,
+    ):
+        super().__init__(
+            use_ensemble=use_ensemble,
+            mlip_names=mlip_names,
+            metastable_threshold=metastable_threshold,
+            min_mlips_required=min_mlips_required,
+            include_individual_results=include_individual_results,
+            name=name or "RelaxedMetastabilityMetric",
+            description=description
+            or "Evaluates structure metastability after relaxation using relaxed_e_above_hull predictions",
+            lower_is_better=lower_is_better,
+            n_jobs=n_jobs,
+        )
+
+    @staticmethod
+    def compute_structure(
+        structure: Structure, **compute_args: Any
+    ) -> Dict[str, float]:
+        """Extract relaxed_e_above_hull for metastability evaluation."""
+        # Reuse the same logic as RelaxedStabilityMetric
+        return RelaxedStabilityMetric.compute_structure(structure, **compute_args)
+
+
+class RelaxedE_HullMetric(E_HullMetric):
+    """Post-relaxation energy above hull metric using relaxed_e_above_hull values.
+    
+    This metric evaluates mean energy above hull after relaxation by using
+    relaxed_e_above_hull values instead of unrelaxed e_above_hull values.
+    """
+
+    def __init__(
+        self,
+        use_ensemble: bool = True,
+        mlip_names: Optional[List[str]] = None,
+        min_mlips_required: int = 2,
+        include_individual_results: bool = True,
+        name: str = None,
+        description: str = None,
+        lower_is_better: bool = True,
+        n_jobs: int = 1,
+    ):
+        super().__init__(
+            use_ensemble=use_ensemble,
+            mlip_names=mlip_names,
+            min_mlips_required=min_mlips_required,
+            include_individual_results=include_individual_results,
+            name=name or "RelaxedE_HullMetric",
+            description=description
+            or "Evaluates mean energy above hull after relaxation using relaxed_e_above_hull predictions",
+            lower_is_better=lower_is_better,
+            n_jobs=n_jobs,
+        )
+        self.lower_is_better = lower_is_better
+
+    @staticmethod
+    def compute_structure(
+        structure: Structure, **compute_args: Any
+    ) -> Dict[str, float]:
+        """Extract relaxed_e_above_hull for mean calculation."""
+        # Reuse the same logic as RelaxedStabilityMetric
+        return RelaxedStabilityMetric.compute_structure(structure, **compute_args)
+
+
+class RelaxedFormationEnergyMetric(FormationEnergyMetric):
+    """Post-relaxation formation energy metric using relaxed_formation_energy values.
+    
+    This metric evaluates formation energy after relaxation by using
+    relaxed_formation_energy values instead of unrelaxed formation_energy values.
+    """
+
+    def __init__(
+        self,
+        use_ensemble: bool = True,
+        mlip_names: Optional[List[str]] = None,
+        min_mlips_required: int = 2,
+        include_individual_results: bool = True,
+        name: str = None,
+        description: str = None,
+        lower_is_better: bool = True,
+        n_jobs: int = 1,
+    ):
+        super().__init__(
+            use_ensemble=use_ensemble,
+            mlip_names=mlip_names,
+            min_mlips_required=min_mlips_required,
+            include_individual_results=include_individual_results,
+            name=name or "RelaxedFormationEnergyMetric",
+            description=description
+            or "Evaluates formation energy after relaxation using relaxed_formation_energy predictions",
+            lower_is_better=lower_is_better,
+            n_jobs=n_jobs,
+        )
+        self.lower_is_better = lower_is_better
+
+    @staticmethod
+    def compute_structure(
+        structure: Structure, **compute_args: Any
+    ) -> Dict[str, float]:
+        """Extract relaxed_formation_energy values from multi-MLIP structure properties."""
+        use_ensemble = compute_args.get("use_ensemble", True)
+        mlip_names = compute_args.get("mlip_names", ["orb", "mace", "uma"])
+        min_mlips_required = compute_args.get("min_mlips_required", 2)
+        include_individual_results = compute_args.get(
+            "include_individual_results", True
+        )
+
+        result = {}
+
+        try:
+            if use_ensemble:
+                mean_value, std_value = extract_ensemble_value(
+                    structure, "relaxed_formation_energy", min_mlips_required
+                )
+                result["value"] = mean_value
+                result["std"] = std_value
+
+                if include_individual_results:
+                    individual_values = extract_individual_values(
+                        structure, mlip_names, "relaxed_formation_energy"
+                    )
+                    result.update(
+                        {
+                            f"value_{mlip}": val
+                            for mlip, val in individual_values.items()
+                        }
+                    )
+            else:
+                individual_values = extract_individual_values(
+                    structure, mlip_names, "relaxed_formation_energy"
+                )
+                valid_values = [
+                    val for val in individual_values.values() if not np.isnan(val)
+                ]
+
+                if valid_values:
+                    result["value"] = np.mean(valid_values)
+                    result["std"] = (
+                        np.std(valid_values) if len(valid_values) > 1 else 0.0
+                    )
+                else:
+                    result["value"] = np.nan
+                    result["std"] = np.nan
+
+                result.update(
+                    {f"value_{mlip}": val for mlip, val in individual_values.items()}
+                )
+
+        except Exception as e:
+            logger.error(f"Failed to extract relaxed_formation_energy: {str(e)}")
+            result["value"] = np.nan
+            result["std"] = np.nan
+
+        return result
