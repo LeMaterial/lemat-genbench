@@ -31,6 +31,10 @@ EXPECTED_EVALUATORS = [
     "mean_e_above_hull",
     "formation_energy",
     "relaxation_stability",
+    "relaxed_stability",
+    "relaxed_metastability",
+    "relaxed_mean_e_above_hull",
+    "relaxed_formation_energy",
 ]
 CORE_FINAL_SCORES = [
     "stable_ratio",
@@ -38,11 +42,17 @@ CORE_FINAL_SCORES = [
     "mean_e_above_hull",
     "mean_formation_energy",
     "mean_relaxation_RMSE",
+    "relaxed_stable_ratio",
+    "relaxed_metastable_ratio",
+    "relaxed_mean_e_above_hull",
+    "relaxed_mean_formation_energy",
 ]
 # NEW: Count metrics in final scores
 COUNT_FINAL_SCORES = [
     "stable_count",
     "metastable_count",
+    "relaxed_stable_count",
+    "relaxed_metastable_count",
 ]
 
 
@@ -62,16 +72,25 @@ def test_structures_comprehensive():
             "e_above_hull": {"orb": -0.01, "mace": -0.008, "uma": -0.012},
             "formation_energy": {"orb": -2.10, "mace": -2.08, "uma": -2.12},
             "relaxation_rmse": {"orb": 0.015, "mace": 0.016, "uma": 0.014},
+            # Relaxed properties (typically more stable after relaxation)
+            "relaxed_e_above_hull": {"orb": -0.02, "mace": -0.018, "uma": -0.022},
+            "relaxed_formation_energy": {"orb": -2.20, "mace": -2.18, "uma": -2.22},
         },
         {  # Structure 2: Metastable with moderate disagreement
             "e_above_hull": {"orb": 0.08, "mace": 0.12, "uma": 0.09},
             "formation_energy": {"orb": -1.20, "mace": -1.10, "uma": -1.30},
             "relaxation_rmse": {"orb": 0.020, "mace": 0.025, "uma": 0.018},
+            # Relaxed properties (slightly more stable after relaxation)
+            "relaxed_e_above_hull": {"orb": 0.05, "mace": 0.08, "uma": 0.06},
+            "relaxed_formation_energy": {"orb": -1.30, "mace": -1.20, "uma": -1.40},
         },
         {  # Structure 3: Unstable with high disagreement
             "e_above_hull": {"orb": 0.20, "mace": 0.35, "uma": 0.25},
             "formation_energy": {"orb": 0.40, "mace": 0.70, "uma": 0.50},
             "relaxation_rmse": {"orb": 0.035, "mace": 0.055, "uma": 0.040},
+            # Relaxed properties (still unstable but slightly better)
+            "relaxed_e_above_hull": {"orb": 0.15, "mace": 0.25, "uma": 0.18},
+            "relaxed_formation_energy": {"orb": 0.20, "mace": 0.50, "uma": 0.30},
         },
     ]
 
@@ -87,9 +106,16 @@ def test_structures_comprehensive():
             structure.properties[f"relaxation_rmse_{mlip_name}"] = data[
                 "relaxation_rmse"
             ][mlip_name]
+            # Add relaxed properties
+            structure.properties[f"relaxed_e_above_hull_{mlip_name}"] = data[
+                "relaxed_e_above_hull"
+            ][mlip_name]
+            structure.properties[f"relaxed_formation_energy_{mlip_name}"] = data[
+                "relaxed_formation_energy"
+            ][mlip_name]
 
         # Calculate ensemble statistics
-        for property_base in ["e_above_hull", "formation_energy", "relaxation_rmse"]:
+        for property_base in ["e_above_hull", "formation_energy", "relaxation_rmse", "relaxed_e_above_hull", "relaxed_formation_energy"]:
             values = [data[property_base][mlip] for mlip in DEFAULT_MLIPS]
             structure.properties[f"{property_base}_mean"] = np.mean(values)
             structure.properties[f"{property_base}_std"] = np.std(values)
@@ -210,7 +236,7 @@ class TestStabilityBenchmarkInitialization:
         assert benchmark.include_individual_results is True
 
         # Check evaluators exist
-        assert len(benchmark.evaluators) == 5
+        assert len(benchmark.evaluators) == 9
         for evaluator_name in EXPECTED_EVALUATORS:
             assert evaluator_name in benchmark.evaluators
 
@@ -316,7 +342,7 @@ class TestBenchmarkEvaluation:
 
         # Check basic result structure
         assert isinstance(result, BenchmarkResult)
-        assert len(result.evaluator_results) == 5
+        assert len(result.evaluator_results) == 9
 
         # Check that we have core final scores
         for score_name in CORE_FINAL_SCORES:
@@ -342,7 +368,7 @@ class TestBenchmarkEvaluation:
 
         # Check basic result structure
         assert isinstance(result, BenchmarkResult)
-        assert len(result.evaluator_results) == 5
+        assert len(result.evaluator_results) == 9
 
         # Check that we have core final scores
         for score_name in CORE_FINAL_SCORES:
@@ -455,6 +481,51 @@ class TestBenchmarkEvaluation:
             if not np.isnan(metastable_ratio):
                 expected_ratio = metastable_count / total_structures
                 assert abs(metastable_ratio - expected_ratio) < 1e-10
+
+    def test_relaxed_metrics_evaluation(self, test_structures_comprehensive):
+        """Test that relaxed metrics are properly evaluated and returned."""
+        benchmark = StabilityBenchmark(use_ensemble=True)
+        result = benchmark.evaluate(test_structures_comprehensive)
+
+        # Check that relaxed metrics are present in final scores
+        relaxed_metrics = [
+            "relaxed_stable_ratio",
+            "relaxed_metastable_ratio", 
+            "relaxed_mean_e_above_hull",
+            "relaxed_mean_formation_energy",
+        ]
+        
+        for metric in relaxed_metrics:
+            assert metric in result.final_scores
+            # Values should be finite (not NaN)
+            value = result.final_scores[metric]
+            assert not np.isnan(value), f"{metric} should not be NaN"
+            assert np.isfinite(value), f"{metric} should be finite"
+
+        # Check that relaxed counts are present
+        relaxed_counts = [
+            "relaxed_stable_count",
+            "relaxed_metastable_count",
+        ]
+        
+        for count_metric in relaxed_counts:
+            assert count_metric in result.final_scores
+            count_value = result.final_scores[count_metric]
+            assert isinstance(count_value, (int, np.integer))
+            assert count_value >= 0
+
+        # Check that relaxed standard deviations are present
+        relaxed_stds = [
+            "relaxed_stability_std_e_above_hull",
+            "relaxed_e_hull_std",
+            "relaxed_formation_energy_std",
+        ]
+        
+        for std_metric in relaxed_stds:
+            if std_metric in result.final_scores:
+                std_value = result.final_scores[std_metric]
+                assert not np.isnan(std_value), f"{std_metric} should not be NaN"
+                assert std_value >= 0, f"{std_metric} should be non-negative"
 
     def test_metastable_threshold_effect(self, test_structures_comprehensive):
         """Test that metastable threshold affects results."""
@@ -588,7 +659,7 @@ class TestErrorHandling:
 
         # Should handle empty input gracefully
         assert isinstance(result, BenchmarkResult)
-        assert len(result.evaluator_results) == 5
+        assert len(result.evaluator_results) == 9
 
         # NEW: Check that counts are 0 for empty input
         if "stable_count" in result.final_scores:
@@ -942,7 +1013,7 @@ if __name__ == "__main__":
     try:
         # Test basic functionality
         benchmark = StabilityBenchmark()
-        assert len(benchmark.evaluators) == 5
+        assert len(benchmark.evaluators) == 9
         print("✓ Basic initialization successful")
 
         # Test factory functions

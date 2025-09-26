@@ -18,6 +18,10 @@ from lemat_genbench.metrics.multi_mlip_stability_metrics import (
     FormationEnergyMetric,
     MetastabilityMetric,
     RelaxationStabilityMetric,
+    RelaxedE_HullMetric,
+    RelaxedFormationEnergyMetric,
+    RelaxedMetastabilityMetric,
+    RelaxedStabilityMetric,
     StabilityMetric,
 )
 
@@ -260,6 +264,48 @@ class StabilityBenchmark(BaseBenchmark):
             aggregation_method="weighted_mean",
         )
 
+        # Relaxed stability evaluator
+        relaxed_stability_metric = RelaxedStabilityMetric(**metric_params)
+        evaluator_configs["relaxed_stability"] = EvaluatorConfig(
+            name="Relaxed Stability Analysis",
+            description="Evaluates stability after relaxation from multi-MLIP relaxed_e_above_hull predictions",
+            metrics={"relaxed_stability": relaxed_stability_metric},
+            weights={"relaxed_stability": 1.0},
+            aggregation_method="weighted_mean",
+        )
+
+        # Relaxed metastability evaluator
+        relaxed_metastability_metric = RelaxedMetastabilityMetric(
+            metastable_threshold=self.metastable_threshold, **metric_params
+        )
+        evaluator_configs["relaxed_metastability"] = EvaluatorConfig(
+            name="Relaxed Metastability Analysis",
+            description="Evaluates metastability after relaxation from multi-MLIP relaxed_e_above_hull predictions",
+            metrics={"relaxed_metastability": relaxed_metastability_metric},
+            weights={"relaxed_metastability": 1.0},
+            aggregation_method="weighted_mean",
+        )
+
+        # Relaxed mean E_hull evaluator
+        relaxed_e_hull_metric = RelaxedE_HullMetric(**metric_params)
+        evaluator_configs["relaxed_mean_e_above_hull"] = EvaluatorConfig(
+            name="Relaxed Mean Energy Above Hull",
+            description="Evaluates mean energy above hull after relaxation from multi-MLIP predictions",
+            metrics={"relaxed_mean_e_above_hull": relaxed_e_hull_metric},
+            weights={"relaxed_mean_e_above_hull": 1.0},
+            aggregation_method="weighted_mean",
+        )
+
+        # Relaxed formation energy evaluator
+        relaxed_formation_energy_metric = RelaxedFormationEnergyMetric(**metric_params)
+        evaluator_configs["relaxed_formation_energy"] = EvaluatorConfig(
+            name="Relaxed Formation Energy Analysis",
+            description="Evaluates formation energy after relaxation from multi-MLIP predictions",
+            metrics={"relaxed_formation_energy": relaxed_formation_energy_metric},
+            weights={"relaxed_formation_energy": 1.0},
+            aggregation_method="weighted_mean",
+        )
+
         return evaluator_configs
 
     def aggregate_evaluator_results(
@@ -382,6 +428,96 @@ class StabilityBenchmark(BaseBenchmark):
                 )
                 final_scores["relaxation_stability_total_structures"] = safe_int(  # Add total count
                     rs_metrics.get("total_structures_evaluated")
+                )
+
+        # Relaxed stability results
+        relaxed_stability_results = evaluator_results.get("relaxed_stability")
+        if relaxed_stability_results:
+            final_scores["relaxed_stable_ratio"] = safe_float(
+                relaxed_stability_results.get("combined_value")
+            )
+
+            # Extract additional metrics from relaxed stability results
+            relaxed_stability_metric_result = relaxed_stability_results.get("metric_results", {}).get(
+                "relaxed_stability"
+            )
+            if relaxed_stability_metric_result:
+                relaxed_stability_metrics = relaxed_stability_metric_result.metrics
+                final_scores["relaxed_stable_count"] = safe_int(
+                    relaxed_stability_metrics.get("stable_count")
+                )
+                final_scores["relaxed_stability_mean_e_above_hull"] = safe_float(
+                    relaxed_stability_metrics.get("mean_e_above_hull")
+                )
+                final_scores["relaxed_stability_std_e_above_hull"] = safe_float(
+                    relaxed_stability_metrics.get("std_e_above_hull")
+                )
+                final_scores["relaxed_stability_total_structures"] = safe_int(
+                    relaxed_stability_metrics.get("total_structures_evaluated")
+                )
+
+                # Add ensemble uncertainty if available
+                if self.use_ensemble:
+                    final_scores["relaxed_stability_mean_ensemble_std"] = safe_float(
+                        relaxed_stability_metrics.get("mean_ensemble_std")
+                    )
+
+        # Relaxed metastability results
+        relaxed_metastability_results = evaluator_results.get("relaxed_metastability")
+        if relaxed_metastability_results:
+            final_scores["relaxed_metastable_ratio"] = safe_float(
+                relaxed_metastability_results.get("combined_value")
+            )
+
+            # Extract relaxed metastability count
+            relaxed_metastability_metric_result = relaxed_metastability_results.get(
+                "metric_results", {}
+            ).get("relaxed_metastability")
+            if relaxed_metastability_metric_result:
+                relaxed_metastability_metrics = relaxed_metastability_metric_result.metrics
+                final_scores["relaxed_metastable_count"] = safe_int(
+                    relaxed_metastability_metrics.get("metastable_count")
+                )
+                final_scores["relaxed_metastability_total_structures"] = safe_int(
+                    relaxed_metastability_metrics.get("total_structures_evaluated")
+                )
+
+        # Relaxed mean E_hull results
+        relaxed_e_hull_results = evaluator_results.get("relaxed_mean_e_above_hull")
+        if relaxed_e_hull_results:
+            final_scores["relaxed_mean_e_above_hull"] = safe_float(
+                relaxed_e_hull_results.get("combined_value")
+            )
+
+            relaxed_e_hull_metric_result = relaxed_e_hull_results.get("metric_results", {}).get(
+                "relaxed_mean_e_above_hull"
+            )
+            if relaxed_e_hull_metric_result:
+                relaxed_e_hull_metrics = relaxed_e_hull_metric_result.metrics
+                final_scores["relaxed_e_hull_std"] = safe_float(
+                    relaxed_e_hull_metrics.get("std_e_above_hull")
+                )
+                final_scores["relaxed_e_hull_total_structures"] = safe_int(
+                    relaxed_e_hull_metrics.get("total_structures_evaluated")
+                )
+
+        # Relaxed formation energy results
+        relaxed_formation_energy_results = evaluator_results.get("relaxed_formation_energy")
+        if relaxed_formation_energy_results:
+            final_scores["relaxed_mean_formation_energy"] = safe_float(
+                relaxed_formation_energy_results.get("combined_value")
+            )
+
+            relaxed_fe_metric_result = relaxed_formation_energy_results.get("metric_results", {}).get(
+                "relaxed_formation_energy"
+            )
+            if relaxed_fe_metric_result:
+                relaxed_fe_metrics = relaxed_fe_metric_result.metrics
+                final_scores["relaxed_formation_energy_std"] = safe_float(
+                    relaxed_fe_metrics.get("std_formation_energy")
+                )
+                final_scores["relaxed_formation_energy_total_structures"] = safe_int(
+                    relaxed_fe_metrics.get("total_structures_evaluated")
                 )
 
         # Add individual MLIP results if requested
