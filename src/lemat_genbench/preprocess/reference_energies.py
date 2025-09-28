@@ -16,7 +16,6 @@ CURRENT_FOLDER = os.path.dirname(Path(__file__).resolve())
 
 
 def build_formation_energy_reference_file():
-
     ds_pbe = load_dataset("LeMaterial/LeMat-Bulk", "compatible_pbe")
     # ds_pbesol = load_dataset("LeMaterial/LeMat-Bulk", "compatible_pbesol")
     # ds_scan = load_dataset("LeMaterial/LeMat-Bulk", "compatible_scan")

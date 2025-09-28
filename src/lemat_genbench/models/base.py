@@ -6,7 +6,7 @@ into the benchmark framework.
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Any, Dict, Tuple, Union
+from typing import Any, Dict, Literal, Tuple, Union
 
 import numpy as np
 import torch
@@ -71,6 +71,7 @@ class BaseMLIPCalculator(ABC):
         self,
         device: Union[str, torch.device] = "cpu",
         precision: str = "float32",
+        hull_type: Literal["dft", "uma", "orb", "mace_mp", "mace_omat"] = "dft",
         **kwargs,
     ):
         self.device = (
@@ -78,6 +79,7 @@ class BaseMLIPCalculator(ABC):
         )
         self.precision = precision
         self.model = None
+        self.hull_type = hull_type
         self._setup_model(**kwargs)
 
     @abstractmethod
@@ -352,7 +354,11 @@ def get_formation_energy_per_atom_from_total_energy(
     )
 
 
-def get_energy_above_hull_from_total_energy(total_energy: float, composition) -> float:
+def get_energy_above_hull_from_total_energy(
+    total_energy: float,
+    composition,
+    hull_type: Literal["dft", "uma", "orb", "mace_mp", "mace_omat"] = "dft",
+) -> float:
     """Calculate energy above hull from total energy and composition.
 
     Parameters
@@ -368,4 +374,4 @@ def get_energy_above_hull_from_total_energy(total_energy: float, composition) ->
         Energy above hull in eV/atom
     """
 
-    return get_energy_above_hull(total_energy, composition)
+    return get_energy_above_hull(total_energy, composition, hull_type=hull_type)

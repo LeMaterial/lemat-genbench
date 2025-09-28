@@ -137,7 +137,7 @@ class EquiformerCalculator(BaseMLIPCalculator):
         total_energy = result.energy
 
         return get_energy_above_hull_from_total_energy(
-            total_energy, structure.composition
+            total_energy, structure.composition, hull_type=self.hull_type
         )
 
 
