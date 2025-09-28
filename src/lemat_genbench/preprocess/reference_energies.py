@@ -16,7 +16,6 @@ CURRENT_FOLDER = os.path.dirname(Path(__file__).resolve())
 
 
 def build_formation_energy_reference_file():
-    from datasets import load_dataset
 
     ds_pbe = load_dataset("LeMaterial/LeMat-Bulk", "compatible_pbe")
     # ds_pbesol = load_dataset("LeMaterial/LeMat-Bulk", "compatible_pbesol")
@@ -171,7 +170,9 @@ def get_formation_energy_per_atom_from_composition_energy(
 
 
 def one_hot_encode_composition(elements):
-    one_hot = np.zeros(118)
+    one_hot = np.zeros(
+        119
+    )  # 119 to use direct Z indexing (0 unused, 1-118 for elements)
     for element in elements:
         try:
             # Handle charged species by extracting the base element
@@ -191,7 +192,7 @@ def one_hot_encode_composition(elements):
 
             # Validate element and get atomic number
             element_obj = Element(base_element)
-            one_hot[int(element_obj.number) - 1] = 1
+            one_hot[int(element_obj.number)] = 1
         except ValueError as e:
             print(f"Warning: Invalid element '{element}': {e}")
             continue
@@ -206,64 +207,145 @@ def process_chunk(chunk):
 
 
 @lru_cache(maxsize=None)
-def _retrieve_df():
+def _retrieve_df(hull_type="dft", threshold=0.01):
+    """Retrieve dataset for hull computations.
+
+    Parameters
+    ----------
+    hull_type : str, optional
+        Type of hull to use ('dft', 'orb', 'uma', 'mace_mp', 'mace_omat')
+        Default is 'dft' for backward compatibility
+    threshold : float, optional
+        Energy above hull threshold in eV/atom (default 0.01)
+
+    Returns
+    -------
+    pd.DataFrame
+        Dataset of materials close to the hull
+    """
     try:
-        # Try to load from local file first - fix path to point to root data folder
-        local_path = os.path.join(
+        threshold_str = f"{threshold:.3f}".replace(".", "_")
+
+        # Try local hull-specific path first
+        local_hull_path = os.path.join(
             CURRENT_FOLDER,
             "..",
             "..",
             "..",
             "data",
-            "lematbulk_above_hull_dataset.parquet",
+            "convex_hulls",
+            f"{hull_type}_above_hull_dataset.parquet",
         )
 
-        if os.path.exists(local_path):
-            dataset = pd.read_parquet(local_path)
-            # Convert numpy arrays in elements column to lists for compatibility
+        if os.path.exists(local_hull_path):
+            dataset = pd.read_parquet(local_hull_path)
             if "elements" in dataset.columns:
                 dataset["elements"] = dataset["elements"].apply(
                     lambda x: x.tolist() if hasattr(x, "tolist") else x
                 )
+            if "species_at_sites" in dataset.columns:
+                dataset["species_at_sites"] = dataset["species_at_sites"].apply(
+                    lambda x: x.tolist() if hasattr(x, "tolist") else x
+                )
             return dataset
 
-        # Fallback to HuggingFace Hub if local file doesn't exist
-        dataset = load_dataset("Entalpic/LeMaterial-Above-Hull-dataset-v2")
-        dataset = pd.DataFrame(dataset["dataset"])
+        try:
+            from datasets import load_dataset
+
+            dataset_dict = load_dataset("LeMaterial/LeMat-Bulk-MLIP-Hull")
+
+            dataset_keys = hull_type
+
+            for dataset_key in dataset_keys:
+                if dataset_key in dataset_dict:
+                    dataset = dataset_dict[dataset_key].to_pandas()
+                    # species_at_sites should already be lists in the new format
+                    # but we'll still check just in case
+                    if "species_at_sites" in dataset.columns:
+                        dataset["species_at_sites"] = dataset["species_at_sites"].apply(
+                            lambda x: x.tolist() if hasattr(x, "tolist") else x
+                        )
+                    return dataset
+        except:
+            pass  # Try old file-based approach
+
+        # Fall back to file-based approach
+        from huggingface_hub import hf_hub_download
+
+        file_path = hf_hub_download(
+            repo_id="LeMaterial/LeMat-Bulk-MLIP-Hull",
+            filename=f"threshold_{threshold_str}/{hull_type}_above_hull_dataset.parquet",
+            repo_type="dataset",
+            cache_dir=os.path.join(CURRENT_FOLDER, "..", "..", "..", "data", ".cache"),
+        )
+        dataset = pd.read_parquet(file_path)
+        if "elements" in dataset.columns:
+            dataset["elements"] = dataset["elements"].apply(
+                lambda x: x.tolist() if hasattr(x, "tolist") else x
+            )
+        if "species_at_sites" in dataset.columns:
+            dataset["species_at_sites"] = dataset["species_at_sites"].apply(
+                lambda x: x.tolist() if hasattr(x, "tolist") else x
+            )
         return dataset
     except Exception as e:
-        raise RuntimeError(f"Failed to load reference dataset: {e}") from e
+        raise RuntimeError(
+            f"Hull-specific dataset not found for hull type '{hull_type}' and threshold {threshold}. "
+            "Tried local path and HuggingFace Hub."
+            f" Error: {e}"
+        )
 
 
 @lru_cache(maxsize=None)
-def _retrieve_matrix():
+def _retrieve_matrix(hull_type="dft", threshold=0.01):
+    """Retrieve composition matrix for hull computations.
+
+    Parameters
+    ----------
+    hull_type : str, optional
+        Type of hull to use ('dft', 'orb', 'uma', 'mace_mp', 'mace_omat')
+        Default is 'dft' for backward compatibility
+    threshold : float, optional
+        Energy above hull threshold in eV/atom (default 0.01)
+
+    Returns
+    -------
+    np.ndarray
+        Composition matrix
+    """
     try:
-        # Try to load from local file first - fix path to point to root data folder
-        local_path = os.path.join(
+        threshold_str = f"{threshold:.3f}".replace(".", "_")
+
+        local_hull_path = os.path.join(
             CURRENT_FOLDER,
             "..",
             "..",
             "..",
             "data",
-            "lematbulk_above_hull_composition_matrix.npz",
+            "convex_hulls",
+            f"{hull_type}_above_hull_composition_matrix.npz",
         )
 
-        if os.path.exists(local_path):
-            composition_array = sparse.load_npz(local_path).toarray()
+        if os.path.exists(local_hull_path):
+            composition_array = sparse.load_npz(local_hull_path).toarray()
             return composition_array
 
-        # Fallback to HuggingFace Hub if local file doesn't exist
-        composition_matrix = load_dataset(
-            "Entalpic/LeMaterial-Above-Hull-composition_matrix"
-        )
-        composition_matrix = composition_matrix["composition_matrix"]
-        composition_df = composition_matrix.to_pandas()
-        composition_df.drop("Unnamed: 0", axis=1, inplace=True)
-        composition_array = composition_df.to_numpy()
-        # save space: composition matrices are very sparse
-        sparse_matrix = sparse.csr_matrix(composition_array)
-        sparse.save_npz(local_path, sparse_matrix)
-        return composition_array
+        # otherwise fetch from HuggingFace Hub with hull type
+        try:
+            from huggingface_hub import hf_hub_download
+
+            file_path = hf_hub_download(
+                repo_id="LeMaterial/LeMat-Bulk-MLIP-Hull",
+                filename=f"threshold_{threshold_str}/{hull_type}_above_hull_composition_matrix.npz",
+                repo_type="dataset",
+                cache_dir=os.path.join(
+                    CURRENT_FOLDER, "..", "..", "..", "data", ".cache"
+                ),
+            )
+            composition_array = sparse.load_npz(file_path).toarray()
+            return composition_array
+        except:
+            pass
     except Exception as e:
         raise RuntimeError(f"Failed to load composition matrix: {e}") from e
 
@@ -286,7 +368,7 @@ def filter_df(df, matrix, composition):
         raise ValueError(f"Failed to filter reference dataset: {e}") from e
 
 
-def get_energy_above_hull(total_energy, composition):
+def get_energy_above_hull(total_energy, composition, hull_type="dft", threshold=0.01):
     """Calculate energy above hull from total energy and composition.
 
     This function properly handles charged species by converting them
@@ -298,6 +380,11 @@ def get_energy_above_hull(total_energy, composition):
         Total energy in eV
     composition : Composition
         Pymatgen composition object (may contain charged species)
+    hull_type : str, optional
+        Type of hull to use ('dft', 'orb', 'uma', 'mace_mp', 'mace_omat')
+        Default is 'dft' for backward compatibility
+    threshold : float, optional
+        Energy above hull threshold in eV/atom for reference dataset (default 0.01)
 
     Returns
     -------
@@ -313,7 +400,9 @@ def get_energy_above_hull(total_energy, composition):
 
     try:
         intersection_elements = filter_df(
-            _retrieve_df(), _retrieve_matrix(), composition
+            _retrieve_df(hull_type, threshold),
+            _retrieve_matrix(hull_type, threshold),
+            composition,
         )
 
         # Create PDEntries from the filtered DataFrame
