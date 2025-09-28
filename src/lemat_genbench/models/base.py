@@ -15,7 +15,7 @@ from pymatgen.core.structure import Structure
 
 from lemat_genbench.preprocess.reference_energies import (
     get_energy_above_hull,
-    get_formation_energy_from_composition_energy,
+    get_formation_energy_per_atom_from_composition_energy,
 )
 
 
@@ -325,10 +325,10 @@ class BaseEmbeddingExtractor(ABC):
         )
 
 
-def get_formation_energy_from_total_energy(
+def get_formation_energy_per_atom_from_total_energy(
     total_energy: float, composition, functional: str = "pbe"
 ) -> float:
-    """Calculate formation energy from total energy and composition.
+    """Calculate formation energy per atom from total energy and composition.
 
     This uses the same reference energies as the current codebase.
 
@@ -347,7 +347,7 @@ def get_formation_energy_from_total_energy(
         Formation energy per atom in eV/atom
     """
 
-    return get_formation_energy_from_composition_energy(
+    return get_formation_energy_per_atom_from_composition_energy(
         total_energy, composition, functional
     )
 

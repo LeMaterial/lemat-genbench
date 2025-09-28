@@ -7,7 +7,7 @@ from lemat_genbench.models.base import (
     CalculationResult,
     EmbeddingResult,
     get_energy_above_hull_from_total_energy,
-    get_formation_energy_from_total_energy,
+    get_formation_energy_per_atom_from_total_energy,
 )
 from lemat_genbench.models.equiformer.embeddings import (
     EquiformerEmbeddingExtractor,
@@ -116,7 +116,7 @@ class EquiformerCalculator(BaseMLIPCalculator):
         result = self.calculate_energy_forces(structure)
         total_energy = result.energy
 
-        return get_formation_energy_from_total_energy(
+        return get_formation_energy_per_atom_from_total_energy(
             total_energy, structure.composition
         )
 
