@@ -265,8 +265,8 @@ def _retrieve_df(hull_type="dft", threshold=0.01):
                             lambda x: x.tolist() if hasattr(x, "tolist") else x
                         )
                     return dataset
-        except:
-            pass  # Try old file-based approach
+        except Exception:
+            pass
 
         # Fall back to file-based approach
         from huggingface_hub import hf_hub_download
@@ -343,7 +343,7 @@ def _retrieve_matrix(hull_type="dft", threshold=0.01):
             )
             composition_array = sparse.load_npz(file_path).toarray()
             return composition_array
-        except:
+        except Exception:
             pass
     except Exception as e:
         raise RuntimeError(f"Failed to load composition matrix: {e}") from e

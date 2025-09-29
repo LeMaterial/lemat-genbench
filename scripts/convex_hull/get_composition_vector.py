@@ -22,7 +22,7 @@ def get_all_unique_elements(df=None):
         try:
             element = Element.from_Z(z)
             all_elements.append(str(element))
-        except:
+        except Exception:
             all_elements.append(None)
     return all_elements
 

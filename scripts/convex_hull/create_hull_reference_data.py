@@ -29,7 +29,7 @@ def create_composition_matrix(df, element_order_file="element_order.txt"):
             try:
                 elem = Element.from_Z(z)
                 element_to_idx[str(elem)] = z
-            except:
+            except Exception:
                 pass
 
     num_elements = 119
