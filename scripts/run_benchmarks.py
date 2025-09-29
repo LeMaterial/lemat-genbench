@@ -212,7 +212,8 @@ def save_embeddings_from_structures(
         from datetime import datetime
 
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"embeddings_{timestamp}.pkl"
+        mlip_names_str = "_".join(mlip_names)
+        filename = f"embeddings_{mlip_names_str}_{timestamp}.pkl"
         filepath = embeddings_dir / filename
 
         # Save embeddings
@@ -285,6 +286,7 @@ def generate_embedding_plots(
     import matplotlib.pyplot as plt
     from sklearn.decomposition import PCA
     from sklearn.manifold import TSNE
+    from umap import UMAP
 
     # Create output directory
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -292,7 +294,7 @@ def generate_embedding_plots(
     # Set up plotting style
     plt.style.use("default")
 
-    methods = ["pca", "tsne"]
+    methods = ["pca", "tsne", "umap"]
 
     for emb_name, emb_array in embeddings.items():
         logger.info(f"📊 Creating plots for {emb_name} ({emb_array.shape})")
@@ -307,6 +309,16 @@ def generate_embedding_plots(
                         n_components=2,
                         random_state=42,
                         perplexity=min(30, len(emb_array) // 4),
+                    )
+                elif method == "umap":
+                    # Reasonable defaults; n_neighbors scales mildly with dataset size
+                    n_neighbors = max(5, min(30, len(emb_array) // 20))
+                    reducer = UMAP(
+                        n_components=2,
+                        random_state=42,
+                        n_neighbors=n_neighbors,
+                        min_dist=0.1,
+                        metric="euclidean",
                     )
 
                 reduced = reducer.fit_transform(emb_array)
