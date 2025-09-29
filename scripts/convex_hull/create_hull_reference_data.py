@@ -73,7 +73,7 @@ def main():
         "--output-dir", default="data/convex_hulls", help="Output directory"
     )
     parser.add_argument(
-        "--threshold", type=float, default=0.01, help="Threshold (eV/atom)"
+        "--threshold", type=float, default=0.001, help="Threshold (eV/atom)"
     )
     parser.add_argument(
         "--energy-types",
