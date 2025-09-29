@@ -35,7 +35,7 @@ def parse_relaxation_config(config_str: str) -> dict:
         Dictionary with relaxation parameters
     """
     if not config_str:
-        return {"fmax": 0.02, "steps": 50}
+        return {"fmax": 0.02, "steps": 500}
     
     config = {}
     for param in config_str.split(','):
@@ -248,8 +248,8 @@ Examples:
     parser.add_argument(
         "--relaxation_config",
         type=str,
-        default="fmax=0.02,steps=50",
-        help="Relaxation configuration as 'key=value,key=value' (default: fmax=0.02,steps=50)"
+        default="fmax=0.02,steps=500",
+        help="Relaxation configuration as 'key=value,key=value' (default: fmax=0.02,steps=500)"
     )
     
     parser.add_argument(
