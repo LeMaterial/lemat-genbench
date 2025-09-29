@@ -206,7 +206,7 @@ def process_chunk(chunk):
 
 
 @lru_cache(maxsize=None)
-def _retrieve_df(hull_type="dft", threshold=0.01):
+def _retrieve_df(hull_type="dft", threshold=0.001):
     """Retrieve dataset for hull computations.
 
     Parameters
@@ -253,18 +253,15 @@ def _retrieve_df(hull_type="dft", threshold=0.01):
 
             dataset_dict = load_dataset("LeMaterial/LeMat-Bulk-MLIP-Hull")
 
-            dataset_keys = hull_type
-
-            for dataset_key in dataset_keys:
-                if dataset_key in dataset_dict:
-                    dataset = dataset_dict[dataset_key].to_pandas()
-                    # species_at_sites should already be lists in the new format
-                    # but we'll still check just in case
-                    if "species_at_sites" in dataset.columns:
-                        dataset["species_at_sites"] = dataset["species_at_sites"].apply(
-                            lambda x: x.tolist() if hasattr(x, "tolist") else x
-                        )
-                    return dataset
+            if hull_type in dataset_dict:
+                dataset = dataset_dict[hull_type].to_pandas()
+                # species_at_sites should already be lists in the new format
+                # but we'll still check just in case
+                if "species_at_sites" in dataset.columns:
+                    dataset["species_at_sites"] = dataset["species_at_sites"].apply(
+                        lambda x: x.tolist() if hasattr(x, "tolist") else x
+                    )
+                return dataset
         except Exception:
             pass
 
@@ -296,7 +293,7 @@ def _retrieve_df(hull_type="dft", threshold=0.01):
 
 
 @lru_cache(maxsize=None)
-def _retrieve_matrix(hull_type="dft", threshold=0.01):
+def _retrieve_matrix(hull_type="dft", threshold=0.001):
     """Retrieve composition matrix for hull computations.
 
     Parameters
@@ -367,7 +364,7 @@ def filter_df(df, matrix, composition):
         raise ValueError(f"Failed to filter reference dataset: {e}") from e
 
 
-def get_energy_above_hull(total_energy, composition, hull_type="dft", threshold=0.01):
+def get_energy_above_hull(total_energy, composition, hull_type="dft", threshold=0.001):
     """Calculate energy above hull from total energy and composition.
 
     This function properly handles charged species by converting them
