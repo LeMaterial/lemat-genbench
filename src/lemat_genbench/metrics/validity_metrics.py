@@ -298,7 +298,7 @@ class ChargeNeutralityMetric(BaseMetric):
                     return 0.0  # Assume charge neutral (reasonable composition)
                 else:
                     # print("failed penalty")
-                    return 0.0  # Small deviation penalty (charge balanced using LeMatBulk oxidation states, but requires unusual states)
+                    return 0.0  # correlation between oxidation state and electronegativity is positive (scores is negative) not a reasonable composition
             
             except IndexError:
                 # print("Index Error")

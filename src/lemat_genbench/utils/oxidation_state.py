@@ -8,23 +8,42 @@ import numpy as np
 from pymatgen.core.periodic_table import Element, Species
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 
+from lemat_genbench.utils.logging import logger
+
 
 def electronegativity_correlation(
         elements: list[str],
-        oxidation_states: list[int]
-        ):
+        oxidation_states: list[int, float]
+        ) -> float:
     """
+    Calculate correlation between oxidation states and electronegativity.
     
+    Args:
+        elements: List of element symbols
+        oxidation_states: List of oxidation state values (averaged per element)
+        TODO this should probably be scaled to follow the number of elements with that 
+        oxidation state.
+        
+    Returns:
+        Pearson correlation coefficient between oxidation states and electronegativity.
+        Returns NaN if correlation cannot be calculated.
     """
 
     en_vals = []
     for el in elements: 
         try:
             en_vals.append(Element(el).X)
-        except KeyError:
-            pass
-    corr = np.corrcoef(oxidation_states, en_vals)[0,1]
-    return corr
+        except (KeyError, AttributeError):
+            # Use Pauling scale default if not available, or raise error
+            logger.warning(f"No electronegativity data for element {el}")
+            return np.nan  # Can't calculate correlation without complete data
+
+    if len(en_vals) != len(oxidation_states):
+        logger.error("Mismatch in array lengths for correlation calculation")
+        return np.nan
+    else:
+        corr = np.corrcoef(oxidation_states, en_vals)[0,1]
+        return corr
 
 
 def compositional_oxi_state_guesses(
@@ -138,13 +157,10 @@ def compositional_oxi_state_guesses(
                     # If it is the most probable combo for a certain sum,
                     # store the combination
                     if oxid_sum not in el_sum_scores[idx] or score > el_sum_scores[idx].get(
-                        oxid_sum, 0
-                    ):
-                        if max(oxid_combo) - min(oxid_combo) > 1:
-                            pass
-                        else:
-                            el_sum_scores[idx][oxid_sum] = score
-                            el_best_oxid_combo[idx][oxid_sum] = oxid_combo
+                        oxid_sum, 0):
+                        
+                        el_sum_scores[idx][oxid_sum] = score
+                        el_best_oxid_combo[idx][oxid_sum] = oxid_combo
                             
             else:
                 pass
@@ -186,31 +202,37 @@ def compositional_oxi_state_guesses(
                 )
 
             else:
-                scores.append(electronegativity_correlation(elements=list(sol.keys()), oxidation_states=list(sol.values())))
+                all_scores.append(electronegativity_correlation(elements=list(sol.keys()), oxidation_states=list(sol.values())))
 
-    if all_oxi_states:
-        return (
-        tuple(all_sols),
-        tuple(all_oxid_combo),
-        tuple(sorted(scores)),
-        )
+    # if all_oxi_states:
+    #     return (
+    #     tuple(all_sols),
+    #     tuple(all_oxid_combo),
+    #     tuple(sorted(all_scores)),
+    #     )
     # Sort the solutions from highest to lowest score
-    if all_scores:
-        all_sols, all_oxid_combo = zip(
-            *(
-                (y, x)
-                for (z, y, x) in sorted(
-                    zip(all_scores, all_sols, all_oxid_combo, strict=True),
-                    key=lambda pair: pair[0],
-                    reverse=True,
-                )
-            ),
-            strict=True,
+    if not all_oxi_states: 
+        if all_scores:
+            all_sols, all_oxid_combo = zip(
+                *(
+                    (y, x)
+                    for (z, y, x) in sorted(
+                        zip(all_scores, all_sols, all_oxid_combo, strict=True),
+                        key=lambda pair: pair[0],
+                        reverse=True,
+                    )
+                ),
+                strict=True,
         )
+            all_scores = sorted(all_scores, reverse=True)
+
+    else:
+        all_scores = sorted(all_scores)
+
     return (
         tuple(all_sols),
         tuple(all_oxid_combo),
-        tuple(sorted(all_scores, reverse=True)),
+        tuple(all_scores),
     )
 
 
