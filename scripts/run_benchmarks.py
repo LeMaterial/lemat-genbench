@@ -33,6 +33,9 @@ from tqdm import tqdm
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
+# Import embedding utilities
+from embedding_utils import save_embeddings_from_structures
+
 from lemat_genbench.benchmarks.distribution_benchmark import DistributionBenchmark
 from lemat_genbench.benchmarks.diversity_benchmark import DiversityBenchmark
 from lemat_genbench.benchmarks.hhi_benchmark import HHIBenchmark
@@ -356,7 +359,7 @@ def create_preprocessor_config(
     """Create preprocessor configuration based on required benchmark families.
 
     Note: validity preprocessing is ALWAYS included regardless of families.
-    
+
     Parameters
     ----------
     benchmark_families : List[str]
@@ -523,7 +526,9 @@ def run_remaining_preprocessors(
     valid_structures,
     preprocessor_config: Dict[str, Any],
     config: Dict[str, Any],
+    run_name: str,
     monitor_memory: bool = False,
+    generate_embedding_plots: bool = False,
 ):
     """Run remaining preprocessors on valid structures only.
 
@@ -627,6 +632,16 @@ def run_remaining_preprocessors(
         logger.info(
             f"✅ Multi-MLIP preprocessing complete for {len(processed_structures)} valid structures in {elapsed_time:.1f}s"
         )
+
+        # Save embeddings if they were extracted
+        if extract_embeddings and processed_structures:
+            save_embeddings_from_structures(
+                processed_structures,
+                config,
+                run_name,
+                generate_embedding_plots,
+                logger=logger,
+            )
 
         # Clean up after MLIP preprocessor (this is crucial for memory management)
         cleanup_after_preprocessor("multi_mlip", monitor_memory)
@@ -860,6 +875,11 @@ def main():
         action="store_true",
         help="Enable detailed memory monitoring throughout the process",
     )
+    parser.add_argument(
+        "--generate-embedding-plots",
+        action="store_true",
+        help="Automatically generate embedding analysis plots after Multi-MLIP preprocessing",
+    )
 
     args = parser.parse_args()
 
@@ -920,7 +940,7 @@ def main():
         # Load benchmark configuration
         logger.info(f"Loading benchmark configuration: {args.config}")
         config = load_benchmark_config(args.config)
-        
+
         # Add fingerprint method to config
         config["fingerprint_method"] = args.fingerprint_method
         logger.info(f"✅ Loaded configuration: {config.get('type', 'unknown')}")
@@ -950,7 +970,7 @@ def main():
         logger.info(
             "🔍 NOTE: Only valid structures will be used for subsequent benchmarks"
         )
-        
+
         # Note about fingerprinting
         if args.fingerprint_method == "structure-matcher":
             logger.info(
@@ -1009,7 +1029,12 @@ def main():
 
         # Step 3: Run remaining preprocessors on valid structures only
         processed_valid_structures, preprocessor_results = run_remaining_preprocessors(
-            valid_structures, preprocessor_config, config, args.monitor_memory
+            valid_structures,
+            preprocessor_config,
+            config,
+            args.name,
+            args.monitor_memory,
+            args.generate_embedding_plots,
         )
 
         # Step 4: Run remaining benchmarks on valid structures only
