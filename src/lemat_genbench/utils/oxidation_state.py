@@ -13,7 +13,7 @@ from lemat_genbench.utils.logging import logger
 
 def electronegativity_correlation(
         elements: list[str],
-        oxidation_states: list[int, float]
+        oxidation_states: list[int | float]
         ) -> float:
     """
     Calculate correlation between oxidation states and electronegativity.
@@ -125,6 +125,7 @@ def compositional_oxi_state_guesses(
     el_sums: list = []  # matrix: dim1= el_idx, dim2=possible sums
     el_sum_scores: defaultdict = defaultdict(set)  # dict of el_idx, sum -> score
     el_best_oxid_combo: dict = {}  # dict of el_idx, sum -> oxid combo with best score
+
     for idx, el in enumerate(elements):
         el_sum_scores[idx] = {}
         el_best_oxid_combo[idx] = {}
@@ -148,12 +149,13 @@ def compositional_oxi_state_guesses(
                 if oxid_sum not in el_sums[idx]:
                     el_sums[idx].append(oxid_sum)
 
+                # Determine how probable is this combo?
                 if not all_oxi_states:
-                    # Determine how probable is this combo?
                     scores = []
                     for o in oxid_combo:
                         scores.append(type(comp).oxi_prob[str(Species(el, o))])
                     score = math.prod(scores)
+
                     # If it is the most probable combo for a certain sum,
                     # store the combination
                     if oxid_sum not in el_sum_scores[idx] or score > el_sum_scores[idx].get(
@@ -164,7 +166,6 @@ def compositional_oxi_state_guesses(
                             
             else:
                 pass
-    
     
     # Determine which combination of oxidation states for each element
     # is the most probable
@@ -200,40 +201,47 @@ def compositional_oxi_state_guesses(
                         for idx, (e, v) in enumerate(zip(elements, x, strict=True))
                     }
                 )
-
             else:
                 all_scores.append(electronegativity_correlation(elements=list(sol.keys()), oxidation_states=list(sol.values())))
 
-    # if all_oxi_states:
-    #     return (
-    #     tuple(all_sols),
-    #     tuple(all_oxid_combo),
-    #     tuple(sorted(all_scores)),
-    #     )
+
     # Sort the solutions from highest to lowest score
-    if not all_oxi_states: 
-        if all_scores:
-            all_sols, all_oxid_combo = zip(
-                *(
-                    (y, x)
-                    for (z, y, x) in sorted(
-                        zip(all_scores, all_sols, all_oxid_combo, strict=True),
-                        key=lambda pair: pair[0],
-                        reverse=True,
-                    )
-                ),
-                strict=True,
-        )
-            all_scores = sorted(all_scores, reverse=True)
+    if all_scores:
+        if all_oxi_states:
+            # For correlation: more negative is better (ascending sort)
+            sorted_data = sorted(
+                zip(all_scores, all_sols),
+                key=lambda x: x[0]  # Sort by score
+            )
+            all_scores, all_sols = zip(*sorted_data)
+            all_oxid_combo = all_sols
+            return (
+                tuple(all_sols),
+                tuple(all_oxid_combo),
+                tuple(all_scores),
+            )
 
+        else:
+            # For probabilities: higher is better (descending sort)
+            sorted_data = sorted(
+                zip(all_scores, all_sols, all_oxid_combo),
+                key=lambda x: x[0],
+                reverse=True
+            )
+            all_scores, all_sols, all_oxid_combo = zip(*sorted_data)
+
+
+            return (
+                tuple(all_sols),
+                tuple(all_oxid_combo),
+                tuple(all_scores),
+            )
     else:
-        all_scores = sorted(all_scores)
-
-    return (
-        tuple(all_sols),
-        tuple(all_oxid_combo),
-        tuple(all_scores),
-    )
+        return (
+            tuple(all_sols),
+            tuple(all_oxid_combo),
+            tuple(all_scores),
+            )
 
 
 def get_inequivalent_site_info(structure):
