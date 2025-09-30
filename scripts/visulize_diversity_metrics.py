@@ -1,0 +1,2 @@
+"""Inital Commit for Diveristy Metric Visulizer. The script should call the results of the divseristy 
+and create a Radar Plot and also integrate with HF to create a heatmap table of best performers"""
