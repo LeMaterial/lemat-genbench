@@ -18,6 +18,7 @@ from pymatgen.core.periodic_table import Element
 from pymatgen.core.structure import Structure
 from pymatgen.io.cif import CifWriter
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
+from smact.metallicity import metallicity_score
 
 from lemat_genbench.metrics.base import BaseMetric, MetricConfig
 from lemat_genbench.utils.logging import logger
@@ -111,6 +112,9 @@ class ChargeNeutralityMetric(BaseMetric):
 
         # Step 1: Bond valence analysis for metallic structures
         try:
+            metal_score = metallicity_score(Composition(structure.formula))
+            if metal_score > 0.7:
+                return 0.0  # Perfectly charge neutral (metallic)
             sites = get_inequivalent_site_info(structure)
             bvs = []
             count = 0
@@ -130,7 +134,7 @@ class ChargeNeutralityMetric(BaseMetric):
                 for bv in bvs:
                     if np.abs(bv[1]) < 10**-15:
                         pass
-                    else:
+                    else:   
                         raise ValueError
                 logger.debug(
                     "Valid structure - Metallic structure with bond valence equal to zero for all atoms"
@@ -159,128 +163,64 @@ class ChargeNeutralityMetric(BaseMetric):
             )
 
         # Step 3: Compositional oxidation state guessing
+        # try:
+        
+        comp = Composition(structure.composition)
+        here = Path(__file__).resolve().parent
+        three_up = here.parents[2]
+
+        with open(three_up / "data" / "lemat_icsd_oxi_state_mapping.json", "r") as f:
+            oxi_state_mapping = json.load(f)
+
+        oxi_states_override = {}
+        for e in comp.elements:
+            if str(e) in oxi_state_mapping:
+                oxi_states_override[str(e)] = oxi_state_mapping[str(e)]
+        # print("starting oxi state guesses")
+        output = compositional_oxi_state_guesses(
+            comp,
+            all_oxi_states=False,
+            max_sites=-1,
+            target_charge=0,
+            oxi_states_override=oxi_states_override,
+        )
+        logger.debug(
+            f"Most valid oxidation state and score based on composition: "
+            f"{output[1][0] if len(output[1]) > 0 else 'None'}, "
+            f"{output[2][0] if len(output[2]) > 0 else 'None'}"
+        )
         try:
-            comp = Composition(structure.composition)
-            here = Path(__file__).resolve().parent
-            three_up = here.parents[2]
-
-            try:
-                with open(three_up / "data" / "oxi_state_mapping.json", "r") as f:
-                    oxi_state_mapping = json.load(f)
-            except FileNotFoundError:
-                # Fallback to default oxidation state mapping
-                oxi_state_mapping = {
-                    "H": [-1, 1],
-                    "Li": [1],
-                    "Be": [2],
-                    "B": [3],
-                    "C": [-4, 2, 4],
-                    "N": [-3, 3, 5],
-                    "O": [-2],
-                    "F": [-1],
-                    "Na": [1],
-                    "Mg": [2],
-                    "Al": [3],
-                    "Si": [4],
-                    "P": [3, 5],
-                    "S": [-2, 4, 6],
-                    "Cl": [-1],
-                    "K": [1],
-                    "Ca": [2],
-                    "Sc": [3],
-                    "Ti": [2, 3, 4],
-                    "V": [2, 3, 4, 5],
-                    "Cr": [2, 3, 6],
-                    "Mn": [2, 3, 4, 7],
-                    "Fe": [2, 3],
-                    "Co": [2, 3],
-                    "Ni": [2],
-                    "Cu": [1, 2],
-                    "Zn": [2],
-                    "Ga": [3],
-                    "Ge": [2, 4],
-                    "As": [3, 5],
-                    "Se": [-2, 4, 6],
-                    "Br": [-1],
-                    "Rb": [1],
-                    "Sr": [2],
-                    "Y": [3],
-                    "Zr": [4],
-                    "Nb": [3, 5],
-                    "Mo": [3, 4, 5, 6],
-                    "Tc": [4, 7],
-                    "Ru": [3, 4],
-                    "Rh": [3],
-                    "Pd": [2, 4],
-                    "Ag": [1],
-                    "Cd": [2],
-                    "In": [3],
-                    "Sn": [2, 4],
-                    "Sb": [3, 5],
-                    "Te": [-2, 4, 6],
-                    "I": [-1],
-                    "Cs": [1],
-                    "Ba": [2],
-                    "La": [3],
-                    "Ce": [3, 4],
-                    "Pr": [3],
-                    "Nd": [3],
-                    "Pm": [3],
-                    "Sm": [2, 3],
-                    "Eu": [2, 3],
-                    "Gd": [3],
-                    "Tb": [3, 4],
-                    "Dy": [3],
-                    "Ho": [3],
-                    "Er": [3],
-                    "Tm": [3],
-                    "Yb": [2, 3],
-                    "Lu": [3],
-                    "Hf": [4],
-                    "Ta": [5],
-                    "W": [4, 6],
-                    "Re": [4, 7],
-                    "Os": [4, 8],
-                    "Ir": [3, 4],
-                    "Pt": [2, 4],
-                    "Au": [1, 3],
-                    "Hg": [1, 2],
-                    "Tl": [1, 3],
-                    "Pb": [2, 4],
-                    "Bi": [3, 5],
-                }
-
-            oxi_states_override = {}
-            for e in comp.elements:
-                if str(e) in oxi_state_mapping:
-                    oxi_states_override[str(e)] = oxi_state_mapping[str(e)]
+            score = output[2][0]
+            if score > 0.001:
+                return 0.0  # Assume charge neutral (reasonable composition)
+            else:
+                print("failed penalty")
+                return 0.0  # Small deviation penalty (charge balanced using LeMatBulk oxidation states, but requires unusual states)
+        except IndexError:
 
             output = compositional_oxi_state_guesses(
                 comp,
-                all_oxi_states=False,
+                all_oxi_states=True,
                 max_sites=-1,
                 target_charge=0,
-                oxi_states_override=oxi_states_override,
-            )
-
-            logger.debug(
-                f"Most valid oxidation state and score based on composition: "
-                f"{output[1][0] if len(output[1]) > 0 else 'None'}, "
-                f"{output[2][0] if len(output[2]) > 0 else 'None'}"
-            )
+                oxi_states_override=None,
+                )
 
             try:
-                score = output[2][0]
-                if score > 0.001:
+                score = -output[2][0] # correlation between oxidation state and electronegativity. Should be negative correlation for valid structures, reverse sign so logic 
+                # maximizing score is consistent
+                if score > 0.0:
                     return 0.0  # Assume charge neutral (reasonable composition)
                 else:
-                    return 10.0  # Large deviation penalty (unreasonable composition)
+                    return 10.0  # correlation between oxidation state and electronegativity is positive (scores is negative) not a reasonable composition
+            
             except IndexError:
-                return 10.0  # Large deviation penalty (no valid assignments)
+                return 10.0 # large deviation penalty 
 
-        except Exception as e:
-            logger.debug(f"Compositional oxidation state guessing failed: {str(e)}")
-            return 10.0  # Large penalty for failed analysis
+        # except Exception as e:
+        #     logger.debug(f"Compositional oxidation state guessing failed: {str(e)}")
+        #     print("failed for other reason")
+        #     return 10.0  # Large penalty for failed analysis
 
     def aggregate_results(self, values: list[float]) -> Dict[str, Any]:
         """Aggregate results into final metric values.
@@ -816,3 +756,39 @@ class OverallValidityMetric(BaseMetric):
         # if needed, but we keep the standard interface clean
         
         return result
+
+
+def lematbulk_item_to_structure(item: dict):
+    sites = item["species_at_sites"]
+    coords = item["cartesian_site_positions"]
+    cell = item["lattice_vectors"]
+
+    structure = Structure(
+        species=sites, coords=coords, lattice=cell, coords_are_cartesian=True
+    )
+
+    return structure
+
+if __name__ == "__main__":
+    from datasets import load_dataset
+    from tqdm import tqdm
+
+    dataset_name = "Lematerial/LeMat-Bulk"
+    name = "compatible_pbe"
+    split = "train"
+    dataset = load_dataset(dataset_name, name=name, split=split, streaming=False)
+
+    np.random.seed(32)
+    indicies = np.random.randint(0, len(dataset), 50)
+
+    metric = ChargeNeutralityMetric()
+    args = metric._get_compute_attributes()
+
+    structures = []
+    for i in tqdm(range(len(indicies))):
+        index = int(indicies[i])
+        strut = lematbulk_item_to_structure(dataset[index])
+        structures.append(strut)
+
+    val = metric.compute_structure(structures[5], **args)
+    print(val)
