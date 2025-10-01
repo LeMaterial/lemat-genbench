@@ -28,8 +28,8 @@ class TestValidityBenchmark:
         benchmark = ValidityBenchmark(
             charge_tolerance=0.05,
             distance_scaling=0.3,
-            min_density=2.0,
-            max_density=20.0,
+            min_mass_density=2.0,
+            max_mass_density=20.0,
             check_format=False,
             check_symmetry=False,
             name="Custom Benchmark",
@@ -204,8 +204,8 @@ class TestValidityBenchmark:
         strict_benchmark = ValidityBenchmark(
             charge_tolerance=0.001,
             distance_scaling=0.9,
-            min_density=2.0,
-            max_density=20.0,
+            min_mass_density=2.0,
+            max_mass_density=20.0,
             check_format=True,
             check_symmetry=True
         )
@@ -214,8 +214,8 @@ class TestValidityBenchmark:
         lenient_benchmark = ValidityBenchmark(
             charge_tolerance=1.0,
             distance_scaling=0.1,
-            min_density=0.1,
-            max_density=50.0,
+            min_mass_density=0.1,
+            max_mass_density=50.0,
             check_format=False,
             check_symmetry=False
         )

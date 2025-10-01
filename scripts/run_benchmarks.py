@@ -418,8 +418,8 @@ def run_validity_preprocessing_and_filtering(
     validity_benchmark = ValidityBenchmark(
         charge_tolerance=validity_settings.get("charge_tolerance", 0.1),
         distance_scaling=validity_settings.get("distance_scaling", 0.5),
-        min_density=validity_settings.get("min_density", 0.01),
-        max_density=validity_settings.get("max_density", 25.0),
+        min_mass_density=validity_settings.get("min_mass_density", 0.01),
+        max_mass_density=validity_settings.get("max_mass_density", 25.0),
         check_format=validity_settings.get("check_format", True),
         check_symmetry=validity_settings.get("check_symmetry", True),
     )
@@ -440,16 +440,16 @@ def run_validity_preprocessing_and_filtering(
 
     charge_tolerance = validity_settings.get("charge_tolerance", 0.1)
     distance_scaling = validity_settings.get("distance_scaling", 0.5)
-    min_density = validity_settings.get("min_density", 0.01)
-    max_density = validity_settings.get("max_density", 25.0)
+    min_mass_density = validity_settings.get("min_mass_density", 0.01)
+    max_mass_density = validity_settings.get("max_mass_density", 25.0)
     check_format = validity_settings.get("check_format", True)
     check_symmetry = validity_settings.get("check_symmetry", True)
 
     validity_preprocessor = ValidityPreprocessor(
         charge_tolerance=charge_tolerance,
         distance_scaling_factor=distance_scaling,
-        plausibility_min_density=min_density,
-        plausibility_max_density=max_density,
+        plausibility_min_mass_density=min_mass_density,
+        plausibility_max_mass_density=max_mass_density,
         plausibility_check_format=check_format,
         plausibility_check_symmetry=check_symmetry,
     )

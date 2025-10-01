@@ -418,9 +418,9 @@ class PhysicalPlausibilityConfig(MetricConfig):
 
     Parameters
     ----------
-    min_density : float, default=0.01
+    min_mass_density : float, default=0.01
         Minimum allowed density in g/cm³.
-    max_density : float, default=25.0
+    max_mass_density : float, default=25.0
         Maximum allowed density in g/cm³.
     check_format : bool, default=True
         Whether to check CIF format round-trip validity.
@@ -428,8 +428,8 @@ class PhysicalPlausibilityConfig(MetricConfig):
         Whether to check space group validity.
     """
 
-    min_density: float = 0.01
-    max_density: float = 25.0
+    min_mass_density: float = 0.01
+    max_mass_density: float = 25.0
     check_format: bool = True
     check_symmetry: bool = True
 
@@ -439,8 +439,8 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
     def __init__(
         self,
-        min_density: float = 0.01,
-        max_density: float = 25.0,
+        min_mass_density: float = 0.01,
+        max_mass_density: float = 25.0,
         check_format: bool = True,
         check_symmetry: bool = True,
         name: str = "PhysicalPlausibility",
@@ -457,8 +457,8 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
         # Override with custom config
         self.config = PhysicalPlausibilityConfig(
-            min_density=min_density,
-            max_density=max_density,
+            min_mass_density=min_mass_density,
+            max_mass_density=max_mass_density,
             check_format=check_format,
             check_symmetry=check_symmetry,
             name=name,
@@ -469,8 +469,8 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
     def _get_compute_attributes(self) -> dict[str, Any]:
         return {
-            "min_density": self.config.min_density,
-            "max_density": self.config.max_density,
+            "min_mass_density": self.config.min_mass_density,
+            "max_mass_density": self.config.max_mass_density,
             "check_format": self.config.check_format,
             "check_symmetry": self.config.check_symmetry,
         }
@@ -484,8 +484,8 @@ class PhysicalPlausibilityMetric(BaseMetric):
         float
             1.0 if structure passes all plausibility checks, 0.0 otherwise.
         """
-        min_density = compute_args.get("min_density", 0.01)
-        max_density = compute_args.get("max_density", 25.0)
+        min_mass_density = compute_args.get("min_mass_density", 0.01)
+        max_mass_density = compute_args.get("max_mass_density", 25.0)
         check_format = compute_args.get("check_format", True)
         check_symmetry = compute_args.get("check_symmetry", True)
 
@@ -495,12 +495,12 @@ class PhysicalPlausibilityMetric(BaseMetric):
         # 1. Density check
         try:
             density = structure.density
-            if min_density <= density <= max_density:
+            if min_mass_density <= density <= max_mass_density:
                 checks_passed += 1
             else:
                 logger.debug(
                     f"Density check failed: {density:.3f} g/cm³ "
-                    f"(not in range [{min_density}, {max_density}])"
+                    f"(not in range [{min_mass_density}, {max_mass_density}])"
                 )
         except Exception as e:
             logger.debug(f"Could not compute density: {str(e)}")
@@ -605,8 +605,8 @@ class OverallValidityMetric(BaseMetric):
         self,
         charge_tolerance: float = 0.1,
         distance_scaling: float = 0.5,
-        min_density: float = 0.01,
-        max_density: float = 25.0,
+        min_mass_density: float = 0.01,
+        max_mass_density: float = 25.0,
         check_format: bool = True,
         check_symmetry: bool = True,
         name: str = "OverallValidity",
@@ -625,8 +625,8 @@ class OverallValidityMetric(BaseMetric):
         # Store parameters for individual metrics
         self.charge_tolerance = charge_tolerance
         self.distance_scaling = distance_scaling
-        self.min_density = min_density
-        self.max_density = max_density
+        self.min_mass_density = min_mass_density
+        self.max_mass_density = max_mass_density
         self.check_format = check_format
         self.check_symmetry = check_symmetry
         
@@ -639,8 +639,8 @@ class OverallValidityMetric(BaseMetric):
             **attrs,
             "charge_tolerance": self.charge_tolerance,
             "distance_scaling": self.distance_scaling,
-            "min_density": self.min_density,
-            "max_density": self.max_density,
+            "min_mass_density": self.min_mass_density,
+            "max_mass_density": self.max_mass_density,
             "check_format": self.check_format,
             "check_symmetry": self.check_symmetry,
             "verbose": self.verbose,
@@ -659,8 +659,8 @@ class OverallValidityMetric(BaseMetric):
         # Extract parameters
         charge_tolerance = compute_args.get("charge_tolerance", 0.1)
         distance_scaling = compute_args.get("distance_scaling", 0.5)
-        min_density = compute_args.get("min_density", 0.01)
-        max_density = compute_args.get("max_density", 25.0)
+        min_mass_density = compute_args.get("min_mass_density", 0.01)
+        max_mass_density = compute_args.get("max_mass_density", 25.0)
         check_format = compute_args.get("check_format", True)
         check_symmetry = compute_args.get("check_symmetry", True)
 
@@ -695,8 +695,8 @@ class OverallValidityMetric(BaseMetric):
         try:
             plausibility_score = PhysicalPlausibilityMetric.compute_structure(
                 structure,
-                min_density=min_density,
-                max_density=max_density,
+                min_mass_density=min_mass_density,
+                max_mass_density=max_mass_density,
                 check_format=check_format,
                 check_symmetry=check_symmetry,
             )
