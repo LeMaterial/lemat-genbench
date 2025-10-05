@@ -31,7 +31,7 @@ def parse_species_string(species_str):
         return list(species_str)
 
 
-def process_maximal_set(set_data, energy_column, hull_energy_column="true_energy"):
+def process_maximal_set(set_data, energy_column, hull_energy_column="true_energy", mp_only_hull=False):
     set_idx, maximal_composition = set_data
 
     is_subset = ~np.any(
@@ -63,7 +63,13 @@ def process_maximal_set(set_data, energy_column, hull_energy_column="true_energy
     try:
         pd_entries = []
         material_map = {}
+
+        # Build hull from MP structures only if mp_only_hull=True, otherwise use all
         for mat in materials_in_set:
+            # Only include MP structures in hull construction if mp_only_hull is enabled
+            if mp_only_hull and not mat["immutable_id"].startswith("mp-"):
+                continue
+
             composition = Composition(Counter(mat["species"]))
             energy = mat[hull_energy_column]
 
@@ -79,17 +85,15 @@ def process_maximal_set(set_data, energy_column, hull_energy_column="true_energy
 
         pd_phase = PhaseDiagram(pd_entries)
 
-        for entry in pd_entries:
-            if id(entry) not in material_map:
-                continue
-
-            mat = material_map[id(entry)]
+        # Compute hull energies for ALL materials, regardless of mp_only_hull setting
+        for mat in materials_in_set:
             test_energy = mat[energy_column]
 
             if pd.isna(test_energy):
                 continue
 
-            test_entry = PDEntry(entry.composition, test_energy)
+            composition = Composition(Counter(mat["species"]))
+            test_entry = PDEntry(composition, test_energy)
             e_above_hull = pd_phase.get_decomp_and_e_above_hull(
                 test_entry, allow_negative=True
             )[1]
@@ -107,13 +111,13 @@ def main():
     parser.add_argument(
         "--energy-type",
         type=str,
-        choices=["dft", "orb", "uma", "mace_mp", "mace_omat", "all"],
+        choices=["dft", "orb_direct_20", "uma", "mace_mp", "mace_omat", "ensemble", "all", "orb_conserv_inf"],
         default="dft",
     )
     parser.add_argument(
         "--hull-energy-type",
         type=str,
-        choices=["dft", "orb", "uma", "mace_mp", "mace_omat"],
+        choices=["dft", "orb_direct_20", "uma", "mace_mp", "mace_omat", "ensemble", "orb_conserv_inf"],
         default=None,
     )
     parser.add_argument("--n-workers", type=int, default=32)
@@ -124,6 +128,10 @@ def main():
     parser.add_argument("--compositions", type=str, default="all_compositions.npy")
     parser.add_argument(
         "--debug", action="store_true", help="Run in debug mode without multiprocessing"
+    )
+    parser.add_argument(
+        "--mp-only-hull", action="store_true",
+        help="Use only MP structures for hull construction (but compute energies for all structures)"
     )
 
     args = parser.parse_args()
@@ -140,6 +148,11 @@ def main():
         print(f"Loading {args.input_csv}...")
         df_main = pd.read_csv(args.input_csv)
     print(f"Loaded {len(df_main):,} materials.")
+
+    if args.mp_only_hull:
+        mp_count = df_main['immutable_id'].str.startswith('mp-', na=False).sum()
+        print(f"MP-only hull mode enabled: using only {mp_count:,} MP structures for hull construction")
+        print(f"Note: Hull energies will still be computed for all {len(df_main):,} materials")
 
     print(f"Loading {args.maximal_sets}...")
     maximal_sets = np.load(args.maximal_sets, allow_pickle=True)
@@ -165,10 +178,12 @@ def main():
 
     type_to_column = {
         "dft": "true_energy",
-        "orb": "orb_energy",
+        "orb_direct_20": "orb_direct_20_energy",
         "uma": "uma_energy",
         "mace_mp": "mace_mp_energy",
         "mace_omat": "mace_omat_energy",
+        "ensemble": "ensemble_energy",
+        "orb_conserv_inf": "orb_conserv_inf_energy",
     }
 
     if args.energy_type == "all":
@@ -187,6 +202,7 @@ def main():
                 process_maximal_set,
                 energy_column=column_name,
                 hull_energy_column=hull_energy_column,
+                mp_only_hull=args.mp_only_hull,
             )
 
             hull_values = {}
@@ -234,6 +250,7 @@ def main():
             process_maximal_set,
             energy_column=energy_column,
             hull_energy_column=hull_energy_column,
+            mp_only_hull=args.mp_only_hull,
         )
 
         hull_values = {}
@@ -248,7 +265,7 @@ def main():
 
                 t0 = time.time()
                 result = process_maximal_set(
-                    set_data, energy_column, hull_energy_column
+                    set_data, energy_column, hull_energy_column, args.mp_only_hull
                 )
                 t1 = time.time()
                 hull_values.update(result)

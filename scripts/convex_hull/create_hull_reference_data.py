@@ -78,7 +78,7 @@ def main():
     parser.add_argument(
         "--energy-types",
         nargs="+",
-        default=["dft", "orb", "uma", "mace_mp", "mace_omat"],
+        default=["dft", "orb_direct_20", "orb_conserv_inf", "uma", "mace_mp", "mace_omat"],
         help="Energy types",
     )
     parser.add_argument(
@@ -105,7 +105,9 @@ def main():
     if args.hull.endswith(".parquet"):
         hull_df = pd.read_parquet(args.hull)
         hull_df = hull_df.reset_index()
-        hull_df.rename(columns={"index": "immutable_id"}, inplace=True)
+        # Rename index column to immutable_id if it's not already named that
+        if "immutable_id" not in hull_df.columns and "index" in hull_df.columns:
+            hull_df.rename(columns={"index": "immutable_id"}, inplace=True)
 
         hull_columns = [col for col in hull_df.columns if "hull" in col.lower()]
         print(f"Found hull columns: {hull_columns}")
@@ -193,7 +195,8 @@ def create_all_split(df_full, hull_df, output_dir, hull_columns):
 
     energy_columns = [
         "true_energy",
-        "orb_energy",
+        "orb_direct_20_energy",
+        "orb_conserv_inf_energy",
         "uma_energy",
         "mace_mp_energy",
         "mace_omat_energy",
@@ -265,7 +268,8 @@ def upload_to_huggingface(output_dir, repo_id, token, threshold, df_all=None):
 
         all_energy_columns = [
             "true_energy",
-            "orb_energy",
+            "orb_direct_20_energy",
+            "orb_conserv_inf_energy",
             "uma_energy",
             "mace_mp_energy",
             "mace_omat_energy",
@@ -273,27 +277,32 @@ def upload_to_huggingface(output_dir, repo_id, token, threshold, df_all=None):
 
         all_file = Path(output_dir) / "all_hull_energies.parquet"
         if all_file.exists():
-            df_all_split = pd.read_parquet(all_file)
+            try:
+                df_all_split = pd.read_parquet(all_file)
 
-            if "species_at_sites" in df_all_split.columns:
+                if "species_at_sites" in df_all_split.columns:
 
-                def ensure_list(x):
-                    if hasattr(x, "tolist"):
-                        return x.tolist()
-                    elif isinstance(x, list):
-                        return x
-                    else:
-                        return list(x)
+                    def ensure_list(x):
+                        if hasattr(x, "tolist"):
+                            return x.tolist()
+                        elif isinstance(x, list):
+                            return x
+                        else:
+                            return list(x)
 
-                df_all_split["species_at_sites"] = df_all_split[
-                    "species_at_sites"
-                ].apply(ensure_list)
+                    df_all_split["species_at_sites"] = df_all_split[
+                        "species_at_sites"
+                    ].apply(ensure_list)
 
-            dataset_all = Dataset.from_pandas(df_all_split, preserve_index=False)
-            print(
-                f"  Prepared 'all' dataset: {len(df_all_split)} materials (no threshold)"
-            )
-            dataset_all.push_to_hub(f"{repo_id}-All", token=token)
+                dataset_all = Dataset.from_pandas(df_all_split, preserve_index=False)
+                print(
+                    f"  Prepared 'all' dataset: {len(df_all_split)} materials (no threshold)"
+                )
+                dataset_all.push_to_hub(f"{repo_id}-All", token=token)
+                print(f"✓ Successfully pushed 'all' dataset to {repo_id}-All")
+            except Exception as e:
+                print(f"✗ Error uploading 'all' dataset: {e}")
+                print("  Continuing with filtered datasets...")
 
         datasets = {}
         threshold_str = f"{threshold:.3f}".replace(".", "_")
@@ -341,10 +350,20 @@ def upload_to_huggingface(output_dir, repo_id, token, threshold, df_all=None):
             print(f"  Prepared {energy_type} dataset: {len(df)} materials")
 
         if datasets:
-            dataset_dict = DatasetDict(datasets)
-            print("\nPushing datasets to hub...")
-            dataset_dict.push_to_hub(repo_id, token=token)
-            print(f"✓ Successfully pushed {len(datasets)} datasets to {repo_id}")
+            try:
+                dataset_dict = DatasetDict(datasets)
+                print("\nPushing datasets to hub...")
+                dataset_dict.push_to_hub(repo_id, token=token)
+                print(f"✓ Successfully pushed {len(datasets)} datasets to {repo_id}")
+            except Exception as e:
+                print(f"✗ Error pushing datasets to hub: {e}")
+                print("  Attempting to push datasets individually...")
+                for split_name, dataset in datasets.items():
+                    try:
+                        dataset.push_to_hub(repo_id, split=split_name, token=token)
+                        print(f"  ✓ Pushed {split_name}")
+                    except Exception as split_error:
+                        print(f"  ✗ Failed to push {split_name}: {split_error}")
 
         print("\nUploading auxiliary files...")
         for file_path in Path(output_dir).glob("*.npz"):
@@ -465,7 +484,8 @@ def process_energy_type(
 
     energy_columns = [
         "true_energy",
-        "orb_energy",
+        "orb_direct_20_energy",
+        "orb_conserv_inf_energy",
         "uma_energy",
         "mace_mp_energy",
         "mace_omat_energy",
