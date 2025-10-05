@@ -28,6 +28,8 @@ class ValidityBenchmark(BaseBenchmark):
         self,
         charge_tolerance: float = 0.1,
         distance_scaling: float = 0.5,
+        min_atomic_density: float = 0.00001,
+        max_atomic_density: float = 0.5,
         min_mass_density: float = 0.01,
         max_mass_density: float = 25.0,
         check_format: bool = True,
@@ -47,6 +49,8 @@ class ValidityBenchmark(BaseBenchmark):
         charge_metric = ChargeNeutralityMetric(tolerance=charge_tolerance)
         distance_metric = MinimumInteratomicDistanceMetric(scaling_factor=distance_scaling)
         plausibility_metric = PhysicalPlausibilityMetric(
+            min_atomic_density=min_atomic_density,
+            max_atomic_density=max_atomic_density,
             min_mass_density=min_mass_density,
             max_mass_density=max_mass_density,
             check_format=check_format,
@@ -55,6 +59,8 @@ class ValidityBenchmark(BaseBenchmark):
         overall_metric = OverallValidityMetric(
             charge_tolerance=charge_tolerance,
             distance_scaling=distance_scaling,
+            min_atomic_density=min_atomic_density,
+            max_atomic_density=max_atomic_density,
             min_mass_density=min_mass_density,
             max_mass_density=max_mass_density,
             check_format=check_format,

@@ -65,6 +65,8 @@ class ValidityPreprocessorConfig(PreprocessorConfig):
     charge_tolerance: float = 0.1
     charge_strict: bool = False
     distance_scaling_factor: float = 0.5
+    plausibility_min_atomic_density: float = 0.00001
+    plausibility_max_atomic_density: float = 0.5
     plausibility_min_mass_density: float = 0.01
     plausibility_max_mass_density: float = 25.0
     plausibility_check_format: bool = True
@@ -83,6 +85,8 @@ class ValidityPreprocessorConfig(PreprocessorConfig):
             "charge_tolerance": self.charge_tolerance,
             "charge_strict": self.charge_strict,
             "distance_scaling_factor": self.distance_scaling_factor,
+            "plausibility_min_atomic_density": self.plausibility_min_atomic_density,
+            "plausibility_max_atomic_density": self.plausibility_max_atomic_density,
             "plausibility_min_mass_density": self.plausibility_min_mass_density,
             "plausibility_max_mass_density": self.plausibility_max_mass_density,
             "plausibility_check_format": self.plausibility_check_format,
@@ -119,6 +123,10 @@ class ValidityPreprocessor(BasePreprocessor):
         Whether to require determinable oxidation states for all atoms.
     distance_scaling_factor : float, default=0.5
         Factor to scale minimum interatomic distances.
+    plausibility_min_atomic_density : float, default=0.00001
+        Minimum plausible density in atoms/A³.
+    plausibility_max_atomic_density : float, default=0.5
+        Maximum plausible density in atoms/A³.
     plausibility_min_mass_density : float, default=0.01
         Minimum plausible density in g/cm³.
     plausibility_max_mass_density : float, default=25.0
@@ -156,6 +164,8 @@ class ValidityPreprocessor(BasePreprocessor):
         charge_tolerance: float = 0.1,
         charge_strict: bool = False,
         distance_scaling_factor: float = 0.5,
+        plausibility_min_atomic_density: float = 0.00001,
+        plausibility_max_atomic_density: float = 0.5,
         plausibility_min_mass_density: float = 0.01,
         plausibility_max_mass_density: float = 25.0,
         plausibility_check_format: bool = True,
@@ -177,6 +187,8 @@ class ValidityPreprocessor(BasePreprocessor):
             charge_tolerance=charge_tolerance,
             charge_strict=charge_strict,
             distance_scaling_factor=distance_scaling_factor,
+            plausibility_min_atomic_density=plausibility_min_atomic_density,
+            plausibility_max_atomic_density=plausibility_max_atomic_density,
             plausibility_min_mass_density=plausibility_min_mass_density,
             plausibility_max_mass_density=plausibility_max_mass_density,
             plausibility_check_format=plausibility_check_format,
@@ -192,6 +204,8 @@ class ValidityPreprocessor(BasePreprocessor):
             scaling_factor=distance_scaling_factor,
         )
         self.plausibility_metric = PhysicalPlausibilityMetric(
+            min_atomic_density=plausibility_min_atomic_density,
+            max_atomic_density=plausibility_max_atomic_density,
             min_mass_density=plausibility_min_mass_density,
             max_mass_density=plausibility_max_mass_density,
             check_format=plausibility_check_format,

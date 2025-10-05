@@ -217,11 +217,6 @@ class ChargeNeutralityMetric(BaseMetric):
             except IndexError:
                 return 10.0 # large deviation penalty 
 
-        # except Exception as e:
-        #     logger.debug(f"Compositional oxidation state guessing failed: {str(e)}")
-        #     print("failed for other reason")
-        #     return 10.0  # Large penalty for failed analysis
-
     def aggregate_results(self, values: list[float]) -> Dict[str, Any]:
         """Aggregate results into final metric values.
 
@@ -418,6 +413,10 @@ class PhysicalPlausibilityConfig(MetricConfig):
 
     Parameters
     ----------
+    min_atomic_density : float, default=0.01
+        Minimum allowed density in atoms/A³.
+    max_atomic_density : float, default=25.0
+        Maximum allowed density in atoms/A³.
     min_mass_density : float, default=0.01
         Minimum allowed density in g/cm³.
     max_mass_density : float, default=25.0
@@ -427,7 +426,8 @@ class PhysicalPlausibilityConfig(MetricConfig):
     check_symmetry : bool, default=True
         Whether to check space group validity.
     """
-
+    min_atomic_density: float = 0.00001
+    max_atomic_density: float = 0.5
     min_mass_density: float = 0.01
     max_mass_density: float = 25.0
     check_format: bool = True
@@ -439,6 +439,8 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
     def __init__(
         self,
+        min_atomic_density: float = 0.00001,
+        max_atomic_density: float = 0.5,
         min_mass_density: float = 0.01,
         max_mass_density: float = 25.0,
         check_format: bool = True,
@@ -457,6 +459,8 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
         # Override with custom config
         self.config = PhysicalPlausibilityConfig(
+            min_atomic_density=min_atomic_density,
+            max_atomic_density=max_atomic_density,
             min_mass_density=min_mass_density,
             max_mass_density=max_mass_density,
             check_format=check_format,
@@ -469,6 +473,8 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
     def _get_compute_attributes(self) -> dict[str, Any]:
         return {
+            "min_atomic_density": self.config.min_atomic_density,
+            "max_atomic_density": self.config.max_atomic_density,
             "min_mass_density": self.config.min_mass_density,
             "max_mass_density": self.config.max_mass_density,
             "check_format": self.config.check_format,
@@ -484,28 +490,47 @@ class PhysicalPlausibilityMetric(BaseMetric):
         float
             1.0 if structure passes all plausibility checks, 0.0 otherwise.
         """
+        min_atomic_density = compute_args.get("min_atomic_density", 0.00001)
+        max_atomic_density = compute_args.get("max_atomic_density", 0.5)
         min_mass_density = compute_args.get("min_mass_density", 0.01)
         max_mass_density = compute_args.get("max_mass_density", 25.0)
         check_format = compute_args.get("check_format", True)
         check_symmetry = compute_args.get("check_symmetry", True)
 
         checks_passed = 0
-        total_checks = 2  # density + lattice checks are always done
+        total_checks = 3  # atomic density, mass density, and lattice checks are always done
 
-        # 1. Density check
+        # 1. Mass density check
         try:
-            density = structure.density
-            if min_mass_density <= density <= max_mass_density:
+            mass_density = structure.density
+            if min_mass_density <= mass_density <= max_mass_density:
                 checks_passed += 1
             else:
                 logger.debug(
-                    f"Density check failed: {density:.3f} g/cm³ "
+                    f"Density check failed: {mass_density:.3f} g/cm³ "
                     f"(not in range [{min_mass_density}, {max_mass_density}])"
                 )
         except Exception as e:
             logger.debug(f"Could not compute density: {str(e)}")
 
-        # 2. Lattice check
+        # 2. Atomic density check
+        try:
+            volume = structure.volume
+            num_atoms = len(structure)
+            atomic_density = num_atoms / volume    
+
+            if min_atomic_density <= atomic_density <= max_atomic_density:
+                checks_passed += 1
+
+            else:
+                logger.debug(
+                    f"Density check failed: {atomic_density:.3f} g/cm³ "
+                    f"(not in range [{min_atomic_density}, {max_atomic_density}])"
+                )
+        except Exception as e:
+            logger.debug(f"Could not compute density: {str(e)}")
+
+        # 3. Lattice check
         try:
             lattice = structure.lattice
             volume = lattice.volume
@@ -529,7 +554,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
         except Exception as e:
             logger.debug(f"Could not validate lattice: {str(e)}")
 
-        # 3. Format check (optional)
+        # 4. Format check (optional)
         if check_format:
             total_checks += 1
             try:
@@ -605,6 +630,8 @@ class OverallValidityMetric(BaseMetric):
         self,
         charge_tolerance: float = 0.1,
         distance_scaling: float = 0.5,
+        min_atomic_density: float = 0.00001,
+        max_atomic_density: float = 0.5,
         min_mass_density: float = 0.01,
         max_mass_density: float = 25.0,
         check_format: bool = True,
@@ -625,6 +652,8 @@ class OverallValidityMetric(BaseMetric):
         # Store parameters for individual metrics
         self.charge_tolerance = charge_tolerance
         self.distance_scaling = distance_scaling
+        self.min_atomic_density = min_atomic_density
+        self.max_atomic_density = max_atomic_density
         self.min_mass_density = min_mass_density
         self.max_mass_density = max_mass_density
         self.check_format = check_format
@@ -639,6 +668,8 @@ class OverallValidityMetric(BaseMetric):
             **attrs,
             "charge_tolerance": self.charge_tolerance,
             "distance_scaling": self.distance_scaling,
+            "min_atomic_density": self.min_atomic_density,
+            "max_atomic_density": self.max_atomic_density,
             "min_mass_density": self.min_mass_density,
             "max_mass_density": self.max_mass_density,
             "check_format": self.check_format,
@@ -659,6 +690,8 @@ class OverallValidityMetric(BaseMetric):
         # Extract parameters
         charge_tolerance = compute_args.get("charge_tolerance", 0.1)
         distance_scaling = compute_args.get("distance_scaling", 0.5)
+        min_atomic_density = compute_args.get("min_atomic_density", 0.00001)
+        max_atomic_density = compute_args.get("max_atomic_density", 0.5)
         min_mass_density = compute_args.get("min_mass_density", 0.01)
         max_mass_density = compute_args.get("max_mass_density", 25.0)
         check_format = compute_args.get("check_format", True)
@@ -695,6 +728,8 @@ class OverallValidityMetric(BaseMetric):
         try:
             plausibility_score = PhysicalPlausibilityMetric.compute_structure(
                 structure,
+                min_atomic_density=min_atomic_density,
+                max_atomic_density=max_atomic_density,
                 min_mass_density=min_mass_density,
                 max_mass_density=max_mass_density,
                 check_format=check_format,
@@ -790,5 +825,5 @@ if __name__ == "__main__":
         strut = lematbulk_item_to_structure(dataset[index])
         structures.append(strut)
 
-    val = metric.compute_structure(structures[5], **args)
-    print(val)
+        val = metric.compute_structure(structures[i], **args)
+        print(val)
