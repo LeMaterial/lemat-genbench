@@ -215,7 +215,7 @@ def _retrieve_df(hull_type="dft", threshold=0.001):
         Type of hull to use ('dft', 'orb', 'uma', 'mace_mp', 'mace_omat')
         Default is 'dft' for backward compatibility
     threshold : float, optional
-        Energy above hull threshold in eV/atom (default 0.01)
+        Energy above hull threshold in eV/atom (default 0.001)
 
     Returns
     -------
@@ -302,7 +302,7 @@ def _retrieve_matrix(hull_type="dft", threshold=0.001):
         Type of hull to use ('dft', 'orb', 'uma', 'mace_mp', 'mace_omat')
         Default is 'dft' for backward compatibility
     threshold : float, optional
-        Energy above hull threshold in eV/atom (default 0.01)
+        Energy above hull threshold in eV/atom (default 0.001)
 
     Returns
     -------
@@ -380,7 +380,7 @@ def get_energy_above_hull(total_energy, composition, hull_type="dft", threshold=
         Type of hull to use ('dft', 'orb', 'uma', 'mace_mp', 'mace_omat')
         Default is 'dft' for backward compatibility
     threshold : float, optional
-        Energy above hull threshold in eV/atom for reference dataset (default 0.01)
+        Energy above hull threshold in eV/atom for reference dataset (default 0.001)
 
     Returns
     -------
@@ -440,14 +440,11 @@ def get_energy_above_hull(total_energy, composition, hull_type="dft", threshold=
                 neutral_composition_dict[base_element] = 0
             neutral_composition_dict[base_element] += count
 
-        # Create neutral composition object
         neutral_composition = Composition(neutral_composition_dict)
 
-        # Compute energy above hull using neutral composition
         entry = PDEntry(neutral_composition, total_energy)
         e_above_hull = pd.get_decomp_and_e_above_hull(entry, allow_negative=True)[1]
 
-        # Return energy above hull in eV (extensive property, following standard conventions)
         return e_above_hull
 
     except Exception as e:
