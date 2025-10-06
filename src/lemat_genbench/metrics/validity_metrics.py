@@ -194,7 +194,6 @@ class ChargeNeutralityMetric(BaseMetric):
             if score > 0.001:
                 return 0.0  # Assume charge neutral (reasonable composition)
             else:
-                print("failed penalty")
                 return 0.0  # Small deviation penalty (charge balanced using LeMatBulk oxidation states, but requires unusual states)
         except IndexError:
 
@@ -517,7 +516,8 @@ class PhysicalPlausibilityMetric(BaseMetric):
         try:
             volume = structure.volume
             num_atoms = len(structure)
-            atomic_density = num_atoms / volume    
+            atomic_density = num_atoms / volume  
+
 
             if min_atomic_density <= atomic_density <= max_atomic_density:
                 checks_passed += 1
@@ -565,8 +565,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
                 checks_passed += 1
             except Exception as e:
                 logger.debug(f"Format check failed: {str(e)}")
-
-        # 4. Symmetry check (optional)
+        # 5. Symmetry check (optional)
         if check_symmetry:
             total_checks += 1
             try:
@@ -586,6 +585,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
         )
 
         # Return 1.0 if ALL checks passed, 0.0 otherwise
+
         return 1.0 if checks_passed == total_checks else 0.0
 
     def aggregate_results(self, values: list[float]) -> Dict[str, Any]:
@@ -816,7 +816,7 @@ if __name__ == "__main__":
     np.random.seed(32)
     indicies = np.random.randint(0, len(dataset), 50)
 
-    metric = ChargeNeutralityMetric()
+    metric = PhysicalPlausibilityMetric()
     args = metric._get_compute_attributes()
 
     structures = []

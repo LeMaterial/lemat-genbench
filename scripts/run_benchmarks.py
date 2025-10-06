@@ -415,7 +415,6 @@ def run_validity_preprocessing_and_filtering(
     start_time = time.time()
 
     validity_settings = config.get("validity_settings", {})
-    print(validity_settings)
     validity_benchmark = ValidityBenchmark(
         charge_tolerance=validity_settings.get("charge_tolerance", 0.1),
         distance_scaling=validity_settings.get("distance_scaling", 0.5),
@@ -426,9 +425,11 @@ def run_validity_preprocessing_and_filtering(
         check_format=validity_settings.get("check_format", True),
         check_symmetry=validity_settings.get("check_symmetry", True),
     )
-
     validity_benchmark_result = validity_benchmark.evaluate(structures)
-
+    print("num phyiscally plausible structures")
+    print(validity_benchmark_result.evaluator_results["physical_plausibility"]["metric_results"]
+          ["plausibility"].metrics["plausibility_valid_count"])
+    
     elapsed_time = time.time() - start_time
     logger.info(
         f"✅ MANDATORY validity benchmark complete for {n_total_structures} structures in {elapsed_time:.1f}s"
@@ -443,8 +444,8 @@ def run_validity_preprocessing_and_filtering(
 
     charge_tolerance = validity_settings.get("charge_tolerance", 0.1)
     distance_scaling = validity_settings.get("distance_scaling", 0.5)
-    min_atomic_density=validity_settings.get("min_atomic_density", 0.00001),
-    max_atomic_density=validity_settings.get("max_atomic_density", 0.5),
+    min_atomic_density=validity_settings.get("min_atomic_density", 0.00001)
+    max_atomic_density=validity_settings.get("max_atomic_density", 0.5)
     min_mass_density = validity_settings.get("min_mass_density", 0.01)
     max_mass_density = validity_settings.get("max_mass_density", 25.0)
     check_format = validity_settings.get("check_format", True)

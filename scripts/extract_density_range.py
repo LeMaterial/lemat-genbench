@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-import pandas as pd 
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
+import pandas as pd
 
 if __name__ == "__main__":
     density_df = pd.read_csv("/home/samue/lemat-genbench/data/lematbulk_density_properties.csv")

@@ -368,7 +368,6 @@ class ValidityPreprocessor(BasePreprocessor):
             plausibility_score = PhysicalPlausibilityMetric.compute_structure(
                 structure, **plausibility_compute_args
             )
-            
             # Determine validity for each check
             # Note: charge_deviation should be <= tolerance for validity
             charge_valid = charge_deviation <= charge_tolerance

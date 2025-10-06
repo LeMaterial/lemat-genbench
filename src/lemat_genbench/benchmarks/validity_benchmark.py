@@ -178,3 +178,20 @@ class ValidityBenchmark(BaseBenchmark):
         })
 
         return final_scores
+    
+
+if __name__ == "__main__":
+    from pymatgen.util.testing import PymatgenTest
+
+    test = PymatgenTest()
+
+    structures = [
+        test.get_structure("Si"),
+        test.get_structure("LiFePO4"),
+    ]
+
+    benchmark = ValidityBenchmark()
+    benchmark_result = benchmark.evaluate(structures)
+    print("num phyiscally plausible structures")
+    print(benchmark_result.evaluator_results["physical_plausibility"]["metric_results"]
+          ["plausibility"].metrics["plausibility_valid_count"])
