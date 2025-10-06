@@ -143,7 +143,7 @@ def test_overall_validity_metric(valid_structures, invalid_structures):
         min_atomic_density=0.00001,
         max_atomic_density=0.5,
         min_mass_density=0.01,
-        max_density=25.0,
+        max_mass_density=25.0,
         check_format=False,  # Skip for speed
         check_symmetry=False,
     )
