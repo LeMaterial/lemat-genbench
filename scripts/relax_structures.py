@@ -8,7 +8,7 @@ in an organized folder structure.
 Usage:
     uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip uma
     uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip orb --data_name my_structures
-    uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip mace --relaxation_config fmax=0.01,steps=100
+    uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip mace --fmax 0.01 --steps 100
 """
 
 import argparse
@@ -17,42 +17,12 @@ from datetime import datetime
 from pathlib import Path
 from typing import List
 
-import numpy as np
 from pymatgen.core import Structure
 from pymatgen.io.cif import CifWriter
 
 from lemat_genbench.models.registry import get_calculator
+from lemat_genbench.preprocess.multi_mlip_preprocess import _calculate_rmse
 from lemat_genbench.utils.logging import logger
-
-
-def parse_relaxation_config(config_str: str) -> dict:
-    """Parse relaxation configuration string.
-    
-    Args:
-        config_str: String like "fmax=0.01,steps=100"
-        
-    Returns:
-        Dictionary with relaxation parameters
-    """
-    if not config_str:
-        return {"fmax": 0.02, "steps": 500}
-    
-    config = {}
-    for param in config_str.split(','):
-        if '=' in param:
-            key, value = param.strip().split('=', 1)
-            try:
-                # Try to convert to float first, then int
-                if '.' in value:
-                    config[key] = float(value)
-                else:
-                    config[key] = int(value)
-            except ValueError:
-                config[key] = value
-        else:
-            logger.warning(f"Invalid parameter format: {param}")
-    
-    return config
 
 
 def get_mlip_config(mlip_name: str) -> dict:
@@ -131,7 +101,7 @@ def relax_structure(structure: Structure, calculator, relaxation_config: dict) -
         )
         
         # Calculate RMSE between original and relaxed positions
-        rmse = calculate_rmse(structure, relaxed_structure)
+        rmse = _calculate_rmse(structure, relaxed_structure)
         
         # Add relaxation metadata to the result
         relaxation_result.metadata["relaxation_rmse"] = rmse
@@ -143,27 +113,6 @@ def relax_structure(structure: Structure, calculator, relaxation_config: dict) -
         raise
 
 
-def calculate_rmse(original: Structure, relaxed: Structure) -> float:
-    """Calculate RMSE between atomic positions of original and relaxed structures.
-    
-    Args:
-        original: Original structure
-        relaxed: Relaxed structure
-        
-    Returns:
-        RMSE in Angstroms
-    """
-    if len(original) != len(relaxed):
-        raise ValueError("Structures must have the same number of atoms")
-    
-    mse = 0.0
-    for i in range(len(original)):
-        original_coords = original[i].coords
-        relaxed_coords = relaxed[i].coords
-        mse += np.linalg.norm(original_coords - relaxed_coords) ** 2
-    
-    mse /= len(original)
-    return np.sqrt(mse)
 
 
 def save_relaxed_structure(structure: Structure, output_path: Path, filename: str) -> None:
@@ -219,7 +168,7 @@ def main():
 Examples:
   uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip uma
   uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip orb --data_name my_structures
-  uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip mace --relaxation_config "fmax=0.01,steps=100"
+  uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip mace --fmax 0.01 --steps 100
         """
     )
     
@@ -246,10 +195,17 @@ Examples:
     )
     
     parser.add_argument(
-        "--relaxation_config",
-        type=str,
-        default="fmax=0.02,steps=500",
-        help="Relaxation configuration as 'key=value,key=value' (default: fmax=0.02,steps=500)"
+        "--fmax",
+        type=float,
+        default=0.02,
+        help="Force convergence threshold for relaxation (default: 0.02)"
+    )
+    
+    parser.add_argument(
+        "--steps",
+        type=int,
+        default=500,
+        help="Maximum number of relaxation steps (default: 500)"
     )
     
     parser.add_argument(
@@ -281,8 +237,8 @@ Examples:
         # Generate timestamp
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
-        # Parse relaxation configuration
-        relaxation_config = parse_relaxation_config(args.relaxation_config)
+        # Create relaxation configuration
+        relaxation_config = {"fmax": args.fmax, "steps": args.steps}
         logger.info(f"Relaxation config: {relaxation_config}")
         
         # Get MLIP configuration
@@ -322,7 +278,7 @@ Examples:
                 )
                 
                 # Generate filename
-                filename = f"relaxed_{i+1:04d}_{structure.formula.replace(' ', '_')}"
+                filename = f"relaxed_{i+1:06d}_{structure.formula.replace(' ', '_')}"
                 
                 # Save relaxed structure
                 save_relaxed_structure(relaxed_structure, output_path, filename)
