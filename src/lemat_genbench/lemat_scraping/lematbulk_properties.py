@@ -4,11 +4,6 @@ from datasets import load_dataset
 from pymatgen.core import Structure
 from tqdm import tqdm
 
-from lemat_genbench.utils.distribution_utils import (
-    map_space_group_to_crystal_system,
-    one_hot_encode_composition,
-)
-
 # Crystal System Mapping Reference
 # ================================
 # Integer | Crystal System | Space Group Range
@@ -48,23 +43,23 @@ def process_item(item):
     volume = strut.volume
     num_atoms = len(strut)
     atomic_density = num_atoms / volume
-    space_group = strut.get_space_group_info()[1]
-    crystal_system = map_space_group_to_crystal_system(space_group)
+    # space_group = strut.get_space_group_info()[1]
+    # crystal_system = map_space_group_to_crystal_system(space_group)
     
     # Compositional properties
-    one_hot_vectors = one_hot_encode_composition(strut.composition)
-    composition_counts = one_hot_vectors[0]  # Element counts
-    composition = one_hot_vectors[1]  # Element presence/absence
+    # one_hot_vectors = one_hot_encode_composition(strut.composition)
+    # composition_counts = one_hot_vectors[0]  # Element counts
+    # composition = one_hot_vectors[1]  # Element presence/absence
 
     return [
         LeMatID,
         volume,
         round(g_cm3_density, 2),
-        round(atomic_density, 2),
-        space_group,
-        crystal_system,
-        composition_counts,
-        composition,
+        round(atomic_density, 5),
+        # space_group,
+        # crystal_system,
+        # composition_counts,
+        # composition,
     ]
 
 
@@ -92,6 +87,8 @@ if __name__ == "__main__":
     name = "compatible_pbe"
     split = "train"
     dataset = load_dataset(dataset_name, name=name, split=split, streaming=False)
+    # dataset = dataset.select(range(0,100000))
+
     # Process and handle results as they come
     print(f"Processing {len(dataset)} structures using {cpu_count()} workers...")
     results = []
@@ -108,10 +105,10 @@ if __name__ == "__main__":
             "Volume",
             "Density(g/cm^3)",
             "Density(atoms/A^3)",
-            "SpaceGroup",
-            "CrystalSystem",
-            "CompositionCounts",
-            "Composition",
+            # "SpaceGroup",
+            # "CrystalSystem",
+            # "CompositionCounts",
+            # "Composition",
         ],
     )
-    df.to_pickle("data/lematbulk_full_distribution_properties.pkl")
+    df.to_csv("data/lematbulk_density_properties.csv")

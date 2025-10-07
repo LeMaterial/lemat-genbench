@@ -81,8 +81,10 @@ def load_benchmark_config(config_name: str) -> dict:
             # Individual metric configurations
             "charge_tolerance": 0.1,
             "distance_scaling": 0.5,
-            "min_density": 0.01,
-            "max_density": 25.0,
+            "min_atomic_density": 0.00001,
+            "max_atomic_density": 0.5,
+            "min_mass_density": 0.01,
+            "max_mass_density": 25.0,
             "check_format": True,
             "check_symmetry": True,
             # Note: No weights needed - overall validity is intersection of all checks
@@ -206,8 +208,10 @@ def load_benchmark_config(config_name: str) -> dict:
                     "config": {
                         "charge_tolerance": 0.1,
                         "distance_scaling": 0.5,
-                        "min_density": 0.01,
-                        "max_density": 25.0,
+                        "min_atomic_density": 0.00001,
+                        "max_atomic_density": 0.5,
+                        "min_mass_density": 0.01,
+                        "max_mass_density": 25.0,
                         "check_format": True,
                         "check_symmetry": True,
                     },
@@ -337,8 +341,10 @@ def main(input: str, config_name: str, output: str):
             # Extract validity parameters (no weights needed)
             charge_tolerance = config.get("charge_tolerance", 0.1)
             distance_scaling = config.get("distance_scaling", 0.5)
-            min_density = config.get("min_density", 0.01)
-            max_density = config.get("max_density", 25.0)
+            min_atomic_density = config.get("min_atomic_density", 0.00001)
+            max_atomic_density = config.get("max_atomic_density", 0.5)
+            min_mass_density = config.get("min_mass_density", 0.01)
+            max_mass_density = config.get("max_mass_density", 25.0)
             check_format = config.get("check_format", True)
             check_symmetry = config.get("check_symmetry", True)
 
@@ -346,8 +352,10 @@ def main(input: str, config_name: str, output: str):
             benchmark = ValidityBenchmark(
                 charge_tolerance=charge_tolerance,
                 distance_scaling=distance_scaling,
-                min_density=min_density,
-                max_density=max_density,
+                min_atomic_density=min_atomic_density,
+                max_atomic_density=max_atomic_density,
+                min_mass_density=min_mass_density,
+                max_mass_density=max_mass_density,
                 check_format=check_format,
                 check_symmetry=check_symmetry,
                 name=config.get("name", "ValidityBenchmark"),

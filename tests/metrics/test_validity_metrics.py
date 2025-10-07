@@ -140,8 +140,10 @@ def test_overall_validity_metric(valid_structures, invalid_structures):
     metric = OverallValidityMetric(
         charge_tolerance=0.1,
         distance_scaling=0.5,
-        min_density=0.01,
-        max_density=25.0,
+        min_atomic_density=0.00001,
+        max_atomic_density=0.5,
+        min_mass_density=0.01,
+        max_mass_density=25.0,
         check_format=False,  # Skip for speed
         check_symmetry=False,
     )
@@ -319,8 +321,10 @@ def test_overall_validity_parameters():
     strict_metric = OverallValidityMetric(
         charge_tolerance=0.001,
         distance_scaling=0.9,
-        min_density=2.0,
-        max_density=20.0,
+        min_atomic_density=0.01,
+        max_atomic_density=0.2,
+        min_mass_density=2.0,
+        max_mass_density=20.0,
         check_format=True,
         check_symmetry=True
     )
@@ -329,8 +333,10 @@ def test_overall_validity_parameters():
     lenient_metric = OverallValidityMetric(
         charge_tolerance=1.0,
         distance_scaling=0.1,
-        min_density=0.1,
-        max_density=50.0,
+        min_atomic_density=0.00001,
+        max_atomic_density=0.5,
+        min_mass_density=0.1,
+        max_mass_density=50.0,
         check_format=False,
         check_symmetry=False
     )

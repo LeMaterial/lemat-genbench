@@ -3,7 +3,9 @@ description: "Validity Benchmark for Materials Generation"
 version: "0.2.0"
 charge_tolerance: 0.1
 distance_scaling: 0.5
-min_density: 0.01
-max_density: 25.0
+min_atomic_density: 0.00001
+max_atomic_density: 0.5
+min_mass_density: 0.01
+max_mass_density: 25.0
 check_format: true
 check_symmetry: true
