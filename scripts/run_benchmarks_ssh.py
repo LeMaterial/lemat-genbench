@@ -46,7 +46,6 @@ from lemat_genbench.benchmarks.sun_benchmark import (
     SUNBenchmark,  # Updated SUN benchmark
 )
 from lemat_genbench.benchmarks.uniqueness_benchmark import UniquenessBenchmark
-from lemat_genbench.benchmarks.validity_benchmark import ValidityBenchmark
 from lemat_genbench.preprocess.distribution_preprocess import DistributionPreprocessor
 from lemat_genbench.preprocess.fingerprint_preprocess import FingerprintPreprocessor
 from lemat_genbench.preprocess.multi_mlip_preprocess import (
@@ -370,7 +369,7 @@ def create_preprocessor_config(
 
 
 def run_validity_preprocessing_and_filtering(structures, config: Dict[str, Any], monitor_memory: bool = False):
-    """Run validity benchmark and preprocessing, then filter to valid structures only.
+    """Run validity preprocessing and generate benchmark result, then filter to valid structures only.
     
     Returns
     -------
@@ -383,44 +382,27 @@ def run_validity_preprocessing_and_filtering(structures, config: Dict[str, Any],
     n_total_structures = len(structures)
     logger.info(f"🔍 Starting MANDATORY validity processing for {n_total_structures} structures...")
     
-    # Step 1: Run validity benchmark on ALL structures
-    logger.info("🔍 Running MANDATORY validity benchmark on ALL structures...")
+    # Run validity preprocessor on ALL structures (replaces both benchmark and preprocessor)
+    logger.info("🔍 Running MANDATORY validity preprocessor on ALL structures...")
     start_time = time.time()
     
     validity_settings = config.get("validity_settings", {})
-    validity_benchmark = ValidityBenchmark(
-        charge_tolerance=validity_settings.get("charge_tolerance", 0.1),
-        distance_scaling=validity_settings.get("distance_scaling", 0.5),
-        min_density=validity_settings.get("min_density", 0.01),
-        max_density=validity_settings.get("max_density", 25.0),
-        check_format=validity_settings.get("check_format", True),
-        check_symmetry=validity_settings.get("check_symmetry", True),
-    )
-    
-    validity_benchmark_result = validity_benchmark.evaluate(structures)
-    
-    elapsed_time = time.time() - start_time
-    logger.info(f"✅ MANDATORY validity benchmark complete for {n_total_structures} structures in {elapsed_time:.1f}s")
-    
-    # Clean up after validity benchmark
-    cleanup_after_benchmark("validity", monitor_memory)
-    
-    # Step 2: Run validity preprocessor on ALL structures - HIGH PARALLELIZATION
-    logger.info("🔍 Running MANDATORY validity preprocessor on ALL structures with high parallelization...")
-    start_time = time.time()
-    
     charge_tolerance = validity_settings.get("charge_tolerance", 0.1)
     distance_scaling = validity_settings.get("distance_scaling", 0.5)
-    min_density = validity_settings.get("min_density", 0.01)
-    max_density = validity_settings.get("max_density", 25.0)
+    min_atomic_density = validity_settings.get("min_atomic_density", 0.00001)
+    max_atomic_density = validity_settings.get("max_atomic_density", 0.5)
+    min_mass_density = validity_settings.get("min_mass_density", 0.01)
+    max_mass_density = validity_settings.get("max_mass_density", 25.0)
     check_format = validity_settings.get("check_format", True)
     check_symmetry = validity_settings.get("check_symmetry", True)
     
     validity_preprocessor = ValidityPreprocessor(
         charge_tolerance=charge_tolerance,
         distance_scaling_factor=distance_scaling,
-        plausibility_min_density=min_density,
-        plausibility_max_density=max_density,
+        plausibility_min_atomic_density=min_atomic_density,
+        plausibility_max_atomic_density=max_atomic_density,
+        plausibility_min_mass_density=min_mass_density,
+        plausibility_max_mass_density=max_mass_density,
         plausibility_check_format=check_format,
         plausibility_check_symmetry=check_symmetry,
     )
@@ -430,10 +412,13 @@ def run_validity_preprocessing_and_filtering(structures, config: Dict[str, Any],
     validity_preprocessor_result = validity_preprocessor.run(structures, structure_sources=structure_sources)
     processed_structures = validity_preprocessor_result.processed_structures
     
-    elapsed_time = time.time() - start_time
-    logger.info(f"✅ MANDATORY validity preprocessing complete for {len(processed_structures)} structures in {elapsed_time:.1f}s")
+    # Generate benchmark result from preprocessor data
+    validity_benchmark_result = validity_preprocessor.generate_benchmark_result(validity_preprocessor_result)
     
-    # Clean up after validity preprocessor
+    elapsed_time = time.time() - start_time
+    logger.info(f"✅ MANDATORY validity processing complete for {n_total_structures} structures in {elapsed_time:.1f}s")
+    
+    # Clean up after validity processing
     cleanup_after_preprocessor("validity", monitor_memory)
     
     # Step 3: Filter to only valid structures
@@ -860,10 +845,11 @@ def main():
         logger.info(f"Loading benchmark configuration: {args.config}")
         config = load_benchmark_config(args.config)
         
-        # Add fingerprint method to config
-        config["fingerprint_method"] = args.fingerprint_method
+        # Add fingerprint method to config (use config file value as default, override with command line if provided)
+        if args.fingerprint_method != "short-bawl":  # Only override if explicitly specified
+            config["fingerprint_method"] = args.fingerprint_method
         logger.info(f"✅ Loaded configuration: {config.get('type', 'unknown')}")
-        logger.info(f"🔍 Using fingerprint method: {args.fingerprint_method}")
+        logger.info(f"🔍 Using fingerprint method: {config.get('fingerprint_method', args.fingerprint_method)}")
 
         # Determine benchmark families to run
         if args.families:
@@ -958,7 +944,7 @@ def main():
         print(f"📊 Valid structures: {validity_filtering_metadata['valid_structures']}")
         print(f"📊 Invalid structures: {validity_filtering_metadata['invalid_structures']}")
         print(f"📊 Validity rate: {validity_filtering_metadata['validity_rate']:.1%}")
-        print(f"🔍 Fingerprint method: {args.fingerprint_method}")
+        print(f"🔍 Fingerprint method: {config.get('fingerprint_method', args.fingerprint_method)}")
         print(f"🔧 Benchmark families: {['validity (ALL structures)'] + [f'{family} (valid structures only)' for family in benchmark_families if family != 'validity']}")
         print(f"⏰ Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         print("=" * 60)

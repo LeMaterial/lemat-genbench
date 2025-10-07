@@ -11,9 +11,12 @@ import warnings
 from dataclasses import dataclass
 from typing import Any, Dict
 
+import numpy as np
 from pymatgen.core import Structure
 from tqdm import tqdm
 
+from lemat_genbench.benchmarks.base import BenchmarkResult
+from lemat_genbench.evaluator import MetricResult
 from lemat_genbench.metrics.validity_metrics import (
     ChargeNeutralityMetric,
     MinimumInteratomicDistanceMetric,
@@ -437,6 +440,196 @@ class ValidityPreprocessor(BasePreprocessor):
                 exc_info=True,
             )
             raise
+
+    def generate_benchmark_result(self, preprocessor_result: PreprocessorResult) -> BenchmarkResult:
+        """Generate a BenchmarkResult from preprocessor results.
+        
+        This method reconstructs the detailed BenchmarkResult format
+        from the individual structure validity properties, matching
+        the exact format returned by ValidityBenchmark.evaluate().
+        
+        Parameters
+        ----------
+        preprocessor_result : PreprocessorResult
+            Result from running the validity preprocessor.
+            
+        Returns
+        -------
+        BenchmarkResult
+            Benchmark result in the same format as ValidityBenchmark.evaluate()
+        """
+        processed_structures = preprocessor_result.processed_structures
+        n_structures = len(processed_structures)
+        
+        if n_structures == 0:
+            # Handle empty case
+            return BenchmarkResult(
+                evaluator_results={},
+                final_scores={},
+                metadata={
+                    'benchmark_name': 'ValidityBenchmark',
+                    'benchmark_description': 'Evaluates the validity of crystal structures based on physical and chemical principles including charge neutrality, interatomic distances, and physical plausibility. Reports ratios and counts for interpretability.',
+                    'n_structures': 0,
+                    'n_evaluators': 4
+                }
+            )
+        
+        # Extract individual values from structure properties
+        charge_deviations = []
+        distance_scores = []
+        plausibility_scores = []
+        overall_validities = []
+        
+        for structure in processed_structures:
+            charge_deviations.append(structure.properties.get("charge_deviation", 0.0))
+            distance_scores.append(structure.properties.get("distance_score", 0.0))
+            plausibility_scores.append(structure.properties.get("plausibility_score", 0.0))
+            overall_validities.append(1.0 if structure.properties.get("overall_valid", False) else 0.0)
+        
+        # Convert to numpy arrays for easier computation
+        charge_deviations = np.array(charge_deviations)
+        distance_scores = np.array(distance_scores)
+        plausibility_scores = np.array(plausibility_scores)
+        overall_validities = np.array(overall_validities)
+        
+        # Compute aggregated statistics
+        charge_valid_count = np.sum(charge_deviations <= self.config.charge_tolerance)
+        charge_neutral_ratio = charge_valid_count / n_structures
+        avg_charge_deviation = np.mean(charge_deviations)
+        charge_deviation_std = np.std(charge_deviations)
+        
+        distance_valid_count = np.sum(distance_scores == 1.0)
+        distance_valid_ratio = distance_valid_count / n_structures
+        
+        plausibility_valid_count = np.sum(plausibility_scores == 1.0)
+        plausibility_valid_ratio = plausibility_valid_count / n_structures
+        
+        overall_valid_count = np.sum(overall_validities == 1.0)
+        overall_valid_ratio = overall_valid_count / n_structures
+        
+        # Create MetricResult objects for each evaluator
+        charge_metric_result = MetricResult(
+            metrics={
+                'charge_neutral_ratio': charge_neutral_ratio,
+                'charge_neutral_count': int(charge_valid_count),
+                'avg_charge_deviation': avg_charge_deviation,
+                'total_structures': n_structures
+            },
+            primary_metric='charge_neutral_ratio',
+            uncertainties={'charge_deviation_std': {'std': charge_deviation_std}},
+            config=self.charge_metric.config,
+            computation_time=0.0,  # We don't track per-metric timing in preprocessor
+            n_structures=n_structures,
+            individual_values=charge_deviations.tolist(),
+            failed_indices=[],
+            warnings=[],
+            attributes={}
+        )
+        
+        distance_metric_result = MetricResult(
+            metrics={
+                'distance_valid_ratio': distance_valid_ratio,
+                'distance_valid_count': int(distance_valid_count),
+                'total_structures': n_structures
+            },
+            primary_metric='distance_valid_ratio',
+            uncertainties={},
+            config=self.distance_metric.config,
+            computation_time=0.0,
+            n_structures=n_structures,
+            individual_values=distance_scores.tolist(),
+            failed_indices=[],
+            warnings=[],
+            attributes={}
+        )
+        
+        plausibility_metric_result = MetricResult(
+            metrics={
+                'plausibility_valid_ratio': plausibility_valid_ratio,
+                'plausibility_valid_count': int(plausibility_valid_count),
+                'total_structures': n_structures
+            },
+            primary_metric='plausibility_valid_ratio',
+            uncertainties={},
+            config=self.plausibility_metric.config,
+            computation_time=0.0,
+            n_structures=n_structures,
+            individual_values=plausibility_scores.tolist(),
+            failed_indices=[],
+            warnings=[],
+            attributes={}
+        )
+        
+        overall_metric_result = MetricResult(
+            metrics={
+                'overall_valid_ratio': overall_valid_ratio,
+                'overall_valid_count': int(overall_valid_count),
+                'total_structures': n_structures
+            },
+            primary_metric='overall_valid_ratio',
+            uncertainties={},
+            config=self.charge_metric.config,  # Use any config as base
+            computation_time=0.0,
+            n_structures=n_structures,
+            individual_values=overall_validities.tolist(),
+            failed_indices=[],
+            warnings=[],
+            attributes={}
+        )
+        
+        # Create evaluator results
+        evaluator_results = {
+            'charge_neutrality': {
+                'combined_value': charge_neutral_ratio,
+                'charge_neutrality_value': charge_neutral_ratio,
+                'metric_results': {'charge_neutrality': charge_metric_result}
+            },
+            'interatomic_distance': {
+                'combined_value': distance_valid_ratio,
+                'min_distance_value': distance_valid_ratio,
+                'metric_results': {'min_distance': distance_metric_result}
+            },
+            'physical_plausibility': {
+                'combined_value': plausibility_valid_ratio,
+                'plausibility_value': plausibility_valid_ratio,
+                'metric_results': {'plausibility': plausibility_metric_result}
+            },
+            'overall_validity': {
+                'combined_value': overall_valid_ratio,
+                'overall_value': overall_valid_ratio,
+                'metric_results': {'overall': overall_metric_result}
+            }
+        }
+        
+        # Create final scores
+        final_scores = {
+            'charge_neutrality_ratio': charge_neutral_ratio,
+            'charge_neutrality_count': int(charge_valid_count),
+            'avg_charge_deviation': avg_charge_deviation,
+            'interatomic_distance_ratio': distance_valid_ratio,
+            'interatomic_distance_count': int(distance_valid_count),
+            'physical_plausibility_ratio': plausibility_valid_ratio,
+            'physical_plausibility_count': int(plausibility_valid_count),
+            'overall_validity_ratio': overall_valid_ratio,
+            'overall_validity_count': int(overall_valid_count),
+            'total_structures': n_structures,
+            'any_invalid_count': int(n_structures - overall_valid_count),
+            'any_invalid_ratio': (n_structures - overall_valid_count) / n_structures if n_structures > 0 else 0.0
+        }
+        
+        # Create metadata
+        metadata = {
+            'benchmark_name': 'ValidityBenchmark',
+            'benchmark_description': 'Evaluates the validity of crystal structures based on physical and chemical principles including charge neutrality, interatomic distances, and physical plausibility. Reports ratios and counts for interpretability.',
+            'n_structures': n_structures,
+            'n_evaluators': 4
+        }
+        
+        return BenchmarkResult(
+            evaluator_results=evaluator_results,
+            final_scores=final_scores,
+            metadata=metadata
+        )
 
 
 # Convenience functions for common configurations
