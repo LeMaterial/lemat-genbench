@@ -524,7 +524,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
             else:
                 logger.debug(
-                    f"Density check failed: {atomic_density:.3f} g/cm³ "
+                    f"Atomic density check failed: {atomic_density:.5f} atoms/A³ "
                     f"(not in range [{min_atomic_density}, {max_atomic_density}])"
                 )
         except Exception as e:
