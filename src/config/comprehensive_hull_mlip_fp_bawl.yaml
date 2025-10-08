@@ -1,0 +1,60 @@
+type: multi_mlip_stability
+
+# General benchmark configuration
+description: "Comprehensive Multi-MLIP Stability Benchmark with Individual MLIP Hulls and Short-BAWL Fingerprinting"
+version: "0.3.0"
+
+# MLIPs to include in the benchmark
+mlip_names:
+  - orb
+  - mace
+  - uma
+
+# Ensemble configuration
+use_ensemble: true                   # Calculate ensemble mean values
+ensemble_config:
+  min_mlips_required: 2              # Minimum MLIPs needed for ensemble statistics
+
+# Individual MLIP configurations (for reporting and fallback)
+individual_mlip_config:
+  use_all_available: true            # Use all available MLIP results
+  require_all_mlips: false           # Don't require all MLIPs to succeed (include partial results)
+  fallback_to_single: true           # Allow single-MLIP results if others failed
+
+# Metastability threshold
+metastable_threshold: 0.1            # E_above_hull threshold for metastability (eV/atom)
+
+# Preprocessor configuration: Each MLIP uses its own hull
+preprocessor_config:
+  model_name: multi_mlip             # Use the multi-MLIP preprocessor
+  mlip_configs:
+    orb:
+      model_type: orb_v3_conservative_inf_omat
+      # Each MLIP calculates energy above hull with respect to its own hull
+      hull_type: orb_conserv_inf
+      # device: cpu # Device will be set by run_benchmarks.py or run_benchmarks_ssh.py
+    mace:
+      model_type: mp
+      hull_type: mace_mp
+      # device: cpu
+    uma:
+      task: omat
+      hull_type: uma
+      # device: cpu
+  relax_structures: true             # Perform structure relaxation
+  relaxation_config:
+    fmax: 0.02                       # Max force for relaxation (eV/Å)
+    steps: 50                        # Max relaxation steps
+  calculate_formation_energy: true   # Calculate formation energy for each MLIP
+  calculate_energy_above_hull: true  # Calculate energy above hull for each MLIP
+  extract_embeddings: true           # Extract embeddings for each MLIP
+  timeout: 300                       # Timeout for each MLIP calculation (seconds)
+
+# Fingerprint method configuration
+fingerprint_method: short-bawl       # Use short-BAWL fingerprinting
+
+# Reporting configuration: How results are presented
+reporting:
+  include_individual_mlip_results: true    # Show per-model results alongside ensemble results
+  include_uncertainty_analysis: true       # Include standard deviation in ensemble results
+  include_ensemble_summary: true           # Include a summary of ensemble quality

@@ -517,12 +517,40 @@ def run_remaining_preprocessors(valid_structures, preprocessor_config: Dict[str,
         logger.info(f"Running Multi-MLIP preprocessor with optimized batching on {len(processed_structures)} valid structures...")
         start_time = time.time()
 
-        # Configure MLIP models
-        mlip_configs = {
-            "orb": {"model_type": "orb_v3_conservative_inf_omat", "device": "cpu"},
-            "mace": {"model_type": "mp", "device": "cpu"},
-            "uma": {"task": "omat", "device": "cpu"},
+        # Configure MLIP models with hull-specific settings
+        device = "cpu"  # SSH-optimized version uses CPU
+        
+        # Get MLIP configurations from config file if available
+        preprocessor_config_from_file = config.get("preprocessor_config", {})
+        mlip_configs_from_file = preprocessor_config_from_file.get("mlip_configs", {})
+        
+        # Default MLIP configurations with hull types
+        default_mlip_configs = {
+            "orb": {
+                "model_type": "orb_v3_conservative_inf_omat", 
+                "device": device,
+                "hull_type": "orb_conserv_inf"
+            },
+            "mace": {
+                "model_type": "mp", 
+                "device": device,
+                "hull_type": "mace_mp"
+            },
+            "uma": {
+                "task": "omat", 
+                "device": device,
+                "hull_type": "uma"
+            },
         }
+        
+        # Merge config file settings with defaults
+        mlip_configs = {}
+        for mlip_name in ["orb", "mace", "uma"]:
+            mlip_configs[mlip_name] = default_mlip_configs[mlip_name].copy()
+            if mlip_name in mlip_configs_from_file:
+                mlip_configs[mlip_name].update(mlip_configs_from_file[mlip_name])
+                # Ensure device is set correctly
+                mlip_configs[mlip_name]["device"] = device
 
         # Determine what to extract based on requirements
         extract_embeddings = preprocessor_config["embeddings"]

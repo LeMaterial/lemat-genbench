@@ -401,7 +401,7 @@ def main(input: str, config_name: str, output: str):
             )
 
         elif benchmark_type == "multi_mlip_stability":
-            benchmark = MultiMLIPStabilityBenchmark()
+            benchmark = MultiMLIPStabilityBenchmark(config=config)
 
         # Original benchmarks
         elif benchmark_type == "uniqueness":
