@@ -28,8 +28,10 @@ class ValidityBenchmark(BaseBenchmark):
         self,
         charge_tolerance: float = 0.1,
         distance_scaling: float = 0.5,
-        min_density: float = 0.01,
-        max_density: float = 25.0,
+        min_atomic_density: float = 0.00001,
+        max_atomic_density: float = 0.5,
+        min_mass_density: float = 0.01,
+        max_mass_density: float = 25.0,
         check_format: bool = True,
         check_symmetry: bool = True,
         name: str = "ValidityBenchmark",
@@ -47,16 +49,20 @@ class ValidityBenchmark(BaseBenchmark):
         charge_metric = ChargeNeutralityMetric(tolerance=charge_tolerance)
         distance_metric = MinimumInteratomicDistanceMetric(scaling_factor=distance_scaling)
         plausibility_metric = PhysicalPlausibilityMetric(
-            min_density=min_density,
-            max_density=max_density,
+            min_atomic_density=min_atomic_density,
+            max_atomic_density=max_atomic_density,
+            min_mass_density=min_mass_density,
+            max_mass_density=max_mass_density,
             check_format=check_format,
             check_symmetry=check_symmetry,
         )
         overall_metric = OverallValidityMetric(
             charge_tolerance=charge_tolerance,
             distance_scaling=distance_scaling,
-            min_density=min_density,
-            max_density=max_density,
+            min_atomic_density=min_atomic_density,
+            max_atomic_density=max_atomic_density,
+            min_mass_density=min_mass_density,
+            max_mass_density=max_mass_density,
             check_format=check_format,
             check_symmetry=check_symmetry,
         )
@@ -172,3 +178,20 @@ class ValidityBenchmark(BaseBenchmark):
         })
 
         return final_scores
+    
+
+if __name__ == "__main__":
+    from pymatgen.util.testing import PymatgenTest
+
+    test = PymatgenTest()
+
+    structures = [
+        test.get_structure("Si"),
+        test.get_structure("LiFePO4"),
+    ]
+
+    benchmark = ValidityBenchmark()
+    benchmark_result = benchmark.evaluate(structures)
+    print("num phyiscally plausible structures")
+    print(benchmark_result.evaluator_results["physical_plausibility"]["metric_results"]
+          ["plausibility"].metrics["plausibility_valid_count"])

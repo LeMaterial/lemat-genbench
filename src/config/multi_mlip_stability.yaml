@@ -31,12 +31,15 @@ preprocessor_config:
     orb:
       model_type: orb_v3_conservative_inf_omat
       device: cpu
+      hull_type: orb_conserv_inf
     mace:
       model_type: mp
       device: cpu
+      hull_type: mace_mp
     uma:
       task: omat
       device: cpu
+      hull_type: uma
   relax_structures: true
   relaxation_config:
     fmax: 0.02

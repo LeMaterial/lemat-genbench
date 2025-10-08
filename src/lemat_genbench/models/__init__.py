@@ -10,7 +10,7 @@ from lemat_genbench.models.base import (
     CalculationResult,
     EmbeddingResult,
     get_energy_above_hull_from_total_energy,
-    get_formation_energy_from_total_energy,
+    get_formation_energy_per_atom_from_total_energy,
 )
 from lemat_genbench.models.registry import (
     get_calculator,
@@ -60,7 +60,7 @@ __all__ = [
     "get_equiformer_calculator",
     "get_uma_calculator",
     # Utility functions
-    "get_formation_energy_from_total_energy",
+    "get_formation_energy_per_atom_from_total_energy",
     "get_energy_above_hull_from_total_energy",
     # Specific calculators (if available)
     "ORBCalculator",

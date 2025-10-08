@@ -1,4 +1,5 @@
 import json
+import math
 from collections import defaultdict
 from itertools import combinations_with_replacement, product
 from pathlib import Path
@@ -6,6 +7,43 @@ from pathlib import Path
 import numpy as np
 from pymatgen.core.periodic_table import Element, Species
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
+
+from lemat_genbench.utils.logging import logger
+
+
+def electronegativity_correlation(
+        elements: list[str],
+        oxidation_states: list[int | float]
+        ) -> float:
+    """
+    Calculate correlation between oxidation states and electronegativity.
+    
+    Args:
+        elements: List of element symbols
+        oxidation_states: List of oxidation state values (averaged per element)
+        TODO this should probably be scaled to follow the number of elements with that 
+        oxidation state.
+        
+    Returns:
+        Pearson correlation coefficient between oxidation states and electronegativity.
+        Returns NaN if correlation cannot be calculated.
+    """
+
+    en_vals = []
+    for el in elements: 
+        try:
+            en_vals.append(Element(el).X)
+        except (KeyError, AttributeError):
+            # Use Pauling scale default if not available, or raise error
+            logger.warning(f"No electronegativity data for element {el}")
+            return np.nan  # Can't calculate correlation without complete data
+
+    if len(en_vals) != len(oxidation_states):
+        logger.error("Mismatch in array lengths for correlation calculation")
+        return np.nan
+    else:
+        corr = np.corrcoef(oxidation_states, en_vals)[0,1]
+        return corr
 
 
 def compositional_oxi_state_guesses(
@@ -15,7 +53,8 @@ def compositional_oxi_state_guesses(
     oxi_states_override: dict[str, list] | None,
     target_charge: float,
 ) -> tuple[tuple, tuple, tuple]:
-    """Utility operation for guessing oxidation states. Adapted from the _get_oxi_state_guesses function from Pymatgen.core.Composition
+    """Utility operation for guessing oxidation states. 
+    Adapted from the _get_oxi_state_guesses function from Pymatgen.core.Composition
 
     See `oxi_state_guesses` for full details. This operation does the
     calculation of the most likely oxidation states
@@ -65,12 +104,11 @@ def compositional_oxi_state_guesses(
             )
 
     # Load prior probabilities of oxidation states, used to rank solutions
-
     here = Path(__file__).resolve().parent
     three_up = here.parents[2]
-    with open(three_up / "data" / "oxi_dict_probs.json", "r") as f:
-        loaded_dict = json.load(f)
 
+    with open(three_up / "data" / "lemat_icsd_oxi_dict_probs.json", "r") as f:
+        loaded_dict = json.load(f)
     type(comp).oxi_prob = loaded_dict
     oxi_states_override = oxi_states_override or {}
     # Assert Composition only has integer amounts
@@ -82,10 +120,12 @@ def compositional_oxi_state_guesses(
     # For each element, determine all possible sum of oxidations
     # (taking into account nsites for that particular element)
     el_amt = comp.get_el_amt_dict()
+    n_sites = int(sum(el_amt.values()))
     elements = list(el_amt)
     el_sums: list = []  # matrix: dim1= el_idx, dim2=possible sums
     el_sum_scores: defaultdict = defaultdict(set)  # dict of el_idx, sum -> score
     el_best_oxid_combo: dict = {}  # dict of el_idx, sum -> oxid combo with best score
+
     for idx, el in enumerate(elements):
         el_sum_scores[idx] = {}
         el_best_oxid_combo[idx] = {}
@@ -102,32 +142,40 @@ def compositional_oxi_state_guesses(
         # Get all possible combinations of oxidation states
         # and sum each combination
         for oxid_combo in combinations_with_replacement(oxids, int(el_amt[el])):
-            # List this sum as a possible option
-            oxid_sum = sum(oxid_combo)
-            if oxid_sum not in el_sums[idx]:
-                el_sums[idx].append(oxid_sum)
+            # check to make sure none of the oxidation states deviate by more than 1 
+            if max(oxid_combo) - min(oxid_combo) <= 1: 
+                # List this sum as a possible option
+                oxid_sum = sum(oxid_combo)
+                if oxid_sum not in el_sums[idx]:
+                    el_sums[idx].append(oxid_sum)
 
-            # Determine how probable is this combo?
-            scores = []
-            for o in oxid_combo:
-                scores.append(type(comp).oxi_prob[str(Species(el, o))])
-            score = np.mean(scores)
-            # If it is the most probable combo for a certain sum,
-            # store the combination
-            if oxid_sum not in el_sum_scores[idx] or score > el_sum_scores[idx].get(
-                oxid_sum, 0
-            ):
-                if max(oxid_combo) - min(oxid_combo) > 1:
-                    pass
-                else:
-                    el_sum_scores[idx][oxid_sum] = score
-                    el_best_oxid_combo[idx][oxid_sum] = oxid_combo
+                # Determine how probable is this combo?
+                if not all_oxi_states:
+                    scores = []
+                    for o in oxid_combo:
+                        scores.append(type(comp).oxi_prob[str(Species(el, o))])
+                    score = math.prod(scores)
 
+                    # If it is the most probable combo for a certain sum,
+                    # store the combination
+                    if oxid_sum not in el_sum_scores[idx] or score > el_sum_scores[idx].get(
+                        oxid_sum, 0):
+                        
+                        el_sum_scores[idx][oxid_sum] = score
+                        el_best_oxid_combo[idx][oxid_sum] = oxid_combo
+                            
+            else:
+                pass
+    
     # Determine which combination of oxidation states for each element
     # is the most probable
+
+    el_sums = [[x for x in sublist if x != 0] for sublist in el_sums]
+    
     all_sols = []  # will contain all solutions
     all_oxid_combo = []  # will contain the best combination of oxidation states for each site
     all_scores = []  # will contain a score for each solution
+    scores = []
     for x in product(*el_sums):
         # Each x is a trial of one possible oxidation sum for each element
         if sum(x) == target_charge:  # charge balance condition
@@ -135,40 +183,65 @@ def compositional_oxi_state_guesses(
             # Normalize oxid_sum by amount to get avg oxid state
             sol = {el: v / el_amt[el] for el, v in el_sum_sol.items()}
             # Add the solution to the list of solutions
-            all_sols.append(sol)
 
-            # Determine the score for this solution
-            scores = []
-            for idx, v in enumerate(x):
-                scores.append(el_sum_scores[idx][v])
-            # the score is the minimum of the scores of each of the oxidation states in the composition - the goal is to find a charge
-            # balanced oxidation state which limits the occurance of very uncommon oxidation states
-            all_scores.append(np.mean(scores))
-            # Collect the combination of oxidation states for each site
-            all_oxid_combo.append(
-                {
-                    e: el_best_oxid_combo[idx][v]
-                    for idx, (e, v) in enumerate(zip(elements, x, strict=True))
-                }
-            )
+                        
+            all_sols.append(sol)
+            
+            if not all_oxi_states:
+                # Determine the score for this solution
+                scores = []
+                for idx, v in enumerate(x):
+                    scores.append(el_sum_scores[idx][v])
+                # the score is geometric mean of the scores for all the elements in the compostion 
+                all_scores.append(math.prod(scores)**(1/n_sites))
+                # Collect the combination of oxidation states for each site
+                all_oxid_combo.append(
+                    {
+                        e: el_best_oxid_combo[idx][v]
+                        for idx, (e, v) in enumerate(zip(elements, x, strict=True))
+                    }
+                )
+            else:
+                all_scores.append(electronegativity_correlation(elements=list(sol.keys()), oxidation_states=list(sol.values())))
+
+
     # Sort the solutions from highest to lowest score
     if all_scores:
-        all_sols, all_oxid_combo = zip(
-            *(
-                (y, x)
-                for (z, y, x) in sorted(
-                    zip(all_scores, all_sols, all_oxid_combo, strict=True),
-                    key=lambda pair: pair[0],
-                    reverse=True,
-                )
-            ),
-            strict=True,
-        )
-    return (
-        tuple(all_sols),
-        tuple(all_oxid_combo),
-        tuple(sorted(all_scores, reverse=True)),
-    )
+        if all_oxi_states:
+            # For correlation: more negative is better (ascending sort)
+            sorted_data = sorted(
+                zip(all_scores, all_sols),
+                key=lambda x: x[0]  # Sort by score
+            )
+            all_scores, all_sols = zip(*sorted_data)
+            all_oxid_combo = all_sols
+            return (
+                tuple(all_sols),
+                tuple(all_oxid_combo),
+                tuple(all_scores),
+            )
+
+        else:
+            # For probabilities: higher is better (descending sort)
+            sorted_data = sorted(
+                zip(all_scores, all_sols, all_oxid_combo),
+                key=lambda x: x[0],
+                reverse=True
+            )
+            all_scores, all_sols, all_oxid_combo = zip(*sorted_data)
+
+
+            return (
+                tuple(all_sols),
+                tuple(all_oxid_combo),
+                tuple(all_scores),
+            )
+    else:
+        return (
+            tuple(all_sols),
+            tuple(all_oxid_combo),
+            tuple(all_scores),
+            )
 
 
 def get_inequivalent_site_info(structure):

@@ -18,6 +18,7 @@ from pymatgen.core.periodic_table import Element
 from pymatgen.core.structure import Structure
 from pymatgen.io.cif import CifWriter
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
+from smact.metallicity import metallicity_score
 
 from lemat_genbench.metrics.base import BaseMetric, MetricConfig
 from lemat_genbench.utils.logging import logger
@@ -111,6 +112,9 @@ class ChargeNeutralityMetric(BaseMetric):
 
         # Step 1: Bond valence analysis for metallic structures
         try:
+            metal_score = metallicity_score(Composition(structure.formula))
+            if metal_score > 0.7:
+                return 0.0  # Perfectly charge neutral (metallic)
             sites = get_inequivalent_site_info(structure)
             bvs = []
             count = 0
@@ -130,7 +134,7 @@ class ChargeNeutralityMetric(BaseMetric):
                 for bv in bvs:
                     if np.abs(bv[1]) < 10**-15:
                         pass
-                    else:
+                    else:   
                         raise ValueError
                 logger.debug(
                     "Valid structure - Metallic structure with bond valence equal to zero for all atoms"
@@ -159,128 +163,58 @@ class ChargeNeutralityMetric(BaseMetric):
             )
 
         # Step 3: Compositional oxidation state guessing
+        # try:
+        
+        comp = Composition(structure.composition)
+        here = Path(__file__).resolve().parent
+        three_up = here.parents[2]
+
+        with open(three_up / "data" / "lemat_icsd_oxi_state_mapping.json", "r") as f:
+            oxi_state_mapping = json.load(f)
+
+        oxi_states_override = {}
+        for e in comp.elements:
+            if str(e) in oxi_state_mapping:
+                oxi_states_override[str(e)] = oxi_state_mapping[str(e)]
+        # print("starting oxi state guesses")
+        output = compositional_oxi_state_guesses(
+            comp,
+            all_oxi_states=False,
+            max_sites=-1,
+            target_charge=0,
+            oxi_states_override=oxi_states_override,
+        )
+        logger.debug(
+            f"Most valid oxidation state and score based on composition: "
+            f"{output[1][0] if len(output[1]) > 0 else 'None'}, "
+            f"{output[2][0] if len(output[2]) > 0 else 'None'}"
+        )
         try:
-            comp = Composition(structure.composition)
-            here = Path(__file__).resolve().parent
-            three_up = here.parents[2]
-
-            try:
-                with open(three_up / "data" / "oxi_state_mapping.json", "r") as f:
-                    oxi_state_mapping = json.load(f)
-            except FileNotFoundError:
-                # Fallback to default oxidation state mapping
-                oxi_state_mapping = {
-                    "H": [-1, 1],
-                    "Li": [1],
-                    "Be": [2],
-                    "B": [3],
-                    "C": [-4, 2, 4],
-                    "N": [-3, 3, 5],
-                    "O": [-2],
-                    "F": [-1],
-                    "Na": [1],
-                    "Mg": [2],
-                    "Al": [3],
-                    "Si": [4],
-                    "P": [3, 5],
-                    "S": [-2, 4, 6],
-                    "Cl": [-1],
-                    "K": [1],
-                    "Ca": [2],
-                    "Sc": [3],
-                    "Ti": [2, 3, 4],
-                    "V": [2, 3, 4, 5],
-                    "Cr": [2, 3, 6],
-                    "Mn": [2, 3, 4, 7],
-                    "Fe": [2, 3],
-                    "Co": [2, 3],
-                    "Ni": [2],
-                    "Cu": [1, 2],
-                    "Zn": [2],
-                    "Ga": [3],
-                    "Ge": [2, 4],
-                    "As": [3, 5],
-                    "Se": [-2, 4, 6],
-                    "Br": [-1],
-                    "Rb": [1],
-                    "Sr": [2],
-                    "Y": [3],
-                    "Zr": [4],
-                    "Nb": [3, 5],
-                    "Mo": [3, 4, 5, 6],
-                    "Tc": [4, 7],
-                    "Ru": [3, 4],
-                    "Rh": [3],
-                    "Pd": [2, 4],
-                    "Ag": [1],
-                    "Cd": [2],
-                    "In": [3],
-                    "Sn": [2, 4],
-                    "Sb": [3, 5],
-                    "Te": [-2, 4, 6],
-                    "I": [-1],
-                    "Cs": [1],
-                    "Ba": [2],
-                    "La": [3],
-                    "Ce": [3, 4],
-                    "Pr": [3],
-                    "Nd": [3],
-                    "Pm": [3],
-                    "Sm": [2, 3],
-                    "Eu": [2, 3],
-                    "Gd": [3],
-                    "Tb": [3, 4],
-                    "Dy": [3],
-                    "Ho": [3],
-                    "Er": [3],
-                    "Tm": [3],
-                    "Yb": [2, 3],
-                    "Lu": [3],
-                    "Hf": [4],
-                    "Ta": [5],
-                    "W": [4, 6],
-                    "Re": [4, 7],
-                    "Os": [4, 8],
-                    "Ir": [3, 4],
-                    "Pt": [2, 4],
-                    "Au": [1, 3],
-                    "Hg": [1, 2],
-                    "Tl": [1, 3],
-                    "Pb": [2, 4],
-                    "Bi": [3, 5],
-                }
-
-            oxi_states_override = {}
-            for e in comp.elements:
-                if str(e) in oxi_state_mapping:
-                    oxi_states_override[str(e)] = oxi_state_mapping[str(e)]
+            score = output[2][0]
+            if score > 0.001:
+                return 0.0  # Assume charge neutral (reasonable composition)
+            else:
+                return 0.0  # Small deviation penalty (charge balanced using LeMatBulk oxidation states, but requires unusual states)
+        except IndexError:
 
             output = compositional_oxi_state_guesses(
                 comp,
-                all_oxi_states=False,
+                all_oxi_states=True,
                 max_sites=-1,
                 target_charge=0,
-                oxi_states_override=oxi_states_override,
-            )
-
-            logger.debug(
-                f"Most valid oxidation state and score based on composition: "
-                f"{output[1][0] if len(output[1]) > 0 else 'None'}, "
-                f"{output[2][0] if len(output[2]) > 0 else 'None'}"
-            )
+                oxi_states_override=None,
+                )
 
             try:
-                score = output[2][0]
-                if score > 0.001:
+                score = -output[2][0] # correlation between oxidation state and electronegativity. Should be negative correlation for valid structures, reverse sign so logic 
+                # maximizing score is consistent
+                if score > 0.0:
                     return 0.0  # Assume charge neutral (reasonable composition)
                 else:
-                    return 10.0  # Large deviation penalty (unreasonable composition)
+                    return 10.0  # correlation between oxidation state and electronegativity is positive (scores is negative) not a reasonable composition
+            
             except IndexError:
-                return 10.0  # Large deviation penalty (no valid assignments)
-
-        except Exception as e:
-            logger.debug(f"Compositional oxidation state guessing failed: {str(e)}")
-            return 10.0  # Large penalty for failed analysis
+                return 10.0 # large deviation penalty 
 
     def aggregate_results(self, values: list[float]) -> Dict[str, Any]:
         """Aggregate results into final metric values.
@@ -478,18 +412,23 @@ class PhysicalPlausibilityConfig(MetricConfig):
 
     Parameters
     ----------
-    min_density : float, default=0.01
+    min_atomic_density : float, default=0.01
+        Minimum allowed density in atoms/A³.
+    max_atomic_density : float, default=25.0
+        Maximum allowed density in atoms/A³.
+    min_mass_density : float, default=0.01
         Minimum allowed density in g/cm³.
-    max_density : float, default=25.0
+    max_mass_density : float, default=25.0
         Maximum allowed density in g/cm³.
     check_format : bool, default=True
         Whether to check CIF format round-trip validity.
     check_symmetry : bool, default=True
         Whether to check space group validity.
     """
-
-    min_density: float = 0.01
-    max_density: float = 25.0
+    min_atomic_density: float = 0.00001
+    max_atomic_density: float = 0.5
+    min_mass_density: float = 0.01
+    max_mass_density: float = 25.0
     check_format: bool = True
     check_symmetry: bool = True
 
@@ -499,8 +438,10 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
     def __init__(
         self,
-        min_density: float = 0.01,
-        max_density: float = 25.0,
+        min_atomic_density: float = 0.00001,
+        max_atomic_density: float = 0.5,
+        min_mass_density: float = 0.01,
+        max_mass_density: float = 25.0,
         check_format: bool = True,
         check_symmetry: bool = True,
         name: str = "PhysicalPlausibility",
@@ -517,8 +458,10 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
         # Override with custom config
         self.config = PhysicalPlausibilityConfig(
-            min_density=min_density,
-            max_density=max_density,
+            min_atomic_density=min_atomic_density,
+            max_atomic_density=max_atomic_density,
+            min_mass_density=min_mass_density,
+            max_mass_density=max_mass_density,
             check_format=check_format,
             check_symmetry=check_symmetry,
             name=name,
@@ -529,8 +472,10 @@ class PhysicalPlausibilityMetric(BaseMetric):
 
     def _get_compute_attributes(self) -> dict[str, Any]:
         return {
-            "min_density": self.config.min_density,
-            "max_density": self.config.max_density,
+            "min_atomic_density": self.config.min_atomic_density,
+            "max_atomic_density": self.config.max_atomic_density,
+            "min_mass_density": self.config.min_mass_density,
+            "max_mass_density": self.config.max_mass_density,
             "check_format": self.config.check_format,
             "check_symmetry": self.config.check_symmetry,
         }
@@ -544,28 +489,48 @@ class PhysicalPlausibilityMetric(BaseMetric):
         float
             1.0 if structure passes all plausibility checks, 0.0 otherwise.
         """
-        min_density = compute_args.get("min_density", 0.01)
-        max_density = compute_args.get("max_density", 25.0)
+        min_atomic_density = compute_args.get("min_atomic_density", 0.00001)
+        max_atomic_density = compute_args.get("max_atomic_density", 0.5)
+        min_mass_density = compute_args.get("min_mass_density", 0.01)
+        max_mass_density = compute_args.get("max_mass_density", 25.0)
         check_format = compute_args.get("check_format", True)
         check_symmetry = compute_args.get("check_symmetry", True)
 
         checks_passed = 0
-        total_checks = 2  # density + lattice checks are always done
+        total_checks = 3  # atomic density, mass density, and lattice checks are always done
 
-        # 1. Density check
+        # 1. Mass density check
         try:
-            density = structure.density
-            if min_density <= density <= max_density:
+            mass_density = structure.density
+            if min_mass_density <= mass_density <= max_mass_density:
                 checks_passed += 1
             else:
                 logger.debug(
-                    f"Density check failed: {density:.3f} g/cm³ "
-                    f"(not in range [{min_density}, {max_density}])"
+                    f"Density check failed: {mass_density:.3f} g/cm³ "
+                    f"(not in range [{min_mass_density}, {max_mass_density}])"
                 )
         except Exception as e:
             logger.debug(f"Could not compute density: {str(e)}")
 
-        # 2. Lattice check
+        # 2. Atomic density check
+        try:
+            volume = structure.volume
+            num_atoms = len(structure)
+            atomic_density = num_atoms / volume  
+
+
+            if min_atomic_density <= atomic_density <= max_atomic_density:
+                checks_passed += 1
+
+            else:
+                logger.debug(
+                    f"Atomic density check failed: {atomic_density:.5f} atoms/A³ "
+                    f"(not in range [{min_atomic_density}, {max_atomic_density}])"
+                )
+        except Exception as e:
+            logger.debug(f"Could not compute density: {str(e)}")
+
+        # 3. Lattice check
         try:
             lattice = structure.lattice
             volume = lattice.volume
@@ -589,7 +554,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
         except Exception as e:
             logger.debug(f"Could not validate lattice: {str(e)}")
 
-        # 3. Format check (optional)
+        # 4. Format check (optional)
         if check_format:
             total_checks += 1
             try:
@@ -600,8 +565,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
                 checks_passed += 1
             except Exception as e:
                 logger.debug(f"Format check failed: {str(e)}")
-
-        # 4. Symmetry check (optional)
+        # 5. Symmetry check (optional)
         if check_symmetry:
             total_checks += 1
             try:
@@ -621,6 +585,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
         )
 
         # Return 1.0 if ALL checks passed, 0.0 otherwise
+
         return 1.0 if checks_passed == total_checks else 0.0
 
     def aggregate_results(self, values: list[float]) -> Dict[str, Any]:
@@ -665,8 +630,10 @@ class OverallValidityMetric(BaseMetric):
         self,
         charge_tolerance: float = 0.1,
         distance_scaling: float = 0.5,
-        min_density: float = 0.01,
-        max_density: float = 25.0,
+        min_atomic_density: float = 0.00001,
+        max_atomic_density: float = 0.5,
+        min_mass_density: float = 0.01,
+        max_mass_density: float = 25.0,
         check_format: bool = True,
         check_symmetry: bool = True,
         name: str = "OverallValidity",
@@ -685,8 +652,10 @@ class OverallValidityMetric(BaseMetric):
         # Store parameters for individual metrics
         self.charge_tolerance = charge_tolerance
         self.distance_scaling = distance_scaling
-        self.min_density = min_density
-        self.max_density = max_density
+        self.min_atomic_density = min_atomic_density
+        self.max_atomic_density = max_atomic_density
+        self.min_mass_density = min_mass_density
+        self.max_mass_density = max_mass_density
         self.check_format = check_format
         self.check_symmetry = check_symmetry
         
@@ -699,8 +668,10 @@ class OverallValidityMetric(BaseMetric):
             **attrs,
             "charge_tolerance": self.charge_tolerance,
             "distance_scaling": self.distance_scaling,
-            "min_density": self.min_density,
-            "max_density": self.max_density,
+            "min_atomic_density": self.min_atomic_density,
+            "max_atomic_density": self.max_atomic_density,
+            "min_mass_density": self.min_mass_density,
+            "max_mass_density": self.max_mass_density,
             "check_format": self.check_format,
             "check_symmetry": self.check_symmetry,
             "verbose": self.verbose,
@@ -719,8 +690,10 @@ class OverallValidityMetric(BaseMetric):
         # Extract parameters
         charge_tolerance = compute_args.get("charge_tolerance", 0.1)
         distance_scaling = compute_args.get("distance_scaling", 0.5)
-        min_density = compute_args.get("min_density", 0.01)
-        max_density = compute_args.get("max_density", 25.0)
+        min_atomic_density = compute_args.get("min_atomic_density", 0.00001)
+        max_atomic_density = compute_args.get("max_atomic_density", 0.5)
+        min_mass_density = compute_args.get("min_mass_density", 0.01)
+        max_mass_density = compute_args.get("max_mass_density", 25.0)
         check_format = compute_args.get("check_format", True)
         check_symmetry = compute_args.get("check_symmetry", True)
 
@@ -755,8 +728,10 @@ class OverallValidityMetric(BaseMetric):
         try:
             plausibility_score = PhysicalPlausibilityMetric.compute_structure(
                 structure,
-                min_density=min_density,
-                max_density=max_density,
+                min_atomic_density=min_atomic_density,
+                max_atomic_density=max_atomic_density,
+                min_mass_density=min_mass_density,
+                max_mass_density=max_mass_density,
                 check_format=check_format,
                 check_symmetry=check_symmetry,
             )
@@ -816,3 +791,39 @@ class OverallValidityMetric(BaseMetric):
         # if needed, but we keep the standard interface clean
         
         return result
+
+
+def lematbulk_item_to_structure(item: dict):
+    sites = item["species_at_sites"]
+    coords = item["cartesian_site_positions"]
+    cell = item["lattice_vectors"]
+
+    structure = Structure(
+        species=sites, coords=coords, lattice=cell, coords_are_cartesian=True
+    )
+
+    return structure
+
+if __name__ == "__main__":
+    from datasets import load_dataset
+    from tqdm import tqdm
+
+    dataset_name = "Lematerial/LeMat-Bulk"
+    name = "compatible_pbe"
+    split = "train"
+    dataset = load_dataset(dataset_name, name=name, split=split, streaming=False)
+
+    np.random.seed(32)
+    indicies = np.random.randint(0, len(dataset), 50)
+
+    metric = PhysicalPlausibilityMetric()
+    args = metric._get_compute_attributes()
+
+    structures = []
+    for i in tqdm(range(len(indicies))):
+        index = int(indicies[i])
+        strut = lematbulk_item_to_structure(dataset[index])
+        structures.append(strut)
+
+        val = metric.compute_structure(structures[i], **args)
+        print(val)

@@ -6,7 +6,7 @@ into the benchmark framework.
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Any, Dict, Tuple, Union
+from typing import Any, Dict, Literal, Tuple, Union
 
 import numpy as np
 import torch
@@ -15,7 +15,7 @@ from pymatgen.core.structure import Structure
 
 from lemat_genbench.preprocess.reference_energies import (
     get_energy_above_hull,
-    get_formation_energy_from_composition_energy,
+    get_formation_energy_per_atom_from_composition_energy,
 )
 
 
@@ -71,6 +71,7 @@ class BaseMLIPCalculator(ABC):
         self,
         device: Union[str, torch.device] = "cpu",
         precision: str = "float32",
+        hull_type: Literal["dft", "uma", "orb", "mace_mp", "mace_omat"] = "dft",
         **kwargs,
     ):
         self.device = (
@@ -78,6 +79,7 @@ class BaseMLIPCalculator(ABC):
         )
         self.precision = precision
         self.model = None
+        self.hull_type = hull_type
         self._setup_model(**kwargs)
 
     @abstractmethod
@@ -325,10 +327,10 @@ class BaseEmbeddingExtractor(ABC):
         )
 
 
-def get_formation_energy_from_total_energy(
+def get_formation_energy_per_atom_from_total_energy(
     total_energy: float, composition, functional: str = "pbe"
 ) -> float:
-    """Calculate formation energy from total energy and composition.
+    """Calculate formation energy per atom from total energy and composition.
 
     This uses the same reference energies as the current codebase.
 
@@ -347,12 +349,16 @@ def get_formation_energy_from_total_energy(
         Formation energy per atom in eV/atom
     """
 
-    return get_formation_energy_from_composition_energy(
+    return get_formation_energy_per_atom_from_composition_energy(
         total_energy, composition, functional
     )
 
 
-def get_energy_above_hull_from_total_energy(total_energy: float, composition) -> float:
+def get_energy_above_hull_from_total_energy(
+    total_energy: float,
+    composition,
+    hull_type: Literal["dft", "uma", "orb", "mace_mp", "mace_omat"] = "dft",
+) -> float:
     """Calculate energy above hull from total energy and composition.
 
     Parameters
@@ -368,4 +374,4 @@ def get_energy_above_hull_from_total_energy(total_energy: float, composition) ->
         Energy above hull in eV/atom
     """
 
-    return get_energy_above_hull(total_energy, composition)
+    return get_energy_above_hull(total_energy, composition, hull_type=hull_type)
