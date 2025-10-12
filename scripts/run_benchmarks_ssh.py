@@ -453,13 +453,17 @@ def run_validity_preprocessing_and_filtering(
         structures, structure_sources=structure_sources
     )
     processed_structures = validity_preprocessor_result.processed_structures
-    
+
     # Generate benchmark result from preprocessor data
-    validity_benchmark_result = validity_preprocessor.generate_benchmark_result(validity_preprocessor_result)
-    
+    validity_benchmark_result = validity_preprocessor.generate_benchmark_result(
+        validity_preprocessor_result
+    )
+
     elapsed_time = time.time() - start_time
-    logger.info(f"✅ MANDATORY validity processing complete for {n_total_structures} structures in {elapsed_time:.1f}s")
-    
+    logger.info(
+        f"✅ MANDATORY validity processing complete for {n_total_structures} structures in {elapsed_time:.1f}s"
+    )
+
     # Clean up after validity processing
     cleanup_after_preprocessor("validity", monitor_memory)
 
@@ -586,30 +590,22 @@ def run_remaining_preprocessors(
 
         # Configure MLIP models with hull-specific settings
         device = "cpu"  # SSH-optimized version uses CPU
-        
+
         # Get MLIP configurations from config file if available
         preprocessor_config_from_file = config.get("preprocessor_config", {})
         mlip_configs_from_file = preprocessor_config_from_file.get("mlip_configs", {})
-        
+
         # Default MLIP configurations with hull types
         default_mlip_configs = {
             "orb": {
-                "model_type": "orb_v3_conservative_inf_omat", 
+                "model_type": "orb_v3_conservative_inf_omat",
                 "device": device,
-                "hull_type": "orb_conserv_inf"
+                "hull_type": "orb_conserv_inf",
             },
-            "mace": {
-                "model_type": "mp", 
-                "device": device,
-                "hull_type": "mace_mp"
-            },
-            "uma": {
-                "task": "omat", 
-                "device": device,
-                "hull_type": "uma"
-            },
+            "mace": {"model_type": "mp", "device": device, "hull_type": "mace_mp"},
+            "uma": {"task": "omat", "device": device, "hull_type": "uma"},
         }
-        
+
         # Merge config file settings with defaults
         mlip_configs = {}
         for mlip_name in ["orb", "mace", "uma"]:
@@ -1007,12 +1003,16 @@ def main():
         # Load benchmark configuration
         logger.info(f"Loading benchmark configuration: {args.config}")
         config = load_benchmark_config(args.config)
-        
+
         # Add fingerprint method to config (use config file value as default, override with command line if provided)
-        if args.fingerprint_method != "short-bawl":  # Only override if explicitly specified
+        if (
+            args.fingerprint_method != "short-bawl"
+        ):  # Only override if explicitly specified
             config["fingerprint_method"] = args.fingerprint_method
         logger.info(f"✅ Loaded configuration: {config.get('type', 'unknown')}")
-        logger.info(f"🔍 Using fingerprint method: {config.get('fingerprint_method', args.fingerprint_method)}")
+        logger.info(
+            f"🔍 Using fingerprint method: {config.get('fingerprint_method', args.fingerprint_method)}"
+        )
 
         # Determine benchmark families to run
         if args.families:
