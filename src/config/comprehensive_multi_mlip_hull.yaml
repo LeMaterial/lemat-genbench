@@ -1,0 +1,134 @@
+type: comprehensive_multi_mlip_hull
+
+# This config runs all benchmark families using multi-MLIP hull energies
+# Each MLIP calculates energies with respect to its own hull, then we ensemble
+# Validity benchmark and preprocessor are ALWAYS run automatically
+
+# Validity benchmark settings (always run - updated to match new implementation)
+validity_settings:
+  charge_tolerance: 0.1
+  distance_scaling: 0.5
+  min_atomic_density: 0.00001
+  max_atomic_density: 0.5
+  min_mass_density: 0.01
+  max_mass_density: 25.0
+  check_format: true
+  check_symmetry: true
+
+# Distribution benchmark settings
+mlips: ["orb", "mace", "uma"]
+cache_dir: "./data"
+js_distributions_file: "data/lematbulk_jsdistance_distributions.json"
+mmd_values_file: "data/lematbulk_mmd_values_15k.pkl"
+
+# Fingerprinting method configuration
+fingerprint_method: "structure-matcher"
+
+# Novelty benchmark settings (using structure-matcher)
+novelty_settings:
+  reference_dataset: "LeMaterial/LeMat-Bulk"
+  reference_config: "compatible_pbe"
+  cache_reference: true
+  max_reference_size: null
+  n_jobs: 1
+  tolerance: 0.1
+
+# Uniqueness benchmark settings (using structure-matcher)
+uniqueness_settings:
+  n_jobs: 1
+  tolerance: 0.1
+
+# SUN benchmark settings (using structure-matcher)
+sun_settings:
+  stability_threshold: 0.0
+  metastability_threshold: 0.1
+  include_metasun: true
+  reference_dataset: "LeMaterial/LeMat-Bulk"
+  reference_config: "compatible_pbe"
+  cache_reference: true
+  max_reference_size: null
+  tolerance: 0.1
+
+# HHI benchmark settings
+hhi_settings:
+  production_weight: 0.25
+  reserve_weight: 0.75
+  scale_to_0_10: true
+
+# Multi-MLIP stability settings with hull-specific calculations
+stability_settings:
+  use_ensemble: true
+  metastable_threshold: 0.1
+  ensemble_config:
+    min_mlips_required: 2
+  individual_mlip_config:
+    use_all_available: true
+    require_all_mlips: false
+    fallback_to_single: true
+
+# Preprocessor configuration for multi-MLIP hull calculations
+preprocessor_config:
+  model_name: multi_mlip
+  mlip_configs:
+    orb:
+      model_type: orb_v3_conservative_inf_omat
+      device: cpu
+      hull_type: orb_conserv_inf  # Use ORB-specific hull
+    mace:
+      model_type: mp
+      device: cpu
+      hull_type: mace_mp  # Use MACE-MP-specific hull
+    uma:
+      task: omat
+      device: cpu
+      hull_type: uma  # Use UMA-specific hull
+  relax_structures: true
+  relaxation_config:
+    fmax: 0.02
+    steps: 50
+  calculate_formation_energy: true
+  calculate_energy_above_hull: true  # This will use hull-specific calculations
+  extract_embeddings: true
+  timeout: 300
+
+# Reporting configuration
+reporting:
+  include_individual_mlip_results: true    # Show per-model results alongside ensemble results
+  include_uncertainty_analysis: true       # Include std deviation in results
+  include_ensemble_summary: true           # Include ensemble quality summary
+
+# Metadata
+description: "Comprehensive benchmark configuration using multi-MLIP hull energies"
+version: "1.0.0"
+metadata:
+  reference: "Comprehensive evaluation using MLIP-specific hull energies"
+  use_case: "Full evaluation across validity, distribution, novelty, uniqueness, and stability metrics using MLIP-specific convex hulls"
+  fingerprinting_method: "structure-matcher"
+  preprocessing_required: true
+  hull_calculation_method: "mlip-specific"
+  notes:
+    - "Validity benchmark and preprocessor are ALWAYS run automatically"
+    - "Uses pymatgen structure matcher for novelty, uniqueness, and SUN metrics"
+    - "Each MLIP calculates energies with respect to its own convex hull"
+    - "Ensemble statistics computed from MLIP-specific hull energies"
+    - "Individual MLIP results reported alongside ensemble results"
+    - "Most accurate stability evaluation using MLIP-specific reference data"
+  performance_characteristics:
+    - "Preprocessing: Multi-MLIP calculations with hull-specific energies"
+    - "High accuracy: Uses MLIP-specific convex hulls for each model"
+    - "Memory intensive: Requires loading multiple MLIP models"
+    - "Computationally intensive: Full MLIP calculations + hull lookups"
+  recommended_usage:
+    - "Research applications requiring highest accuracy stability evaluation"
+    - "When MLIP-specific hull energies are available"
+    - "Ensemble-based stability assessment"
+    - "Comparative analysis across different MLIPs"
+  limitations:
+    - "Requires significant computational resources"
+    - "Slower than single-MLIP approaches"
+    - "Memory intensive due to multiple model loading"
+  accuracy_benefits:
+    - "Uses MLIP-specific convex hulls for each model"
+    - "Accounts for model-specific systematic errors"
+    - "Provides uncertainty quantification through ensemble statistics"
+    - "Most accurate stability assessment available"
