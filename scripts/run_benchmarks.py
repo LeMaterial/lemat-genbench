@@ -354,7 +354,9 @@ def load_benchmark_config(config_name: str) -> Dict[str, Any]:
 
 
 def create_preprocessor_config(
-    benchmark_families: List[str], fingerprint_method: str = "short-bawl"
+    benchmark_families: List[str],
+    fingerprint_method: str = "short-bawl",
+    generate_embedding_plots: bool = False,
 ) -> Dict[str, Any]:
     """Create preprocessor configuration based on required benchmark families.
 
@@ -366,6 +368,8 @@ def create_preprocessor_config(
         List of benchmark families to run
     fingerprint_method : str, default="short-bawl"
         Fingerprinting method to use. Determines if fingerprint preprocessing is needed.
+    generate_embedding_plots : bool, default=False
+        Whether to generate embedding plots. If True, enables embeddings preprocessing.
     """
     config = {
         "validity": True,  # ALWAYS run validity preprocessing
@@ -391,6 +395,10 @@ def create_preprocessor_config(
             # Only run fingerprint preprocessor for BAWL/short-BAWL methods
             if fingerprint_method.lower() not in ["structure-matcher"]:
                 config["fingerprint"] = True
+
+    # Enable embeddings preprocessing if embedding plots are requested
+    if generate_embedding_plots:
+        config["embeddings"] = True
 
     return config
 
@@ -1021,7 +1029,7 @@ def main():
 
         # Step 2: Determine preprocessor requirements for remaining benchmarks
         preprocessor_config = create_preprocessor_config(
-            benchmark_families, args.fingerprint_method
+            benchmark_families, args.fingerprint_method, args.generate_embedding_plots
         )
         # Remove validity since it's already done
         preprocessor_config["validity"] = False

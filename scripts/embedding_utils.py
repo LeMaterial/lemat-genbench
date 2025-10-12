@@ -127,20 +127,6 @@ def save_embeddings_from_structures(
             logger.info(f"Metadata saved to: {metadata_file}")
             logger.info(f"Total embedding types: {len(embeddings)}")
 
-        # Create a symlink to the latest embeddings for easy access
-        latest_link = embeddings_dir / "latest_embeddings.pkl"
-        if latest_link.exists():
-            latest_link.unlink()
-        latest_link.symlink_to(filepath.name)
-
-        latest_metadata_link = embeddings_dir / "latest_embeddings_metadata.json"
-        if latest_metadata_link.exists():
-            latest_metadata_link.unlink()
-        latest_metadata_link.symlink_to(metadata_file.name)
-
-        if logger:
-            logger.info(f"Created symlinks: {latest_link} and {latest_metadata_link}")
-
         # Generate plots if requested
         if generate_plots:
             try:
