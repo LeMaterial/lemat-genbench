@@ -191,7 +191,7 @@ def load_cif_files(input_path: str) -> List[str]:
 
 
 def load_structures_from_wycoff_csv(
-    csv_path: str, respect_validity_flags: bool = True
+    csv_path: str, respect_validity_flags: bool = False
 ) -> List:
     """Load structures from a CSV file with proper validation handling.
 
