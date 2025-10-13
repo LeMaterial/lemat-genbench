@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """Structure relaxation script using MLIPs.
 
-This script reads CIF files from a specified folder, relaxes them using
-the chosen MLIP (UMA, ORB, or MACE), and saves the relaxed structures
-in an organized folder structure.
+This script reads structures from either CIF files in a specified folder or 
+from a CSV file containing structures, relaxes them using the chosen MLIP 
+(UMA, ORB, or MACE), and saves the relaxed structures in an organized folder structure.
 
 Usage:
     uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip uma
     uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip orb --data_name my_structures
     uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip mace --fmax 0.01 --steps 100
+    uv run scripts/relax_structures.py --csv /path/to/structures.csv --mlip uma
+    uv run scripts/relax_structures.py --csv /path/to/structures.csv --mlip orb --respect_validity_flags
 """
 
 import argparse
@@ -19,6 +21,9 @@ from typing import List
 
 from pymatgen.core import Structure
 from pymatgen.io.cif import CifWriter
+
+# Import the CSV loading function from run_benchmarks.py
+from run_benchmarks import load_structures_from_wycoff_csv
 
 from lemat_genbench.models.registry import get_calculator
 from lemat_genbench.preprocess.multi_mlip_preprocess import _calculate_rmse
@@ -82,6 +87,30 @@ def read_cif_files(input_folder: str) -> List[Structure]:
     
     logger.info(f"Successfully loaded {len(structures)} structures")
     return structures
+
+
+def load_structures_from_input(input_path: str, respect_validity_flags: bool = False) -> List[Structure]:
+    """Load structures from either a CSV file or CIF folder.
+    
+    Args:
+        input_path: Path to CSV file or folder containing CIF files
+        respect_validity_flags: If True, skip structures marked as invalid in CSV validity columns
+        
+    Returns:
+        List of pymatgen Structure objects
+    """
+    input_path_obj = Path(input_path)
+    
+    if input_path_obj.is_file() and input_path_obj.suffix.lower() == '.csv':
+        # Load from CSV file
+        logger.info(f"Loading structures from CSV: {input_path}")
+        return load_structures_from_wycoff_csv(input_path, respect_validity_flags)
+    elif input_path_obj.is_dir():
+        # Load from CIF folder
+        logger.info(f"Loading structures from CIF folder: {input_path}")
+        return read_cif_files(input_path)
+    else:
+        raise ValueError(f"Input path must be either a CSV file or a directory containing CIF files: {input_path}")
 
 
 def relax_structure(structure: Structure, calculator, relaxation_config: dict) -> tuple:
@@ -169,14 +198,21 @@ Examples:
   uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip uma
   uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip orb --data_name my_structures
   uv run scripts/relax_structures.py --input_folder /path/to/cifs --mlip mace --fmax 0.01 --steps 100
+  uv run scripts/relax_structures.py --csv /path/to/structures.csv --mlip uma
+  uv run scripts/relax_structures.py --csv /path/to/structures.csv --mlip orb --respect_validity_flags
         """
     )
     
     parser.add_argument(
         "--input_folder",
         type=str,
-        required=True,
         help="Path to folder containing CIF files to relax"
+    )
+    
+    parser.add_argument(
+        "--csv",
+        type=str,
+        help="Path to CSV file containing structures in LeMatStructs column"
     )
     
     parser.add_argument(
@@ -221,7 +257,19 @@ Examples:
         help="Enable verbose logging"
     )
     
+    parser.add_argument(
+        "--respect_validity_flags",
+        action="store_true",
+        help="Respect validity flags in CSV (skip structures marked as invalid)"
+    )
+    
     args = parser.parse_args()
+    
+    # Validate input arguments
+    if not args.input_folder and not args.csv:
+        parser.error("Either --input_folder or --csv must be provided")
+    if args.input_folder and args.csv:
+        parser.error("Only one of --input_folder or --csv can be provided")
     
     # Set up logging
     if args.verbose:
@@ -232,7 +280,10 @@ Examples:
     try:
         # Generate data name if not provided
         if args.data_name is None:
-            args.data_name = Path(args.input_folder).name
+            if args.input_folder:
+                args.data_name = Path(args.input_folder).name
+            else:
+                args.data_name = Path(args.csv).stem
         
         # Generate timestamp
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -248,9 +299,10 @@ Examples:
         # Create output folder
         output_path = create_output_folder(args.data_name, args.mlip, timestamp)
         
-        # Read CIF files
-        logger.info(f"Reading CIF files from {args.input_folder}")
-        structures = read_cif_files(args.input_folder)
+        # Load structures from input
+        input_path = args.input_folder if args.input_folder else args.csv
+        logger.info(f"Loading structures from {input_path}")
+        structures = load_structures_from_input(input_path, args.respect_validity_flags)
         
         # Limit structures if specified
         if args.max_structures and args.max_structures < len(structures):
