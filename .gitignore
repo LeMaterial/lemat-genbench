@@ -206,3 +206,6 @@ data/augmented_fingerprints/unique_fingerprints.txt
 LeMat-GenBench_Flowchart.md
 LeMat-GenBench_Documentation.md
 LeMat-GenBench_Combined_Documentation.md
+RELAXATION_WORKFLOW.md
+VERIFICATION.md
+SINGLE_MLIP_DATA_VERIFICATION.md

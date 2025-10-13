@@ -1,0 +1,86 @@
+type: single_mlip_ssh
+
+# Single-MLIP SSH-optimized configuration for before/after relaxation comparison
+# This config is designed for high-core SSH environments with a SINGLE MLIP
+# Use with run_benchmarks_single_mlip_ssh.py
+
+# Key features:
+# - Uses ONLY ONE MLIP (specified via command line --mlip flag)
+# - Optimized for SSH environments with high parallelization
+# - Evaluates against that specific MLIP's hull (no ensembling)
+# - Designed for before/after relaxation comparison workflow
+# - Uses structure-matcher for fast fingerprinting
+
+# Validity benchmark settings (always run - mandatory)
+validity_settings:
+  charge_tolerance: 0.1
+  distance_scaling: 0.5
+  min_atomic_density: 0.00001
+  max_atomic_density: 0.5
+  min_mass_density: 0.01
+  max_mass_density: 25.0
+  check_format: true
+  check_symmetry: true
+
+# Distribution benchmark settings
+# Note: mlip will be set to single MLIP via command line
+cache_dir: "./data"
+js_distributions_file: "data/lematbulk_jsdistance_distributions.json"
+mmd_values_file: "data/lematbulk_mmd_values_15k.pkl"
+
+# Novelty/Uniqueness settings
+reference_dataset: "LeMaterial/LeMat-Bulk"
+reference_config: "compatible_pbe"
+fingerprint_method: "structure-matcher"  # Fast matching for relaxation comparison
+cache_reference: true
+max_reference_size: null
+
+# Novelty settings (SSH-optimized)
+novelty_settings:
+  n_jobs: -1  # Will use optimal n_jobs from get_optimal_n_jobs()
+
+# SUN benchmark settings
+sun_settings:
+  stability_threshold: 0.0
+  metastability_threshold: 0.1
+  include_metasun: true
+
+# HHI benchmark settings
+hhi_settings:
+  production_weight: 0.25
+  reserve_weight: 0.75
+  scale_to_0_10: true
+
+# Single-MLIP stability settings (NO ENSEMBLE)
+stability_settings:
+  use_ensemble: false  # Single MLIP only
+  metastable_threshold: 0.1
+  # mlips will be set to single MLIP via script
+
+# SSH optimization settings
+ssh_optimization:
+  auto_detect_cores: true
+  cpu_usage_percentage: 0.75  # Use 75% of available cores
+  enable_parallel_fingerprinting: true
+  enable_parallel_benchmarks: true
+
+# Metadata
+description: "SSH-optimized single-MLIP benchmark configuration for before/after relaxation comparison"
+version: "1.0.0"
+metadata:
+  reference: "Single-MLIP evaluation for relaxation effect analysis in SSH environments"
+  use_case: "Evaluate structures before and after relaxation with same MLIP on high-core servers"
+  workflow:
+    - "Run this config on original structures (before relaxation)"
+    - "Run relax_structures.py to relax with chosen MLIP"
+    - "Run this config again on relaxed structures (after relaxation)"
+    - "Compare metrics to analyze relaxation effects"
+  notes:
+    - "Validity benchmark is ALWAYS run automatically"
+    - "Uses structure-matcher for fast fingerprinting"
+    - "MLIP is specified via --mlip command line argument"
+    - "Evaluates against specific MLIP's hull (no ensembling)"
+    - "Optimized for SSH with smart CPU core detection and parallelization"
+    - "Ideal for before/after relaxation comparison on servers"
+    - "Set LEMAT_N_JOBS environment variable to override auto-detection"
+
