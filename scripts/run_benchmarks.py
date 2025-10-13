@@ -33,6 +33,9 @@ from tqdm import tqdm
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
+# Import embedding utilities
+from embedding_utils import save_embeddings_from_structures
+
 from lemat_genbench.benchmarks.distribution_benchmark import DistributionBenchmark
 from lemat_genbench.benchmarks.diversity_benchmark import DiversityBenchmark
 from lemat_genbench.benchmarks.hhi_benchmark import HHIBenchmark
@@ -350,18 +353,22 @@ def load_benchmark_config(config_name: str) -> Dict[str, Any]:
 
 
 def create_preprocessor_config(
-    benchmark_families: List[str], fingerprint_method: str = "short-bawl"
+    benchmark_families: List[str],
+    fingerprint_method: str = "short-bawl",
+    generate_embedding_plots: bool = False,
 ) -> Dict[str, Any]:
     """Create preprocessor configuration based on required benchmark families.
 
     Note: validity preprocessing is ALWAYS included regardless of families.
-    
+
     Parameters
     ----------
     benchmark_families : List[str]
         List of benchmark families to run
     fingerprint_method : str, default="short-bawl"
         Fingerprinting method to use. Determines if fingerprint preprocessing is needed.
+    generate_embedding_plots : bool, default=False
+        Whether to generate embedding plots. If True, enables embeddings preprocessing.
     """
     config = {
         "validity": True,  # ALWAYS run validity preprocessing
@@ -387,6 +394,10 @@ def create_preprocessor_config(
             # Only run fingerprint preprocessor for BAWL/short-BAWL methods
             if fingerprint_method.lower() not in ["structure-matcher"]:
                 config["fingerprint"] = True
+
+    # Enable embeddings preprocessing if embedding plots are requested
+    if generate_embedding_plots:
+        config["embeddings"] = True
 
     return config
 
@@ -442,7 +453,9 @@ def run_validity_preprocessing_and_filtering(
     processed_structures = validity_preprocessor_result.processed_structures
 
     # Generate benchmark result from preprocessor data
-    validity_benchmark_result = validity_preprocessor.generate_benchmark_result(validity_preprocessor_result)
+    validity_benchmark_result = validity_preprocessor.generate_benchmark_result(
+        validity_preprocessor_result
+    )
 
     elapsed_time = time.time() - start_time
     logger.info(
@@ -506,7 +519,9 @@ def run_remaining_preprocessors(
     valid_structures,
     preprocessor_config: Dict[str, Any],
     config: Dict[str, Any],
+    run_name: str,
     monitor_memory: bool = False,
+    generate_embedding_plots: bool = False,
 ):
     """Run remaining preprocessors on valid structures only.
 
@@ -575,30 +590,22 @@ def run_remaining_preprocessors(
         device = (
             torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
         )
-        
+
         # Get MLIP configurations from config file if available
         preprocessor_config_from_file = config.get("preprocessor_config", {})
         mlip_configs_from_file = preprocessor_config_from_file.get("mlip_configs", {})
-        
+
         # Default MLIP configurations with hull types
         default_mlip_configs = {
             "orb": {
-                "model_type": "orb_v3_conservative_inf_omat", 
+                "model_type": "orb_v3_conservative_inf_omat",
                 "device": device,
-                "hull_type": "orb_conserv_inf"
+                "hull_type": "orb_conserv_inf",
             },
-            "mace": {
-                "model_type": "mp", 
-                "device": device,
-                "hull_type": "mace_mp"
-            },
-            "uma": {
-                "task": "omat", 
-                "device": device,
-                "hull_type": "uma"
-            },
+            "mace": {"model_type": "mp", "device": device, "hull_type": "mace_mp"},
+            "uma": {"task": "omat", "device": device, "hull_type": "uma"},
         }
-        
+
         # Merge config file settings with defaults
         mlip_configs = {}
         for mlip_name in ["orb", "mace", "uma"]:
@@ -637,6 +644,16 @@ def run_remaining_preprocessors(
         logger.info(
             f"✅ Multi-MLIP preprocessing complete for {len(processed_structures)} valid structures in {elapsed_time:.1f}s"
         )
+
+        # Save embeddings if they were extracted
+        if extract_embeddings and processed_structures:
+            save_embeddings_from_structures(
+                processed_structures,
+                config,
+                run_name,
+                generate_embedding_plots,
+                logger=logger,
+            )
 
         # Clean up after MLIP preprocessor (this is crucial for memory management)
         cleanup_after_preprocessor("multi_mlip", monitor_memory)
@@ -870,6 +887,11 @@ def main():
         action="store_true",
         help="Enable detailed memory monitoring throughout the process",
     )
+    parser.add_argument(
+        "--generate-embedding-plots",
+        action="store_true",
+        help="Automatically generate embedding analysis plots after Multi-MLIP preprocessing",
+    )
 
     args = parser.parse_args()
 
@@ -930,12 +952,16 @@ def main():
         # Load benchmark configuration
         logger.info(f"Loading benchmark configuration: {args.config}")
         config = load_benchmark_config(args.config)
-        
+
         # Add fingerprint method to config (use config file value as default, override with command line if provided)
-        if args.fingerprint_method != "short-bawl":  # Only override if explicitly specified
+        if (
+            args.fingerprint_method != "short-bawl"
+        ):  # Only override if explicitly specified
             config["fingerprint_method"] = args.fingerprint_method
         logger.info(f"✅ Loaded configuration: {config.get('type', 'unknown')}")
-        logger.info(f"🔍 Using fingerprint method: {config.get('fingerprint_method', args.fingerprint_method)}")
+        logger.info(
+            f"🔍 Using fingerprint method: {config.get('fingerprint_method', args.fingerprint_method)}"
+        )
 
         # Determine benchmark families to run
         if args.families:
@@ -961,7 +987,7 @@ def main():
         logger.info(
             "🔍 NOTE: Only valid structures will be used for subsequent benchmarks"
         )
-        
+
         # Note about fingerprinting
         if args.fingerprint_method == "structure-matcher":
             logger.info(
@@ -1012,7 +1038,7 @@ def main():
 
         # Step 2: Determine preprocessor requirements for remaining benchmarks
         preprocessor_config = create_preprocessor_config(
-            benchmark_families, args.fingerprint_method
+            benchmark_families, args.fingerprint_method, args.generate_embedding_plots
         )
         # Remove validity since it's already done
         preprocessor_config["validity"] = False
@@ -1020,7 +1046,12 @@ def main():
 
         # Step 3: Run remaining preprocessors on valid structures only
         processed_valid_structures, preprocessor_results = run_remaining_preprocessors(
-            valid_structures, preprocessor_config, config, args.monitor_memory
+            valid_structures,
+            preprocessor_config,
+            config,
+            args.name,
+            args.monitor_memory,
+            args.generate_embedding_plots,
         )
 
         # Step 4: Run remaining benchmarks on valid structures only
@@ -1055,7 +1086,9 @@ def main():
             f"📊 Invalid structures: {validity_filtering_metadata['invalid_structures']}"
         )
         print(f"📊 Validity rate: {validity_filtering_metadata['validity_rate']:.1%}")
-        print(f"🔍 Fingerprint method: {config.get('fingerprint_method', args.fingerprint_method)}")
+        print(
+            f"🔍 Fingerprint method: {config.get('fingerprint_method', args.fingerprint_method)}"
+        )
         print(
             f"🔧 Benchmark families: {['validity (ALL structures)'] + [f'{family} (valid structures only)' for family in benchmark_families if family != 'validity']}"
         )
