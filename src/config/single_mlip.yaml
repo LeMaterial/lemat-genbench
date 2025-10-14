@@ -1,0 +1,76 @@
+type: single_mlip
+
+# Single-MLIP configuration for before/after relaxation comparison
+# This config is designed for evaluating structures with a SINGLE MLIP only
+# Use with run_benchmarks_single_mlip.py
+
+# Key differences from comprehensive config:
+# - Uses ONLY ONE MLIP (specified via command line --mlip flag)
+# - Evaluates against that specific MLIP's hull (no ensembling)
+# - Optimized for before/after relaxation comparison workflow
+# - Uses structure-matcher for fast fingerprinting by default
+
+# Validity benchmark settings (always run - mandatory)
+validity_settings:
+  charge_tolerance: 0.1
+  distance_scaling: 0.5
+  min_atomic_density: 0.00001
+  max_atomic_density: 0.5
+  min_mass_density: 0.01
+  max_mass_density: 25.0
+  check_format: true
+  check_symmetry: true
+
+# Distribution benchmark settings
+# Note: mlip will be set to single MLIP via command line
+cache_dir: "./data"
+js_distributions_file: "data/lematbulk_jsdistance_distributions.json"
+mmd_values_file: "data/lematbulk_mmd_values_15k.pkl"
+
+# Novelty/Uniqueness settings
+reference_dataset: "LeMaterial/LeMat-Bulk"
+reference_config: "compatible_pbe"
+fingerprint_method: "structure-matcher"  # Fast matching for relaxation comparison
+cache_reference: true
+max_reference_size: null
+
+# Novelty settings
+novelty_settings:
+  n_jobs: 1  # Will be overridden for SSH version
+
+# SUN benchmark settings
+sun_settings:
+  stability_threshold: 0.0
+  metastability_threshold: 0.1
+  include_metasun: true
+
+# HHI benchmark settings
+hhi_settings:
+  production_weight: 0.25
+  reserve_weight: 0.75
+  scale_to_0_10: true
+
+# Single-MLIP stability settings (NO ENSEMBLE)
+stability_settings:
+  use_ensemble: false  # Single MLIP only
+  metastable_threshold: 0.1
+  # mlips will be set to single MLIP via script
+
+# Metadata
+description: "Single-MLIP benchmark configuration for before/after relaxation comparison"
+version: "1.0.0"
+metadata:
+  reference: "Single-MLIP evaluation for relaxation effect analysis"
+  use_case: "Evaluate structures before and after relaxation with same MLIP"
+  workflow:
+    - "Run this config on original structures (before relaxation)"
+    - "Run relax_structures.py to relax with chosen MLIP"
+    - "Run this config again on relaxed structures (after relaxation)"
+    - "Compare metrics to analyze relaxation effects"
+  notes:
+    - "Validity benchmark is ALWAYS run automatically"
+    - "Uses structure-matcher for fast fingerprinting by default"
+    - "MLIP is specified via --mlip command line argument"
+    - "Evaluates against specific MLIP's hull (no ensembling)"
+    - "Ideal for before/after relaxation comparison"
+
