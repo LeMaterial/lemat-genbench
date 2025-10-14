@@ -1,5 +1,10 @@
 """Diveristy Metric Visulizer. The script should call the results of the divseristy
-and create a Radar Plot. The next TODO would be to  also integrate with HF to create a heatmap table of best performers"""
+and create a Radar Plot. The next TODO would be to  also integrate with HF to create a heatmap table of best performers
+
+Usage:
+    python scripts/visulize_diversity_metrics.py --results_file path/to/benchmark_results.json
+
+"""
 
 import argparse
 import json
