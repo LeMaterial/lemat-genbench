@@ -81,9 +81,15 @@ class TestNoveltyBenchmark:
         assert benchmark.config.metadata["reference_config"] == "custom_config"
         assert benchmark.config.metadata["max_reference_size"] == 100
 
+    @patch.object(NoveltyMetric, "_load_reference_dataset")
     @patch.object(NoveltyMetric, "compute")
-    def test_evaluate(self, mock_compute):
+    def test_evaluate(self, mock_compute, mock_load_dataset):
         """Test benchmark evaluation on structures."""
+        # Mock the dataset loading to prevent network calls
+        mock_load_dataset.return_value = {
+            "fingerprints": {"test_fp_1", "test_fp_2", "test_fp_3"}
+        }
+        
         # Mock the NoveltyMetric.compute method
         mock_result = MetricResult(
             metrics={
@@ -225,9 +231,15 @@ class TestNoveltyBenchmark:
         assert isinstance(novelty_metric, NoveltyMetric)
 
     @pytest.mark.slow
+    @patch.object(NoveltyMetric, "_load_reference_dataset")
     @patch.object(NoveltyMetric, "compute")
-    def test_realistic_workflow(self, mock_compute):
+    def test_realistic_workflow(self, mock_compute, mock_load_dataset):
         """Test a complete workflow with realistic structures."""
+        # Mock the dataset loading to prevent network calls
+        mock_load_dataset.return_value = {
+            "fingerprints": {"test_fp_1", "test_fp_2", "test_fp_3"}
+        }
+        
         # Mock a realistic result
         mock_result = MetricResult(
             metrics={
