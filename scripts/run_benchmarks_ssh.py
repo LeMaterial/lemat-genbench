@@ -1137,7 +1137,7 @@ def main():
             f"📊 Invalid structures: {validity_filtering_metadata['invalid_structures']}"
         )
         print(f"📊 Validity rate: {validity_filtering_metadata['validity_rate']:.1%}")
-        print(f"🔍 Fingerprint method: {args.fingerprint_method}")
+        print(f"🔍 Fingerprint method: {config.get('fingerprint_method', args.fingerprint_method)}")
         print(
             f"🔧 Benchmark families: {['validity (ALL structures)'] + [f'{family} (valid structures only)' for family in benchmark_families if family != 'validity']}"
         )
