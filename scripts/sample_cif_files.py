@@ -114,7 +114,7 @@ def sample_and_copy_cifs(
     sampled_files = random.sample(cif_files, n_samples)
     
     # Copy sampled files
-    print(f"Copying files to destination...")
+    print("Copying files to destination...")
     for i, source_file in enumerate(sampled_files, 1):
         dest_file = dest_dir / source_file.name
         shutil.copy2(source_file, dest_file)
