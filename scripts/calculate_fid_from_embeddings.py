@@ -145,34 +145,94 @@ def calculate_fid_for_model(embeddings_file, model_name, mlips=['orb', 'mace', '
 
 
 if __name__ == "__main__":
-    # Calculate FID for DiffCSP++
-    diffcsp_pp_file = Path("results_october/embeddings_diffcsp_pp_21102025/embeddings_orb_mace_uma_20251023_134508.pkl")
+    results = {}
+    
+    # Before relaxation embeddings
+    print("\n" + "="*60)
+    print("CALCULATING FID FOR BEFORE RELAXATION RESULTS")
+    print("="*60)
+    
+    # Calculate FID for Crystal GFN (before relax)
+    crystal_gfn_file = Path("results_before_and_after_relax/embeddings_crystal_gfn/embeddings_orb_mace_uma_20251025_053552.pkl")
+    if crystal_gfn_file.exists():
+        try:
+            results['Crystal GFN (before)'] = calculate_fid_for_model(
+                crystal_gfn_file,
+                "Crystal GFN (before)"
+            )
+        except Exception as e:
+            print(f"\n❌ Error calculating FID for Crystal GFN: {e}")
+    
+    # Calculate FID for Crystalformer (before relax)
+    crystalformer_file = Path("results_before_and_after_relax/embeddings_crystalformer.csv/embeddings_orb_mace_uma_20251025_024858.pkl")
+    if crystalformer_file.exists():
+        try:
+            results['Crystalformer (before)'] = calculate_fid_for_model(
+                crystalformer_file,
+                "Crystalformer (before)"
+            )
+        except Exception as e:
+            print(f"\n❌ Error calculating FID for Crystalformer: {e}")
+    
+    # Calculate FID for DiffCSP++ (before relax)
+    diffcsp_pp_file = Path("results_before_and_after_relax/embeddings_diffcsp_pp_2500.csv/embeddings_orb_mace_uma_20251025_152056.pkl")
     if diffcsp_pp_file.exists():
         try:
-            diffcsp_pp_result = calculate_fid_for_model(
+            results['DiffCSP++ (before)'] = calculate_fid_for_model(
                 diffcsp_pp_file,
-                "DiffCSP++"
+                "DiffCSP++ (before)"
             )
         except Exception as e:
             print(f"\n❌ Error calculating FID for DiffCSP++: {e}")
     
-    # Calculate FID for SymmCD
-    symmcd_file = Path("results_october/embeddings_symmcd_21102025/embeddings_orb_mace_uma_20251024_065704.pkl")
+    # Calculate FID for LLaMat3 (before relax)
+    llamat3_file = Path("results_before_and_after_relax/embeddings_llamat3/embeddings_orb_mace_uma_20251024_165551.pkl")
+    if llamat3_file.exists():
+        try:
+            results['LLaMat3 (before)'] = calculate_fid_for_model(
+                llamat3_file,
+                "LLaMat3 (before)"
+            )
+        except Exception as e:
+            print(f"\n❌ Error calculating FID for LLaMat3: {e}")
+    
+    # Calculate FID for SymmCD (before relax)
+    symmcd_file = Path("results_before_and_after_relax/embeddings_symmcd_2500.csv/embeddings_orb_mace_uma_20251025_100718.pkl")
     if symmcd_file.exists():
         try:
-            symmcd_result = calculate_fid_for_model(
+            results['SymmCD (before)'] = calculate_fid_for_model(
                 symmcd_file,
-                "SymmCD"
+                "SymmCD (before)"
             )
         except Exception as e:
             print(f"\n❌ Error calculating FID for SymmCD: {e}")
     
+    # Calculate FID for WyFormer (before relax)
+    wyformer_file = Path("results_before_and_after_relax/embeddings_wyformer_diffcsppp/embeddings_orb_mace_uma_20251025_074024.pkl")
+    if wyformer_file.exists():
+        try:
+            results['WyFormer (before)'] = calculate_fid_for_model(
+                wyformer_file,
+                "WyFormer (before)"
+            )
+        except Exception as e:
+            print(f"\n❌ Error calculating FID for WyFormer: {e}")
+    
+    # Calculate FID for WyFormer-DFT (before relax)
+    wyformer_dft_file = Path("results_before_and_after_relax/embeddings_wyformer_diffcsppp_dft_uma_20251022_165930/embeddings_orb_mace_uma_20251024_185833.pkl")
+    if wyformer_dft_file.exists():
+        try:
+            results['WyFormer-DFT (before)'] = calculate_fid_for_model(
+                wyformer_dft_file,
+                "WyFormer-DFT (before)"
+            )
+        except Exception as e:
+            print(f"\n❌ Error calculating FID for WyFormer-DFT: {e}")
+    
     # Summary
     print(f"\n{'='*60}")
-    print("FINAL SUMMARY")
+    print("FINAL SUMMARY - BEFORE RELAXATION")
     print(f"{'='*60}")
-    if diffcsp_pp_file.exists() and 'diffcsp_pp_result' in locals():
-        print(f"DiffCSP++: Mean FID = {diffcsp_pp_result['mean_fid']:.4f}")
-    if symmcd_file.exists() and 'symmcd_result' in locals():
-        print(f"SymmCD:    Mean FID = {symmcd_result['mean_fid']:.4f}")
+    for model_name, result in results.items():
+        print(f"{model_name:30s}: Mean FID = {result['mean_fid']:.4f}")
 
