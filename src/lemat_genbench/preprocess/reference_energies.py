@@ -205,6 +205,84 @@ def process_chunk(chunk):
     return one_hot_compositions
 
 
+def _retrieve_df_mp20(hull_type="mace", threshold=0.025):
+    """Retrieve MP-20 dataset for hull computations.
+
+    Parameters
+    ----------
+    hull_type : str, optional
+        Type of hull to use for MP-20 ('total_energy', 'mace', 'orb', 'uma', 'ensemble')
+        Default is 'mace'
+    threshold : float, optional
+        Energy above hull threshold in eV/atom (default 0.025)
+
+    Returns
+    -------
+    pd.DataFrame
+        Dataset of MP-20 materials close to the hull
+    """
+    try:
+        threshold_str = f"{threshold:.3f}".replace(".", "_")
+
+        # Try local MP-20 hull-specific path first
+        local_hull_path = os.path.join(
+            CURRENT_FOLDER,
+            "..",
+            "..",
+            "..",
+            "data",
+            "mp20_hulls",
+            f"{hull_type}_above_hull_dataset.parquet",
+        )
+
+        if os.path.exists(local_hull_path):
+            dataset = pd.read_parquet(local_hull_path)
+            if "species_at_sites" in dataset.columns:
+                dataset["species_at_sites"] = dataset["species_at_sites"].apply(
+                    lambda x: x.tolist() if hasattr(x, "tolist") else x
+                )
+            return dataset
+
+        # Try to load from HuggingFace
+        try:
+            from datasets import load_dataset
+
+            dataset_dict = load_dataset("LeMaterial/mp20-hull-reference")
+
+            if hull_type in dataset_dict:
+                dataset = dataset_dict[hull_type].to_pandas()
+                # Ensure species_at_sites is properly formatted
+                if "species_at_sites" in dataset.columns:
+                    dataset["species_at_sites"] = dataset["species_at_sites"].apply(
+                        lambda x: x.tolist() if hasattr(x, "tolist") else x
+                    )
+                return dataset
+        except Exception:
+            pass
+
+        # Fall back to file-based download from HuggingFace Hub
+        from huggingface_hub import hf_hub_download
+
+        file_path = hf_hub_download(
+            repo_id="LeMaterial/mp20-hull-reference",
+            filename=f"threshold_{threshold_str}/{hull_type}_above_hull_dataset.parquet",
+            repo_type="dataset",
+            cache_dir=os.path.join(CURRENT_FOLDER, "..", "..", "..", "data", ".cache"),
+        )
+        dataset = pd.read_parquet(file_path)
+        if "species_at_sites" in dataset.columns:
+            dataset["species_at_sites"] = dataset["species_at_sites"].apply(
+                lambda x: x.tolist() if hasattr(x, "tolist") else x
+            )
+        return dataset
+    except Exception as e:
+        raise RuntimeError(
+            f"MP-20 hull dataset not found for hull type '{hull_type}' and threshold {threshold}. "
+            "Tried local path and HuggingFace Hub."
+            f" Error: {e}"
+        )
+
+
 @lru_cache(maxsize=None)
 def _retrieve_df(hull_type="dft", threshold=0.001):
     """Retrieve dataset for hull computations.
@@ -213,6 +291,7 @@ def _retrieve_df(hull_type="dft", threshold=0.001):
     ----------
     hull_type : str, optional
         Type of hull to use ('dft', 'orb', 'uma', 'mace_mp', 'mace_omat')
+        For MP-20 dataset, use 'model_mp20' prefix (e.g., 'mace_mp20', 'orb_mp20', 'uma_mp20', 'ensemble_mp20')
         Default is 'dft' for backward compatibility
     threshold : float, optional
         Energy above hull threshold in eV/atom (default 0.001)
@@ -222,6 +301,12 @@ def _retrieve_df(hull_type="dft", threshold=0.001):
     pd.DataFrame
         Dataset of materials close to the hull
     """
+    # Check if this is an MP-20 hull type
+    if hull_type.endswith("_mp20"):
+        # Extract the model type (e.g., 'mace_mp20' -> 'mace')
+        model_type = hull_type.replace("_mp20", "")
+        return _retrieve_df_mp20(hull_type=model_type, threshold=threshold)
+
     try:
         threshold_str = f"{threshold:.3f}".replace(".", "_")
 
@@ -292,6 +377,58 @@ def _retrieve_df(hull_type="dft", threshold=0.001):
         )
 
 
+def _retrieve_matrix_mp20(hull_type="mace", threshold=0.025):
+    """Retrieve MP-20 composition matrix for hull computations.
+
+    Parameters
+    ----------
+    hull_type : str, optional
+        Type of hull to use for MP-20 ('total_energy', 'mace', 'orb', 'uma', 'ensemble')
+        Default is 'mace'
+    threshold : float, optional
+        Energy above hull threshold in eV/atom (default 0.025)
+
+    Returns
+    -------
+    np.ndarray
+        Composition matrix
+    """
+    try:
+        threshold_str = f"{threshold:.3f}".replace(".", "_")
+
+        # Try local MP-20 composition matrix path first
+        local_matrix_path = os.path.join(
+            CURRENT_FOLDER,
+            "..",
+            "..",
+            "..",
+            "data",
+            "mp20_hulls",
+            f"{hull_type}_above_hull_composition_matrix.npz",
+        )
+
+        if os.path.exists(local_matrix_path):
+            composition_array = sparse.load_npz(local_matrix_path).toarray()
+            return composition_array
+
+        # Try to fetch from HuggingFace Hub
+        from huggingface_hub import hf_hub_download
+
+        file_path = hf_hub_download(
+            repo_id="LeMaterial/mp20-hull-reference",
+            filename=f"threshold_{threshold_str}/{hull_type}_above_hull_composition_matrix.npz",
+            repo_type="dataset",
+            cache_dir=os.path.join(CURRENT_FOLDER, "..", "..", "..", "data", ".cache"),
+        )
+        composition_array = sparse.load_npz(file_path).toarray()
+        return composition_array
+    except Exception as e:
+        raise RuntimeError(
+            f"MP-20 composition matrix not found for hull type '{hull_type}' and threshold {threshold}. "
+            f"Error: {e}"
+        ) from e
+
+
 @lru_cache(maxsize=None)
 def _retrieve_matrix(hull_type="dft", threshold=0.001):
     """Retrieve composition matrix for hull computations.
@@ -300,6 +437,7 @@ def _retrieve_matrix(hull_type="dft", threshold=0.001):
     ----------
     hull_type : str, optional
         Type of hull to use ('dft', 'orb', 'uma', 'mace_mp', 'mace_omat')
+        For MP-20 dataset, use 'model_mp20' suffix (e.g., 'mace_mp20', 'orb_mp20', 'uma_mp20', 'ensemble_mp20')
         Default is 'dft' for backward compatibility
     threshold : float, optional
         Energy above hull threshold in eV/atom (default 0.001)
@@ -309,6 +447,12 @@ def _retrieve_matrix(hull_type="dft", threshold=0.001):
     np.ndarray
         Composition matrix
     """
+    # Check if this is an MP-20 hull type
+    if hull_type.endswith("_mp20"):
+        # Extract the model type (e.g., 'mace_mp20' -> 'mace')
+        model_type = hull_type.replace("_mp20", "")
+        return _retrieve_matrix_mp20(hull_type=model_type, threshold=threshold)
+
     try:
         threshold_str = f"{threshold:.3f}".replace(".", "_")
 
@@ -377,10 +521,13 @@ def get_energy_above_hull(total_energy, composition, hull_type="dft", threshold=
     composition : Composition
         Pymatgen composition object (may contain charged species)
     hull_type : str, optional
-        Type of hull to use ('dft', 'orb', 'uma', 'mace_mp', 'mace_omat')
+        Type of hull to use:
+        - For LeMat-Bulk: 'dft', 'orb', 'uma', 'mace_mp', 'mace_omat'
+        - For MP-20: 'mace_mp20', 'orb_mp20', 'uma_mp20', 'ensemble_mp20'
         Default is 'dft' for backward compatibility
     threshold : float, optional
-        Energy above hull threshold in eV/atom for reference dataset (default 0.001)
+        Energy above hull threshold in eV/atom for reference dataset
+        Default 0.001 for LeMat-Bulk, 0.025 for MP-20
 
     Returns
     -------
@@ -392,6 +539,14 @@ def get_energy_above_hull(total_energy, composition, hull_type="dft", threshold=
     Pymatgen's get_decomp_and_e_above_hull() always returns eV/atom,
     making this an intensive property like formation energy.
     This follows Materials Project conventions.
+
+    Examples
+    --------
+    >>> # Using LeMat-Bulk DFT hull
+    >>> e_hull = get_energy_above_hull(-10.5, Composition("Fe2O3"), hull_type="dft")
+
+    >>> # Using MP-20 MACE hull
+    >>> e_hull = get_energy_above_hull(-10.5, Composition("Fe2O3"), hull_type="mace_mp20", threshold=0.025)
     """
 
     try:
