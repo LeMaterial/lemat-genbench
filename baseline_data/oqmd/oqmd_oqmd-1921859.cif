@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_Tm3FeSi3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.10885300
+_cell_length_b   5.55712167
+_cell_length_c   12.60593983
+_cell_angle_alpha   95.08647116
+_cell_angle_beta   99.37949367
+_cell_angle_gamma   68.30334802
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tm3FeSi3
+_chemical_formula_sum   'Tm6 Fe2 Si6'
+_cell_volume   263.74208923
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.24700021  0.92118483  0.41518342  1
+  Fe  Fe1  1  0.75300144  0.07881495  0.58481626  1
+  Si  Si2  1  0.11420373  0.84700720  0.07541277  1
+  Si  Si3  1  0.05349075  0.13493878  0.24192031  1
+  Si  Si4  1  0.85689959  0.74284524  0.45664582  1
+  Si  Si5  1  0.14309902  0.25715654  0.54335466  1
+  Si  Si6  1  0.94650884  0.86506106  0.75808018  1
+  Si  Si7  1  0.88579792  0.15299258  0.92458691  1
+  Tm  Tm8  1  0.39854215  0.28360423  0.08068677  1
+  Tm  Tm9  1  0.74800881  0.73374408  0.22976303  1
+  Tm  Tm10  1  0.52341799  0.33271797  0.37955225  1
+  Tm  Tm11  1  0.47658403  0.66728188  0.62044823  1
+  Tm  Tm12  1  0.25199041  0.26625570  0.77023665  1
+  Tm  Tm13  1  0.60145950  0.71639555  0.91931291  1

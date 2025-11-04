@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_NbZnFe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.02369496
+_cell_length_b   6.98342653
+_cell_length_c   6.98342654
+_cell_angle_alpha   119.99999993
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NbZnFe
+_chemical_formula_sum   'Nb3 Zn3 Fe3'
+_cell_volume   127.70436600
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nb  Nb0  1  0.50000000  0.61473893  0.00000000  1
+  Nb  Nb1  1  0.50000000  0.00000000  0.61473893  1
+  Nb  Nb2  1  0.50000000  0.38526107  0.38526107  1
+  Zn  Zn3  1  0.00000000  0.27940128  0.00000000  1
+  Zn  Zn4  1  0.00000000  0.72059872  0.72059872  1
+  Zn  Zn5  1  0.00000000  0.00000000  0.27940128  1
+  Fe  Fe6  1  0.00000000  0.33333333  0.66666667  1
+  Fe  Fe7  1  0.00000000  0.66666667  0.33333333  1
+  Fe  Fe8  1  0.50000000  0.00000000  0.00000000  1

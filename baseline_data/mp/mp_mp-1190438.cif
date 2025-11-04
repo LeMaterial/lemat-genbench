@@ -1,0 +1,47 @@
+# generated using pymatgen
+data_Eu2CoTe2(SO7)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.30390700
+_cell_length_b   8.06272861
+_cell_length_c   8.34634816
+_cell_angle_alpha   116.60048460
+_cell_angle_beta   106.19495382
+_cell_angle_gamma   86.39856823
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Eu2CoTe2(SO7)2
+_chemical_formula_sum   'Eu2 Co1 Te2 S2 O14'
+_cell_volume   305.67688663
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Eu  Eu0  1  0.09098800  0.25395600  0.98987100  1
+  Eu  Eu1  1  0.90901200  0.74604400  0.01012900  1
+  Co  Co2  1  0.00000000  0.00000000  0.50000000  1
+  Te  Te3  1  0.52048500  0.26524600  0.64565500  1
+  Te  Te4  1  0.47951500  0.73475400  0.35434500  1
+  S  S5  1  0.77049500  0.24582900  0.25551100  1
+  S  S6  1  0.22950500  0.75417100  0.74448900  1
+  O  O7  1  0.90737600  0.40634900  0.26584400  1
+  O  O8  1  0.09262400  0.59365100  0.73415600  1
+  O  O9  1  0.87732500  0.22324100  0.42973600  1
+  O  O10  1  0.12267500  0.77675900  0.57026400  1
+  O  O11  1  0.48495900  0.27175000  0.22956800  1
+  O  O12  1  0.51504100  0.72825000  0.77043200  1
+  O  O13  1  0.81844200  0.07815700  0.09142900  1
+  O  O14  1  0.18155800  0.92184300  0.90857100  1
+  O  O15  1  0.73284100  0.42699700  0.88575800  1
+  O  O16  1  0.26715900  0.57300300  0.11424200  1
+  O  O17  1  0.26819300  0.17352600  0.72109400  1
+  O  O18  1  0.73180700  0.82647400  0.27890600  1
+  O  O19  1  0.75261000  0.06766500  0.64765000  1
+  O  O20  1  0.24739000  0.93233500  0.35235000  1

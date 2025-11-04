@@ -1,0 +1,48 @@
+# generated using pymatgen
+data_Sr3CuIrO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.80375010
+_cell_length_b   6.80375010
+_cell_length_c   6.76741270
+_cell_angle_alpha   89.26991829
+_cell_angle_beta   89.26991829
+_cell_angle_gamma   91.90865031
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr3CuIrO6
+_chemical_formula_sum   'Sr6 Cu2 Ir2 O12'
+_cell_volume   313.04401271
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.60122500  0.39877500  0.75000000  1
+  Sr  Sr1  1  0.39877500  0.60122500  0.25000000  1
+  Sr  Sr2  1  0.10806600  0.25821700  0.62031000  1
+  Sr  Sr3  1  0.74178300  0.89193400  0.87969000  1
+  Sr  Sr4  1  0.89193400  0.74178300  0.37969000  1
+  Sr  Sr5  1  0.25821700  0.10806600  0.12031000  1
+  Cu  Cu6  1  0.80841000  0.19159000  0.25000000  1
+  Cu  Cu7  1  0.19159000  0.80841000  0.75000000  1
+  Ir  Ir8  1  0.00000000  0.50000000  0.00000000  1
+  Ir  Ir9  1  0.50000000  0.00000000  0.50000000  1
+  O  O10  1  0.78286100  0.10190100  0.53679500  1
+  O  O11  1  0.89809900  0.21713900  0.96320500  1
+  O  O12  1  0.21713900  0.89809900  0.46320500  1
+  O  O13  1  0.10190100  0.78286100  0.03679500  1
+  O  O14  1  0.60466900  0.97045000  0.21714800  1
+  O  O15  1  0.02955000  0.39533100  0.28285200  1
+  O  O16  1  0.39533100  0.02955000  0.78285200  1
+  O  O17  1  0.97045000  0.60466900  0.71714800  1
+  O  O18  1  0.42846000  0.27816600  0.42991000  1
+  O  O19  1  0.72183400  0.57154000  0.07009000  1
+  O  O20  1  0.57154000  0.72183400  0.57009000  1
+  O  O21  1  0.27816600  0.42846000  0.92991000  1

@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_Pu4I9
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.11556848
+_cell_length_b   10.11556825
+_cell_length_c   18.42906960
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99999422
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pu4I9
+_chemical_formula_sum   'Pu4 I9'
+_cell_volume   1633.10702193
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pu  Pu0  1  0.50000001  0.00000002  0.47329986  1
+  Pu  Pu1  1  0.00000001  0.50000000  0.47329986  1
+  Pu  Pu2  1  0.50000000  0.50000000  0.47329986  1
+  Pu  Pu3  1  0.00000001  0.99999999  0.54627429  1
+  I  I4  1  0.40147011  0.20073504  0.56509359  1
+  I  I5  1  0.79926494  0.20073506  0.56509358  1
+  I  I6  1  0.79926497  0.59852991  0.56509358  1
+  I  I7  1  0.20073504  0.40147009  0.56509358  1
+  I  I8  1  0.20073506  0.79926494  0.56509358  1
+  I  I9  1  0.59852990  0.79926496  0.56509358  1
+  I  I10  1  0.33333333  0.66666666  0.37902508  1
+  I  I11  1  0.66666667  0.33333334  0.37902508  1
+  I  I12  1  0.99999998  0.99999999  0.38521448  1

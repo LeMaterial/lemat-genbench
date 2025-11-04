@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_LiGeSe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.69726746
+_cell_length_b   4.35509338
+_cell_length_c   7.29196036
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   97.80414302
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiGeSe
+_chemical_formula_sum   'Li4 Ge4 Se4'
+_cell_volume   273.64242324
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.59776530  0.00000000  0.87346135  1
+  Li  Li1  1  0.59776530  0.50000000  0.37346135  1
+  Li  Li2  1  0.34100086  0.00000000  0.32663954  1
+  Li  Li3  1  0.34100086  0.50000000  0.82663954  1
+  Ge  Ge4  1  0.01400577  0.00000000  0.64737468  1
+  Ge  Ge5  1  0.01400577  0.50000000  0.14737468  1
+  Ge  Ge6  1  0.92686071  0.00000000  0.29751643  1
+  Ge  Ge7  1  0.92686071  0.50000000  0.79751643  1
+  Se  Se8  1  0.29267304  0.00000000  0.65964975  1
+  Se  Se9  1  0.29267304  0.50000000  0.15964975  1
+  Se  Se10  1  0.64861432  0.00000000  0.22187826  1
+  Se  Se11  1  0.64861432  0.50000000  0.72187826  1

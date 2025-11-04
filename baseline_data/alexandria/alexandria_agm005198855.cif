@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_HoPaAsSe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.94096717
+_cell_length_b   3.94105191
+_cell_length_c   7.63759490
+_cell_angle_alpha   90.00157944
+_cell_angle_beta   104.94681891
+_cell_angle_gamma   119.99892477
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HoPaAsSe
+_chemical_formula_sum   'Ho1 Pa1 As1 Se1'
+_cell_volume   98.06999357
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.48179223  0.13884464  0.63592107  1
+  Pa  Pa1  1  0.12499399  0.96046254  0.10066715  1
+  As  As2  1  0.30066074  0.54828688  0.86420701  1
+  Se  Se3  1  0.97045305  0.38320594  0.36886478  1

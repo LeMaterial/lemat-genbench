@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_CsYFeSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   16.46367561
+_cell_length_b   4.12951054
+_cell_length_c   11.05680052
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsYFeSe3
+_chemical_formula_sum   'Cs4 Y4 Fe4 Se12'
+_cell_volume   751.71783354
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.26333366  0.25000057  0.02162108  1
+  Cs  Cs1  1  0.76333380  0.25000057  0.47837889  1
+  Cs  Cs2  1  0.23666647  0.74999930  0.52162106  1
+  Cs  Cs3  1  0.73666660  0.74999930  0.97837887  1
+  Fe  Fe4  1  0.48965008  0.74999930  0.08391035  1
+  Fe  Fe5  1  0.98965021  0.74999930  0.41608963  1
+  Fe  Fe6  1  0.01035006  0.25000057  0.58391033  1
+  Fe  Fe7  1  0.51035019  0.25000057  0.91608960  1
+  Se  Se8  1  0.09097482  0.74999930  0.07454417  1
+  Se  Se9  1  0.57568129  0.25000057  0.11669560  1
+  Se  Se10  1  0.38341742  0.74999930  0.23741407  1
+  Se  Se11  1  0.88341755  0.74999930  0.26258591  1
+  Se  Se12  1  0.07568176  0.25000057  0.38330437  1
+  Se  Se13  1  0.59097496  0.74999930  0.42545581  1
+  Se  Se14  1  0.40902531  0.25000057  0.57454415  1
+  Se  Se15  1  0.92431850  0.74999930  0.61669558  1
+  Se  Se16  1  0.11658271  0.25000057  0.73741405  1
+  Se  Se17  1  0.61658285  0.25000057  0.76258588  1
+  Se  Se18  1  0.42431837  0.74999930  0.88330435  1
+  Se  Se19  1  0.90902544  0.25000057  0.92545578  1
+  Y  Y20  1  0.98383923  0.25000057  0.15481784  1
+  Y  Y21  1  0.48383971  0.25000057  0.34518213  1
+  Y  Y22  1  0.51616056  0.74999930  0.65481782  1
+  Y  Y23  1  0.01616043  0.74999930  0.84518211  1

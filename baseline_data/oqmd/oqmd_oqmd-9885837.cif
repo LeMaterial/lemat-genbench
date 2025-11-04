@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Nd3CdAg(HgPd)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.95972108
+_cell_length_b   7.92552306
+_cell_length_c   7.92552306
+_cell_angle_alpha   120.40926016
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nd3CdAg(HgPd)2
+_chemical_formula_sum   'Nd3 Cd1 Ag1 Hg2 Pd2'
+_cell_volume   214.50887331
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.00000000  0.00486514  0.00486514  1
+  Cd  Cd1  1  0.49999986  0.26226805  0.26226805  1
+  Hg  Hg2  1  0.49999986  0.73576379  0.00184303  1
+  Hg  Hg3  1  0.49999986  0.00184303  0.73576379  1
+  Nd  Nd4  1  0.00000000  0.99670317  0.41047470  1
+  Nd  Nd5  1  0.00000000  0.59552116  0.59552116  1
+  Nd  Nd6  1  0.00000000  0.41047470  0.99670317  1
+  Pd  Pd7  1  0.49999986  0.66053338  0.33203362  1
+  Pd  Pd8  1  0.49999986  0.33203362  0.66053338  1

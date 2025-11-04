@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_AgTe2Pd7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.85397400
+_cell_length_b   8.09957310
+_cell_length_c   8.09958142
+_cell_angle_alpha   125.01149881
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   AgTe2Pd7
+_chemical_formula_sum   'Ag1 Te2 Pd7'
+_cell_volume   207.07943046
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.00000000  0.00000000  0.00000000  1
+  Te  Te1  1  0.50000000  0.68382041  0.31617963  1
+  Te  Te2  1  0.50000000  0.31617959  0.68382037  1
+  Pd  Pd3  1  0.00000000  0.80205906  0.19794069  1
+  Pd  Pd4  1  0.00000000  0.19794094  0.80205931  1
+  Pd  Pd5  1  0.50000000  0.08937050  0.29024872  1
+  Pd  Pd6  1  0.50000000  0.91062950  0.70975128  1
+  Pd  Pd7  1  0.50000000  0.29024810  0.08937010  1
+  Pd  Pd8  1  0.50000000  0.70975190  0.91062990  1
+  Pd  Pd9  1  0.50000000  0.50000000  0.50000000  1

@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_La8Si2Ge
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.89198505
+_cell_length_b   8.38338672
+_cell_length_c   8.38338742
+_cell_angle_alpha   115.60339692
+_cell_angle_beta   103.57428944
+_cell_angle_gamma   103.57428207
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La8Si2Ge
+_chemical_formula_sum   'La8 Si2 Ge1'
+_cell_volume   335.25682081
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.52407092  0.34598916  0.09505512  1
+  La  La1  1  0.52407092  0.09505512  0.34598916  1
+  La  La2  1  0.14613653  0.36378269  0.36378269  1
+  La  La3  1  0.96301805  0.16597752  0.69924346  1
+  La  La4  1  0.96301805  0.69924346  0.16597752  1
+  La  La5  1  0.80525311  0.60655044  0.60655044  1
+  La  La6  1  0.47032270  0.95663728  0.73298478  1
+  La  La7  1  0.47032270  0.73298378  0.95663728  1
+  Si  Si8  1  0.53435363  0.73698636  0.34865963  1
+  Si  Si9  1  0.53435363  0.34865963  0.73698636  1
+  Ge  Ge10  1  0.06474675  0.98206757  0.98206757  1

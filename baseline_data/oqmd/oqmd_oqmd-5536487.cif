@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_KTbZnTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.30982169
+_cell_length_b   4.40715432
+_cell_length_c   10.90914159
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   108.70881769
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KTbZnTe3
+_chemical_formula_sum   'K2 Tb2 Zn2 Te6'
+_cell_volume   423.94934933
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.23917593  0.25000032  0.27511846  1
+  K  K1  1  0.76082445  0.75000097  0.72488225  1
+  Tb  Tb2  1  0.68160107  0.25000032  0.13840993  1
+  Tb  Tb3  1  0.31839895  0.75000097  0.86158982  1
+  Te  Te4  1  0.92059658  0.75000097  0.14894249  1
+  Te  Te5  1  0.45593820  0.75000097  0.15609938  1
+  Te  Te6  1  0.77960023  0.25000032  0.45148260  1
+  Te  Te7  1  0.22040015  0.75000097  0.54851811  1
+  Te  Te8  1  0.54406181  0.25000032  0.84390037  1
+  Te  Te9  1  0.07940344  0.25000032  0.85105725  1
+  Zn  Zn10  1  0.91950137  0.75000097  0.39049862  1
+  Zn  Zn11  1  0.08049864  0.25000032  0.60950113  1

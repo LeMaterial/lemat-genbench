@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_PrZrFe2Ge2C
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.67184261
+_cell_length_b   5.67184261
+_cell_length_c   6.83262393
+_cell_angle_alpha   125.51198961
+_cell_angle_beta   125.51198961
+_cell_angle_gamma   40.41545313
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PrZrFe2Ge2C
+_chemical_formula_sum   'Pr1 Zr1 Fe2 Ge2 C1'
+_cell_volume   111.92480714
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  C  C0  1  0.00735513  0.00735513  0.02445576  1
+  Fe  Fe1  1  0.19717422  0.19717422  0.08677658  1
+  Fe  Fe2  1  0.80599050  0.80599050  0.91811775  1
+  Ge  Ge3  1  0.83672944  0.83672944  0.28938819  1
+  Ge  Ge4  1  0.16031747  0.16031747  0.69853208  1
+  Pr  Pr5  1  0.43819059  0.43819059  0.70244344  1
+  Zr  Zr6  1  0.55424586  0.55424586  0.28028902  1

@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_MgTi2Ge
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.54933329
+_cell_length_b   4.54931255
+_cell_length_c   4.54939081
+_cell_angle_alpha   59.98862939
+_cell_angle_beta   59.98793385
+_cell_angle_gamma   59.98741202
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgTi2Ge
+_chemical_formula_sum   'Mg1 Ti2 Ge1'
+_cell_volume   66.56003073
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ge  Ge0  1  0.75000161  0.74999918  0.74999928  1
+  Mg  Mg1  1  0.24999992  0.24999989  0.24999966  1
+  Ti  Ti2  1  0.49998705  0.49998745  0.49999288  1
+  Ti  Ti3  1  0.00001342  0.00001248  0.00000718  1

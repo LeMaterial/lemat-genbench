@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Li2CaNpCl8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.60264899
+_cell_length_b   6.86382057
+_cell_length_c   8.30949821
+_cell_angle_alpha   73.86821207
+_cell_angle_beta   90.50465797
+_cell_angle_gamma   102.11893605
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2CaNpCl8
+_chemical_formula_sum   'Li2 Ca1 Np1 Cl8'
+_cell_volume   353.19950715
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.54558495  0.36206189  0.67363187  1
+  Li  Li1  1  0.45441505  0.63793811  0.32636813  1
+  Ca  Ca2  1  0.00000000  0.00000000  0.50000000  1
+  Np  Np3  1  0.00000000  0.00000000  0.00000000  1
+  Cl  Cl4  1  0.13458479  0.78391337  0.28709298  1
+  Cl  Cl5  1  0.64487532  0.74322733  0.05939808  1
+  Cl  Cl6  1  0.87983876  0.20886789  0.18675565  1
+  Cl  Cl7  1  0.86541521  0.21608663  0.71290702  1
+  Cl  Cl8  1  0.35512468  0.25677267  0.94060192  1
+  Cl  Cl9  1  0.12016124  0.79113211  0.81324435  1
+  Cl  Cl10  1  0.63299290  0.72624588  0.55110225  1
+  Cl  Cl11  1  0.36700710  0.27375412  0.44889775  1

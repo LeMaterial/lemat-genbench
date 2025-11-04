@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_SrSmNiS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.93277501
+_cell_length_b   6.82911066
+_cell_length_c   10.45129430
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   106.74674330
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrSmNiS3
+_chemical_formula_sum   'Sr2 Sm2 Ni2 S6'
+_cell_volume   268.78925693
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.25124106  0.50215119  0.25000000  1
+  Sr  Sr1  1  0.74875894  0.49784881  0.75000000  1
+  S  S2  1  0.36289527  0.72598466  0.91882988  1
+  S  S3  1  0.92475049  0.84888997  0.25000000  1
+  S  S4  1  0.63710473  0.27401534  0.41882988  1
+  S  S5  1  0.63710473  0.27401534  0.08117012  1
+  S  S6  1  0.36289527  0.72598466  0.58117012  1
+  S  S7  1  0.07524951  0.15111003  0.75000000  1
+  Sm  Sm8  1  0.00000000  0.00000000  0.50000000  1
+  Sm  Sm9  1  0.00000000  0.00000000  0.00000000  1
+  Ni  Ni10  1  0.47899773  0.95882929  0.75000000  1
+  Ni  Ni11  1  0.52100227  0.04117071  0.25000000  1

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_ThMnSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.05246582
+_cell_length_b   6.71377666
+_cell_length_c   9.34679440
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   107.56588750
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ThMnSe3
+_chemical_formula_sum   'Th2 Mn2 Se6'
+_cell_volume   242.44356424
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Th  Th0  1  0.25051913  0.50103926  0.25000000  1
+  Th  Th1  1  0.74948087  0.49896074  0.75000000  1
+  Mn  Mn2  1  0.00000000  0.00000000  0.50000000  1
+  Mn  Mn3  1  0.00000000  0.00000000  -0.00000000  1
+  Se  Se4  1  0.08270097  0.16540294  0.75000000  1
+  Se  Se5  1  0.91729903  0.83459706  0.25000000  1
+  Se  Se6  1  0.35628637  0.71257174  0.94111864  1
+  Se  Se7  1  0.64371363  0.28742826  0.05888136  1
+  Se  Se8  1  0.64371363  0.28742826  0.44111864  1
+  Se  Se9  1  0.35628637  0.71257174  0.55888136  1

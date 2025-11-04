@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_HoEr2Sc3CuSe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.81252483
+_cell_length_b   7.73188948
+_cell_length_c   7.73188948
+_cell_angle_alpha   119.98722639
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HoEr2Sc3CuSe2
+_chemical_formula_sum   'Ho1 Er2 Sc3 Cu1 Se2'
+_cell_volume   197.41060203
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.00000000  0.99868205  0.99868205  1
+  Er  Er1  1  0.00000000  0.59652640  0.00014655  1
+  Er  Er2  1  0.00000000  0.00014655  0.59652640  1
+  Ho  Ho3  1  0.00000000  0.40446598  0.40446598  1
+  Sc  Sc4  1  0.49999937  0.24564485  0.00000000  1
+  Sc  Sc5  1  0.49999937  -0.00000000  0.24564485  1
+  Sc  Sc6  1  0.49999937  0.75419652  0.75419652  1
+  Se  Se7  1  0.49999937  0.66718059  0.33314240  1
+  Se  Se8  1  0.49999937  0.33314240  0.66718059  1

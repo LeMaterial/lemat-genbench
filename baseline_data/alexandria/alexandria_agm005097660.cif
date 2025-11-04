@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_LaCdCoH6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.67626150
+_cell_length_b   4.67616555
+_cell_length_c   4.51782011
+_cell_angle_alpha   89.99999396
+_cell_angle_beta   89.99995722
+_cell_angle_gamma   60.00101175
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaCdCoH6
+_chemical_formula_sum   'La1 Cd1 Co1 H6'
+_cell_volume   85.55643138
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.99997733  0.00000373  0.99998449  1
+  Cd  Cd1  1  0.66660399  0.66668521  0.49999382  1
+  Co  Co2  1  0.33336201  0.33332187  0.50001185  1
+  H  H3  1  0.06118213  0.46896231  0.23728767  1
+  H  H4  1  0.46893196  0.06122000  0.76267537  1
+  H  H5  1  0.46979554  0.46896753  0.76267233  1
+  H  H6  1  0.06118028  0.46983106  0.76268548  1
+  H  H7  1  0.46892687  0.46983747  0.23730203  1
+  H  H8  1  0.46980336  0.06122090  0.23729795  1

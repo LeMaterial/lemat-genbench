@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_LuGaSb2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.09857692
+_cell_length_b   4.09857692
+_cell_length_c   7.74496676
+_cell_angle_alpha   74.65704211
+_cell_angle_beta   74.65704208
+_cell_angle_gamma   59.99999999
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LuGaSb2
+_chemical_formula_sum   'Lu1 Ga1 Sb2'
+_cell_volume   107.28441591
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sb  Sb0  1  0.25536053  0.25536053  0.23391942  1
+  Sb  Sb1  1  0.74463947  0.74463947  0.76608058  1
+  Lu  Lu2  1  0.50000000  0.50000000  0.50000000  1
+  Ga  Ga3  1  0.00000000  0.00000000  0.00000000  1

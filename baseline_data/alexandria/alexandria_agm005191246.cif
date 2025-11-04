@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_ZnGaAsS
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.97059704
+_cell_length_b   3.97059704
+_cell_length_c   6.85519295
+_cell_angle_alpha   89.99930681
+_cell_angle_beta   106.83465336
+_cell_angle_gamma   120.00073182
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZnGaAsS
+_chemical_formula_sum   'Zn1 Ga1 As1 S1'
+_cell_volume   88.20778487
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zn  Zn0  1  0.46001513  0.61397529  0.07399042  1
+  Ga  Ga1  1  0.45385589  0.11106112  0.56491701  1
+  As  As2  1  0.20604888  0.48716453  0.69321340  1
+  S  S3  1  0.20911010  0.98856907  0.19767917  1

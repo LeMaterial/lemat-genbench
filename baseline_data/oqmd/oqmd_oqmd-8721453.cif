@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_SrDyAuS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.80430962
+_cell_length_b   3.99474756
+_cell_length_c   9.44310925
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   105.82087315
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrDyAuS3
+_chemical_formula_sum   'Sr2 Dy2 Au2 S6'
+_cell_volume   283.24843389
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.37682671  0.74999983  0.41432113  1
+  Au  Au1  1  0.62317224  0.25000078  0.58567861  1
+  Dy  Dy2  1  0.18692109  0.25000078  0.16243657  1
+  Dy  Dy3  1  0.81307787  0.74999983  0.83756317  1
+  S  S4  1  0.93233258  0.74999983  0.13784215  1
+  S  S5  1  0.43079003  0.74999983  0.16082409  1
+  S  S6  1  0.19845600  0.25000078  0.46259092  1
+  S  S7  1  0.80154296  0.74999983  0.53740882  1
+  S  S8  1  0.56921057  0.25000078  0.83917675  1
+  S  S9  1  0.06766637  0.25000078  0.86215759  1
+  Sr  Sr10  1  0.73799426  0.25000078  0.27414666  1
+  Sr  Sr11  1  0.26200598  0.74999983  0.72585308  1

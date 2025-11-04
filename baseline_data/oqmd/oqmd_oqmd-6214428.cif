@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Gd2Ni
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.92345246
+_cell_length_b   7.92345246
+_cell_length_c   3.87529826
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Gd2Ni
+_chemical_formula_sum   'Gd6 Ni3'
+_cell_volume   210.70006886
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Gd  Gd0  1  0.24835007  0.00000000  0.00000000  1
+  Gd  Gd1  1  -0.00000000  0.24834918  0.00000000  1
+  Gd  Gd2  1  0.75165014  0.75165066  0.00000000  1
+  Gd  Gd3  1  0.58332779  0.00000000  0.50000023  1
+  Gd  Gd4  1  0.41667223  0.41667255  0.50000023  1
+  Gd  Gd5  1  -0.00000000  0.58332729  0.50000023  1
+  Ni  Ni6  1  0.66666687  0.33333279  0.00000000  1
+  Ni  Ni7  1  0.33333352  0.66666704  0.00000000  1
+  Ni  Ni8  1  0.00000000  0.00000000  0.50000023  1

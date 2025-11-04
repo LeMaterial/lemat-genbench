@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_HoCoO3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.38024178
+_cell_length_b   5.38024178
+_cell_length_c   5.65545914
+_cell_angle_alpha   61.59714901
+_cell_angle_beta   61.59714901
+_cell_angle_gamma   60.00000267
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HoCoO3
+_chemical_formula_sum   'Ho2 Co2 O6'
+_cell_volume   118.47571133
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.84750626  0.84750626  0.45748056  1
+  Co  Co1  1  0.15249274  0.15249274  0.54252050  1
+  Ho  Ho2  1  0.63513291  0.63513291  0.09460190  1
+  Ho  Ho3  1  0.36486787  0.36486787  0.90539704  1
+  O  O4  1  0.55894554  0.21141470  0.26498012  1
+  O  O5  1  0.21141526  0.96466019  0.26498012  1
+  O  O6  1  0.96465866  0.55894457  0.26498012  1
+  O  O7  1  0.03534175  0.44105584  0.73501671  1
+  O  O8  1  0.78858516  0.03534023  0.73501671  1
+  O  O9  1  0.44105488  0.78858571  0.73501671  1

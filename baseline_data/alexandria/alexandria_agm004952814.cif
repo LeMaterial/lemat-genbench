@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_PmNbCr2O6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.49452330
+_cell_length_b   5.61286312
+_cell_length_c   5.83592040
+_cell_angle_alpha   64.43749283
+_cell_angle_beta   61.24780650
+_cell_angle_gamma   59.18566742
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PmNbCr2O6
+_chemical_formula_sum   'Pm1 Nb1 Cr2 O6'
+_cell_volume   131.35673801
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.80217443  0.80222451  0.58879678  1
+  Nb  Nb1  1  0.31347073  0.31169308  0.05476241  1
+  Cr  Cr2  1  0.52256619  0.51048844  0.44579589  1
+  Cr  Cr3  1  0.01301235  0.02689639  0.94901740  1
+  O  O4  1  0.58787199  0.24194410  0.23009493  1
+  O  O5  1  0.21689273  0.97327564  0.21156531  1
+  O  O6  1  0.93160324  0.56940340  0.25268119  1
+  O  O7  1  0.38997543  0.69963103  0.76340051  1
+  O  O8  1  0.72124495  0.12307734  0.77726833  1
+  O  O9  1  0.16278495  0.40296706  0.74181824  1

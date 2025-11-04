@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Li5H5Ru
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.91032942
+_cell_length_b   4.86003330
+_cell_length_c   5.69969608
+_cell_angle_alpha   100.75316095
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   113.72169788
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li5H5Ru
+_chemical_formula_sum   'Li5 H5 Ru1'
+_cell_volume   97.08587838
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.65673960  0.31347920  0.29310600  1
+  Li  Li1  1  0.67484266  0.34968532  0.84505206  1
+  Li  Li2  1  0.00000000  0.00000000  0.50000000  1
+  Li  Li3  1  0.32515734  0.65031468  0.15494794  1
+  Li  Li4  1  0.34326040  0.68652080  0.70689400  1
+  H  H5  1  0.85507822  0.71015544  0.16805954  1
+  H  H6  1  0.86372313  0.72744626  0.72760074  1
+  H  H7  1  0.50000000  0.00000000  0.00000000  1
+  H  H8  1  0.13627687  0.27255374  0.27239926  1
+  H  H9  1  0.14492178  0.28984456  0.83194046  1
+  Ru  Ru10  1  0.00000000  0.00000000  0.00000000  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_SrLiDyTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.84177239
+_cell_length_b   9.84177239
+_cell_length_c   9.23029288
+_cell_angle_alpha   103.56884932
+_cell_angle_beta   103.56884932
+_cell_angle_gamma   25.95738835
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrLiDyTe3
+_chemical_formula_sum   'Sr2 Li2 Dy2 Te6'
+_cell_volume   379.81680663
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.83378175  0.83378175  0.41316605  1
+  Dy  Dy1  1  0.16621787  0.16621787  0.58683384  1
+  Li  Li2  1  0.48229219  0.48229219  0.29565104  1
+  Li  Li3  1  0.51770795  0.51770795  0.70434884  1
+  Sr  Sr4  1  0.13246800  0.13246800  0.06798700  1
+  Sr  Sr5  1  0.86753214  0.86753214  0.93201288  1
+  Te  Te6  1  0.49999995  0.49999995  0.00000000  1
+  Te  Te7  1  0.32196711  0.32196711  0.17775764  1
+  Te  Te8  1  0.66845643  0.66845643  0.35590819  1
+  Te  Te9  1  -0.00000000  -0.00000000  0.50000050  1
+  Te  Te10  1  0.33154371  0.33154371  0.64409169  1
+  Te  Te11  1  0.67803316  0.67803316  0.82224336  1

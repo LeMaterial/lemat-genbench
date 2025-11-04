@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_PrTcHgO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.26673157
+_cell_length_b   6.09743317
+_cell_length_c   5.60974693
+_cell_angle_alpha   71.98540401
+_cell_angle_beta   103.06694223
+_cell_angle_gamma   69.42927249
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PrTcHgO6
+_chemical_formula_sum   'Pr1 Tc1 Hg1 O6'
+_cell_volume   148.62567621
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.65265205  0.66577300  0.65890717  1
+  Tc  Tc1  1  0.29872161  0.31353971  0.45764820  1
+  Hg  Hg2  1  0.01835665  0.96480746  0.03262138  1
+  O  O3  1  0.03210159  0.43732310  0.12910793  1
+  O  O4  1  0.26123986  0.03705606  0.64720447  1
+  O  O5  1  0.62425222  0.27799653  0.80356591  1
+  O  O6  1  0.08550761  0.54484240  0.56878636  1
+  O  O7  1  0.40473526  0.64390341  0.27702128  1
+  O  O8  1  0.62219665  0.11480842  0.42504829  1

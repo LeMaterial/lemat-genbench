@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Rb2Na2ZnAs2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.06607114
+_cell_length_b   10.06607114
+_cell_length_c   10.06607114
+_cell_angle_alpha   31.03232336
+_cell_angle_beta   31.03232336
+_cell_angle_gamma   31.03232336
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Rb2Na2ZnAs2
+_chemical_formula_sum   'Rb2 Na2 Zn1 As2'
+_cell_volume   240.47824183
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  As  As0  1  0.08057716  0.08057716  0.08057716  1
+  As  As1  1  0.91942274  0.91942274  0.91942274  1
+  Na  Na2  1  0.38570143  0.38570143  0.38570143  1
+  Na  Na3  1  0.61429847  0.61429847  0.61429847  1
+  Rb  Rb4  1  0.20620156  0.20620156  0.20620156  1
+  Rb  Rb5  1  0.79379835  0.79379835  0.79379835  1
+  Zn  Zn6  1  0.00000000  0.00000000  0.00000000  1

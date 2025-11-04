@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_PrAlPd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.19802444
+_cell_length_b   4.55186101
+_cell_length_c   7.89620485
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PrAlPd
+_chemical_formula_sum   'Pr4 Al4 Pd4'
+_cell_volume   258.71446778
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.35694655  0.75000093  0.06497299  1
+  Al  Al1  1  0.85694624  0.75000093  0.43502797  1
+  Al  Al2  1  0.14305314  0.25000104  0.56497268  1
+  Al  Al3  1  0.64305283  0.25000104  0.93502767  1
+  Pd  Pd4  1  0.71592283  0.75000093  0.11568089  1
+  Pd  Pd5  1  0.21592175  0.75000093  0.38432007  1
+  Pd  Pd6  1  0.78407764  0.25000104  0.61568058  1
+  Pd  Pd7  1  0.28407795  0.25000104  0.88431976  1
+  Pr  Pr8  1  0.03661005  0.25000104  0.17816660  1
+  Pr  Pr9  1  0.53660974  0.25000104  0.32183436  1
+  Pr  Pr10  1  0.46338965  0.75000093  0.67816630  1
+  Pr  Pr11  1  0.96338934  0.75000093  0.82183405  1

@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_RbErNiTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   12.25357129
+_cell_length_b   4.48759294
+_cell_length_c   13.59137264
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   RbErNiTe3
+_chemical_formula_sum   'Rb4 Er4 Ni4 Te12'
+_cell_volume   747.37653335
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.49246623  0.74999895  0.15836517  1
+  Er  Er1  1  0.99246576  0.74999895  0.34163437  1
+  Er  Er2  1  0.00753413  0.25000039  0.65836544  1
+  Er  Er3  1  0.50753367  0.25000039  0.84163464  1
+  Ni  Ni4  1  0.27318077  0.25000039  0.20426634  1
+  Ni  Ni5  1  0.77318031  0.25000039  0.29573319  1
+  Ni  Ni6  1  0.22681959  0.74999895  0.70426661  1
+  Ni  Ni7  1  0.72681913  0.74999895  0.79573346  1
+  Rb  Rb8  1  0.15652824  0.74999895  0.00099181  1
+  Rb  Rb9  1  0.65652860  0.74999895  0.49900846  1
+  Rb  Rb10  1  0.34347130  0.25000039  0.50099134  1
+  Rb  Rb11  1  0.84347165  0.25000039  0.99900874  1
+  Te  Te12  1  0.37866756  0.25000039  0.04200385  1
+  Te  Te13  1  0.06338560  0.25000039  0.20015712  1
+  Te  Te14  1  0.78407264  0.74999895  0.21346409  1
+  Te  Te15  1  0.28407229  0.74999895  0.28653544  1
+  Te  Te16  1  0.56338514  0.25000039  0.29984242  1
+  Te  Te17  1  0.87866710  0.25000039  0.45799568  1
+  Te  Te18  1  0.12133279  0.74999895  0.54200412  1
+  Te  Te19  1  0.43661475  0.74999895  0.70015739  1
+  Te  Te20  1  0.71592761  0.25000039  0.71346436  1
+  Te  Te21  1  0.21592725  0.25000039  0.78653571  1
+  Te  Te22  1  0.93661429  0.74999895  0.79984269  1
+  Te  Te23  1  0.62133233  0.74999895  0.95799595  1

@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_La(SiIr)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.12985563
+_cell_length_b   4.12986219
+_cell_length_c   5.94025786
+_cell_angle_alpha   110.33587988
+_cell_angle_beta   110.33575736
+_cell_angle_gamma   89.98098207
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La(SiIr)2
+_chemical_formula_sum   'La1 Si2 Ir2'
+_cell_volume   88.23972483
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  -0.00000000  -0.00000000  0.00000000  1
+  Si  Si1  1  0.62902128  0.62902258  0.25807065  1
+  Si  Si2  1  0.37097772  0.37097842  0.74192935  1
+  Ir  Ir3  1  0.75003934  0.24996085  0.50000139  1
+  Ir  Ir4  1  0.24996166  0.75003715  0.49999861  1

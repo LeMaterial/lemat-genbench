@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_In2CoPb2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.95693412
+_cell_length_b   6.95693412
+_cell_length_c   5.50425621
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   In2CoPb2
+_chemical_formula_sum   'In4 Co2 Pb4'
+_cell_volume   266.40012394
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pb  Pb0  1  0.33168470  0.83168470  0.00000000  1
+  Pb  Pb1  1  0.83168470  0.66831530  0.00000000  1
+  Pb  Pb2  1  0.66831530  0.16831530  0.00000000  1
+  Pb  Pb3  1  0.16831530  0.33168470  0.00000000  1
+  Co  Co4  1  0.00000000  0.00000000  0.00000000  1
+  Co  Co5  1  0.50000000  0.50000000  0.00000000  1
+  In  In6  1  0.16421812  0.66421812  0.50000000  1
+  In  In7  1  0.66421812  0.83578188  0.50000000  1
+  In  In8  1  0.83578188  0.33578188  0.50000000  1
+  In  In9  1  0.33578188  0.16421812  0.50000000  1

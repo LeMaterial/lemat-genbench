@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_ErCd(H4Ir)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.31094749
+_cell_length_b   4.85852091
+_cell_length_c   6.55140353
+_cell_angle_alpha   61.46826489
+_cell_angle_beta   70.79133519
+_cell_angle_gamma   63.66312076
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ErCd(H4Ir)2
+_chemical_formula_sum   'Er1 Cd1 H8 Ir2'
+_cell_volume   106.83834668
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.50000000  0.50000000  0.50000000  1
+  Cd  Cd1  1  0.00000000  0.00000000  0.00000000  1
+  H  H2  1  0.91073719  0.54167750  0.63684912  1
+  H  H3  1  0.70438880  0.46377374  0.12744966  1
+  H  H4  1  0.08926281  0.45832250  0.36315088  1
+  H  H5  1  0.29561220  0.53622626  0.87255034  1
+  H  H6  1  0.57914301  0.02043449  0.33359041  1
+  H  H7  1  0.42085699  0.97956551  0.66640959  1
+  H  H8  1  0.06683109  0.02043449  0.33359041  1
+  H  H9  1  0.93316891  0.97956551  0.66640959  1
+  Ir  Ir10  1  0.27857778  0.28113751  0.16170693  1
+  Ir  Ir11  1  0.72142222  0.71886249  0.83829307  1

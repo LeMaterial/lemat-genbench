@@ -1,0 +1,52 @@
+# generated using pymatgen
+data_H2He6Li5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.57746438
+_cell_length_b   7.58236018
+_cell_length_c   23.54171877
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   H2He6Li5
+_chemical_formula_sum   'H4 He12 Li10'
+_cell_volume   817.08559059
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.50000000  0.68197766  0.87909306  1
+  H  H1  1  0.50000000  0.31802234  0.12090694  1
+  H  H2  1  0.50000000  0.18197766  0.62090694  1
+  H  H3  1  0.50000000  0.81802234  0.37909306  1
+  He  He4  1  0.50000000  0.70640583  0.49727770  1
+  He  He5  1  0.50000000  0.29359417  0.50272230  1
+  He  He6  1  0.50000000  0.20640583  0.00272230  1
+  He  He7  1  0.50000000  0.79359417  0.99727770  1
+  He  He8  1  0.50000000  0.51192430  0.31168828  1
+  He  He9  1  0.50000000  0.48807570  0.68831172  1
+  He  He10  1  0.50000000  0.01192430  0.18831172  1
+  He  He11  1  0.50000000  0.98807570  0.81168828  1
+  He  He12  1  0.00000000  0.46369330  0.86383886  1
+  He  He13  1  0.00000000  0.53630670  0.13616114  1
+  He  He14  1  0.00000000  0.96369330  0.63616114  1
+  He  He15  1  0.00000000  0.03630670  0.36383886  1
+  Li  Li16  1  0.00000000  0.50000000  0.00000000  1
+  Li  Li17  1  0.00000000  0.00000000  0.50000000  1
+  Li  Li18  1  0.00000000  0.22841059  0.74500782  1
+  Li  Li19  1  0.00000000  0.77158941  0.25499218  1
+  Li  Li20  1  0.00000000  0.72841059  0.75499218  1
+  Li  Li21  1  0.00000000  0.27158941  0.24500782  1
+  Li  Li22  1  0.00000000  0.96410033  0.08857040  1
+  Li  Li23  1  0.00000000  0.03589967  0.91142960  1
+  Li  Li24  1  0.00000000  0.46410033  0.41142960  1
+  Li  Li25  1  0.00000000  0.53589967  0.58857040  1

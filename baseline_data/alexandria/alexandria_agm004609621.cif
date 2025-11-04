@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Tb2Ho(AgS2)3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.05116421
+_cell_length_b   9.56512939
+_cell_length_c   8.00310142
+_cell_angle_alpha   105.02934541
+_cell_angle_beta   104.66100911
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb2Ho(AgS2)3
+_chemical_formula_sum   'Tb2 Ho1 Ag3 S6'
+_cell_volume   289.04347365
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.83744806  0.68081632  0.67489612  1
+  Tb  Tb1  1  0.16255194  0.31918368  0.32510388  1
+  Ho  Ho2  1  0.50000000  0.00000000  0.00000000  1
+  Ag  Ag3  1  0.50000000  0.50000000  0.00000000  1
+  Ag  Ag4  1  0.84496257  0.27049340  0.68992515  1
+  Ag  Ag5  1  0.15503743  0.72950660  0.31007485  1
+  S  S6  1  0.32165296  0.85985200  0.64330592  1
+  S  S7  1  0.65756053  0.52534480  0.31512206  1
+  S  S8  1  0.67834704  0.14014800  0.35669408  1
+  S  S9  1  0.98411817  0.18569792  0.96823534  1
+  S  S10  1  0.01588183  0.81430208  0.03176466  1
+  S  S11  1  0.34243947  0.47465520  0.68487794  1

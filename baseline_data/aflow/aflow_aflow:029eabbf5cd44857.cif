@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_H3He5Li6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.05918942
+_cell_length_b   10.05918942
+_cell_length_c   15.17585365
+_cell_angle_alpha   53.31719893
+_cell_angle_beta   53.31719893
+_cell_angle_gamma   25.67693881
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   H3He5Li6
+_chemical_formula_sum   'H3 He5 Li6'
+_cell_volume   525.85250699
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.87206577  0.87206577  0.37715946  1
+  H  H1  1  0.12793423  0.12793423  0.62284054  1
+  H  H2  1  0.50000000  0.50000000  0.50000000  1
+  He  He3  1  0.37224920  0.37224920  0.87549411  1
+  He  He4  1  0.62775080  0.62775080  0.12450589  1
+  He  He5  1  0.74689350  0.74689350  0.76113987  1
+  He  He6  1  0.25310650  0.25310650  0.23886013  1
+  He  He7  1  -0.00000000  -0.00000000  -0.00000000  1
+  Li  Li8  1  0.31627590  0.31627590  0.55258572  1
+  Li  Li9  1  0.68372410  0.68372410  0.44741428  1
+  Li  Li10  1  0.95190394  0.95190394  0.66749264  1
+  Li  Li11  1  0.04809606  0.04809606  0.33250736  1
+  Li  Li12  1  0.56894427  0.56894427  0.78769963  1
+  Li  Li13  1  0.43105573  0.43105573  0.21230037  1

@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_SrPa3(CuO3)4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.12831472
+_cell_length_b   7.12831472
+_cell_length_c   7.12831472
+_cell_angle_alpha   105.07947180
+_cell_angle_beta   105.07947174
+_cell_angle_gamma   105.07947178
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrPa3(CuO3)4
+_chemical_formula_sum   'Sr1 Pa3 Cu4 O12'
+_cell_volume   316.12794716
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.00000000  0.00000000  0.00000000  1
+  Pa  Pa1  1  0.55429839  0.44570161  0.00000000  1
+  Pa  Pa2  1  0.44570161  0.00000000  0.55429839  1
+  Pa  Pa3  1  0.00000000  0.55429839  0.44570161  1
+  Cu  Cu4  1  0.93147388  0.06852612  0.50000000  1
+  Cu  Cu5  1  0.06852612  0.50000000  0.93147388  1
+  Cu  Cu6  1  0.50000000  0.93147388  0.06852612  1
+  Cu  Cu7  1  0.50000000  0.50000000  0.50000000  1
+  O  O8  1  0.50000000  0.33458700  0.66541300  1
+  O  O9  1  0.89632680  0.50000000  0.10367320  1
+  O  O10  1  0.10367320  0.89632680  0.50000000  1
+  O  O11  1  0.50000000  0.10367320  0.89632680  1
+  O  O12  1  0.35285328  0.99180414  0.24192991  1
+  O  O13  1  0.24192991  0.35285328  0.99180414  1
+  O  O14  1  0.99180414  0.24192991  0.35285328  1
+  O  O15  1  0.64714672  0.75807009  0.00819586  1
+  O  O16  1  0.00819586  0.64714672  0.75807009  1
+  O  O17  1  0.75807009  0.00819586  0.64714672  1
+  O  O18  1  0.66541300  0.50000000  0.33458700  1
+  O  O19  1  0.33458700  0.66541300  0.50000000  1

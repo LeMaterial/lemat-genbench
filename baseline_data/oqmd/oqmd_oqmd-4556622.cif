@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_YMgAgTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.41934906
+_cell_length_b   7.41934906
+_cell_length_c   11.30890100
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   147.46463986
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   YMgAgTe3
+_chemical_formula_sum   'Y2 Mg2 Ag2 Te6'
+_cell_volume   334.80270905
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.01976989  0.98023156  0.24999954  1
+  Ag  Ag1  1  0.98023156  0.01976989  0.74999949  1
+  Mg  Mg2  1  0.72114124  0.27886020  0.24999954  1
+  Mg  Mg3  1  0.27886020  0.72114124  0.74999949  1
+  Te  Te4  1  0.15051269  0.84948875  0.06728240  1
+  Te  Te5  1  0.38505547  0.61494597  0.24999954  1
+  Te  Te6  1  0.15051269  0.84948875  0.43271844  1
+  Te  Te7  1  0.84948875  0.15051269  0.56728236  1
+  Te  Te8  1  0.61494597  0.38505547  0.74999949  1
+  Te  Te9  1  0.84948875  0.15051269  0.93271840  1
+  Y  Y10  1  0.50000072  0.50000072  0.00000000  1
+  Y  Y11  1  0.50000072  0.50000072  0.49999996  1

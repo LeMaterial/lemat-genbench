@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_Ba3SrTe2O9
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.16802314
+_cell_length_b   6.16802314
+_cell_length_c   7.55900869
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba3SrTe2O9
+_chemical_formula_sum   'Ba3 Sr1 Te2 O9'
+_cell_volume   249.05052696
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.33333333  0.66666667  0.68194110  1
+  Ba  Ba1  1  0.00000000  0.00000000  0.00000000  1
+  Ba  Ba2  1  0.66666667  0.33333333  0.31805890  1
+  Sr  Sr3  1  0.00000000  0.00000000  0.50000000  1
+  Te  Te4  1  0.33333333  0.66666667  0.16781387  1
+  Te  Te5  1  0.66666667  0.33333333  0.83218613  1
+  O  O6  1  0.81841657  0.18158343  0.68665062  1
+  O  O7  1  0.81841657  0.63683315  0.68665062  1
+  O  O8  1  0.36316685  0.18158343  0.68665062  1
+  O  O9  1  0.63683315  0.81841657  0.31334938  1
+  O  O10  1  0.18158343  0.36316685  0.31334938  1
+  O  O11  1  0.18158343  0.81841657  0.31334938  1
+  O  O12  1  0.50000000  0.00000000  0.00000000  1
+  O  O13  1  0.00000000  0.50000000  0.00000000  1
+  O  O14  1  0.50000000  0.50000000  0.00000000  1

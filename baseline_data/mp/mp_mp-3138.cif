@@ -1,0 +1,52 @@
+# generated using pymatgen
+data_Na8SnSb4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.45185698
+_cell_length_b   10.45186483
+_cell_length_c   10.45184407
+_cell_angle_alpha   59.99033384
+_cell_angle_beta   59.99045239
+_cell_angle_gamma   59.99024768
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na8SnSb4
+_chemical_formula_sum   'Na16 Sn2 Sb8'
+_cell_volume   807.17941599
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.62499999  0.12499942  0.62500023  1
+  Na  Na1  1  0.62499949  0.62500024  0.12500001  1
+  Na  Na2  1  0.12499977  0.62499977  0.62499994  1
+  Na  Na3  1  0.62500010  0.62500006  0.62500018  1
+  Na  Na4  1  0.02030679  0.02030515  0.47971569  1
+  Na  Na5  1  0.77028239  0.22969498  0.22969610  1
+  Na  Na6  1  0.22972162  0.77029793  0.77029690  1
+  Na  Na7  1  0.77029682  0.77029750  0.22972172  1
+  Na  Na8  1  0.77029680  0.22972128  0.77029670  1
+  Na  Na9  1  0.22969439  0.77028333  0.22969547  1
+  Na  Na10  1  0.47970210  0.02027893  0.47970244  1
+  Na  Na11  1  0.47971551  0.02030610  0.02030578  1
+  Na  Na12  1  0.02027954  0.47970076  0.47970219  1
+  Na  Na13  1  0.02030599  0.47971626  0.02030518  1
+  Na  Na14  1  0.22969514  0.22969460  0.77028277  1
+  Na  Na15  1  0.47970225  0.47970274  0.02027973  1
+  Sn  Sn16  1  0.49999637  0.49999674  0.49999653  1
+  Sn  Sn17  1  0.75000362  0.75000358  0.75000346  1
+  Sb  Sb18  1  0.41537464  0.86154363  0.86154284  1
+  Sb  Sb19  1  0.86153332  0.86153224  0.86153293  1
+  Sb  Sb20  1  0.83443407  0.38852183  0.38852210  1
+  Sb  Sb21  1  0.38852776  0.38852778  0.38852807  1
+  Sb  Sb22  1  0.38852264  0.38852164  0.83443427  1
+  Sb  Sb23  1  0.86154311  0.41537479  0.86154368  1
+  Sb  Sb24  1  0.86154412  0.86154296  0.41537401  1
+  Sb  Sb25  1  0.38852165  0.83443576  0.38852110  1

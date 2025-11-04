@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Sm3Y2ErCoTe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.98493392
+_cell_length_b   8.38143564
+_cell_length_c   8.38143564
+_cell_angle_alpha   119.73379775
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sm3Y2ErCoTe2
+_chemical_formula_sum   'Sm3 Y2 Er1 Co1 Te2'
+_cell_volume   243.07892690
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.50000076  0.00714070  0.00714070  1
+  Er  Er1  1  0.00000000  0.22975503  0.22975503  1
+  Sm  Sm2  1  0.50000076  0.40214531  0.00124206  1
+  Sm  Sm3  1  0.50000076  0.00124206  0.40214531  1
+  Sm  Sm4  1  0.50000076  0.59424226  0.59424226  1
+  Te  Te5  1  0.00000000  0.66673853  0.33357080  1
+  Te  Te6  1  0.00000000  0.33357080  0.66673853  1
+  Y  Y7  1  0.00000000  0.99931285  0.76585154  1
+  Y  Y8  1  0.00000000  0.76585154  0.99931285  1

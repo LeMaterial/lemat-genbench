@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_GdAlRh
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.19172340
+_cell_length_b   6.93033665
+_cell_length_c   7.98949455
+_cell_angle_alpha   90.00057987
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   GdAlRh
+_chemical_formula_sum   'Gd4 Al4 Rh4'
+_cell_volume   232.09525055
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Gd  Gd0  1  0.25000000  0.53813930  0.18001549  1
+  Gd  Gd1  1  0.75000000  0.46186070  0.81998451  1
+  Gd  Gd2  1  0.75000000  0.96186300  0.68001602  1
+  Gd  Gd3  1  0.25000000  0.03813700  0.31998398  1
+  Al  Al4  1  0.25000000  0.63327313  0.55984465  1
+  Al  Al5  1  0.75000000  0.36672687  0.44015535  1
+  Al  Al6  1  0.75000000  0.86669872  0.05986530  1
+  Al  Al7  1  0.25000000  0.13330128  0.94013470  1
+  Rh  Rh8  1  0.25000000  0.76724996  0.88063048  1
+  Rh  Rh9  1  0.75000000  0.23275004  0.11936952  1
+  Rh  Rh10  1  0.75000000  0.73275840  0.38059641  1
+  Rh  Rh11  1  0.25000000  0.26724160  0.61940359  1

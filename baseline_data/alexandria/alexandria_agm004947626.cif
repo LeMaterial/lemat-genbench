@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_HfTi(FeO3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.27223771
+_cell_length_b   5.29411098
+_cell_length_c   5.63854751
+_cell_angle_alpha   62.09013369
+_cell_angle_beta   61.62537975
+_cell_angle_gamma   59.79920212
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfTi(FeO3)2
+_chemical_formula_sum   'Hf1 Ti1 Fe2 O6'
+_cell_volume   114.12185150
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.81124119  0.81823001  0.55819526  1
+  Ti  Ti1  1  0.31021877  0.30959380  0.06413883  1
+  Fe  Fe2  1  0.52882219  0.51658896  0.43203384  1
+  Fe  Fe3  1  0.02699735  0.02657755  0.92413662  1
+  O  O4  1  0.59099784  0.20359043  0.24539644  1
+  O  O5  1  0.20519948  0.95665847  0.25102607  1
+  O  O6  1  0.94576055  0.58094089  0.25692987  1
+  O  O7  1  0.43258427  0.70361157  0.76834327  1
+  O  O8  1  0.69707956  0.10328907  0.76448387  1
+  O  O9  1  0.11269580  0.44252027  0.75051692  1

@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_Er4Al2Tl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.08124730
+_cell_length_b   6.61558470
+_cell_length_c   8.63657479
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   111.66508843
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Er4Al2Tl
+_chemical_formula_sum   'Er8 Al4 Tl2'
+_cell_volume   376.01262991
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.60079411  0.48781977  0.23445133  1
+  Er  Er1  1  0.91128040  0.75000000  0.74063372  1
+  Er  Er2  1  0.08871960  0.25000000  0.25936628  1
+  Er  Er3  1  0.60079411  0.01218023  0.23445133  1
+  Er  Er4  1  0.95667782  0.25000000  0.58935498  1
+  Er  Er5  1  0.39920589  0.98781977  0.76554867  1
+  Er  Er6  1  0.39920589  0.51218023  0.76554867  1
+  Er  Er7  1  0.04332218  0.75000000  0.41064502  1
+  Al  Al8  1  0.78361213  0.75000000  0.03575727  1
+  Al  Al9  1  0.21638787  0.25000000  0.96424273  1
+  Al  Al10  1  0.50709300  0.25000000  0.52017670  1
+  Al  Al11  1  0.49290700  0.75000000  0.47982330  1
+  Tl  Tl12  1  0.21005525  0.75000000  0.10059487  1
+  Tl  Tl13  1  0.78994475  0.25000000  0.89940513  1

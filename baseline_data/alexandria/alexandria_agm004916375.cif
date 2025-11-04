@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_HfV2NiO8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.73264989
+_cell_length_b   5.73264989
+_cell_length_c   5.65011851
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000016
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfV2NiO8
+_chemical_formula_sum   'Hf1 V2 Ni1 O8'
+_cell_volume   160.80480665
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.00000000  0.00000000  0.00000000  1
+  V  V1  1  0.66666667  0.33333333  0.32616125  1
+  V  V2  1  0.33333333  0.66666667  0.67383875  1
+  Ni  Ni3  1  0.00000000  0.00000000  0.50000000  1
+  O  O4  1  0.84149301  0.15850698  0.24030274  1
+  O  O5  1  0.84149301  0.68298603  0.24030274  1
+  O  O6  1  0.31701396  0.15850698  0.24030274  1
+  O  O7  1  0.68298604  0.84149302  0.75969726  1
+  O  O8  1  0.33333333  0.66666667  0.38722851  1
+  O  O9  1  0.66666667  0.33333333  0.61277149  1
+  O  O10  1  0.15850699  0.84149302  0.75969726  1
+  O  O11  1  0.15850699  0.31701397  0.75969726  1

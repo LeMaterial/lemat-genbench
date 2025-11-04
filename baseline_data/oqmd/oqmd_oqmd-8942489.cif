@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_GaGe(Mo2C)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.10458322
+_cell_length_b   3.10458322
+_cell_length_c   12.91667078
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   GaGe(Mo2C)2
+_chemical_formula_sum   'Ga1 Ge1 Mo4 C2'
+_cell_volume   107.81714659
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  C  C0  1  0.66666690  0.33333483  0.24751889  1
+  C  C1  1  0.66666690  0.33333483  0.75248183  1
+  Ga  Ga2  1  0.00000000  0.00000000  0.50000036  1
+  Ge  Ge3  1  0.33333297  0.66666594  0.00000000  1
+  Mo  Mo4  1  0.00000000  0.00000000  0.15723324  1
+  Mo  Mo5  1  0.33333297  0.66666594  0.33553615  1
+  Mo  Mo6  1  0.33333297  0.66666594  0.66446456  1
+  Mo  Mo7  1  0.00000000  0.00000000  0.84276747  1

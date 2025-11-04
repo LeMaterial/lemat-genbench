@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_SrLiTbSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.11826085
+_cell_length_b   7.11826085
+_cell_length_c   10.75601595
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   145.91090262
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrLiTbSe3
+_chemical_formula_sum   'Sr2 Li2 Tb2 Se6'
+_cell_volume   305.46429338
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.97699198  0.02300793  0.24999963  1
+  Li  Li1  1  0.02300793  0.97699198  0.74999982  1
+  Se  Se2  1  0.86324826  0.13675165  0.06705271  1
+  Se  Se3  1  0.58012948  0.41987043  0.24999963  1
+  Se  Se4  1  0.86324826  0.13675165  0.43294655  1
+  Se  Se5  1  0.13675165  0.86324826  0.56705290  1
+  Se  Se6  1  0.41987043  0.58012948  0.74999982  1
+  Se  Se7  1  0.13675165  0.86324826  0.93294674  1
+  Sr  Sr8  1  0.25143651  0.74856340  0.24999963  1
+  Sr  Sr9  1  0.74856340  0.25143651  0.74999982  1
+  Tb  Tb10  1  0.49999995  0.49999995  0.00000000  1
+  Tb  Tb11  1  0.49999995  0.49999995  0.50000019  1

@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Rb4Sb2O5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.03786090
+_cell_length_b   10.03786090
+_cell_length_c   6.72624000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   157.02011413
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Rb4Sb2O5
+_chemical_formula_sum   'Rb4 Sb2 O5'
+_cell_volume   264.58996146
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rb  Rb0  1  0.90713700  0.09286300  0.50000000  1
+  Rb  Rb1  1  0.09169000  0.90831000  0.00000000  1
+  Rb  Rb2  1  0.23760000  0.76240000  0.50000000  1
+  Rb  Rb3  1  0.76254700  0.23745300  0.00000000  1
+  Sb  Sb4  1  0.58917200  0.41082800  0.50000000  1
+  Sb  Sb5  1  0.41343900  0.58656100  0.00000000  1
+  O  O6  1  0.65114600  0.34885400  0.27646200  1
+  O  O7  1  0.34939200  0.65060800  0.22150400  1
+  O  O8  1  0.65114600  0.34885400  0.72353800  1
+  O  O9  1  0.34939200  0.65060800  0.77849600  1
+  O  O10  1  0.05353900  0.94646100  0.50000000  1

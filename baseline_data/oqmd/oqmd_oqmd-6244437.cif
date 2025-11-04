@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Dy3Y2Er2(NiTe)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.34883767
+_cell_length_b   9.34883767
+_cell_length_c   9.34883767
+_cell_angle_alpha   156.26498497
+_cell_angle_beta   66.94342085
+_cell_angle_gamma   118.43901901
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy3Y2Er2(NiTe)2
+_chemical_formula_sum   'Dy3 Y2 Er2 Ni2 Te2'
+_cell_volume   286.92378420
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.26391734  0.89539636  0.36852028  1
+  Dy  Dy1  1  0.97723049  0.47723049  0.50000000  1
+  Dy  Dy2  1  0.52687607  0.89539636  0.63147901  1
+  Er  Er3  1  0.89204796  0.74560785  0.14644011  1
+  Er  Er4  1  0.59916785  0.74560760  0.85355954  1
+  Ni  Ni5  1  0.66650907  0.40495511  0.26155396  1
+  Ni  Ni6  1  0.14340126  0.40495487  0.73844569  1
+  Te  Te7  1  0.24148089  0.24148089  0.00000000  1
+  Te  Te8  1  0.64161824  0.14161823  0.50000000  1
+  Y  Y9  1  0.28136519  0.09693849  0.18442670  1
+  Y  Y10  1  0.91251180  0.09693849  0.81557331  1

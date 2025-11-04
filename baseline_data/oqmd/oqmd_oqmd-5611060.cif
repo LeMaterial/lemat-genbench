@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_K2Sb2Pd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.26538145
+_cell_length_b   8.26538145
+_cell_length_c   6.36607440
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   129.53638160
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K2Sb2Pd
+_chemical_formula_sum   'K4 Sb4 Pd2'
+_cell_volume   335.41006829
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.59033431  0.40966577  0.25000022  1
+  K  K1  1  0.19743420  0.80256588  0.25000022  1
+  K  K2  1  0.80256588  0.19743420  0.75000066  1
+  K  K3  1  0.40966577  0.59033431  0.75000066  1
+  Pd  Pd4  1  0.00000000  0.00000000  0.00000000  1
+  Pd  Pd5  1  0.00000000  0.00000000  0.50000044  1
+  Sb  Sb6  1  0.09166639  0.31149481  0.25000022  1
+  Sb  Sb7  1  0.68850527  0.90833369  0.25000022  1
+  Sb  Sb8  1  0.31149481  0.09166639  0.75000066  1
+  Sb  Sb9  1  0.90833369  0.68850527  0.75000066  1

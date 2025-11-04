@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Cs2PaCuS5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.11009069
+_cell_length_b   10.67515343
+_cell_length_c   14.32323870
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   101.09914576
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cs2PaCuS5
+_chemical_formula_sum   'Cs4 Pa2 Cu2 S10'
+_cell_volume   616.68954055
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.87456211  0.74912421  0.83144126  1
+  Cs  Cs1  1  0.12812814  0.25625629  0.69527198  1
+  Cs  Cs2  1  0.12543789  0.25087579  0.33144126  1
+  Cs  Cs3  1  0.87187186  0.74374371  0.19527198  1
+  Pa  Pa4  1  0.79570345  0.59140690  0.51902540  1
+  Pa  Pa5  1  0.20429655  0.40859310  0.01902540  1
+  Cu  Cu6  1  0.58991062  0.17982125  0.91975226  1
+  Cu  Cu7  1  0.41008938  0.82017875  0.41975226  1
+  S  S8  1  0.32282553  0.64565106  0.01478627  1
+  S  S9  1  0.70018271  0.40036541  0.89511088  1
+  S  S10  1  0.51244834  0.02489667  0.82031818  1
+  S  S11  1  0.30574312  0.61148624  0.63840901  1
+  S  S12  1  0.92392264  0.84784528  0.48985475  1
+  S  S13  1  0.67717447  0.35434894  0.51478627  1
+  S  S14  1  0.29981729  0.59963459  0.39511088  1
+  S  S15  1  0.48755166  0.97510333  0.32031818  1
+  S  S16  1  0.69425688  0.38851376  0.13840901  1
+  S  S17  1  0.07607736  0.15215472  0.98985475  1

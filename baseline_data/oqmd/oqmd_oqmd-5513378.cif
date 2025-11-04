@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Y3Al3Si2Os
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.91297819
+_cell_length_b   6.91297819
+_cell_length_c   4.24841191
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Y3Al3Si2Os
+_chemical_formula_sum   'Y3 Al3 Si2 Os1'
+_cell_volume   175.82783258
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.77111049  0.00000000  0.50000095  1
+  Al  Al1  1  0.22888899  0.22888966  0.50000095  1
+  Al  Al2  1  -0.00000000  0.77111122  0.50000095  1
+  Os  Os3  1  0.00000000  0.00000000  0.00000000  1
+  Si  Si4  1  0.66666639  0.33333251  0.50000095  1
+  Si  Si5  1  0.33333335  0.66666670  0.50000095  1
+  Y  Y6  1  0.42198455  0.00000000  0.00000000  1
+  Y  Y7  1  0.00000000  0.42198400  0.00000000  1
+  Y  Y8  1  0.57801474  0.57801521  0.00000000  1

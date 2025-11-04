@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_TmTlBiTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.07607169
+_cell_length_b   8.07607169
+_cell_length_c   12.52068641
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   149.69347256
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TmTlBiTe3
+_chemical_formula_sum   'Tm2 Tl2 Bi2 Te6'
+_cell_volume   412.09569462
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Bi  Bi0  1  0.88581792  0.11418175  0.24999987  1
+  Bi  Bi1  1  0.11418175  0.88581792  0.74999962  1
+  Te  Te2  1  0.86135821  0.13864146  0.00633032  1
+  Te  Te3  1  0.53757456  0.46242511  0.24999987  1
+  Te  Te4  1  0.86135821  0.13864146  0.49366942  1
+  Te  Te5  1  0.13864146  0.86135821  0.50633087  1
+  Te  Te6  1  0.46242511  0.53757456  0.74999962  1
+  Te  Te7  1  0.13864146  0.86135821  0.99366916  1
+  Tl  Tl8  1  0.20710416  0.79289551  0.24999987  1
+  Tl  Tl9  1  0.79289551  0.20710416  0.74999962  1
+  Tm  Tm10  1  0.49999984  0.49999984  0.00000000  1
+  Tm  Tm11  1  0.49999984  0.49999984  0.49999974  1

@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_Li2PbN2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.44339700
+_cell_length_b   3.44341537
+_cell_length_c   5.60768500
+_cell_angle_alpha   90.00002759
+_cell_angle_beta   89.99967013
+_cell_angle_gamma   120.00018912
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2PbN2
+_chemical_formula_sum   'Li2 Pb1 N2'
+_cell_volume   57.58242148
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.66666500  0.33333200  0.37958500  1
+  Li  Li1  1  0.33333500  0.66666800  0.62041500  1
+  Pb  Pb2  1  0.00000000  0.00000000  0.00000000  1
+  N  N3  1  0.66666400  0.33333200  0.75965900  1
+  N  N4  1  0.33333600  0.66666800  0.24034100  1

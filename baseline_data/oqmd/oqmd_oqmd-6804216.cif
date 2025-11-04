@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_K2ZnAgF6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.81738139
+_cell_length_b   5.81738139
+_cell_length_c   5.81738139
+_cell_angle_alpha   59.76546707
+_cell_angle_beta   59.76546707
+_cell_angle_gamma   59.76546708
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K2ZnAgF6
+_chemical_formula_sum   'K2 Zn1 Ag1 F6'
+_cell_volume   138.46777442
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.00000000  0.00000000  0.00000000  1
+  F  F1  1  0.26331923  0.73849265  0.26126175  1
+  F  F2  1  0.73873749  0.73668116  0.26150751  1
+  F  F3  1  0.73849196  0.26126221  0.26331946  1
+  F  F4  1  0.26150797  0.73873772  0.73668046  1
+  F  F5  1  0.26126244  0.26331877  0.73849242  1
+  F  F6  1  0.73668070  0.26150728  0.73873818  1
+  K  K7  1  0.24989735  0.24989735  0.24989735  1
+  K  K8  1  0.75010257  0.75010257  0.75010257  1
+  Zn  Zn9  1  0.49999996  0.49999996  0.49999996  1

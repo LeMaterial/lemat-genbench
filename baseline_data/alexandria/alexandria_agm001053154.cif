@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_SrAlPd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.69370117
+_cell_length_b   5.11111696
+_cell_length_c   7.23304064
+_cell_angle_alpha   124.16144301
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrAlPd
+_chemical_formula_sum   'Sr2 Al2 Pd2'
+_cell_volume   143.58148992
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pd  Pd0  1  0.25000000  0.75652368  0.38873884  1
+  Pd  Pd1  1  0.75000000  0.24347632  0.61126116  1
+  Al  Al2  1  0.25000000  0.33707409  0.49150995  1
+  Al  Al3  1  0.75000000  0.66292591  0.50849005  1
+  Sr  Sr4  1  0.25000000  0.16335108  0.89080823  1
+  Sr  Sr5  1  0.75000000  0.83664892  0.10919177  1

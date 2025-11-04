@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_MgMo2HO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.83979369
+_cell_length_b   7.84260627
+_cell_length_c   4.00267226
+_cell_angle_alpha   90.89451718
+_cell_angle_beta   90.81517758
+_cell_angle_gamma   29.44239387
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgMo2HO6
+_chemical_formula_sum   'Mg1 Mo2 H1 O6'
+_cell_volume   120.95614448
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg0  1  0.69253300  0.79204200  0.20227600  1
+  Mo  Mo1  1  0.02895500  0.13005000  0.25212900  1
+  Mo  Mo2  1  0.96944600  0.86341000  0.73195600  1
+  H  H3  1  0.18423300  0.30414500  0.52229600  1
+  O  O4  1  0.91657200  0.95521800  0.23176100  1
+  O  O5  1  0.02184200  0.08923700  0.73582200  1
+  O  O6  1  0.56072800  0.65078000  0.20668900  1
+  O  O7  1  0.41798700  0.42834200  0.72811600  1
+  O  O8  1  0.17735100  0.27189600  0.28705500  1
+  O  O9  1  0.76126600  0.81989700  0.72515000  1

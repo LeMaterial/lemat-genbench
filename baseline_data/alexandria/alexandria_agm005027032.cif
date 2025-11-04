@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_LaSmHo3Sc
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.01070440
+_cell_length_b   7.88981698
+_cell_length_c   10.04044269
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   108.51437055
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaSmHo3Sc
+_chemical_formula_sum   'La2 Sm2 Ho6 Sc2'
+_cell_volume   376.39053677
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.49794503  0.99589107  0.75000000  1
+  La  La1  1  0.50205497  0.00410893  0.25000000  1
+  Sm  Sm2  1  0.00000000  0.00000000  0.50000000  1
+  Sm  Sm3  1  0.00000000  0.00000000  0.00000000  1
+  Ho  Ho4  1  0.66947820  0.33895639  0.50086824  1
+  Ho  Ho5  1  0.33052180  0.66104361  0.49913176  1
+  Ho  Ho6  1  0.33052180  0.66104361  0.00086824  1
+  Ho  Ho7  1  0.66947820  0.33895639  0.99913176  1
+  Ho  Ho8  1  0.17165519  0.34330937  0.75000000  1
+  Ho  Ho9  1  0.82834481  0.65669063  0.25000000  1
+  Sc  Sc10  1  0.83000433  0.66000866  0.75000000  1
+  Sc  Sc11  1  0.16999567  0.33999134  0.25000000  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_MoI3Cl2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.92290726
+_cell_length_b   7.35046362
+_cell_length_c   9.87464873
+_cell_angle_alpha   70.80058773
+_cell_angle_beta   88.23477075
+_cell_angle_gamma   63.49781034
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MoI3Cl2
+_chemical_formula_sum   'Mo2 I6 Cl4'
+_cell_volume   420.65762614
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cl  Cl0  1  0.05958925  0.68096254  0.07411298  1
+  Cl  Cl1  1  0.72245004  0.52199758  0.25789607  1
+  Cl  Cl2  1  0.27752761  0.47801909  0.74210413  1
+  Cl  Cl3  1  0.94042013  0.31904029  0.92587314  1
+  I  I4  1  0.54851571  0.09646078  0.14420420  1
+  I  I5  1  0.12733214  0.89825663  0.34031997  1
+  I  I6  1  0.25564980  0.30606403  0.45110188  1
+  I  I7  1  0.74431899  0.69399701  0.54885177  1
+  I  I8  1  0.87263035  0.10172831  0.65967698  1
+  I  I9  1  0.45148197  0.90354146  0.85579166  1
+  Mo  Mo10  1  0.89339168  0.72670598  0.27413900  1
+  Mo  Mo11  1  0.10668864  0.27322220  0.72592507  1

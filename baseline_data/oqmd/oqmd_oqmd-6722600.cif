@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_NaZnPS3O
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.71074566
+_cell_length_b   5.79113460
+_cell_length_c   5.86250910
+_cell_angle_alpha   62.90543008
+_cell_angle_beta   63.17314029
+_cell_angle_gamma   64.99176708
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaZnPS3O
+_chemical_formula_sum   'Na1 Zn1 P1 S3 O1'
+_cell_volume   148.16035039
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.08540578  0.99975120  0.92670767  1
+  O  O1  1  0.31341475  0.25023724  0.50591735  1
+  P  P2  1  0.24413248  0.24816484  0.27953230  1
+  S  S3  1  0.90629983  0.53780621  0.18386200  1
+  S  S4  1  0.14978264  0.89225762  0.41213642  1
+  S  S5  1  0.56087516  0.33527346  0.92714056  1
+  Zn  Zn6  1  0.49008479  0.48650638  0.51470880  1

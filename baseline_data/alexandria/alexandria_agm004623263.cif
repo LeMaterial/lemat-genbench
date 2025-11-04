@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_K3Ho2TiSe6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.09182439
+_cell_length_b   7.09182439
+_cell_length_c   8.01329991
+_cell_angle_alpha   98.51074435
+_cell_angle_beta   98.51074433
+_cell_angle_gamma   120.01649542
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K3Ho2TiSe6
+_chemical_formula_sum   'K3 Ho2 Ti1 Se6'
+_cell_volume   333.32327186
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.17046571  0.82953429  0.50000000  1
+  K  K1  1  0.82953429  0.17046571  0.50000000  1
+  K  K2  1  0.50000000  0.50000000  0.50000000  1
+  Ho  Ho3  1  0.33371720  0.66628280  0.00000000  1
+  Ho  Ho4  1  0.66628280  0.33371720  0.00000000  1
+  Ti  Ti5  1  0.00000000  0.00000000  0.00000000  1
+  Se  Se6  1  0.93367833  0.61798504  0.80106055  1
+  Se  Se7  1  0.75159729  0.75159729  0.19981619  1
+  Se  Se8  1  0.06632167  0.38201496  0.19893945  1
+  Se  Se9  1  0.61798504  0.93367833  0.80106055  1
+  Se  Se10  1  0.24840271  0.24840271  0.80018381  1
+  Se  Se11  1  0.38201496  0.06632167  0.19893945  1

@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_V8Fe2N
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.10293308
+_cell_length_b   5.06624162
+_cell_length_c   7.07673029
+_cell_angle_alpha   105.77027862
+_cell_angle_beta   106.85131304
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   V8Fe2N
+_chemical_formula_sum   'V8 Fe2 N1'
+_cell_volume   134.98784174
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  V  V0  1  0.40826155  0.57109255  0.81652310  1
+  V  V1  1  0.63071415  0.95432689  0.26142930  1
+  V  V2  1  0.78870093  0.74052607  0.57740186  1
+  V  V3  1  0.99123382  0.24080732  0.98246664  1
+  V  V4  1  0.21129907  0.25947393  0.42259814  1
+  V  V5  1  0.36928585  0.04567311  0.73857070  1
+  V  V6  1  0.59173845  0.42890745  0.18347690  1
+  V  V7  1  0.00876718  0.75919268  0.01753436  1
+  Fe  Fe8  1  0.81940267  0.32959465  0.63880434  1
+  Fe  Fe9  1  0.18059733  0.67040535  0.36119566  1
+  N  N10  1  0.50000000  0.00000000  0.00000000  1

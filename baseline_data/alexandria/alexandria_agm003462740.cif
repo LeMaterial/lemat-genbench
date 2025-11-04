@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Er2TiS4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.78900239
+_cell_length_b   6.82781382
+_cell_length_c   7.08596902
+_cell_angle_alpha   119.87170462
+_cell_angle_beta   105.50720242
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Er2TiS4
+_chemical_formula_sum   'Er2 Ti1 S4'
+_cell_volume   151.21876386
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.72801212  0.73739481  0.45602524  1
+  Er  Er1  1  0.27198788  0.26260519  0.54397476  1
+  Ti  Ti2  1  0.00000000  0.00000000  0.00000000  1
+  S  S3  1  0.88731442  0.19191422  0.77462985  1
+  S  S4  1  0.11268558  0.80808578  0.22537015  1
+  S  S5  1  0.62680065  0.26683501  0.25360130  1
+  S  S6  1  0.37319935  0.73316499  0.74639870  1

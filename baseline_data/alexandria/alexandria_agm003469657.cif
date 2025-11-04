@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Pu2CdPd5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.32777918
+_cell_length_b   6.32778045
+_cell_length_c   5.86392438
+_cell_angle_alpha   122.65320440
+_cell_angle_beta   122.65322134
+_cell_angle_gamma   90.00007094
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pu2CdPd5
+_chemical_formula_sum   'Pu2 Cd1 Pd5'
+_cell_volume   151.75982788
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pu  Pu0  1  0.23010331  0.73009011  0.46019008  1
+  Pu  Pu1  1  0.73008863  0.23010373  0.46019137  1
+  Cd  Cd2  1  0.16433706  0.16433605  0.32867887  1
+  Pd  Pd3  1  0.69881994  0.24956230  0.94837488  1
+  Pd  Pd4  1  0.24954350  0.24954140  0.94835129  1
+  Pd  Pd5  1  0.69882217  0.69882187  0.94838173  1
+  Pd  Pd6  1  0.24955889  0.69881498  0.94836617  1
+  Pd  Pd7  1  0.75573151  0.75573356  0.51147161  1

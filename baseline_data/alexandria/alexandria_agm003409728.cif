@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_PrAl2Cu3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.26688088
+_cell_length_b   6.36220503
+_cell_length_c   6.36220503
+_cell_angle_alpha   101.42409757
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PrAl2Cu3
+_chemical_formula_sum   'Pr2 Al4 Cu6'
+_cell_volume   208.96722726
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.25000000  0.31404629  0.31404629  1
+  Pr  Pr1  1  0.75000000  0.68595371  0.68595371  1
+  Al  Al2  1  0.50000000  0.79024156  0.20975844  1
+  Al  Al3  1  0.00000000  0.79024156  0.20975844  1
+  Al  Al4  1  0.00000000  0.20975844  0.79024156  1
+  Al  Al5  1  0.50000000  0.20975844  0.79024156  1
+  Cu  Cu6  1  0.75000000  0.46054287  0.09663507  1
+  Cu  Cu7  1  0.75000000  0.09663507  0.46054287  1
+  Cu  Cu8  1  0.25000000  0.53945713  0.90336493  1
+  Cu  Cu9  1  0.75000000  0.06723145  0.06723145  1
+  Cu  Cu10  1  0.25000000  0.93276855  0.93276855  1
+  Cu  Cu11  1  0.25000000  0.90336493  0.53945713  1

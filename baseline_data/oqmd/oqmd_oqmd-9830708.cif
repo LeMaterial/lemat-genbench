@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_TlCu7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   2.68699085
+_cell_length_b   3.45626831
+_cell_length_c   34.09806567
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TlCu7
+_chemical_formula_sum   'Tl2 Cu14'
+_cell_volume   316.66741638
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.50000170  0.49999880  0.25971180  1
+  Cu  Cu1  1  0.00000000  0.00000000  0.29567865  1
+  Cu  Cu2  1  0.50000170  0.49999880  0.33383155  1
+  Cu  Cu3  1  0.00000000  0.00000000  0.37063246  1
+  Cu  Cu4  1  0.50000170  0.49999880  0.40794162  1
+  Cu  Cu5  1  0.00000000  0.00000000  0.44463842  1
+  Cu  Cu6  1  0.50000170  0.49999880  0.48170562  1
+  Cu  Cu7  1  0.00000000  0.00000000  0.51829450  1
+  Cu  Cu8  1  0.50000170  0.49999880  0.55536171  1
+  Cu  Cu9  1  0.00000000  0.00000000  0.59205851  1
+  Cu  Cu10  1  0.50000170  0.49999880  0.62936767  1
+  Cu  Cu11  1  0.00000000  0.00000000  0.66616858  1
+  Cu  Cu12  1  0.50000170  0.49999880  0.70432148  1
+  Cu  Cu13  1  0.00000000  0.00000000  0.74028833  1
+  Tl  Tl14  1  0.00000000  0.00000000  0.19986970  1
+  Tl  Tl15  1  0.50000170  0.49999880  0.80013043  1

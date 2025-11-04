@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_PrHo2Mg3Tl2Zn
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.61593921
+_cell_length_b   7.58218817
+_cell_length_c   7.58218817
+_cell_angle_alpha   121.20923493
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PrHo2Mg3Tl2Zn
+_chemical_formula_sum   'Pr1 Ho2 Mg3 Tl2 Zn1'
+_cell_volume   226.96448061
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.00000000  0.59019243  0.00287092  1
+  Ho  Ho1  1  0.00000000  0.00287092  0.59019243  1
+  Mg  Mg2  1  0.50000009  0.99928267  0.23359017  1
+  Mg  Mg3  1  0.50000009  0.76365566  0.76365566  1
+  Mg  Mg4  1  0.50000009  0.23359017  0.99928267  1
+  Pr  Pr5  1  0.00000000  0.41465854  0.41465854  1
+  Tl  Tl6  1  0.50000009  0.67393197  0.33229594  1
+  Tl  Tl7  1  0.50000009  0.33229594  0.67393197  1
+  Zn  Zn8  1  0.00000000  0.98952135  0.98952135  1

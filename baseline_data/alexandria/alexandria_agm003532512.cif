@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ho8Tl2Sb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.62794897
+_cell_length_b   8.48160882
+_cell_length_c   8.48160882
+_cell_angle_alpha   118.51762182
+_cell_angle_beta   101.56772831
+_cell_angle_gamma   101.56772831
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho8Tl2Sb
+_chemical_formula_sum   'Ho8 Tl2 Sb1'
+_cell_volume   327.22352002
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.87832553  0.90573782  0.68017476  1
+  Ho  Ho1  1  0.87832553  0.68017476  0.90573782  1
+  Ho  Ho2  1  0.29700388  0.60004806  0.60004806  1
+  Ho  Ho3  1  0.50000000  0.78163057  0.21836943  1
+  Ho  Ho4  1  0.50000000  0.21836943  0.78163057  1
+  Ho  Ho5  1  0.70299612  0.39995194  0.39995194  1
+  Ho  Ho6  1  0.12167447  0.31982524  0.09426218  1
+  Ho  Ho7  1  0.12167447  0.09426218  0.31982524  1
+  Tl  Tl8  1  0.00000000  0.30527333  0.69472667  1
+  Tl  Tl9  1  0.00000000  0.69472667  0.30527333  1
+  Sb  Sb10  1  0.50000000  0.00000000  -0.00000000  1

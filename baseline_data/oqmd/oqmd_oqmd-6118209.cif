@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_HfZrFeSi2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.28911960
+_cell_length_b   5.28911960
+_cell_length_c   9.43284974
+_cell_angle_alpha   116.27915109
+_cell_angle_beta   116.27915109
+_cell_angle_gamma   43.22465648
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfZrFeSi2
+_chemical_formula_sum   'Hf2 Zr2 Fe2 Si4'
+_cell_volume   158.91345292
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.72422226  0.72422226  0.37597684  1
+  Fe  Fe1  1  0.27577814  0.27577814  0.62402234  1
+  Hf  Hf2  1  0.00105464  0.00105464  0.32835267  1
+  Hf  Hf3  1  0.99894631  0.99894631  0.67164772  1
+  Si  Si4  1  0.48848081  0.48848081  0.12593365  1
+  Si  Si5  1  0.35360579  0.35360579  0.42848617  1
+  Si  Si6  1  0.64639359  0.64639359  0.57151301  1
+  Si  Si7  1  0.51152014  0.51152014  0.87406674  1
+  Zr  Zr8  1  0.18706829  0.18706829  0.10115948  1
+  Zr  Zr9  1  0.81293109  0.81293109  0.89883970  1

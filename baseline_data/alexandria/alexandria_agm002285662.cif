@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_PrMgFe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.12505630
+_cell_length_b   5.12495660
+_cell_length_c   5.12503221
+_cell_angle_alpha   59.99691066
+_cell_angle_beta   59.99670945
+_cell_angle_gamma   59.99701232
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PrMgFe4
+_chemical_formula_sum   'Pr1 Mg1 Fe4'
+_cell_volume   95.17868188
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.99999651  0.00001256  0.00000248  1
+  Mg  Mg1  1  0.25001072  0.24997397  0.25000427  1
+  Fe  Fe2  1  0.12768644  0.62411410  0.62409733  1
+  Fe  Fe3  1  0.62409704  0.62411928  0.12767740  1
+  Fe  Fe4  1  0.62411035  0.12766339  0.62411541  1
+  Fe  Fe5  1  0.62410094  0.62411369  0.62410611  1

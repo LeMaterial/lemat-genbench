@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Li6Hg5Pt
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.46865597
+_cell_length_b   6.88452970
+_cell_length_c   7.91878044
+_cell_angle_alpha   115.76997135
+_cell_angle_beta   106.78712741
+_cell_angle_gamma   89.99748805
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li6Hg5Pt
+_chemical_formula_sum   'Li6 Hg5 Pt1'
+_cell_volume   207.80212600
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hg  Hg0  1  0.66068727  0.16182694  0.32354153  1
+  Hg  Hg1  1  0.32961187  0.33104108  0.66191778  1
+  Hg  Hg2  1  0.00000000  0.50000000  -0.00000000  1
+  Hg  Hg3  1  0.67038813  0.66895892  0.33808222  1
+  Hg  Hg4  1  0.33931273  0.83817306  0.67645847  1
+  Pt  Pt5  1  0.00000000  0.00000000  0.00000000  1
+  Li  Li6  1  0.84107587  0.60142888  0.68243548  1
+  Li  Li7  1  0.84107817  0.08107757  0.68235674  1
+  Li  Li8  1  0.49998706  0.76655194  0.00005484  1
+  Li  Li9  1  0.50001294  0.23344806  0.99994516  1
+  Li  Li10  1  0.15892183  0.91892243  0.31764326  1
+  Li  Li11  1  0.15892413  0.39857112  0.31756452  1

@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_Hf2FeIr
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.55518200
+_cell_length_b   6.44263500
+_cell_length_c   13.66566700
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Hf2FeIr
+_chemical_formula_sum   'Hf12 Fe6 Ir6'
+_cell_volume   401.05145386
+_cell_formula_units_Z   6
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.00000000  0.00000000  0.00000000  1
+  Fe  Fe1  1  0.49952340  0.50000039  0.16664316  1
+  Fe  Fe2  1  0.99952318  0.00000000  0.33335658  1
+  Fe  Fe3  1  0.49999978  0.50000039  0.49999974  1
+  Fe  Fe4  1  0.00047858  0.00000000  0.66664291  1
+  Fe  Fe5  1  0.50047836  0.50000039  0.83335705  1
+  Hf  Hf6  1  0.49999978  0.25001727  0.00000000  1
+  Hf  Hf7  1  0.49999978  0.74998196  0.00000000  1
+  Hf  Hf8  1  0.99967027  0.24998933  0.16666585  1
+  Hf  Hf9  1  0.99967027  0.75001145  0.16666585  1
+  Hf  Hf10  1  0.49967049  0.25001106  0.33333389  1
+  Hf  Hf11  1  0.49967049  0.74998972  0.33333389  1
+  Hf  Hf12  1  0.00000000  0.24998157  0.49999974  1
+  Hf  Hf13  1  0.00000000  0.75001766  0.49999974  1
+  Hf  Hf14  1  0.50032908  0.25001106  0.66666633  1
+  Hf  Hf15  1  0.50032908  0.74998972  0.66666633  1
+  Hf  Hf16  1  0.00032930  0.24998933  0.83333364  1
+  Hf  Hf17  1  0.00032930  0.75001145  0.83333364  1
+  Ir  Ir18  1  0.00000000  0.50000039  0.00000000  1
+  Ir  Ir19  1  0.49960243  0.00000000  0.16667024  1
+  Ir  Ir20  1  0.99960221  0.50000039  0.33333024  1
+  Ir  Ir21  1  0.49999978  0.00000000  0.49999974  1
+  Ir  Ir22  1  0.00039735  0.50000039  0.66666998  1
+  Ir  Ir23  1  0.50039713  0.00000000  0.83332998  1

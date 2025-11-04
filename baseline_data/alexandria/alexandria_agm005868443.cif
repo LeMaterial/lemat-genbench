@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Er3ThCo
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.66468590
+_cell_length_b   6.12707473
+_cell_length_c   12.56174845
+_cell_angle_alpha   82.84216787
+_cell_angle_beta   81.61253071
+_cell_angle_gamma   72.59903907
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Er3ThCo
+_chemical_formula_sum   'Er6 Th2 Co2'
+_cell_volume   265.29043733
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.43561154  0.98106851  0.14770741  1
+  Er  Er1  1  0.77864849  0.67590384  0.76680017  1
+  Er  Er2  1  0.12414707  0.12268271  0.62902415  1
+  Er  Er3  1  0.98563720  0.13277633  0.89594926  1
+  Er  Er4  1  0.78617296  0.03920370  0.38845038  1
+  Er  Er5  1  0.44239282  0.58749022  0.52772413  1
+  Th  Th6  1  0.10029527  0.50700269  0.29240676  1
+  Th  Th7  1  0.22003171  0.55363649  0.00630110  1
+  Co  Co8  1  0.72981893  0.39185852  0.14850262  1
+  Co  Co9  1  0.45801300  0.34525197  0.73872102  1

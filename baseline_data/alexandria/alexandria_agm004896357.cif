@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_ScTlCu2F8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.95695712
+_cell_length_b   5.95695712
+_cell_length_c   7.55967333
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99999998
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ScTlCu2F8
+_chemical_formula_sum   'Sc1 Tl1 Cu2 F8'
+_cell_volume   232.31786563
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sc  Sc0  1  0.00000000  0.00000000  0.00000000  1
+  Tl  Tl1  1  0.00000000  0.00000000  0.50000000  1
+  Cu  Cu2  1  0.33333333  0.66666667  0.74190589  1
+  Cu  Cu3  1  0.66666667  0.33333333  0.25809411  1
+  F  F4  1  0.15585363  0.31170727  0.83643509  1
+  F  F5  1  0.15585363  0.84414537  0.83643509  1
+  F  F6  1  0.68829173  0.84414537  0.83643509  1
+  F  F7  1  0.31170827  0.15585463  0.16356491  1
+  F  F8  1  0.66666667  0.33333333  0.49832837  1
+  F  F9  1  0.33333333  0.66666667  0.50167163  1
+  F  F10  1  0.84414637  0.68829273  0.16356491  1
+  F  F11  1  0.84414637  0.15585463  0.16356491  1

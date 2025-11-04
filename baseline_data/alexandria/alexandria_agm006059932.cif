@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Ta3Nb4Au
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.39062842
+_cell_length_b   4.69701567
+_cell_length_c   9.11446471
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ta3Nb4Au
+_chemical_formula_sum   'Ta3 Nb4 Au1'
+_cell_volume   145.15545944
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nb  Nb0  1  0.00000000  0.00000000  0.50000000  1
+  Nb  Nb1  1  0.00000000  0.50000000  0.74737260  1
+  Nb  Nb2  1  0.00000000  0.00000000  0.00000000  1
+  Nb  Nb3  1  0.00000000  0.50000000  0.25262740  1
+  Au  Au4  1  0.50000000  0.50000000  0.00000000  1
+  Ta  Ta5  1  0.50000000  0.00000000  0.24764359  1
+  Ta  Ta6  1  0.50000000  0.50000000  0.50000000  1
+  Ta  Ta7  1  0.50000000  0.00000000  0.75235641  1

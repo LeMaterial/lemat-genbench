@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_TmGaSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.20020521
+_cell_length_b   8.79479076
+_cell_length_c   8.79479076
+_cell_angle_alpha   79.52865184
+_cell_angle_beta   77.47585504
+_cell_angle_gamma   77.47585508
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TmGaSe3
+_chemical_formula_sum   'Tm4 Ga4 Se12'
+_cell_volume   525.40491370
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tm  Tm0  1  0.75000000  0.32332633  0.67667367  1
+  Tm  Tm1  1  0.25000000  0.09208873  0.90791127  1
+  Tm  Tm2  1  0.75000000  0.90791127  0.09208873  1
+  Tm  Tm3  1  0.25000000  0.67667367  0.32332633  1
+  Ga  Ga4  1  0.75209868  0.39240115  0.19584302  1
+  Ga  Ga5  1  0.25209868  0.19584302  0.39240115  1
+  Ga  Ga6  1  0.74790132  0.80415698  0.60759885  1
+  Ga  Ga7  1  0.24790132  0.60759885  0.80415698  1
+  Se  Se8  1  0.49349080  0.34032299  0.42366399  1
+  Se  Se9  1  0.64365986  0.00350296  0.78189970  1
+  Se  Se10  1  0.99349080  0.42366399  0.34032299  1
+  Se  Se11  1  0.00650920  0.57633601  0.65967701  1
+  Se  Se12  1  0.90047453  0.91319858  0.35592825  1
+  Se  Se13  1  0.14365986  0.78189970  0.00350296  1
+  Se  Se14  1  0.50650920  0.65967701  0.57633601  1
+  Se  Se15  1  0.85634014  0.21810030  0.99649704  1
+  Se  Se16  1  0.35634014  0.99649704  0.21810030  1
+  Se  Se17  1  0.40047453  0.35592825  0.91319858  1
+  Se  Se18  1  0.09952547  0.08680142  0.64407175  1
+  Se  Se19  1  0.59952547  0.64407175  0.08680142  1

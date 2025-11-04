@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_HoEr2(CoSi2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.55524281
+_cell_length_b   5.55524281
+_cell_length_c   7.77178700
+_cell_angle_alpha   105.61892316
+_cell_angle_beta   105.61892316
+_cell_angle_gamma   42.37583716
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HoEr2(CoSi2)2
+_chemical_formula_sum   'Ho1 Er2 Co2 Si4'
+_cell_volume   154.76594740
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.69158763  0.69158763  0.36792514  1
+  Co  Co1  1  0.30841202  0.30841202  0.63207412  1
+  Er  Er2  1  0.38126443  0.38126443  0.30611262  1
+  Er  Er3  1  0.61873522  0.61873522  0.69388664  1
+  Ho  Ho4  1  0.00000000  0.00000000  0.00000000  1
+  Si  Si5  1  0.71745110  0.71745110  0.07894929  1
+  Si  Si6  1  0.10209995  0.10209995  0.40652353  1
+  Si  Si7  1  0.89789999  0.89789999  0.59347708  1
+  Si  Si8  1  0.28254855  0.28254855  0.92104997  1

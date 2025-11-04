@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_PrSmHg4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.98941656
+_cell_length_b   5.76507824
+_cell_length_c   8.08472036
+_cell_angle_alpha   101.84877496
+_cell_angle_beta   75.71616844
+_cell_angle_gamma   69.75724589
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PrSmHg4
+_chemical_formula_sum   'Pr1 Sm1 Hg4'
+_cell_volume   160.19117692
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.50000000  0.50000000  0.50000000  1
+  Sm  Sm1  1  0.00000000  0.00000000  0.00000000  1
+  Hg  Hg2  1  0.82929573  0.50131349  0.84009504  1
+  Hg  Hg3  1  0.33970460  0.99173640  0.32885441  1
+  Hg  Hg4  1  0.17070427  0.49868651  0.15990496  1
+  Hg  Hg5  1  0.66029540  0.00826360  0.67114559  1

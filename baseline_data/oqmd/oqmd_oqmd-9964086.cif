@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_SmGdSn2Ir
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.99527458
+_cell_length_b   5.99527458
+_cell_length_c   11.03437202
+_cell_angle_alpha   113.95225428
+_cell_angle_beta   113.95225428
+_cell_angle_gamma   44.57740383
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmGdSn2Ir
+_chemical_formula_sum   'Sm2 Gd2 Sn4 Ir2'
+_cell_volume   250.14565624
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Gd  Gd0  1  0.00016140  0.00016140  0.16989074  1
+  Gd  Gd1  1  0.99983866  0.99983866  0.83010934  1
+  Ir  Ir2  1  0.27343750  0.27343750  0.17201367  1
+  Ir  Ir3  1  0.72656257  0.72656257  0.82798641  1
+  Sm  Sm4  1  0.81123762  0.81123762  0.37285075  1
+  Sm  Sm5  1  0.18876154  0.18876154  0.62714933  1
+  Sn  Sn6  1  0.65514333  0.65514333  0.04800642  1
+  Sn  Sn7  1  0.52588649  0.52588649  0.38072727  1
+  Sn  Sn8  1  0.47411358  0.47411358  0.61927281  1
+  Sn  Sn9  1  0.34485674  0.34485674  0.95199366  1

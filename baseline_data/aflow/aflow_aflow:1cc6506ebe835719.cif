@@ -1,0 +1,54 @@
+# generated using pymatgen
+data_HHe3Li3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.26580784
+_cell_length_b   7.01460020
+_cell_length_c   5.05944086
+_cell_angle_alpha   80.81683810
+_cell_angle_beta   81.38637054
+_cell_angle_gamma   83.55198758
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HHe3Li3
+_chemical_formula_sum   'H4 He12 Li12'
+_cell_volume   216.15505594
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.33444596  0.66353211  0.97973229  1
+  H  H1  1  0.66555404  0.33646789  0.02026771  1
+  H  H2  1  0.16445880  0.83386383  0.46824703  1
+  H  H3  1  0.83554120  0.16613617  0.53175297  1
+  He  He4  1  0.45819284  0.12696136  0.79256283  1
+  He  He5  1  0.54180716  0.87303864  0.20743717  1
+  He  He6  1  0.97052523  0.62028290  0.23395837  1
+  He  He7  1  0.02947477  0.37971710  0.76604163  1
+  He  He8  1  0.92176126  0.87740905  0.88101034  1
+  He  He9  1  0.07823874  0.12259095  0.11898966  1
+  He  He10  1  0.26763151  0.31996346  0.22053199  1
+  He  He11  1  0.73236849  0.68003654  0.77946801  1
+  He  He12  1  0.51851368  0.11281335  0.36126933  1
+  He  He13  1  0.48148632  0.88718665  0.63873067  1
+  He  He14  1  0.30666568  0.50003656  0.59369325  1
+  He  He15  1  0.69333432  0.49996344  0.40630675  1
+  Li  Li16  1  0.57140427  0.21701788  0.75549359  1
+  Li  Li17  1  0.42859573  0.78298212  0.24450641  1
+  Li  Li18  1  0.06112376  0.73123268  0.18605023  1
+  Li  Li19  1  0.93887624  0.26876732  0.81394977  1
+  Li  Li20  1  0.89735866  0.89802945  0.68994193  1
+  Li  Li21  1  0.10264134  0.10197055  0.31005807  1
+  Li  Li22  1  0.37780415  0.41343902  0.17886645  1
+  Li  Li23  1  0.62219585  0.58656098  0.82113355  1
+  Li  Li24  1  0.66763790  0.09411611  0.27263388  1
+  Li  Li25  1  0.33236210  0.90588389  0.72736612  1
+  Li  Li26  1  0.19928353  0.58208118  0.69793169  1
+  Li  Li27  1  0.80071647  0.41791882  0.30206831  1

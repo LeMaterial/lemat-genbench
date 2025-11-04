@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Nd2YMg3AgHg2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.24033379
+_cell_length_b   7.90402238
+_cell_length_c   7.90402238
+_cell_angle_alpha   120.00969169
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nd2YMg3AgHg2
+_chemical_formula_sum   'Nd2 Y1 Mg3 Ag1 Hg2'
+_cell_volume   229.39533304
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.50000073  0.99648425  0.99648425  1
+  Hg  Hg1  1  0.00000000  0.66474973  0.33912172  1
+  Hg  Hg2  1  0.00000000  0.33912172  0.66474973  1
+  Mg  Mg3  1  0.00000000  0.24400520  0.24400520  1
+  Mg  Mg4  1  0.00000000  0.99676177  0.75655439  1
+  Mg  Mg5  1  0.00000000  0.75655439  0.99676177  1
+  Nd  Nd6  1  0.50000073  0.40968874  0.00048658  1
+  Nd  Nd7  1  0.50000073  0.00048658  0.40968874  1
+  Y  Y8  1  0.50000073  0.59214225  0.59214225  1

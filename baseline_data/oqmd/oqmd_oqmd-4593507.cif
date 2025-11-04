@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_KYHgS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.53163844
+_cell_length_b   7.53163844
+_cell_length_c   10.74311900
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   148.29294381
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KYHgS3
+_chemical_formula_sum   'K2 Y2 Hg2 S6'
+_cell_volume   320.29133646
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hg  Hg0  1  0.04724141  0.95276053  0.25000002  1
+  Hg  Hg1  1  0.95276053  0.04724141  0.75000007  1
+  K  K2  1  0.75858053  0.24142142  0.25000002  1
+  K  K3  1  0.24142142  0.75858053  0.75000007  1
+  S  S4  1  0.12618033  0.87382162  0.04389600  1
+  S  S5  1  0.43206112  0.56794082  0.25000002  1
+  S  S6  1  0.12618033  0.87382162  0.45610497  1
+  S  S7  1  0.87382162  0.12618033  0.54389605  1
+  S  S8  1  0.56794082  0.43206112  0.75000007  1
+  S  S9  1  0.87382162  0.12618033  0.95610502  1
+  Y  Y10  1  0.50000097  0.50000097  0.00000000  1
+  Y  Y11  1  0.50000097  0.50000097  0.50000005  1

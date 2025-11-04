@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Pr2CuPdO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.53448891
+_cell_length_b   5.85592212
+_cell_length_c   7.76148852
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.15082685
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr2CuPdO6
+_chemical_formula_sum   'Pr4 Cu2 Pd2 O12'
+_cell_volume   251.54537033
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.01756970  0.93175346  0.25032656  1
+  Pr  Pr1  1  0.51756970  0.56824654  0.75032656  1
+  Pr  Pr2  1  0.98243030  0.06824654  0.74967344  1
+  Pr  Pr3  1  0.48243030  0.43175346  0.24967344  1
+  Cu  Cu4  1  0.50000000  0.00000000  0.00000000  1
+  Cu  Cu5  1  0.00000000  0.50000000  0.50000000  1
+  Pd  Pd6  1  0.50000000  0.00000000  0.50000000  1
+  Pd  Pd7  1  0.00000000  0.50000000  0.00000000  1
+  O  O8  1  0.30089720  0.69999932  0.04904150  1
+  O  O9  1  0.80089720  0.80000068  0.54904150  1
+  O  O10  1  0.69910280  0.30000068  0.95095850  1
+  O  O11  1  0.19910280  0.19999932  0.45095850  1
+  O  O12  1  0.30327742  0.70333043  0.45144019  1
+  O  O13  1  0.80327742  0.79666957  0.95144019  1
+  O  O14  1  0.69672258  0.29666957  0.54855981  1
+  O  O15  1  0.19672258  0.20333043  0.04855981  1
+  O  O16  1  0.90254668  0.52913038  0.25426160  1
+  O  O17  1  0.40254668  0.97086962  0.75426160  1
+  O  O18  1  0.09745332  0.47086962  0.74573840  1
+  O  O19  1  0.59745332  0.02913038  0.24573840  1

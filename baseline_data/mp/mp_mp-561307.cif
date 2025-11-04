@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_DySCl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.61379443
+_cell_length_b   6.66068079
+_cell_length_c   6.78708316
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   100.76356627
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   DySCl
+_chemical_formula_sum   'Dy4 S4 Cl4'
+_cell_volume   293.72680467
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.31156772  0.45574804  0.20628354  1
+  Dy  Dy1  1  0.68843228  0.54425196  0.79371646  1
+  Dy  Dy2  1  0.31156772  0.04425196  0.70628354  1
+  Dy  Dy3  1  0.68843228  0.95574804  0.29371646  1
+  S  S4  1  0.43613615  0.75797837  0.98830266  1
+  S  S5  1  0.43613615  0.74202163  0.48830266  1
+  S  S6  1  0.56386385  0.24202163  0.01169734  1
+  S  S7  1  0.56386385  0.25797837  0.51169734  1
+  Cl  Cl8  1  0.93578287  0.66211925  0.16475697  1
+  Cl  Cl9  1  0.06421713  0.16211925  0.33524303  1
+  Cl  Cl10  1  0.06421713  0.33788075  0.83524303  1
+  Cl  Cl11  1  0.93578287  0.83788075  0.66475697  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_LuMg
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.85661338
+_cell_length_b   6.75958442
+_cell_length_c   5.39194300
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   99.92998770
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LuMg
+_chemical_formula_sum   'Lu6 Mg6'
+_cell_volume   317.96379670
+_cell_formula_units_Z   6
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Lu  Lu0  1  0.34071181  0.33211253  0.00000000  1
+  Lu  Lu1  1  0.00182036  0.50157144  0.00000000  1
+  Lu  Lu2  1  0.33150756  0.83300467  0.00000000  1
+  Lu  Lu3  1  0.89068368  0.22255963  0.49999972  1
+  Lu  Lu4  1  0.22038148  0.55397099  0.49999972  1
+  Lu  Lu5  1  0.88150119  0.72345844  0.49999972  1
+  Mg  Mg6  1  0.00059531  0.00167436  0.00000000  1
+  Mg  Mg7  1  0.67471881  0.15741107  0.00000000  1
+  Mg  Mg8  1  0.66541651  0.67093062  0.00000000  1
+  Mg  Mg9  1  0.22161039  0.05387520  0.49999972  1
+  Mg  Mg10  1  0.55678290  0.38461492  0.49999972  1
+  Mg  Mg11  1  0.54747719  0.89812922  0.49999972  1

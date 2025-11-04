@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_GdMgZn
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.86826600
+_cell_length_b   4.86826821
+_cell_length_c   10.20572200
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99999859
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   GdMgZn
+_chemical_formula_sum   'Gd3 Mg3 Zn3'
+_cell_volume   209.47064437
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Gd  Gd0  1  0.00000000  0.00000000  0.08094087  1
+  Gd  Gd1  1  0.33333513  0.66666999  0.31025732  1
+  Gd  Gd2  1  0.33333513  0.66666999  0.93115803  1
+  Mg  Mg3  1  0.66666517  0.33333144  0.16427451  1
+  Mg  Mg4  1  0.33333513  0.66666999  0.61327361  1
+  Mg  Mg5  1  0.00000000  0.00000000  0.74840565  1
+  Zn  Zn6  1  0.00000000  0.00000000  0.44449966  1
+  Zn  Zn7  1  0.66666517  0.33333144  0.46769352  1
+  Zn  Zn8  1  0.66666517  0.33333144  0.83483951  1

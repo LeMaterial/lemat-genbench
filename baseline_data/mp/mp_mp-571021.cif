@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_K5InPb8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   13.23940524
+_cell_length_b   13.23940524
+_cell_length_c   13.23940565
+_cell_angle_alpha   30.20377330
+_cell_angle_beta   30.20377330
+_cell_angle_gamma   30.20376824
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K5InPb8
+_chemical_formula_sum   'K5 In1 Pb8'
+_cell_volume   520.39429434
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.31803642  0.31803642  0.31803642  1
+  K  K1  1  0.50000000  0.50000000  0.50000000  1
+  K  K2  1  0.77954868  0.77954868  0.77954868  1
+  K  K3  1  0.68196358  0.68196358  0.68196358  1
+  K  K4  1  0.22045132  0.22045132  0.22045132  1
+  In  In5  1  0.00000000  -0.00000000  -0.00000000  1
+  Pb  Pb6  1  0.77031018  0.77031018  0.26319767  1
+  Pb  Pb7  1  0.87264824  0.87264824  0.87264824  1
+  Pb  Pb8  1  0.22968982  0.73680233  0.22968982  1
+  Pb  Pb9  1  0.26319767  0.77031018  0.77031018  1
+  Pb  Pb10  1  0.12735176  0.12735176  0.12735176  1
+  Pb  Pb11  1  0.77031018  0.26319767  0.77031018  1
+  Pb  Pb12  1  0.73680133  0.22968982  0.22968982  1
+  Pb  Pb13  1  0.22968982  0.22968982  0.73680233  1

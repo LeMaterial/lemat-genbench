@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Er2NiGe6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.01782300
+_cell_length_b   4.04580000
+_cell_length_c   10.86038925
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   100.65973120
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Er2NiGe6
+_chemical_formula_sum   'Er2 Ni1 Ge6'
+_cell_volume   173.49245027
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.77680600  0.50000000  0.55361100  1
+  Er  Er1  1  0.11393400  0.50000000  0.22786800  1
+  Ni  Ni2  1  0.55601900  0.00000000  0.11203900  1
+  Ge  Ge3  1  0.49854600  0.50000000  0.99709200  1
+  Ge  Ge4  1  0.38112200  0.50000000  0.76224300  1
+  Ge  Ge5  1  0.99844700  0.00000000  0.99689400  1
+  Ge  Ge6  1  0.88019600  0.00000000  0.76039200  1
+  Ge  Ge7  1  0.66352500  0.00000000  0.32705000  1
+  Ge  Ge8  1  0.23840500  0.00000000  0.47681000  1

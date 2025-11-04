@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_NpAsO5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.83464154
+_cell_length_b   5.83553221
+_cell_length_c   8.05828392
+_cell_angle_alpha   109.84810322
+_cell_angle_beta   109.85205250
+_cell_angle_gamma   91.08912123
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NpAsO5
+_chemical_formula_sum   'Np2 As2 O10'
+_cell_volume   239.92168754
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Np  Np0  1  0.50000000  0.00000000  0.00000000  1
+  Np  Np1  1  0.50000000  -0.00000000  0.50000000  1
+  As  As2  1  0.87049607  0.62955882  0.25002580  1
+  As  As3  1  0.12950393  0.37044118  0.74997420  1
+  O  O4  1  0.75642818  0.75404106  0.07685511  1
+  O  O5  1  0.18495793  0.70291713  0.35144379  1
+  O  O6  1  0.44773695  0.05208861  0.24976253  1
+  O  O7  1  0.74602805  0.74384011  0.42321058  1
+  O  O8  1  0.25397195  0.25615989  0.57678942  1
+  O  O9  1  0.79707565  0.31522325  0.14872166  1
+  O  O10  1  0.20292435  0.68477675  0.85127834  1
+  O  O11  1  0.55226305  0.94791139  0.75023747  1
+  O  O12  1  0.81504207  0.29708287  0.64855621  1
+  O  O13  1  0.24357182  0.24595894  0.92314489  1

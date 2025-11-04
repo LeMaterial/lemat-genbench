@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_NdHoB4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.18667557
+_cell_length_b   5.18667557
+_cell_length_c   5.18667557
+_cell_angle_alpha   142.77234588
+_cell_angle_beta   112.75864936
+_cell_angle_gamma   79.45031023
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NdHoB4
+_chemical_formula_sum   'Nd1 Ho1 B4'
+_cell_volume   75.86399265
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  B  B0  1  0.58556597  0.25205112  0.33351485  1
+  B  B1  1  0.08146382  0.74794734  0.33351363  1
+  B  B2  1  0.91853587  0.25205112  0.66648475  1
+  B  B3  1  0.41443371  0.74794734  0.66648352  1
+  Ho  Ho4  1  0.00000000  0.00000000  0.00000000  1
+  Nd  Nd5  1  0.49999989  0.49999989  -0.00000000  1

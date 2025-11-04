@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_SrSbAu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.43343800
+_cell_length_b   5.42964842
+_cell_length_c   6.50062600
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.02309042
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrSbAu
+_chemical_formula_sum   'Sr2 Sb2 Au2'
+_cell_volume   166.04704108
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.00000000  0.00000000  0.00000000  1
+  Au  Au1  1  0.00000000  0.00000000  0.49999954  1
+  Sb  Sb2  1  0.66678175  0.33356314  0.25000054  1
+  Sb  Sb3  1  0.33321747  0.66643495  0.75000008  1
+  Sr  Sr4  1  0.33331213  0.66662427  0.25000054  1
+  Sr  Sr5  1  0.66668709  0.33337382  0.75000008  1

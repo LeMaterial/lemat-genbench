@@ -1,0 +1,45 @@
+# generated using pymatgen
+data_LaPrNi17
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.32057015
+_cell_length_b   6.32056990
+_cell_length_c   6.32057039
+_cell_angle_alpha   83.23972434
+_cell_angle_beta   83.23972237
+_cell_angle_gamma   83.23972740
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaPrNi17
+_chemical_formula_sum   'La1 Pr1 Ni17'
+_cell_volume   247.62053908
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.65868643  0.65868643  0.65868643  1
+  Pr  Pr1  1  0.34050547  0.34050547  0.34050547  1
+  Ni  Ni2  1  0.28808299  0.00011486  0.71215824  1
+  Ni  Ni3  1  0.71215824  0.28808299  0.00011486  1
+  Ni  Ni4  1  0.00011486  0.71215924  0.28808299  1
+  Ni  Ni5  1  0.28808299  0.71215824  0.00011486  1
+  Ni  Ni6  1  0.00011486  0.28808299  0.71215824  1
+  Ni  Ni7  1  0.71215824  0.00011486  0.28808299  1
+  Ni  Ni8  1  0.34258108  0.84849328  0.34258108  1
+  Ni  Ni9  1  0.34258108  0.34258108  0.84849328  1
+  Ni  Ni10  1  0.84849328  0.34258108  0.34258108  1
+  Ni  Ni11  1  0.65717507  0.15093585  0.65717507  1
+  Ni  Ni12  1  0.65717507  0.65717507  0.15093685  1
+  Ni  Ni13  1  0.15093685  0.65717507  0.65717507  1
+  Ni  Ni14  1  0.00073668  0.49958665  0.00073668  1
+  Ni  Ni15  1  0.00073668  0.00073668  0.49958665  1
+  Ni  Ni16  1  0.49958665  0.00073668  0.00073668  1
+  Ni  Ni17  1  0.90192508  0.90192508  0.90192508  1
+  Ni  Ni18  1  0.09816939  0.09816939  0.09816939  1

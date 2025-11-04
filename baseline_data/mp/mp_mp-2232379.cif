@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_Sr2SmMgTa(CuO4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.04462600
+_cell_length_b   4.04462600
+_cell_length_c   13.14010600
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2SmMgTa(CuO4)2
+_chemical_formula_sum   'Sr2 Sm1 Mg1 Ta1 Cu2 O8'
+_cell_volume   214.95898722
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.50000000  0.50000000  0.74591500  1
+  Sr  Sr1  1  0.50000000  0.50000000  0.25408500  1
+  Sm  Sm2  1  0.50000000  0.50000000  0.50000000  1
+  Mg  Mg3  1  0.50000000  0.50000000  0.00000000  1
+  Ta  Ta4  1  0.00000000  0.00000000  0.00000000  1
+  Cu  Cu5  1  0.00000000  0.00000000  0.61124300  1
+  Cu  Cu6  1  0.00000000  0.00000000  0.38875700  1
+  O  O7  1  0.50000000  0.00000000  0.61796600  1
+  O  O8  1  0.00000000  0.50000000  0.61796600  1
+  O  O9  1  0.50000000  0.00000000  0.38203400  1
+  O  O10  1  0.00000000  0.50000000  0.38203400  1
+  O  O11  1  0.00000000  0.50000000  0.00000000  1
+  O  O12  1  0.50000000  0.00000000  0.00000000  1
+  O  O13  1  0.00000000  0.00000000  0.15018700  1
+  O  O14  1  0.00000000  0.00000000  0.84981300  1

@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Pr3ThGe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.21664795
+_cell_length_b   6.60446567
+_cell_length_c   9.05663667
+_cell_angle_alpha   111.38512540
+_cell_angle_beta   103.46157866
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr3ThGe4
+_chemical_formula_sum   'Pr3 Th1 Ge4'
+_cell_volume   227.39284677
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.00000000  0.50000000  0.00000000  1
+  Pr  Pr1  1  0.19453921  0.19447678  0.38907843  1
+  Pr  Pr2  1  0.80546079  0.80552322  0.61092157  1
+  Th  Th3  1  0.50000000  0.00000000  0.00000000  1
+  Ge  Ge4  1  0.36887431  0.55760225  0.73774862  1
+  Ge  Ge5  1  0.63112569  0.44239775  0.26225138  1
+  Ge  Ge6  1  0.63100458  0.81960277  0.26200916  1
+  Ge  Ge7  1  0.36899542  0.18039723  0.73799084  1

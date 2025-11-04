@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_SrTb2ReO8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.02431672
+_cell_length_b   4.86191901
+_cell_length_c   7.19368634
+_cell_angle_alpha   89.54538412
+_cell_angle_beta   89.94088779
+_cell_angle_gamma   91.01595518
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrTb2ReO8
+_chemical_formula_sum   'Sr1 Tb2 Re1 O8'
+_cell_volume   175.69280581
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.00000000  0.00000000  0.50000000  1
+  Tb  Tb1  1  0.49859701  0.49663058  0.76322352  1
+  Tb  Tb2  1  0.50140299  0.50336942  0.23677648  1
+  Re  Re3  1  0.00000000  0.00000000  0.00000000  1
+  O  O4  1  0.14395714  0.77990364  0.19207567  1
+  O  O5  1  0.69313935  0.75703023  0.99661385  1
+  O  O6  1  0.84828896  0.21414696  0.18911930  1
+  O  O7  1  0.85604286  0.22009636  0.80792433  1
+  O  O8  1  0.30686065  0.24296977  0.00338615  1
+  O  O9  1  0.15171104  0.78585304  0.81088070  1
+  O  O10  1  0.55243903  0.74702148  0.50023483  1
+  O  O11  1  0.44756097  0.25297852  0.49976517  1

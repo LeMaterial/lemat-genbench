@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_MgV3Ag2TeS6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.51119967
+_cell_length_b   5.58299343
+_cell_length_c   11.05001058
+_cell_angle_alpha   103.91381271
+_cell_angle_beta   83.01184173
+_cell_angle_gamma   120.42791193
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgV3Ag2TeS6
+_chemical_formula_sum   'Mg1 V3 Ag2 Te1 S6'
+_cell_volume   284.56679465
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg0  1  0.99999207  0.49831624  0.76790374  1
+  V  V1  1  0.33003047  0.02594850  0.48010316  1
+  V  V2  1  0.66999267  0.69597395  0.48017496  1
+  V  V3  1  0.00001657  0.35777883  0.47751469  1
+  Ag  Ag4  1  0.40955208  0.64486106  0.10870653  1
+  Ag  Ag5  1  0.59038568  0.23522959  0.10870239  1
+  Te  Te6  1  -0.00012801  0.71828505  0.01832610  1
+  S  S7  1  0.66323426  0.29507664  0.34319040  1
+  S  S8  1  0.66176607  0.42519487  0.61622919  1
+  S  S9  1  0.33679916  0.63181584  0.34318240  1
+  S  S10  1  0.33837686  0.76350568  0.61626018  1
+  S  S11  1  -0.00000353  0.96278066  0.34541261  1
+  S  S12  1  0.00008465  0.09047112  0.61929365  1

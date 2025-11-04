@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Ac4Cd2B
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.48401937
+_cell_length_b   5.48401937
+_cell_length_c   9.18351015
+_cell_angle_alpha   107.37231646
+_cell_angle_beta   107.37231646
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ac4Cd2B
+_chemical_formula_sum   'Ac4 Cd2 B1'
+_cell_volume   250.35911101
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.82533348  0.82533348  0.65066697  1
+  Ac  Ac1  1  0.17466652  0.17466652  0.34933303  1
+  Ac  Ac2  1  0.00000000  0.50000000  0.00000000  1
+  Ac  Ac3  1  0.50000000  0.00000000  0.00000000  1
+  B  B4  1  0.00000000  0.00000000  0.00000000  1
+  Cd  Cd5  1  0.62769496  0.62769496  0.25538992  1
+  Cd  Cd6  1  0.37230504  0.37230504  0.74461008  1

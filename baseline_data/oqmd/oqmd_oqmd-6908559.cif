@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_LaY2In3AgPt2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.85211089
+_cell_length_b   7.92251535
+_cell_length_c   7.92251535
+_cell_angle_alpha   120.20500487
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaY2In3AgPt2
+_chemical_formula_sum   'La1 Y2 In3 Ag1 Pt2'
+_cell_volume   208.95594335
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.00000000  0.00134718  0.00134718  1
+  In  In1  1  0.50000118  0.73424110  0.00585695  1
+  In  In2  1  0.50000118  0.26102458  0.26102458  1
+  In  In3  1  0.50000118  0.00585695  0.73424110  1
+  La  La4  1  0.00000000  0.58759145  0.58759145  1
+  Pt  Pt5  1  0.50000118  0.66894752  0.33065825  1
+  Pt  Pt6  1  0.50000118  0.33065825  0.66894752  1
+  Y  Y7  1  0.00000000  0.41015329  0.00017832  1
+  Y  Y8  1  0.00000000  0.00017832  0.41015329  1

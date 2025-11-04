@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_KTbPdS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.64862974
+_cell_length_b   7.64862974
+_cell_length_c   10.05926007
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   149.67065611
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KTbPdS3
+_chemical_formula_sum   'K2 Tb2 Pd2 S6'
+_cell_volume   297.16569277
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.24759881  0.75240295  0.25000050  1
+  K  K1  1  0.75240295  0.24759881  0.75000049  1
+  Pd  Pd2  1  0.51084237  0.48915939  0.25000050  1
+  Pd  Pd3  1  0.48915939  0.51084237  0.75000049  1
+  S  S4  1  0.61966363  0.38033813  0.07410187  1
+  S  S5  1  0.91657493  0.08342683  0.25000050  1
+  S  S6  1  0.61966363  0.38033813  0.42589912  1
+  S  S7  1  0.38033813  0.61966363  0.57410187  1
+  S  S8  1  0.08342683  0.91657493  0.75000049  1
+  S  S9  1  0.38033813  0.61966363  0.92589912  1
+  Tb  Tb10  1  0.00000000  0.00000000  0.00000000  1
+  Tb  Tb11  1  0.00000000  0.00000000  0.50000000  1

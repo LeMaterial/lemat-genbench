@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_B2PPtRhC
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   2.81860109
+_cell_length_b   4.26227579
+_cell_length_c   6.52410619
+_cell_angle_alpha   88.64180020
+_cell_angle_beta   86.20491093
+_cell_angle_gamma   72.02660714
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   B2PPtRhC
+_chemical_formula_sum   'B2 P1 Rh1 Pt1 C1'
+_cell_volume   74.38956267
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  P  P0  1  0.97896839  0.19579650  0.37434016  1
+  C  C1  1  0.71191586  0.88021705  0.82608573  1
+  B  B2  1  0.29133745  0.71052065  0.82034252  1
+  B  B3  1  0.52974139  0.22682108  0.91619531  1
+  Rh  Rh4  1  0.88706678  0.49215315  0.07892722  1
+  Pt  Pt5  1  0.66569014  0.75385157  0.48435905  1

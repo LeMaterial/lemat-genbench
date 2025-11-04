@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Hf4CuC2S
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.31953049
+_cell_length_b   3.31953049
+_cell_length_c   12.80050524
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Hf4CuC2S
+_chemical_formula_sum   'Hf4 Cu1 C2 S1'
+_cell_volume   122.15494955
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  C  C0  1  0.33333302  0.66666603  0.26160217  1
+  C  C1  1  0.33333302  0.66666603  0.73839820  1
+  Cu  Cu2  1  0.00000000  0.00000000  0.00000000  1
+  Hf  Hf3  1  0.66666881  0.33333476  0.16273733  1
+  Hf  Hf4  1  0.00000000  0.00000000  0.35809446  1
+  Hf  Hf5  1  0.00000000  0.00000000  0.64190591  1
+  Hf  Hf6  1  0.66666881  0.33333476  0.83726305  1
+  S  S7  1  0.66666881  0.33333476  0.49999980  1

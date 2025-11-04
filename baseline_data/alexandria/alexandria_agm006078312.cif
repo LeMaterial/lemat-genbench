@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_MnIr4W3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.91435841
+_cell_length_b   3.91435898
+_cell_length_c   8.19725817
+_cell_angle_alpha   103.83145090
+_cell_angle_beta   103.82761840
+_cell_angle_gamma   89.99726220
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MnIr4W3
+_chemical_formula_sum   'Mn1 Ir4 W3'
+_cell_volume   118.20633675
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mn  Mn0  1  0.50000000  0.00000000  -0.00000000  1
+  W  W1  1  0.00000000  0.50000000  0.00000000  1
+  W  W2  1  0.74740279  0.24739021  0.49477222  1
+  W  W3  1  0.25259721  0.75260979  0.50522778  1
+  Ir  Ir4  1  0.37692521  0.37726218  0.75389536  1
+  Ir  Ir5  1  0.62307479  0.62273782  0.24610464  1
+  Ir  Ir6  1  0.12281887  0.12300890  0.24610623  1
+  Ir  Ir7  1  0.87718113  0.87699110  0.75389377  1

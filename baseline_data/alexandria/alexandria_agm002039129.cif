@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_BePdPt
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.56446684
+_cell_length_b   2.77595797
+_cell_length_c   10.33875527
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   105.67099399
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BePdPt
+_chemical_formula_sum   'Be4 Pd4 Pt4'
+_cell_volume   153.76365339
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.00000000  0.00000000  0.00000000  1
+  Be  Be1  1  -0.00000000  0.50000000  0.50000000  1
+  Be  Be2  1  0.50000000  0.50000000  0.50000000  1
+  Be  Be3  1  0.50000000  0.00000000  0.00000000  1
+  Pd  Pd4  1  0.17847880  0.00000000  0.35492117  1
+  Pd  Pd5  1  0.82152120  0.00000000  0.64507883  1
+  Pd  Pd6  1  0.17847880  0.50000000  0.85492117  1
+  Pd  Pd7  1  0.82152120  0.50000000  0.14507883  1
+  Pt  Pt8  1  0.67818459  0.00000000  0.35905012  1
+  Pt  Pt9  1  0.32181541  0.00000000  0.64094988  1
+  Pt  Pt10  1  0.67818459  0.50000000  0.85905012  1
+  Pt  Pt11  1  0.32181541  0.50000000  0.14094988  1

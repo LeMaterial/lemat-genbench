@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Sr2MnPbCl8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.64004314
+_cell_length_b   6.45225011
+_cell_length_c   8.62268355
+_cell_angle_alpha   90.00274031
+_cell_angle_beta   90.00072709
+_cell_angle_gamma   89.95273768
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2MnPbCl8
+_chemical_formula_sum   'Sr2 Mn1 Pb1 Cl8'
+_cell_volume   369.42339451
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.50004923  0.50008561  0.76184226  1
+  Sr  Sr1  1  0.49995077  0.49991439  0.23815774  1
+  Mn  Mn2  1  0.00000000  0.00000000  0.00000000  1
+  Pb  Pb3  1  0.00000000  0.00000000  0.50000000  1
+  Cl  Cl4  1  0.15842698  0.78970788  0.22089826  1
+  Cl  Cl5  1  0.69320257  0.74574089  0.00006976  1
+  Cl  Cl6  1  0.84170398  0.21041412  0.22091929  1
+  Cl  Cl7  1  0.84157302  0.21029212  0.77910174  1
+  Cl  Cl8  1  0.30679743  0.25425911  0.99993024  1
+  Cl  Cl9  1  0.15829602  0.78958588  0.77908071  1
+  Cl  Cl10  1  0.65834951  0.72659316  0.49995711  1
+  Cl  Cl11  1  0.34165049  0.27340684  0.50004289  1

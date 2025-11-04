@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_SmAl2PtAu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.33819283
+_cell_length_b   4.33819283
+_cell_length_c   10.46370788
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmAl2PtAu
+_chemical_formula_sum   'Sm2 Al4 Pt2 Au2'
+_cell_volume   196.92611369
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.50000083  0.00000000  0.13868411  1
+  Al  Al1  1  0.00000000  0.00000000  0.49999962  1
+  Al  Al2  1  0.50000083  0.50000083  0.49999962  1
+  Al  Al3  1  0.00000000  0.50000083  0.86131609  1
+  Au  Au4  1  0.00000000  0.00000000  0.00000000  1
+  Au  Au5  1  0.50000083  0.50000083  0.00000000  1
+  Pt  Pt6  1  0.50000083  0.00000000  0.37203638  1
+  Pt  Pt7  1  0.00000000  0.50000083  0.62796382  1
+  Sm  Sm8  1  0.00000000  0.50000083  0.25920353  1
+  Sm  Sm9  1  0.50000083  0.00000000  0.74079667  1

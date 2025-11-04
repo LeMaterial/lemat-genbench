@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Na3BiAs
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.60091778
+_cell_length_b   7.60091779
+_cell_length_c   7.60091779
+_cell_angle_alpha   108.53120435
+_cell_angle_beta   131.75822436
+_cell_angle_gamma   90.92766872
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na3BiAs
+_chemical_formula_sum   'Na6 Bi2 As2'
+_cell_volume   294.03455804
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.03201364  0.20802387  0.68249715  1
+  Na  Na1  1  0.03201364  0.84951649  0.32398977  1
+  Na  Na2  1  0.52552672  0.70802387  0.67601023  1
+  Na  Na3  1  0.00081878  0.27920225  0.22161653  1
+  Na  Na4  1  0.52552672  0.34951649  0.31750285  1
+  Na  Na5  1  0.05758571  0.77920225  0.77838347  1
+  Bi  Bi6  1  0.54747082  0.78161811  0.26585271  1
+  Bi  Bi7  1  0.51576540  0.28161811  0.73414729  1
+  As  As8  1  0.50412767  0.03992628  0.96420140  1
+  As  As9  1  0.07572588  0.53992728  0.03579960  1

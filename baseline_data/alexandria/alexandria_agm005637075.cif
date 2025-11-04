@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Ac4Hg3Au2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.38887186
+_cell_length_b   5.38890227
+_cell_length_c   11.03589014
+_cell_angle_alpha   89.99121764
+_cell_angle_beta   89.99952508
+_cell_angle_gamma   60.00037023
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ac4Hg3Au2
+_chemical_formula_sum   'Ac4 Hg3 Au2'
+_cell_volume   277.54779282
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.66663822  0.66675654  0.89053796  1
+  Ac  Ac1  1  0.00005262  0.99984781  0.33300538  1
+  Ac  Ac2  1  0.99994738  0.00015219  0.66699462  1
+  Ac  Ac3  1  0.33336178  0.33324346  0.10946204  1
+  Hg  Hg4  1  0.33331963  0.33336272  0.50693070  1
+  Hg  Hg5  1  0.00000000  0.00000000  0.00000000  1
+  Hg  Hg6  1  0.66668037  0.66663728  0.49306930  1
+  Au  Au7  1  0.33327788  0.33348528  0.80667792  1
+  Au  Au8  1  0.66672212  0.66651472  0.19332208  1

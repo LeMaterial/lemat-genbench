@@ -1,0 +1,54 @@
+# generated using pymatgen
+data_Ta6Cr3Cu3C2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.13145533
+_cell_length_b   8.13145533
+_cell_length_c   8.13145533
+_cell_angle_alpha   120.47331864
+_cell_angle_beta   119.62437879
+_cell_angle_gamma   89.91698698
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ta6Cr3Cu3C2
+_chemical_formula_sum   'Ta12 Cr6 Cu6 C4'
+_cell_volume   379.87325756
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ta  Ta0  1  0.56932300  0.06932300  0.50000000  1
+  Ta  Ta1  1  0.18329400  0.68329400  0.50000000  1
+  Ta  Ta2  1  0.17969700  0.06932200  0.50108300  1
+  Ta  Ta3  1  0.56824000  0.67861500  0.49891700  1
+  Ta  Ta4  1  0.56824000  0.06932200  0.88962500  1
+  Ta  Ta5  1  0.17969700  0.67861500  0.11037500  1
+  Ta  Ta6  1  0.93209300  0.93209300  0.00000000  1
+  Ta  Ta7  1  0.31677500  0.31677500  0.00000000  1
+  Ta  Ta8  1  0.31746700  0.93595000  0.00256900  1
+  Ta  Ta9  1  0.93338000  0.31489800  0.99743100  1
+  Ta  Ta10  1  0.93338000  0.93595000  0.61848200  1
+  Ta  Ta11  1  0.31746700  0.31489800  0.38151800  1
+  Cr  Cr12  1  0.74145600  0.49467600  0.24678000  1
+  Cr  Cr13  1  0.24789600  0.49467600  0.75322000  1
+  Cr  Cr14  1  0.74949900  0.48281800  0.73331900  1
+  Cr  Cr15  1  0.74949900  0.01618000  0.26668100  1
+  Cr  Cr16  1  0.95388700  0.30104300  0.65284400  1
+  Cr  Cr17  1  0.64820000  0.30104300  0.34715600  1
+  Cu  Cu18  1  0.95893900  0.29565500  0.33671600  1
+  Cu  Cu19  1  0.95893900  0.62222300  0.66328400  1
+  Cu  Cu20  1  0.54383000  0.70624900  0.83758100  1
+  Cu  Cu21  1  0.86866800  0.70624900  0.16241900  1
+  Cu  Cu22  1  0.54334200  0.70634500  0.16300300  1
+  Cu  Cu23  1  0.54334200  0.38033900  0.83699700  1
+  C  C24  1  0.24707300  0.99755100  0.24952200  1
+  C  C25  1  0.74803000  0.99755100  0.75047800  1
+  C  C26  1  0.24917300  0.99873900  0.74956600  1
+  C  C27  1  0.24917300  0.49960800  0.25043400  1

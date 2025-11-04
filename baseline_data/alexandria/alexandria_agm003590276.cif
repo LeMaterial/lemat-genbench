@@ -1,0 +1,43 @@
+# generated using pymatgen
+data_La(ZnAg3)4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.77848692
+_cell_length_b   7.77848691
+_cell_length_c   7.77848692
+_cell_angle_alpha   109.47122066
+_cell_angle_beta   109.47122062
+_cell_angle_gamma   109.47122063
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La(ZnAg3)4
+_chemical_formula_sum   'La1 Zn4 Ag12'
+_cell_volume   362.29595541
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.00000000  0.00000000  0.00000000  1
+  Zn  Zn1  1  0.00000000  0.50000000  0.00000000  1
+  Zn  Zn2  1  0.50000000  0.00000000  0.00000000  1
+  Zn  Zn3  1  0.50000000  0.50000000  0.50000000  1
+  Zn  Zn4  1  -0.00000000  0.00000000  0.50000000  1
+  Ag  Ag5  1  0.84309735  0.34622950  0.18932586  1
+  Ag  Ag6  1  0.34622850  0.50313215  0.15690265  1
+  Ag  Ag7  1  0.81067414  0.15690265  0.65377050  1
+  Ag  Ag8  1  0.34622950  0.18932586  0.84309735  1
+  Ag  Ag9  1  0.18932586  0.84309735  0.34622950  1
+  Ag  Ag10  1  0.65377150  0.49686785  0.84309735  1
+  Ag  Ag11  1  0.50313215  0.15690365  0.34622850  1
+  Ag  Ag12  1  0.49686785  0.84309635  0.65377150  1
+  Ag  Ag13  1  0.65377050  0.81067414  0.15690265  1
+  Ag  Ag14  1  0.84309635  0.65377050  0.49686785  1
+  Ag  Ag15  1  0.15690365  0.34622950  0.50313315  1
+  Ag  Ag16  1  0.15690365  0.65377150  0.81067514  1

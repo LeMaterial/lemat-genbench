@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_SmHoSi2Pd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.68519173
+_cell_length_b   5.68519173
+_cell_length_c   10.29150196
+_cell_angle_alpha   116.37064530
+_cell_angle_beta   116.37064530
+_cell_angle_gamma   44.55702567
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmHoSi2Pd
+_chemical_formula_sum   'Sm2 Ho2 Si4 Pd2'
+_cell_volume   204.73901664
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.81363614  0.81363614  0.39337018  1
+  Ho  Ho1  1  0.18636456  0.18636456  0.60663025  1
+  Pd  Pd2  1  0.27491277  0.27491277  0.14570521  1
+  Pd  Pd3  1  0.72508698  0.72508698  0.85429522  1
+  Si  Si4  1  0.63511961  0.63511961  0.06368594  1
+  Si  Si5  1  0.51789634  0.51789634  0.38938275  1
+  Si  Si6  1  0.48210437  0.48210437  0.61061769  1
+  Si  Si7  1  0.36487962  0.36487962  0.93631338  1
+  Sm  Sm8  1  0.99700335  0.99700335  0.17769771  1
+  Sm  Sm9  1  0.00299588  0.00299588  0.82230161  1

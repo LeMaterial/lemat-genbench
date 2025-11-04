@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Na2MnReN4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.82696651
+_cell_length_b   6.04834165
+_cell_length_c   6.42806475
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00003897
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na2MnReN4
+_chemical_formula_sum   'Na4 Mn2 Re2 N8'
+_cell_volume   226.54739868
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.50078105  0.27192685  0.25068630  1
+  Na  Na1  1  0.50078105  0.27192685  0.74931370  1
+  Na  Na2  1  0.00078301  0.72806857  0.75070465  1
+  Na  Na3  1  0.00078301  0.72806857  0.24929535  1
+  Mn  Mn4  1  0.49992076  0.81500300  0.50000000  1
+  Mn  Mn5  1  0.99992121  0.18499877  0.00000000  1
+  Re  Re6  1  0.99986461  0.17266806  0.50000000  1
+  Re  Re7  1  0.49986455  0.82733469  0.00000000  1
+  N  N8  1  0.24964529  0.01239277  0.00000000  1
+  N  N9  1  0.74964980  0.98760677  0.50000000  1
+  N  N10  1  0.25280311  0.99100173  0.50000000  1
+  N  N11  1  0.75280666  0.00899973  0.00000000  1
+  N  N12  1  0.49807069  0.66521420  0.75122160  1
+  N  N13  1  0.99807125  0.33478762  0.25121776  1
+  N  N14  1  0.99807125  0.33478762  0.74878224  1
+  N  N15  1  0.49807069  0.66521420  0.24877840  1

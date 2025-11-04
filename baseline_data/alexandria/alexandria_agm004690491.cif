@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_Dy8Tl3PSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.91149946
+_cell_length_b   7.91820808
+_cell_length_c   8.99209905
+_cell_angle_alpha   116.14749345
+_cell_angle_beta   89.98483122
+_cell_angle_gamma   120.00462990
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy8Tl3PSe3
+_chemical_formula_sum   'Dy8 Tl3 P1 Se3'
+_cell_volume   419.97511185
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.25943974  0.51894748  0.27884630  1
+  Dy  Dy1  1  0.74056026  0.48105252  0.72115370  1
+  Dy  Dy2  1  0.76801953  0.53596456  0.28578188  1
+  Dy  Dy3  1  0.23198047  0.46403544  0.71421812  1
+  Dy  Dy4  1  0.76810414  0.01784480  0.28580419  1
+  Dy  Dy5  1  0.23189586  0.98215520  0.71419581  1
+  Dy  Dy6  1  0.24987338  0.01786226  0.28570118  1
+  Dy  Dy7  1  0.75012662  0.98213774  0.71429882  1
+  Tl  Tl8  1  0.00000000  0.00000000  0.00000000  1
+  Tl  Tl9  1  0.00000000  0.50000000  0.00000000  1
+  Tl  Tl10  1  0.50000000  0.50000000  0.00000000  1
+  P  P11  1  0.00000000  -0.00000000  0.50000000  1
+  Se  Se12  1  0.50000000  -0.00000000  0.50000000  1
+  Se  Se13  1  0.50000000  0.50000000  0.50000000  1
+  Se  Se14  1  0.00000000  0.50000000  0.50000000  1

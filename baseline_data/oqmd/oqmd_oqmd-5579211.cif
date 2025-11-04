@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_HoAgPbS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.90886215
+_cell_length_b   8.90886215
+_cell_length_c   8.38254394
+_cell_angle_alpha   103.23719619
+_cell_angle_beta   103.23719619
+_cell_angle_gamma   25.53681500
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HoAgPbS3
+_chemical_formula_sum   'Ho2 Ag2 Pb2 S6'
+_cell_volume   278.78937748
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.52271467  0.52271467  0.21270654  1
+  Ag  Ag1  1  0.47728540  0.47728540  0.78729327  1
+  Ho  Ho2  1  0.16380926  0.16380926  0.08574264  1
+  Ho  Ho3  1  0.83619082  0.83619082  0.91425717  1
+  Pb  Pb4  1  0.86580961  0.86580961  0.42752519  1
+  Pb  Pb5  1  0.13419003  0.13419003  0.57247584  1
+  S  S6  1  0.00000000  0.00000000  0.00000000  1
+  S  S7  1  0.32674120  0.32674120  0.13822771  1
+  S  S8  1  0.68059728  0.68059728  0.31670101  1
+  S  S9  1  0.49999975  0.49999975  0.49999990  1
+  S  S10  1  0.31940280  0.31940280  0.68329880  1
+  S  S11  1  0.67325830  0.67325830  0.86177210  1

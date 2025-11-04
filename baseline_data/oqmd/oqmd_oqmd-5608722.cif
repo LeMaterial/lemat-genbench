@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_ScInNiSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.05914412
+_cell_length_b   3.79047050
+_cell_length_c   9.85609483
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   111.17229001
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ScInNiSe3
+_chemical_formula_sum   'Sc2 In2 Ni2 Se6'
+_cell_volume   280.75991225
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  In  In0  1  0.76931367  0.25000063  0.28906424  1
+  In  In1  1  0.23068751  0.74999924  0.71093636  1
+  Ni  Ni2  1  0.41411733  0.74999924  0.39936700  1
+  Ni  Ni3  1  0.58588213  0.25000063  0.60063251  1
+  Sc  Sc4  1  0.19664426  0.25000063  0.15374188  1
+  Sc  Sc5  1  0.80335644  0.74999924  0.84625763  1
+  Se  Se6  1  0.94356387  0.74999924  0.13908156  1
+  Se  Se7  1  0.43833517  0.74999924  0.16496506  1
+  Se  Se8  1  0.27790487  0.25000063  0.45738048  1
+  Se  Se9  1  0.72209507  0.74999924  0.54262012  1
+  Se  Se10  1  0.56166554  0.25000063  0.83503445  1
+  Se  Se11  1  0.05643608  0.25000063  0.86091904  1

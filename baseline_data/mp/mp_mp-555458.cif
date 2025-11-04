@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_Ba4Fe2S4I5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.23098430
+_cell_length_b   10.23098430
+_cell_length_c   10.23098430
+_cell_angle_alpha   93.66257539
+_cell_angle_beta   93.66257539
+_cell_angle_gamma   150.71988369
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba4Fe2S4I5
+_chemical_formula_sum   'Ba4 Fe2 S4 I5'
+_cell_volume   506.75450464
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.93937900  0.25039100  0.18977000  1
+  Ba  Ba1  1  0.74960900  0.93937900  0.68898700  1
+  Ba  Ba2  1  0.25039100  0.06062100  0.31101300  1
+  Ba  Ba3  1  0.06062100  0.74960900  0.81023000  1
+  Fe  Fe4  1  0.25000000  0.75000000  0.50000000  1
+  Fe  Fe5  1  0.75000000  0.25000000  0.50000000  1
+  S  S6  1  0.10035800  0.41453700  0.51489500  1
+  S  S7  1  0.58546300  0.10035800  0.68582100  1
+  S  S8  1  0.89964200  0.58546300  0.48510500  1
+  S  S9  1  0.41453700  0.89964200  0.31417900  1
+  I  I10  1  0.70330300  0.36931000  0.07261300  1
+  I  I11  1  0.63069000  0.70330300  0.33399300  1
+  I  I12  1  0.29669700  0.63069000  0.92738700  1
+  I  I13  1  0.00000000  0.00000000  0.00000000  1
+  I  I14  1  0.36931000  0.29669700  0.66600700  1

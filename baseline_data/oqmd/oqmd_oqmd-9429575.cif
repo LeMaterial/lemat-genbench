@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Nd5SiSe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.36138881
+_cell_length_b   7.36138881
+_cell_length_c   7.36138881
+_cell_angle_alpha   99.51515025
+_cell_angle_beta   99.51515025
+_cell_angle_gamma   132.01947843
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nd5SiSe4
+_chemical_formula_sum   'Nd5 Si1 Se4'
+_cell_volume   270.75891620
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nd  Nd0  1  0.50117049  0.50117049  0.00000000  1
+  Nd  Nd1  1  0.29150282  0.90490669  0.19441601  1
+  Nd  Nd2  1  0.09708603  0.29150204  0.38659676  1
+  Nd  Nd3  1  0.90490669  0.71049069  0.61340387  1
+  Nd  Nd4  1  0.71048991  0.09708603  0.80558463  1
+  Se  Se5  1  0.80234380  0.40245015  0.20280712  1
+  Se  Se6  1  0.59953668  0.80234380  0.39989364  1
+  Se  Se7  1  0.40244937  0.19964225  0.60010699  1
+  Se  Se8  1  0.19964225  0.59953590  0.79719352  1
+  Si  Si9  1  0.00116939  0.00116939  0.00000000  1

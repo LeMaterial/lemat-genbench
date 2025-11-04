@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_La6TcNi2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.78784994
+_cell_length_b   7.45406508
+_cell_length_c   10.53046420
+_cell_angle_alpha   90.00000512
+_cell_angle_beta   86.18589830
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La6TcNi2
+_chemical_formula_sum   'La12 Tc2 Ni4'
+_cell_volume   531.63058055
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.16072454  0.06003660  0.25107733  1
+  La  La1  1  0.17361551  0.32115788  0.57838485  1
+  La  La2  1  0.16911556  0.31975555  0.92859949  1
+  La  La3  1  0.33088444  0.81975555  0.57140051  1
+  La  La4  1  0.32638449  0.82115788  0.92161515  1
+  La  La5  1  0.33927546  0.56003660  0.24892267  1
+  La  La6  1  0.83927546  0.93996340  0.74892267  1
+  La  La7  1  0.82638449  0.67884212  0.42161515  1
+  La  La8  1  0.83088444  0.68024445  0.07140051  1
+  La  La9  1  0.66911556  0.18024445  0.42859949  1
+  La  La10  1  0.67361551  0.17884212  0.07838485  1
+  La  La11  1  0.66072454  0.43996340  0.75107733  1
+  Tc  Tc12  1  0.50000000  0.50000000  -0.00000000  1
+  Tc  Tc13  1  0.00000000  0.00000000  0.50000000  1
+  Ni  Ni14  1  0.05457767  0.61084965  0.77251780  1
+  Ni  Ni15  1  0.44542233  0.11084965  0.72748220  1
+  Ni  Ni16  1  0.55457767  0.88915035  0.27251780  1
+  Ni  Ni17  1  0.94542233  0.38915035  0.22748220  1

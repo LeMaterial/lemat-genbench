@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_SiRh2W
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.94280169
+_cell_length_b   4.94280170
+_cell_length_c   4.26340334
+_cell_angle_alpha   64.46847427
+_cell_angle_beta   64.46847423
+_cell_angle_gamma   37.44671203
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SiRh2W
+_chemical_formula_sum   'Si1 Rh2 W1'
+_cell_volume   56.39362479
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rh  Rh0  1  0.02757303  0.02757303  0.97244169  1
+  Rh  Rh1  1  0.47242697  0.47242697  0.52755831  1
+  Si  Si2  1  0.75000000  0.75000000  0.75000000  1
+  W  W3  1  0.25000000  0.25000000  0.25000000  1

@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_In(ReS)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.96539577
+_cell_length_b   3.96539577
+_cell_length_c   7.01424212
+_cell_angle_alpha   73.58052930
+_cell_angle_beta   73.58052930
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   In(ReS)2
+_chemical_formula_sum   'In1 Re2 S2'
+_cell_volume   101.09850032
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Re  Re0  1  0.75000000  0.25000000  0.50000000  1
+  Re  Re1  1  0.25000000  0.75000000  0.50000000  1
+  S  S2  1  0.35085005  0.35085005  0.29829990  1
+  S  S3  1  0.64914995  0.64914995  0.70170010  1
+  In  In4  1  0.00000000  0.00000000  0.00000000  1

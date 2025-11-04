@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Zr2Fe2SiGeC
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.43727548
+_cell_length_b   5.43727548
+_cell_length_c   6.49528196
+_cell_angle_alpha   124.78114907
+_cell_angle_beta   124.78114907
+_cell_angle_gamma   40.30576756
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Zr2Fe2SiGeC
+_chemical_formula_sum   'Zr2 Fe2 Si1 Ge1 C1'
+_cell_volume   98.65290029
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  C  C0  1  0.99823064  0.99823064  0.99882768  1
+  Fe  Fe1  1  0.19892968  0.19892968  0.08396064  1
+  Fe  Fe2  1  0.79395430  0.79395430  0.90086519  1
+  Ge  Ge3  1  0.84903910  0.84903910  0.31530602  1
+  Si  Si4  1  0.15824523  0.15824523  0.69491233  1
+  Zr  Zr5  1  0.56238423  0.56238423  0.29440697  1
+  Zr  Zr6  1  0.43921739  0.43921739  0.71172113  1

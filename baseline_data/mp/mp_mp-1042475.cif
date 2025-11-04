@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_BaYCrCuO5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.91612609
+_cell_length_b   3.91618009
+_cell_length_c   7.77018100
+_cell_angle_alpha   89.99861184
+_cell_angle_beta   89.99986759
+_cell_angle_gamma   89.97609355
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaYCrCuO5
+_chemical_formula_sum   'Ba1 Y1 Cr1 Cu1 O5'
+_cell_volume   119.16546671
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.99999700  0.99999600  0.98528400  1
+  Y  Y1  1  0.99999900  0.99999500  0.46263900  1
+  Cr  Cr2  1  0.50000400  0.49999200  0.69957000  1
+  Cu  Cu3  1  0.49998700  0.49997200  0.24800700  1
+  O  O4  1  0.00000000  0.49998000  0.64543800  1
+  O  O5  1  0.49999900  0.99998000  0.64543900  1
+  O  O6  1  0.00001400  0.50000400  0.27870000  1
+  O  O7  1  0.49999700  0.00008700  0.27869800  1
+  O  O8  1  0.49999600  0.49998600  0.94414300  1

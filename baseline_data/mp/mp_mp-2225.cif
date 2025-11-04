@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Be2Fe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.18834927
+_cell_length_b   4.18834883
+_cell_length_c   6.79926708
+_cell_angle_alpha   89.99999941
+_cell_angle_beta   90.00000061
+_cell_angle_gamma   119.99882555
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Be2Fe
+_chemical_formula_sum   'Be8 Fe4'
+_cell_volume   103.29602470
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.00000003  -0.00000003  0.99999906  1
+  Be  Be1  1  0.00000003  -0.00000003  0.49999998  1
+  Be  Be2  1  0.82971170  0.65942203  0.25000037  1
+  Be  Be3  1  0.17029563  0.82970437  0.75000010  1
+  Be  Be4  1  0.65941940  0.82971092  0.75000011  1
+  Be  Be5  1  0.34057797  0.17028830  0.25000037  1
+  Be  Be6  1  0.82970545  0.17029455  0.25000037  1
+  Be  Be7  1  0.17028908  0.34058060  0.75000011  1
+  Fe  Fe8  1  0.33333345  0.66666655  0.06146797  1
+  Fe  Fe9  1  0.66666640  0.33333360  0.56148582  1
+  Fe  Fe10  1  0.66666641  0.33333359  0.93852158  1
+  Fe  Fe11  1  0.33333346  0.66666654  0.43852517  1

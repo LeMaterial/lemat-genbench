@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Sr2BeInO5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.30988085
+_cell_length_b   7.38479812
+_cell_length_c   10.43202166
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   102.95001767
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2BeInO5
+_chemical_formula_sum   'Sr4 Be2 In2 O10'
+_cell_volume   248.50246052
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.87158079  0.74316158  0.83584823  1
+  Sr  Sr1  1  0.11487734  0.22975468  0.68741434  1
+  Sr  Sr2  1  0.12841921  0.25683842  0.33584823  1
+  Sr  Sr3  1  0.88512266  0.77024532  0.18741434  1
+  Be  Be4  1  0.55800160  0.11600320  0.91979600  1
+  Be  Be5  1  0.44199840  0.88399680  0.41979600  1
+  In  In6  1  0.80356887  0.60713775  0.52870132  1
+  In  In7  1  0.19643113  0.39286225  0.02870132  1
+  O  O8  1  0.34388532  0.68777065  0.01574066  1
+  O  O9  1  0.67181458  0.34362917  0.88769337  1
+  O  O10  1  0.50001687  0.00003375  0.79238139  1
+  O  O11  1  0.30121381  0.60242762  0.66917381  1
+  O  O12  1  0.95897739  0.91795477  0.48722088  1
+  O  O13  1  0.65611468  0.31222935  0.51574066  1
+  O  O14  1  0.32818542  0.65637083  0.38769337  1
+  O  O15  1  0.49998313  0.99996625  0.29238139  1
+  O  O16  1  0.69878619  0.39757238  0.16917381  1
+  O  O17  1  0.04102261  0.08204523  0.98722088  1

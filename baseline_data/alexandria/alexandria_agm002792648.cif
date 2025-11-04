@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_TcAsOs2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.56331469
+_cell_length_b   5.56331469
+_cell_length_c   6.74637630
+_cell_angle_alpha   65.64942234
+_cell_angle_beta   65.64942234
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TcAsOs2
+_chemical_formula_sum   'Tc2 As2 Os4'
+_cell_volume   169.63104874
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  As  As0  1  0.50000000  0.50000000  0.00000000  1
+  As  As1  1  0.25000000  0.75000000  0.50000000  1
+  Os  Os2  1  0.62599417  0.12500000  0.25000000  1
+  Os  Os3  1  0.12400583  0.62500000  0.25000000  1
+  Os  Os4  1  0.37500000  0.37400583  0.75000000  1
+  Os  Os5  1  0.87500000  0.87599417  0.75000000  1
+  Tc  Tc6  1  0.00000000  0.00000000  0.00000000  1
+  Tc  Tc7  1  0.75000000  0.25000000  0.50000000  1

@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Ho7GeI12
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.67745273
+_cell_length_b   9.67745260
+_cell_length_c   9.67745298
+_cell_angle_alpha   107.98566454
+_cell_angle_beta   107.98566522
+_cell_angle_gamma   107.98566164
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho7GeI12
+_chemical_formula_sum   'Ho7 Ge1 I12'
+_cell_volume   733.55431424
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.96684010  0.68878867  0.89657989  1
+  Ho  Ho1  1  0.31121133  0.10342011  0.03315990  1
+  Ho  Ho2  1  0.10342011  0.03315990  0.31121133  1
+  Ho  Ho3  1  0.50000000  0.50000000  0.50000000  1
+  Ho  Ho4  1  0.89657989  0.96684010  0.68878867  1
+  Ho  Ho5  1  0.68878867  0.89657989  0.96684010  1
+  Ho  Ho6  1  0.03315990  0.31121133  0.10342011  1
+  Ge  Ge7  1  0.00000000  0.00000000  0.00000000  1
+  I  I8  1  0.92195998  0.31359839  0.77154869  1
+  I  I9  1  0.68640161  0.22845131  0.07804002  1
+  I  I10  1  0.46768198  0.15457485  0.38827090  1
+  I  I11  1  0.84542515  0.61172910  0.53231802  1
+  I  I12  1  0.22845131  0.07804002  0.68640161  1
+  I  I13  1  0.61172910  0.53231802  0.84542515  1
+  I  I14  1  0.38827090  0.46768198  0.15457485  1
+  I  I15  1  0.77154869  0.92195998  0.31359839  1
+  I  I16  1  0.15457485  0.38827090  0.46768198  1
+  I  I17  1  0.53231802  0.84542515  0.61172910  1
+  I  I18  1  0.31359839  0.77154869  0.92195998  1
+  I  I19  1  0.07804002  0.68640161  0.22845131  1

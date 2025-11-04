@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_LiCa4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.72831284
+_cell_length_b   6.38125352
+_cell_length_c   9.44000962
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   72.36407287
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiCa4
+_chemical_formula_sum   'Li2 Ca8'
+_cell_volume   386.25837923
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.50000000  0.75000000  0.60826568  1
+  Li  Li1  1  0.50000000  0.25000000  0.39173432  1
+  Ca  Ca2  1  0.20116833  0.94536553  0.34068012  1
+  Ca  Ca3  1  0.79883167  0.55463447  0.34068012  1
+  Ca  Ca4  1  0.25185156  0.47690022  0.09706453  1
+  Ca  Ca5  1  0.74814844  0.02309978  0.09706453  1
+  Ca  Ca6  1  0.74814844  0.52309978  0.90293547  1
+  Ca  Ca7  1  0.25185156  0.97690022  0.90293547  1
+  Ca  Ca8  1  0.20116833  0.44536553  0.65931988  1
+  Ca  Ca9  1  0.79883167  0.05463447  0.65931988  1

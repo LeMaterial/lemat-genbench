@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Sr8GaPt2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.25924093
+_cell_length_b   9.78798906
+_cell_length_c   9.78435944
+_cell_angle_alpha   120.01852256
+_cell_angle_beta   89.99636725
+_cell_angle_gamma   90.00075174
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr8GaPt2
+_chemical_formula_sum   'Sr8 Ga1 Pt2'
+_cell_volume   519.03552472
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.25769057  0.66663232  0.33320689  1
+  Sr  Sr1  1  0.74230943  0.33336768  0.66675911  1
+  Sr  Sr2  1  0.74948568  0.83567653  0.16207988  1
+  Sr  Sr3  1  0.25055373  0.16206378  0.32647260  1
+  Sr  Sr4  1  0.25052104  0.67356777  0.83550059  1
+  Sr  Sr5  1  0.25051232  0.16433547  0.83790512  1
+  Sr  Sr6  1  0.74944727  0.83792322  0.67350040  1
+  Sr  Sr7  1  0.74947896  0.32643223  0.16449741  1
+  Pt  Pt8  1  0.23749386  0.33337532  0.66678914  1
+  Pt  Pt9  1  0.76250614  0.66662468  0.33319886  1
+  Ga  Ga10  1  0.00000000  0.00000000  0.99999600  1

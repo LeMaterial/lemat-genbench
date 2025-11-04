@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_GdSnTeO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.99747800
+_cell_length_b   4.99747808
+_cell_length_c   10.97812113
+_cell_angle_alpha   76.84354776
+_cell_angle_beta   103.15645061
+_cell_angle_gamma   119.99999944
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   GdSnTeO
+_chemical_formula_sum   'Gd2 Sn2 Te2 O2'
+_cell_volume   229.09607713
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Gd  Gd0  1  0.76363366  0.23636732  0.29089960  1
+  Gd  Gd1  1  0.23636748  0.76363467  0.70910069  1
+  O  O2  1  0.69623392  0.30376708  0.08870037  1
+  O  O3  1  0.30376690  0.69623522  0.91129897  1
+  Sn  Sn4  1  0.36939581  0.63060233  0.10818928  1
+  Sn  Sn5  1  0.63060302  0.36939503  0.89181100  1
+  Te  Te6  1  0.12463723  0.87536495  0.37390991  1
+  Te  Te7  1  0.87536390  0.12463703  0.62609037  1

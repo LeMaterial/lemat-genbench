@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_HoHfCS
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.48910018
+_cell_length_b   3.48884465
+_cell_length_c   6.62946069
+_cell_angle_alpha   90.00120449
+_cell_angle_beta   105.24619635
+_cell_angle_gamma   119.99605607
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HoHfCS
+_chemical_formula_sum   'Ho1 Hf1 C1 S1'
+_cell_volume   66.59102323
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.49775186  0.14683177  0.65963992  1
+  Hf  Hf1  1  0.10295195  0.94942417  0.06785304  1
+  C  C2  1  0.32133952  0.55860662  0.89506978  1
+  S  S3  1  0.95585668  0.37593744  0.34709727  1

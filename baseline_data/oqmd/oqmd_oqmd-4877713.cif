@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_BaZrCuSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.41495692
+_cell_length_b   7.41495692
+_cell_length_c   10.27217823
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   148.61273859
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaZrCuSe3
+_chemical_formula_sum   'Ba2 Zr2 Cu2 Se6'
+_cell_volume   294.14897373
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.75371714  0.24628431  0.24999956  1
+  Ba  Ba1  1  0.24628431  0.75371714  0.74999964  1
+  Cu  Cu2  1  0.46858254  0.53141891  0.24999956  1
+  Cu  Cu3  1  0.53141891  0.46858254  0.74999964  1
+  Se  Se4  1  0.36958541  0.63041603  0.05466708  1
+  Se  Se5  1  0.06925023  0.93075122  0.24999956  1
+  Se  Se6  1  0.36958541  0.63041603  0.44533301  1
+  Se  Se7  1  0.63041603  0.36958541  0.55466717  1
+  Se  Se8  1  0.93075122  0.06925023  0.74999964  1
+  Se  Se9  1  0.63041603  0.36958541  0.94533212  1
+  Zr  Zr10  1  0.00000000  0.00000000  0.00000000  1
+  Zr  Zr11  1  0.00000000  0.00000000  0.50000009  1

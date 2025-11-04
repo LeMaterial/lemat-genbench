@@ -1,0 +1,43 @@
+# generated using pymatgen
+data_Sr3CaMn2FeO10
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.85917705
+_cell_length_b   3.85907405
+_cell_length_c   14.23578626
+_cell_angle_alpha   82.20241728
+_cell_angle_beta   82.20246442
+_cell_angle_gamma   90.01502458
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr3CaMn2FeO10
+_chemical_formula_sum   'Sr3 Ca1 Mn2 Fe1 O10'
+_cell_volume   208.07123472
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.57047600  0.57047800  0.85919300  1
+  Sr  Sr1  1  0.42999200  0.43001100  0.13988100  1
+  Sr  Sr2  1  0.70403400  0.70405000  0.59211400  1
+  Ca  Ca3  1  0.29939300  0.29939600  0.40140800  1
+  Mn  Mn4  1  0.14226900  0.14217400  0.71533100  1
+  Mn  Mn5  1  0.85742100  0.85743500  0.28451400  1
+  Fe  Fe6  1  0.00015900  0.00018000  0.99979300  1
+  O  O7  1  0.64061100  0.14074000  0.71931900  1
+  O  O8  1  0.14073100  0.64060400  0.71932500  1
+  O  O9  1  0.35686500  0.85688200  0.28561700  1
+  O  O10  1  0.85688500  0.35686200  0.28561600  1
+  O  O11  1  0.07194500  0.07194800  0.85595100  1
+  O  O12  1  0.92786500  0.92785600  0.14495100  1
+  O  O13  1  0.21253400  0.21255600  0.57563700  1
+  O  O14  1  0.78942400  0.78942100  0.42005300  1
+  O  O15  1  0.99969200  0.49970500  0.00064600  1
+  O  O16  1  0.49970500  0.99970200  0.00064900  1

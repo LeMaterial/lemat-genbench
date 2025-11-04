@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Cd2SnGeAs4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.32305621
+_cell_length_b   7.32305621
+_cell_length_c   7.32305621
+_cell_angle_alpha   130.36222645
+_cell_angle_beta   130.36222645
+_cell_angle_gamma   72.82834663
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cd2SnGeAs4
+_chemical_formula_sum   'Cd2 Sn1 Ge1 As4'
+_cell_volume   222.73093484
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  As  As0  1  0.13304842  0.63519193  0.02931166  1
+  As  As1  1  0.36480707  0.39411873  0.49785574  1
+  As  As2  1  0.89626284  0.86695118  0.50214350  1
+  As  As3  1  0.60588051  0.10373701  0.97068758  1
+  Cd  Cd4  1  0.50000022  0.50000022  0.00000000  1
+  Cd  Cd5  1  0.74999931  0.24999969  0.49999962  1
+  Ge  Ge6  1  0.24999969  0.74999931  0.49999962  1
+  Sn  Sn7  1  0.00000000  0.00000000  0.00000000  1

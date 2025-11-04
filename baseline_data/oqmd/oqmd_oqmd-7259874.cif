@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_HfSi2Ni
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.39672683
+_cell_length_b   4.39672683
+_cell_length_c   4.39672683
+_cell_angle_alpha   60.00000000
+_cell_angle_beta   60.00000000
+_cell_angle_gamma   60.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfSi2Ni
+_chemical_formula_sum   'Hf1 Si2 Ni1'
+_cell_volume   60.09985878
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.50000075  0.50000075  0.50000075  1
+  Ni  Ni1  1  0.74999951  0.74999951  0.74999951  1
+  Si  Si2  1  0.00000000  0.00000000  0.00000000  1
+  Si  Si3  1  0.25000037  0.25000037  0.25000037  1

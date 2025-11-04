@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_TlIn5Hg2Bi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.44620187
+_cell_length_b   8.66159234
+_cell_length_c   13.87298680
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   104.87208420
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TlIn5Hg2Bi
+_chemical_formula_sum   'Tl2 In10 Hg4 Bi2'
+_cell_volume   516.36798442
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tl  Tl0  1  0.60811044  0.21622089  0.89708648  1
+  Tl  Tl1  1  0.39188956  0.78377911  0.39708648  1
+  In  In2  1  0.43180534  0.86361068  0.06816437  1
+  In  In3  1  0.78766029  0.57532059  0.79284580  1
+  In  In4  1  0.43806005  0.87612011  0.75140222  1
+  In  In5  1  0.26004930  0.52009860  0.62876200  1
+  In  In6  1  0.91330624  0.82661247  0.58156429  1
+  In  In7  1  0.56819466  0.13638932  0.56816437  1
+  In  In8  1  0.21233971  0.42467941  0.29284580  1
+  In  In9  1  0.56193995  0.12387989  0.25140222  1
+  In  In10  1  0.73995070  0.47990140  0.12876200  1
+  In  In11  1  0.08669376  0.17338753  0.08156429  1
+  Hg  Hg12  1  0.94603124  0.89206248  0.91319871  1
+  Hg  Hg13  1  0.09650783  0.19301566  0.72575341  1
+  Hg  Hg14  1  0.05396876  0.10793752  0.41319871  1
+  Hg  Hg15  1  0.90349217  0.80698434  0.22575341  1
+  Bi  Bi16  1  0.74046975  0.48093951  0.46519271  1
+  Bi  Bi17  1  0.25953025  0.51906049  0.96519271  1

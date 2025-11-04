@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_MgCr4(CuS4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.82339830
+_cell_length_b   6.77927031
+_cell_length_c   7.81548020
+_cell_angle_alpha   64.30322313
+_cell_angle_beta   51.38683560
+_cell_angle_gamma   64.29417693
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgCr4(CuS4)2
+_chemical_formula_sum   'Mg1 Cr4 Cu2 S8'
+_cell_volume   283.91234563
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg0  1  0.37520800  0.37427000  0.37566600  1
+  Cr  Cr1  1  0.56312700  0.44739400  0.56281100  1
+  Cr  Cr2  1  0.44792100  0.56251600  0.92734700  1
+  Cr  Cr3  1  0.56307100  0.92654600  0.56272200  1
+  Cr  Cr4  1  0.92727700  0.56242900  0.44803900  1
+  Cu  Cu5  1  0.87455600  0.87529100  0.87514500  1
+  Cu  Cu6  1  0.12535900  0.12438800  0.12583900  1
+  S  S7  1  0.74777700  0.73552300  0.74813900  1
+  S  S8  1  0.30775000  0.22153600  0.74915300  1
+  S  S9  1  0.22244000  0.74813300  0.22288800  1
+  S  S10  1  0.74905700  0.22175900  0.30706600  1
+  S  S11  1  0.74808400  0.26876700  0.74803000  1
+  S  S12  1  0.26943700  0.74760700  0.73545800  1
+  S  S13  1  0.22246700  0.30685900  0.22242000  1
+  S  S14  1  0.73609600  0.74735300  0.26890700  1

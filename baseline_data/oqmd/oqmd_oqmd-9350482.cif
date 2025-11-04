@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_Sm2Cu3Ag
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.58586869
+_cell_length_b   3.58586869
+_cell_length_c   9.18423347
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sm2Cu3Ag
+_chemical_formula_sum   'Sm2 Cu3 Ag1'
+_cell_volume   118.09504577
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.00000000  0.00000000  0.31723170  1
+  Cu  Cu1  1  0.49999879  0.49999879  0.17442392  1
+  Cu  Cu2  1  0.00000000  0.00000000  0.68357365  1
+  Cu  Cu3  1  0.49999879  0.49999879  0.82066076  1
+  Sm  Sm4  1  0.49999879  0.49999879  0.51106170  1
+  Sm  Sm5  1  0.00000000  0.00000000  0.99304858  1

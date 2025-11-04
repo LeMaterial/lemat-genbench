@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_TaInSi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.35287819
+_cell_length_b   3.47247720
+_cell_length_c   21.74884365
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   97.66754168
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TaInSi
+_chemical_formula_sum   'Ta4 In4 Si4'
+_cell_volume   250.95325608
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Si  Si0  1  0.17598218  0.00000000  0.44955932  1
+  Si  Si1  1  0.17598218  0.50000000  0.94955932  1
+  Si  Si2  1  0.83531263  0.00000000  0.12418620  1
+  Si  Si3  1  0.83531263  0.50000000  0.62418620  1
+  In  In4  1  0.00978250  0.00000000  0.32203788  1
+  In  In5  1  0.00978250  0.50000000  0.82203788  1
+  In  In6  1  0.43326429  0.00000000  0.71836090  1
+  In  In7  1  0.43326429  0.50000000  0.21836090  1
+  Ta  Ta8  1  0.29247055  0.00000000  0.57685862  1
+  Ta  Ta9  1  0.29247055  0.50000000  0.07685862  1
+  Ta  Ta10  1  0.71718785  0.00000000  0.99789708  1
+  Ta  Ta11  1  0.71718785  0.50000000  0.49789708  1

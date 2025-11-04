@@ -1,0 +1,45 @@
+# generated using pymatgen
+data_Sr8Fe3N8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.79623331
+_cell_length_b   9.79623331
+_cell_length_c   7.47745989
+_cell_angle_alpha   74.83099930
+_cell_angle_beta   74.83099932
+_cell_angle_gamma   31.72894061
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr8Fe3N8
+_chemical_formula_sum   'Sr8 Fe3 N8'
+_cell_volume   363.14681538
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.03016610  0.03016610  0.73537540  1
+  Sr  Sr1  1  0.79953229  0.79953229  0.80718472  1
+  Sr  Sr2  1  0.40539079  0.40539079  0.96489736  1
+  Sr  Sr3  1  0.66680382  0.66680382  0.53011167  1
+  Sr  Sr4  1  0.33319618  0.33319618  0.46988833  1
+  Sr  Sr5  1  0.59460921  0.59460921  0.03510264  1
+  Sr  Sr6  1  0.96983390  0.96983390  0.26462460  1
+  Sr  Sr7  1  0.20046771  0.20046771  0.19281528  1
+  Fe  Fe8  1  0.81235949  0.81235949  0.20584774  1
+  Fe  Fe9  1  0.50000000  0.50000000  0.50000000  1
+  Fe  Fe10  1  0.18764051  0.18764051  0.79415226  1
+  N  N11  1  0.27520541  0.27520541  0.83182790  1
+  N  N12  1  0.47309048  0.47309048  0.28003392  1
+  N  N13  1  0.52690952  0.52690952  0.71996608  1
+  N  N14  1  0.10844680  0.10844680  0.98414652  1
+  N  N15  1  0.89155320  0.89155320  0.01585348  1
+  N  N16  1  0.72479459  0.72479459  0.16817210  1
+  N  N17  1  0.82087066  0.82087066  0.43072391  1
+  N  N18  1  0.17912934  0.17912934  0.56927609  1

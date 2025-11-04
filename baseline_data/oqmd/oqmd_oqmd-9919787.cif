@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Tb2ErGa3CoGe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.13617391
+_cell_length_b   6.94678335
+_cell_length_c   6.94678335
+_cell_angle_alpha   119.86470070
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb2ErGa3CoGe2
+_chemical_formula_sum   'Tb2 Er1 Ga3 Co1 Ge2'
+_cell_volume   173.09615532
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.00000000  0.00235455  0.00235455  1
+  Er  Er1  1  0.00000000  0.39840626  0.39840626  1
+  Ga  Ga2  1  0.50000074  0.22937947  0.00130340  1
+  Ga  Ga3  1  0.50000074  0.00130340  0.22937947  1
+  Ga  Ga4  1  0.50000074  0.77050159  0.77050159  1
+  Ge  Ge5  1  0.50000074  0.66439614  0.33419242  1
+  Ge  Ge6  1  0.50000074  0.33419242  0.66439614  1
+  Tb  Tb7  1  0.00000000  0.99953562  0.59993054  1
+  Tb  Tb8  1  0.00000000  0.59993054  0.99953562  1

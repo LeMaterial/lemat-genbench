@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_NaTcAuSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.05752148
+_cell_length_b   3.97311155
+_cell_length_c   17.52026320
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaTcAuSe3
+_chemical_formula_sum   'Na4 Tc4 Au4 Se12'
+_cell_volume   491.27378830
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.32394234  0.25000053  0.17500822  1
+  Au  Au1  1  0.82394223  0.25000053  0.32499226  1
+  Au  Au2  1  0.17605756  0.74999908  0.67500812  1
+  Au  Au3  1  0.67605745  0.74999908  0.82499217  1
+  Na  Na4  1  0.00568755  0.74999908  0.19825501  1
+  Na  Na5  1  0.50568744  0.74999908  0.30174547  1
+  Na  Na6  1  0.49431235  0.25000053  0.69825492  1
+  Na  Na7  1  0.99431224  0.25000053  0.80174538  1
+  Se  Se8  1  0.12100565  0.25000053  0.05086853  1
+  Se  Se9  1  0.51973487  0.74999908  0.06326846  1
+  Se  Se10  1  0.70244207  0.25000053  0.18269874  1
+  Se  Se11  1  0.20244218  0.25000053  0.31730174  1
+  Se  Se12  1  0.01973497  0.74999908  0.43673202  1
+  Se  Se13  1  0.62100555  0.25000053  0.44913195  1
+  Se  Se14  1  0.37899424  0.74999908  0.55086844  1
+  Se  Se15  1  0.98026482  0.25000053  0.56326836  1
+  Se  Se16  1  0.79755762  0.74999908  0.68269865  1
+  Se  Se17  1  0.29755772  0.74999908  0.81730165  1
+  Se  Se18  1  0.48026492  0.25000053  0.93673193  1
+  Se  Se19  1  0.87899414  0.74999908  0.94913186  1
+  Tc  Tc20  1  0.74372710  0.25000053  0.03602514  1
+  Tc  Tc21  1  0.24372721  0.25000053  0.46397534  1
+  Tc  Tc22  1  0.75627258  0.74999908  0.53602505  1
+  Tc  Tc23  1  0.25627269  0.74999908  0.96397524  1

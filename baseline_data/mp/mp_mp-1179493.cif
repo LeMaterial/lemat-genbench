@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_SmInNi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.91607037
+_cell_length_b   7.91607080
+_cell_length_c   3.65976700
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.38400578
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmInNi
+_chemical_formula_sum   'Sm3 In3 Ni3'
+_cell_volume   199.83234943
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.33730200  0.33730200  0.50000000  1
+  Sm  Sm1  1  0.66553400  0.00170200  0.50000000  1
+  Sm  Sm2  1  0.00170200  0.66553400  0.50000000  1
+  In  In3  1  0.66893100  0.66893100  0.00000000  1
+  In  In4  1  0.33149200  0.00034500  0.00000000  1
+  In  In5  1  0.00034500  0.33149200  0.00000000  1
+  Ni  Ni6  1  0.99814800  0.99814800  0.00000000  1
+  Ni  Ni7  1  0.66514300  0.33150200  0.00000000  1
+  Ni  Ni8  1  0.33150200  0.66514300  0.00000000  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_ErGeTe3Au
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.79864776
+_cell_length_b   7.79864776
+_cell_length_c   11.24655600
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   30.74287122
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ErGeTe3Au
+_chemical_formula_sum   'Er2 Ge2 Te6 Au2'
+_cell_volume   349.65298663
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.53397409  0.53397409  0.25000098  1
+  Au  Au1  1  0.46602565  0.46602565  0.75000027  1
+  Er  Er2  1  0.00000000  0.00000000  0.00000000  1
+  Er  Er3  1  0.00000000  0.00000000  0.50000018  1
+  Ge  Ge4  1  0.17355810  0.17355810  0.25000098  1
+  Ge  Ge5  1  0.82644163  0.82644163  0.75000027  1
+  Te  Te6  1  0.64757146  0.64757146  0.05108408  1
+  Te  Te7  1  0.90910947  0.90910947  0.25000098  1
+  Te  Te8  1  0.64757146  0.64757146  0.44891609  1
+  Te  Te9  1  0.35242827  0.35242827  0.55108426  1
+  Te  Te10  1  0.09089027  0.09089027  0.75000027  1
+  Te  Te11  1  0.35242827  0.35242827  0.94891627  1

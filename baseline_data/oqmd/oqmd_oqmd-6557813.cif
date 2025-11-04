@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_GdTm(ZnGa)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.40555235
+_cell_length_b   4.40555235
+_cell_length_c   7.15092518
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   GdTm(ZnGa)2
+_chemical_formula_sum   'Gd1 Tm1 Zn2 Ga2'
+_cell_volume   120.19699145
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ga  Ga0  1  0.33333375  0.66666750  0.47138096  1
+  Ga  Ga1  1  0.66666709  0.33333244  0.96143224  1
+  Gd  Gd2  1  0.00000000  0.00000000  0.24906707  1
+  Tm  Tm3  1  0.00000000  0.00000000  0.74867515  1
+  Zn  Zn4  1  0.33333375  0.66666750  0.02845646  1
+  Zn  Zn5  1  0.66666709  0.33333244  0.54098874  1

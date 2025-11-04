@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_CePm3(NdS2)4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.09994831
+_cell_length_b   8.09885732
+_cell_length_c   8.09924066
+_cell_angle_alpha   119.99517630
+_cell_angle_beta   120.00289035
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CePm3(NdS2)4
+_chemical_formula_sum   'Ce1 Pm3 Nd4 S8'
+_cell_volume   375.70587810
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.00000000  0.50000000  0.00000000  1
+  Pm  Pm1  1  0.50000000  0.50000000  0.00000000  1
+  Pm  Pm2  1  0.50000000  0.50000000  0.50000000  1
+  Pm  Pm3  1  -0.00000000  0.50000000  0.50000000  1
+  Nd  Nd4  1  0.50000000  0.00000000  0.00000000  1
+  Nd  Nd5  1  0.50000000  -0.00000000  0.50000000  1
+  Nd  Nd6  1  0.00000000  0.00000000  0.00000000  1
+  Nd  Nd7  1  -0.00000000  -0.00000000  0.50000000  1
+  S  S8  1  0.24798067  0.74583132  0.99784677  1
+  S  S9  1  0.24799419  0.74585361  0.49598838  1
+  S  S10  1  0.25110196  0.25328806  0.50220392  1
+  S  S11  1  0.74986611  0.74583132  0.99784677  1
+  S  S12  1  0.25013389  0.25416868  0.00215323  1
+  S  S13  1  0.74889804  0.74671194  0.49779608  1
+  S  S14  1  0.75200581  0.25414639  0.50401162  1
+  S  S15  1  0.75201933  0.25416868  0.00215323  1

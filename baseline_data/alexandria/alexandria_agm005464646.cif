@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_LiScBe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.63084647
+_cell_length_b   4.63084647
+_cell_length_c   4.63084647
+_cell_angle_alpha   60.00000000
+_cell_angle_beta   60.00000000
+_cell_angle_gamma   60.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiScBe4
+_chemical_formula_sum   'Li1 Sc1 Be4'
+_cell_volume   70.22086093
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.25000000  0.25000000  0.25000000  1
+  Sc  Sc1  1  0.00000000  0.00000000  0.00000000  1
+  Be  Be2  1  0.62511516  0.62511516  0.12465453  1
+  Be  Be3  1  0.62511516  0.12465453  0.62511516  1
+  Be  Be4  1  0.62511516  0.62511516  0.62511516  1
+  Be  Be5  1  0.12465453  0.62511516  0.62511516  1

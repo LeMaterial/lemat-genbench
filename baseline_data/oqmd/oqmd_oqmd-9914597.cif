@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_TbGd2Ga3AgPt2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.83935601
+_cell_length_b   7.46685157
+_cell_length_c   7.46685157
+_cell_angle_alpha   119.94630194
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TbGd2Ga3AgPt2
+_chemical_formula_sum   'Tb1 Gd2 Ga3 Ag1 Pt2'
+_cell_volume   185.48072880
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.00000000  0.99927991  0.99927991  1
+  Ga  Ga1  1  0.50000052  0.26766677  0.26766677  1
+  Ga  Ga2  1  0.50000052  0.99961749  0.73255618  1
+  Ga  Ga3  1  0.50000052  0.73255618  0.99961749  1
+  Gd  Gd4  1  0.00000000  0.40929330  0.00016426  1
+  Gd  Gd5  1  0.00000000  0.00016426  0.40929330  1
+  Pt  Pt6  1  0.50000052  0.66631767  0.33427766  1
+  Pt  Pt7  1  0.50000052  0.33427766  0.66631767  1
+  Tb  Tb8  1  0.00000000  0.59072828  0.59072828  1

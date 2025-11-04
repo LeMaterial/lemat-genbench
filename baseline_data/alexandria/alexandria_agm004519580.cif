@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Pm2BeP3Pt4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.19404258
+_cell_length_b   4.19404258
+_cell_length_c   9.70357091
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pm2BeP3Pt4
+_chemical_formula_sum   'Pm2 Be1 P3 Pt4'
+_cell_volume   170.68574596
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.50000000  0.00000000  0.25371049  1
+  Pm  Pm1  1  0.00000000  0.50000000  0.74628951  1
+  Be  Be2  1  0.50000000  0.50000000  0.50000000  1
+  P  P3  1  0.00000000  0.00000000  0.50000000  1
+  P  P4  1  0.50000000  0.00000000  0.85948903  1
+  P  P5  1  0.00000000  0.50000000  0.14051097  1
+  Pt  Pt6  1  0.50000000  0.50000000  0.00000000  1
+  Pt  Pt7  1  0.00000000  0.00000000  0.00000000  1
+  Pt  Pt8  1  0.50000000  0.00000000  0.61461443  1
+  Pt  Pt9  1  0.00000000  0.50000000  0.38538557  1

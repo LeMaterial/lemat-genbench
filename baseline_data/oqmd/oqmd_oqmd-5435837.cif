@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Na2AgBi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.17481042
+_cell_length_b   6.17481042
+_cell_length_c   5.83643204
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   80.78399331
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na2AgBi
+_chemical_formula_sum   'Na4 Ag2 Bi2'
+_cell_volume   219.66058146
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.00000000  0.00000000  0.00000000  1
+  Ag  Ag1  1  0.00000000  0.00000000  0.50000068  1
+  Bi  Bi2  1  0.69766238  0.30233685  0.25000034  1
+  Bi  Bi3  1  0.30233685  0.69766238  0.74999931  1
+  Na  Na4  1  0.16129309  0.47789789  0.25000034  1
+  Na  Na5  1  0.52210239  0.83870720  0.25000034  1
+  Na  Na6  1  0.47789789  0.16129309  0.74999931  1
+  Na  Na7  1  0.83870720  0.52210239  0.74999931  1

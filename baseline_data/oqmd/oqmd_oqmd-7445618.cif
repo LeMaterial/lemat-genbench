@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_InReTeAuS2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.11830428
+_cell_length_b   8.11830428
+_cell_length_c   10.28403732
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   156.48615224
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   InReTeAuS2
+_chemical_formula_sum   'In2 Re2 Te2 Au2 S4'
+_cell_volume   270.41781382
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.84251609  0.15748622  0.25000007  1
+  Au  Au1  1  0.15748622  0.84251609  0.75000020  1
+  In  In2  1  0.20045180  0.79955050  0.25000007  1
+  In  In3  1  0.79955050  0.20045180  0.75000020  1
+  Re  Re4  1  0.50000115  0.50000115  0.00000000  1
+  Re  Re5  1  0.50000115  0.50000115  0.50000013  1
+  S  S6  1  0.88925684  0.11074547  0.02072824  1
+  S  S7  1  0.88925684  0.11074547  0.47927189  1
+  S  S8  1  0.11074547  0.88925684  0.52072837  1
+  S  S9  1  0.11074547  0.88925684  0.97927105  1
+  Te  Te10  1  0.53821648  0.46178583  0.25000007  1
+  Te  Te11  1  0.46178583  0.53821648  0.75000020  1

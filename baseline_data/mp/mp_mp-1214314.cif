@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_BaTi(AsO4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.11124206
+_cell_length_b   5.11124206
+_cell_length_c   7.99141329
+_cell_angle_alpha   87.29788477
+_cell_angle_beta   87.29788477
+_cell_angle_gamma   65.22770822
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaTi(AsO4)2
+_chemical_formula_sum   'Ba1 Ti1 As2 O8'
+_cell_volume   189.26556511
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.00000000  0.00000000  0.50000000  1
+  Ti  Ti1  1  0.00000000  0.00000000  0.00000000  1
+  As  As2  1  0.36399400  0.36399400  0.79719300  1
+  As  As3  1  0.63600600  0.63600600  0.20280700  1
+  O  O4  1  0.30637200  0.30637200  0.59826700  1
+  O  O5  1  0.69362800  0.69362800  0.40173300  1
+  O  O6  1  0.73331400  0.22657500  0.82014700  1
+  O  O7  1  0.26668600  0.77342500  0.17985300  1
+  O  O8  1  0.77342500  0.26668600  0.17985300  1
+  O  O9  1  0.22657500  0.73331400  0.82014700  1
+  O  O10  1  0.22043300  0.22043300  0.95407400  1
+  O  O11  1  0.77956700  0.77956700  0.04592600  1

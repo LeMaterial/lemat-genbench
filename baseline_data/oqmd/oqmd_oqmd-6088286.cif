@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Sm3Mg3HgAu2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.75263256
+_cell_length_b   7.75263257
+_cell_length_c   4.21284937
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sm3Mg3HgAu2
+_chemical_formula_sum   'Sm3 Mg3 Hg1 Au2'
+_cell_volume   219.28300076
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.66666698  0.33333300  0.49999889  1
+  Au  Au1  1  0.33333300  0.66666600  0.49999889  1
+  Hg  Hg2  1  0.00000000  0.00000000  0.00000000  1
+  Mg  Mg3  1  0.25203181  0.00000000  0.49999889  1
+  Mg  Mg4  1  0.00000000  0.25203245  0.49999889  1
+  Mg  Mg5  1  0.74796795  0.74796804  0.49999889  1
+  Sm  Sm6  1  0.58324188  0.00000000  0.00000000  1
+  Sm  Sm7  1  0.41675828  0.41675748  0.00000000  1
+  Sm  Sm8  1  0.00000000  0.58324152  0.00000000  1

@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_LiTbCdTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   13.43022764
+_cell_length_b   4.33973343
+_cell_length_c   12.77490492
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiTbCdTe3
+_chemical_formula_sum   'Li4 Tb4 Cd4 Te12'
+_cell_volume   744.56754861
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cd  Cd0  1  0.26557108  0.24999923  0.21703567  1
+  Cd  Cd1  1  0.76557079  0.24999923  0.28296414  1
+  Cd  Cd2  1  0.23442938  0.74999998  0.71703547  1
+  Cd  Cd3  1  0.73442910  0.74999998  0.78296395  1
+  Li  Li4  1  0.88621953  0.24999923  0.00934567  1
+  Li  Li5  1  0.38621981  0.24999923  0.49065414  1
+  Li  Li6  1  0.61378036  0.74999998  0.50934547  1
+  Li  Li7  1  0.11377990  0.74999998  0.99065395  1
+  Tb  Tb8  1  0.55424749  0.74999998  0.17443339  1
+  Tb  Tb9  1  0.05424778  0.74999998  0.32556642  1
+  Tb  Tb10  1  0.94575240  0.24999923  0.67443320  1
+  Tb  Tb11  1  0.44575194  0.24999923  0.82556622  1
+  Te  Te12  1  0.42191913  0.24999923  0.07698453  1
+  Te  Te13  1  0.77878799  0.74999998  0.13702020  1
+  Te  Te14  1  0.06358195  0.24999923  0.14404256  1
+  Te  Te15  1  0.56358166  0.24999923  0.35595725  1
+  Te  Te16  1  0.27878828  0.74999998  0.36297961  1
+  Te  Te17  1  0.92191885  0.24999923  0.42301528  1
+  Te  Te18  1  0.07808133  0.74999998  0.57698433  1
+  Te  Te19  1  0.72121190  0.24999923  0.63702001  1
+  Te  Te20  1  0.43641851  0.74999998  0.64404237  1
+  Te  Te21  1  0.93641823  0.74999998  0.85595706  1
+  Te  Te22  1  0.22121144  0.24999923  0.86297942  1
+  Te  Te23  1  0.57808104  0.74999998  0.92301509  1

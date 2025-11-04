@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Hf4Tl5Fe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.72756850
+_cell_length_b   3.25684548
+_cell_length_c   9.27233413
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   94.44073218
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Hf4Tl5Fe2
+_chemical_formula_sum   'Hf4 Tl5 Fe2'
+_cell_volume   232.66087680
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.57900391  0.00000000  0.13476448  1
+  Fe  Fe1  1  0.42099587  0.00000000  0.86523571  1
+  Hf  Hf2  1  0.31228413  0.49999916  0.06170048  1
+  Hf  Hf3  1  0.68945995  0.49999916  0.33420635  1
+  Hf  Hf4  1  0.31053983  0.49999916  0.66579384  1
+  Hf  Hf5  1  0.68771554  0.49999916  0.93829863  1
+  Tl  Tl6  1  0.96344101  0.00000000  0.16197310  1
+  Tl  Tl7  1  0.35148091  0.00000000  0.36307217  1
+  Tl  Tl8  1  -0.00000000  0.00000000  0.50000010  1
+  Tl  Tl9  1  0.64851887  0.00000000  0.63692803  1
+  Tl  Tl10  1  0.03655877  0.00000000  0.83802710  1

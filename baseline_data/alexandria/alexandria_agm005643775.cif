@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_Sm8In2Rh3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.01590897
+_cell_length_b   10.08652746
+_cell_length_c   9.00111646
+_cell_angle_alpha   123.97720293
+_cell_angle_beta   90.00350317
+_cell_angle_gamma   89.99992222
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sm8In2Rh3
+_chemical_formula_sum   'Sm8 In2 Rh3'
+_cell_volume   377.64037402
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.99998000  0.61173619  0.22287477  1
+  Sm  Sm1  1  0.00002000  0.38826381  0.77712523  1
+  Sm  Sm2  1  0.99998200  0.11438553  0.22814210  1
+  Sm  Sm3  1  0.00001800  0.88561447  0.77185790  1
+  Sm  Sm4  1  0.50001900  0.64050301  0.77453080  1
+  Sm  Sm5  1  0.50001800  0.13335621  0.77367938  1
+  Sm  Sm6  1  0.49998200  0.86664379  0.22632062  1
+  Sm  Sm7  1  0.49998100  0.35949699  0.22547020  1
+  In  In8  1  0.49999900  0.25564655  0.51040060  1
+  In  In9  1  0.50000100  0.74435345  0.48959940  1
+  Rh  Rh10  1  0.50000000  -0.00000000  -0.00000000  1
+  Rh  Rh11  1  0.00000200  0.25192385  0.99965416  1
+  Rh  Rh12  1  0.99999800  0.74807615  0.00034584  1

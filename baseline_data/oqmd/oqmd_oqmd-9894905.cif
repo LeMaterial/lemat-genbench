@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Gd2ErMg3Ir2Au
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.02469449
+_cell_length_b   7.41866454
+_cell_length_c   7.41866454
+_cell_angle_alpha   119.82241188
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Gd2ErMg3Ir2Au
+_chemical_formula_sum   'Gd2 Er1 Mg3 Ir2 Au1'
+_cell_volume   192.17168893
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.00000000  0.00248838  0.00248838  1
+  Er  Er1  1  0.00000000  0.41725363  0.41725363  1
+  Gd  Gd2  1  0.00000000  0.58151255  0.00027676  1
+  Gd  Gd3  1  0.00000000  0.00027676  0.58151255  1
+  Ir  Ir4  1  0.50000068  0.66316365  0.33431314  1
+  Ir  Ir5  1  0.50000068  0.33431314  0.66316365  1
+  Mg  Mg6  1  0.50000068  0.25357363  0.00147811  1
+  Mg  Mg7  1  0.50000068  0.00147811  0.25357363  1
+  Mg  Mg8  1  0.50000068  0.74588539  0.74588539  1

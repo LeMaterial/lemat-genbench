@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_NaNdB4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.28936541
+_cell_length_b   5.28936541
+_cell_length_c   5.28936541
+_cell_angle_alpha   145.22169730
+_cell_angle_beta   115.61278902
+_cell_angle_gamma   75.30625714
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaNdB4
+_chemical_formula_sum   'Na1 Nd1 B4'
+_cell_volume   74.62109439
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  B  B0  1  0.56194791  0.24470863  0.31723929  1
+  B  B1  1  0.07253086  0.75529186  0.31723880  1
+  B  B2  1  0.92747012  0.24470863  0.68276149  1
+  B  B3  1  0.43805306  0.75529186  0.68276100  1
+  Na  Na4  1  0.00000000  0.00000000  0.00000000  1
+  Nd  Nd5  1  0.50000059  0.50000059  -0.00000000  1

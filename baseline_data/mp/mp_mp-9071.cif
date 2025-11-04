@@ -1,0 +1,52 @@
+# generated using pymatgen
+data_Na8TiAs4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.70077513
+_cell_length_b   9.70078007
+_cell_length_c   9.70079033
+_cell_angle_alpha   59.99410347
+_cell_angle_beta   59.99416037
+_cell_angle_gamma   59.99415067
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na8TiAs4
+_chemical_formula_sum   'Na16 Ti2 As8'
+_cell_volume   645.42753882
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.62500007  0.62500018  0.12500003  1
+  Na  Na1  1  0.62499994  0.12500023  0.62500014  1
+  Na  Na2  1  0.12500025  0.62499988  0.62500001  1
+  Na  Na3  1  0.62499966  0.62500005  0.62500000  1
+  Na  Na4  1  0.02922268  0.47077922  0.47077955  1
+  Na  Na5  1  0.77922186  0.22077685  0.22077666  1
+  Na  Na6  1  0.47077937  0.02922389  0.47077851  1
+  Na  Na7  1  0.47077926  0.47077921  0.02922284  1
+  Na  Na8  1  0.02922315  0.02922329  0.47077801  1
+  Na  Na9  1  0.02922355  0.47077816  0.02922336  1
+  Na  Na10  1  0.47077741  0.02922405  0.02922368  1
+  Na  Na11  1  0.77922113  0.22077639  0.77922114  1
+  Na  Na12  1  0.22077660  0.77922254  0.22077633  1
+  Na  Na13  1  0.22077663  0.22077702  0.77922230  1
+  Na  Na14  1  0.77922078  0.77922045  0.22077682  1
+  Na  Na15  1  0.22077695  0.77922087  0.77922070  1
+  Ti  Ti16  1  0.75000361  0.74999960  0.74999907  1
+  Ti  Ti17  1  0.49999703  0.49999798  0.50000080  1
+  As  As18  1  0.85514508  0.85514555  0.43456669  1
+  As  As19  1  0.85514556  0.43456666  0.85514511  1
+  As  As20  1  0.39485477  0.39485453  0.81543322  1
+  As  As21  1  0.39485444  0.81543324  0.39485512  1
+  As  As22  1  0.81543318  0.39485526  0.39485427  1
+  As  As23  1  0.85514384  0.85514409  0.85514380  1
+  As  As24  1  0.43456718  0.85514502  0.85514522  1
+  As  As25  1  0.39485600  0.39485579  0.39485663  1

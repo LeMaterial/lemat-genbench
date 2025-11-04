@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Pu3In3FeSi2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.36079720
+_cell_length_b   7.17019765
+_cell_length_c   7.17019766
+_cell_angle_alpha   120.00000001
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pu3In3FeSi2
+_chemical_formula_sum   'Pu3 In3 Fe1 Si2'
+_cell_volume   194.15955902
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Si  Si0  1  0.50000000  0.33333333  0.66666667  1
+  Si  Si1  1  0.50000000  0.66666667  0.33333333  1
+  In  In2  1  0.50000000  0.75505575  0.75505575  1
+  In  In3  1  0.50000000  0.24494425  1.00000000  1
+  In  In4  1  0.50000000  1.00000000  0.24494425  1
+  Fe  Fe5  1  0.00000000  0.00000000  0.00000000  1
+  Pu  Pu6  1  0.00000000  1.00000000  0.59239599  1
+  Pu  Pu7  1  0.00000000  0.59239599  1.00000000  1
+  Pu  Pu8  1  0.00000000  0.40760401  0.40760401  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_U2Al3Cu7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.15557300
+_cell_length_b   5.07489897
+_cell_length_c   8.80272722
+_cell_angle_alpha   91.32444640
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   U2Al3Cu7
+_chemical_formula_sum   'U2 Al3 Cu7'
+_cell_volume   185.59211369
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  U  U0  1  0.00000000  0.00364400  0.99924600  1
+  U  U1  1  0.00000000  0.49636100  0.50073700  1
+  Al  Al2  1  0.50000000  0.51078200  0.99329400  1
+  Al  Al3  1  0.50000000  0.98925900  0.50673000  1
+  Al  Al4  1  0.50000000  0.24991200  0.24998000  1
+  Cu  Cu5  1  0.00000000  0.99414300  0.33412200  1
+  Cu  Cu6  1  0.00000000  0.49910300  0.82990800  1
+  Cu  Cu7  1  0.00000000  0.50579900  0.16587100  1
+  Cu  Cu8  1  0.00000000  0.00087600  0.67008800  1
+  Cu  Cu9  1  0.50000000  0.75004400  0.75000500  1
+  Cu  Cu10  1  0.50000000  0.74985500  0.25003900  1
+  Cu  Cu11  1  0.50000000  0.25002200  0.74998000  1

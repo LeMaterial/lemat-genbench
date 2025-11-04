@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_H2He3Li7Be
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.83945632
+_cell_length_b   3.91758749
+_cell_length_c   11.84681047
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   H2He3Li7Be
+_chemical_formula_sum   'H2 He3 Li7 Be1'
+_cell_volume   178.19268665
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.50000000  0.50000000  0.18243809  1
+  H  H1  1  0.50000000  0.50000000  0.81756191  1
+  He  He2  1  0.00000000  0.00000000  0.00000000  1
+  He  He3  1  0.00000000  0.00000000  0.35540707  1
+  He  He4  1  0.00000000  -0.00000000  0.64459293  1
+  Li  Li5  1  0.00000000  0.50000000  0.00000000  1
+  Li  Li6  1  0.50000000  0.00000000  0.37947453  1
+  Li  Li7  1  0.50000000  0.00000000  0.62052547  1
+  Li  Li8  1  0.00000000  0.50000000  0.37840052  1
+  Li  Li9  1  -0.00000000  0.50000000  0.62159948  1
+  Li  Li10  1  0.00000000  0.00000000  0.15752636  1
+  Li  Li11  1  0.00000000  0.00000000  0.84247364  1
+  Be  Be12  1  0.50000000  0.50000000  0.50000000  1

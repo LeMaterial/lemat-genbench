@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_TbZnInSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.87178218
+_cell_length_b   8.87178218
+_cell_length_c   9.15412527
+_cell_angle_alpha   104.52084166
+_cell_angle_beta   104.52084166
+_cell_angle_gamma   27.14269549
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TbZnInSe3
+_chemical_formula_sum   'Tb2 Zn2 In2 Se6'
+_cell_volume   317.57902774
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  In  In0  1  0.13697957  0.13697957  0.06928473  1
+  In  In1  1  0.86302061  0.86302061  0.93071496  1
+  Se  Se2  1  0.50000009  0.50000009  0.00000000  1
+  Se  Se3  1  0.33729697  0.33729697  0.19802309  1
+  Se  Se4  1  0.65758260  0.65758260  0.36848176  1
+  Se  Se5  1  -0.00000000  -0.00000000  0.50000041  1
+  Se  Se6  1  0.34241759  0.34241759  0.63151793  1
+  Se  Se7  1  0.66270321  0.66270321  0.80197660  1
+  Tb  Tb8  1  0.82639479  0.82639479  0.40522037  1
+  Tb  Tb9  1  0.17360539  0.17360539  0.59477932  1
+  Zn  Zn10  1  0.48877717  0.48877717  0.28537468  1
+  Zn  Zn11  1  0.51122317  0.51122317  0.71462615  1

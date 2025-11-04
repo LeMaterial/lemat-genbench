@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Pr3InNi(SnPt)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.08583154
+_cell_length_b   7.64655027
+_cell_length_c   7.64655027
+_cell_angle_alpha   119.86542461
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr3InNi(SnPt)2
+_chemical_formula_sum   'Pr3 In1 Ni1 Sn2 Pt2'
+_cell_volume   207.17126728
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  In  In0  1  0.50000104  0.24395665  0.24395665  1
+  Ni  Ni1  1  0.00000000  0.99193186  0.99193186  1
+  Pr  Pr2  1  0.00000000  0.41145516  0.00084179  1
+  Pr  Pr3  1  0.00000000  0.00084179  0.41145516  1
+  Pr  Pr4  1  0.00000000  0.58805949  0.58805949  1
+  Pt  Pt5  1  0.50000104  0.66824469  0.33382799  1
+  Pt  Pt6  1  0.50000104  0.33382799  0.66824469  1
+  Sn  Sn7  1  0.50000104  0.76050152  0.00118534  1
+  Sn  Sn8  1  0.50000104  0.00118534  0.76050152  1

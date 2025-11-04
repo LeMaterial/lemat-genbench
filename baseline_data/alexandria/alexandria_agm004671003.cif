@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_CuNi3(Te4Pd)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.72543860
+_cell_length_b   7.72543860
+_cell_length_c   7.83866128
+_cell_angle_alpha   60.47666883
+_cell_angle_beta   60.47666885
+_cell_angle_gamma   59.99999999
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CuNi3(Te4Pd)2
+_chemical_formula_sum   'Cu1 Ni3 Te8 Pd2'
+_cell_volume   333.16926262
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.87223796  0.87223796  0.38328611  1
+  Ni  Ni1  1  0.49952991  0.99887782  0.00206136  1
+  Ni  Ni2  1  0.99887782  0.49953091  0.00206136  1
+  Ni  Ni3  1  0.49952991  0.49953091  0.00206136  1
+  Te  Te4  1  0.26280013  0.26280013  0.21159860  1
+  Te  Te5  1  0.73814290  0.73814290  0.78557031  1
+  Te  Te6  1  0.25587774  0.25587774  0.77603665  1
+  Te  Te7  1  0.71220687  0.25587774  0.77603665  1
+  Te  Te8  1  0.25587774  0.71220687  0.77603665  1
+  Te  Te9  1  0.74546153  0.28024672  0.22883123  1
+  Te  Te10  1  0.28024672  0.74546153  0.22883123  1
+  Te  Te11  1  0.74546153  0.74546153  0.22883123  1
+  Pd  Pd12  1  0.12665328  0.12665328  0.62004115  1
+  Pd  Pd13  1  0.49976996  0.49976996  0.50068911  1

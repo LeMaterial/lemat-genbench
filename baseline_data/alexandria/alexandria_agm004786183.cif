@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_CdGa(AgTe2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.31696695
+_cell_length_b   6.31696694
+_cell_length_c   7.92560990
+_cell_angle_alpha   113.50013396
+_cell_angle_beta   113.50013398
+_cell_angle_gamma   89.96620301
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CdGa(AgTe2)2
+_chemical_formula_sum   'Cd1 Ga1 Ag2 Te4'
+_cell_volume   261.21618620
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cd  Cd0  1  0.99978207  0.99978207  0.99956413  1
+  Ga  Ga1  1  0.50021695  0.50021695  0.00043490  1
+  Ag  Ag2  1  0.75000043  0.25000043  0.50000187  1
+  Ag  Ag3  1  0.25000043  0.75000043  0.50000187  1
+  Te  Te4  1  0.61289514  0.61289514  0.75195114  1
+  Te  Te5  1  0.38689277  0.86144620  0.24833797  1
+  Te  Te6  1  0.86144620  0.38689277  0.24833797  1
+  Te  Te7  1  0.13905600  0.13905600  0.75195114  1

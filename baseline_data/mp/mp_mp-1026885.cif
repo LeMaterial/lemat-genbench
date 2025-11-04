@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_NaMg14Cu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.37259986
+_cell_length_b   6.37716598
+_cell_length_c   10.10932719
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.02371061
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaMg14Cu
+_chemical_formula_sum   'Na1 Mg14 Cu1'
+_cell_volume   355.70784331
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.16530272  0.83265086  0.12500000  1
+  Mg  Mg1  1  0.16703956  0.33351928  0.62500000  1
+  Mg  Mg2  1  0.16918098  0.83458999  0.62500000  1
+  Mg  Mg3  1  0.66877539  0.33929666  0.12500000  1
+  Mg  Mg4  1  0.66506342  0.33068390  0.62500000  1
+  Mg  Mg5  1  0.66877539  0.82947772  0.12500000  1
+  Mg  Mg6  1  0.66506342  0.83437852  0.62500000  1
+  Mg  Mg7  1  0.33085330  0.17273237  0.37136478  1
+  Mg  Mg8  1  0.33085330  0.17273237  0.87863522  1
+  Mg  Mg9  1  0.33085330  0.65812193  0.37136478  1
+  Mg  Mg10  1  0.33085330  0.65812193  0.87863522  1
+  Mg  Mg11  1  0.84093559  0.17046830  0.36546781  1
+  Mg  Mg12  1  0.84093559  0.17046830  0.88453219  1
+  Mg  Mg13  1  0.83088649  0.66544375  0.38149645  1
+  Mg  Mg14  1  0.83088649  0.66544375  0.86850355  1
+  Cu  Cu15  1  0.16374174  0.33187037  0.12500000  1

@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Tm4Lu3(FeTe)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.17040441
+_cell_length_b   9.17040441
+_cell_length_c   9.17040441
+_cell_angle_alpha   155.98381001
+_cell_angle_beta   66.00658276
+_cell_angle_gamma   119.55120471
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tm4Lu3(FeTe)2
+_chemical_formula_sum   'Tm4 Lu3 Fe2 Te2'
+_cell_volume   270.93863113
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.16609776  0.93170844  0.23438849  1
+  Fe  Fe1  1  0.69731995  0.93170844  0.76561068  1
+  Lu  Lu2  1  0.99805452  0.99805452  -0.00000000  1
+  Lu  Lu3  1  0.93850489  0.62593489  0.31257000  1
+  Lu  Lu4  1  0.31336490  0.62593457  0.68742950  1
+  Te  Te5  1  0.66197480  0.66197480  0.00000000  1
+  Te  Te6  1  0.26476999  0.76476958  0.49999958  1
+  Tm  Tm7  1  0.55449731  0.41748309  0.13701422  1
+  Tm  Tm8  1  0.61910086  0.26837355  0.35072731  1
+  Tm  Tm9  1  0.91764606  0.26837355  0.64927251  1
+  Tm  Tm10  1  0.28046887  0.41748276  0.86298527  1

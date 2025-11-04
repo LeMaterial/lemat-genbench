@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_CeCu(WO4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.26944100
+_cell_length_b   7.46893402
+_cell_length_c   7.62736943
+_cell_angle_alpha   113.96416325
+_cell_angle_beta   116.23496476
+_cell_angle_gamma   91.22248511
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CeCu(WO4)2
+_chemical_formula_sum   'Ce2 Cu2 W4 O16'
+_cell_volume   329.09547656
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.18500400  0.28814200  0.46517900  1
+  Ce  Ce1  1  0.81499600  0.71185800  0.53482100  1
+  Cu  Cu2  1  0.24244500  0.67636800  0.99131000  1
+  Cu  Cu3  1  0.75755500  0.32363200  0.00869000  1
+  W  W4  1  0.26422700  0.29367200  0.03262300  1
+  W  W5  1  0.73577300  0.70632800  0.96737700  1
+  W  W6  1  0.64966400  0.10413000  0.28845300  1
+  W  W7  1  0.35033600  0.89587000  0.71154700  1
+  O  O8  1  0.19019600  0.35627300  0.80226800  1
+  O  O9  1  0.80980400  0.64372700  0.19773200  1
+  O  O10  1  0.45697700  0.53754100  0.25577400  1
+  O  O11  1  0.54302300  0.46245900  0.74422600  1
+  O  O12  1  0.86208800  0.01059300  0.19897600  1
+  O  O13  1  0.13791200  0.98940700  0.80102400  1
+  O  O14  1  0.70807500  0.00642200  0.48091400  1
+  O  O15  1  0.29192500  0.99357800  0.51908600  1
+  O  O16  1  0.17519800  0.63684500  0.55397400  1
+  O  O17  1  0.82480200  0.36315500  0.44602600  1
+  O  O18  1  0.47916600  0.82684000  0.00653500  1
+  O  O19  1  0.52083400  0.17316000  0.99346500  1
+  O  O20  1  0.04166400  0.30756500  0.08782000  1
+  O  O21  1  0.95833600  0.69243500  0.91218000  1
+  O  O22  1  0.38572000  0.17565700  0.25816500  1
+  O  O23  1  0.61428000  0.82434300  0.74183500  1

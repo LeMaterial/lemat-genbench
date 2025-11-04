@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_NiSn(ClO)6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.83644100
+_cell_length_b   7.24546262
+_cell_length_c   7.63034109
+_cell_angle_alpha   100.78332376
+_cell_angle_beta   105.02269616
+_cell_angle_gamma   89.45016117
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NiSn(ClO)6
+_chemical_formula_sum   'Ni1 Sn1 Cl6 O6'
+_cell_volume   358.29031190
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.50000000  0.00000000  0.00000000  1
+  Sn  Sn1  1  0.00000000  0.00000000  0.00000000  1
+  Cl  Cl2  1  0.68566800  0.16233500  0.85317900  1
+  Cl  Cl3  1  0.82379800  0.79527500  0.29044100  1
+  Cl  Cl4  1  0.88665200  0.71810800  0.78038100  1
+  Cl  Cl5  1  0.31433200  0.83766500  0.14682100  1
+  Cl  Cl6  1  0.17620200  0.20472500  0.70955900  1
+  Cl  Cl7  1  0.11334800  0.28189200  0.21961900  1
+  O  O8  1  0.28198700  0.59951100  0.60764200  1
+  O  O9  1  0.77300200  0.94453400  0.13977700  1
+  O  O10  1  0.40502500  0.73388000  0.64593700  1
+  O  O11  1  0.71801300  0.40048900  0.39235800  1
+  O  O12  1  0.22699800  0.05546600  0.86022300  1
+  O  O13  1  0.59497500  0.26612000  0.35406300  1

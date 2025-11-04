@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_KLaBe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.81122722
+_cell_length_b   3.81122723
+_cell_length_c   8.39414887
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99999994
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KLaBe
+_chemical_formula_sum   'K1 La1 Be1'
+_cell_volume   105.59345083
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.00000000  0.00000000  0.97435263  1
+  K  K1  1  0.66666667  0.33333333  0.27667838  1
+  La  La2  1  0.33333333  0.66666667  0.74896899  1

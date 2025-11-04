@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Na2Hf(ReO4)3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.43639082
+_cell_length_b   7.43639082
+_cell_length_c   7.43639082
+_cell_angle_alpha   59.05270900
+_cell_angle_beta   59.05270901
+_cell_angle_gamma   59.05270900
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na2Hf(ReO4)3
+_chemical_formula_sum   'Na2 Hf1 Re3 O12'
+_cell_volume   284.50336197
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.69735665  0.69735665  0.69735665  1
+  Na  Na1  1  0.30264335  0.30264335  0.30264335  1
+  Hf  Hf2  1  0.00000000  0.00000000  0.00000000  1
+  Re  Re3  1  0.50000000  0.00000000  -0.00000000  1
+  Re  Re4  1  -0.00000000  0.50000000  0.00000000  1
+  Re  Re5  1  -0.00000000  -0.00000000  0.50000000  1
+  O  O6  1  0.30530948  0.30530948  0.93732536  1
+  O  O7  1  0.93006598  0.93006598  0.33477644  1
+  O  O8  1  0.33477644  0.93006598  0.93006598  1
+  O  O9  1  0.93732536  0.30530948  0.30530948  1
+  O  O10  1  0.93006598  0.33477644  0.93006598  1
+  O  O11  1  0.30530948  0.93732536  0.30530948  1
+  O  O12  1  0.69469052  0.69469052  0.06267464  1
+  O  O13  1  0.06993402  0.06993402  0.66522356  1
+  O  O14  1  0.66522356  0.06993402  0.06993402  1
+  O  O15  1  0.06267464  0.69469052  0.69469052  1
+  O  O16  1  0.06993402  0.66522356  0.06993402  1
+  O  O17  1  0.69469052  0.06267464  0.69469052  1

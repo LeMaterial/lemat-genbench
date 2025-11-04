@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Pr2InAgO5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.60775776
+_cell_length_b   6.92583260
+_cell_length_c   12.31203654
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   105.09715749
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr2InAgO5
+_chemical_formula_sum   'Pr4 In2 Ag2 O10'
+_cell_volume   297.01954966
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.84842188  0.69684376  0.75970519  1
+  Pr  Pr1  1  0.08374851  0.16749701  0.65835546  1
+  Pr  Pr2  1  0.15157812  0.30315624  0.25970519  1
+  Pr  Pr3  1  0.91625149  0.83250299  0.15835546  1
+  In  In4  1  0.77695084  0.55390168  0.49614145  1
+  In  In5  1  0.22304916  0.44609832  0.99614145  1
+  Ag  Ag6  1  0.52372058  0.04744115  0.93596660  1
+  Ag  Ag7  1  0.47627942  0.95255885  0.43596660  1
+  O  O8  1  0.37327362  0.74654724  0.04681425  1
+  O  O9  1  0.73052477  0.46104953  0.90482940  1
+  O  O10  1  0.48591823  0.97183645  0.75881865  1
+  O  O11  1  0.25657265  0.51314530  0.69410849  1
+  O  O12  1  0.91645416  0.83290832  0.56923050  1
+  O  O13  1  0.62672638  0.25345276  0.54681425  1
+  O  O14  1  0.26947523  0.53895047  0.40482940  1
+  O  O15  1  0.51408177  0.02816355  0.25881865  1
+  O  O16  1  0.74342735  0.48685470  0.19410849  1
+  O  O17  1  0.08354584  0.16709168  0.06923050  1

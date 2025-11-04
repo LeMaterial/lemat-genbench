@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_TlFeBr3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.66107519
+_cell_length_b   8.49595919
+_cell_length_c   10.74231510
+_cell_angle_alpha   89.99998968
+_cell_angle_beta   89.69974121
+_cell_angle_gamma   89.99999976
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TlFeBr3
+_chemical_formula_sum   'Tl4 Fe4 Br12'
+_cell_volume   699.18816135
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tl  Tl0  1  0.95636514  0.61034723  0.25392175  1
+  Tl  Tl1  1  0.54363486  0.11034723  0.24607825  1
+  Tl  Tl2  1  0.04363486  0.38965277  0.74607825  1
+  Tl  Tl3  1  0.45636514  0.88965277  0.75392175  1
+  Fe  Fe4  1  0.43175823  0.60221534  0.06461355  1
+  Fe  Fe5  1  0.06824177  0.10221534  0.43538645  1
+  Fe  Fe6  1  0.56824177  0.39778466  0.93538645  1
+  Fe  Fe7  1  0.93175823  0.89778466  0.56461355  1
+  Br  Br8  1  0.15844598  0.71043641  0.55305538  1
+  Br  Br9  1  0.34155402  0.21043641  0.94694462  1
+  Br  Br10  1  0.84155402  0.28956359  0.44694462  1
+  Br  Br11  1  0.65844598  0.78956359  0.05305538  1
+  Br  Br12  1  0.88008358  0.02342834  0.75761399  1
+  Br  Br13  1  0.61991642  0.52342834  0.74238601  1
+  Br  Br14  1  0.11991642  0.97657166  0.24238601  1
+  Br  Br15  1  0.38008358  0.47657166  0.25761399  1
+  Br  Br16  1  0.68048064  0.82569533  0.44970033  1
+  Br  Br17  1  0.81951936  0.32569533  0.05029967  1
+  Br  Br18  1  0.31951936  0.17430467  0.55029967  1
+  Br  Br19  1  0.18048064  0.67430467  0.94970033  1

@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_CdAg2GeS4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.63618068
+_cell_length_b   7.04451769
+_cell_length_c   7.78799726
+_cell_angle_alpha   89.99999459
+_cell_angle_beta   89.99998976
+_cell_angle_gamma   89.99998300
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CdAg2GeS4
+_chemical_formula_sum   'Cd2 Ag4 Ge2 S8'
+_cell_volume   364.07868672
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cd  Cd0  1  0.01579059  0.14454183  -0.00000025  1
+  Cd  Cd1  1  0.51579015  0.85545824  0.50000025  1
+  Ag  Ag2  1  0.49469787  0.32375853  0.75701629  1
+  Ag  Ag3  1  0.49469816  0.32375827  0.24298361  1
+  Ag  Ag4  1  0.99469808  0.67624116  0.25701640  1
+  Ag  Ag5  1  0.99469828  0.67624130  0.74298355  1
+  Ge  Ge6  1  0.01209716  0.17374377  0.50000018  1
+  Ge  Ge7  1  0.51209750  0.82625674  0.00000005  1
+  S  S8  1  0.17661790  0.81987975  -0.00000013  1
+  S  S9  1  0.61911401  0.66634196  0.23152539  1
+  S  S10  1  0.63097127  0.12116325  0.00000000  1
+  S  S11  1  0.67661774  0.18012018  0.50000002  1
+  S  S12  1  0.11911394  0.33365817  0.26847457  1
+  S  S13  1  0.61911408  0.66634171  0.76847462  1
+  S  S14  1  0.13097124  0.87883682  0.50000002  1
+  S  S15  1  0.11911401  0.33365832  0.73152545  1

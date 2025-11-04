@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_Pu8Ir3Ru2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.28874969
+_cell_length_b   7.45046641
+_cell_length_c   7.45045640
+_cell_angle_alpha   82.64214221
+_cell_angle_beta   70.86993873
+_cell_angle_gamma   70.87001769
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pu8Ir3Ru2
+_chemical_formula_sum   'Pu8 Ir3 Ru2'
+_cell_volume   261.97617512
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pu  Pu0  1  0.22263025  0.57559192  0.57559192  1
+  Pu  Pu1  1  0.77736975  0.42440808  0.42440808  1
+  Pu  Pu2  1  0.89353304  0.13861276  0.13861176  1
+  Pu  Pu3  1  0.10646696  0.86138724  0.86138824  1
+  Pu  Pu4  1  0.64582092  0.59944347  0.08106960  1
+  Pu  Pu5  1  0.64582092  0.08107060  0.59944347  1
+  Pu  Pu6  1  0.35417908  0.91892940  0.40055653  1
+  Pu  Pu7  1  0.35417908  0.40055653  0.91893040  1
+  Ir  Ir8  1  0.50000000  0.00000000  -0.00000000  1
+  Ir  Ir9  1  1.00000000  0.26603411  0.73396589  1
+  Ir  Ir10  1  0.00000000  0.73396589  0.26603411  1
+  Ru  Ru11  1  0.35072317  0.29252323  0.29252123  1
+  Ru  Ru12  1  0.64927683  0.70747677  0.70747877  1

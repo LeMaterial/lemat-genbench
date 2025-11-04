@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_PrErNi4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.45435905
+_cell_length_b   5.45435905
+_cell_length_c   7.93628157
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PrErNi4
+_chemical_formula_sum   'Pr2 Er2 Ni8'
+_cell_volume   204.47261238
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.66666698  0.33333379  0.49999990  1
+  Er  Er1  1  0.33333379  0.66666758  0.49999990  1
+  Ni  Ni2  1  0.66666698  0.33333379  0.00000000  1
+  Ni  Ni3  1  0.33333379  0.66666758  0.00000000  1
+  Ni  Ni4  1  0.50000009  0.00000000  0.22674725  1
+  Ni  Ni5  1  0.00000000  0.50000069  0.22674725  1
+  Ni  Ni6  1  0.50000039  0.50000069  0.22674725  1
+  Ni  Ni7  1  0.50000009  0.00000000  0.77325255  1
+  Ni  Ni8  1  0.00000000  0.50000069  0.77325255  1
+  Ni  Ni9  1  0.50000039  0.50000069  0.77325255  1
+  Pr  Pr10  1  0.00000000  0.00000000  0.00000000  1
+  Pr  Pr11  1  0.00000000  0.00000000  0.49999990  1

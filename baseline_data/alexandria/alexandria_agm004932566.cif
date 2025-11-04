@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_LiTm2BePd6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.88374813
+_cell_length_b   6.51720015
+_cell_length_c   6.47801086
+_cell_angle_alpha   54.01386969
+_cell_angle_beta   63.42137321
+_cell_angle_gamma   90.22353959
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiTm2BePd6
+_chemical_formula_sum   'Li1 Tm2 Be1 Pd6'
+_cell_volume   167.09277985
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.99999969  0.99999973  0.00000058  1
+  Tm  Tm1  1  0.73930773  0.26117347  0.52280801  1
+  Tm  Tm2  1  0.26069504  0.73882851  0.47718719  1
+  Be  Be3  1  0.49999947  0.49999958  0.00000096  1
+  Pd  Pd4  1  0.25606759  0.23779393  0.48876632  1
+  Pd  Pd5  1  0.76109712  0.74404967  0.98367521  1
+  Pd  Pd6  1  0.25600141  0.74436686  0.98245886  1
+  Pd  Pd7  1  0.74399659  0.25563119  0.01754517  1
+  Pd  Pd8  1  0.23890061  0.25594881  0.01632859  1
+  Pd  Pd9  1  0.74393176  0.76220524  0.51123511  1

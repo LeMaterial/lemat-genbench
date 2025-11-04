@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_KZrAgTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   11.49823332
+_cell_length_b   4.21351937
+_cell_length_c   15.66915586
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KZrAgTe3
+_chemical_formula_sum   'K4 Zr4 Ag4 Te12'
+_cell_volume   759.13971355
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.75333225  0.75000011  0.20605130  1
+  Ag  Ag1  1  0.25333196  0.75000011  0.29394819  1
+  Ag  Ag2  1  0.74666775  0.25000004  0.70605144  1
+  Ag  Ag3  1  0.24666746  0.25000004  0.79394832  1
+  K  K4  1  0.76431220  0.25000004  0.00874648  1
+  K  K5  1  0.26431191  0.25000004  0.49125301  1
+  K  K6  1  0.73568780  0.75000011  0.50874661  1
+  K  K7  1  0.23568751  0.75000011  0.99125314  1
+  Te  Te8  1  0.54579428  0.75000011  0.12005561  1
+  Te  Te9  1  0.96833833  0.75000011  0.12474507  1
+  Te  Te10  1  0.26679142  0.25000004  0.17619137  1
+  Te  Te11  1  0.76679084  0.25000004  0.32380813  1
+  Te  Te12  1  0.46833804  0.75000011  0.37525442  1
+  Te  Te13  1  0.04579399  0.75000011  0.37994389  1
+  Te  Te14  1  0.95420572  0.25000004  0.62005574  1
+  Te  Te15  1  0.53166168  0.25000004  0.62474521  1
+  Te  Te16  1  0.23320887  0.75000011  0.67619150  1
+  Te  Te17  1  0.73320916  0.75000011  0.82380826  1
+  Te  Te18  1  0.03166139  0.25000004  0.87525455  1
+  Te  Te19  1  0.45420543  0.25000004  0.87994402  1
+  Zr  Zr20  1  0.04059406  0.25000004  0.24678994  1
+  Zr  Zr21  1  0.54059348  0.25000004  0.25320956  1
+  Zr  Zr22  1  0.45940623  0.75000011  0.74679007  1
+  Zr  Zr23  1  0.95940652  0.75000011  0.75320969  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Li2CaHfCl8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.53484660
+_cell_length_b   6.83580844
+_cell_length_c   8.03332509
+_cell_angle_alpha   72.99463874
+_cell_angle_beta   91.53566956
+_cell_angle_gamma   102.08009038
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2CaHfCl8
+_chemical_formula_sum   'Li2 Ca1 Hf1 Cl8'
+_cell_volume   335.33991068
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.53901735  0.35723213  0.68471570  1
+  Li  Li1  1  0.46098265  0.64276787  0.31528430  1
+  Ca  Ca2  1  0.00000000  0.00000000  0.50000000  1
+  Hf  Hf3  1  0.00000000  0.00000000  0.00000000  1
+  Cl  Cl4  1  0.12927119  0.78589127  0.27711298  1
+  Cl  Cl5  1  0.66454653  0.75241075  0.04878474  1
+  Cl  Cl6  1  0.87349700  0.19956443  0.17026796  1
+  Cl  Cl7  1  0.87072881  0.21410873  0.72288702  1
+  Cl  Cl8  1  0.33545347  0.24758925  0.95121526  1
+  Cl  Cl9  1  0.12650300  0.80043557  0.82973204  1
+  Cl  Cl10  1  0.63134520  0.72469165  0.55561691  1
+  Cl  Cl11  1  0.36865480  0.27530835  0.44438309  1

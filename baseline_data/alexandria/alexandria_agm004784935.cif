@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_LaTb2FeN4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.44399761
+_cell_length_b   6.03895543
+_cell_length_c   11.66567846
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   106.56772266
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaTb2FeN4
+_chemical_formula_sum   'La2 Tb4 Fe2 N8'
+_cell_volume   232.55155432
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.11394622  0.22789244  0.75000000  1
+  La  La1  1  0.88605378  0.77210756  0.25000000  1
+  Tb  Tb2  1  0.36770944  0.73541888  0.54479403  1
+  Tb  Tb3  1  0.63229056  0.26458112  0.04479403  1
+  Tb  Tb4  1  0.63229056  0.26458112  0.45520597  1
+  Tb  Tb5  1  0.36770944  0.73541888  0.95520597  1
+  Fe  Fe6  1  0.84073762  0.68147524  0.75000000  1
+  Fe  Fe7  1  0.15926238  0.31852476  0.25000000  1
+  N  N8  1  0.26675297  0.53350595  0.12910024  1
+  N  N9  1  0.73324703  0.46649405  0.62910024  1
+  N  N10  1  0.73324703  0.46649405  0.87089976  1
+  N  N11  1  0.26675297  0.53350595  0.37089976  1
+  N  N12  1  0.00000000  0.00000000  0.50000000  1
+  N  N13  1  0.00000000  0.00000000  0.00000000  1
+  N  N14  1  0.40534142  0.81068285  0.75000000  1
+  N  N15  1  0.59465858  0.18931715  0.25000000  1

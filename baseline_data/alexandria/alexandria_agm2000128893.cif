@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_Cd4Rh
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.00405638
+_cell_length_b   4.65386237
+_cell_length_c   20.85227850
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.01408375
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cd4Rh
+_chemical_formula_sum   'Cd4 Rh1'
+_cell_volume   291.52453963
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cd  Cd0  1  0.73784540  0.36951245  0.64466688  1
+  Cd  Cd1  1  0.23797711  0.86952013  0.36401273  1
+  Cd  Cd2  1  0.73766713  0.36946411  0.42226625  1
+  Cd  Cd3  1  0.73772701  0.86897859  0.53443000  1
+  Rh  Rh4  1  0.23755552  0.36885549  0.53462414  1

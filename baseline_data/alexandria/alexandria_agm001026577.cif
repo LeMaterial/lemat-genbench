@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_PuBCl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.41573830
+_cell_length_b   3.41488294
+_cell_length_c   11.54914858
+_cell_angle_alpha   82.28892670
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00828618
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PuBCl
+_chemical_formula_sum   'Pu2 B2 Cl2'
+_cell_volume   115.24648114
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pu  Pu0  1  0.04994752  0.09989504  0.83469035  1
+  Pu  Pu1  1  0.95005248  0.90010496  0.16530965  1
+  B  B2  1  0.66819635  0.33639270  0.99468146  1
+  B  B3  1  0.33180365  0.66360730  0.00531854  1
+  Cl  Cl4  1  0.23164593  0.46329085  0.33680493  1
+  Cl  Cl5  1  0.76835407  0.53670915  0.66319507  1

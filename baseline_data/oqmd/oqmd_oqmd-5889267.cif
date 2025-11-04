@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Tm3(TaN3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.73196365
+_cell_length_b   9.73196365
+_cell_length_c   9.73196365
+_cell_angle_alpha   156.41724818
+_cell_angle_beta   156.41724818
+_cell_angle_gamma   33.59532243
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tm3(TaN3)2
+_chemical_formula_sum   'Tm3 Ta2 N6'
+_cell_volume   147.38982011
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  N  N0  1  0.29541426  0.29541426  0.00000000  1
+  N  N1  1  0.70458591  0.70458591  0.00000000  1
+  N  N2  1  0.58225004  0.08225111  0.49999894  1
+  N  N3  1  0.91774765  0.41774871  0.49999894  1
+  N  N4  1  0.08225111  0.58225004  0.49999894  1
+  N  N5  1  0.41774871  0.91774765  0.49999894  1
+  Ta  Ta6  1  0.39928834  0.39928834  0.00000000  1
+  Ta  Ta7  1  0.60071184  0.60071184  0.00000000  1
+  Tm  Tm8  1  0.00000000  0.00000000  0.00000000  1
+  Tm  Tm9  1  0.17841377  0.17841377  0.00000000  1
+  Tm  Tm10  1  0.82158640  0.82158640  0.00000000  1

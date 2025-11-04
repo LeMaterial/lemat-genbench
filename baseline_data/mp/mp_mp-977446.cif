@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_NdVGe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.21831062
+_cell_length_b   6.21844740
+_cell_length_c   5.62042085
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99928167
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NdVGe3
+_chemical_formula_sum   'Nd2 V2 Ge6'
+_cell_volume   188.21619490
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nd  Nd0  1  0.66662332  0.33324664  0.25000000  1
+  Nd  Nd1  1  0.33337668  0.66675336  0.75000000  1
+  V  V2  1  -0.00000000  0.00000000  -0.00000000  1
+  V  V3  1  -0.00000000  0.00000000  0.50000000  1
+  Ge  Ge4  1  0.19528771  0.39057642  0.25000000  1
+  Ge  Ge5  1  0.19525223  0.80466434  0.25000000  1
+  Ge  Ge6  1  0.60941311  0.80466434  0.25000000  1
+  Ge  Ge7  1  0.39058789  0.19533566  0.75000000  1
+  Ge  Ge8  1  0.80474777  0.19533566  0.75000000  1
+  Ge  Ge9  1  0.80471229  0.60942358  0.75000000  1

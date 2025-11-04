@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_ZnIn2TeS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.72583082
+_cell_length_b   5.73922335
+_cell_length_c   6.89737094
+_cell_angle_alpha   112.10655251
+_cell_angle_beta   112.07774176
+_cell_angle_gamma   91.79724322
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZnIn2TeS3
+_chemical_formula_sum   'Zn1 In2 Te1 S3'
+_cell_volume   190.61642885
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  In  In0  1  0.50899365  0.49652361  0.00663404  1
+  In  In1  1  0.73444059  0.23192318  0.49123975  1
+  S  S2  1  0.88576110  0.87115938  0.25358073  1
+  S  S3  1  0.35526448  0.36513294  0.25405114  1
+  S  S4  1  0.63249950  0.11147361  0.76792246  1
+  Te  Te5  1  0.13581369  0.65980267  0.71458475  1
+  Zn  Zn6  1  0.99722736  0.01398387  0.01198780  1

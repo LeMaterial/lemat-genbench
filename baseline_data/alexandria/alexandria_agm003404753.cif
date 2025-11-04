@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Sr2BeN2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.19805884
+_cell_length_b   6.24170105
+_cell_length_c   8.01663769
+_cell_angle_alpha   128.15196333
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   114.60736172
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2BeN2
+_chemical_formula_sum   'Sr4 Be2 N4'
+_cell_volume   173.50653463
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.67213760  0.34427520  0.53957366  1
+  Sr  Sr1  1  0.32786240  0.65572480  0.46042634  1
+  Sr  Sr2  1  0.10159169  0.20318438  0.81150257  1
+  Sr  Sr3  1  0.89840831  0.79681562  0.18849743  1
+  Be  Be4  1  0.38005431  0.76010862  0.85169017  1
+  Be  Be5  1  0.61994569  0.23989138  0.14830983  1
+  N  N6  1  0.19236201  0.38472402  0.60277094  1
+  N  N7  1  0.80763799  0.61527598  0.39722906  1
+  N  N8  1  0.44840366  0.89680732  0.11578159  1
+  N  N9  1  0.55159634  0.10319268  0.88421841  1

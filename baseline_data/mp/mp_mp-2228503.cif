@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_Sr2YMgCu3O7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.91051705
+_cell_length_b   3.69236844
+_cell_length_c   14.31453379
+_cell_angle_alpha   90.01127131
+_cell_angle_beta   90.02553228
+_cell_angle_gamma   89.98100555
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2YMgCu3O7
+_chemical_formula_sum   'Sr2 Y1 Mg1 Cu3 O7'
+_cell_volume   206.68851602
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.50007218  0.49996698  0.77140928  1
+  Sr  Sr1  1  0.50012499  0.49951603  0.07856669  1
+  Y  Y2  1  0.49985765  0.49989592  0.52200891  1
+  Mg  Mg3  1  0.00041077  0.50009280  0.26798847  1
+  Cu  Cu4  1  0.00003348  -0.00007701  0.93662465  1
+  Cu  Cu5  1  -0.00001258  0.00000306  0.64336023  1
+  Cu  Cu6  1  0.99972880  0.00037601  0.41592775  1
+  O  O7  1  0.49998355  -0.00007311  0.63765671  1
+  O  O8  1  0.49976325  0.99987529  0.42972655  1
+  O  O9  1  0.00016031  0.00005371  0.80028238  1
+  O  O10  1  0.00020386  0.00010143  0.20010677  1
+  O  O11  1  0.99994428  0.49992234  0.98583939  1
+  O  O12  1  0.99998050  0.49999989  0.60745248  1
+  O  O13  1  0.99974796  0.50034665  0.40304775  1

@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_NdHo2Tl2Zn3Cd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.56780905
+_cell_length_b   7.31989220
+_cell_length_c   7.31989220
+_cell_angle_alpha   120.93132776
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NdHo2Tl2Zn3Cd
+_chemical_formula_sum   'Nd1 Ho2 Tl2 Zn3 Cd1'
+_cell_volume   209.94002613
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cd  Cd0  1  0.00000000  0.99060648  0.99060648  1
+  Ho  Ho1  1  0.00000000  0.57619062  0.00323662  1
+  Ho  Ho2  1  0.00000000  0.00323662  0.57619062  1
+  Nd  Nd3  1  0.00000000  0.42695951  0.42695951  1
+  Tl  Tl4  1  0.49999901  0.67286356  0.33206820  1
+  Tl  Tl5  1  0.49999901  0.33206820  0.67286356  1
+  Zn  Zn6  1  0.49999901  0.23031894  0.00032400  1
+  Zn  Zn7  1  0.49999901  0.00032400  0.23031894  1
+  Zn  Zn8  1  0.49999901  0.76743658  0.76743658  1

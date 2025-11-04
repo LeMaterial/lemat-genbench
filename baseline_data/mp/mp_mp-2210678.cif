@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_NaMgFeO2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.20425266
+_cell_length_b   3.20425266
+_cell_length_c   8.35646321
+_cell_angle_alpha   78.94663463
+_cell_angle_beta   78.94663463
+_cell_angle_gamma   59.99998339
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaMgFeO2
+_chemical_formula_sum   'Na1 Mg1 Fe1 O2'
+_cell_volume   72.45935484
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.45388305  0.45388305  0.63835086  1
+  Mg  Mg1  1  0.58968241  0.58968241  0.23095177  1
+  Fe  Fe2  1  0.02230933  0.02230933  0.93307202  1
+  O  O3  1  0.29076367  0.29076367  0.12770799  1
+  O  O4  1  0.72669455  0.72669455  0.81991735  1

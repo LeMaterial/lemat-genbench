@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_LiNdHgTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   12.88019500
+_cell_length_b   4.41239400
+_cell_length_c   13.73042000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiNdHgTe3
+_chemical_formula_sum   'Li4 Nd4 Hg4 Te12'
+_cell_volume   780.33402788
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hg  Hg0  1  0.28712221  0.00000000  0.23308100  1
+  Hg  Hg1  1  0.78712318  0.50000068  0.26691827  1
+  Hg  Hg2  1  0.21287721  0.00000000  0.73308173  1
+  Hg  Hg3  1  0.71287663  0.50000068  0.76691900  1
+  Li  Li4  1  0.00862953  0.00000000  0.11435484  1
+  Li  Li5  1  0.50862895  0.50000068  0.38564443  1
+  Li  Li6  1  0.49137067  0.00000000  0.61435484  1
+  Li  Li7  1  0.99137164  0.50000068  0.88564443  1
+  Nd  Nd8  1  0.68000523  0.00000000  0.05763771  1
+  Nd  Nd9  1  0.18000582  0.50000068  0.44236156  1
+  Nd  Nd10  1  0.81999535  0.00000000  0.55763771  1
+  Nd  Nd11  1  0.31999516  0.50000068  0.94236229  1
+  Te  Te12  1  0.86267172  0.50000068  0.06605333  1
+  Te  Te13  1  0.42373582  0.00000000  0.07681630  1
+  Te  Te14  1  0.13926885  0.50000068  0.21908143  1
+  Te  Te15  1  0.63926905  0.00000000  0.28091857  1
+  Te  Te16  1  0.92373679  0.50000068  0.42318443  1
+  Te  Te17  1  0.36267153  0.00000000  0.43394594  1
+  Te  Te18  1  0.63732886  0.50000068  0.56605406  1
+  Te  Te19  1  0.07626360  0.00000000  0.57681484  1
+  Te  Te20  1  0.36073056  0.50000068  0.71908070  1
+  Te  Te21  1  0.86073076  0.00000000  0.78091930  1
+  Te  Te22  1  0.57626301  0.50000068  0.92318370  1
+  Te  Te23  1  0.13732867  0.00000000  0.93394594  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_KBaSmTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.19405459
+_cell_length_b   8.19405459
+_cell_length_c   12.00823442
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   145.11366677
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KBaSmTe3
+_chemical_formula_sum   'K2 Ba2 Sm2 Te6'
+_cell_volume   461.14244661
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.74859386  0.25140745  0.25000012  1
+  Ba  Ba1  1  0.25140745  0.74859386  0.75000035  1
+  K  K2  1  0.47210977  0.52789154  0.25000012  1
+  K  K3  1  0.52789154  0.47210977  0.75000035  1
+  Sm  Sm4  1  0.00000000  0.00000000  0.00000000  1
+  Sm  Sm5  1  0.00000000  0.00000000  0.50000023  1
+  Te  Te6  1  0.36166427  0.63833704  0.03052156  1
+  Te  Te7  1  0.09367293  0.90632838  0.25000012  1
+  Te  Te8  1  0.36166427  0.63833704  0.46947868  1
+  Te  Te9  1  0.63833704  0.36166427  0.53052096  1
+  Te  Te10  1  0.90632838  0.09367293  0.75000035  1
+  Te  Te11  1  0.63833704  0.36166427  0.96947891  1

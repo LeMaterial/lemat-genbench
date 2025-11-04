@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Cd3(InAu2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.72862107
+_cell_length_b   4.78662866
+_cell_length_c   10.10397013
+_cell_angle_alpha   102.95595547
+_cell_angle_beta   90.00001230
+_cell_angle_gamma   119.60001780
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cd3(InAu2)2
+_chemical_formula_sum   'Cd3 In2 Au4'
+_cell_volume   192.12468192
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cd  Cd0  1  0.59411730  0.18823461  0.79266701  1
+  Cd  Cd1  1  0.00000000  0.00000000  0.00000000  1
+  Cd  Cd2  1  0.40588270  0.81176539  0.20733299  1
+  In  In3  1  0.80383065  0.60766031  0.39886886  1
+  In  In4  1  0.19616935  0.39233969  0.60113114  1
+  Au  Au5  1  0.69936623  0.39873146  0.09523444  1
+  Au  Au6  1  0.30063377  0.60126854  0.90476556  1
+  Au  Au7  1  0.89139051  0.78278103  0.68690569  1
+  Au  Au8  1  0.10860949  0.21721897  0.31309431  1

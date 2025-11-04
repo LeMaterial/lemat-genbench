@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Er4AlRh
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.93449142
+_cell_length_b   8.23807654
+_cell_length_c   7.91422201
+_cell_angle_alpha   114.95171312
+_cell_angle_beta   103.77112464
+_cell_angle_gamma   105.24822631
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Er4AlRh
+_chemical_formula_sum   'Er8 Al2 Rh2'
+_cell_volume   310.35046529
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.04360327  0.21872938  0.85915080  1
+  Er  Er1  1  0.78206796  0.70599021  0.64730380  1
+  Er  Er2  1  0.31554753  0.64042142  0.85915080  1
+  Er  Er3  1  0.36523585  0.94131359  0.64730380  1
+  Er  Er4  1  0.63476415  0.05868641  0.35269620  1
+  Er  Er5  1  0.68445247  0.35957858  0.14084920  1
+  Er  Er6  1  0.21793204  0.29400979  0.35269620  1
+  Er  Er7  1  0.95639673  0.78127062  0.14084920  1
+  Al  Al8  1  0.37799354  0.62799354  0.25598608  1
+  Al  Al9  1  0.62200646  0.37200646  0.74401392  1
+  Rh  Rh10  1  0.24934386  0.99934386  0.99868871  1
+  Rh  Rh11  1  0.75065614  0.00065614  0.00131129  1

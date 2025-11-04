@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_CsCuTe3Mo
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.86358254
+_cell_length_b   8.86358254
+_cell_length_c   10.64751700
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   153.17974098
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsCuTe3Mo
+_chemical_formula_sum   'Cs2 Cu2 Te6 Mo2'
+_cell_volume   377.42389858
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.75269649  0.24730302  0.25000007  1
+  Cs  Cs1  1  0.24730302  0.75269649  0.75000021  1
+  Cu  Cu2  1  0.46828291  0.53171660  0.25000007  1
+  Cu  Cu3  1  0.53171660  0.46828291  0.75000021  1
+  Mo  Mo4  1  0.00000000  0.00000000  0.00000000  1
+  Mo  Mo5  1  0.00000000  0.00000000  0.50000014  1
+  Te  Te6  1  0.39123855  0.60876096  0.04456250  1
+  Te  Te7  1  0.06264105  0.93735846  0.25000007  1
+  Te  Te8  1  0.39123855  0.60876096  0.45543764  1
+  Te  Te9  1  0.60876096  0.39123855  0.54456264  1
+  Te  Te10  1  0.93735846  0.06264105  0.75000021  1
+  Te  Te11  1  0.60876096  0.39123855  0.95543778  1

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_DyErO3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.59026552
+_cell_length_b   5.59026552
+_cell_length_c   6.32839319
+_cell_angle_alpha   63.78879776
+_cell_angle_beta   63.78879776
+_cell_angle_gamma   59.99999998
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   DyErO3
+_chemical_formula_sum   'Dy2 Er2 O6'
+_cell_volume   147.32369299
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.35438709  0.35438709  0.93683773  1
+  Dy  Dy1  1  0.64561291  0.64561291  0.06316227  1
+  Er  Er2  1  0.14749337  0.14749337  0.55751988  1
+  Er  Er3  1  0.85250663  0.85250663  0.44248012  1
+  O  O4  1  0.24541070  0.95822250  0.25103034  1
+  O  O5  1  0.95822250  0.54533546  0.25103034  1
+  O  O6  1  0.54533546  0.24541070  0.25103034  1
+  O  O7  1  0.75458930  0.45466454  0.74896966  1
+  O  O8  1  0.04177750  0.75458930  0.74896966  1
+  O  O9  1  0.45466454  0.04177750  0.74896966  1

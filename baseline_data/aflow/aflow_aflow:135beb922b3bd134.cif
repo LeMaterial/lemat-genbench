@@ -1,0 +1,51 @@
+# generated using pymatgen
+data_H4He2Li5Be14
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.41052783
+_cell_length_b   3.60055768
+_cell_length_c   9.47974674
+_cell_angle_alpha   81.35884162
+_cell_angle_beta   65.58586774
+_cell_angle_gamma   81.10102780
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   H4He2Li5Be14
+_chemical_formula_sum   'H4 He2 Li5 Be14'
+_cell_volume   318.19318419
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.68467358  0.88854967  0.12335819  1
+  H  H1  1  0.81204481  0.54583188  0.29212513  1
+  H  H2  1  0.19841807  0.54814408  0.55289410  1
+  H  H3  1  0.32597436  0.20541714  0.72149470  1
+  He  He4  1  0.18017752  0.53957651  0.06921710  1
+  He  He5  1  0.83026651  0.55494088  0.77592767  1
+  Li  Li6  1  0.00528458  0.04751300  0.42249707  1
+  Li  Li7  1  0.65298111  0.10996960  0.61112765  1
+  Li  Li8  1  0.35735366  0.98526683  0.23382741  1
+  Li  Li9  1  0.50500606  0.04702689  0.92280798  1
+  Li  Li10  1  0.50524253  0.54693551  0.42242832  1
+  Be  Be11  1  0.39064389  0.39712366  0.07230125  1
+  Be  Be12  1  0.17361580  0.98861963  0.22971514  1
+  Be  Be13  1  0.55014793  0.89619394  0.24084243  1
+  Be  Be14  1  0.32042645  0.63662417  0.42622278  1
+  Be  Be15  1  0.61979612  0.69747439  0.77276135  1
+  Be  Be16  1  0.83675125  0.10582559  0.61537621  1
+  Be  Be17  1  0.69014228  0.45615674  0.41862810  1
+  Be  Be18  1  0.70440008  0.01738168  0.97256350  1
+  Be  Be19  1  0.30625408  0.07656745  0.87229549  1
+  Be  Be20  1  0.80338744  0.73798540  0.15558613  1
+  Be  Be21  1  0.94322186  0.45569676  0.29540781  1
+  Be  Be22  1  0.20719610  0.35602088  0.68936755  1
+  Be  Be23  1  0.46058104  0.19735121  0.60412414  1
+  Be  Be24  1  0.06721291  0.63910652  0.54980281  1

@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_FeHgO2F5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.88337300
+_cell_length_b   7.20674000
+_cell_length_c   9.52042700
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   FeHgO2F5
+_chemical_formula_sum   'Fe2 Hg2 O4 F10'
+_cell_volume   266.44304498
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.50000000  0.00000000  0.50000000  1
+  Fe  Fe1  1  0.50000000  0.50000000  0.00000000  1
+  Hg  Hg2  1  0.00000000  0.50000000  0.50000000  1
+  Hg  Hg3  1  0.00000000  0.00000000  0.00000000  1
+  O  O4  1  0.00000000  0.90860300  0.21210200  1
+  O  O5  1  0.00000000  0.09139700  0.78789800  1
+  O  O6  1  0.00000000  0.59139700  0.71210200  1
+  O  O7  1  0.00000000  0.40860300  0.28789800  1
+  F  F8  1  0.50000000  0.02318800  0.29502000  1
+  F  F9  1  0.50000000  0.97681200  0.70498000  1
+  F  F10  1  0.50000000  0.47681200  0.79502000  1
+  F  F11  1  0.50000000  0.52318800  0.20498000  1
+  F  F12  1  0.50000000  0.73209600  0.48619900  1
+  F  F13  1  0.50000000  0.26790400  0.51380100  1
+  F  F14  1  0.50000000  0.76790400  0.98619900  1
+  F  F15  1  0.50000000  0.23209600  0.01380100  1
+  F  F16  1  0.00000000  0.00000000  0.50000000  1
+  F  F17  1  0.00000000  0.50000000  0.00000000  1

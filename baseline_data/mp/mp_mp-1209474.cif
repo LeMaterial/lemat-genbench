@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_SmNiPb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.58978341
+_cell_length_b   7.33181523
+_cell_length_c   7.87051051
+_cell_angle_alpha   90.00819843
+_cell_angle_beta   90.04042330
+_cell_angle_gamma   89.97303752
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmNiPb
+_chemical_formula_sum   'Sm4 Ni4 Pb4'
+_cell_volume   264.85394486
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.74999700  0.98780000  0.29813300  1
+  Sm  Sm1  1  0.25015700  0.01216800  0.70193300  1
+  Sm  Sm2  1  0.24996500  0.51213000  0.79796400  1
+  Sm  Sm3  1  0.74982900  0.48789100  0.20192100  1
+  Ni  Ni4  1  0.75000700  0.71246000  0.58671500  1
+  Ni  Ni5  1  0.25000700  0.28750300  0.41315300  1
+  Ni  Ni6  1  0.25039900  0.78752700  0.08676000  1
+  Ni  Ni7  1  0.74961300  0.21259400  0.91342000  1
+  Pb  Pb8  1  0.75031900  0.81286200  0.91677500  1
+  Pb  Pb9  1  0.24971900  0.18718800  0.08315100  1
+  Pb  Pb10  1  0.24988000  0.68711000  0.41668700  1
+  Pb  Pb11  1  0.75010800  0.31276700  0.58338900  1

@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_GaCu2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.94036863
+_cell_length_b   4.94036863
+_cell_length_c   4.94036863
+_cell_angle_alpha   130.01709546
+_cell_angle_beta   116.80573331
+_cell_angle_gamma   84.60721175
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   GaCu2
+_chemical_formula_sum   'Ga2 Cu4'
+_cell_volume   78.96268712
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ga  Ga0  1  0.24404400  0.49404400  0.75000000  1
+  Ga  Ga1  1  0.75595600  0.50595600  0.25000000  1
+  Cu  Cu2  1  0.33740600  0.83420600  0.50320000  1
+  Cu  Cu3  1  0.66259400  0.16579400  0.49680000  1
+  Cu  Cu4  1  0.16899500  0.16579400  0.00320000  1
+  Cu  Cu5  1  0.83100500  0.83420600  0.99680000  1

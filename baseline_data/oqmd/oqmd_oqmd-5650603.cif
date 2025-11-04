@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_CsScNiTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   11.47572824
+_cell_length_b   4.21618892
+_cell_length_c   15.77775693
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsScNiTe3
+_chemical_formula_sum   'Cs4 Sc4 Ni4 Te12'
+_cell_volume   763.38843886
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.77058029  0.25000066  0.01251699  1
+  Cs  Cs1  1  0.27057978  0.25000066  0.48748248  1
+  Cs  Cs2  1  0.72942038  0.74999960  0.51251709  1
+  Cs  Cs3  1  0.22941986  0.74999960  0.98748257  1
+  Ni  Ni4  1  0.26506205  0.25000066  0.19830449  1
+  Ni  Ni5  1  0.76506169  0.25000066  0.30169498  1
+  Ni  Ni6  1  0.23493847  0.74999960  0.69830458  1
+  Ni  Ni7  1  0.73493811  0.74999960  0.80169507  1
+  Sc  Sc8  1  0.47433068  0.74999960  0.23204312  1
+  Sc  Sc9  1  0.97433032  0.74999960  0.26795634  1
+  Sc  Sc10  1  0.02566983  0.25000066  0.73204322  1
+  Sc  Sc11  1  0.52566947  0.25000066  0.76795644  1
+  Te  Te12  1  0.44892750  0.25000066  0.10852303  1
+  Te  Te13  1  0.05290993  0.25000066  0.14709125  1
+  Te  Te14  1  0.73461569  0.74999960  0.21751127  1
+  Te  Te15  1  0.23461518  0.74999960  0.28248819  1
+  Te  Te16  1  0.55290957  0.25000066  0.35290821  1
+  Te  Te17  1  0.94892714  0.25000066  0.39147643  1
+  Te  Te18  1  0.05107301  0.74999960  0.60852313  1
+  Te  Te19  1  0.44709058  0.74999960  0.64709135  1
+  Te  Te20  1  0.76538498  0.25000066  0.71751137  1
+  Te  Te21  1  0.26538446  0.25000066  0.78248829  1
+  Te  Te22  1  0.94709022  0.74999960  0.85290831  1
+  Te  Te23  1  0.55107265  0.74999960  0.89147653  1

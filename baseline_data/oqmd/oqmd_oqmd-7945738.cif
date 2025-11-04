@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_SrCuAs
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.14669889
+_cell_length_b   7.14669889
+_cell_length_c   4.40129359
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrCuAs
+_chemical_formula_sum   'Sr3 Cu3 As3'
+_cell_volume   194.68027020
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  As  As0  1  0.66666640  0.33333264  0.00000000  1
+  As  As1  1  0.33333345  0.66666690  0.00000000  1
+  As  As2  1  0.00000000  0.00000000  0.50000073  1
+  Cu  Cu3  1  0.23119765  0.00000000  0.00000000  1
+  Cu  Cu4  1  -0.00000000  0.23119704  0.00000000  1
+  Cu  Cu5  1  0.76880251  0.76880251  0.00000000  1
+  Sr  Sr6  1  0.57777864  0.00000000  0.50000073  1
+  Sr  Sr7  1  0.42222057  0.42222103  0.50000073  1
+  Sr  Sr8  1  0.00000000  0.57777852  0.50000073  1

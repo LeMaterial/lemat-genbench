@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_UFeCo
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.83884628
+_cell_length_b   4.83869162
+_cell_length_c   4.84143728
+_cell_angle_alpha   121.63221104
+_cell_angle_beta   119.12945022
+_cell_angle_gamma   89.33629302
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   UFeCo
+_chemical_formula_sum   'U2 Fe2 Co2'
+_cell_volume   79.65283368
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  U  U0  1  0.12004568  0.86985973  0.25034409  1
+  U  U1  1  0.87995432  0.13014027  0.74965591  1
+  Fe  Fe2  1  0.50000000  0.50000000  -0.00000000  1
+  Fe  Fe3  1  -0.00000000  0.50000000  0.50000000  1
+  Co  Co4  1  0.50000000  0.50000000  0.50000000  1
+  Co  Co5  1  0.50000000  -0.00000000  -0.00000000  1

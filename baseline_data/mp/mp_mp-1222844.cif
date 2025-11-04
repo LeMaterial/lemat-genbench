@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_LaPr3Al4O12
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.26793516
+_cell_length_b   9.26793516
+_cell_length_c   9.26793506
+_cell_angle_alpha   33.75481165
+_cell_angle_beta   33.75481165
+_cell_angle_gamma   33.75481211
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaPr3Al4O12
+_chemical_formula_sum   'La1 Pr3 Al4 O12'
+_cell_volume   218.98805112
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.50000000  0.50000000  0.50000000  1
+  Pr  Pr1  1  0.74978200  0.74978200  0.74978200  1
+  Pr  Pr2  1  0.25021800  0.25021800  0.25021800  1
+  Pr  Pr3  1  0.00000000  0.00000000  0.00000000  1
+  Al  Al4  1  0.87512000  0.87512000  0.87512000  1
+  Al  Al5  1  0.37490400  0.37490400  0.37490400  1
+  Al  Al6  1  0.62509600  0.62509600  0.62509600  1
+  Al  Al7  1  0.12488000  0.12488000  0.12488000  1
+  O  O8  1  0.24944900  0.79059600  0.71086100  1
+  O  O9  1  0.75055100  0.28913900  0.20940400  1
+  O  O10  1  0.71086100  0.24944900  0.79059600  1
+  O  O11  1  0.20940400  0.75055100  0.28913900  1
+  O  O12  1  0.79059600  0.71086100  0.24944900  1
+  O  O13  1  0.28913900  0.20940400  0.75055100  1
+  O  O14  1  0.03690400  0.50000000  0.96309600  1
+  O  O15  1  0.53993500  0.00000000  0.46006500  1
+  O  O16  1  0.96309600  0.03690400  0.50000000  1
+  O  O17  1  0.46006500  0.53993500  0.00000000  1
+  O  O18  1  0.50000000  0.96309600  0.03690400  1
+  O  O19  1  0.00000000  0.46006500  0.53993500  1

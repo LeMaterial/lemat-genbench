@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Tb2LuAl3CuGe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.17405154
+_cell_length_b   6.98027797
+_cell_length_c   6.98027797
+_cell_angle_alpha   119.84027443
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb2LuAl3CuGe2
+_chemical_formula_sum   'Tb2 Lu1 Al3 Cu1 Ge2'
+_cell_volume   176.41301549
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.50000101  0.23277890  0.00173462  1
+  Al  Al1  1  0.50000101  0.00173462  0.23277890  1
+  Al  Al2  1  0.50000101  0.76692946  0.76692946  1
+  Cu  Cu3  1  0.00000000  0.00526073  0.00526073  1
+  Ge  Ge4  1  0.50000101  0.66216976  0.33448839  1
+  Ge  Ge5  1  0.50000101  0.33448839  0.66216976  1
+  Lu  Lu6  1  0.00000000  0.40218528  0.40218528  1
+  Tb  Tb7  1  0.00000000  0.99875503  0.59569736  1
+  Tb  Tb8  1  0.00000000  0.59569736  0.99875503  1

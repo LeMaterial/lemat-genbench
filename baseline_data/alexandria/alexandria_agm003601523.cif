@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_PaPdPt
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.74070816
+_cell_length_b   4.48283558
+_cell_length_c   4.48283558
+_cell_angle_alpha   68.03301569
+_cell_angle_beta   58.07814087
+_cell_angle_gamma   58.07814089
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PaPdPt
+_chemical_formula_sum   'Pa1 Pd1 Pt1'
+_cell_volume   68.03953361
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pa  Pa0  1  0.23033030  0.26966971  0.26966970  1
+  Pd  Pd1  1  0.76025451  0.73974523  0.73974524  1
+  Pt  Pt2  1  0.00941519  0.99058506  0.99058506  1

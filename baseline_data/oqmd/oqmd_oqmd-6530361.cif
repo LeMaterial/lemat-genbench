@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_AcSmNO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.25697587
+_cell_length_b   8.51341774
+_cell_length_c   5.37560636
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   AcSmNO
+_chemical_formula_sum   'Ac4 Sm4 N4 O4'
+_cell_volume   332.11392284
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.07251368  0.12920898  0.05013946  1
+  Ac  Ac1  1  0.57251396  0.87079129  0.05013946  1
+  Ac  Ac2  1  0.42748661  0.12920898  0.55013887  1
+  Ac  Ac3  1  0.92748689  0.87079129  0.55013887  1
+  N  N4  1  0.42114375  0.15336026  0.04832013  1
+  N  N5  1  0.92114403  0.84664000  0.04832013  1
+  N  N6  1  0.07885654  0.15336026  0.54831954  1
+  N  N7  1  0.57885682  0.84664000  0.54831954  1
+  O  O8  1  0.91024417  0.39548864  0.05356791  1
+  O  O9  1  0.41024389  0.60451163  0.05356791  1
+  O  O10  1  0.58975668  0.39548864  0.55356732  1
+  O  O11  1  0.08975640  0.60451163  0.55356732  1
+  Sm  Sm12  1  0.58798046  0.37926366  0.05037199  1
+  Sm  Sm13  1  0.08798017  0.62073660  0.05037199  1
+  Sm  Sm14  1  0.91202039  0.37926366  0.55037140  1
+  Sm  Sm15  1  0.41202011  0.62073660  0.55037140  1

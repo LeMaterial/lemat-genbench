@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_TlAsAuCl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.53297477
+_cell_length_b   3.55772352
+_cell_length_c   9.25583921
+_cell_angle_alpha   80.48648422
+_cell_angle_beta   80.02736788
+_cell_angle_gamma   89.99030520
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TlAsAuCl
+_chemical_formula_sum   'Tl1 As1 Au1 Cl1'
+_cell_volume   112.95764915
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tl  Tl0  1  0.34871754  0.73719159  0.85942379  1
+  Au  Au1  1  0.50530198  0.88227952  0.50840176  1
+  As  As2  1  0.05024771  0.42521930  0.41073373  1
+  Cl  Cl3  1  0.76926277  0.16167959  0.03502072  1

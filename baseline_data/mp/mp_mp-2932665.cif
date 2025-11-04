@@ -1,0 +1,48 @@
+# generated using pymatgen
+data_Cu2Hg2SF6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.75371516
+_cell_length_b   7.55082392
+_cell_length_c   8.23723419
+_cell_angle_alpha   60.19434511
+_cell_angle_beta   60.29371663
+_cell_angle_gamma   58.39148406
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cu2Hg2SF6
+_chemical_formula_sum   'Cu4 Hg4 S2 F12'
+_cell_volume   337.88245532
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.12500000  0.12500000  0.12500000  1
+  Cu  Cu1  1  0.62500000  0.12500000  0.12500000  1
+  Cu  Cu2  1  0.12500000  0.12500000  0.62500000  1
+  Cu  Cu3  1  0.12500000  0.62500000  0.12500000  1
+  Hg  Hg4  1  0.62500000  0.62500000  0.62500000  1
+  Hg  Hg5  1  0.12500000  0.62500000  0.62500000  1
+  Hg  Hg6  1  0.62500000  0.62500000  0.12500000  1
+  Hg  Hg7  1  0.62500000  0.12500000  0.62500000  1
+  S  S8  1  0.74357836  0.73521361  0.76847240  1
+  S  S9  1  0.50642164  0.51478639  0.48152760  1
+  F  F10  1  0.42623330  0.43538718  0.05357159  1
+  F  F11  1  0.42873544  0.05319551  0.48324178  1
+  F  F12  1  0.82376670  0.81461282  0.19642841  1
+  F  F13  1  0.04393289  0.03959292  0.40526641  1
+  F  F14  1  0.20945846  0.80807939  0.15340851  1
+  F  F15  1  0.18740888  0.81542617  0.77376042  1
+  F  F16  1  0.04054154  0.44192061  0.09659149  1
+  F  F17  1  0.82126456  0.19680449  0.76675822  1
+  F  F18  1  0.20606711  0.21040708  0.84473359  1
+  F  F19  1  0.47203027  0.02970457  0.08157300  1
+  F  F20  1  0.06259112  0.43457383  0.47623958  1
+  F  F21  1  0.77796973  0.22029543  0.16842700  1

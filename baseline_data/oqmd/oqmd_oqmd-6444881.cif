@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_SmGdTlNi2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.73379227
+_cell_length_b   7.53709678
+_cell_length_c   7.53709678
+_cell_angle_alpha   30.32350166
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmGdTlNi2
+_chemical_formula_sum   'Sm1 Gd1 Tl1 Ni2'
+_cell_volume   107.08977157
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Gd  Gd0  1  0.50000103  0.36107406  0.36107406  1
+  Ni  Ni1  1  0.00000000  0.20291652  0.20291652  1
+  Ni  Ni2  1  0.00000000  0.79925190  0.79925190  1
+  Sm  Sm3  1  0.50000103  0.63814099  0.63814099  1
+  Tl  Tl4  1  0.00000000  0.99861640  0.99861640  1

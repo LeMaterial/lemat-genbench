@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Sc3Co2B2N3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.29872002
+_cell_length_b   3.29871993
+_cell_length_c   9.87529470
+_cell_angle_alpha   99.59612069
+_cell_angle_beta   99.59612557
+_cell_angle_gamma   89.99424219
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sc3Co2B2N3
+_chemical_formula_sum   'Sc3 Co2 B2 N3'
+_cell_volume   104.42994160
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sc  Sc0  1  0.61672745  0.61672715  0.23358251  1
+  Sc  Sc1  1  0.38326890  0.38326920  0.76641747  1
+  Sc  Sc2  1  0.99999850  0.99999859  0.99999998  1
+  B  B3  1  0.81143173  0.81143160  0.62294619  1
+  B  B4  1  0.18856264  0.18856223  0.37705383  1
+  Co  Co5  1  0.25001124  0.74998244  0.50000001  1
+  Co  Co6  1  0.74998277  0.25001099  0.50000000  1
+  N  N7  1  0.88862272  0.88862302  0.77703572  1
+  N  N8  1  0.49999853  0.49999862  0.99999999  1
+  N  N9  1  0.11137352  0.11137316  0.22296429  1
