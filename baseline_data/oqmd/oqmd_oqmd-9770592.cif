@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_BaTlPtPb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.61767031
+_cell_length_b   8.36312123
+_cell_length_c   6.40227413
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   111.09053023
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaTlPtPb
+_chemical_formula_sum   'Ba2 Tl2 Pt2 Pb2'
+_cell_volume   230.68177528
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.56139624  0.00000000  0.12246784  1
+  Ba  Ba1  1  0.44152214  0.49999993  0.88354630  1
+  Pb  Pb2  1  0.84422373  0.19651515  0.68905254  1
+  Pb  Pb3  1  0.84422373  0.80348471  0.68905254  1
+  Pt  Pt4  1  0.72425563  0.49999993  0.44764250  1
+  Pt  Pt5  1  0.28271631  0.00000000  0.56629676  1
+  Tl  Tl6  1  0.15083006  0.30247080  0.30097239  1
+  Tl  Tl7  1  0.15083006  0.69752905  0.30097239  1

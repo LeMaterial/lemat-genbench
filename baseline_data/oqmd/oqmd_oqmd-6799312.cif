@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_ReNi6Sn
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.14820600
+_cell_length_b   5.14820600
+_cell_length_c   4.24404650
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ReNi6Sn
+_chemical_formula_sum   'Re1 Ni6 Sn1'
+_cell_volume   97.41427420
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.50771393  0.01542903  0.00000000  1
+  Ni  Ni1  1  0.50771501  0.49228468  0.00000000  1
+  Ni  Ni2  1  0.98457044  0.49228468  0.00000000  1
+  Ni  Ni3  1  0.32611707  0.16305792  0.49999923  1
+  Ni  Ni4  1  0.83694162  0.16305792  0.49999923  1
+  Ni  Ni5  1  0.83694069  0.67388256  0.49999923  1
+  Re  Re6  1  0.00000000  0.00000000  0.00000000  1
+  Sn  Sn7  1  0.33333354  0.66666709  0.49999923  1

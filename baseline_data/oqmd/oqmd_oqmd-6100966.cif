@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Pr3Y3Te2Os
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.58348345
+_cell_length_b   8.58348344
+_cell_length_c   4.01369108
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr3Y3Te2Os
+_chemical_formula_sum   'Pr3 Y3 Te2 Os1'
+_cell_volume   256.09536735
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Os  Os0  1  0.00000000  0.00000000  0.00000000  1
+  Pr  Pr1  1  0.24494717  0.00000000  0.50000111  1
+  Pr  Pr2  1  -0.00000000  0.24494739  0.50000111  1
+  Pr  Pr3  1  0.75505288  0.75505332  0.50000111  1
+  Te  Te4  1  0.66666658  0.33333357  0.50000111  1
+  Te  Te5  1  0.33333357  0.66666714  0.50000111  1
+  Y  Y6  1  0.59982174  0.00000000  0.00000000  1
+  Y  Y7  1  0.40017799  0.40017813  0.00000000  1
+  Y  Y8  1  0.00000000  0.59982124  0.00000000  1

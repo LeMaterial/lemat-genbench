@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Ho7Co2Sn
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.89342076
+_cell_length_b   7.98188222
+_cell_length_c   7.98189038
+_cell_angle_alpha   112.51000548
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho7Co2Sn
+_chemical_formula_sum   'Ho7 Co2 Sn1'
+_cell_volume   288.00999412
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.00000000  0.70994768  0.29005207  1
+  Ho  Ho1  1  0.00000000  0.29005232  0.70994793  1
+  Ho  Ho2  1  0.50000000  0.05289503  0.31607877  1
+  Ho  Ho3  1  0.50000000  0.94710497  0.68392123  1
+  Ho  Ho4  1  0.50000000  0.31607814  0.05289462  1
+  Ho  Ho5  1  0.50000000  0.68392186  0.94710538  1
+  Ho  Ho6  1  0.50000000  0.50000000  0.50000000  1
+  Co  Co7  1  0.50000000  0.70362830  0.29637174  1
+  Co  Co8  1  0.50000000  0.29637170  0.70362826  1
+  Sn  Sn9  1  0.00000000  0.00000000  0.00000000  1

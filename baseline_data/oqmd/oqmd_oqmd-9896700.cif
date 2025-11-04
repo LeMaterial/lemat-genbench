@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Gd2ErIn3Co2Cu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.90162052
+_cell_length_b   7.37114829
+_cell_length_c   7.37114829
+_cell_angle_alpha   120.02402386
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Gd2ErIn3Co2Cu
+_chemical_formula_sum   'Gd2 Er1 In3 Co2 Cu1'
+_cell_volume   183.54424427
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.49999993  0.66524818  0.33411784  1
+  Co  Co1  1  0.49999993  0.33411784  0.66524818  1
+  Cu  Cu2  1  0.00000000  0.00146435  0.00146435  1
+  Er  Er3  1  0.00000000  0.41275724  0.41275724  1
+  Gd  Gd4  1  0.00000000  0.99983838  0.58598576  1
+  Gd  Gd5  1  0.00000000  0.58598576  0.99983838  1
+  In  In6  1  0.49999993  0.25837492  0.00246887  1
+  In  In7  1  0.49999993  0.00246887  0.25837492  1
+  In  In8  1  0.49999993  0.73974229  0.73974229  1

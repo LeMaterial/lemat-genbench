@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Zn5TeSe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.13691691
+_cell_length_b   14.80047558
+_cell_length_c   4.13691691
+_cell_angle_alpha   98.03373974
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   98.03373974
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Zn5TeSe4
+_chemical_formula_sum   'Zn5 Te1 Se4'
+_cell_volume   248.29992552
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zn  Zn0  1  0.99394500  0.98789000  0.99394500  1
+  Zn  Zn1  1  0.60605500  0.21211000  0.60605500  1
+  Zn  Zn2  1  0.20305700  0.40611300  0.20305700  1
+  Zn  Zn3  1  0.80000000  0.60000000  0.80000000  1
+  Zn  Zn4  1  0.39694300  0.79388700  0.39694300  1
+  Te  Te5  1  0.05000000  0.10000000  0.55000000  1
+  Se  Se6  1  0.65456400  0.30912800  0.15456400  1
+  Se  Se7  1  0.25128900  0.50257800  0.75128900  1
+  Se  Se8  1  0.84871100  0.69742200  0.34871100  1
+  Se  Se9  1  0.44543600  0.89087200  0.94543600  1

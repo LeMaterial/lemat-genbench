@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_LiErTlO2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.37237958
+_cell_length_b   9.63595182
+_cell_length_c   3.37237996
+_cell_angle_alpha   100.53040205
+_cell_angle_beta   59.97373033
+_cell_angle_gamma   100.53040605
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiErTlO2
+_chemical_formula_sum   'Li1 Er1 Tl1 O2'
+_cell_volume   92.74565272
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.09746400  0.30255600  0.09746400  1
+  Er  Er1  1  0.51421300  0.54549600  0.51421300  1
+  Tl  Tl2  1  0.98524000  0.94853100  0.98524000  1
+  O  O3  1  0.21485900  0.64301100  0.21485900  1
+  O  O4  1  0.79536700  0.39373900  0.79536700  1

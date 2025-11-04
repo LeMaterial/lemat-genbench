@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Dy5BSe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.68821981
+_cell_length_b   7.00264662
+_cell_length_c   7.00264650
+_cell_angle_alpha   80.50530895
+_cell_angle_beta   66.03691205
+_cell_angle_gamma   66.03691621
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy5BSe4
+_chemical_formula_sum   'Dy5 B1 Se4'
+_cell_volume   232.92175142
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.90943162  0.36071775  0.82253221  1
+  Dy  Dy1  1  0.27014937  0.82253221  0.63928225  1
+  Dy  Dy2  1  0.73196283  0.17746779  0.36071775  1
+  Dy  Dy3  1  0.09268158  0.63928225  0.17746779  1
+  Dy  Dy4  1  0.50085863  -0.00000000  -0.00000000  1
+  B  B5  1  0.00107654  0.00000000  -0.00000000  1
+  Se  Se6  1  0.40814196  0.39741206  0.78837224  1
+  Se  Se7  1  0.80555502  0.78837224  0.60258794  1
+  Se  Se8  1  0.19651420  0.21162776  0.39741206  1
+  Se  Se9  1  0.59392726  0.60258794  0.21162776  1

@@ -1,0 +1,54 @@
+# generated using pymatgen
+data_Ba3AlSb3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   11.28994836
+_cell_length_b   11.28994836
+_cell_length_c   14.24566977
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   142.42920098
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba3AlSb3
+_chemical_formula_sum   'Ba12 Al4 Sb12'
+_cell_volume   1107.16510732
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.13060822  0.47977028  0.87077926  1
+  Ba  Ba1  1  0.97977028  0.63060822  0.62922074  1
+  Ba  Ba2  1  0.36939178  0.02022972  0.37077926  1
+  Ba  Ba3  1  0.52022972  0.86939178  0.12922074  1
+  Ba  Ba4  1  0.86939178  0.52022972  0.12922074  1
+  Ba  Ba5  1  0.02022972  0.36939178  0.37077926  1
+  Ba  Ba6  1  0.63060822  0.97977028  0.62922074  1
+  Ba  Ba7  1  0.47977028  0.13060822  0.87077926  1
+  Ba  Ba8  1  0.18434374  0.18434374  0.64772777  1
+  Ba  Ba9  1  0.68434374  0.68434374  0.85227223  1
+  Ba  Ba10  1  0.31565626  0.31565626  0.14772777  1
+  Ba  Ba11  1  0.81565626  0.81565626  0.35227223  1
+  Al  Al12  1  0.58512226  0.41487774  0.50000000  1
+  Al  Al13  1  0.91487774  0.08512226  -0.00000000  1
+  Al  Al14  1  0.41487774  0.58512226  0.50000000  1
+  Al  Al15  1  0.08512226  0.91487774  -0.00000000  1
+  Sb  Sb16  1  0.64174389  0.95908742  0.88071231  1
+  Sb  Sb17  1  0.45908742  0.14174389  0.61928769  1
+  Sb  Sb18  1  0.85825611  0.54091258  0.38071231  1
+  Sb  Sb19  1  0.04091258  0.35825611  0.11928769  1
+  Sb  Sb20  1  0.35825611  0.04091258  0.11928769  1
+  Sb  Sb21  1  0.54091258  0.85825611  0.38071231  1
+  Sb  Sb22  1  0.14174389  0.45908742  0.61928769  1
+  Sb  Sb23  1  0.95908742  0.64174389  0.88071231  1
+  Sb  Sb24  1  0.29792831  0.29792831  0.39892091  1
+  Sb  Sb25  1  0.79792831  0.79792831  0.10107909  1
+  Sb  Sb26  1  0.20207169  0.20207169  0.89892091  1
+  Sb  Sb27  1  0.70207169  0.70207169  0.60107909  1

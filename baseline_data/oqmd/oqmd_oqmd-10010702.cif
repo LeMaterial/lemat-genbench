@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Co2PtI8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.31349529
+_cell_length_b   8.31349529
+_cell_length_c   7.74041176
+_cell_angle_alpha   93.58674751
+_cell_angle_beta   93.58674751
+_cell_angle_gamma   70.15898495
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Co2PtI8
+_chemical_formula_sum   'Co2 Pt1 I8'
+_cell_volume   501.74285566
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.21499483  0.21499483  0.33231787  1
+  Co  Co1  1  0.78500528  0.78500528  0.66768195  1
+  I  I2  1  0.92429371  0.30296855  0.15755605  1
+  I  I3  1  0.30296855  0.92429371  0.15755605  1
+  I  I4  1  0.38854067  0.38854067  0.27046703  1
+  I  I5  1  0.81428327  0.81428327  0.35925832  1
+  I  I6  1  0.18571684  0.18571684  0.64074150  1
+  I  I7  1  0.61145944  0.61145944  0.72953279  1
+  I  I8  1  0.69703157  0.07570641  0.84244377  1
+  I  I9  1  0.07570641  0.69703157  0.84244377  1
+  Pt  Pt10  1  0.00000000  0.00000000  0.00000000  1

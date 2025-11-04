@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_K3Ce3PdO8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.23958219
+_cell_length_b   7.02290026
+_cell_length_c   7.43321085
+_cell_angle_alpha   118.23818152
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   121.02598802
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K3Ce3PdO8
+_chemical_formula_sum   'K3 Ce3 Pd1 O8'
+_cell_volume   270.01878735
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.00000000  0.00000000  0.00000000  1
+  K  K1  1  0.00000000  0.50000000  0.00000000  1
+  K  K2  1  0.50000000  0.50000000  0.00000000  1
+  Ce  Ce3  1  0.50000000  0.00000000  0.50000000  1
+  Ce  Ce4  1  0.50000000  0.50000000  0.50000000  1
+  Ce  Ce5  1  -0.00000000  0.50000000  0.50000000  1
+  Pd  Pd6  1  0.00000000  0.00000000  0.50000000  1
+  O  O7  1  0.26780099  0.53560199  0.30730339  1
+  O  O8  1  0.73219901  0.46439801  0.69269661  1
+  O  O9  1  0.78167056  0.56334211  0.33955203  1
+  O  O10  1  0.21832944  0.43665789  0.66044797  1
+  O  O11  1  0.74674818  0.06460688  0.31259713  1
+  O  O12  1  0.25325182  0.93539312  0.68740287  1
+  O  O13  1  0.31785869  0.06460688  0.31259713  1
+  O  O14  1  0.68214131  0.93539312  0.68740287  1

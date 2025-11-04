@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Rb2Pa(FeN2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.49375081
+_cell_length_b   6.87283818
+_cell_length_c   6.86198442
+_cell_angle_alpha   106.55450761
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   104.72446207
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Rb2Pa(FeN2)2
+_chemical_formula_sum   'Rb2 Pa1 Fe2 N4'
+_cell_volume   152.28635780
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rb  Rb0  1  0.86666561  0.73333122  0.44976611  1
+  Rb  Rb1  1  0.13333439  0.26666878  0.55023389  1
+  Pa  Pa2  1  0.00000000  0.00000000  0.00000000  1
+  Fe  Fe3  1  0.31489331  0.62978562  0.02806018  1
+  Fe  Fe4  1  0.68510669  0.37021438  0.97193982  1
+  N  N5  1  0.81033996  0.62067892  0.90857879  1
+  N  N6  1  0.18966004  0.37932108  0.09142121  1
+  N  N7  1  0.46374675  0.92749349  0.17998575  1
+  N  N8  1  0.53625325  0.07250651  0.82001425  1

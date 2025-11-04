@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Dy3ErSc2Bi2Os
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.23138196
+_cell_length_b   8.07102506
+_cell_length_c   8.07102506
+_cell_angle_alpha   119.89785096
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy3ErSc2Bi2Os
+_chemical_formula_sum   'Dy3 Er1 Sc2 Bi2 Os1'
+_cell_volume   238.95513210
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Bi  Bi0  1  0.00000000  0.66564078  0.32854201  1
+  Bi  Bi1  1  0.00000000  0.32854201  0.66564078  1
+  Dy  Dy2  1  0.49999977  0.61346603  0.00264707  1
+  Dy  Dy3  1  0.49999977  0.38214713  0.38214713  1
+  Dy  Dy4  1  0.49999977  0.00264707  0.61346603  1
+  Er  Er5  1  0.00000000  0.77149042  0.77149042  1
+  Os  Os6  1  0.49999977  0.00996724  0.00996724  1
+  Sc  Sc7  1  0.00000000  0.22539048  0.00070759  1
+  Sc  Sc8  1  0.00000000  0.00070759  0.22539048  1

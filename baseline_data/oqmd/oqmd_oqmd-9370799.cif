@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ni9Hg2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   2.65915291
+_cell_length_b   2.65915291
+_cell_length_c   33.97692025
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99999999
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ni9Hg2
+_chemical_formula_sum   'Ni9 Hg2'
+_cell_volume   208.06607009
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hg  Hg0  1  0.33333276  0.66666552  0.20139053  1
+  Hg  Hg1  1  0.00000000  0.00000000  0.79849644  1
+  Ni  Ni2  1  0.00000000  0.00000000  0.27522948  1
+  Ni  Ni3  1  0.66666771  0.33333276  0.33122720  1
+  Ni  Ni4  1  0.33333276  0.66666552  0.38753100  1
+  Ni  Ni5  1  0.00000000  0.00000000  0.44413413  1
+  Ni  Ni6  1  0.66666771  0.33333276  0.49960973  1
+  Ni  Ni7  1  0.33333276  0.66666552  0.55613634  1
+  Ni  Ni8  1  0.00000000  0.00000000  0.61243338  1
+  Ni  Ni9  1  0.66666771  0.33333276  0.66886492  1
+  Ni  Ni10  1  0.33333276  0.66666552  0.72494652  1

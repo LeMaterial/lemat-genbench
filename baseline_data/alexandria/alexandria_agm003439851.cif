@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_La3Hg2Pb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.84709214
+_cell_length_b   3.84709214
+_cell_length_c   12.38911563
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La3Hg2Pb
+_chemical_formula_sum   'La3 Hg2 Pb1'
+_cell_volume   183.36037242
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.00000000  0.00000000  0.00000000  1
+  La  La1  1  0.00000000  0.00000000  0.67458423  1
+  La  La2  1  0.00000000  0.00000000  0.32541577  1
+  Hg  Hg3  1  0.50000000  0.50000000  0.84266163  1
+  Hg  Hg4  1  0.50000000  0.50000000  0.15733837  1
+  Pb  Pb5  1  0.50000000  0.50000000  0.50000000  1

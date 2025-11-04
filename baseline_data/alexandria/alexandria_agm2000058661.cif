@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_SmAg2P3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.83736535
+_cell_length_b   3.83582794
+_cell_length_c   20.84249956
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00450900
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmAg2P3
+_chemical_formula_sum   'Sm1 Ag2 P3'
+_cell_volume   306.79061355
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.72373474  0.42376961  0.49999999  1
+  Ag  Ag1  1  0.22357629  0.92382164  0.62404393  1
+  Ag  Ag2  1  0.22357628  0.92382164  0.37595608  1
+  P  P3  1  0.72413590  0.42300796  0.64015833  1
+  P  P4  1  0.72413591  0.42300795  0.35984168  1
+  P  P5  1  0.22373089  0.92377119  0.50000000  1

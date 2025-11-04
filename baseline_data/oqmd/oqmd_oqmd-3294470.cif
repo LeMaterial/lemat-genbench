@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_RbHoTeO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.17301413
+_cell_length_b   7.42097200
+_cell_length_c   6.65797294
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   97.57382058
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   RbHoTeO
+_chemical_formula_sum   'Rb4 Ho4 Te4 O4'
+_cell_volume   449.27206340
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.50895916  0.63518229  0.20941182  1
+  Ho  Ho1  1  0.49104177  0.13518175  0.29058876  1
+  Ho  Ho2  1  0.50895897  0.86481798  0.70941106  1
+  Ho  Ho3  1  0.49104049  0.36481744  0.79058804  1
+  O  O4  1  0.56826351  0.35762296  0.11173282  1
+  O  O5  1  0.43173743  0.85762216  0.38826776  1
+  O  O6  1  0.56826332  0.14237758  0.61173207  1
+  O  O7  1  0.43173615  0.64237677  0.88826704  1
+  Rb  Rb8  1  0.87077824  0.39912831  0.15469942  1
+  Rb  Rb9  1  0.12922127  0.89912750  0.34529816  1
+  Rb  Rb10  1  0.87077822  0.10087223  0.65470018  1
+  Rb  Rb11  1  0.12922125  0.60087142  0.84529893  1
+  Te  Te12  1  0.74780588  0.92131058  0.11504844  1
+  Te  Te13  1  0.25219380  0.42131139  0.38495066  1
+  Te  Te14  1  0.74780694  0.57868834  0.61504917  1
+  Te  Te15  1  0.25219378  0.07868915  0.88495142  1

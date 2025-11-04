@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_NbTeNO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.72071900
+_cell_length_b   7.60796500
+_cell_length_c   5.91605300
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NbTeNO
+_chemical_formula_sum   'Nb4 Te4 N4 O4'
+_cell_volume   302.49367593
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  N  N0  1  0.37166262  0.05341902  0.16263377  1
+  N  N1  1  0.87166269  0.94657901  0.16263377  1
+  N  N2  1  0.12833746  0.05341902  0.66263436  1
+  N  N3  1  0.62833753  0.94657901  0.66263436  1
+  Nb  Nb4  1  0.11210556  0.05453889  0.00408042  1
+  Nb  Nb5  1  0.61210564  0.94546308  0.00408042  1
+  Nb  Nb6  1  0.38789451  0.05453889  0.50408101  1
+  Nb  Nb7  1  0.88789458  0.94546308  0.50408101  1
+  O  O8  1  0.00899011  0.29065065  0.04413415  1
+  O  O9  1  0.50899018  0.70934869  0.04413415  1
+  O  O10  1  0.49100848  0.29065065  0.54413475  1
+  O  O11  1  0.99101004  0.70934869  0.54413475  1
+  Te  Te12  1  0.78979645  0.33393818  0.49154901  1
+  Te  Te13  1  0.28979786  0.66606248  0.49154901  1
+  Te  Te14  1  0.71020377  0.33393818  0.99154960  1
+  Te  Te15  1  0.21020370  0.66606248  0.99154960  1

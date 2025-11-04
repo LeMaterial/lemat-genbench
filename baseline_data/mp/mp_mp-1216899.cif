@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_TiCuSnS4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.33144173
+_cell_length_b   7.33144173
+_cell_length_c   7.33144173
+_cell_angle_alpha   121.56516469
+_cell_angle_beta   118.79270863
+_cell_angle_gamma   89.70721043
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TiCuSnS4
+_chemical_formula_sum   'Ti2 Cu2 Sn2 S8'
+_cell_volume   277.68400878
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ti  Ti0  1  0.00000000  0.00000000  0.50000000  1
+  Ti  Ti1  1  0.00000000  0.50000000  0.00000000  1
+  Cu  Cu2  1  0.38012500  0.63012500  0.75000000  1
+  Cu  Cu3  1  0.61987500  0.36987500  0.25000000  1
+  Sn  Sn4  1  0.00000000  0.00000000  0.00000000  1
+  Sn  Sn5  1  0.50000000  0.00000000  0.50000000  1
+  S  S6  1  0.23433000  0.72821000  0.99388000  1
+  S  S7  1  0.23433000  0.24045000  0.50612000  1
+  S  S8  1  0.22938600  0.74725800  0.48212800  1
+  S  S9  1  0.76513000  0.74725800  0.01787200  1
+  S  S10  1  0.76567000  0.27179000  0.00612000  1
+  S  S11  1  0.76567000  0.75955000  0.49388000  1
+  S  S12  1  0.77061400  0.25274200  0.51787200  1
+  S  S13  1  0.23487000  0.25274200  0.98212800  1

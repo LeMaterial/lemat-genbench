@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_SmPIrO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.55605338
+_cell_length_b   4.09009610
+_cell_length_c   6.93581492
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmPIrO
+_chemical_formula_sum   'Sm2 P2 Ir2 O2'
+_cell_volume   129.24680377
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ir  Ir0  1  0.00000000  0.75947360  0.43899384  1
+  Ir  Ir1  1  0.00000000  0.24052491  0.93899420  1
+  O  O2  1  0.50000073  0.75870344  0.43783896  1
+  O  O3  1  0.50000073  0.24129506  0.93783933  1
+  P  P4  1  0.00000000  0.25857339  0.27455462  1
+  P  P5  1  0.00000000  0.74142512  0.77455498  1
+  Sm  Sm6  1  0.50000073  0.74339574  0.10261087  1
+  Sm  Sm7  1  0.50000073  0.25660277  0.60261124  1

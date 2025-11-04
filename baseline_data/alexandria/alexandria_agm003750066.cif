@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_Zr4ZnMo
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.76609493
+_cell_length_b   4.76300927
+_cell_length_c   7.53800634
+_cell_angle_alpha   71.51764194
+_cell_angle_beta   71.57049487
+_cell_angle_gamma   59.97856731
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Zr4ZnMo
+_chemical_formula_sum   'Zr4 Zn1 Mo1'
+_cell_volume   137.91040967
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zr  Zr0  1  0.63186595  0.63162062  0.10464749  1
+  Zr  Zr1  1  0.36813405  0.36837938  0.89535251  1
+  Zr  Zr2  1  0.12502872  0.12520670  0.62473586  1
+  Zr  Zr3  1  0.87497128  0.87479330  0.37526414  1
+  Zn  Zn4  1  0.50000000  0.50000000  0.50000000  1
+  Mo  Mo5  1  0.00000000  0.00000000  0.00000000  1

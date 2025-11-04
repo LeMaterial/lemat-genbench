@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_TlCrSe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.58894651
+_cell_length_b   3.58894651
+_cell_length_c   9.45329785
+_cell_angle_alpha   79.05742303
+_cell_angle_beta   79.05742303
+_cell_angle_gamma   59.99999056
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TlCrSe2
+_chemical_formula_sum   'Tl1 Cr1 Se2'
+_cell_volume   102.88597337
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tl  Tl0  1  0.89255400  0.89255400  0.32233900  1
+  Cr  Cr1  1  0.39258700  0.39258700  0.82224000  1
+  Se  Se2  1  0.00792100  0.00792100  0.97623600  1
+  Se  Se3  1  0.77733900  0.77733900  0.66798400  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_KYPtS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.66819233
+_cell_length_b   7.66819233
+_cell_length_c   10.15048367
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   150.49814799
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KYPtS3
+_chemical_formula_sum   'K2 Y2 Pt2 S6'
+_cell_volume   293.92489127
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.75404100  0.24596077  0.24999991  1
+  K  K1  1  0.24596077  0.75404100  0.74999973  1
+  Pt  Pt2  1  0.48876558  0.51123619  0.24999991  1
+  Pt  Pt3  1  0.51123619  0.48876558  0.74999973  1
+  S  S4  1  0.37949256  0.62050921  0.07560625  1
+  S  S5  1  0.08287587  0.91712590  0.24999991  1
+  S  S6  1  0.37949256  0.62050921  0.42439357  1
+  S  S7  1  0.62050921  0.37949256  0.57560607  1
+  S  S8  1  0.91712590  0.08287587  0.74999973  1
+  S  S9  1  0.62050921  0.37949256  0.92439339  1
+  Y  Y10  1  0.00000000  0.00000000  0.00000000  1
+  Y  Y11  1  0.00000000  0.00000000  0.49999982  1

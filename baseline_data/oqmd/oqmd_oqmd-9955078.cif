@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Ba2YTcN6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.06274225
+_cell_length_b   6.06274225
+_cell_length_c   6.06274225
+_cell_angle_alpha   120.02212684
+_cell_angle_beta   120.02212684
+_cell_angle_gamma   89.96167946
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba2YTcN6
+_chemical_formula_sum   'Ba2 Y1 Tc1 N6'
+_cell_volume   157.52407579
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.75000048  0.25000003  0.50000046  1
+  Ba  Ba1  1  0.25000003  0.75000048  0.50000046  1
+  N  N2  1  0.23034952  0.23034952  0.00000000  1
+  N  N3  1  0.76965059  0.76965059  0.00000000  1
+  N  N4  1  0.77560947  0.23612192  0.01173129  1
+  N  N5  1  0.23612233  0.22439104  0.46051336  1
+  N  N6  1  0.76387818  0.77560947  0.53948755  1
+  N  N7  1  0.22439104  0.76387859  0.98826962  1
+  Tc  Tc8  1  0.00000000  0.00000000  0.00000000  1
+  Y  Y9  1  0.50000005  0.50000005  0.00000000  1

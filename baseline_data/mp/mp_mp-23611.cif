@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_BaTa2Bi2O9
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   12.93976145
+_cell_length_b   12.93976145
+_cell_length_c   12.93976145
+_cell_angle_alpha   162.35730040
+_cell_angle_beta   162.35730040
+_cell_angle_gamma   25.05115198
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaTa2Bi2O9
+_chemical_formula_sum   'Ba1 Ta2 Bi2 O9'
+_cell_volume   198.96095994
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.00000000  0.00000000  0.00000000  1
+  Ta  Ta1  1  0.41199700  0.41199700  0.00000000  1
+  Ta  Ta2  1  0.58800300  0.58800300  0.00000000  1
+  Bi  Bi3  1  0.20134300  0.20134300  0.00000000  1
+  Bi  Bi4  1  0.79865700  0.79865700  0.00000000  1
+  O  O5  1  0.08079400  0.58079400  0.50000000  1
+  O  O6  1  0.58079400  0.08079400  0.50000000  1
+  O  O7  1  0.91920600  0.41920600  0.50000000  1
+  O  O8  1  0.41920600  0.91920600  0.50000000  1
+  O  O9  1  0.75000000  0.25000000  0.50000000  1
+  O  O10  1  0.50000000  0.50000000  0.00000000  1
+  O  O11  1  0.33720400  0.33720400  0.00000000  1
+  O  O12  1  0.66279600  0.66279600  0.00000000  1
+  O  O13  1  0.25000000  0.75000000  0.50000000  1

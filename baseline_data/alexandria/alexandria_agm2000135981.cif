@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_TiBrCl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.34713526
+_cell_length_b   6.00418884
+_cell_length_c   18.81940071
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TiBrCl
+_chemical_formula_sum   'Ti2 Br2 Cl2'
+_cell_volume   378.21033769
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cl  Cl0  1  0.75000000  0.33937942  0.43000772  1
+  Cl  Cl1  1  0.25000000  0.16814602  0.56999227  1
+  Br  Br2  1  0.25000000  0.84129901  0.39852491  1
+  Br  Br3  1  0.75000000  0.66622642  0.60147509  1
+  Ti  Ti4  1  0.75000000  0.95001247  0.49859127  1
+  Ti  Ti5  1  0.25000000  0.55751298  0.50140873  1

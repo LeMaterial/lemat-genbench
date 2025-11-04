@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_NpAlSbO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.28466559
+_cell_length_b   5.28466559
+_cell_length_c   9.73603273
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99999996
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NpAlSbO6
+_chemical_formula_sum   'Np2 Al2 Sb2 O12'
+_cell_volume   235.47655749
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Np  Np0  1  0.66666667  0.33333333  0.25000000  1
+  Np  Np1  1  0.33333333  0.66666667  0.75000000  1
+  Al  Al2  1  0.33333333  0.66666667  0.25000000  1
+  Al  Al3  1  0.66666667  0.33333333  0.75000000  1
+  Sb  Sb4  1  0.00000000  0.00000000  0.00000000  1
+  Sb  Sb5  1  0.00000000  0.00000000  0.50000000  1
+  O  O6  1  0.63376683  0.65326775  0.13969195  1
+  O  O7  1  0.01950092  0.36623217  0.13969195  1
+  O  O8  1  0.36623317  0.01950192  0.63969195  1
+  O  O9  1  0.98049908  0.63376783  0.86030805  1
+  O  O10  1  0.34673125  0.36623217  0.36030805  1
+  O  O11  1  0.01950092  0.65326775  0.36030805  1
+  O  O12  1  0.65326875  0.01950192  0.86030805  1
+  O  O13  1  0.63376683  0.98049808  0.36030805  1
+  O  O14  1  0.98049908  0.34673225  0.63969195  1
+  O  O15  1  0.34673125  0.98049808  0.13969195  1
+  O  O16  1  0.65326875  0.63376783  0.63969195  1
+  O  O17  1  0.36623317  0.34673225  0.86030805  1

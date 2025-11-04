@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_BaSrPrCu3O7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.82619000
+_cell_length_b   3.94062700
+_cell_length_c   11.74884400
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaSrPrCu3O7
+_chemical_formula_sum   'Ba1 Sr1 Pr1 Cu3 O7'
+_cell_volume   177.14422486
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.50000000  0.50000000  0.17663100  1
+  Sr  Sr1  1  0.50000000  0.50000000  0.82030700  1
+  Pr  Pr2  1  0.50000000  0.50000000  0.50306000  1
+  Cu  Cu3  1  0.00000000  0.00000000  0.34495600  1
+  Cu  Cu4  1  0.00000000  0.00000000  0.66065800  1
+  Cu  Cu5  1  0.00000000  0.00000000  0.99629600  1
+  O  O6  1  0.00000000  0.00000000  0.15579600  1
+  O  O7  1  0.00000000  0.00000000  0.83843800  1
+  O  O8  1  0.00000000  0.50000000  0.37003200  1
+  O  O9  1  0.50000000  0.00000000  0.37215300  1
+  O  O10  1  0.00000000  0.50000000  0.63866600  1
+  O  O11  1  0.50000000  0.00000000  0.63454600  1
+  O  O12  1  0.00000000  0.50000000  0.98846200  1

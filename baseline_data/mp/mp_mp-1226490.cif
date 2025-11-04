@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_CeZr3O8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.52148407
+_cell_length_b   6.52148407
+_cell_length_c   3.70706200
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   110.99795847
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CeZr3O8
+_chemical_formula_sum   'Ce1 Zr3 O8'
+_cell_volume   147.19071070
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.50198000  0.49802000  0.50000000  1
+  Zr  Zr1  1  0.99753700  0.00246300  0.50000000  1
+  Zr  Zr2  1  0.49444900  0.99472400  0.00000000  1
+  Zr  Zr3  1  0.00527600  0.50555100  0.00000000  1
+  O  O4  1  0.38768900  0.61231100  0.00000000  1
+  O  O5  1  0.90620300  0.09379700  0.00000000  1
+  O  O6  1  0.08836300  0.39483400  0.50000000  1
+  O  O7  1  0.60516600  0.91163700  0.50000000  1
+  O  O8  1  0.34302000  0.13613000  0.50000000  1
+  O  O9  1  0.86387000  0.65698000  0.50000000  1
+  O  O10  1  0.65431900  0.34568100  0.00000000  1
+  O  O11  1  0.15212700  0.84787300  0.00000000  1

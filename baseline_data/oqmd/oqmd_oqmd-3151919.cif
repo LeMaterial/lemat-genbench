@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_ZnSnAsO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.37197600
+_cell_length_b   4.37197600
+_cell_length_c   8.83525300
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZnSnAsO
+_chemical_formula_sum   'Zn2 Sn2 As2 O2'
+_cell_volume   168.87856445
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  As  As0  1  0.75000183  0.75000183  0.31398648  1
+  As  As1  1  0.25000137  0.25000137  0.68601318  1
+  O  O2  1  0.75000183  0.25000137  0.00000000  1
+  O  O3  1  0.25000137  0.75000183  0.00000000  1
+  Sn  Sn4  1  0.75000183  0.25000137  0.50000040  1
+  Sn  Sn5  1  0.25000137  0.75000183  0.50000040  1
+  Zn  Zn6  1  0.75000183  0.75000183  0.00266999  1
+  Zn  Zn7  1  0.25000137  0.25000137  0.99733081  1

@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ba3(GeAu)4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.75136116
+_cell_length_b   4.62097911
+_cell_length_c   13.74029182
+_cell_angle_alpha   80.18665261
+_cell_angle_beta   80.05446873
+_cell_angle_gamma   89.93314954
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba3(GeAu)4
+_chemical_formula_sum   'Ba3 Ge4 Au4'
+_cell_volume   292.67545601
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.15062542  0.64988256  0.69895867  1
+  Ba  Ba1  1  0.84940138  0.35014933  0.30103769  1
+  Ba  Ba2  1  0.00000908  0.00000365  0.00001268  1
+  Ge  Ge3  1  0.59977405  0.09916082  0.80099531  1
+  Ge  Ge4  1  0.24979193  0.24932069  0.50063003  1
+  Ge  Ge5  1  0.75024234  0.75072151  0.49935192  1
+  Ge  Ge6  1  0.40025165  0.90086140  0.19900343  1
+  Au  Au7  1  0.55511827  0.55380593  0.89076680  1
+  Au  Au8  1  0.44489985  0.44620422  0.10925705  1
+  Au  Au9  1  0.30108267  0.80154071  0.39715519  1
+  Au  Au10  1  0.69894936  0.19849618  0.60283022  1

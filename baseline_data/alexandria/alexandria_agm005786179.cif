@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_TiMnNb2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.37064757
+_cell_length_b   4.37064801
+_cell_length_c   7.35349476
+_cell_angle_alpha   107.36560570
+_cell_angle_beta   107.36559865
+_cell_angle_gamma   89.95615075
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TiMnNb2
+_chemical_formula_sum   'Ti2 Mn2 Nb4'
+_cell_volume   127.35420731
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ti  Ti0  1  0.35883035  0.35883035  0.21794734  1
+  Ti  Ti1  1  0.64116965  0.64116965  0.78205266  1
+  Mn  Mn2  1  0.24991294  0.75008706  1.00000000  1
+  Mn  Mn3  1  0.75008706  0.24991294  -0.00000000  1
+  Nb  Nb4  1  0.86260124  0.86260124  0.22577489  1
+  Nb  Nb5  1  0.13739876  0.13739876  0.77422511  1
+  Nb  Nb6  1  0.50000000  0.00000000  0.50000000  1
+  Nb  Nb7  1  0.00000000  0.50000000  0.50000000  1

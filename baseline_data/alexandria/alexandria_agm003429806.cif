@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_LiPa2As3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.08305072
+_cell_length_b   5.70422277
+_cell_length_c   7.07605220
+_cell_angle_alpha   113.76994811
+_cell_angle_beta   106.76888740
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiPa2As3
+_chemical_formula_sum   'Li1 Pa2 As3'
+_cell_volume   143.13442792
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.50000000  0.50000000  0.50000000  1
+  Pa  Pa1  1  0.83645598  0.83645598  0.17291195  1
+  Pa  Pa2  1  0.16354402  0.16354402  0.82708805  1
+  As  As3  1  0.83075898  0.33075898  0.16151796  1
+  As  As4  1  0.16924102  0.66924102  0.83848204  1
+  As  As5  1  0.50000000  0.00000000  0.50000000  1

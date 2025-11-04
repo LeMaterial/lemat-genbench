@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_ThAu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.87966839
+_cell_length_b   4.60523425
+_cell_length_c   6.15709654
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   71.63577136
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ThAu
+_chemical_formula_sum   'Th2 Au2'
+_cell_volume   104.40513661
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Th  Th0  1  0.14796036  0.75000000  0.70407728  1
+  Th  Th1  1  0.85203964  0.25000000  0.29592272  1
+  Au  Au2  1  0.42216937  0.75000000  0.15566025  1
+  Au  Au3  1  0.57783063  0.25000000  0.84433975  1

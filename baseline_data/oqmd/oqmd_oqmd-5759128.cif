@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_ErSiIr
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.78220898
+_cell_length_b   6.78220898
+_cell_length_c   3.94843427
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ErSiIr
+_chemical_formula_sum   'Er3 Si3 Ir3'
+_cell_volume   157.28882911
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.58175884  0.00000000  0.00000000  1
+  Er  Er1  1  0.41824151  0.41824171  0.00000000  1
+  Er  Er2  1  0.00000000  0.58175909  0.00000000  1
+  Ir  Ir3  1  0.24139923  0.00000000  0.50000073  1
+  Ir  Ir4  1  0.00000000  0.24139853  0.50000073  1
+  Ir  Ir5  1  0.75860149  0.75860058  0.50000073  1
+  Si  Si6  1  0.00000000  0.00000000  0.00000000  1
+  Si  Si7  1  0.66666642  0.33333417  0.50000073  1
+  Si  Si8  1  0.33333332  0.66666664  0.50000073  1

@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_AlInHg(TeSe)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.02453924
+_cell_length_b   6.08532784
+_cell_length_c   7.29243593
+_cell_angle_alpha   113.39102432
+_cell_angle_beta   113.79865819
+_cell_angle_gamma   90.07349833
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   AlInHg(TeSe)2
+_chemical_formula_sum   'Al1 In1 Hg1 Te2 Se2'
+_cell_volume   220.32371023
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.99797451  0.01744300  0.99854842  1
+  Hg  Hg1  1  0.50066618  0.49376167  0.00227299  1
+  In  In2  1  0.76675042  0.24500542  0.49987407  1
+  Se  Se3  1  0.91628741  0.37188771  0.25269091  1
+  Se  Se4  1  0.12599344  0.08878183  0.74834348  1
+  Te  Te5  1  0.33854596  0.87404956  0.27272847  1
+  Te  Te6  1  0.60378261  0.65907133  0.72554373  1

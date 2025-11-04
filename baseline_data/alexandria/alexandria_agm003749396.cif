@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Mg4BiPb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.04390088
+_cell_length_b   7.21959951
+_cell_length_c   8.37774541
+_cell_angle_alpha   113.37734411
+_cell_angle_beta   112.67158601
+_cell_angle_gamma   94.65189759
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Mg4BiPb
+_chemical_formula_sum   'Mg8 Bi2 Pb2'
+_cell_volume   346.80173201
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg0  1  0.99234993  0.22972028  0.98555798  1
+  Mg  Mg1  1  0.49320805  0.75583770  0.98555798  1
+  Mg  Mg2  1  0.24965169  0.50742826  0.51391703  1
+  Mg  Mg3  1  0.75034831  0.49257174  0.48608297  1
+  Mg  Mg4  1  0.23573466  0.99351023  0.48608297  1
+  Mg  Mg5  1  0.50679195  0.24416230  0.01444202  1
+  Mg  Mg6  1  0.76426534  0.00648977  0.51391703  1
+  Mg  Mg7  1  0.00765007  0.77027972  0.01444202  1
+  Bi  Bi8  1  0.37347619  0.62347619  0.24695238  1
+  Bi  Bi9  1  0.62652381  0.37652381  0.75304762  1
+  Pb  Pb10  1  0.12340200  0.87340200  0.74680300  1
+  Pb  Pb11  1  0.87659800  0.12659800  0.25319700  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_AcTaO4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.84959218
+_cell_length_b   5.34891717
+_cell_length_c   5.76071781
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   103.04392856
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   AcTaO4
+_chemical_formula_sum   'Ac2 Ta2 O8'
+_cell_volume   175.59614997
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.00000000  0.00000000  0.00000000  1
+  Ac  Ac1  1  -0.00000000  0.50000026  0.50000038  1
+  O  O2  1  0.81998925  0.62256152  0.09108929  1
+  O  O3  1  0.39756769  0.75659425  0.22216022  1
+  O  O4  1  0.60243225  0.25659399  0.27784015  1
+  O  O5  1  0.18001069  0.12256125  0.40891109  1
+  O  O6  1  0.81998957  0.87743927  0.59108967  1
+  O  O7  1  0.39756761  0.74340654  0.72215881  1
+  O  O8  1  0.60243256  0.24340627  0.77784053  1
+  O  O9  1  0.18001100  0.37743901  0.90891146  1
+  Ta  Ta10  1  0.50000067  0.50000026  0.00000000  1
+  Ta  Ta11  1  0.49999927  0.00000000  0.50000038  1

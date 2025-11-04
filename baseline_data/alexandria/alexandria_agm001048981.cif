@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_NdMoAs
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.16884768
+_cell_length_b   3.95787992
+_cell_length_c   10.61782850
+_cell_angle_alpha   80.93955839
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   121.77949563
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NdMoAs
+_chemical_formula_sum   'Nd2 Mo2 As2'
+_cell_volume   146.34977473
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mo  Mo0  1  0.13444234  0.26888368  0.06914994  1
+  Mo  Mo1  1  0.86555766  0.73111632  0.93085006  1
+  Nd  Nd2  1  0.36432593  0.72865287  0.35283533  1
+  Nd  Nd3  1  0.63567407  0.27134713  0.64716467  1
+  As  As4  1  0.24484556  0.48969112  0.82119478  1
+  As  As5  1  0.75515444  0.51030888  0.17880522  1

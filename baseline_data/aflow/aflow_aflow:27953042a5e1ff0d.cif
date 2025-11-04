@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_HHe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.25578910
+_cell_length_b   6.25569940
+_cell_length_c   4.48814075
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00047432
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HHe
+_chemical_formula_sum   'H6 He6'
+_cell_volume   152.10832883
+_cell_formula_units_Z   6
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.99999746  0.29976836  0.50000000  1
+  H  H1  1  0.70022910  0.70023164  0.50000000  1
+  H  H2  1  0.29977497  0.00000000  0.50000000  1
+  H  H3  1  0.99999798  0.63245014  0.00000000  1
+  H  H4  1  0.36754784  0.36754986  0.00000000  1
+  H  H5  1  0.63245196  -0.00000000  0.00000000  1
+  He  He6  1  0.00000075  0.00000000  0.17081783  1
+  He  He7  1  0.00000075  -0.00000000  0.82918217  1
+  He  He8  1  0.66666465  0.33332970  0.32711252  1
+  He  He9  1  0.66666465  0.33332970  0.67288748  1
+  He  He10  1  0.33333494  0.66667030  0.67288748  1
+  He  He11  1  0.33333494  0.66667030  0.32711252  1

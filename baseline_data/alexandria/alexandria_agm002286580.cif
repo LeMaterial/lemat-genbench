@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Mg2TaNi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.21234865
+_cell_length_b   5.38588260
+_cell_length_c   8.37791357
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   107.46696426
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Mg2TaNi
+_chemical_formula_sum   'Mg4 Ta2 Ni2'
+_cell_volume   138.26549366
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.76194962  0.52479824  0.75000000  1
+  Ni  Ni1  1  0.23805038  0.47520176  0.25000000  1
+  Mg  Mg2  1  0.13570853  0.27247411  0.55286247  1
+  Mg  Mg3  1  0.86429147  0.72752589  0.44713753  1
+  Mg  Mg4  1  0.13570853  0.27247411  0.94713753  1
+  Mg  Mg5  1  0.86429147  0.72752589  0.05286247  1
+  Ta  Ta6  1  0.55888974  0.11749163  0.25000000  1
+  Ta  Ta7  1  0.44111026  0.88250837  0.75000000  1

@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_ErTmGa3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.95149633
+_cell_length_b   6.95149633
+_cell_length_c   6.95149633
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ErTmGa3
+_chemical_formula_sum   'Er3 Tm3 Ga9'
+_cell_volume   335.91925185
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.50000026  0.00000000  0.00000000  1
+  Er  Er1  1  0.00000000  0.50000026  0.00000000  1
+  Er  Er2  1  0.00000000  0.00000000  0.50000026  1
+  Ga  Ga3  1  0.00000000  0.00000000  0.00000000  1
+  Ga  Ga4  1  0.24712665  0.24712665  0.24712665  1
+  Ga  Ga5  1  0.75287388  0.24712665  0.24712665  1
+  Ga  Ga6  1  0.24712665  0.75287388  0.24712665  1
+  Ga  Ga7  1  0.75287388  0.75287388  0.24712665  1
+  Ga  Ga8  1  0.24712665  0.24712665  0.75287388  1
+  Ga  Ga9  1  0.75287388  0.24712665  0.75287388  1
+  Ga  Ga10  1  0.24712665  0.75287388  0.75287388  1
+  Ga  Ga11  1  0.75287388  0.75287388  0.75287388  1
+  Tm  Tm12  1  0.50000026  0.50000026  0.00000000  1
+  Tm  Tm13  1  0.50000026  0.00000000  0.50000026  1
+  Tm  Tm14  1  0.00000000  0.50000026  0.50000026  1

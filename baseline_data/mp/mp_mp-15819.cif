@@ -1,0 +1,52 @@
+# generated using pymatgen
+data_Mn3Al9Si
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.46652092
+_cell_length_b   7.46654962
+_cell_length_c   7.71050383
+_cell_angle_alpha   89.99999937
+_cell_angle_beta   90.00000350
+_cell_angle_gamma   120.00005729
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Mn3Al9Si
+_chemical_formula_sum   'Mn6 Al18 Si2'
+_cell_volume   372.26429146
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mn  Mn0  1  0.76689353  0.88344855  0.24999999  1
+  Mn  Mn1  1  0.11654711  0.88344647  0.25000002  1
+  Mn  Mn2  1  0.88344223  0.76688723  0.74999992  1
+  Mn  Mn3  1  0.23312174  0.11656944  0.74999997  1
+  Mn  Mn4  1  0.88344782  0.11656727  0.74999995  1
+  Mn  Mn5  1  0.11654391  0.23310019  0.25000001  1
+  Al  Al6  1  0.79714659  0.20284834  0.43819825  1
+  Al  Al7  1  0.79714660  0.20284836  0.06180173  1
+  Al  Al8  1  0.20285817  0.79714328  0.56179465  1
+  Al  Al9  1  0.20285626  0.40571518  0.56179445  1
+  Al  Al10  1  0.59428720  0.79714138  0.56180479  1
+  Al  Al11  1  0.40571232  0.20285560  0.06179936  1
+  Al  Al12  1  0.45832688  0.91665943  0.24999995  1
+  Al  Al13  1  0.54167794  0.45833320  0.75000009  1
+  Al  Al14  1  0.91666211  0.45833031  0.75000007  1
+  Al  Al15  1  0.79714173  0.59428706  0.06180298  1
+  Al  Al16  1  0.45832633  0.54166219  0.24999994  1
+  Al  Al17  1  0.54167562  0.08333935  0.75000008  1
+  Al  Al18  1  0.20285628  0.40571520  0.93820560  1
+  Al  Al19  1  0.08333581  0.54166453  0.24999997  1
+  Al  Al20  1  0.40571228  0.20285557  0.43820062  1
+  Al  Al21  1  0.59428716  0.79714137  0.93819525  1
+  Al  Al22  1  0.20285815  0.79714327  0.93820537  1
+  Al  Al23  1  0.79714173  0.59428705  0.43819698  1
+  Si  Si24  1  -0.00000324  0.00000307  0.00000018  1
+  Si  Si25  1  -0.00000324  0.00000310  0.49999982  1

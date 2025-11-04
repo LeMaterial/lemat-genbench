@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_BaPrTaCoO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.82878000
+_cell_length_b   5.75398700
+_cell_length_c   9.90041648
+_cell_angle_alpha   54.64051430
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaPrTaCoO6
+_chemical_formula_sum   'Ba2 Pr2 Ta2 Co2 O12'
+_cell_volume   270.79695949
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.76109500  0.74906900  0.74973500  1
+  Ba  Ba1  1  0.23890500  0.74906900  0.24973500  1
+  Pr  Pr2  1  0.70056200  0.26957700  0.24725700  1
+  Pr  Pr3  1  0.29943800  0.26957700  0.74725700  1
+  Ta  Ta4  1  0.75805700  0.99905600  0.00023200  1
+  Ta  Ta5  1  0.24194300  0.99905600  0.50023200  1
+  Co  Co6  1  0.75362600  0.50213800  0.49814600  1
+  Co  Co7  1  0.24637400  0.50213800  0.99814600  1
+  O  O8  1  0.04707400  0.67504700  0.54616600  1
+  O  O9  1  0.95292600  0.67504700  0.04616600  1
+  O  O10  1  0.48506200  0.27646700  0.47172700  1
+  O  O11  1  0.51493800  0.27646700  0.97172700  1
+  O  O12  1  0.49777600  0.72938600  0.53425000  1
+  O  O13  1  0.50222400  0.72938600  0.03425000  1
+  O  O14  1  0.96824200  0.24248500  0.45351000  1
+  O  O15  1  0.03175800  0.24248500  0.95351000  1
+  O  O16  1  0.24110700  0.85708700  0.74177100  1
+  O  O17  1  0.75889300  0.85708700  0.24177100  1
+  O  O18  1  0.27792300  0.19968800  0.25720700  1
+  O  O19  1  0.72207700  0.19968800  0.75720700  1

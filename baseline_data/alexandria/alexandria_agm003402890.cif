@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Sr2Si2Ag
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.56080527
+_cell_length_b   6.20041175
+_cell_length_c   10.28217419
+_cell_angle_alpha   82.62409020
+_cell_angle_beta   77.18627156
+_cell_angle_gamma   68.42107985
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2Si2Ag
+_chemical_formula_sum   'Sr4 Si4 Ag2'
+_cell_volume   263.30359488
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.71304212  0.23039170  0.34352506  1
+  Sr  Sr1  1  0.90043826  0.29885218  0.90027129  1
+  Sr  Sr2  1  0.28695788  0.76960830  0.65647494  1
+  Sr  Sr3  1  0.09956174  0.70114782  0.09972871  1
+  Si  Si4  1  0.04185907  0.34020704  0.57607482  1
+  Si  Si5  1  0.60438255  0.89437535  0.89686055  1
+  Si  Si6  1  0.95814093  0.65979296  0.42392518  1
+  Si  Si7  1  0.39561745  0.10562465  0.10313945  1
+  Ag  Ag8  1  0.56784234  0.18626189  0.67805244  1
+  Ag  Ag9  1  0.43215766  0.81373811  0.32194756  1

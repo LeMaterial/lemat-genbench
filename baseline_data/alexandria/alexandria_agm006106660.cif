@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Pr5NdAu6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.31341747
+_cell_length_b   7.42280666
+_cell_length_c   8.42249622
+_cell_angle_alpha   89.99960081
+_cell_angle_beta   108.93818358
+_cell_angle_gamma   90.00667918
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr5NdAu6
+_chemical_formula_sum   'Pr5 Nd1 Au6'
+_cell_volume   314.20567905
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.66658293  0.50000694  0.33386503  1
+  Pr  Pr1  1  0.33377530  0.99999336  0.66670056  1
+  Pr  Pr2  1  -0.00000000  0.50000000  0.00000000  1
+  Pr  Pr3  1  0.66622470  0.00000664  0.33329944  1
+  Pr  Pr4  1  0.33341707  0.49999306  0.66613497  1
+  Au  Au5  1  0.83546101  0.75103437  0.66888941  1
+  Au  Au6  1  0.83546209  0.24896016  0.66889253  1
+  Au  Au7  1  0.49999376  0.24742462  0.99999569  1
+  Au  Au8  1  0.50000624  0.75257538  0.00000431  1
+  Au  Au9  1  0.16453791  0.75103984  0.33110747  1
+  Au  Au10  1  0.16453899  0.24896563  0.33111059  1
+  Nd  Nd11  1  0.00000000  0.00000000  0.00000000  1

@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Tb2GaCoO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.26895743
+_cell_length_b   5.53277625
+_cell_length_c   7.53789892
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   89.57229138
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb2GaCoO6
+_chemical_formula_sum   'Tb4 Ga2 Co2 O12'
+_cell_volume   219.73842433
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.01810785  0.93245833  0.25013969  1
+  Tb  Tb1  1  0.51810785  0.56754167  0.75013969  1
+  Tb  Tb2  1  0.98189215  0.06754167  0.74986031  1
+  Tb  Tb3  1  0.48189215  0.43245833  0.24986031  1
+  Ga  Ga4  1  0.50000000  0.00000000  0.50000000  1
+  Ga  Ga5  1  0.00000000  0.50000000  0.00000000  1
+  Co  Co6  1  0.50000000  0.00000000  -0.00000000  1
+  Co  Co7  1  0.00000000  0.50000000  0.50000000  1
+  O  O8  1  0.30710009  0.70308888  0.05202368  1
+  O  O9  1  0.80710009  0.79691112  0.55202368  1
+  O  O10  1  0.69289991  0.29691112  0.94797632  1
+  O  O11  1  0.19289991  0.20308888  0.44797632  1
+  O  O12  1  0.29973760  0.69721251  0.44879650  1
+  O  O13  1  0.79973760  0.80278749  0.94879650  1
+  O  O14  1  0.70026240  0.30278749  0.55120350  1
+  O  O15  1  0.20026240  0.19721251  0.05120350  1
+  O  O16  1  0.89951521  0.52934361  0.25311152  1
+  O  O17  1  0.39951521  0.97065639  0.75311152  1
+  O  O18  1  0.10048479  0.47065639  0.74688848  1
+  O  O19  1  0.60048479  0.02934361  0.24688848  1

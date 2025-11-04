@@ -1,0 +1,52 @@
+# generated using pymatgen
+data_H6HeLi12Be6B
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.18961441
+_cell_length_b   7.18961441
+_cell_length_c   7.18961441
+_cell_angle_alpha   96.89767504
+_cell_angle_beta   96.89767504
+_cell_angle_gamma   96.89767504
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   H6HeLi12Be6B
+_chemical_formula_sum   'H6 He1 Li12 Be6 B1'
+_cell_volume   362.84728093
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.16719643  0.27684057  0.92702029  1
+  H  H1  1  0.92702029  0.16719643  0.27684057  1
+  H  H2  1  0.27684057  0.92702029  0.16719643  1
+  H  H3  1  0.83280357  0.72315943  0.07297971  1
+  H  H4  1  0.07297971  0.83280357  0.72315943  1
+  H  H5  1  0.72315943  0.07297971  0.83280357  1
+  He  He6  1  0.50000000  0.50000000  0.50000000  1
+  Li  Li7  1  0.44525713  0.32192737  0.13127477  1
+  Li  Li8  1  0.13127477  0.44525713  0.32192737  1
+  Li  Li9  1  0.32192737  0.13127477  0.44525713  1
+  Li  Li10  1  0.55474287  0.67807263  0.86872523  1
+  Li  Li11  1  0.86872523  0.55474287  0.67807263  1
+  Li  Li12  1  0.67807263  0.86872523  0.55474287  1
+  Li  Li13  1  0.65479046  0.29855978  0.21371288  1
+  Li  Li14  1  0.21371288  0.65479046  0.29855978  1
+  Li  Li15  1  0.29855978  0.21371288  0.65479046  1
+  Li  Li16  1  0.34520954  0.70144022  0.78628712  1
+  Li  Li17  1  0.78628712  0.34520954  0.70144022  1
+  Li  Li18  1  0.70144022  0.78628712  0.34520954  1
+  Be  Be19  1  0.55381542  0.37849671  0.22588787  1
+  Be  Be20  1  0.22588787  0.55381542  0.37849671  1
+  Be  Be21  1  0.37849671  0.22588787  0.55381542  1
+  Be  Be22  1  0.44618458  0.62150329  0.77411213  1
+  Be  Be23  1  0.77411213  0.44618458  0.62150329  1
+  Be  Be24  1  0.62150329  0.77411213  0.44618458  1
+  B  B25  1  -0.00000000  -0.00000000  -0.00000000  1

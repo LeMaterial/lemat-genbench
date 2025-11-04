@@ -1,0 +1,45 @@
+# generated using pymatgen
+data_MgMn2Te2(MoO6)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.19205790
+_cell_length_b   5.37155790
+_cell_length_c   10.22879631
+_cell_angle_alpha   87.45168257
+_cell_angle_beta   88.39718570
+_cell_angle_gamma   89.55386546
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgMn2Te2(MoO6)2
+_chemical_formula_sum   'Mg1 Mn2 Te2 Mo2 O12'
+_cell_volume   284.87566315
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg0  1  0.51347000  0.47822600  0.00469100  1
+  Mn  Mn1  1  0.00228400  0.99375900  0.48345900  1
+  Mn  Mn2  1  0.49593300  0.51088600  0.52339100  1
+  Te  Te3  1  0.02176100  0.50408400  0.28038400  1
+  Te  Te4  1  0.50233200  0.99782100  0.72527900  1
+  Mo  Mo5  1  0.54290500  0.97196200  0.23253400  1
+  Mo  Mo6  1  0.02223800  0.52635400  0.77902700  1
+  O  O7  1  0.68789000  0.17062400  0.58665400  1
+  O  O8  1  0.20261700  0.33531500  0.41717800  1
+  O  O9  1  0.77437900  0.69007000  0.38636600  1
+  O  O10  1  0.26929200  0.80519700  0.62417800  1
+  O  O11  1  0.78970700  0.18935100  0.30436900  1
+  O  O12  1  0.24040800  0.29401100  0.69209300  1
+  O  O13  1  0.24288600  0.64756900  0.89761200  1
+  O  O14  1  0.64436300  0.73458400  0.11780500  1
+  O  O15  1  0.38300800  0.21960700  0.12981000  1
+  O  O16  1  0.78305800  0.35050800  0.88471300  1
+  O  O17  1  0.25910400  0.81305800  0.32893400  1
+  O  O18  1  0.75986500  0.70451400  0.68009200  1

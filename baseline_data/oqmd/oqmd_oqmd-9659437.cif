@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Ba3(ZnAs2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.80961868
+_cell_length_b   8.80961868
+_cell_length_c   7.30312728
+_cell_angle_alpha   112.16207664
+_cell_angle_beta   112.16207664
+_cell_angle_gamma   29.60930883
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba3(ZnAs2)2
+_chemical_formula_sum   'Ba3 Zn2 As4'
+_cell_volume   257.84534264
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  As  As0  1  0.20583813  0.20583813  0.16527002  1
+  As  As1  1  0.48859908  0.48859908  0.31953067  1
+  As  As2  1  0.51140069  0.51140069  0.68046955  1
+  As  As3  1  0.79416222  0.79416222  0.83473020  1
+  Ba  Ba4  1  0.00000000  0.00000000  0.00000000  1
+  Ba  Ba5  1  0.85586532  0.85586532  0.41537157  1
+  Ba  Ba6  1  0.14413503  0.14413503  0.58462865  1
+  Zn  Zn7  1  0.32888957  0.32888957  0.03715051  1
+  Zn  Zn8  1  0.67111019  0.67111019  0.96284971  1

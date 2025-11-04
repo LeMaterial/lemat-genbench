@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_NaDyNiSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   11.06008980
+_cell_length_b   4.07926192
+_cell_length_c   11.87376779
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaDyNiSe3
+_chemical_formula_sum   'Na4 Dy4 Ni4 Se12'
+_cell_volume   535.70881951
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.48573385  0.75000087  0.18681433  1
+  Dy  Dy1  1  0.98573341  0.75000087  0.31318618  1
+  Dy  Dy2  1  0.01426661  0.25000111  0.68681400  1
+  Dy  Dy3  1  0.51426617  0.25000111  0.81318585  1
+  Na  Na4  1  0.81764888  0.75000087  0.00480892  1
+  Na  Na5  1  0.31764842  0.75000087  0.49519159  1
+  Na  Na6  1  0.68235160  0.25000111  0.50480859  1
+  Na  Na7  1  0.18235114  0.25000111  0.99519127  1
+  Ni  Ni8  1  0.75141705  0.25000111  0.21559627  1
+  Ni  Ni9  1  0.25141658  0.25000111  0.28440425  1
+  Ni  Ni10  1  0.74858343  0.75000087  0.71559594  1
+  Ni  Ni11  1  0.24858297  0.75000087  0.78440392  1
+  Se  Se12  1  0.61057190  0.25000111  0.06176641  1
+  Se  Se13  1  0.95153748  0.25000111  0.14556626  1
+  Se  Se14  1  0.22078483  0.75000087  0.19262546  1
+  Se  Se15  1  0.72078438  0.75000087  0.30737505  1
+  Se  Se16  1  0.45153702  0.25000111  0.35443425  1
+  Se  Se17  1  0.11057144  0.25000111  0.43823410  1
+  Se  Se18  1  0.88942858  0.75000087  0.56176608  1
+  Se  Se19  1  0.54846300  0.75000087  0.64556593  1
+  Se  Se20  1  0.27921564  0.25000111  0.69262513  1
+  Se  Se21  1  0.77921519  0.25000111  0.80737472  1
+  Se  Se22  1  0.04846254  0.75000087  0.85443392  1
+  Se  Se23  1  0.38942812  0.75000087  0.93823378  1

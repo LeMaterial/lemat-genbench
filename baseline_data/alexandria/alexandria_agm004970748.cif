@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_La2ScCrS6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.47118189
+_cell_length_b   7.06320726
+_cell_length_c   9.44523817
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.86158580
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La2ScCrS6
+_chemical_formula_sum   'La4 Sc2 Cr2 S12'
+_cell_volume   431.66751394
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.03371149  0.90567800  0.24816262  1
+  La  La1  1  0.53371149  0.59432200  0.74816262  1
+  La  La2  1  0.96628851  0.09432200  0.75183738  1
+  La  La3  1  0.46628851  0.40567800  0.25183738  1
+  Sc  Sc4  1  0.50000000  0.00000000  -0.00000000  1
+  Sc  Sc5  1  -0.00000000  0.50000000  0.50000000  1
+  Cr  Cr6  1  0.50000000  0.00000000  0.50000000  1
+  Cr  Cr7  1  0.00000000  0.50000000  0.00000000  1
+  S  S8  1  0.30869220  0.68463553  0.05068111  1
+  S  S9  1  0.80869220  0.81536447  0.55068111  1
+  S  S10  1  0.69130780  0.31536447  0.94931889  1
+  S  S11  1  0.19130780  0.18463553  0.44931889  1
+  S  S12  1  0.32354207  0.69877646  0.44830966  1
+  S  S13  1  0.82354207  0.80122354  0.94830966  1
+  S  S14  1  0.67645793  0.30122354  0.55169034  1
+  S  S15  1  0.17645793  0.19877646  0.05169034  1
+  S  S16  1  0.89508187  0.52023441  0.24161648  1
+  S  S17  1  0.39508187  0.97976559  0.74161648  1
+  S  S18  1  0.10491813  0.47976559  0.75838352  1
+  S  S19  1  0.60491813  0.02023441  0.25838352  1

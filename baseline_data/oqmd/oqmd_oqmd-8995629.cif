@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_NaYFeTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.84381764
+_cell_length_b   4.20663971
+_cell_length_c   10.04271670
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   104.45436782
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaYFeTe3
+_chemical_formula_sum   'Na2 Y2 Fe2 Te6'
+_cell_volume   361.79053860
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.56545659  0.25000002  0.07839827  1
+  Fe  Fe1  1  0.43454374  0.75000005  0.92160152  1
+  Na  Na2  1  0.29306290  0.75000005  0.24303762  1
+  Na  Na3  1  0.70693743  0.25000002  0.75696218  1
+  Te  Te4  1  0.73708091  0.75000005  0.02927660  1
+  Te  Te5  1  0.07051306  0.25000002  0.33440680  1
+  Te  Te6  1  0.57448346  0.25000002  0.34353910  1
+  Te  Te7  1  0.42551603  0.75000005  0.65646172  1
+  Te  Te8  1  0.92948727  0.75000005  0.66559299  1
+  Te  Te9  1  0.26291971  0.25000002  0.97072422  1
+  Y  Y10  1  0.82681258  0.75000005  0.35145080  1
+  Y  Y11  1  0.17318662  0.25000002  0.64854899  1

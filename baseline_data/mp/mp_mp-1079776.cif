@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Hf2Co7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.66883152
+_cell_length_b   4.73313038
+_cell_length_c   6.26332539
+_cell_angle_alpha   82.16818733
+_cell_angle_beta   73.96142306
+_cell_angle_gamma   60.44836794
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Hf2Co7
+_chemical_formula_sum   'Hf2 Co7'
+_cell_volume   115.71627575
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.10035000  0.00000000  0.23185800  1
+  Hf  Hf1  1  0.89965000  0.00000000  0.76814200  1
+  Co  Co2  1  0.50000000  0.50000000  0.50000000  1
+  Co  Co3  1  0.00000000  0.50000000  0.50000000  1
+  Co  Co4  1  0.54490000  0.66394700  0.84506400  1
+  Co  Co5  1  0.20884700  0.33605300  0.84506400  1
+  Co  Co6  1  0.45510000  0.33605300  0.15493600  1
+  Co  Co7  1  0.79115300  0.66394700  0.15493600  1
+  Co  Co8  1  0.50000000  0.00000000  0.50000000  1

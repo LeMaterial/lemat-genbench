@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_HfTaNbMo
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.27796101
+_cell_length_b   3.29021091
+_cell_length_c   7.58341606
+_cell_angle_alpha   90.00119604
+_cell_angle_beta   115.88219973
+_cell_angle_gamma   89.99863764
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfTaNbMo
+_chemical_formula_sum   'Hf1 Ta1 Nb1 Mo1'
+_cell_volume   73.58460421
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.49519910  0.42962637  0.60243787  1
+  Ta  Ta1  1  0.96863810  0.42965218  0.07672946  1
+  Nb  Nb2  1  0.71868533  0.92960357  0.32610947  1
+  Mo  Mo3  1  0.24785747  0.92967788  0.85548320  1

@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Tb3CeRu3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.82827442
+_cell_length_b   6.01068380
+_cell_length_c   5.82827476
+_cell_angle_alpha   110.10646459
+_cell_angle_beta   108.82857328
+_cell_angle_gamma   110.10646683
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb3CeRu3
+_chemical_formula_sum   'Tb3 Ce1 Ru3'
+_cell_volume   155.92545251
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.40817570  0.00017936  0.00000000  1
+  Tb  Tb1  1  0.59182430  0.59200366  0.59182430  1
+  Tb  Tb2  1  0.00000000  0.00017936  0.40817570  1
+  Ce  Ce3  1  1.00000000  0.40379986  1.00000000  1
+  Ru  Ru4  1  0.47283655  0.50055810  1.00000000  1
+  Ru  Ru5  1  0.52716345  0.02772155  0.52716345  1
+  Ru  Ru6  1  1.00000000  0.50055810  0.47283655  1

@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_NpPa2ReC4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.48386308
+_cell_length_b   6.14923881
+_cell_length_c   12.02380669
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   106.45582206
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NpPa2ReC4
+_chemical_formula_sum   'Np2 Pa4 Re2 C8'
+_cell_volume   247.03610909
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Np  Np0  1  0.11189465  0.22378930  0.75000000  1
+  Np  Np1  1  0.88810535  0.77621070  0.25000000  1
+  Pa  Pa2  1  0.36634330  0.73268660  0.54378828  1
+  Pa  Pa3  1  0.63365670  0.26731340  0.04378828  1
+  Pa  Pa4  1  0.63365670  0.26731340  0.45621172  1
+  Pa  Pa5  1  0.36634330  0.73268660  0.95621172  1
+  Re  Re6  1  0.85331917  0.70663835  0.75000000  1
+  Re  Re7  1  0.14668083  0.29336165  0.25000000  1
+  C  C8  1  0.26982865  0.53965730  0.13192788  1
+  C  C9  1  0.73017135  0.46034270  0.63192788  1
+  C  C10  1  0.73017135  0.46034270  0.86807212  1
+  C  C11  1  0.26982865  0.53965730  0.36807212  1
+  C  C12  1  0.00000000  0.00000000  0.50000000  1
+  C  C13  1  0.00000000  0.00000000  0.00000000  1
+  C  C14  1  0.44758852  0.89517705  0.75000000  1
+  C  C15  1  0.55241148  0.10482295  0.25000000  1

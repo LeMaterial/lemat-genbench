@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_TiGePb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.01968905
+_cell_length_b   3.01981561
+_cell_length_c   14.99939868
+_cell_angle_alpha   90.72854307
+_cell_angle_beta   90.06644051
+_cell_angle_gamma   89.99191318
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TiGePb
+_chemical_formula_sum   'Ti2 Ge2 Pb2'
+_cell_volume   136.76692861
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pb  Pb0  1  0.02587781  0.34865613  0.07604150  1
+  Pb  Pb1  1  0.02210448  0.30431565  0.35717061  1
+  Ti  Ti2  1  0.52197244  0.81303490  0.52047614  1
+  Ti  Ti3  1  0.52401648  0.83729783  0.91277799  1
+  Ge  Ge4  1  0.02168475  0.31975449  0.63382292  1
+  Ge  Ge5  1  0.02215804  0.32939101  0.79941285  1

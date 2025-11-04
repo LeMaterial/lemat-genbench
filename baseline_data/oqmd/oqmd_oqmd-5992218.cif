@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_YMgZn
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.21210915
+_cell_length_b   7.21210915
+_cell_length_c   4.49184936
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   YMgZn
+_chemical_formula_sum   'Y3 Mg3 Zn3'
+_cell_volume   202.33937126
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg0  1  0.24270986  0.00000000  0.00000000  1
+  Mg  Mg1  1  0.00000000  0.24270919  0.00000000  1
+  Mg  Mg2  1  0.75729055  0.75729085  0.00000000  1
+  Y  Y3  1  0.58137639  0.00000000  0.49999896  1
+  Y  Y4  1  0.41862378  0.41862384  0.49999896  1
+  Y  Y5  1  0.00000000  0.58137620  0.49999896  1
+  Zn  Zn6  1  0.66666631  0.33333388  0.00000000  1
+  Zn  Zn7  1  0.33333308  0.66666616  0.00000000  1
+  Zn  Zn8  1  0.00000000  0.00000000  0.49999896  1

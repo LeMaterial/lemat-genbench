@@ -1,0 +1,45 @@
+# generated using pymatgen
+data_Na5Ag2F12
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.65007362
+_cell_length_b   6.99347798
+_cell_length_c   7.53271277
+_cell_angle_alpha   108.24488113
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   118.38853891
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na5Ag2F12
+_chemical_formula_sum   'Na5 Ag2 F12'
+_cell_volume   288.01964206
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.29018834  0.58037668  0.60961337  1
+  Na  Na1  1  0.31466963  0.62933927  0.21977632  1
+  Na  Na2  1  -0.00000000  -0.00000000  0.50000000  1
+  Na  Na3  1  0.68533037  0.37066073  0.78022368  1
+  Na  Na4  1  0.70981166  0.41962332  0.39038663  1
+  Ag  Ag5  1  0.75190913  1.00000000  1.00000000  1
+  Ag  Ag6  1  0.24809087  0.00000000  0.00000000  1
+  F  F7  1  0.98542708  0.97085416  0.17755159  1
+  F  F8  1  0.08632802  0.66104330  0.87431625  1
+  F  F9  1  0.57471528  0.66104330  0.87431625  1
+  F  F10  1  0.10089263  0.70309344  0.43693734  1
+  F  F11  1  0.60220081  0.70309344  0.43693734  1
+  F  F12  1  0.50815666  0.01631333  0.81801353  1
+  F  F13  1  0.49184334  0.98368667  0.18198647  1
+  F  F14  1  0.89910737  0.29690656  0.56306266  1
+  F  F15  1  0.39779919  0.29690656  0.56306266  1
+  F  F16  1  0.91367198  0.33895670  0.12568375  1
+  F  F17  1  0.42528472  0.33895670  0.12568375  1
+  F  F18  1  0.01457292  0.02914584  0.82244841  1

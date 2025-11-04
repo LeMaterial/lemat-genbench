@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_Tm3Ag2Au
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.05054903
+_cell_length_b   5.05054927
+_cell_length_c   6.19841503
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99999848
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tm3Ag2Au
+_chemical_formula_sum   'Tm3 Ag2 Au1'
+_cell_volume   136.92681124
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tm  Tm0  1  0.00000000  0.00000000  0.50000000  1
+  Tm  Tm1  1  0.66666700  0.33333300  0.84075236  1
+  Tm  Tm2  1  0.33333300  0.66666700  0.15924764  1
+  Ag  Ag3  1  0.66666700  0.33333300  0.34742295  1
+  Ag  Ag4  1  0.33333300  0.66666700  0.65257705  1
+  Au  Au5  1  0.00000000  0.00000000  0.00000000  1

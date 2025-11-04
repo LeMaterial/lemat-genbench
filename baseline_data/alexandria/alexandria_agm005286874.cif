@@ -1,0 +1,45 @@
+# generated using pymatgen
+data_KLiNi2H3(SeO5)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.62687438
+_cell_length_b   5.84974960
+_cell_length_c   8.20213605
+_cell_angle_alpha   96.63880231
+_cell_angle_beta   108.93869054
+_cell_angle_gamma   109.28891714
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KLiNi2H3(SeO5)2
+_chemical_formula_sum   'K1 Li1 Ni2 H3 Se2 O10'
+_cell_volume   233.40215434
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.88236008  0.39459292  0.47192619  1
+  Li  Li1  1  0.36401741  0.86244162  0.50514884  1
+  Ni  Ni2  1  0.02731315  0.48004458  0.02922843  1
+  Ni  Ni3  1  0.49757928  0.00264897  0.99935489  1
+  H  H4  1  0.52507237  0.69417236  0.19480305  1
+  H  H5  1  0.50433060  0.34517967  0.79621198  1
+  H  H6  1  0.52019731  0.49061250  0.98674443  1
+  Se  Se7  1  0.83852532  0.94132378  0.74136463  1
+  Se  Se8  1  0.13749468  0.03012747  0.24389204  1
+  O  O9  1  0.73224907  0.84180981  0.52159793  1
+  O  O10  1  0.27277487  0.16104039  0.46784216  1
+  O  O11  1  0.53714257  0.85036921  0.76975597  1
+  O  O12  1  0.98873554  0.25458322  0.79771055  1
+  O  O13  1  0.41754236  0.16491571  0.19313520  1
+  O  O14  1  0.11335598  0.70741534  0.26268019  1
+  O  O15  1  0.43219805  0.65877659  0.06588133  1
+  O  O16  1  0.58907977  0.36460817  0.92438091  1
+  O  O17  1  0.04632798  0.80874449  0.84913765  1
+  O  O18  1  0.90922561  0.19911722  0.14820264  1

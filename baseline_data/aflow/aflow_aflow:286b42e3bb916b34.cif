@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_H2He4Li
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.28115513
+_cell_length_b   5.67489922
+_cell_length_c   10.11957491
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   H2He4Li
+_chemical_formula_sum   'H4 He8 Li2'
+_cell_volume   188.42875862
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.50000000  0.05954313  0.67721858  1
+  H  H1  1  0.50000000  0.94045687  0.32278142  1
+  H  H2  1  0.50000000  0.44045687  0.17721858  1
+  H  H3  1  0.50000000  0.55954313  0.82278142  1
+  He  He4  1  0.50000000  0.23914986  0.95993400  1
+  He  He5  1  0.50000000  0.76085014  0.04006600  1
+  He  He6  1  0.50000000  0.26085014  0.45993400  1
+  He  He7  1  0.50000000  0.73914986  0.54006600  1
+  He  He8  1  0.00000000  0.35975071  0.69398379  1
+  He  He9  1  0.00000000  0.64024929  0.30601621  1
+  He  He10  1  0.00000000  0.14024929  0.19398379  1
+  He  He11  1  0.00000000  0.85975071  0.80601621  1
+  Li  Li12  1  0.00000000  0.00000000  0.00000000  1
+  Li  Li13  1  0.00000000  0.50000000  0.50000000  1

@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_CsDyCrCl6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.69517449
+_cell_length_b   7.03198106
+_cell_length_c   7.84171515
+_cell_angle_alpha   93.49443389
+_cell_angle_beta   91.83061266
+_cell_angle_gamma   58.31845490
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsDyCrCl6
+_chemical_formula_sum   'Cs1 Dy1 Cr1 Cl6'
+_cell_volume   313.58981234
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.03643613  0.98174213  0.99998622  1
+  Dy  Dy1  1  0.35207601  0.32396827  0.49999307  1
+  Cr  Cr2  1  0.67035174  0.66485078  0.49997354  1
+  Cl  Cl3  1  0.97460121  0.39100550  0.31391179  1
+  Cl  Cl4  1  0.37874217  0.98792785  0.66729973  1
+  Cl  Cl5  1  0.61707122  0.37300399  0.72193503  1
+  Cl  Cl6  1  0.97447091  0.63447923  0.68614073  1
+  Cl  Cl7  1  0.37876220  0.63324731  0.33257693  1
+  Cl  Cl8  1  0.61725190  0.00982502  0.27809394  1

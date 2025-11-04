@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_CePu2Pa5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.49592304
+_cell_length_b   6.62519342
+_cell_length_c   13.25802154
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CePu2Pa5
+_chemical_formula_sum   'Ce2 Pu4 Pa10'
+_cell_volume   394.90819905
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.00000000  0.00000000  0.50000000  1
+  Ce  Ce1  1  0.00000000  0.50000000  0.00000000  1
+  Pu  Pu2  1  0.50000000  0.25215899  0.62616425  1
+  Pu  Pu3  1  0.50000000  0.74784101  0.37383575  1
+  Pu  Pu4  1  0.50000000  0.24784101  0.12616425  1
+  Pu  Pu5  1  0.50000000  0.75215899  0.87383575  1
+  Pa  Pa6  1  0.00000000  0.00000000  0.00000000  1
+  Pa  Pa7  1  0.00000000  0.50000000  0.50000000  1
+  Pa  Pa8  1  0.00000000  0.50052735  0.74903772  1
+  Pa  Pa9  1  0.00000000  0.49947265  0.25096228  1
+  Pa  Pa10  1  0.00000000  0.99947265  0.24903772  1
+  Pa  Pa11  1  0.00000000  0.00052735  0.75096228  1
+  Pa  Pa12  1  0.50000000  0.24930548  0.87470833  1
+  Pa  Pa13  1  0.50000000  0.75069452  0.12529167  1
+  Pa  Pa14  1  0.50000000  0.25069452  0.37470833  1
+  Pa  Pa15  1  0.50000000  0.74930548  0.62529167  1

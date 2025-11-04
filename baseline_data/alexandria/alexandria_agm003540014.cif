@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Hf2TaV9
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.23650139
+_cell_length_b   5.23650139
+_cell_length_c   8.47911744
+_cell_angle_alpha   72.01378816
+_cell_angle_beta   72.01378815
+_cell_angle_gamma   60.00000004
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Hf2TaV9
+_chemical_formula_sum   'Hf2 Ta1 V9'
+_cell_volume   188.12116063
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.85592590  0.85592590  0.43222130  1
+  Hf  Hf1  1  0.14407410  0.14407410  0.56777870  1
+  Ta  Ta2  1  0.00000000  0.00000000  0.00000000  1
+  V  V3  1  0.66714577  0.66714577  0.99856370  1
+  V  V4  1  0.33285423  0.33285423  0.00143630  1
+  V  V5  1  0.50000000  0.50000000  0.50000000  1
+  V  V6  1  0.41800869  0.41800869  0.24276977  1
+  V  V7  1  0.92121386  0.41800869  0.24276977  1
+  V  V8  1  0.41800869  0.92121386  0.24276977  1
+  V  V9  1  0.58199131  0.58199131  0.75723023  1
+  V  V10  1  0.58199131  0.07878614  0.75723023  1
+  V  V11  1  0.07878614  0.58199131  0.75723023  1

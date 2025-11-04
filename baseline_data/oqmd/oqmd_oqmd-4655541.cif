@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_NaSmZnO3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.51842800
+_cell_length_b   5.43770704
+_cell_length_c   9.57752700
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   71.12398812
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaSmZnO3
+_chemical_formula_sum   'Na2 Sm2 Zn2 O6'
+_cell_volume   173.38454833
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.26763991  0.46471790  0.25000086  1
+  Na  Na1  1  0.73235687  0.53528171  0.75000050  1
+  O  O2  1  0.63106582  0.73786381  0.07441378  1
+  O  O3  1  0.93692526  0.12614493  0.25000086  1
+  O  O4  1  0.63106582  0.73786381  0.42558585  1
+  O  O5  1  0.36893096  0.26213580  0.57441550  1
+  O  O6  1  0.06307152  0.87385468  0.75000050  1
+  O  O7  1  0.36893096  0.26213580  0.92558549  1
+  Sm  Sm8  1  0.00000000  0.00000000  0.00000000  1
+  Sm  Sm9  1  0.00000000  0.00000000  0.50000068  1
+  Zn  Zn10  1  0.54514033  0.90971478  0.25000086  1
+  Zn  Zn11  1  0.45485645  0.09028483  0.75000050  1

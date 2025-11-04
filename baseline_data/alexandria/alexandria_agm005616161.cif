@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Na3(Tl3Cd)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.52169229
+_cell_length_b   11.32171229
+_cell_length_c   8.26974812
+_cell_angle_alpha   88.09562399
+_cell_angle_beta   102.29389491
+_cell_angle_gamma   89.99999822
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na3(Tl3Cd)2
+_chemical_formula_sum   'Na3 Tl6 Cd2'
+_cell_volume   321.98035539
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.31329259  0.39840285  0.62658418  1
+  Na  Na1  1  0.68670741  0.60159715  0.37341582  1
+  Na  Na2  1  0.00000000  0.50000000  0.00000000  1
+  Tl  Tl3  1  0.95154424  0.22940184  0.90308849  1
+  Tl  Tl4  1  0.72070019  0.87782470  0.44140038  1
+  Tl  Tl5  1  0.63534628  0.30306254  0.27069156  1
+  Tl  Tl6  1  0.04845576  0.77059816  0.09691151  1
+  Tl  Tl7  1  0.27929981  0.12217530  0.55859962  1
+  Tl  Tl8  1  0.36465372  0.69693746  0.72930844  1
+  Cd  Cd9  1  0.90879961  0.95411693  0.81759922  1
+  Cd  Cd10  1  0.09120039  0.04588307  0.18240078  1

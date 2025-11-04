@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Sm2SiIr2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.67726834
+_cell_length_b   5.67726834
+_cell_length_c   7.63837404
+_cell_angle_alpha   100.65365911
+_cell_angle_beta   100.65365911
+_cell_angle_gamma   59.79079940
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sm2SiIr2
+_chemical_formula_sum   'Sm4 Si2 Ir4'
+_cell_volume   207.86665122
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ir  Ir0  1  0.49654211  0.76168411  0.00395300  1
+  Ir  Ir1  1  0.23831545  0.50345746  0.49604711  1
+  Ir  Ir2  1  0.76168421  0.49654221  0.50395312  1
+  Ir  Ir3  1  0.50345756  0.23831555  0.99604722  1
+  Si  Si4  1  0.38890718  0.61109340  0.25000006  1
+  Si  Si5  1  0.61109350  0.38890728  0.75000017  1
+  Sm  Sm6  1  0.01503132  0.28358717  0.14874820  1
+  Sm  Sm7  1  0.71641239  0.98496824  0.35125191  1
+  Sm  Sm8  1  0.28358727  0.01503142  0.64874832  1
+  Sm  Sm9  1  0.98496834  0.71641249  0.85125202  1

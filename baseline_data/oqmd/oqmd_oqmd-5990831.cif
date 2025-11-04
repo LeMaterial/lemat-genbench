@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Co(SiTc)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.81975844
+_cell_length_b   5.81975844
+_cell_length_c   3.77793670
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Co(SiTc)2
+_chemical_formula_sum   'Co2 Si4 Tc4'
+_cell_volume   127.95716044
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.00000000  0.00000000  0.00000000  1
+  Co  Co1  1  0.50000013  0.50000013  0.00000000  1
+  Si  Si2  1  0.64173969  0.14173956  0.00000000  1
+  Si  Si3  1  0.14173956  0.35826057  0.00000000  1
+  Si  Si4  1  0.85826071  0.64173969  0.00000000  1
+  Si  Si5  1  0.35826057  0.85826071  0.00000000  1
+  Tc  Tc6  1  0.32566987  0.17433026  0.50000044  1
+  Tc  Tc7  1  0.82567001  0.32566987  0.50000044  1
+  Tc  Tc8  1  0.17433026  0.67433039  0.50000044  1
+  Tc  Tc9  1  0.67433039  0.82567001  0.50000044  1

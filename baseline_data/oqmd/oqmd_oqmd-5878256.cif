@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_ZrGeB4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.12279455
+_cell_length_b   3.12279455
+_cell_length_c   7.47679739
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99999999
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZrGeB4
+_chemical_formula_sum   'Zr1 Ge1 B4'
+_cell_volume   63.14414248
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  B  B0  1  0.66666696  0.33333217  0.26077743  1
+  B  B1  1  0.33333402  0.66666804  0.26077743  1
+  B  B2  1  0.66666696  0.33333217  0.73922292  1
+  B  B3  1  0.33333402  0.66666804  0.73922292  1
+  Ge  Ge4  1  0.00000000  0.00000000  0.00000000  1
+  Zr  Zr5  1  0.00000000  0.00000000  0.50000017  1

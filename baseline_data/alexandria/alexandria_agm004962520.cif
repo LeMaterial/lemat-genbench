@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_KLi2InCl6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.79106862
+_cell_length_b   6.78609801
+_cell_length_c   7.39420616
+_cell_angle_alpha   62.62140881
+_cell_angle_beta   62.58283004
+_cell_angle_gamma   59.96703894
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KLi2InCl6
+_chemical_formula_sum   'K1 Li2 In1 Cl6'
+_cell_volume   249.93338999
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.80400143  0.80390708  0.58805161  1
+  Li  Li1  1  0.52363258  0.52401585  0.42744524  1
+  Li  Li2  1  0.01108815  0.01204181  0.96513940  1
+  In  In3  1  0.32382879  0.32370361  0.02895493  1
+  Cl  Cl4  1  0.57537972  0.26343710  0.23558863  1
+  Cl  Cl5  1  0.26358764  0.92529855  0.23595406  1
+  Cl  Cl6  1  0.92527753  0.57502369  0.23608929  1
+  Cl  Cl7  1  0.33865742  0.73168166  0.76607591  1
+  Cl  Cl8  1  0.73175114  0.16370985  0.76601442  1
+  Cl  Cl9  1  0.16439260  0.33878181  0.76588750  1

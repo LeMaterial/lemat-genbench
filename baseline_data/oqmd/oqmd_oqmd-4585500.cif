@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_NaHoNiS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.69215562
+_cell_length_b   6.69215562
+_cell_length_c   10.27839900
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   33.42532725
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaHoNiS3
+_chemical_formula_sum   'Na2 Ho2 Ni2 S6'
+_cell_volume   253.56579800
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.00000000  0.00000000  0.00000000  1
+  Ho  Ho1  1  0.00000000  0.00000000  0.50000005  1
+  Na  Na2  1  0.75504503  0.75504503  0.24999905  1
+  Na  Na3  1  0.24495465  0.24495465  0.74999910  1
+  Ni  Ni4  1  0.48221367  0.48221367  0.24999905  1
+  Ni  Ni5  1  0.51778602  0.51778602  0.74999910  1
+  S  S6  1  0.36753105  0.36753105  0.08232119  1
+  S  S7  1  0.07694862  0.07694862  0.24999905  1
+  S  S8  1  0.36753105  0.36753105  0.41767984  1
+  S  S9  1  0.63246863  0.63246863  0.58232026  1
+  S  S10  1  0.92305107  0.92305107  0.74999910  1
+  S  S11  1  0.63246863  0.63246863  0.91767988  1

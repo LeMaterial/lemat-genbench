@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_SmLuSi2Pd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.69155832
+_cell_length_b   5.69155832
+_cell_length_c   10.05355741
+_cell_angle_alpha   115.26139480
+_cell_angle_beta   115.26139480
+_cell_angle_gamma   43.93221960
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmLuSi2Pd
+_chemical_formula_sum   'Sm2 Lu2 Si4 Pd2'
+_cell_volume   200.61121761
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Lu  Lu0  1  0.00458705  0.00458705  0.32731436  1
+  Lu  Lu1  1  0.99541275  0.99541275  0.67268619  1
+  Pd  Pd2  1  0.72871208  0.72871208  0.37005717  1
+  Pd  Pd3  1  0.27128867  0.27128867  0.62994338  1
+  Si  Si4  1  0.48590168  0.48590168  0.12048360  1
+  Si  Si5  1  0.37026553  0.37026553  0.43341293  1
+  Si  Si6  1  0.62973522  0.62973522  0.56658762  1
+  Si  Si7  1  0.51409907  0.51409907  0.87951695  1
+  Sm  Sm8  1  0.18685736  0.18685736  0.10587114  1
+  Sm  Sm9  1  0.81314244  0.81314244  0.89412941  1

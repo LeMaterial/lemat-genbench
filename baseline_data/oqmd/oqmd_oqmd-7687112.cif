@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_KHoZnS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.86647418
+_cell_length_b   3.97074637
+_cell_length_c   14.74676382
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KHoZnS3
+_chemical_formula_sum   'K4 Ho4 Zn4 S12'
+_cell_volume   577.73789697
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.17631729  0.75000006  0.05733665  1
+  Ho  Ho1  1  0.67631759  0.75000006  0.44266322  1
+  Ho  Ho2  1  0.32368300  0.25000086  0.55733652  1
+  Ho  Ho3  1  0.82368330  0.25000086  0.94266309  1
+  K  K4  1  0.53551856  0.25000086  0.17679947  1
+  K  K5  1  0.03551927  0.25000086  0.32320040  1
+  K  K6  1  0.96448132  0.75000006  0.67679934  1
+  K  K7  1  0.46448102  0.75000006  0.82320027  1
+  S  S8  1  0.68272717  0.75000006  0.02239881  1
+  S  S9  1  0.98286174  0.25000086  0.10285375  1
+  S  S10  1  0.28238254  0.75000006  0.21497191  1
+  S  S11  1  0.78238283  0.75000006  0.28502796  1
+  S  S12  1  0.48286246  0.25000086  0.39714612  1
+  S  S13  1  0.18272789  0.75000006  0.47760106  1
+  S  S14  1  0.81727270  0.25000086  0.52239868  1
+  S  S15  1  0.51713813  0.75000006  0.60285362  1
+  S  S16  1  0.21761776  0.25000086  0.71497178  1
+  S  S17  1  0.71761805  0.25000086  0.78502783  1
+  S  S18  1  0.01713783  0.75000006  0.89714599  1
+  S  S19  1  0.31727241  0.25000086  0.97760093  1
+  Zn  Zn20  1  0.84244583  0.75000006  0.13855175  1
+  Zn  Zn21  1  0.34244655  0.75000006  0.36144812  1
+  Zn  Zn22  1  0.65755404  0.25000086  0.63855163  1
+  Zn  Zn23  1  0.15755375  0.25000086  0.86144799  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Hf4CuRh
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.18065001
+_cell_length_b   5.48428649
+_cell_length_c   13.35889799
+_cell_angle_alpha   90.11863114
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Hf4CuRh
+_chemical_formula_sum   'Hf8 Cu2 Rh2'
+_cell_volume   233.02671835
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.49920783  0.16828649  0.34249932  1
+  Hf  Hf1  1  0.99920783  0.33171351  0.15750068  1
+  Hf  Hf2  1  0.50079217  0.83171351  0.65750068  1
+  Hf  Hf3  1  0.00079217  0.66828649  0.84249932  1
+  Hf  Hf4  1  0.99930285  0.66591462  0.34261106  1
+  Hf  Hf5  1  0.49930285  0.83408538  0.15738894  1
+  Hf  Hf6  1  0.00069715  0.33408538  0.65738894  1
+  Hf  Hf7  1  0.50069715  0.16591462  0.84261106  1
+  Cu  Cu8  1  0.50000000  0.50000000  0.50000000  1
+  Cu  Cu9  1  0.00000000  0.00000000  0.00000000  1
+  Rh  Rh10  1  0.00000000  -0.00000000  0.50000000  1
+  Rh  Rh11  1  0.50000000  0.50000000  0.00000000  1

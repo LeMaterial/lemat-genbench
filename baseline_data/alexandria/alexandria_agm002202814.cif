@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Y2Zn2Si2C
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.85065072
+_cell_length_b   5.86044911
+_cell_length_c   6.12315151
+_cell_angle_alpha   74.08011534
+_cell_angle_beta   71.93841652
+_cell_angle_gamma   70.89868660
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Y2Zn2Si2C
+_chemical_formula_sum   'Y2 Zn2 Si2 C1'
+_cell_volume   121.81747517
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Y  Y0  1  0.55986663  0.15743198  0.72341157  1
+  Y  Y1  1  0.44013337  0.84256802  0.27658843  1
+  C  C2  1  0.00000000  0.00000000  0.00000000  1
+  Zn  Zn3  1  0.21235889  0.67619653  0.89925880  1
+  Zn  Zn4  1  0.78764111  0.32380347  0.10074120  1
+  Si  Si5  1  0.13483556  0.38255434  0.34949540  1
+  Si  Si6  1  0.86516444  0.61744566  0.65050460  1

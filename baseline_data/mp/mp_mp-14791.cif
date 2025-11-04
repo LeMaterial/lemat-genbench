@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Ge2Te5As2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.13575195
+_cell_length_b   4.13543707
+_cell_length_c   16.95077160
+_cell_angle_alpha   89.99999693
+_cell_angle_beta   89.99899985
+_cell_angle_gamma   120.00219178
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ge2Te5As2
+_chemical_formula_sum   'Ge2 Te5 As2'
+_cell_volume   251.06513768
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ge  Ge0  1  0.33331965  0.66659181  0.10495822  1
+  Ge  Ge1  1  0.66667335  0.33339675  0.89501518  1
+  Te  Te2  1  0.66666636  0.33333777  0.20658322  1
+  Te  Te3  1  0.33341223  0.66661426  0.40676732  1
+  Te  Te4  1  0.66682663  0.33363148  0.59319310  1
+  Te  Te5  1  0.00031453  0.00020877  0.00002615  1
+  Te  Te6  1  0.33334996  0.66669451  0.79340690  1
+  As  As7  1  0.99951988  -0.00046674  0.31659253  1
+  As  As8  1  -0.00008260  -0.00000862  0.68345638  1

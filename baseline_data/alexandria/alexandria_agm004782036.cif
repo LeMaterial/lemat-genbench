@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Pu2PaIrN4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.38942538
+_cell_length_b   5.98920747
+_cell_length_c   11.67611812
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   106.43701175
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pu2PaIrN4
+_chemical_formula_sum   'Pu4 Pa2 Ir2 N8'
+_cell_volume   227.33799148
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pu  Pu0  1  0.37053258  0.74106516  0.55412639  1
+  Pu  Pu1  1  0.62946742  0.25893484  0.05412639  1
+  Pu  Pu2  1  0.62946742  0.25893484  0.44587361  1
+  Pu  Pu3  1  0.37053258  0.74106516  0.94587361  1
+  Pa  Pa4  1  0.11197506  0.22395012  0.75000000  1
+  Pa  Pa5  1  0.88802494  0.77604988  0.25000000  1
+  Ir  Ir6  1  0.85031736  0.70063473  0.75000000  1
+  Ir  Ir7  1  0.14968264  0.29936527  0.25000000  1
+  N  N8  1  0.28661602  0.57323204  0.12679229  1
+  N  N9  1  0.71338398  0.42676796  0.62679229  1
+  N  N10  1  0.71338398  0.42676796  0.87320771  1
+  N  N11  1  0.28661602  0.57323204  0.37320771  1
+  N  N12  1  0.00000000  0.00000000  0.50000000  1
+  N  N13  1  0.00000000  0.00000000  0.00000000  1
+  N  N14  1  0.46843972  0.93687944  0.75000000  1
+  N  N15  1  0.53156028  0.06312056  0.25000000  1

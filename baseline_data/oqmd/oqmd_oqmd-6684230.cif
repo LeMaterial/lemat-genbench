@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_GdDyCo2Si2C
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.64521677
+_cell_length_b   5.64521677
+_cell_length_c   6.82898365
+_cell_angle_alpha   126.90696299
+_cell_angle_beta   126.90696299
+_cell_angle_gamma   40.34044026
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   GdDyCo2Si2C
+_chemical_formula_sum   'Gd1 Dy1 Co2 Si2 C1'
+_cell_volume   108.27584796
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  C  C0  1  0.99897466  0.99897466  0.99698005  1
+  Co  Co1  1  0.19800829  0.19800829  0.08652733  1
+  Co  Co2  1  0.80147997  0.80147997  0.91281334  1
+  Dy  Dy3  1  0.43702490  0.43702490  0.70359114  1
+  Gd  Gd4  1  0.56406560  0.56406560  0.29829495  1
+  Si  Si5  1  0.84273397  0.84273397  0.29415482  1
+  Si  Si6  1  0.15771227  0.15771227  0.70763791  1

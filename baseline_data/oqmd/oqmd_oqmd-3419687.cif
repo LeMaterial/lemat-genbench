@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_ZnGeSO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.70086300
+_cell_length_b   8.85486800
+_cell_length_c   5.50985000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZnGeSO
+_chemical_formula_sum   'Zn4 Ge4 S4 O4'
+_cell_volume   278.13937327
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ge  Ge0  1  0.98503156  0.31750897  0.05745165  1
+  Ge  Ge1  1  0.48503183  0.68249013  0.05745165  1
+  Ge  Ge2  1  0.51496765  0.31750897  0.55745075  1
+  Ge  Ge3  1  0.01496791  0.68249013  0.55745075  1
+  O  O4  1  0.07188385  0.09424082  0.10474695  1
+  O  O5  1  0.57188184  0.90576054  0.10474695  1
+  O  O6  1  0.42811588  0.09424082  0.60474605  1
+  O  O7  1  0.92811737  0.90576054  0.60474605  1
+  S  S8  1  0.56001697  0.31076804  0.11266368  1
+  S  S9  1  0.06001547  0.68923105  0.11266368  1
+  S  S10  1  0.93998224  0.31076804  0.61266278  1
+  S  S11  1  0.43998426  0.68923105  0.61266278  1
+  Zn  Zn12  1  0.09332973  0.08564780  0.47513998  1
+  Zn  Zn13  1  0.59333122  0.91435129  0.47513998  1
+  Zn  Zn14  1  0.40667001  0.08564780  0.97514088  1
+  Zn  Zn15  1  0.90666799  0.91435129  0.97514088  1

@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_BeRe2P
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.64595826
+_cell_length_b   2.84749136
+_cell_length_c   5.59451157
+_cell_angle_alpha   64.37214821
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BeRe2P
+_chemical_formula_sum   'Be1 Re2 P1'
+_cell_volume   52.36739453
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Re  Re0  1  0.00000000  0.80834747  0.99712274  1
+  Re  Re1  1  0.00000000  0.69165253  0.50287726  1
+  Be  Be2  1  0.50000000  0.25000000  0.25000000  1
+  P  P3  1  0.50000000  0.75000000  0.75000000  1

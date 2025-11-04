@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_NiCl2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.02286157
+_cell_length_b   7.46235899
+_cell_length_c   5.95441238
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   103.92975289
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NiCl2
+_chemical_formula_sum   'Ni4 Cl8'
+_cell_volume   259.74934344
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cl  Cl0  1  0.48256767  0.91840797  0.22259260  1
+  Cl  Cl1  1  0.92197228  0.67754982  0.24642592  1
+  Cl  Cl2  1  0.07802767  0.17754975  0.25357558  1
+  Cl  Cl3  1  0.51743186  0.41840791  0.27740717  1
+  Cl  Cl4  1  0.48256746  0.58159223  0.72259237  1
+  Cl  Cl5  1  0.92197207  0.82245038  0.74642569  1
+  Cl  Cl6  1  0.07802746  0.32245031  0.75357535  1
+  Cl  Cl7  1  0.51743372  0.08159216  0.77740867  1
+  Ni  Ni8  1  0.28588317  0.13324205  0.00396588  1
+  Ni  Ni9  1  0.71411802  0.63324212  0.49603389  1
+  Ni  Ni10  1  0.28588296  0.36675802  0.50396565  1
+  Ni  Ni11  1  0.71411781  0.86675809  0.99603366  1

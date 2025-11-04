@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Ba2Ga3GeAu12
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.90031948
+_cell_length_b   8.90031948
+_cell_length_c   8.90031947
+_cell_angle_alpha   58.44105179
+_cell_angle_beta   58.44105178
+_cell_angle_gamma   58.44105182
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba2Ga3GeAu12
+_chemical_formula_sum   'Ba2 Ga3 Ge1 Au12'
+_cell_volume   480.75702930
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.61211912  0.61211912  0.61211912  1
+  Ba  Ba1  1  0.38788088  0.38788088  0.38788088  1
+  Ga  Ga2  1  0.50000000  0.00000000  -0.00000000  1
+  Ga  Ga3  1  0.00000000  0.50000000  0.00000000  1
+  Ga  Ga4  1  0.00000000  -0.00000000  0.50000000  1
+  Ge  Ge5  1  0.00000000  0.00000000  0.00000000  1
+  Au  Au6  1  0.34460908  0.34460908  0.98642333  1
+  Au  Au7  1  0.88901925  0.88901925  0.35105434  1
+  Au  Au8  1  0.35105434  0.88901925  0.88901925  1
+  Au  Au9  1  0.98642333  0.34460908  0.34460908  1
+  Au  Au10  1  0.88901925  0.35105434  0.88901925  1
+  Au  Au11  1  0.34460908  0.98642333  0.34460908  1
+  Au  Au12  1  0.65539092  0.65539092  0.01357667  1
+  Au  Au13  1  0.11098075  0.11098075  0.64894566  1
+  Au  Au14  1  0.64894566  0.11098075  0.11098075  1
+  Au  Au15  1  0.01357667  0.65539092  0.65539092  1
+  Au  Au16  1  0.11098075  0.64894566  0.11098075  1
+  Au  Au17  1  0.65539092  0.01357667  0.65539092  1

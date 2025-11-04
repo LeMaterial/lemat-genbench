@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_LiErMgTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.49305834
+_cell_length_b   7.49305834
+_cell_length_c   11.64696904
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   146.52609619
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiErMgTe3
+_chemical_formula_sum   'Li2 Er2 Mg2 Te6'
+_cell_volume   360.67965547
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.50000061  0.50000061  0.00000000  1
+  Er  Er1  1  0.50000061  0.50000061  0.49999961  1
+  Li  Li2  1  0.72523659  0.27476462  0.24999981  1
+  Li  Li3  1  0.27476462  0.72523659  0.75000028  1
+  Mg  Mg4  1  0.01989361  0.98010760  0.24999981  1
+  Mg  Mg5  1  0.98010760  0.01989361  0.75000028  1
+  Te  Te6  1  0.14091365  0.85908756  0.06725698  1
+  Te  Te7  1  0.39963171  0.60036950  0.24999981  1
+  Te  Te8  1  0.14091365  0.85908756  0.43274263  1
+  Te  Te9  1  0.85908756  0.14091365  0.56725660  1
+  Te  Te10  1  0.60036950  0.39963171  0.75000028  1
+  Te  Te11  1  0.85908756  0.14091365  0.93274310  1

@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_Ru4S9
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.99790223
+_cell_length_b   7.99803580
+_cell_length_c   17.85956776
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00155183
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ru4S9
+_chemical_formula_sum   'Ru4 S9'
+_cell_volume   989.35970612
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ru  Ru0  1  0.50000000  0.00000000  0.50415836  1
+  Ru  Ru1  1  0.00000000  0.50000000  0.50417008  1
+  Ru  Ru2  1  0.50000000  0.50000000  0.50414944  1
+  Ru  Ru3  1  0.00000000  0.00000000  0.54508578  1
+  S  S4  1  0.81130121  0.18867992  0.54698142  1
+  S  S5  1  0.81129460  0.62262895  0.54696973  1
+  S  S6  1  0.37736468  0.18868825  0.54695573  1
+  S  S7  1  0.18870177  0.81132309  0.54698147  1
+  S  S8  1  0.18870241  0.37737113  0.54696980  1
+  S  S9  1  0.62263535  0.81130867  0.54695571  1
+  S  S10  1  0.50000000  0.00000000  0.38687363  1
+  S  S11  1  0.00000000  0.50000000  0.38688142  1
+  S  S12  1  0.50000000  0.50000000  0.38686742  1

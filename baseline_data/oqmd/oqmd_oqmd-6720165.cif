@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_HoTmSi2Mo2C
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.87433719
+_cell_length_b   5.87433719
+_cell_length_c   7.09671309
+_cell_angle_alpha   123.44331523
+_cell_angle_beta   123.44331523
+_cell_angle_gamma   37.58350202
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HoTmSi2Mo2C
+_chemical_formula_sum   'Ho1 Tm1 Si2 Mo2 C1'
+_cell_volume   121.44584229
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  C  C0  1  0.99946616  0.99946616  0.99827497  1
+  Ho  Ho1  1  0.57507675  0.57507675  0.29560796  1
+  Mo  Mo2  1  0.20574627  0.20574627  0.08506920  1
+  Mo  Mo3  1  0.79398555  0.79398555  0.91428892  1
+  Si  Si4  1  0.86956123  0.86956123  0.33875171  1
+  Si  Si5  1  0.13054864  0.13054864  0.66228744  1
+  Tm  Tm6  1  0.42561663  0.42561663  0.70572407  1

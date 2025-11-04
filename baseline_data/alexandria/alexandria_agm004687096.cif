@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_Na3Np3CdTe8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.81230411
+_cell_length_b   8.80647916
+_cell_length_c   9.10080215
+_cell_angle_alpha   118.88319774
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.02188267
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na3Np3CdTe8
+_chemical_formula_sum   'Na3 Np3 Cd1 Te8'
+_cell_volume   507.51143043
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.00000000  0.00000000  0.00000000  1
+  Na  Na1  1  0.00000000  0.50000000  -0.00000000  1
+  Na  Na2  1  0.50000000  0.50000000  -0.00000000  1
+  Np  Np3  1  0.50000000  -0.00000000  0.50000000  1
+  Np  Np4  1  0.50000000  0.50000000  0.50000000  1
+  Np  Np5  1  -0.00000000  0.50000000  0.50000000  1
+  Cd  Cd6  1  -0.00000000  -0.00000000  0.50000000  1
+  Te  Te7  1  0.25515386  0.51030771  0.26549685  1
+  Te  Te8  1  0.74484614  0.48969229  0.73450315  1
+  Te  Te9  1  0.75475886  0.50951872  0.27016224  1
+  Te  Te10  1  0.24524114  0.49048128  0.72983776  1
+  Te  Te11  1  0.75386422  0.01567215  0.26950942  1
+  Te  Te12  1  0.24613578  0.98432785  0.73049058  1
+  Te  Te13  1  0.26180794  0.01567215  0.26950942  1
+  Te  Te14  1  0.73819206  0.98432785  0.73049058  1

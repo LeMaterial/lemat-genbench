@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Ga2Si2Ir
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.19567169
+_cell_length_b   6.19567169
+_cell_length_c   4.29279435
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ga2Si2Ir
+_chemical_formula_sum   'Ga4 Si4 Ir2'
+_cell_volume   164.78469648
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Si  Si0  1  0.36363039  0.86363039  0.00000000  1
+  Si  Si1  1  0.86363039  0.63636961  0.00000000  1
+  Si  Si2  1  0.63636961  0.13636961  0.00000000  1
+  Si  Si3  1  0.13636961  0.36363039  0.00000000  1
+  Ir  Ir4  1  0.00000000  0.00000000  0.00000000  1
+  Ir  Ir5  1  0.50000000  0.50000000  0.00000000  1
+  Ga  Ga6  1  0.18016532  0.68016532  0.50000000  1
+  Ga  Ga7  1  0.68016532  0.81983468  0.50000000  1
+  Ga  Ga8  1  0.81983468  0.31983468  0.50000000  1
+  Ga  Ga9  1  0.31983468  0.18016532  0.50000000  1

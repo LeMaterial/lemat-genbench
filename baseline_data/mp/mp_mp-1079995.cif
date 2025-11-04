@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_YbPrS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.59422649
+_cell_length_b   6.59422649
+_cell_length_c   9.51806239
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   145.66603908
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   YbPrS3
+_chemical_formula_sum   'Yb2 Pr2 S6'
+_cell_volume   233.43575936
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Yb  Yb0  1  0.00000000  0.00000000  0.50000000  1
+  Yb  Yb1  1  0.00000000  0.00000000  0.00000000  1
+  Pr  Pr2  1  0.74641433  0.25358567  0.25000000  1
+  Pr  Pr3  1  0.25358567  0.74641433  0.75000000  1
+  S  S4  1  0.64110344  0.35889656  0.56222230  1
+  S  S5  1  0.64110344  0.35889656  0.93777770  1
+  S  S6  1  0.35889656  0.64110344  0.06222230  1
+  S  S7  1  0.35889656  0.64110344  0.43777770  1
+  S  S8  1  0.08490470  0.91509530  0.25000000  1
+  S  S9  1  0.91509530  0.08490470  0.75000000  1

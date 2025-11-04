@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_HfTl2Ag
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.25336978
+_cell_length_b   3.25336978
+_cell_length_c   10.98701471
+_cell_angle_alpha   81.48575945
+_cell_angle_beta   81.48575945
+_cell_angle_gamma   60.00000002
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfTl2Ag
+_chemical_formula_sum   'Hf1 Tl2 Ag1'
+_cell_volume   99.22840477
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tl  Tl0  1  0.09062475  0.09062475  0.72812675  1
+  Tl  Tl1  1  0.90937525  0.90937525  0.27187325  1
+  Hf  Hf2  1  0.00000000  0.00000000  0.00000000  1
+  Ag  Ag3  1  0.50000000  0.50000000  0.50000000  1

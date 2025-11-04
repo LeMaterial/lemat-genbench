@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_SrFe2Se2O
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.11132654
+_cell_length_b   6.70686461
+_cell_length_c   9.98538570
+_cell_angle_alpha   90.09200231
+_cell_angle_beta   89.74140797
+_cell_angle_gamma   89.97333908
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrFe2Se2O
+_chemical_formula_sum   'Sr2 Fe4 Se4 O2'
+_cell_volume   275.33493855
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.49853900  0.99833900  0.50119400  1
+  Sr  Sr1  1  0.99985100  0.00113200  0.00001500  1
+  Fe  Fe2  1  0.50073500  0.37326200  0.83632500  1
+  Fe  Fe3  1  0.99918100  0.62911100  0.33500300  1
+  Fe  Fe4  1  0.50483600  0.36914000  0.16506300  1
+  Fe  Fe5  1  0.00478400  0.62792200  0.66316700  1
+  Se  Se6  1  0.49929700  0.74757800  0.19825500  1
+  Se  Se7  1  0.49956000  0.74913000  0.79973500  1
+  Se  Se8  1  0.00095400  0.25177100  0.69993700  1
+  Se  Se9  1  0.99774600  0.25195100  0.30199500  1
+  O  O10  1  0.49747100  0.21883200  0.99979400  1
+  O  O11  1  0.99704400  0.78183100  0.49951800  1

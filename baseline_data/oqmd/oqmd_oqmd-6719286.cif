@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_TmZrFe2Si2C
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.47981927
+_cell_length_b   5.47981927
+_cell_length_c   6.55048165
+_cell_angle_alpha   125.77586239
+_cell_angle_beta   125.77586239
+_cell_angle_gamma   40.51932426
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TmZrFe2Si2C
+_chemical_formula_sum   'Tm1 Zr1 Fe2 Si2 C1'
+_cell_volume   99.94854562
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  C  C0  1  0.49736235  0.49736235  0.48942184  1
+  Fe  Fe1  1  0.29604497  0.29604497  0.40492912  1
+  Fe  Fe2  1  0.70450384  0.70450384  0.59754504  1
+  Si  Si3  1  0.65583237  0.65583237  0.20318776  1
+  Si  Si4  1  0.34561842  0.34561842  0.80430685  1
+  Tm  Tm5  1  0.06188493  0.06188493  0.79305182  1
+  Zr  Zr6  1  0.93875011  0.93875011  0.20755235  1

@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_DyIBr2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.83358853
+_cell_length_b   7.47350488
+_cell_length_c   7.47516763
+_cell_angle_alpha   62.62904094
+_cell_angle_beta   75.10858071
+_cell_angle_gamma   75.14642791
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   DyIBr2
+_chemical_formula_sum   'Dy1 I1 Br2'
+_cell_volume   181.40359152
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.75005370  0.86485458  0.63514811  1
+  I  I1  1  0.25036991  0.16894206  0.33105726  1
+  Br  Br2  1  0.09993840  0.88284433  0.91662074  1
+  Br  Br3  1  0.39963699  0.58336003  0.61717589  1

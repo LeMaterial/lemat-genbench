@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_KNaHfS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.71503022
+_cell_length_b   6.71503022
+_cell_length_c   7.38172507
+_cell_angle_alpha   98.25075881
+_cell_angle_beta   98.25075881
+_cell_angle_gamma   119.31213341
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KNaHfS3
+_chemical_formula_sum   'K2 Na2 Hf2 S6'
+_cell_volume   278.28110422
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.66856446  0.33143470  0.00000000  1
+  Hf  Hf1  1  0.33143470  0.66856446  0.00000000  1
+  K  K2  1  0.84490544  0.15509320  0.50000006  1
+  K  K3  1  0.15509320  0.84490544  0.50000006  1
+  Na  Na4  1  0.00000000  0.00000000  0.00000000  1
+  Na  Na5  1  0.49999932  0.49999932  0.50000006  1
+  S  S6  1  0.42861102  0.06641711  0.20048635  1
+  S  S7  1  0.06641711  0.42861102  0.20048635  1
+  S  S8  1  0.68601031  0.68601031  0.20746184  1
+  S  S9  1  0.31398980  0.31398980  0.79253829  1
+  S  S10  1  0.93358300  0.57138909  0.79951378  1
+  S  S11  1  0.57138909  0.93358300  0.79951378  1

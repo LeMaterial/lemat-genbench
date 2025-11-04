@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_NaSrGa
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.05383192
+_cell_length_b   4.05383192
+_cell_length_c   6.36464012
+_cell_angle_alpha   108.57012800
+_cell_angle_beta   108.57012800
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaSrGa
+_chemical_formula_sum   'Na1 Sr1 Ga1'
+_cell_volume   93.38520033
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.68360871  0.68360871  0.36721742  1
+  Ga  Ga1  1  0.34097003  0.34097003  0.68194007  1
+  Na  Na2  1  0.97542126  0.97542126  0.95084251  1

@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Hf6In2Fe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.04990277
+_cell_length_b   8.04990277
+_cell_length_c   3.35391966
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Hf6In2Fe
+_chemical_formula_sum   'Hf6 In2 Fe1'
+_cell_volume   188.21947479
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.00000000  0.00000000  0.00000000  1
+  Hf  Hf1  1  0.37752133  0.00000000  0.00000000  1
+  Hf  Hf2  1  0.00000000  0.37752135  0.00000000  1
+  Hf  Hf3  1  0.62247909  0.62247861  0.00000000  1
+  Hf  Hf4  1  0.75867252  0.00000000  0.50000005  1
+  Hf  Hf5  1  0.24132765  0.24132816  0.50000005  1
+  Hf  Hf6  1  0.00000000  0.75867180  0.50000005  1
+  In  In7  1  0.66666673  0.33333380  0.50000005  1
+  In  In8  1  0.33333308  0.66666616  0.50000005  1

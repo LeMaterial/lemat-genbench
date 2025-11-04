@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_ScNbN2O
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.49091219
+_cell_length_b   5.49091219
+_cell_length_c   5.49091219
+_cell_angle_alpha   89.91362966
+_cell_angle_beta   121.22867643
+_cell_angle_gamma   118.88494915
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ScNbN2O
+_chemical_formula_sum   'Sc2 Nb2 N4 O2'
+_cell_volume   116.90074131
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  N  N0  1  0.21781114  0.89711324  0.15704266  1
+  N  N1  1  0.74007058  0.39711280  0.17930167  1
+  N  N2  1  0.21781203  0.56076937  0.82069708  1
+  N  N3  1  0.74007148  0.06077022  0.84295737  1
+  Nb  Nb4  1  0.70018517  0.70018517  0.00000000  1
+  Nb  Nb5  1  0.70018606  0.20018647  0.49999959  1
+  O  O6  1  0.84775643  0.94146751  0.40628807  1
+  O  O7  1  0.53518033  0.44146881  0.59371067  1
+  Sc  Sc8  1  0.18420032  0.48114323  0.20305624  1
+  Sc  Sc9  1  0.27808699  0.98114367  0.79694335  1

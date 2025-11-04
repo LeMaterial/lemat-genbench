@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_SiBP
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.16064215
+_cell_length_b   4.59229422
+_cell_length_c   5.12464933
+_cell_angle_alpha   73.24977096
+_cell_angle_beta   75.56822430
+_cell_angle_gamma   84.17530052
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SiBP
+_chemical_formula_sum   'Si2 B2 P2'
+_cell_volume   90.75647885
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  P  P0  1  0.31074240  0.68808053  0.90649366  1
+  P  P1  1  0.99987834  0.29582550  0.55613719  1
+  Si  Si2  1  0.81170522  0.40152087  0.97533451  1
+  Si  Si3  1  0.12908620  0.79600418  0.32887454  1
+  B  B4  1  0.37286127  0.98361829  0.53725735  1
+  B  B5  1  0.75199658  0.11635063  0.36063275  1

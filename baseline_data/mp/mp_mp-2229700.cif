@@ -1,0 +1,43 @@
+# generated using pymatgen
+data_MgTi4(CoO5)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.63851596
+_cell_length_b   5.47480112
+_cell_length_c   11.04603718
+_cell_angle_alpha   97.09340658
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   109.40823119
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgTi4(CoO5)2
+_chemical_formula_sum   'Mg1 Ti4 Co2 O10'
+_cell_volume   205.74854974
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg0  1  0.50000000  -0.00000000  -0.00000000  1
+  Ti  Ti1  1  0.13537981  0.27075962  0.54896503  1
+  Ti  Ti2  1  0.17893819  0.35787637  0.88759532  1
+  Ti  Ti3  1  0.82106181  0.64212363  0.11240468  1
+  Ti  Ti4  1  0.86462019  0.72924038  0.45103497  1
+  Co  Co5  1  0.15492602  0.30985304  0.26486881  1
+  Co  Co6  1  0.84507398  0.69014696  0.73513119  1
+  O  O7  1  0.00030303  0.00060406  0.12365718  1
+  O  O8  1  0.32061545  0.64123090  0.03803896  1
+  O  O9  1  0.02910533  0.05820865  0.39359152  1
+  O  O10  1  0.30416567  0.60833135  0.44006123  1
+  O  O11  1  0.24816594  0.49633187  0.74232716  1
+  O  O12  1  0.75183406  0.50366813  0.25767284  1
+  O  O13  1  0.69583433  0.39166865  0.55993877  1
+  O  O14  1  0.99969697  0.99939594  0.87634282  1
+  O  O15  1  0.67938455  0.35876910  0.96196104  1
+  O  O16  1  0.97089467  0.94179135  0.60640848  1

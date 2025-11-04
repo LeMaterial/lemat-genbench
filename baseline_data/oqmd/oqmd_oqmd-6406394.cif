@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Na4TaRe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.57496414
+_cell_length_b   7.57496414
+_cell_length_c   2.50225410
+_cell_angle_alpha   90.02749826
+_cell_angle_beta   90.02749826
+_cell_angle_gamma   92.19790267
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na4TaRe2
+_chemical_formula_sum   'Na4 Ta1 Re2'
+_cell_volume   143.47388197
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.70838073  0.29161854  0.00000000  1
+  Na  Na1  1  0.29161854  0.70838073  0.00000000  1
+  Na  Na2  1  0.30072333  0.30072333  0.49370697  1
+  Na  Na3  1  0.69927706  0.69927706  0.50629562  1
+  Re  Re4  1  0.50000024  -0.00000000  0.50000130  1
+  Re  Re5  1  -0.00000000  0.50000024  0.50000130  1
+  Ta  Ta6  1  0.00000000  0.00000000  0.00000000  1

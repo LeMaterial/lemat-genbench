@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_Tb3Te2P
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.19754971
+_cell_length_b   4.19754971
+_cell_length_c   10.75343007
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb3Te2P
+_chemical_formula_sum   'Tb3 Te2 P1'
+_cell_volume   164.08517453
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  P  P0  1  0.00000000  0.00000000  0.00000000  1
+  Tb  Tb1  1  0.66666575  0.33333382  0.13374337  1
+  Tb  Tb2  1  0.00000000  0.00000000  0.50000046  1
+  Tb  Tb3  1  0.33333382  0.66666764  0.86625662  1
+  Te  Te4  1  0.33333382  0.66666764  0.32346702  1
+  Te  Te5  1  0.66666575  0.33333382  0.67653297  1

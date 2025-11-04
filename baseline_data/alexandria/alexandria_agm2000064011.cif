@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_TmICl2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.17279134
+_cell_length_b   7.16243880
+_cell_length_c   18.46366778
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   112.94089035
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TmICl2
+_chemical_formula_sum   'Tm2 I2 Cl4'
+_cell_volume   873.54059426
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  I  I0  1  0.55947811  0.03703598  0.49995439  1
+  I  I1  1  0.05947812  0.53703597  0.49995439  1
+  Tm  Tm2  1  0.30958438  0.28716395  0.50000972  1
+  Tm  Tm3  1  0.80958437  0.78716397  0.50000972  1
+  Cl  Cl4  1  0.05967303  0.03717635  0.59381480  1
+  Cl  Cl5  1  0.05963945  0.03719330  0.40622110  1
+  Cl  Cl6  1  0.55967303  0.53717634  0.59381480  1
+  Cl  Cl7  1  0.55963945  0.53719330  0.40622110  1

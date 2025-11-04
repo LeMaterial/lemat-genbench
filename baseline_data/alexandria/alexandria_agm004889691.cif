@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_LaPaMn2O8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.29282796
+_cell_length_b   5.29282796
+_cell_length_c   6.70001805
+_cell_angle_alpha   113.26510699
+_cell_angle_beta   113.26510709
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaPaMn2O8
+_chemical_formula_sum   'La1 Pa1 Mn2 O8'
+_cell_volume   155.68146088
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.75000000  0.25000000  0.50000000  1
+  Pa  Pa1  1  0.00000000  0.00000000  0.00000000  1
+  Mn  Mn2  1  0.50000000  0.50000000  0.00000000  1
+  Mn  Mn3  1  0.25000000  0.75000000  0.50000000  1
+  O  O4  1  0.74650294  0.80830694  0.16327587  1
+  O  O5  1  0.41677293  0.35496893  0.16327587  1
+  O  O6  1  0.62807214  0.70133141  0.69023290  1
+  O  O7  1  0.06216075  0.98890149  0.69023290  1
+  O  O8  1  0.01109851  0.37192786  0.30976710  1
+  O  O9  1  0.29866859  0.93783925  0.30976710  1
+  O  O10  1  0.19169306  0.58322707  0.83672413  1
+  O  O11  1  0.64503107  0.25349706  0.83672413  1

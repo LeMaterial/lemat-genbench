@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_LaZr3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.70953437
+_cell_length_b   6.70953500
+_cell_length_c   5.36003300
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00059286
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaZr3
+_chemical_formula_sum   'La2 Zr6'
+_cell_volume   208.96824984
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.00000000  0.00000000  0.00000000  1
+  La  La1  1  0.33334767  0.66665481  0.49999879  1
+  Zr  Zr2  1  0.51112203  0.02223860  0.00000000  1
+  Zr  Zr3  1  0.51112312  0.48887804  0.00000000  1
+  Zr  Zr4  1  0.97776087  0.48887877  0.00000000  1
+  Zr  Zr5  1  0.35558852  0.17777198  0.49999879  1
+  Zr  Zr6  1  0.82222800  0.17777208  0.49999879  1
+  Zr  Zr7  1  0.82222909  0.64441152  0.49999879  1

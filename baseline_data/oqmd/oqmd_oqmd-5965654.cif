@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Hf(BeOs)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.47853286
+_cell_length_b   6.47853286
+_cell_length_c   3.03837833
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Hf(BeOs)2
+_chemical_formula_sum   'Hf2 Be4 Os4'
+_cell_volume   127.52495592
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.61784668  0.11784767  0.00000000  1
+  Be  Be1  1  0.11784767  0.38215288  0.00000000  1
+  Be  Be2  1  0.88215343  0.61784668  0.00000000  1
+  Be  Be3  1  0.38215288  0.88215343  0.00000000  1
+  Hf  Hf4  1  0.00000000  0.00000000  0.00000000  1
+  Hf  Hf5  1  0.50000055  0.50000055  0.00000000  1
+  Os  Os6  1  0.33466065  0.16533990  0.50000027  1
+  Os  Os7  1  0.83465965  0.33466065  0.50000027  1
+  Os  Os8  1  0.16533990  0.66533891  0.50000027  1
+  Os  Os9  1  0.66533891  0.83465965  0.50000027  1

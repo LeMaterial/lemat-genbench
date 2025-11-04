@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_ZnHgC4(SN)4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.31875487
+_cell_length_b   8.31875487
+_cell_length_c   8.31875487
+_cell_angle_alpha   94.68401984
+_cell_angle_beta   94.68401984
+_cell_angle_gamma   146.79106633
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZnHgC4(SN)4
+_chemical_formula_sum   'Zn1 Hg1 C4 S4 N4'
+_cell_volume   302.14425449
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zn  Zn0  1  0.75000000  0.25000000  0.50000000  1
+  Hg  Hg1  1  0.00000000  0.00000000  0.00000000  1
+  C  C2  1  0.18068200  0.38242800  0.35249700  1
+  C  C3  1  0.61757200  0.97006900  0.79825400  1
+  C  C4  1  0.17181600  0.81931800  0.20174600  1
+  C  C5  1  0.02993100  0.82818400  0.64750300  1
+  S  S6  1  0.40291800  0.44645400  0.27773800  1
+  S  S7  1  0.55354600  0.83128300  0.95646400  1
+  S  S8  1  0.87482000  0.59708200  0.04353600  1
+  S  S9  1  0.16871700  0.12518000  0.72226200  1
+  N  N10  1  0.02804800  0.34341300  0.41031000  1
+  N  N11  1  0.65658700  0.06689700  0.68463500  1
+  N  N12  1  0.38226100  0.97195200  0.31536500  1
+  N  N13  1  0.93310300  0.61773900  0.58969000  1

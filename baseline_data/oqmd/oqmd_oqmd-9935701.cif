@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Er6As2Os
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.80940503
+_cell_length_b   7.80940503
+_cell_length_c   4.13161799
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Er6As2Os
+_chemical_formula_sum   'Er6 As2 Os1'
+_cell_volume   218.21604829
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  As  As0  1  0.66666627  0.33333318  0.50000024  1
+  As  As1  1  0.33333318  0.66666636  0.50000024  1
+  Er  Er2  1  0.59747061  0.00000000  0.00000000  1
+  Er  Er3  1  0.40252942  0.40252882  0.00000000  1
+  Er  Er4  1  0.00000000  0.59747072  0.00000000  1
+  Er  Er5  1  0.24595728  0.00000000  0.50000024  1
+  Er  Er6  1  0.00000000  0.24595665  0.50000024  1
+  Er  Er7  1  0.75404248  0.75404289  0.50000024  1
+  Os  Os8  1  0.00000000  0.00000000  0.00000000  1

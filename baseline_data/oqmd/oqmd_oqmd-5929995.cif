@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_LaAlIr
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.62012594
+_cell_length_b   4.70341166
+_cell_length_c   7.08805017
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaAlIr
+_chemical_formula_sum   'La4 Al4 Ir4'
+_cell_volume   254.03989468
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.68038246  0.24999938  0.10961830  1
+  Al  Al1  1  0.18038285  0.24999938  0.39038098  1
+  Al  Al2  1  0.81961637  0.75000027  0.60961899  1
+  Al  Al3  1  0.31961676  0.75000027  0.89038168  1
+  Ir  Ir4  1  0.34779215  0.24999938  0.07205931  1
+  Ir  Ir5  1  0.84779307  0.24999938  0.42793997  1
+  Ir  Ir6  1  0.15220746  0.75000027  0.57206000  1
+  Ir  Ir7  1  0.65220707  0.75000027  0.92794067  1
+  La  La8  1  0.96519796  0.75000027  0.17773153  1
+  La  La9  1  0.46519835  0.75000027  0.32226775  1
+  La  La10  1  0.53480087  0.24999938  0.67773222  1
+  La  La11  1  0.03480126  0.24999938  0.82226845  1

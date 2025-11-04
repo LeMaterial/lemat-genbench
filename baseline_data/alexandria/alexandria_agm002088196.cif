@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_AlReAg
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.61339104
+_cell_length_b   4.83207529
+_cell_length_c   5.18485714
+_cell_angle_alpha   68.57660230
+_cell_angle_beta   78.22058599
+_cell_angle_gamma   61.71479779
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   AlReAg
+_chemical_formula_sum   'Al2 Re2 Ag2'
+_cell_volume   94.68113702
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Re  Re0  1  0.40039060  0.66453170  0.97002947  1
+  Re  Re1  1  0.05922541  0.38224184  0.96126272  1
+  Al  Al2  1  0.73207726  0.02134966  0.97010514  1
+  Al  Al3  1  0.11956891  0.83065170  0.45007153  1
+  Ag  Ag4  1  0.76315377  0.50810955  0.46681327  1
+  Ag  Ag5  1  0.43095406  0.15800555  0.48138787  1

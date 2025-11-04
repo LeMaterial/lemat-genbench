@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_BaPaTlO4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.27015898
+_cell_length_b   6.34182476
+_cell_length_c   7.53636896
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   114.58188904
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaPaTlO4
+_chemical_formula_sum   'Ba2 Pa2 Tl2 O8'
+_cell_volume   272.51752858
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.60240987  0.75000000  0.20481974  1
+  Ba  Ba1  1  0.39759013  0.25000000  0.79518026  1
+  Pa  Pa2  1  0.25309534  0.75000000  0.50619068  1
+  Pa  Pa3  1  0.74690466  0.25000000  0.49380932  1
+  Tl  Tl4  1  0.08888647  0.25000000  0.17777294  1
+  Tl  Tl5  1  0.91111353  0.75000000  0.82222706  1
+  O  O6  1  0.89874239  0.25000000  0.79748479  1
+  O  O7  1  0.41035243  0.75000000  0.82070487  1
+  O  O8  1  0.10125761  0.75000000  0.20251521  1
+  O  O9  1  0.58964757  0.25000000  0.17929513  1
+  O  O10  1  0.50000000  0.50000000  0.50000000  1
+  O  O11  1  -0.00000000  0.00000000  0.50000000  1
+  O  O12  1  0.50000000  0.00000000  0.50000000  1
+  O  O13  1  -0.00000000  0.50000000  0.50000000  1

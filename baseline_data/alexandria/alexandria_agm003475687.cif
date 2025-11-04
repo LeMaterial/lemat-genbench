@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_CeNi5B2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.47143256
+_cell_length_b   5.54381209
+_cell_length_c   5.54381209
+_cell_angle_alpha   67.88258947
+_cell_angle_beta   71.75440754
+_cell_angle_gamma   71.75440753
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CeNi5B2
+_chemical_formula_sum   'Ce1 Ni5 B2'
+_cell_volume   91.53064237
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.00000000  0.00000000  0.00000000  1
+  Ni  Ni1  1  0.00000000  0.50000000  0.50000000  1
+  Ni  Ni2  1  0.65873067  0.53324405  0.14929361  1
+  Ni  Ni3  1  0.34126933  0.46675595  0.85070639  1
+  Ni  Ni4  1  0.34126933  0.85070639  0.46675595  1
+  Ni  Ni5  1  0.65873067  0.14929361  0.53324405  1
+  B  B6  1  0.76380045  0.73619955  0.73619955  1
+  B  B7  1  0.23619955  0.26380045  0.26380045  1

@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Sr2MgCu(BrO)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.74519177
+_cell_length_b   4.78428511
+_cell_length_c   11.65206881
+_cell_angle_alpha   98.27562212
+_cell_angle_beta   99.19907171
+_cell_angle_gamma   89.93603131
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2MgCu(BrO)2
+_chemical_formula_sum   'Sr2 Mg1 Cu1 Br2 O2'
+_cell_volume   203.90004888
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.51010201  0.49323866  0.01680224  1
+  Sr  Sr1  1  0.35820819  0.40185628  0.72532596  1
+  Mg  Mg2  1  0.64750162  0.02439903  0.29562229  1
+  Cu  Cu3  1  0.05988606  0.02046655  0.11542991  1
+  Br  Br4  1  0.81429716  0.87167398  0.64007468  1
+  Br  Br5  1  0.20832325  0.30260921  0.42129450  1
+  O  O6  1  0.56220567  0.03602716  0.12056719  1
+  O  O7  1  0.93947603  0.44972914  0.87738322  1

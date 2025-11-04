@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_MgScAu2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.60012100
+_cell_length_b   6.66626900
+_cell_length_c   6.76358100
+_cell_angle_alpha   90.00003413
+_cell_angle_beta   90.00003430
+_cell_angle_gamma   90.00001728
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgScAu2
+_chemical_formula_sum   'Mg4 Sc4 Au8'
+_cell_volume   297.58526794
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  -0.00000000  0.00000000  0.24986616  1
+  Au  Au1  1  -0.00000000  0.50001590  0.24986631  1
+  Au  Au2  1  0.49998485  0.00000000  0.25013392  1
+  Au  Au3  1  0.49998492  0.49998597  0.25013406  1
+  Au  Au4  1  0.50001538  0.50001463  0.74986490  1
+  Au  Au5  1  0.50001530  0.00000000  0.74986623  1
+  Au  Au6  1  -0.00000000  -0.00000000  0.75013369  1
+  Au  Au7  1  -0.00000000  0.49998455  0.75013384  1
+  Mg  Mg8  1  0.74994993  0.25000053  0.00000000  1
+  Mg  Mg9  1  0.25005007  0.74999977  0.00000000  1
+  Mg  Mg10  1  0.75005007  0.25000068  0.49999431  1
+  Mg  Mg11  1  0.24995023  0.74999992  0.50000614  1
+  Sc  Sc12  1  0.25010757  0.25000045  0.00000000  1
+  Sc  Sc13  1  0.74989243  0.74999985  0.00000000  1
+  Sc  Sc14  1  0.75010924  0.75000000  0.49999446  1
+  Sc  Sc15  1  0.24989106  0.25000060  0.50000599  1

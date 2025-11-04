@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_NaTmNiSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.51078137
+_cell_length_b   3.94763285
+_cell_length_c   13.33363751
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaTmNiSe3
+_chemical_formula_sum   'Na4 Tm4 Ni4 Se12'
+_cell_volume   553.24869819
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.22120430  0.74999883  0.00483214  1
+  Na  Na1  1  0.72120423  0.74999883  0.49516795  1
+  Na  Na2  1  0.27879564  0.25000045  0.50483223  1
+  Na  Na3  1  0.77879557  0.25000045  0.99516805  1
+  Ni  Ni4  1  0.23587495  0.25000045  0.22709632  1
+  Ni  Ni5  1  0.73587488  0.25000045  0.27290377  1
+  Ni  Ni6  1  0.26412499  0.74999883  0.72709641  1
+  Ni  Ni7  1  0.76412492  0.74999883  0.77290387  1
+  Se  Se8  1  0.40439715  0.25000045  0.10676381  1
+  Se  Se9  1  0.05572659  0.25000045  0.11818380  1
+  Se  Se10  1  0.73662173  0.74999883  0.17079510  1
+  Se  Se11  1  0.23662180  0.74999883  0.32920499  1
+  Se  Se12  1  0.55572652  0.25000045  0.38181629  1
+  Se  Se13  1  0.90439708  0.25000045  0.39323628  1
+  Se  Se14  1  0.09560279  0.74999883  0.60676391  1
+  Se  Se15  1  0.44427335  0.74999883  0.61818390  1
+  Se  Se16  1  0.76337807  0.25000045  0.67079520  1
+  Se  Se17  1  0.26337814  0.25000045  0.82920508  1
+  Se  Se18  1  0.94427328  0.74999883  0.88181638  1
+  Se  Se19  1  0.59560272  0.74999883  0.89323637  1
+  Tm  Tm20  1  0.48352447  0.74999883  0.24227672  1
+  Tm  Tm21  1  0.98352441  0.74999883  0.25772337  1
+  Tm  Tm22  1  0.01647546  0.25000045  0.74227682  1
+  Tm  Tm23  1  0.51647540  0.25000045  0.75772346  1

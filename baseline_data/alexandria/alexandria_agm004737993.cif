@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Sm2YScIn2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.30047755
+_cell_length_b   6.77932148
+_cell_length_c   9.31735940
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sm2YScIn2
+_chemical_formula_sum   'Sm4 Y2 Sc2 In4'
+_cell_volume   334.80665063
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.50000000  0.00857166  0.00933030  1
+  Sm  Sm1  1  0.00000000  0.26901961  0.16372530  1
+  Sm  Sm2  1  0.50000000  0.50857166  0.99066970  1
+  Sm  Sm3  1  0.00000000  0.76901961  0.83627470  1
+  Y  Y4  1  0.00000000  0.00533958  0.49169300  1
+  Y  Y5  1  0.00000000  0.50533958  0.50830700  1
+  Sc  Sc6  1  0.50000000  0.24657524  0.67006235  1
+  Sc  Sc7  1  0.50000000  0.74657524  0.32993765  1
+  In  In8  1  0.00000000  0.26059444  0.81973544  1
+  In  In9  1  0.50000000  0.25550047  0.35045345  1
+  In  In10  1  0.00000000  0.76059444  0.18026456  1
+  In  In11  1  0.50000000  0.75550047  0.64954655  1

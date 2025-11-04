@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Th8Te4C3Se
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.06546475
+_cell_length_b   8.75188137
+_cell_length_c   8.06539957
+_cell_angle_alpha   117.43974500
+_cell_angle_beta   120.00026728
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Th8Te4C3Se
+_chemical_formula_sum   'Th8 Te4 C3 Se1'
+_cell_volume   417.45004732
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Th  Th0  1  0.24392609  0.69275733  0.94880496  1
+  Th  Th1  1  0.24394197  0.69273426  0.48788394  1
+  Th  Th2  1  0.27089419  0.31273936  0.54178838  1
+  Th  Th3  1  0.70487887  0.69275733  0.94880496  1
+  Th  Th4  1  0.29512113  0.30724267  0.05119504  1
+  Th  Th5  1  0.72910581  0.68726064  0.45821162  1
+  Th  Th6  1  0.75605803  0.30726574  0.51211606  1
+  Th  Th7  1  0.75607391  0.30724267  0.05119504  1
+  Te  Te8  1  0.50000000  0.00000000  0.00000000  1
+  Te  Te9  1  0.50000000  0.00000000  0.50000000  1
+  Te  Te10  1  0.00000000  0.00000000  0.00000000  1
+  Te  Te11  1  -0.00000000  0.00000000  0.50000000  1
+  C  C12  1  0.50000000  0.50000000  -0.00000000  1
+  C  C13  1  0.50000000  0.50000000  0.50000000  1
+  C  C14  1  -0.00000000  0.50000000  0.50000000  1
+  Se  Se15  1  0.00000000  0.50000000  -0.00000000  1

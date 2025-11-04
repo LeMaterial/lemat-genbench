@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_BaSmZnS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.20737502
+_cell_length_b   7.20737502
+_cell_length_c   10.55987536
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   146.85142842
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaSmZnS3
+_chemical_formula_sum   'Ba2 Sm2 Zn2 S6'
+_cell_volume   299.95148227
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.75305248  0.24694598  0.25000011  1
+  Ba  Ba1  1  0.24694598  0.75305248  0.75000033  1
+  S  S2  1  0.13429040  0.86570806  0.07375182  1
+  S  S3  1  0.43417473  0.56582374  0.25000011  1
+  S  S4  1  0.13429040  0.86570806  0.42624840  1
+  S  S5  1  0.86570806  0.13429040  0.57375204  1
+  S  S6  1  0.56582374  0.43417473  0.75000033  1
+  S  S7  1  0.86570806  0.13429040  0.92624862  1
+  Sm  Sm8  1  0.49999923  0.49999923  0.00000000  1
+  Sm  Sm9  1  0.49999923  0.49999923  0.50000022  1
+  Zn  Zn10  1  0.02775679  0.97224168  0.25000011  1
+  Zn  Zn11  1  0.97224168  0.02775679  0.75000033  1

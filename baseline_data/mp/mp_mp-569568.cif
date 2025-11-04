@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Ta3AlC2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.08869848
+_cell_length_b   3.08869923
+_cell_length_c   19.21971736
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000289
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ta3AlC2
+_chemical_formula_sum   'Ta6 Al2 C4'
+_cell_volume   158.79204800
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ta  Ta0  1  0.33333300  0.66666700  0.13438313  1
+  Ta  Ta1  1  0.66666700  0.33333300  0.63438313  1
+  Ta  Ta2  1  0.33333300  0.66666700  0.36561687  1
+  Ta  Ta3  1  0.66666700  0.33333300  0.86561687  1
+  Ta  Ta4  1  -0.00000000  0.00000000  0.50000000  1
+  Ta  Ta5  1  -0.00000000  0.00000000  0.00000000  1
+  Al  Al6  1  -0.00000000  0.00000000  0.25000000  1
+  Al  Al7  1  -0.00000000  0.00000000  0.75000000  1
+  C  C8  1  0.66666700  0.33333300  0.43170295  1
+  C  C9  1  0.66666700  0.33333300  0.06829705  1
+  C  C10  1  0.33333300  0.66666700  0.56829705  1
+  C  C11  1  0.33333300  0.66666700  0.93170295  1

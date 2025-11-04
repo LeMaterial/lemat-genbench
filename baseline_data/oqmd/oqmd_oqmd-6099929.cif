@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Er3Hf3Sb2Os
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.98199930
+_cell_length_b   7.98199930
+_cell_length_c   3.81548682
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Er3Hf3Sb2Os
+_chemical_formula_sum   'Er3 Hf3 Sb2 Os1'
+_cell_volume   210.52513744
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.25049238  0.00000000  0.49999911  1
+  Er  Er1  1  0.00000000  0.25049279  0.49999911  1
+  Er  Er2  1  0.74950726  0.74950806  0.49999911  1
+  Hf  Hf3  1  0.60997124  0.00000000  0.00000000  1
+  Hf  Hf4  1  0.39002830  0.39002900  0.00000000  1
+  Hf  Hf5  1  -0.00000000  0.60997184  0.00000000  1
+  Os  Os6  1  0.00000000  0.00000000  0.00000000  1
+  Sb  Sb7  1  0.66666637  0.33333265  0.49999911  1
+  Sb  Sb8  1  0.33333337  0.66666675  0.49999911  1

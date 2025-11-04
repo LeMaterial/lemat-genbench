@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Gd3Ga3NiGe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.18853766
+_cell_length_b   7.05447304
+_cell_length_c   7.05447304
+_cell_angle_alpha   120.00000001
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Gd3Ga3NiGe2
+_chemical_formula_sum   'Gd3 Ga3 Ni1 Ge2'
+_cell_volume   180.51870621
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.00000000  0.00000000  0.00000000  1
+  Ge  Ge1  1  0.50000000  0.33333333  0.66666667  1
+  Ge  Ge2  1  0.50000000  0.66666667  0.33333333  1
+  Gd  Gd3  1  0.00000000  -0.00000000  0.59989894  1
+  Gd  Gd4  1  0.00000000  0.59989894  0.00000000  1
+  Gd  Gd5  1  0.00000000  0.40010106  0.40010106  1
+  Ga  Ga6  1  0.50000000  0.77236084  0.77236084  1
+  Ga  Ga7  1  0.50000000  0.22763916  1.00000000  1
+  Ga  Ga8  1  0.50000000  1.00000000  0.22763916  1

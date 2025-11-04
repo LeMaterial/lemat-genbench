@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_NiIr3Rh
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.15602441
+_cell_length_b   7.20949354
+_cell_length_c   6.83272873
+_cell_angle_alpha   121.84145786
+_cell_angle_beta   124.73911493
+_cell_angle_gamma   89.99999985
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NiIr3Rh
+_chemical_formula_sum   'Ni4 Ir12 Rh4'
+_cell_volume   284.16740201
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.25000000  0.04059753  1.00000000  1
+  Ni  Ni1  1  0.75000000  0.95940247  -0.00000000  1
+  Ni  Ni2  1  0.25000000  0.66015225  0.00000000  1
+  Ni  Ni3  1  0.75000000  0.33984775  1.00000000  1
+  Ir  Ir4  1  0.59190053  0.23974122  0.18132763  1
+  Ir  Ir5  1  0.90809947  0.05841359  0.81867237  1
+  Ir  Ir6  1  0.40809947  0.76025878  0.81867237  1
+  Ir  Ir7  1  0.09190053  0.94158641  0.18132763  1
+  Ir  Ir8  1  0.92168681  0.63632184  0.58918576  1
+  Ir  Ir9  1  0.57831319  0.04713609  0.41081424  1
+  Ir  Ir10  1  0.07831319  0.36367816  0.41081424  1
+  Ir  Ir11  1  0.42168681  0.95286391  0.58918576  1
+  Ir  Ir12  1  0.42576592  0.34062469  0.59776688  1
+  Ir  Ir13  1  0.07423408  0.74285781  0.40223312  1
+  Ir  Ir14  1  0.57423408  0.65937531  0.40223312  1
+  Ir  Ir15  1  0.92576592  0.25714219  0.59776688  1
+  Rh  Rh16  1  0.76699855  0.53687321  0.78083108  1
+  Rh  Rh17  1  0.73300145  0.75604113  0.21916892  1
+  Rh  Rh18  1  0.23300145  0.46312679  0.21916892  1
+  Rh  Rh19  1  0.26699855  0.24395887  0.78083108  1

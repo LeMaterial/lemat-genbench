@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_AcPuAsO2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.94951907
+_cell_length_b   3.94951907
+_cell_length_c   7.03924496
+_cell_angle_alpha   106.29217970
+_cell_angle_beta   106.29217970
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   AcPuAsO2
+_chemical_formula_sum   'Ac1 Pu1 As1 O2'
+_cell_volume   100.79177462
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.85587565  0.85587565  0.71175130  1
+  Pu  Pu1  1  0.15229998  0.15229998  0.30459996  1
+  As  As2  1  0.51061923  0.51061923  0.02123846  1
+  O  O3  1  0.74060307  0.24060307  0.48120614  1
+  O  O4  1  0.24060307  0.74060307  0.48120614  1

@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_NaBPb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.20119335
+_cell_length_b   5.14128321
+_cell_length_c   8.75786226
+_cell_angle_alpha   89.99340904
+_cell_angle_beta   88.11534145
+_cell_angle_gamma   89.95928241
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaBPb
+_chemical_formula_sum   'Na2 B2 Pb2'
+_cell_volume   144.06100515
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pb  Pb0  1  0.76010858  0.48616341  0.30238878  1
+  Pb  Pb1  1  0.27900921  0.98620196  0.10902561  1
+  Na  Na2  1  0.82991314  0.48657512  0.83725528  1
+  Na  Na3  1  0.24742450  0.98665648  0.51320649  1
+  B  B4  1  0.68881657  0.98650885  0.79777787  1
+  B  B5  1  0.19202801  0.98642417  0.80826597  1

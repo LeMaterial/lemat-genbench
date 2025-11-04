@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_NaHfB
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.41565024
+_cell_length_b   3.12352758
+_cell_length_c   4.58400922
+_cell_angle_alpha   109.92730790
+_cell_angle_beta   90.31523133
+_cell_angle_gamma   81.22689589
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaHfB
+_chemical_formula_sum   'Na2 Hf2 B2'
+_cell_volume   125.10417374
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.40658624  0.08997643  0.76075127  1
+  Na  Na1  1  0.14653868  0.52514308  0.31605079  1
+  B  B2  1  0.87063473  0.68263992  0.37582626  1
+  B  B3  1  0.90130458  0.09735666  0.23405322  1
+  Hf  Hf4  1  0.84981302  0.41210493  0.81644786  1
+  Hf  Hf5  1  0.64967276  0.22941899  0.26478060  1

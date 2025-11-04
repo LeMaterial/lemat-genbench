@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_NaCe(PbBr4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.22553411
+_cell_length_b   6.87582182
+_cell_length_c   9.02563745
+_cell_angle_alpha   90.00107900
+_cell_angle_beta   90.00114884
+_cell_angle_gamma   89.38197062
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaCe(PbBr4)2
+_chemical_formula_sum   'Na1 Ce1 Pb2 Br8'
+_cell_volume   448.38098611
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.00000000  0.00000000  0.50000000  1
+  Ce  Ce1  1  0.00000000  0.00000000  0.00000000  1
+  Pb  Pb2  1  0.50000972  0.50000048  0.74100182  1
+  Pb  Pb3  1  0.49999028  0.49999952  0.25899818  1
+  Br  Br4  1  0.15539023  0.76724829  0.24246091  1
+  Br  Br5  1  0.66902718  0.75337250  0.00000048  1
+  Br  Br6  1  0.84458660  0.23274013  0.24245558  1
+  Br  Br7  1  0.84460977  0.23275171  0.75753909  1
+  Br  Br8  1  0.33097282  0.24662750  0.99999952  1
+  Br  Br9  1  0.15541340  0.76725987  0.75754442  1
+  Br  Br10  1  0.65999154  0.73695448  0.50001006  1
+  Br  Br11  1  0.34000846  0.26304552  0.49998994  1

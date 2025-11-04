@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_Sr2Ce2Ti5O15
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   11.71402282
+_cell_length_b   11.71402282
+_cell_length_c   11.71402179
+_cell_angle_alpha   27.29930576
+_cell_angle_beta   27.29930576
+_cell_angle_gamma   27.29930724
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2Ce2Ti5O15
+_chemical_formula_sum   'Sr2 Ce2 Ti5 O15'
+_cell_volume   298.34698343
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.19991600  0.19991600  0.19991600  1
+  Sr  Sr1  1  0.80008400  0.80008400  0.80008400  1
+  Ce  Ce2  1  0.60210600  0.60210600  0.60210600  1
+  Ce  Ce3  1  0.39789400  0.39789400  0.39789400  1
+  Ti  Ti4  1  0.90269600  0.90269600  0.90269600  1
+  Ti  Ti5  1  0.69801500  0.69801500  0.69801500  1
+  Ti  Ti6  1  0.30198500  0.30198500  0.30198500  1
+  Ti  Ti7  1  0.09730400  0.09730400  0.09730400  1
+  Ti  Ti8  1  0.50000000  0.50000000  0.50000000  1
+  O  O9  1  0.30137800  0.79343100  0.30137800  1
+  O  O10  1  0.10289100  0.59001800  0.10289100  1
+  O  O11  1  0.69862200  0.20656900  0.69862200  1
+  O  O12  1  0.50000000  0.00000000  0.50000000  1
+  O  O13  1  0.89710900  0.40998200  0.89710900  1
+  O  O14  1  0.69862200  0.69862200  0.20656900  1
+  O  O15  1  0.50000000  0.50000000  0.00000000  1
+  O  O16  1  0.10289100  0.10289100  0.59001800  1
+  O  O17  1  0.89710900  0.89710900  0.40998200  1
+  O  O18  1  0.30137800  0.30137800  0.79343100  1
+  O  O19  1  0.59001800  0.10289100  0.10289100  1
+  O  O20  1  0.40998200  0.89710900  0.89710900  1
+  O  O21  1  0.00000000  0.50000000  0.50000000  1
+  O  O22  1  0.79343100  0.30137800  0.30137800  1
+  O  O23  1  0.20656900  0.69862200  0.69862200  1

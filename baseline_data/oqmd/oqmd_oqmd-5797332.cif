@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_NiPdS
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.63742755
+_cell_length_b   5.63742755
+_cell_length_c   5.63742755
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NiPdS
+_chemical_formula_sum   'Ni4 Pd4 S4'
+_cell_volume   179.16076985
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.56449861  0.93550116  0.06449928  1
+  Ni  Ni1  1  0.43550183  0.43550183  0.43550183  1
+  Ni  Ni2  1  0.93550116  0.06449928  0.56449861  1
+  Ni  Ni3  1  0.06449928  0.56449861  0.93550116  1
+  Pd  Pd4  1  0.17072681  0.17072681  0.17072681  1
+  Pd  Pd5  1  0.82927363  0.67072614  0.32927252  1
+  Pd  Pd6  1  0.32927252  0.82927363  0.67072614  1
+  Pd  Pd7  1  0.67072614  0.32927252  0.82927363  1
+  S  S8  1  0.43513109  0.56486757  0.06486824  1
+  S  S9  1  0.56486757  0.06486824  0.43513109  1
+  S  S10  1  0.06486824  0.43513109  0.56486757  1
+  S  S11  1  0.93513220  0.93513220  0.93513220  1

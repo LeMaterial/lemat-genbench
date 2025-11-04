@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Li5GeAu2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.49975480
+_cell_length_b   4.49975374
+_cell_length_c   6.82992644
+_cell_angle_alpha   109.23322405
+_cell_angle_beta   109.23322378
+_cell_angle_gamma   90.00008076
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li5GeAu2
+_chemical_formula_sum   'Li5 Ge1 Au2'
+_cell_volume   122.36770357
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.50000000  0.50000000  -0.00000000  1
+  Li  Li1  1  0.87245778  0.37245778  0.74491456  1
+  Li  Li2  1  0.37245778  0.87245778  0.74491456  1
+  Li  Li3  1  0.12754222  0.62754222  0.25508544  1
+  Li  Li4  1  0.62754222  0.12754222  0.25508544  1
+  Ge  Ge5  1  0.00000000  0.00000000  0.00000000  1
+  Au  Au6  1  0.75219851  0.75219851  0.50439802  1
+  Au  Au7  1  0.24780149  0.24780149  0.49560198  1

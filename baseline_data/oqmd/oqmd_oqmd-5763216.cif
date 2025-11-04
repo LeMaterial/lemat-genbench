@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_UAlPt
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.73076854
+_cell_length_b   4.73076853
+_cell_length_c   5.74166997
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   UAlPt
+_chemical_formula_sum   'U2 Al2 Pt2'
+_cell_volume   111.28387940
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.33333327  0.66666655  0.49807809  1
+  Al  Al1  1  0.66666635  0.33333449  0.99807722  1
+  Pt  Pt2  1  0.33333327  0.66666655  0.00238258  1
+  Pt  Pt3  1  0.66666635  0.33333449  0.50238171  1
+  U  U4  1  0.00000000  0.00000000  0.24953890  1
+  U  U5  1  0.00000000  0.00000000  0.74953803  1

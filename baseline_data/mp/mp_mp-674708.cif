@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Rb4N4O3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.12071400
+_cell_length_b   4.26512395
+_cell_length_c   16.39536504
+_cell_angle_alpha   95.96841417
+_cell_angle_beta   89.80227678
+_cell_angle_gamma   105.04723061
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Rb4N4O3
+_chemical_formula_sum   'Rb4 N4 O3'
+_cell_volume   276.68259656
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rb  Rb0  1  0.51872800  0.50536200  0.88837700  1
+  Rb  Rb1  1  0.51962900  0.55947900  0.63164500  1
+  Rb  Rb2  1  0.50902000  0.51210100  0.10643200  1
+  Rb  Rb3  1  0.54385200  0.61784600  0.37587300  1
+  N  N4  1  0.89339000  0.13971700  0.72588100  1
+  N  N5  1  0.88298200  0.14013900  0.26696400  1
+  N  N6  1  0.09013800  0.93526100  0.99707100  1
+  N  N7  1  0.04271800  0.14645300  0.47312000  1
+  O  O8  1  0.00829800  0.43590700  0.75542800  1
+  O  O9  1  0.97958000  0.40696300  0.50476400  1
+  O  O10  1  0.01166700  0.40877400  0.23944500  1

@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Gd3MgTl2Pt2Au
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.94371976
+_cell_length_b   7.76304984
+_cell_length_c   7.76304984
+_cell_angle_alpha   120.22821506
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Gd3MgTl2Pt2Au
+_chemical_formula_sum   'Gd3 Mg1 Tl2 Pt2 Au1'
+_cell_volume   205.35160512
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.00000000  0.97219507  0.97219507  1
+  Gd  Gd1  1  0.00000000  0.58900386  0.00126098  1
+  Gd  Gd2  1  0.00000000  0.40955987  0.40955987  1
+  Gd  Gd3  1  0.00000000  0.00126098  0.58900386  1
+  Mg  Mg4  1  0.50000003  0.73880569  0.73880569  1
+  Pt  Pt5  1  0.50000003  0.67224358  0.35316457  1
+  Pt  Pt6  1  0.50000003  0.35316457  0.67224358  1
+  Tl  Tl7  1  0.50000003  0.26286341  0.00090759  1
+  Tl  Tl8  1  0.50000003  0.00090759  0.26286341  1

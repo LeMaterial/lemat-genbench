@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_LaMnFe3(BiO4)3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.67140825
+_cell_length_b   5.67140825
+_cell_length_c   9.79516655
+_cell_angle_alpha   71.92698299
+_cell_angle_beta   71.92698299
+_cell_angle_gamma   58.56092493
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaMnFe3(BiO4)3
+_chemical_formula_sum   'La1 Mn1 Fe3 Bi3 O12'
+_cell_volume   251.23095331
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.37303800  0.37303800  0.37885500  1
+  Mn  Mn1  1  0.74928900  0.74928900  0.24949300  1
+  Fe  Fe2  1  0.49776000  0.49776000  0.99872300  1
+  Fe  Fe3  1  0.00283200  0.00283200  0.50053800  1
+  Fe  Fe4  1  0.24997700  0.24997700  0.74970100  1
+  Bi  Bi5  1  0.64412100  0.64412100  0.61107000  1
+  Bi  Bi6  1  0.13775600  0.13775600  0.11102100  1
+  Bi  Bi7  1  0.85864800  0.85864800  0.88394500  1
+  O  O8  1  0.07870500  0.07870500  0.67095300  1
+  O  O9  1  0.56671000  0.56671000  0.16889300  1
+  O  O10  1  0.42252500  0.42252500  0.82969300  1
+  O  O11  1  0.93305500  0.93305500  0.33020000  1
+  O  O12  1  0.09010300  0.59888500  0.60010800  1
+  O  O13  1  0.59154600  0.08975200  0.09975700  1
+  O  O14  1  0.90270200  0.40537300  0.90538900  1
+  O  O15  1  0.41249500  0.89473000  0.40320400  1
+  O  O16  1  0.59888500  0.09010300  0.60010800  1
+  O  O17  1  0.08975200  0.59154600  0.09975700  1
+  O  O18  1  0.40537300  0.90270200  0.90538900  1
+  O  O19  1  0.89473000  0.41249500  0.40320400  1

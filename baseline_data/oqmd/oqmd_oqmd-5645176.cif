@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_NaTbNiTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   14.83481485
+_cell_length_b   4.19285353
+_cell_length_c   11.37434583
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaTbNiTe3
+_chemical_formula_sum   'Na4 Tb4 Ni4 Te12'
+_cell_volume   707.48665213
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.27802100  0.24999919  0.04165163  1
+  Na  Na1  1  0.77802117  0.24999919  0.45834812  1
+  Na  Na2  1  0.22197918  0.74999996  0.54165137  1
+  Na  Na3  1  0.72197935  0.74999996  0.95834786  1
+  Ni  Ni4  1  0.48873141  0.74999996  0.10408247  1
+  Ni  Ni5  1  0.98873158  0.74999996  0.39591727  1
+  Ni  Ni6  1  0.01126876  0.24999919  0.60408221  1
+  Ni  Ni7  1  0.51126894  0.24999919  0.89591702  1
+  Tb  Tb8  1  0.98265264  0.24999919  0.16031340  1
+  Tb  Tb9  1  0.48265314  0.24999919  0.33968635  1
+  Tb  Tb10  1  0.51734720  0.74999996  0.66031314  1
+  Tb  Tb11  1  0.01734703  0.74999996  0.83968609  1
+  Te  Te12  1  0.11909687  0.74999996  0.07263978  1
+  Te  Te13  1  0.58499213  0.24999919  0.09774540  1
+  Te  Te14  1  0.35274252  0.74999996  0.24224426  1
+  Te  Te15  1  0.85274270  0.74999996  0.25775548  1
+  Te  Te16  1  0.08499263  0.24999919  0.40225434  1
+  Te  Te17  1  0.61909704  0.74999996  0.42735996  1
+  Te  Te18  1  0.38090330  0.24999919  0.57263953  1
+  Te  Te19  1  0.91500771  0.74999996  0.59774515  1
+  Te  Te20  1  0.14725765  0.24999919  0.74224400  1
+  Te  Te21  1  0.64725783  0.24999919  0.75775523  1
+  Te  Te22  1  0.41500754  0.74999996  0.90225409  1
+  Te  Te23  1  0.88090348  0.24999919  0.92735971  1

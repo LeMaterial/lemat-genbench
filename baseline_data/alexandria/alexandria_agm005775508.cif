@@ -1,0 +1,54 @@
+# generated using pymatgen
+data_ErAlNi5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.78034726
+_cell_length_b   7.84871647
+_cell_length_c   9.96417403
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ErAlNi5
+_chemical_formula_sum   'Er4 Al4 Ni20'
+_cell_volume   373.85172700
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.25000000  0.24821929  0.94120762  1
+  Er  Er1  1  0.75000000  0.25178071  0.44120762  1
+  Er  Er2  1  0.25000000  0.74821929  0.55879238  1
+  Er  Er3  1  0.75000000  0.75178071  0.05879238  1
+  Al  Al4  1  0.25000000  0.85864684  0.85780649  1
+  Al  Al5  1  0.75000000  0.64135316  0.35780649  1
+  Al  Al6  1  0.25000000  0.35864684  0.64219351  1
+  Al  Al7  1  0.75000000  0.14135316  0.14219351  1
+  Ni  Ni8  1  0.25000000  0.59705470  0.01667854  1
+  Ni  Ni9  1  0.75000000  0.90294530  0.51667854  1
+  Ni  Ni10  1  0.25000000  0.09705470  0.48332146  1
+  Ni  Ni11  1  0.75000000  0.40294530  0.98332146  1
+  Ni  Ni12  1  0.75000000  0.31268453  0.74955454  1
+  Ni  Ni13  1  0.25000000  0.18731547  0.24955454  1
+  Ni  Ni14  1  0.75000000  0.81268453  0.75044546  1
+  Ni  Ni15  1  0.25000000  0.68731547  0.25044546  1
+  Ni  Ni16  1  0.25000000  0.94987432  0.09166663  1
+  Ni  Ni17  1  0.75000000  0.55012568  0.59166663  1
+  Ni  Ni18  1  0.25000000  0.44987432  0.40833337  1
+  Ni  Ni19  1  0.75000000  0.05012568  0.90833337  1
+  Ni  Ni20  1  0.99418925  0.43439580  0.19448010  1
+  Ni  Ni21  1  0.00581075  0.06560420  0.69448010  1
+  Ni  Ni22  1  0.50581075  0.93439580  0.30551990  1
+  Ni  Ni23  1  0.49418925  0.56560420  0.80551990  1
+  Ni  Ni24  1  0.00581075  0.56560420  0.80551990  1
+  Ni  Ni25  1  0.99418925  0.93439580  0.30551990  1
+  Ni  Ni26  1  0.49418925  0.06560420  0.69448010  1
+  Ni  Ni27  1  0.50581075  0.43439580  0.19448010  1

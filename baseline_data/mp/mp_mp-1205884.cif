@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Pr3(GaNi2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.10103700
+_cell_length_b   5.38281858
+_cell_length_c   8.08400785
+_cell_angle_alpha   98.26410888
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   112.39178347
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr3(GaNi2)2
+_chemical_formula_sum   'Pr3 Ga2 Ni4'
+_cell_volume   162.99417680
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.62308500  0.24617000  0.87955800  1
+  Pr  Pr1  1  0.37691500  0.75383000  0.12044200  1
+  Pr  Pr2  1  0.00000000  0.00000000  0.50000000  1
+  Ga  Ga3  1  0.32245900  0.64491800  0.71501000  1
+  Ga  Ga4  1  0.67754100  0.35508200  0.28499000  1
+  Ni  Ni5  1  0.91534700  0.83069400  0.86240500  1
+  Ni  Ni6  1  0.08465300  0.16930600  0.13759500  1
+  Ni  Ni7  1  0.73879200  0.47758400  0.58609000  1
+  Ni  Ni8  1  0.26120800  0.52241600  0.41391000  1

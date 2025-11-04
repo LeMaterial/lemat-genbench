@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Ga2Pd2F
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.52460064
+_cell_length_b   4.52460064
+_cell_length_c   8.45831347
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ga2Pd2F
+_chemical_formula_sum   'Ga4 Pd4 F2'
+_cell_volume   149.95982125
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  F  F0  1  0.00000000  0.00000000  0.25000019  1
+  F  F1  1  0.00000000  0.00000000  0.75000058  1
+  Ga  Ga2  1  0.00000000  0.00000000  0.00000000  1
+  Ga  Ga3  1  0.33333341  0.66666682  0.25000019  1
+  Ga  Ga4  1  0.00000000  0.00000000  0.50000039  1
+  Ga  Ga5  1  0.66666663  0.33333341  0.75000058  1
+  Pd  Pd6  1  0.66666663  0.33333341  0.05099362  1
+  Pd  Pd7  1  0.66666663  0.33333341  0.44900677  1
+  Pd  Pd8  1  0.33333341  0.66666682  0.55099400  1
+  Pd  Pd9  1  0.33333341  0.66666682  0.94900597  1

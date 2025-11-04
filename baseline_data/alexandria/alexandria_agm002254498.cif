@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_BaB2Pt2C
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.05221979
+_cell_length_b   4.05221877
+_cell_length_c   6.02135926
+_cell_angle_alpha   109.58877509
+_cell_angle_beta   109.58877217
+_cell_angle_gamma   90.03521767
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaB2Pt2C
+_chemical_formula_sum   'Ba1 B2 Pt2 C1'
+_cell_volume   87.04548927
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  C  C0  1  0.50000798  0.50001326  0.99999995  1
+  B  B1  1  0.36064727  0.36065251  0.72040279  1
+  B  B2  1  0.63936769  0.63937267  0.27959710  1
+  Ba  Ba3  1  0.00000802  0.00001325  0.00000006  1
+  Pt  Pt4  1  0.75004591  0.24998077  0.50000001  1
+  Pt  Pt5  1  0.24997313  0.75005455  0.50000009  1

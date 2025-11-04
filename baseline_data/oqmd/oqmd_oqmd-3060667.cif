@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Y2AlZn
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.18357200
+_cell_length_b   7.15962200
+_cell_length_c   7.21630300
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   89.99998408
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Y2AlZn
+_chemical_formula_sum   'Y8 Al4 Zn4'
+_cell_volume   371.14644329
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.99907957  0.25000063  -0.00000000  1
+  Al  Al1  1  0.00092016  0.75000049  0.00000000  1
+  Al  Al2  1  0.50092064  0.25000063  0.49999834  1
+  Al  Al3  1  0.49908033  0.75000049  0.50000111  1
+  Y  Y4  1  0.74999593  0.50068146  0.24999633  1
+  Y  Y5  1  0.74999593  0.99931952  0.24999633  1
+  Y  Y6  1  0.24999537  0.00067881  0.25000471  1
+  Y  Y7  1  0.24999537  0.49932105  0.25000471  1
+  Y  Y8  1  0.75000560  0.50067867  0.74999612  1
+  Y  Y9  1  0.75000560  0.99932091  0.74999612  1
+  Y  Y10  1  0.25000505  0.00068160  0.75000450  1
+  Y  Y11  1  0.25000505  0.49931966  0.75000450  1
+  Zn  Zn12  1  0.50134668  0.25000063  -0.00000000  1
+  Zn  Zn13  1  0.49865304  0.75000049  -0.00000000  1
+  Zn  Zn14  1  0.99865353  0.25000063  0.49998441  1
+  Zn  Zn15  1  0.00134745  0.75000049  0.50001504  1

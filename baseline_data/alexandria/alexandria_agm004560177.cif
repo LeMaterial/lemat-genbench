@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Rb2Li(GaTe2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.74322383
+_cell_length_b   8.62923491
+_cell_length_c   8.46206616
+_cell_angle_alpha   107.24411285
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   105.95215479
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Rb2Li(GaTe2)2
+_chemical_formula_sum   'Rb2 Li1 Ga2 Te4'
+_cell_volume   316.79473046
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rb  Rb0  1  0.87691896  0.75383792  0.44900034  1
+  Rb  Rb1  1  0.12308104  0.24616208  0.55099966  1
+  Li  Li2  1  0.00000000  0.00000000  0.00000000  1
+  Ga  Ga3  1  0.33327563  0.66655025  0.01447270  1
+  Ga  Ga4  1  0.66672437  0.33344975  0.98552730  1
+  Te  Te5  1  0.79715214  0.59430328  0.83621142  1
+  Te  Te6  1  0.20284786  0.40569672  0.16378858  1
+  Te  Te7  1  0.48334520  0.96669041  0.23128628  1
+  Te  Te8  1  0.51665480  0.03330959  0.76871372  1

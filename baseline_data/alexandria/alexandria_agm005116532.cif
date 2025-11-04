@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_Sm2HoAg
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.61817368
+_cell_length_b   3.61817368
+_cell_length_c   10.73634014
+_cell_angle_alpha   80.29930945
+_cell_angle_beta   80.29930943
+_cell_angle_gamma   59.99999998
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sm2HoAg
+_chemical_formula_sum   'Sm2 Ho1 Ag1'
+_cell_volume   119.39483739
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.07583416  0.07583416  0.77249751  1
+  Sm  Sm1  1  0.25739575  0.25739575  0.22781276  1
+  Ho  Ho2  1  0.49962792  0.49962792  0.50111623  1
+  Ag  Ag3  1  0.66714217  0.66714217  0.99857250  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_CsZrTeAuS2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.76036310
+_cell_length_b   8.76036310
+_cell_length_c   10.66480908
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   154.19461244
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsZrTeAuS2
+_chemical_formula_sum   'Cs2 Zr2 Te2 Au2 S4'
+_cell_volume   356.28840186
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.53086040  0.46913778  0.24999979  1
+  Au  Au1  1  0.46913778  0.53086040  0.75000030  1
+  Cs  Cs2  1  0.22053516  0.77946302  0.24999979  1
+  Cs  Cs3  1  0.77946302  0.22053516  0.75000030  1
+  S  S4  1  0.59944435  0.40055383  0.04774394  1
+  S  S5  1  0.59944435  0.40055383  0.45225563  1
+  S  S6  1  0.40055383  0.59944435  0.54774445  1
+  S  S7  1  0.40055383  0.59944435  0.95225521  1
+  Te  Te8  1  0.91447438  0.08552380  0.24999979  1
+  Te  Te9  1  0.08552380  0.91447438  0.75000030  1
+  Zr  Zr10  1  0.00000000  0.00000000  0.00000000  1
+  Zr  Zr11  1  0.00000000  0.00000000  0.49999957  1

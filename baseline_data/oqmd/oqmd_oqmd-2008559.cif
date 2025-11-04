@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Li4TePtO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.33101512
+_cell_length_b   5.33101512
+_cell_length_c   5.26892936
+_cell_angle_alpha   99.50732819
+_cell_angle_beta   99.50732819
+_cell_angle_gamma   120.12127890
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li4TePtO6
+_chemical_formula_sum   'Li4 Te1 Pt1 O6'
+_cell_volume   122.22224195
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.50135114  0.49864961  0.00000000  1
+  Li  Li1  1  0.97963355  0.02036705  0.49999949  1
+  Li  Li2  1  0.66534128  0.33465557  0.49999951  1
+  Li  Li3  1  0.34577988  0.65421697  0.49999951  1
+  O  O4  1  0.59082968  0.92516505  0.23445545  1
+  O  O5  1  0.91872047  0.55819027  0.24487047  1
+  O  O6  1  0.23172798  0.25153699  0.25342807  1
+  O  O7  1  0.74846428  0.76827330  0.74657293  1
+  O  O8  1  0.44181100  0.08128080  0.75513053  1
+  O  O9  1  0.07483555  0.40917092  0.76554354  1
+  Pt  Pt10  1  0.83541375  0.16458700  0.00000000  1
+  Te  Te11  1  0.16609578  0.83390497  0.00000000  1

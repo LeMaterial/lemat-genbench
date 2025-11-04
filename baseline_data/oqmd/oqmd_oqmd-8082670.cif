@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_ErAlCu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.81843775
+_cell_length_b   4.81843775
+_cell_length_c   5.79942471
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ErAlCu
+_chemical_formula_sum   'Er2 Al2 Cu2'
+_cell_volume   116.60792092
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.33333377  0.66666755  0.25000066  1
+  Al  Al1  1  0.66666652  0.33333257  0.75000025  1
+  Cu  Cu2  1  0.00000000  0.00000000  0.00000000  1
+  Cu  Cu3  1  0.00000000  0.00000000  0.49999959  1
+  Er  Er4  1  0.66666652  0.33333257  0.25000066  1
+  Er  Er5  1  0.33333377  0.66666755  0.75000025  1

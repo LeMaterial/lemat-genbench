@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_ErPd3Au4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.15355346
+_cell_length_b   4.16962901
+_cell_length_c   10.52693904
+_cell_angle_alpha   126.55506072
+_cell_angle_beta   101.37806896
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ErPd3Au4
+_chemical_formula_sum   'Er1 Pd3 Au4'
+_cell_volume   141.96448552
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.50000000  0.00000000  0.00000000  1
+  Pd  Pd1  1  0.00000000  0.50000000  0.00000000  1
+  Pd  Pd2  1  0.24699842  0.24113484  0.49399584  1
+  Pd  Pd3  1  0.75300158  0.75886516  0.50600416  1
+  Au  Au4  1  0.62948693  0.88866346  0.25897486  1
+  Au  Au5  1  0.37051307  0.11133654  0.74102514  1
+  Au  Au6  1  0.87031530  0.61074210  0.74063059  1
+  Au  Au7  1  0.12968470  0.38925790  0.25936941  1

@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_NiTeMo2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.08648788
+_cell_length_b   8.08648788
+_cell_length_c   8.08648788
+_cell_angle_alpha   22.82201941
+_cell_angle_beta   22.82201943
+_cell_angle_gamma   22.82201948
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NiTeMo2
+_chemical_formula_sum   'Ni1 Te1 Mo2'
+_cell_volume   69.80462448
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mo  Mo0  1  0.99107795  0.99107795  0.99107795  1
+  Mo  Mo1  1  0.24896828  0.24896828  0.24896828  1
+  Ni  Ni2  1  0.50577771  0.50577771  0.50577771  1
+  Te  Te3  1  0.75417606  0.75417606  0.75417606  1

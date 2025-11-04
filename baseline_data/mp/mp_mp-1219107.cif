@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_SmCdIn
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.86707519
+_cell_length_b   4.86707519
+_cell_length_c   7.64239093
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99998843
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmCdIn
+_chemical_formula_sum   'Sm2 Cd2 In2'
+_cell_volume   156.78194309
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.00000000  0.00000000  0.26275920  1
+  Sm  Sm1  1  0.00000000  0.00000000  0.73724080  1
+  Cd  Cd2  1  0.33333300  0.66666700  0.47129504  1
+  Cd  Cd3  1  0.66666700  0.33333300  0.52870496  1
+  In  In4  1  0.66666700  0.33333300  0.94619783  1
+  In  In5  1  0.33333300  0.66666700  0.05380217  1

@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_GaNiPPtS
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.53337174
+_cell_length_b   4.65058973
+_cell_length_c   5.75629681
+_cell_angle_alpha   75.05783155
+_cell_angle_beta   72.16582836
+_cell_angle_gamma   67.60179107
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   GaNiPPtS
+_chemical_formula_sum   'Ga1 Ni1 P1 Pt1 S1'
+_cell_volume   82.17311258
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.44223852  0.27893127  0.20287292  1
+  S  S1  1  0.48119115  0.57590929  0.83101097  1
+  Pt  Pt2  1  0.65942213  0.67639606  0.36797103  1
+  Ga  Ga3  1  0.77906246  0.91021278  0.89975445  1
+  P  P4  1  0.93062574  0.07939060  0.42653062  1

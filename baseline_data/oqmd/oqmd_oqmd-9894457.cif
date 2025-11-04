@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Pr2ErMg3Ir2Pd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.08511530
+_cell_length_b   7.44970421
+_cell_length_c   7.44970421
+_cell_angle_alpha   119.52430862
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr2ErMg3Ir2Pd
+_chemical_formula_sum   'Pr2 Er1 Mg3 Ir2 Pd1'
+_cell_volume   197.27627297
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.00000000  0.41365663  0.41365663  1
+  Ir  Ir1  1  0.50000058  0.65572074  0.33788149  1
+  Ir  Ir2  1  0.50000058  0.33788149  0.65572074  1
+  Mg  Mg3  1  0.50000058  0.24662800  0.00399561  1
+  Mg  Mg4  1  0.50000058  0.00399561  0.24662800  1
+  Mg  Mg5  1  0.50000058  0.75160827  0.75160827  1
+  Pd  Pd6  1  0.00000000  0.00812986  0.00812986  1
+  Pr  Pr7  1  0.00000000  0.58127366  0.00110690  1
+  Pr  Pr8  1  0.00000000  0.00110690  0.58127366  1

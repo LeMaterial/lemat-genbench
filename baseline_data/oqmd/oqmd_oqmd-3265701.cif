@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_MgAgSeO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.78969100
+_cell_length_b   3.78983999
+_cell_length_c   11.69464400
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99869085
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgAgSeO
+_chemical_formula_sum   'Mg2 Ag2 Se2 O2'
+_cell_volume   145.46149290
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.33332807  0.66665631  0.26160181  1
+  Ag  Ag1  1  0.66667020  0.33334339  0.76160164  1
+  Mg  Mg2  1  0.00000000  0.00000000  0.48923422  1
+  Mg  Mg3  1  0.00000000  0.00000000  0.98923405  1
+  O  O4  1  0.00000000  0.00000000  0.32763460  1
+  O  O5  1  0.00000000  0.00000000  0.82763443  1
+  Se  Se6  1  0.66668239  0.33336776  0.10922008  1
+  Se  Se7  1  0.33331588  0.66663193  0.60921991  1

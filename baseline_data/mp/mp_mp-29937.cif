@@ -1,0 +1,45 @@
+# generated using pymatgen
+data_Ho5(ReO6)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.76865339
+_cell_length_b   6.76865364
+_cell_length_c   7.46401372
+_cell_angle_alpha   73.72471057
+_cell_angle_beta   73.72471041
+_cell_angle_gamma   49.04898273
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho5(ReO6)2
+_chemical_formula_sum   'Ho5 Re2 O12'
+_cell_volume   245.71398068
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.31402642  0.31413929  0.82368026  1
+  Ho  Ho1  1  0.68586067  0.68597371  0.17631956  1
+  Ho  Ho2  1  -0.00219055  0.00219063  0.50000002  1
+  Ho  Ho3  1  0.69376364  0.70036799  0.64072217  1
+  Ho  Ho4  1  0.29963217  0.30623629  0.35927771  1
+  Re  Re5  1  0.21728958  0.78271036  0.00000005  1
+  Re  Re6  1  0.78712399  0.21287584  0.00000006  1
+  O  O7  1  0.50170399  0.49669909  0.17875375  1
+  O  O8  1  0.50330081  0.49829605  0.82124630  1
+  O  O9  1  -0.00042338  0.00437985  0.20713806  1
+  O  O10  1  0.99562005  0.00042332  0.79286202  1
+  O  O11  1  0.91320247  0.41502595  0.91408517  1
+  O  O12  1  0.58497381  0.08679764  0.08591481  1
+  O  O13  1  0.08819868  0.57620020  0.08521544  1
+  O  O14  1  0.59303536  0.10027405  0.57183516  1
+  O  O15  1  0.89972600  0.40696470  0.42816487  1
+  O  O16  1  0.40529403  0.90393781  0.42539339  1
+  O  O17  1  0.09606242  0.59470587  0.57460656  1
+  O  O18  1  0.42379982  0.91180137  0.91478462  1

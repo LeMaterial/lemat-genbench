@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_NaHfAgTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.54164581
+_cell_length_b   9.54164581
+_cell_length_c   9.17393856
+_cell_angle_alpha   100.92636930
+_cell_angle_beta   100.92636930
+_cell_angle_gamma   24.64784189
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaHfAgTe3
+_chemical_formula_sum   'Na2 Hf2 Ag2 Te6'
+_cell_volume   341.70242822
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.54353421  0.54353421  0.22539076  1
+  Ag  Ag1  1  0.45646554  0.45646554  0.77460983  1
+  Hf  Hf2  1  0.16436810  0.16436810  0.09013052  1
+  Hf  Hf3  1  0.83563219  0.83563219  0.90987006  1
+  Na  Na4  1  0.87530645  0.87530645  0.43360967  1
+  Na  Na5  1  0.12469384  0.12469384  0.56639091  1
+  Te  Te6  1  0.00000000  0.00000000  0.00000000  1
+  Te  Te7  1  0.32724185  0.32724185  0.12988778  1
+  Te  Te8  1  0.69380373  0.69380373  0.31839919  1
+  Te  Te9  1  0.50000014  0.50000014  0.50000029  1
+  Te  Te10  1  0.30619656  0.30619656  0.68160140  1
+  Te  Te11  1  0.67275790  0.67275790  0.87011280  1

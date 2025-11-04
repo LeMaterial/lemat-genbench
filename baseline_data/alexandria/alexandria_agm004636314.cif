@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Rb3Ca(NpSe3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.45879453
+_cell_length_b   7.45879453
+_cell_length_c   8.34298023
+_cell_angle_alpha   98.55690507
+_cell_angle_beta   98.55690510
+_cell_angle_gamma   120.00416542
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Rb3Ca(NpSe3)2
+_chemical_formula_sum   'Rb3 Ca1 Np2 Se6'
+_cell_volume   383.73666403
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rb  Rb0  1  0.16283424  0.83716576  0.50000000  1
+  Rb  Rb1  1  0.83716576  0.16283424  0.50000000  1
+  Rb  Rb2  1  0.50000000  0.50000000  0.50000000  1
+  Ca  Ca3  1  0.00000000  0.00000000  0.00000000  1
+  Np  Np4  1  0.33298039  0.66701961  0.00000000  1
+  Np  Np5  1  0.66701961  0.33298039  0.00000000  1
+  Se  Se6  1  0.93472156  0.58848796  0.80456892  1
+  Se  Se7  1  0.71879425  0.71879425  0.19413441  1
+  Se  Se8  1  0.06527844  0.41151204  0.19543108  1
+  Se  Se9  1  0.58848796  0.93472156  0.80456892  1
+  Se  Se10  1  0.28120575  0.28120575  0.80586559  1
+  Se  Se11  1  0.41151204  0.06527844  0.19543108  1

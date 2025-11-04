@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_U2AlRh2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.57403493
+_cell_length_b   5.17503576
+_cell_length_c   5.17503133
+_cell_angle_alpha   67.40532719
+_cell_angle_beta   63.77271651
+_cell_angle_gamma   63.77274064
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   U2AlRh2
+_chemical_formula_sum   'U2 Al1 Rh2'
+_cell_volume   95.81822854
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rh  Rh0  1  0.49999951  0.24789881  0.75210218  1
+  Rh  Rh1  1  0.50000049  0.75210119  0.24789782  1
+  U  U2  1  0.81849882  0.68150141  0.68150095  1
+  U  U3  1  0.18150118  0.31849859  0.31849905  1
+  Al  Al4  1  0.00000000  0.00000000  0.00000000  1

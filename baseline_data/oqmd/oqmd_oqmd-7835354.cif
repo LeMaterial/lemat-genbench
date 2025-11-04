@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Co2BH3O5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.87450436
+_cell_length_b   5.00031386
+_cell_length_c   5.30119553
+_cell_angle_alpha   89.37224865
+_cell_angle_beta   85.37580968
+_cell_angle_gamma   61.16619871
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Co2BH3O5
+_chemical_formula_sum   'Co2 B1 H3 O5'
+_cell_volume   112.76609894
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  B  B0  1  0.99025090  0.01698024  0.48638037  1
+  Co  Co1  1  0.33001986  0.35978605  0.37294861  1
+  Co  Co2  1  0.65316328  0.69840011  0.62185242  1
+  H  H3  1  0.62743069  0.83941676  0.07302456  1
+  H  H4  1  0.38737340  0.51147679  0.95013157  1
+  H  H5  1  0.04232111  0.50322749  0.98258988  1
+  O  O6  1  0.29068719  0.38375156  0.00408427  1
+  O  O7  1  0.72359184  0.00418652  0.43689954  1
+  O  O8  1  0.98830454  0.28880229  0.50635675  1
+  O  O9  1  0.25912255  0.74660167  0.51652482  1
+  O  O10  1  0.70773330  0.64736519  0.97642844  1

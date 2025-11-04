@@ -1,0 +1,45 @@
+# generated using pymatgen
+data_CaV4(NiO6)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.03393695
+_cell_length_b   6.89510194
+_cell_length_c   5.62943655
+_cell_angle_alpha   75.08197017
+_cell_angle_beta   103.51958506
+_cell_angle_gamma   96.80898948
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CaV4(NiO6)2
+_chemical_formula_sum   'Ca1 V4 Ni2 O12'
+_cell_volume   256.01756174
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ca  Ca0  1  0.26267300  0.34108500  0.24003300  1
+  V  V1  1  0.19678700  0.64327900  0.70709700  1
+  V  V2  1  0.39027900  0.86597200  0.17732600  1
+  V  V3  1  0.60869300  0.20462400  0.79294100  1
+  V  V4  1  0.79769600  0.41150600  0.28752000  1
+  Ni  Ni5  1  0.07293200  0.10240400  0.77232700  1
+  Ni  Ni6  1  0.91463900  0.94256300  0.27023300  1
+  O  O7  1  0.04019600  0.83450900  0.64668400  1
+  O  O8  1  0.08918600  0.40286800  0.79928900  1
+  O  O9  1  0.18188500  0.01810900  0.15702800  1
+  O  O10  1  0.31591200  0.65109000  0.46330800  1
+  O  O11  1  0.38296300  0.06780000  0.80848900  1
+  O  O12  1  0.35791700  0.65485000  0.99846800  1
+  O  O13  1  0.63409600  0.37633000  0.97865000  1
+  O  O14  1  0.62337100  0.93652600  0.29954200  1
+  O  O15  1  0.59033600  0.33525900  0.47324300  1
+  O  O16  1  0.80668600  0.05910900  0.88198500  1
+  O  O17  1  0.88929500  0.65228200  0.23702300  1
+  O  O18  1  0.97445800  0.21983400  0.38381400  1

@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_LaHgAu2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.03913600
+_cell_length_b   7.60973700
+_cell_length_c   8.28836600
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaHgAu2
+_chemical_formula_sum   'La4 Hg4 Au8'
+_cell_volume   380.90210948
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.57074721  0.55537793  0.21004864  1
+  Au  Au1  1  0.57074721  0.94462003  0.21004864  1
+  Au  Au2  1  0.07074688  0.05537905  0.28995100  1
+  Au  Au3  1  0.07074688  0.44462115  0.28995100  1
+  Au  Au4  1  0.92925213  0.55537793  0.71004828  1
+  Au  Au5  1  0.92925213  0.94462003  0.71004828  1
+  Au  Au6  1  0.42925180  0.05537905  0.78995184  1
+  Au  Au7  1  0.42925180  0.44462115  0.78995184  1
+  Hg  Hg8  1  0.35819362  0.25000076  0.09056429  1
+  Hg  Hg9  1  0.85819561  0.74999964  0.40943655  1
+  Hg  Hg10  1  0.14180505  0.25000076  0.59056514  1
+  Hg  Hg11  1  0.64180538  0.74999964  0.90943619  1
+  La  La12  1  0.15263773  0.74999964  0.04681260  1
+  La  La13  1  0.65263806  0.25000076  0.45318703  1
+  La  La14  1  0.34736095  0.74999964  0.54681345  1
+  La  La15  1  0.84736293  0.25000076  0.95318547  1

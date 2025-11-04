@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_GdMgSeO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.04292400
+_cell_length_b   4.04292323
+_cell_length_c   12.72193757
+_cell_angle_alpha   80.85719362
+_cell_angle_beta   99.14280828
+_cell_angle_gamma   120.00000630
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   GdMgSeO
+_chemical_formula_sum   'Gd2 Mg2 Se2 O2'
+_cell_volume   177.02681621
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Gd  Gd0  1  0.75580529  0.24419368  0.26741788  1
+  Gd  Gd1  1  0.24419543  0.75580774  0.73258212  1
+  Mg  Mg2  1  0.35857770  0.64142117  0.07573423  1
+  Mg  Mg3  1  0.64142159  0.35857740  0.92426577  1
+  O  O4  1  0.69408782  0.30591112  0.08226551  1
+  O  O5  1  0.30591289  0.69409030  0.91773449  1
+  Se  Se6  1  0.12718143  0.87282169  0.38154018  1
+  Se  Se7  1  0.87281955  0.12717947  0.61846062  1

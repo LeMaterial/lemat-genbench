@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Cs4Rb5Pd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.00786355
+_cell_length_b   14.86777199
+_cell_length_c   12.18368821
+_cell_angle_alpha   100.88421963
+_cell_angle_beta   101.85964210
+_cell_angle_gamma   89.99999949
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cs4Rb5Pd
+_chemical_formula_sum   'Cs4 Rb5 Pd1'
+_cell_volume   871.10042957
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.64888744  0.04031972  0.29777387  1
+  Cs  Cs1  1  0.00238758  0.16077008  0.00477616  1
+  Cs  Cs2  1  0.35111256  0.95968028  0.70222613  1
+  Cs  Cs3  1  0.99761242  0.83922992  0.99522384  1
+  Rb  Rb4  1  0.17238901  0.39363607  0.34477802  1
+  Rb  Rb5  1  0.17180673  0.71421587  0.34361245  1
+  Rb  Rb6  1  0.82819327  0.28578413  0.65638755  1
+  Rb  Rb7  1  0.50000000  0.50000000  0.00000000  1
+  Rb  Rb8  1  0.82761099  0.60636393  0.65522198  1
+  Pd  Pd9  1  0.50000000  0.00000000  -0.00000000  1

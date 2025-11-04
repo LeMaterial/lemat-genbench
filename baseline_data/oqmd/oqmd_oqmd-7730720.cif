@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Cs2PdS2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.82422209
+_cell_length_b   11.84995454
+_cell_length_c   3.73391992
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cs2PdS2
+_chemical_formula_sum   'Cs4 Pd2 S4'
+_cell_volume   301.94986212
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.58277851  0.15848922  0.00000000  1
+  Cs  Cs1  1  0.08277867  0.34151101  0.00000000  1
+  Cs  Cs2  1  0.91722103  0.65848945  0.00000000  1
+  Cs  Cs3  1  0.41722118  0.84151040  0.00000000  1
+  Pd  Pd4  1  0.00000000  0.00000000  0.00000000  1
+  Pd  Pd5  1  0.49999985  0.50000023  0.00000000  1
+  S  S6  1  0.15746703  0.09171850  0.50000001  1
+  S  S7  1  0.65746688  0.40828174  0.50000001  1
+  S  S8  1  0.34253281  0.59171873  0.50000001  1
+  S  S9  1  0.84253266  0.90828112  0.50000001  1

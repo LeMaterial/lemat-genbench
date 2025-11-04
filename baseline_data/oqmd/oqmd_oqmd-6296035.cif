@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Gd3HgF5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.45594967
+_cell_length_b   6.48284889
+_cell_length_c   5.70939790
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   92.65702395
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Gd3HgF5
+_chemical_formula_sum   'Gd3 Hg1 F5'
+_cell_volume   164.75148439
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  F  F0  1  0.68372018  0.00745814  0.17252589  1
+  F  F1  1  0.21741641  0.84015687  0.36300292  1
+  F  F2  1  0.00000000  0.20835747  0.50000001  1
+  F  F3  1  0.78258404  0.84015687  0.63699710  1
+  F  F4  1  0.31628027  0.00745814  0.82747413  1
+  Gd  Gd5  1  0.00000000  0.81466344  0.00000000  1
+  Gd  Gd6  1  0.50000023  0.11824277  0.50000001  1
+  Gd  Gd7  1  0.00000000  0.54575081  0.50000001  1
+  Hg  Hg8  1  0.49999892  0.46776194  0.00000000  1

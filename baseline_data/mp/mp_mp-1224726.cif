@@ -1,0 +1,48 @@
+# generated using pymatgen
+data_Gd3Bi(Ru2O7)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.31501351
+_cell_length_b   7.31501351
+_cell_length_c   7.31501304
+_cell_angle_alpha   59.82302055
+_cell_angle_beta   59.82302055
+_cell_angle_gamma   59.82301314
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Gd3Bi(Ru2O7)2
+_chemical_formula_sum   'Gd3 Bi1 Ru4 O14'
+_cell_volume   275.66540605
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Gd  Gd0  1  0.50000000  0.00000000  0.50000000  1
+  Gd  Gd1  1  0.00000000  0.50000000  0.50000000  1
+  Gd  Gd2  1  0.50000000  0.50000000  0.00000000  1
+  Bi  Bi3  1  0.50000000  0.50000000  0.50000000  1
+  Ru  Ru4  1  0.00000000  0.00000000  0.00000000  1
+  Ru  Ru5  1  0.00000000  0.50000000  0.00000000  1
+  Ru  Ru6  1  0.50000000  0.00000000  0.00000000  1
+  Ru  Ru7  1  0.00000000  0.00000000  0.50000000  1
+  O  O8  1  0.91876500  0.91876500  0.33118200  1
+  O  O9  1  0.33118200  0.91876500  0.91876500  1
+  O  O10  1  0.91876500  0.33118200  0.91876500  1
+  O  O11  1  0.32999700  0.32999700  0.91978200  1
+  O  O12  1  0.91978200  0.32999700  0.32999700  1
+  O  O13  1  0.32999700  0.91978200  0.32999700  1
+  O  O14  1  0.08123500  0.08123500  0.66881800  1
+  O  O15  1  0.66881800  0.08123500  0.08123500  1
+  O  O16  1  0.08123500  0.66881800  0.08123500  1
+  O  O17  1  0.67000300  0.67000300  0.08021800  1
+  O  O18  1  0.08021800  0.67000300  0.67000300  1
+  O  O19  1  0.67000300  0.08021800  0.67000300  1
+  O  O20  1  0.62671800  0.62671800  0.62671800  1
+  O  O21  1  0.37328200  0.37328200  0.37328200  1

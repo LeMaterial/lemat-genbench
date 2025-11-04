@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Cu2NiTe8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.92550637
+_cell_length_b   6.61429630
+_cell_length_c   6.61429631
+_cell_angle_alpha   77.36658656
+_cell_angle_beta   88.42043636
+_cell_angle_gamma   88.42043637
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cu2NiTe8
+_chemical_formula_sum   'Cu2 Ni1 Te8'
+_cell_volume   295.46359171
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.66958847  0.16423398  0.16423398  1
+  Cu  Cu1  1  0.33041153  0.83576602  0.83576602  1
+  Ni  Ni2  1  0.00000000  0.00000000  0.00000000  1
+  Te  Te3  1  0.13583834  0.12242226  0.59475520  1
+  Te  Te4  1  0.13583834  0.59475520  0.12242226  1
+  Te  Te5  1  0.86416166  0.87757774  0.40524480  1
+  Te  Te6  1  0.32639836  0.57346868  0.57346868  1
+  Te  Te7  1  0.86416166  0.40524480  0.87757774  1
+  Te  Te8  1  0.29522516  0.14231336  0.14231336  1
+  Te  Te9  1  0.70477484  0.85768664  0.85768664  1
+  Te  Te10  1  0.67360164  0.42653132  0.42653132  1

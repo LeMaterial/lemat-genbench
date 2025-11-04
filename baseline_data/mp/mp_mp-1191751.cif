@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_Dy11In9Ni4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.59253800
+_cell_length_b   12.94253048
+_cell_length_c   12.94253048
+_cell_angle_alpha   111.25144122
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy11In9Ni4
+_chemical_formula_sum   'Dy11 In9 Ni4'
+_cell_volume   560.86080975
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.00000000  0.92257000  0.58237300  1
+  Dy  Dy1  1  0.00000000  0.07743000  0.41762700  1
+  Dy  Dy2  1  0.00000000  0.58237300  0.92257000  1
+  Dy  Dy3  1  0.00000000  0.41762700  0.07743000  1
+  Dy  Dy4  1  0.00000000  0.15947500  0.84052500  1
+  Dy  Dy5  1  0.00000000  0.84052500  0.15947500  1
+  Dy  Dy6  1  0.00000000  0.37457600  0.62542400  1
+  Dy  Dy7  1  0.00000000  0.62542400  0.37457600  1
+  Dy  Dy8  1  0.00000000  0.68702200  0.68702200  1
+  Dy  Dy9  1  0.00000000  0.31297800  0.31297800  1
+  Dy  Dy10  1  0.00000000  0.00000000  0.00000000  1
+  In  In11  1  0.50000000  0.15942800  0.63154100  1
+  In  In12  1  0.50000000  0.84057200  0.36845900  1
+  In  In13  1  0.50000000  0.63154100  0.15942800  1
+  In  In14  1  0.50000000  0.36845900  0.84057200  1
+  In  In15  1  0.50000000  0.92219200  0.78025200  1
+  In  In16  1  0.50000000  0.07780800  0.21974800  1
+  In  In17  1  0.50000000  0.78025200  0.92219200  1
+  In  In18  1  0.50000000  0.21974800  0.07780800  1
+  In  In19  1  0.50000000  0.50000000  0.50000000  1
+  Ni  Ni20  1  0.50000000  0.75018500  0.54976600  1
+  Ni  Ni21  1  0.50000000  0.24981500  0.45023400  1
+  Ni  Ni22  1  0.50000000  0.54976600  0.75018500  1
+  Ni  Ni23  1  0.50000000  0.45023400  0.24981500  1

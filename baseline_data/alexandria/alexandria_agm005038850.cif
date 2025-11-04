@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_DyYNbN3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.33807362
+_cell_length_b   5.76076679
+_cell_length_c   8.63657231
+_cell_angle_alpha   102.80053350
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   DyYNbN3
+_chemical_formula_sum   'Dy2 Y2 Nb2 N6'
+_cell_volume   161.95256749
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.75000000  0.65291263  0.68698273  1
+  Dy  Dy1  1  0.25000000  0.34708737  0.31301727  1
+  Y  Y2  1  0.25000000  0.76930492  0.04836197  1
+  Y  Y3  1  0.75000000  0.23069508  0.95163803  1
+  Nb  Nb4  1  0.25000000  0.13580543  0.63347965  1
+  Nb  Nb5  1  0.75000000  0.86419457  0.36652035  1
+  N  N6  1  0.25000000  0.74771777  0.48777332  1
+  N  N7  1  0.75000000  0.04796330  0.17365583  1
+  N  N8  1  0.75000000  0.55898263  0.18244978  1
+  N  N9  1  0.75000000  0.25228223  0.51222668  1
+  N  N10  1  0.25000000  0.44101737  0.81755022  1
+  N  N11  1  0.25000000  0.95203670  0.82634417  1

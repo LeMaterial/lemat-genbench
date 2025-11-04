@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_K2U(Te2Pd)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.31524082
+_cell_length_b   8.11096115
+_cell_length_c   8.48818342
+_cell_angle_alpha   107.81519178
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   105.42714900
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K2U(Te2Pd)2
+_chemical_formula_sum   'K2 U1 Te4 Pd2'
+_cell_volume   271.58134359
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.86495611  0.72991222  0.42495555  1
+  K  K1  1  0.13504389  0.27008778  0.57504445  1
+  U  U2  1  0.00000000  0.00000000  0.00000000  1
+  Te  Te3  1  0.80235436  0.60470771  0.81382520  1
+  Te  Te4  1  0.19764564  0.39529229  0.18617480  1
+  Te  Te5  1  0.48846389  0.97692778  0.24518648  1
+  Te  Te6  1  0.51153611  0.02307222  0.75481352  1
+  Pd  Pd7  1  0.32134688  0.64269276  0.01130389  1
+  Pd  Pd8  1  0.67865312  0.35730724  0.98869611  1

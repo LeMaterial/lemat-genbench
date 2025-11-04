@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_PmCu2SiNi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.15932879
+_cell_length_b   4.17560834
+_cell_length_c   5.52297407
+_cell_angle_alpha   112.21119732
+_cell_angle_beta   112.12001614
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PmCu2SiNi
+_chemical_formula_sum   'Pm1 Cu2 Si1 Ni1'
+_cell_volume   81.12664897
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.44354835  0.44354835  0.88709671  1
+  Cu  Cu1  1  0.69708425  0.19708425  0.39416851  1
+  Cu  Cu2  1  0.05889923  0.05889923  0.11779846  1
+  Si  Si3  1  0.80957712  0.80957712  0.61915424  1
+  Ni  Ni4  1  0.20303103  0.70303103  0.40606207  1

@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Th2Mo2C3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.35519681
+_cell_length_b   6.35519681
+_cell_length_c   5.87244066
+_cell_angle_alpha   113.58694172
+_cell_angle_beta   113.58694172
+_cell_angle_gamma   31.21784019
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Th2Mo2C3
+_chemical_formula_sum   'Th2 Mo2 C3'
+_cell_volume   111.81696769
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  C  C0  1  0.00000000  0.00000000  0.00000000  1
+  C  C1  1  0.74649295  0.74649295  0.26382753  1
+  C  C2  1  0.25350640  0.25350640  0.73617180  1
+  Mo  Mo3  1  0.15862265  0.15862265  0.33028099  1
+  Mo  Mo4  1  0.84137789  0.84137789  0.66972022  1
+  Th  Th5  1  0.39506424  0.39506424  0.18650287  1
+  Th  Th6  1  0.60493549  0.60493549  0.81349834  1

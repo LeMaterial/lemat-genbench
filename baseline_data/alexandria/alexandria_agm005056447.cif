@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Er4SiGeC
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.63204402
+_cell_length_b   4.63204402
+_cell_length_c   8.17979734
+_cell_angle_alpha   106.44765704
+_cell_angle_beta   106.44765704
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Er4SiGeC
+_chemical_formula_sum   'Er4 Si1 Ge1 C1'
+_cell_volume   160.82025282
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.00081648  0.50081648  0.00163297  1
+  Er  Er1  1  0.50081648  0.00081648  0.00163297  1
+  Er  Er2  1  0.83207591  0.83207591  0.66415182  1
+  Er  Er3  1  0.16733673  0.16733673  0.33467346  1
+  Si  Si4  1  0.63615366  0.63615366  0.27230731  1
+  Ge  Ge5  1  0.36297217  0.36297217  0.72594435  1
+  C  C6  1  0.99982856  0.99982856  0.99965712  1

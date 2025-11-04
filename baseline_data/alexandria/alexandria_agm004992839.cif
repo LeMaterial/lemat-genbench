@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_KSrInAs2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.50643790
+_cell_length_b   9.86471861
+_cell_length_c   8.66739302
+_cell_angle_alpha   63.75425388
+_cell_angle_beta   74.93201378
+_cell_angle_gamma   76.79640935
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KSrInAs2
+_chemical_formula_sum   'K2 Sr2 In2 As4'
+_cell_volume   330.82644828
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.40138904  0.43099409  0.76622784  1
+  K  K1  1  0.59861096  0.56900591  0.23377216  1
+  Sr  Sr2  1  0.72981830  0.84441199  0.69595142  1
+  Sr  Sr3  1  0.27018170  0.15558801  0.30404858  1
+  In  In4  1  0.05705324  0.10713411  0.77876042  1
+  In  In5  1  0.94294676  0.89286589  0.22123958  1
+  As  As6  1  0.37863556  0.80086979  0.44185908  1
+  As  As7  1  0.62136444  0.19913021  0.55814092  1
+  As  As8  1  0.87856755  0.20675948  0.03610641  1
+  As  As9  1  0.12143245  0.79324052  0.96389359  1

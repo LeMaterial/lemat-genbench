@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Ga2GeAuSe6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.96343827
+_cell_length_b   8.75998804
+_cell_length_c   8.75998804
+_cell_angle_alpha   83.89711150
+_cell_angle_beta   76.84227584
+_cell_angle_gamma   76.84227586
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ga2GeAuSe6
+_chemical_formula_sum   'Ga4 Ge2 Au2 Se12'
+_cell_volume   505.83002800
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ga  Ga0  1  0.21797635  0.79915534  0.60571631  1
+  Ga  Ga1  1  0.28202365  0.39428369  0.20084466  1
+  Ga  Ga2  1  0.78202365  0.20084466  0.39428369  1
+  Ga  Ga3  1  0.71797635  0.60571631  0.79915534  1
+  Ge  Ge4  1  0.25000000  0.25843279  0.74156721  1
+  Ge  Ge5  1  0.75000000  0.74156721  0.25843279  1
+  Au  Au6  1  0.25000000  0.83987926  0.16012074  1
+  Au  Au7  1  0.75000000  0.16012074  0.83987926  1
+  Se  Se8  1  0.10824975  0.00371092  0.80000878  1
+  Se  Se9  1  0.39175025  0.19999122  0.99628908  1
+  Se  Se10  1  0.89175025  0.99628908  0.19999122  1
+  Se  Se11  1  0.60824975  0.80000878  0.00371092  1
+  Se  Se12  1  0.38800935  0.93585419  0.36924254  1
+  Se  Se13  1  0.11199065  0.63075746  0.06414581  1
+  Se  Se14  1  0.61199065  0.06414581  0.63075746  1
+  Se  Se15  1  0.88800935  0.36924254  0.93585419  1
+  Se  Se16  1  0.93448636  0.70070847  0.56286791  1
+  Se  Se17  1  0.56551364  0.43713209  0.29929153  1
+  Se  Se18  1  0.06551364  0.29929153  0.43713209  1
+  Se  Se19  1  0.43448636  0.56286791  0.70070847  1

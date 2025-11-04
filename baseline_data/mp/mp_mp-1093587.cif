@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_La2HgAu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   12.59025361
+_cell_length_b   12.59025361
+_cell_length_c   12.59025361
+_cell_angle_alpha   126.17654288
+_cell_angle_beta   117.51561622
+_cell_angle_gamma   87.00403663
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La2HgAu
+_chemical_formula_sum   'La2 Hg1 Au1'
+_cell_volume   1359.32170790
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.00000000  0.23730400  0.23730400  1
+  La  La1  1  0.00000000  0.76269600  0.76269600  1
+  Hg  Hg2  1  0.00000000  0.50000000  0.50000000  1
+  Au  Au3  1  0.00000000  0.00000000  0.00000000  1

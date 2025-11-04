@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_La3SnH2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.46937442
+_cell_length_b   7.41336237
+_cell_length_c   7.41336238
+_cell_angle_alpha   105.24741854
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La3SnH2
+_chemical_formula_sum   'La6 Sn2 H4'
+_cell_volume   290.00470040
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.00000000  0.14201178  0.14201178  1
+  H  H1  1  0.50000000  0.14201178  0.14201178  1
+  H  H2  1  0.00000000  0.85798822  0.85798822  1
+  H  H3  1  0.50000000  0.85798822  0.85798822  1
+  Sn  Sn4  1  0.75000000  0.68445441  0.31554559  1
+  Sn  Sn5  1  0.25000000  0.31554559  0.68445441  1
+  La  La6  1  0.25000000  0.87967988  0.12032012  1
+  La  La7  1  0.25000000  0.40624224  0.19258967  1
+  La  La8  1  0.75000000  0.19258967  0.40624224  1
+  La  La9  1  0.25000000  0.80741033  0.59375776  1
+  La  La10  1  0.75000000  0.59375776  0.80741033  1
+  La  La11  1  0.75000000  0.12032012  0.87967988  1

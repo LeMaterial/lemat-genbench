@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Nb12Al3Ge
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.19889500
+_cell_length_b   5.20215300
+_cell_length_c   10.39360800
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nb12Al3Ge
+_chemical_formula_sum   'Nb12 Al3 Ge1'
+_cell_volume   281.09977660
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nb  Nb0  1  0.50000000  0.00000000  0.37510100  1
+  Nb  Nb1  1  0.50000000  0.00000000  0.87495900  1
+  Nb  Nb2  1  0.75068400  0.50000000  0.00000000  1
+  Nb  Nb3  1  0.75006400  0.50000000  0.50000000  1
+  Nb  Nb4  1  0.00000000  0.74969600  0.25022800  1
+  Nb  Nb5  1  0.00000000  0.74969600  0.74977200  1
+  Nb  Nb6  1  0.50000000  0.00000000  0.12504100  1
+  Nb  Nb7  1  0.50000000  0.00000000  0.62489900  1
+  Nb  Nb8  1  0.24931600  0.50000000  0.00000000  1
+  Nb  Nb9  1  0.24993600  0.50000000  0.50000000  1
+  Nb  Nb10  1  0.00000000  0.25030400  0.25022800  1
+  Nb  Nb11  1  0.00000000  0.25030400  0.74977200  1
+  Al  Al12  1  0.50000000  0.50000000  0.25013700  1
+  Al  Al13  1  0.50000000  0.50000000  0.74986300  1
+  Al  Al14  1  0.00000000  0.00000000  0.00000000  1
+  Ge  Ge15  1  0.00000000  0.00000000  0.50000000  1

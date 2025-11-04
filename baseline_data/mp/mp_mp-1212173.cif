@@ -1,0 +1,43 @@
+# generated using pymatgen
+data_In6Ge2IrO8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.24822352
+_cell_length_b   7.24822352
+_cell_length_c   7.24822352
+_cell_angle_alpha   60.00000000
+_cell_angle_beta   60.00000000
+_cell_angle_gamma   60.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   In6Ge2IrO8
+_chemical_formula_sum   'In6 Ge2 Ir1 O8'
+_cell_volume   269.26489358
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  In  In0  1  0.75048100  0.24951900  0.24951900  1
+  In  In1  1  0.24951900  0.75048100  0.75048100  1
+  In  In2  1  0.24951900  0.75048100  0.24951900  1
+  In  In3  1  0.75048100  0.24951900  0.75048100  1
+  In  In4  1  0.24951900  0.24951900  0.75048100  1
+  In  In5  1  0.75048100  0.75048100  0.24951900  1
+  Ge  Ge6  1  0.25000000  0.25000000  0.25000000  1
+  Ge  Ge7  1  0.75000000  0.75000000  0.75000000  1
+  Ir  Ir8  1  0.00000000  0.00000000  0.00000000  1
+  O  O9  1  0.35290800  0.35290800  0.35290900  1
+  O  O10  1  0.64709200  0.64709200  0.64709200  1
+  O  O11  1  0.35290800  0.35290800  0.94127500  1
+  O  O12  1  0.35290800  0.94127500  0.35290800  1
+  O  O13  1  0.64709100  0.64709200  0.05872500  1
+  O  O14  1  0.64709200  0.05872500  0.64709200  1
+  O  O15  1  0.94127500  0.35290800  0.35290800  1
+  O  O16  1  0.05872500  0.64709200  0.64709200  1

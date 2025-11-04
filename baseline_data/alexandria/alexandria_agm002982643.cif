@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_H2Os2S
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.62341486
+_cell_length_b   5.62341486
+_cell_length_c   3.10025879
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   H2Os2S
+_chemical_formula_sum   'H4 Os4 S2'
+_cell_volume   98.03884719
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.41371318  0.91371318  0.00000000  1
+  H  H1  1  0.91371318  0.58628682  0.00000000  1
+  H  H2  1  0.58628682  0.08628682  0.00000000  1
+  H  H3  1  0.08628682  0.41371318  0.00000000  1
+  S  S4  1  0.00000000  0.00000000  0.00000000  1
+  S  S5  1  0.50000000  0.50000000  0.00000000  1
+  Os  Os6  1  0.31643224  0.81643224  0.50000000  1
+  Os  Os7  1  0.81643224  0.68356776  0.50000000  1
+  Os  Os8  1  0.68356776  0.18356776  0.50000000  1
+  Os  Os9  1  0.18356776  0.31643224  0.50000000  1

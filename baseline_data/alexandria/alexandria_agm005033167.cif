@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_ScSnTe3Au
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.22860136
+_cell_length_b   8.16163458
+_cell_length_c   10.46398284
+_cell_angle_alpha   107.78163689
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ScSnTe3Au
+_chemical_formula_sum   'Sc2 Sn2 Te6 Au2'
+_cell_volume   343.88366496
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sc  Sc0  1  0.25000000  0.71557921  0.18349145  1
+  Sc  Sc1  1  0.75000000  0.28442079  0.81650855  1
+  Sn  Sn2  1  0.25000000  0.30252567  0.28325797  1
+  Sn  Sn3  1  0.75000000  0.69747433  0.71674203  1
+  Te  Te4  1  0.75000000  0.95099196  0.15884189  1
+  Te  Te5  1  0.25000000  0.04900804  0.84115811  1
+  Te  Te6  1  0.25000000  0.70040302  0.46580073  1
+  Te  Te7  1  0.75000000  0.29959698  0.53419927  1
+  Te  Te8  1  0.75000000  0.43373033  0.11822546  1
+  Te  Te9  1  0.25000000  0.56626967  0.88177454  1
+  Au  Au10  1  0.25000000  0.11131485  0.59960643  1
+  Au  Au11  1  0.75000000  0.88868515  0.40039357  1

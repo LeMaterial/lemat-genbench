@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_ReNi2As
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.64923565
+_cell_length_b   4.64923565
+_cell_length_c   4.64923564
+_cell_angle_alpha   137.82761229
+_cell_angle_beta   128.78717003
+_cell_angle_gamma   68.43493338
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ReNi2As
+_chemical_formula_sum   'Re1 Ni2 As1'
+_cell_volume   51.68461059
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  As  As0  1  0.23559368  0.73559368  0.50000000  1
+  Ni  Ni1  1  0.01955784  0.01955784  1.00000000  1
+  Ni  Ni2  1  0.76125004  0.26125004  0.50000000  1
+  Re  Re3  1  0.48359844  0.48359844  0.00000000  1

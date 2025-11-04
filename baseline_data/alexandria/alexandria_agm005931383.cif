@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_La(NdNi)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.27043857
+_cell_length_b   6.47077648
+_cell_length_c   7.32422456
+_cell_angle_alpha   100.42826086
+_cell_angle_beta   89.99999999
+_cell_angle_gamma   118.98101054
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La(NdNi)2
+_chemical_formula_sum   'La2 Nd4 Ni4'
+_cell_volume   254.33919268
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.92394437  -0.00000000  0.25000000  1
+  La  La1  1  0.07605563  1.00000000  0.75000000  1
+  Nd  Nd2  1  0.55866885  0.31528110  0.15175600  1
+  Nd  Nd3  1  0.24338875  0.68471890  0.34824400  1
+  Nd  Nd4  1  0.44133115  0.68471890  0.84824400  1
+  Nd  Nd5  1  0.75661125  0.31528110  0.65175600  1
+  Ni  Ni6  1  0.68607094  0.68525944  0.49110587  1
+  Ni  Ni7  1  0.00081050  0.31473956  0.00889413  1
+  Ni  Ni8  1  0.31392906  0.31474056  0.50889413  1
+  Ni  Ni9  1  0.99918950  0.68526044  0.99110587  1

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Cs2PuTeO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.52999196
+_cell_length_b   6.40661774
+_cell_length_c   6.53132383
+_cell_angle_alpha   119.38096809
+_cell_angle_beta   121.25137071
+_cell_angle_gamma   89.98654961
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cs2PuTeO6
+_chemical_formula_sum   'Cs2 Pu1 Te1 O6'
+_cell_volume   191.32000425
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.74066981  0.25963366  0.51827971  1
+  Cs  Cs1  1  0.24671854  0.75356976  0.50627842  1
+  Pu  Pu2  1  0.49958410  0.50070818  0.00040341  1
+  Te  Te3  1  0.97154004  0.02878479  0.05667731  1
+  O  O4  1  0.76136510  0.77815487  0.01615240  1
+  O  O5  1  0.71959951  0.71224681  0.42339808  1
+  O  O6  1  0.28801874  0.28067309  0.99183525  1
+  O  O7  1  0.76133448  0.23896650  0.01616216  1
+  O  O8  1  0.22214879  0.23893408  0.47692476  1
+  O  O9  1  0.28799190  0.71227324  0.99183148  1

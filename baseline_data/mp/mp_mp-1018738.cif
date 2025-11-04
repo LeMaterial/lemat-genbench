@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_LaAl2BRu2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.22934600
+_cell_length_b   4.22934600
+_cell_length_c   5.67991800
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaAl2BRu2
+_chemical_formula_sum   'La1 Al2 B1 Ru2'
+_cell_volume   101.59878113
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.00000000  0.00000000  0.50000000  1
+  Al  Al1  1  0.50000000  0.50000000  0.74577000  1
+  Al  Al2  1  0.50000000  0.50000000  0.25423000  1
+  B  B3  1  0.00000000  0.00000000  0.00000000  1
+  Ru  Ru4  1  0.50000000  0.00000000  0.00000000  1
+  Ru  Ru5  1  0.00000000  0.50000000  0.00000000  1

@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Ba8As3I4N
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.42272109
+_cell_length_b   10.04847580
+_cell_length_c   9.42720878
+_cell_angle_alpha   118.02808376
+_cell_angle_beta   119.98425415
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba8As3I4N
+_chemical_formula_sum   'Ba8 As3 I4 N1'
+_cell_volume   649.47594965
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.21633341  0.69006948  0.97382892  1
+  Ba  Ba1  1  0.21900815  0.69229083  0.43801630  1
+  Ba  Ba2  1  0.26453791  0.29376165  0.52907581  1
+  Ba  Ba3  1  0.75749552  0.69006948  0.97382892  1
+  Ba  Ba4  1  0.24250448  0.30993052  0.02617108  1
+  Ba  Ba5  1  0.73546209  0.70623835  0.47092419  1
+  Ba  Ba6  1  0.78099185  0.30770917  0.56198370  1
+  Ba  Ba7  1  0.78366659  0.30993052  0.02617108  1
+  As  As8  1  0.50000000  0.50000000  0.00000000  1
+  As  As9  1  0.50000000  0.50000000  0.50000000  1
+  As  As10  1  -0.00000000  0.50000000  0.50000000  1
+  I  I11  1  0.50000000  0.00000000  0.00000000  1
+  I  I12  1  0.50000000  0.00000000  0.50000000  1
+  I  I13  1  0.00000000  0.00000000  0.00000000  1
+  I  I14  1  -0.00000000  0.00000000  0.50000000  1
+  N  N15  1  0.00000000  0.50000000  0.00000000  1

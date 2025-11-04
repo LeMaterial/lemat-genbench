@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_CaMn2CrN4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.12125836
+_cell_length_b   5.58836737
+_cell_length_c   10.22909064
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   106.21627596
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CaMn2CrN4
+_chemical_formula_sum   'Ca2 Mn4 Cr2 N8'
+_cell_volume   171.32467072
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ca  Ca0  1  0.09640851  0.19281703  0.75000000  1
+  Ca  Ca1  1  0.90359149  0.80718297  0.25000000  1
+  Mn  Mn2  1  0.37274085  0.74548169  0.54128646  1
+  Mn  Mn3  1  0.62725915  0.25451831  0.04128646  1
+  Mn  Mn4  1  0.62725915  0.25451831  0.45871354  1
+  Mn  Mn5  1  0.37274085  0.74548169  0.95871354  1
+  Cr  Cr6  1  0.83113298  0.66226597  0.75000000  1
+  Cr  Cr7  1  0.16886702  0.33773403  0.25000000  1
+  N  N8  1  0.26429259  0.52858517  0.11090010  1
+  N  N9  1  0.73570741  0.47141483  0.61090010  1
+  N  N10  1  0.73570741  0.47141483  0.88909990  1
+  N  N11  1  0.26429259  0.52858517  0.38909990  1
+  N  N12  1  0.00000000  0.00000000  0.50000000  1
+  N  N13  1  0.00000000  0.00000000  0.00000000  1
+  N  N14  1  0.42596070  0.85192139  0.75000000  1
+  N  N15  1  0.57403930  0.14807861  0.25000000  1

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Nd2BeAlPt6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.79121262
+_cell_length_b   7.28025673
+_cell_length_c   7.28022784
+_cell_angle_alpha   46.87414456
+_cell_angle_beta   66.56412120
+_cell_angle_gamma   90.00105492
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nd2BeAlPt6
+_chemical_formula_sum   'Nd2 Be1 Al1 Pt6'
+_cell_volume   187.83792961
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nd  Nd0  1  0.78530383  0.21472323  0.42940587  1
+  Nd  Nd1  1  0.21469894  0.78527875  0.57058933  1
+  Be  Be2  1  0.99999969  0.99999973  0.00000058  1
+  Al  Al3  1  0.49999947  0.49999958  0.00000096  1
+  Pt  Pt4  1  0.24102241  0.27890570  0.51795645  1
+  Pt  Pt5  1  0.72107894  0.75894592  0.03791650  1
+  Pt  Pt6  1  0.24101802  0.75893792  0.03792708  1
+  Pt  Pt7  1  0.75897998  0.24106013  0.96207695  1
+  Pt  Pt8  1  0.27891879  0.24105256  0.96208730  1
+  Pt  Pt9  1  0.75897694  0.72109347  0.48204498  1

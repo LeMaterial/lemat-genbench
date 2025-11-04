@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_TaAl(PbO3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.59975207
+_cell_length_b   5.59975229
+_cell_length_c   5.59916231
+_cell_angle_alpha   120.01221720
+_cell_angle_beta   120.01213408
+_cell_angle_gamma   89.98685126
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TaAl(PbO3)2
+_chemical_formula_sum   'Ta1 Al1 Pb2 O6'
+_cell_volume   124.11824401
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pb  Pb0  1  0.74998609  0.25000883  0.49999972  1
+  Pb  Pb1  1  0.25000174  0.75000513  0.49999954  1
+  Al  Al2  1  0.50000025  0.49999976  0.99999992  1
+  O  O3  1  0.74599020  0.74598433  0.49200481  1
+  O  O4  1  0.25401650  0.25400782  0.50799531  1
+  O  O5  1  0.25396974  0.74603019  0.00000159  1
+  O  O6  1  0.74603465  0.25396412  0.99999881  1
+  O  O7  1  0.74604146  0.74603074  0.99995856  1
+  O  O8  1  0.25396986  0.25395762  0.00004178  1
+  Ta  Ta9  1  0.00000051  0.99999946  0.99999995  1

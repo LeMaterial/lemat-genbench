@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_PrSm(HoP2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.07496010
+_cell_length_b   7.04995238
+_cell_length_c   7.05439291
+_cell_angle_alpha   70.52856334
+_cell_angle_beta   89.99971632
+_cell_angle_gamma   89.99968040
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PrSm(HoP2)2
+_chemical_formula_sum   'Pr1 Sm1 Ho2 P4'
+_cell_volume   191.06993204
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.49999900  0.50000150  0.99999950  1
+  Sm  Sm1  1  0.00000050  0.49999400  0.50000450  1
+  Ho  Ho2  1  -0.00000000  0.00000100  0.99999900  1
+  Ho  Ho3  1  0.50000000  0.00000100  0.49999900  1
+  P  P4  1  0.00000300  0.76112897  0.74372125  1
+  P  P5  1  0.99999600  0.23887253  0.25627725  1
+  P  P6  1  0.50000200  0.75922572  0.24941412  1
+  P  P7  1  0.49999700  0.24077528  0.75058488  1

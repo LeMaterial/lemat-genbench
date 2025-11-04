@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_DySc2PdO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.33746986
+_cell_length_b   4.33732692
+_cell_length_c   4.78864078
+_cell_angle_alpha   89.99810993
+_cell_angle_beta   89.99999904
+_cell_angle_gamma   89.99999828
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   DySc2PdO
+_chemical_formula_sum   'Dy1 Sc2 Pd1 O1'
+_cell_volume   90.08881770
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.00000003  0.99998849  0.49996846  1
+  Sc  Sc1  1  0.99999999  0.49999410  0.99989466  1
+  Sc  Sc2  1  0.49999999  0.99997828  0.00002064  1
+  Pd  Pd3  1  0.49999990  0.50003485  0.50015070  1
+  O  O4  1  0.00000009  0.00000827  0.99996554  1

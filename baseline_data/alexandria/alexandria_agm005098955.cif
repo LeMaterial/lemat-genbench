@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_NpAlCoH6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.26212831
+_cell_length_b   4.26214989
+_cell_length_c   4.40462706
+_cell_angle_alpha   89.99996318
+_cell_angle_beta   90.00001018
+_cell_angle_gamma   60.00022838
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NpAlCoH6
+_chemical_formula_sum   'Np1 Al1 Co1 H6'
+_cell_volume   69.29406079
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Np  Np0  1  0.99997429  0.00000492  0.99998997  1
+  Al  Al1  1  0.66663989  0.66667368  0.49999034  1
+  Co  Co2  1  0.33330671  0.33333862  0.49999006  1
+  H  H3  1  0.02494682  0.48751889  0.22153561  1
+  H  H4  1  0.48748686  0.02497911  0.77844496  1
+  H  H5  1  0.48748723  0.48751867  0.77844409  1
+  H  H6  1  0.02494713  0.48751892  0.77844463  1
+  H  H7  1  0.48748707  0.48751886  0.22153604  1
+  H  H8  1  0.48748749  0.02497840  0.22153529  1

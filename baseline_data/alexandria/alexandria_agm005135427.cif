@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Y2Al2SnPd5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.69066551
+_cell_length_b   10.04294647
+_cell_length_c   10.04294647
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Y2Al2SnPd5
+_chemical_formula_sum   'Y4 Al4 Sn2 Pd10'
+_cell_volume   372.24337917
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Y  Y0  1  0.00000000  0.68054460  0.18054460  1
+  Y  Y1  1  0.00000000  0.31945540  0.81945540  1
+  Y  Y2  1  0.00000000  0.18054460  0.31945540  1
+  Y  Y3  1  0.00000000  0.81945540  0.68054460  1
+  Al  Al4  1  0.00000000  0.11613682  0.61613682  1
+  Al  Al5  1  0.00000000  0.88386318  0.38386318  1
+  Al  Al6  1  0.00000000  0.61613682  0.88386318  1
+  Al  Al7  1  0.00000000  0.38386318  0.11613682  1
+  Sn  Sn8  1  0.00000000  0.00000000  0.00000000  1
+  Sn  Sn9  1  0.00000000  0.50000000  0.50000000  1
+  Pd  Pd10  1  0.50000000  0.21365980  0.06222920  1
+  Pd  Pd11  1  0.50000000  0.78634020  0.93777080  1
+  Pd  Pd12  1  0.50000000  0.06222920  0.78634020  1
+  Pd  Pd13  1  0.50000000  0.71365980  0.43777080  1
+  Pd  Pd14  1  0.50000000  0.93777080  0.21365980  1
+  Pd  Pd15  1  0.50000000  0.28634020  0.56222920  1
+  Pd  Pd16  1  0.50000000  0.56222920  0.71365980  1
+  Pd  Pd17  1  0.50000000  0.43777080  0.28634020  1
+  Pd  Pd18  1  0.50000000  0.50000000  0.00000000  1
+  Pd  Pd19  1  0.50000000  0.00000000  0.50000000  1

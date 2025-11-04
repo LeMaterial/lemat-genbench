@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Zr2Ti2Se2O5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.74354637
+_cell_length_b   3.74354674
+_cell_length_c   12.18335691
+_cell_angle_alpha   98.83305477
+_cell_angle_beta   98.83309149
+_cell_angle_gamma   89.99794345
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Zr2Ti2Se2O5
+_chemical_formula_sum   'Zr2 Ti2 Se2 O5'
+_cell_volume   166.66485780
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  O  O0  1  0.00000000  0.00000000  0.00000000  1
+  O  O1  1  0.10688619  0.60685707  0.21352968  1
+  O  O2  1  0.39314332  0.89311333  0.78647031  1
+  O  O3  1  0.60685668  0.10688667  0.21352969  1
+  O  O4  1  0.89311381  0.39314293  0.78647032  1
+  Se  Se5  1  0.21203635  0.21203646  0.42402268  1
+  Se  Se6  1  0.78796365  0.78796354  0.57597732  1
+  Zr  Zr7  1  0.33880595  0.33880568  0.67771479  1
+  Zr  Zr8  1  0.66119405  0.66119432  0.32228521  1
+  Ti  Ti9  1  0.07670789  0.07670837  0.15330958  1
+  Ti  Ti10  1  0.92329211  0.92329163  0.84669042  1

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_SrCd4S5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   16.23424601
+_cell_length_b   16.23424601
+_cell_length_c   16.23424610
+_cell_angle_alpha   14.11814923
+_cell_angle_beta   14.11814923
+_cell_angle_gamma   14.11814677
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrCd4S5
+_chemical_formula_sum   'Sr1 Cd4 S5'
+_cell_volume   221.57533454
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.00000000  0.00000000  0.00000000  1
+  Cd  Cd1  1  0.59699400  0.59699400  0.59699400  1
+  Cd  Cd2  1  0.19894300  0.19894300  0.19894300  1
+  Cd  Cd3  1  0.80105700  0.80105700  0.80105700  1
+  Cd  Cd4  1  0.40300600  0.40300600  0.40300600  1
+  S  S5  1  0.70476700  0.70476700  0.70476700  1
+  S  S6  1  0.50000000  0.50000000  0.50000000  1
+  S  S7  1  0.10201400  0.10201400  0.10201400  1
+  S  S8  1  0.29523300  0.29523300  0.29523300  1
+  S  S9  1  0.89798600  0.89798600  0.89798600  1

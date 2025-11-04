@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_LiCa(YAu2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.99695957
+_cell_length_b   4.99695957
+_cell_length_c   8.64184464
+_cell_angle_alpha   73.19506964
+_cell_angle_beta   73.19506962
+_cell_angle_gamma   59.99999995
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiCa(YAu2)2
+_chemical_formula_sum   'Li1 Ca1 Y2 Au4'
+_cell_volume   176.15292308
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.50000000  0.50000000  0.50000000  1
+  Ca  Ca1  1  0.00000000  0.00000000  0.00000000  1
+  Y  Y2  1  0.75448722  0.75448722  0.73653833  1
+  Y  Y3  1  0.24551278  0.24551278  0.26346167  1
+  Au  Au4  1  0.37828179  0.37828179  0.86515463  1
+  Au  Au5  1  0.87562778  0.87562778  0.37311665  1
+  Au  Au6  1  0.12437222  0.12437222  0.62688335  1
+  Au  Au7  1  0.62171821  0.62171821  0.13484537  1

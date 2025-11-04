@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_HfSc(Ga2Ni)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.40858913
+_cell_length_b   5.18074365
+_cell_length_c   5.18074365
+_cell_angle_alpha   46.03349375
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfSc(Ga2Ni)2
+_chemical_formula_sum   'Hf1 Sc1 Ga4 Ni2'
+_cell_volume   123.80145519
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ga  Ga0  1  0.29859146  0.13477213  0.13477213  1
+  Ga  Ga1  1  0.70140867  0.13477213  0.13477213  1
+  Ga  Ga2  1  0.20095999  0.86490956  0.86490956  1
+  Ga  Ga3  1  0.79904015  0.86490956  0.86490956  1
+  Hf  Hf4  1  0.00000000  0.57412716  0.57412716  1
+  Ni  Ni5  1  0.00000000  0.29272544  0.29272544  1
+  Ni  Ni6  1  0.49999929  0.70724566  0.70724566  1
+  Sc  Sc7  1  0.49999929  0.42653706  0.42653706  1

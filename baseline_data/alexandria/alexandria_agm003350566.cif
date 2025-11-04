@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Ac7Sn3Ir2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.58734075
+_cell_length_b   5.79772571
+_cell_length_c   14.16917650
+_cell_angle_alpha   101.80546204
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ac7Sn3Ir2
+_chemical_formula_sum   'Ac7 Sn3 Ir2'
+_cell_volume   449.28574763
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.00000000  0.38985217  0.77970333  1
+  Ac  Ac1  1  0.00000000  0.78727023  0.57454045  1
+  Ac  Ac2  1  0.00000000  0.00000000  0.00000000  1
+  Ac  Ac3  1  0.00000000  0.61014783  0.22029667  1
+  Ac  Ac4  1  0.50000000  0.09649986  0.19300072  1
+  Ac  Ac5  1  0.50000000  0.90350014  0.80699928  1
+  Ac  Ac6  1  0.00000000  0.21272977  0.42545955  1
+  Sn  Sn7  1  0.50000000  0.50000000  0.00000000  1
+  Sn  Sn8  1  0.50000000  0.69150822  0.38301643  1
+  Sn  Sn9  1  0.50000000  0.30849178  0.61698357  1
+  Ir  Ir10  1  0.00000000  0.89273671  0.78547443  1
+  Ir  Ir11  1  0.00000000  0.10726329  0.21452557  1

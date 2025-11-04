@@ -1,0 +1,31 @@
+{
+  "seed": 42,
+  "target_count": 151848,
+  "final_sample_size": 2500,
+  "databases": {
+    "mp": {
+      "total_fetched": 151848,
+      "sampled": 2500,
+      "unique_samples": 2473,
+      "output_dir": "baseline_data/mp"
+    },
+    "alexandria": {
+      "total_fetched": 151848,
+      "sampled": 2500,
+      "unique_samples": 2475,
+      "output_dir": "baseline_data/alexandria"
+    },
+    "oqmd": {
+      "total_fetched": 151848,
+      "sampled": 2500,
+      "unique_samples": 2487,
+      "output_dir": "baseline_data/oqmd"
+    },
+    "aflow": {
+      "total_fetched": 10000,
+      "sampled": 2500,
+      "unique_samples": 2203,
+      "output_dir": "baseline_data/aflow"
+    }
+  }
+}

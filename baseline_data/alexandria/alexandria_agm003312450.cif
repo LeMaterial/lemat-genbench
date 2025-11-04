@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_La2Zn3Co2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.42344785
+_cell_length_b   5.32905700
+_cell_length_c   6.53529737
+_cell_angle_alpha   105.17373580
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   114.52126947
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La2Zn3Co2
+_chemical_formula_sum   'La2 Zn3 Co2'
+_cell_volume   134.23493710
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.62474664  0.24949327  0.34771279  1
+  La  La1  1  0.37525336  0.75050673  0.65228721  1
+  Zn  Zn2  1  0.29253310  0.58506620  0.11736316  1
+  Zn  Zn3  1  0.00000000  0.00000000  0.00000000  1
+  Zn  Zn4  1  0.70746690  0.41493380  0.88263684  1
+  Co  Co5  1  0.07768207  0.15536415  0.67280513  1
+  Co  Co6  1  0.92231793  0.84463585  0.32719487  1

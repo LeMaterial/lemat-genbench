@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_KLuHgTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.04940789
+_cell_length_b   4.44270983
+_cell_length_c   11.15486713
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   108.31585837
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KLuHgTe3
+_chemical_formula_sum   'K2 Lu2 Hg2 Te6'
+_cell_volume   425.74898750
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hg  Hg0  1  0.57890102  0.25000057  0.11300650  1
+  Hg  Hg1  1  0.42109850  0.74999947  0.88699301  1
+  K  K2  1  0.25761734  0.74999947  0.21927251  1
+  K  K3  1  0.74238219  0.25000057  0.78072700  1
+  Lu  Lu4  1  0.82382500  0.74999947  0.36149689  1
+  Lu  Lu5  1  0.17617489  0.25000057  0.63850356  1
+  Te  Te6  1  0.75870383  0.74999947  0.06081355  1
+  Te  Te7  1  0.05170464  0.25000057  0.35598779  1
+  Te  Te8  1  0.58614532  0.25000057  0.36492002  1
+  Te  Te9  1  0.41385420  0.74999947  0.63507949  1
+  Te  Te10  1  0.94829525  0.74999947  0.64401266  1
+  Te  Te11  1  0.24129570  0.25000057  0.93918596  1

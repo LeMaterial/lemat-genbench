@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_Ho3PaTl3Te8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.82214532
+_cell_length_b   8.82179815
+_cell_length_c   9.69837200
+_cell_angle_alpha   117.05764885
+_cell_angle_beta   89.99970534
+_cell_angle_gamma   120.00190856
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho3PaTl3Te8
+_chemical_formula_sum   'Ho3 Pa1 Tl3 Te8'
+_cell_volume   556.22522326
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.50000000  0.00000000  0.50000000  1
+  Ho  Ho1  1  0.50000000  0.50000000  0.50000000  1
+  Ho  Ho2  1  0.00000000  0.50000000  0.50000000  1
+  Pa  Pa3  1  0.00000000  0.00000000  0.50000000  1
+  Tl  Tl4  1  0.00000000  0.00000000  0.00000000  1
+  Tl  Tl5  1  0.00000000  0.50000000  0.00000000  1
+  Tl  Tl6  1  0.50000000  0.50000000  0.00000000  1
+  Te  Te7  1  0.26264637  0.52529375  0.28798177  1
+  Te  Te8  1  0.73735363  0.47470625  0.71201823  1
+  Te  Te9  1  0.76136101  0.52272048  0.28738132  1
+  Te  Te10  1  0.23863899  0.47727952  0.71261868  1
+  Te  Te11  1  0.76136818  0.02596803  0.28739359  1
+  Te  Te12  1  0.23863182  0.97403197  0.71260641  1
+  Te  Te13  1  0.26459717  0.02597052  0.28739431  1
+  Te  Te14  1  0.73540283  0.97402948  0.71260569  1

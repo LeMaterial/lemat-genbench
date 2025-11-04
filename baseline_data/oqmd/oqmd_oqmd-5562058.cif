@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_KYFeSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.96431826
+_cell_length_b   4.07006383
+_cell_length_c   9.87991311
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   108.54601747
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KYFeSe3
+_chemical_formula_sum   'K2 Y2 Fe2 Se6'
+_cell_volume   341.75220947
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.57239940  0.25000099  0.08686819  1
+  Fe  Fe1  1  0.42760024  0.75000052  0.91313133  1
+  K  K2  1  0.28819718  0.75000052  0.25614950  1
+  K  K3  1  0.71180246  0.25000099  0.74385002  1
+  Se  Se4  1  0.71375256  0.75000052  0.03707442  1
+  Se  Se5  1  0.60019086  0.25000099  0.33973057  1
+  Se  Se6  1  0.04943090  0.25000099  0.34463511  1
+  Se  Se7  1  0.95057023  0.75000052  0.65536549  1
+  Se  Se8  1  0.39980877  0.75000052  0.66026896  1
+  Se  Se9  1  0.28624707  0.25000099  0.96292510  1
+  Y  Y10  1  0.83094322  0.75000052  0.35298371  1
+  Y  Y11  1  0.16905641  0.25000099  0.64701581  1

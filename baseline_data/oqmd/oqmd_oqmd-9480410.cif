@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Cu(AgCl3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.37888268
+_cell_length_b   6.59883340
+_cell_length_c   11.66966855
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   110.71730137
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cu(AgCl3)2
+_chemical_formula_sum   'Cu2 Ag4 Cl12'
+_cell_volume   459.45029053
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.65181897  0.13527391  0.16458063  1
+  Ag  Ag1  1  0.34818096  0.63527290  0.33541865  1
+  Ag  Ag2  1  0.65181835  0.36472659  0.66458082  1
+  Ag  Ag3  1  0.34818034  0.86472709  0.83541885  1
+  Cl  Cl4  1  0.90579321  0.28896926  0.07051898  1
+  Cl  Cl5  1  0.77312716  0.82480034  0.07415707  1
+  Cl  Cl6  1  0.58885056  0.46131639  0.24438768  1
+  Cl  Cl7  1  0.41114840  0.96131537  0.25561252  1
+  Cl  Cl8  1  0.22687180  0.32479984  0.42584313  1
+  Cl  Cl9  1  0.09420673  0.78896824  0.42948030  1
+  Cl  Cl10  1  0.90579258  0.21103124  0.57051918  1
+  Cl  Cl11  1  0.77312811  0.67519965  0.57415726  1
+  Cl  Cl12  1  0.58885151  0.03868411  0.74438787  1
+  Cl  Cl13  1  0.41114934  0.53868461  0.75561272  1
+  Cl  Cl14  1  0.22687274  0.17519915  0.92584333  1
+  Cl  Cl15  1  0.09420610  0.71103174  0.92948050  1
+  Cu  Cu16  1  0.00000000  0.00000000  0.00000000  1
+  Cu  Cu17  1  -0.00000000  0.50000050  0.50000020  1

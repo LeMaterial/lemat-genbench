@@ -1,0 +1,53 @@
+# generated using pymatgen
+data_HHe6(LiBe9)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.63536066
+_cell_length_b   7.63536066
+_cell_length_c   7.63536066
+_cell_angle_alpha   96.46945843
+_cell_angle_beta   96.46945843
+_cell_angle_gamma   96.46945843
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HHe6(LiBe9)2
+_chemical_formula_sum   'H1 He6 Li2 Be18'
+_cell_volume   435.92322037
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.00000000  -0.00000000  0.00000000  1
+  He  He1  1  0.16737627  0.79603621  0.35923253  1
+  He  He2  1  0.35923253  0.16737627  0.79603621  1
+  He  He3  1  0.79603621  0.35923253  0.16737627  1
+  He  He4  1  0.83262373  0.20396379  0.64076747  1
+  He  He5  1  0.64076747  0.83262373  0.20396379  1
+  He  He6  1  0.20396379  0.64076747  0.83262373  1
+  Li  Li7  1  0.32105095  0.32105095  0.32105095  1
+  Li  Li8  1  0.67894905  0.67894905  0.67894905  1
+  Be  Be9  1  0.40909642  0.81627114  0.40748803  1
+  Be  Be10  1  0.40748803  0.40909642  0.81627114  1
+  Be  Be11  1  0.81627114  0.40748803  0.40909642  1
+  Be  Be12  1  0.59090358  0.18372886  0.59251197  1
+  Be  Be13  1  0.59251197  0.59090358  0.18372886  1
+  Be  Be14  1  0.18372886  0.59251197  0.59090358  1
+  Be  Be15  1  0.18170127  0.94757427  0.17593039  1
+  Be  Be16  1  0.17593039  0.18170127  0.94757427  1
+  Be  Be17  1  0.94757427  0.17593039  0.18170127  1
+  Be  Be18  1  0.81829873  0.05242573  0.82406961  1
+  Be  Be19  1  0.82406961  0.81829873  0.05242573  1
+  Be  Be20  1  0.05242573  0.82406961  0.81829873  1
+  Be  Be21  1  0.12061872  0.58809223  0.20881737  1
+  Be  Be22  1  0.20881737  0.12061872  0.58809223  1
+  Be  Be23  1  0.58809223  0.20881737  0.12061872  1
+  Be  Be24  1  0.87938128  0.41190777  0.79118263  1
+  Be  Be25  1  0.79118263  0.87938128  0.41190777  1
+  Be  Be26  1  0.41190777  0.79118263  0.87938128  1

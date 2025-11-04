@@ -1,0 +1,45 @@
+# generated using pymatgen
+data_NpBe17Tc
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.65339896
+_cell_length_b   5.65339906
+_cell_length_c   5.65340006
+_cell_angle_alpha   82.74767750
+_cell_angle_beta   82.74769277
+_cell_angle_gamma   82.74768482
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NpBe17Tc
+_chemical_formula_sum   'Np1 Be17 Tc1'
+_cell_volume   176.68785464
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Np  Np0  1  0.66184774  0.66184774  0.66184774  1
+  Be  Be1  1  0.28782164  0.00663460  0.70554818  1
+  Be  Be2  1  0.70554818  0.28782164  0.00663460  1
+  Be  Be3  1  0.00663460  0.70554818  0.28782164  1
+  Be  Be4  1  0.28782164  0.70554818  0.00663460  1
+  Be  Be5  1  0.00663460  0.28782164  0.70554818  1
+  Be  Be6  1  0.70554818  0.00663460  0.28782164  1
+  Be  Be7  1  0.34122415  0.85703801  0.34122415  1
+  Be  Be8  1  0.34122415  0.34122415  0.85703801  1
+  Be  Be9  1  0.85703801  0.34122415  0.34122415  1
+  Be  Be10  1  0.65059329  0.16546823  0.65059329  1
+  Be  Be11  1  0.65059329  0.65059329  0.16546823  1
+  Be  Be12  1  0.16546823  0.65059329  0.65059329  1
+  Be  Be13  1  0.99947376  0.50122646  0.99947376  1
+  Be  Be14  1  0.99947376  0.99947376  0.50122646  1
+  Be  Be15  1  0.50122646  0.99947376  0.99947376  1
+  Be  Be16  1  0.90824596  0.90824596  0.90824596  1
+  Be  Be17  1  0.09979857  0.09979857  0.09979857  1
+  Tc  Tc18  1  0.32378280  0.32378280  0.32378280  1
