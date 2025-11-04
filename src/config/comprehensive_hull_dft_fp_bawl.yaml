@@ -1,60 +1,133 @@
-type: multi_mlip_stability
+type: comprehensive_hull_dft
 
-# General benchmark configuration
-description: "Comprehensive Multi-MLIP Stability Benchmark with DFT Hull and Short-BAWL Fingerprinting"
-version: "0.3.0"
+# This config runs all benchmark families using multi-MLIP ensemble with DFT hull
+# Each MLIP calculates energies with respect to the DFT hull for consistency
+# Validity benchmark and preprocessor are ALWAYS run automatically
 
-# MLIPs to include in the benchmark
-mlip_names:
-  - orb
-  - mace
-  - uma
+# Validity benchmark settings (always run - updated to match new implementation)
+validity_settings:
+  charge_tolerance: 0.1
+  distance_scaling: 0.5
+  min_atomic_density: 0.00001
+  max_atomic_density: 0.5
+  min_mass_density: 0.01
+  max_mass_density: 25.0
+  check_format: true
+  check_symmetry: true
 
-# Ensemble configuration
-use_ensemble: true                   # Calculate ensemble mean values
-ensemble_config:
-  min_mlips_required: 2              # Minimum MLIPs needed for ensemble statistics
+# Distribution benchmark settings
+mlips: ["orb", "mace", "uma"]
+cache_dir: "./data"
+js_distributions_file: "data/lematbulk_jsdistance_distributions.json"
+mmd_values_file: "data/lematbulk_mmd_values_15k.pkl"
 
-# Individual MLIP configurations (for reporting and fallback)
-individual_mlip_config:
-  use_all_available: true            # Use all available MLIP results
-  require_all_mlips: false           # Don't require all MLIPs to succeed (include partial results)
-  fallback_to_single: true           # Allow single-MLIP results if others failed
+# Fingerprinting method configuration
+fingerprint_method: "short-bawl"
 
-# Metastability threshold
-metastable_threshold: 0.1            # E_above_hull threshold for metastability (eV/atom)
+# Novelty benchmark settings (using short-bawl)
+novelty_settings:
+  reference_dataset: "LeMaterial/LeMat-Bulk"
+  reference_config: "compatible_pbe"
+  cache_reference: true
+  max_reference_size: null
+  n_jobs: 1
 
-# Preprocessor configuration: All MLIPs use DFT hull
+# Uniqueness benchmark settings (using short-bawl)
+uniqueness_settings:
+  n_jobs: 1
+
+# SUN benchmark settings (using short-bawl)
+sun_settings:
+  stability_threshold: 0.0
+  metastability_threshold: 0.1
+  include_metasun: true
+  reference_dataset: "LeMaterial/LeMat-Bulk"
+  reference_config: "compatible_pbe"
+  cache_reference: true
+  max_reference_size: null
+
+# HHI benchmark settings
+hhi_settings:
+  production_weight: 0.25
+  reserve_weight: 0.75
+  scale_to_0_10: true
+
+# Multi-MLIP stability settings with DFT hull calculations
+stability_settings:
+  use_ensemble: true
+  metastable_threshold: 0.1
+  ensemble_config:
+    min_mlips_required: 2
+  individual_mlip_config:
+    use_all_available: true
+    require_all_mlips: false
+    fallback_to_single: true
+
+# Preprocessor configuration for multi-MLIP hull calculations with DFT hull
 preprocessor_config:
-  model_name: multi_mlip             # Use the multi-MLIP preprocessor
+  model_name: multi_mlip
   mlip_configs:
     orb:
       model_type: orb_v3_conservative_inf_omat
-      # All MLIPs use DFT hull for consistency
-      hull_type: dft
-      # device: cpu # Device will be set by run_benchmarks.py or run_benchmarks_ssh.py
+      device: cpu
+      hull_type: dft  # Use DFT hull for consistency
     mace:
       model_type: mp
-      hull_type: dft
-      # device: cpu
+      device: cpu
+      hull_type: dft  # Use DFT hull for consistency
     uma:
       task: omat
-      hull_type: dft
-      # device: cpu
-  relax_structures: true             # Perform structure relaxation
+      device: cpu
+      hull_type: dft  # Use DFT hull for consistency
+  relax_structures: true
   relaxation_config:
-    fmax: 0.02                       # Max force for relaxation (eV/Å)
-    steps: 50                        # Max relaxation steps
-  calculate_formation_energy: true   # Calculate formation energy for each MLIP
-  calculate_energy_above_hull: true  # Calculate energy above hull for each MLIP
-  extract_embeddings: true           # Extract embeddings for each MLIP
-  timeout: 300                       # Timeout for each MLIP calculation (seconds)
+    fmax: 0.02
+    steps: 50
+  calculate_formation_energy: true
+  calculate_energy_above_hull: true  # This will use DFT hull for all MLIPs
+  extract_embeddings: true
+  timeout: 300
 
-# Fingerprint method configuration
-fingerprint_method: short-bawl       # Use short-BAWL fingerprinting
-
-# Reporting configuration: How results are presented
+# Reporting configuration
 reporting:
   include_individual_mlip_results: true    # Show per-model results alongside ensemble results
-  include_uncertainty_analysis: true       # Include standard deviation in ensemble results
-  include_ensemble_summary: true           # Include a summary of ensemble quality
+  include_uncertainty_analysis: true       # Include std deviation in results
+  include_ensemble_summary: true           # Include ensemble quality summary
+
+# Metadata
+description: "Comprehensive benchmark configuration using multi-MLIP ensemble with DFT hull and short-BAWL fingerprinting"
+version: "1.0.0"
+metadata:
+  reference: "Comprehensive evaluation using DFT convex hull for all MLIPs"
+  use_case: "Full evaluation across validity, distribution, novelty, uniqueness, and stability metrics using DFT hull"
+  fingerprinting_method: "short-bawl"
+  preprocessing_required: true
+  hull_calculation_method: "dft-consistent"
+  notes:
+    - "Validity benchmark and preprocessor are ALWAYS run automatically"
+    - "Uses short-BAWL fingerprinting for novelty, uniqueness, and SUN metrics"
+    - "All MLIPs calculate energies with respect to the same DFT convex hull"
+    - "Ensemble statistics computed from DFT hull energies across all MLIPs"
+    - "Individual MLIP results reported alongside ensemble results"
+    - "Consistent stability evaluation using DFT reference data"
+  performance_characteristics:
+    - "Preprocessing: Multi-MLIP calculations with DFT hull energies"
+    - "High consistency: All models use same DFT convex hull"
+    - "Memory intensive: Requires loading multiple MLIP models"
+    - "Computationally intensive: Full MLIP calculations + hull lookups"
+    - "Faster fingerprinting: short-BAWL is faster than structure-matcher"
+  recommended_usage:
+    - "Research applications requiring consistent stability evaluation across MLIPs"
+    - "When comparing different MLIPs on equal footing"
+    - "Ensemble-based stability assessment with DFT reference"
+    - "Comparative analysis without model-specific hull bias"
+    - "When speed is important (short-BAWL faster than structure-matcher)"
+  limitations:
+    - "Requires significant computational resources"
+    - "Slower than single-MLIP approaches"
+    - "Memory intensive due to multiple model loading"
+  accuracy_benefits:
+    - "Consistent DFT hull reference for all MLIPs"
+    - "Eliminates model-specific hull biases"
+    - "Provides uncertainty quantification through ensemble statistics"
+    - "Fair comparison across different MLIP architectures"
