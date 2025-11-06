@@ -218,3 +218,6 @@ command.txt
 results_october/
 results_before_and_after_relax/
 results_neurips/
+
+baseline_data/
+baseline_results/

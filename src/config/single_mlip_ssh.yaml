@@ -29,8 +29,7 @@ js_distributions_file: "data/lematbulk_jsdistance_distributions.json"
 mmd_values_file: "data/lematbulk_mmd_values_15k.pkl"
 
 # Novelty/Uniqueness settings
-reference_dataset: "LeMaterial/LeMat-Bulk"
-reference_config: "compatible_pbe"
+reference_dataset_path: "mp-20-data/mp_20.csv"
 fingerprint_method: "structure-matcher"  # Fast matching for relaxation comparison
 cache_reference: true
 max_reference_size: null

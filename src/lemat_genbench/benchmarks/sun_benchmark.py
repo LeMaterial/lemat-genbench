@@ -32,8 +32,7 @@ class SUNBenchmark(BaseBenchmark):
         self,
         stability_threshold: float = 0.0,
         metastability_threshold: float = 0.1,
-        reference_dataset: str = "LeMaterial/LeMat-Bulk",
-        reference_config: str = "compatible_pbe",
+        reference_dataset_path: str = "mp-20-data/mp_20.csv",
         fingerprint_method: str = "bawl",
         cache_reference: bool = True,
         max_reference_size: int = None,
@@ -50,13 +49,11 @@ class SUNBenchmark(BaseBenchmark):
             Energy above hull threshold for stability (eV/atom).
         metastability_threshold : float, default=0.1
             Energy above hull threshold for metastability (eV/atom).
-        reference_dataset : str, default="LeMaterial/LeMat-Bulk"
-            HuggingFace dataset name to use as reference for novelty.
-        reference_config : str, default="compatible_pbe"
-            Configuration/subset of the reference dataset to use.
+        reference_dataset_path : str, default="mp-20-data/mp_20.csv"
+            Path to MP-20 CSV file to use as reference for novelty.
         fingerprint_method : str, default="bawl"
             Method to use for structure fingerprinting/comparison.
-            Supports: "bawl", "short-bawl", "structure-matcher", "pdd"
+            Supports: "bawl", "short-bawl", "structure-matcher"
         cache_reference : bool, default=True
             Whether to cache the reference dataset fingerprints.
         max_reference_size : int | None, default=None
@@ -73,17 +70,16 @@ class SUNBenchmark(BaseBenchmark):
         if description is None:
             description = (
                 "Evaluates the SUN (Stable, Unique, Novel) rate of crystal structures "
-                "using the new hierarchical order: Stability → Uniqueness → Novelty. "
+                "using the hierarchical order: Stability → Uniqueness → Novelty. "
                 "Measures the proportion that are simultaneously stable, unique within "
-                "the stable/metastable sets, and novel compared to reference datasets."
+                "the stable/metastable sets, and novel compared to MP-20 reference."
             )
 
         # Initialize the main SUN metric
         sun_metric = SUNMetric(
             stability_threshold=stability_threshold,
             metastability_threshold=metastability_threshold,
-            reference_dataset=reference_dataset,
-            reference_config=reference_config,
+            reference_dataset_path=reference_dataset_path,
             fingerprint_method=fingerprint_method,
             cache_reference=cache_reference,
             max_reference_size=max_reference_size,
@@ -104,8 +100,7 @@ class SUNBenchmark(BaseBenchmark):
         if include_metasun:
             metasun_metric = MetaSUNMetric(
                 metastability_threshold=metastability_threshold,
-                reference_dataset=reference_dataset,
-                reference_config=reference_config,
+                reference_dataset_path=reference_dataset_path,
                 fingerprint_method=fingerprint_method,
                 cache_reference=cache_reference,
                 max_reference_size=max_reference_size,
@@ -128,8 +123,7 @@ class SUNBenchmark(BaseBenchmark):
             "computation_order": "Stability → Uniqueness → Novelty",
             "stability_threshold": stability_threshold,
             "metastability_threshold": metastability_threshold,
-            "reference_dataset": reference_dataset,
-            "reference_config": reference_config,
+            "reference_dataset_path": reference_dataset_path,
             "fingerprint_method": fingerprint_method,
             "max_reference_size": max_reference_size,
             "include_metasun": include_metasun,

@@ -1,10 +1,9 @@
 type: "novelty"
-description: "Novelty Benchmark for Materials Generation"
+description: "Novelty Benchmark for Materials Generation using MP-20 Reference"
 version: "0.1.0"
 
 # Reference dataset configuration
-reference_dataset: "LeMaterial/LeMat-Bulk"
-reference_config: "compatible_pbe"
+reference_dataset_path: "mp-20-data/mp_20.csv"
 fingerprint_method: "bawl"
 
 # Performance and caching settings

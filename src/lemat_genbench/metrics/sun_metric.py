@@ -38,13 +38,11 @@ class SUNConfig(MetricConfig):
     metastability_threshold : float, default=0.1
         Energy above hull threshold for metastability (eV/atom).
         Used for MetaSUN calculations.
-    reference_dataset : str, default="LeMaterial/LeMat-Bulk"
-        HuggingFace dataset name to use as reference for novelty.
-    reference_config : str, default="compatible_pbe"
-        Configuration/subset of the reference dataset to use.
+    reference_dataset_path : str, default="mp-20-data/mp_20.csv"
+        Path to MP-20 CSV file to use as reference for novelty.
     fingerprint_method : str, default="bawl"
         Method to use for structure fingerprinting.
-        Supports: "bawl", "short-bawl", "structure-matcher", "pdd"
+        Supports: "bawl", "short-bawl", "structure-matcher"
     cache_reference : bool, default=True
         Whether to cache the reference dataset fingerprints.
     max_reference_size : int | None, default=None
@@ -53,25 +51,24 @@ class SUNConfig(MetricConfig):
 
     stability_threshold: float = 0.0
     metastability_threshold: float = 0.1
-    reference_dataset: str = "LeMaterial/LeMat-Bulk"
-    reference_config: str = "compatible_pbe"
+    reference_dataset_path: str = "mp-20-data/mp_20.csv"
     fingerprint_method: str = "bawl"
     cache_reference: bool = True
     max_reference_size: Optional[int] = None
 
 
 class SUNMetric(BaseMetric):
-    """Evaluate SUN (Stable, Unique, Novel) rate of structures.
+    """Evaluate SUN (Stable, Unique, Novel) rate using MP-20 reference.
 
     This metric computes the proportion of structures that are simultaneously:
     1. Stable (e_above_hull <= stability_threshold) [computed first]
     2. Unique (not duplicated within the stable set) [computed second]
-    3. Novel (not present in reference dataset) [computed third]
+    3. Novel (not present in MP-20 reference) [computed third]
 
-    **NEW COMPUTATION ORDER**: Stability → Uniqueness → Novelty
+    **COMPUTATION ORDER**: Stability → Uniqueness → Novelty
     
-    Key changes from the original implementation:
-    - **Order changed**: Now computes stability first, then uniqueness within stable/metastable sets,
+    Key features:
+    - **Hierarchical evaluation**: Computes stability first, then uniqueness within stable/metastable sets,
       then novelty within unique stable/metastable structures
     - **Structure matcher support**: Handles both fingerprinting and structure matcher methods
     - **Hierarchical reporting**: Reports counts at each stage of the hierarchy
@@ -84,7 +81,7 @@ class SUNMetric(BaseMetric):
     - G is the complete set of generated structures
     - S is the subset of stable structures from G
     - S_unique is the subset of unique structures within S
-    - T is the reference dataset
+    - T is the MP-20 reference dataset
 
     Output metrics include hierarchical counts:
     - Level 1: stable_count, metastable_count (from all structures)
@@ -97,13 +94,11 @@ class SUNMetric(BaseMetric):
         Energy above hull threshold for stability.
     metastability_threshold : float, default=0.1
         Energy above hull threshold for metastability (for MetaSUN).
-    reference_dataset : str, default="LeMaterial/LeMat-Bulk"
-        HuggingFace dataset name to use as reference.
-    reference_config : str, default="compatible_pbe"
-        Configuration/subset of the reference dataset to use.
+    reference_dataset_path : str, default="mp-20-data/mp_20.csv"
+        Path to MP-20 CSV file to use as reference.
     fingerprint_method : str, default="bawl"
         Method to use for structure fingerprinting/comparison.
-        Supports: "bawl", "short-bawl", "structure-matcher", "pdd"
+        Supports: "bawl", "short-bawl", "structure-matcher"
     cache_reference : bool, default=True
         Whether to cache the reference dataset fingerprints.
     max_reference_size : int | None, default=None
@@ -122,8 +117,7 @@ class SUNMetric(BaseMetric):
         self,
         stability_threshold: float = 0.0,
         metastability_threshold: float = 0.1,
-        reference_dataset: str = "LeMaterial/LeMat-Bulk",
-        reference_config: str = "compatible_pbe",
+        reference_dataset_path: str = "mp-20-data/mp_20.csv",
         fingerprint_method: str = "bawl",
         cache_reference: bool = True,
         max_reference_size: Optional[int] = None,
@@ -149,8 +143,7 @@ class SUNMetric(BaseMetric):
             n_jobs=self.config.n_jobs,
             stability_threshold=stability_threshold,
             metastability_threshold=metastability_threshold,
-            reference_dataset=reference_dataset,
-            reference_config=reference_config,
+            reference_dataset_path=reference_dataset_path,
             fingerprint_method=fingerprint_method,
             cache_reference=cache_reference,
             max_reference_size=max_reference_size,
@@ -163,8 +156,7 @@ class SUNMetric(BaseMetric):
         )
 
         self.novelty_metric = NoveltyMetric(
-            reference_dataset=reference_dataset,
-            reference_config=reference_config,
+            reference_dataset_path=reference_dataset_path,
             fingerprint_method=fingerprint_method,
             cache_reference=cache_reference,
             max_reference_size=max_reference_size,

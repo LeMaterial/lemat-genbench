@@ -1,7 +1,7 @@
 type: sun
 
 # SUN (Stable, Unique, Novel) Benchmark Configuration
-description: "SUN Benchmark for evaluating structures that are Stable, Unique, and Novel"
+description: "SUN Benchmark for evaluating structures that are Stable, Unique, and Novel using MP-20"
 version: "0.1.0"
 
 # Core SUN configuration
@@ -12,8 +12,7 @@ stability_threshold: 0.0                # Energy above hull threshold for stabil
 metastability_threshold: 0.1            # Energy above hull threshold for metastability (MetaSUN)
 
 # Reference dataset configuration for novelty evaluation
-reference_dataset: "LeMaterial/LeMat-Bulk"
-reference_config: "compatible_pbe"
+reference_dataset_path: "mp-20-data/mp_20.csv"
 fingerprint_method: "bawl"              # Method for structure fingerprinting (uniqueness & novelty)
 
 # Performance and caching settings

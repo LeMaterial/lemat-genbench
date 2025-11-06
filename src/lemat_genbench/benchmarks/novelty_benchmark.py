@@ -18,14 +18,13 @@ class NoveltyBenchmark(BaseBenchmark):
     """Benchmark for evaluating the novelty of generated material structures.
 
     This benchmark uses the NoveltyMetric to compare generated structures
-    against reference datasets (like LeMat-Bulk) to determine how many
+    against the MP-20 reference dataset to determine how many
     structures are truly novel vs. known materials.
     """
 
     def __init__(
         self,
-        reference_dataset: str = "LeMaterial/LeMat-Bulk",
-        reference_config: str = "compatible_pbe",
+        reference_dataset_path: str = "mp-20-data/mp_20.csv",
         fingerprint_method: str = "bawl",
         cache_reference: bool = True,
         max_reference_size: int = None,
@@ -38,10 +37,8 @@ class NoveltyBenchmark(BaseBenchmark):
 
         Parameters
         ----------
-        reference_dataset : str, default="LeMaterial/LeMat-Bulk"
-            HuggingFace dataset name to use as reference for known materials.
-        reference_config : str, default="compatible_pbe"
-            Configuration/subset of the reference dataset to use.
+        reference_dataset_path : str, default="mp-20-data/mp_20.csv"
+            Path to MP-20 CSV file to use as reference for known materials.
         fingerprint_method : str, default="bawl"
             Method to use for structure fingerprinting.
         cache_reference : bool, default=True
@@ -58,14 +55,13 @@ class NoveltyBenchmark(BaseBenchmark):
         if description is None:
             description = (
                 "Evaluates the novelty of crystal structures by comparing them "
-                "against known materials in reference datasets using structure "
+                "against known materials in MP-20 reference dataset using structure "
                 "fingerprinting to identify truly novel materials."
             )
 
         # Initialize the novelty metric
         novelty_metric = NoveltyMetric(
-            reference_dataset=reference_dataset,
-            reference_config=reference_config,
+            reference_dataset_path=reference_dataset_path,
             fingerprint_method=fingerprint_method,
             cache_reference=cache_reference,
             max_reference_size=max_reference_size,
@@ -76,7 +72,7 @@ class NoveltyBenchmark(BaseBenchmark):
         evaluator_configs = {
             "novelty": EvaluatorConfig(
                 name="novelty",
-                description=("Evaluates structural novelty against reference datasets"),
+                description=("Evaluates structural novelty against MP-20 reference"),
                 metrics={"novelty": novelty_metric},
                 weights={"novelty": 1.0},
                 aggregation_method="weighted_mean",
@@ -87,8 +83,7 @@ class NoveltyBenchmark(BaseBenchmark):
         benchmark_metadata = {
             "version": "0.1.0",
             "category": "novelty",
-            "reference_dataset": reference_dataset,
-            "reference_config": reference_config,
+            "reference_dataset_path": reference_dataset_path,
             "fingerprint_method": fingerprint_method,
             "max_reference_size": max_reference_size,
             **(metadata or {}),

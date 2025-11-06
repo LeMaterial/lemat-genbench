@@ -26,8 +26,7 @@ fingerprint_method: "short-bawl"
 
 # Novelty benchmark settings (using short-BAWL fingerprinting)
 novelty_settings:
-  reference_dataset: "LeMaterial/LeMat-Bulk"
-  reference_config: "compatible_pbe"
+  reference_dataset_path: "mp-20-data/mp_20.csv"
   cache_reference: true
   max_reference_size: null
   n_jobs: 1
@@ -41,8 +40,7 @@ sun_settings:
   stability_threshold: 0.0
   metastability_threshold: 0.1
   include_metasun: true
-  reference_dataset: "LeMaterial/LeMat-Bulk"
-  reference_config: "compatible_pbe"
+  reference_dataset_path: "mp-20-data/mp_20.csv"
   cache_reference: true
   max_reference_size: null
 
