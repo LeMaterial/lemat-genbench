@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_CeAlAu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.57402022
+_cell_length_b   7.48377489
+_cell_length_c   7.77365616
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CeAlAu
+_chemical_formula_sum   'Ce4 Al4 Au4'
+_cell_volume   266.09953960
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.24999999  0.00985521  0.30420015  1
+  Ce  Ce1  1  0.74999996  0.49014446  0.80420040  1
+  Ce  Ce2  1  0.74999996  0.99014413  0.69580034  1
+  Ce  Ce3  1  0.24999999  0.50985488  0.19580009  1
+  Al  Al4  1  0.24999999  0.17765025  0.91711783  1
+  Al  Al5  1  0.74999996  0.32234942  0.41711759  1
+  Al  Al6  1  0.74999996  0.82234910  0.08288266  1
+  Al  Al7  1  0.24999999  0.67764992  0.58288291  1
+  Au  Au8  1  0.24999999  0.29810389  0.59105802  1
+  Au  Au9  1  0.74999996  0.20189578  0.09105778  1
+  Au  Au10  1  0.74999996  0.70189545  0.40894247  1
+  Au  Au11  1  0.24999999  0.79810357  0.90894272  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_CeMgSn
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.61460551
+_cell_length_b   7.66290638
+_cell_length_c   9.06857239
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CeMgSn
+_chemical_formula_sum   'Ce4 Mg4 Sn4'
+_cell_volume   320.67641847
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.25000024  0.01883415  0.31874717  1
+  Ce  Ce1  1  0.75000073  0.48116609  0.81874704  1
+  Ce  Ce2  1  0.75000073  0.98116633  0.68125256  1
+  Ce  Ce3  1  0.25000024  0.51883438  0.18125270  1
+  Mg  Mg4  1  0.25000024  0.15928271  0.93112963  1
+  Mg  Mg5  1  0.75000073  0.34071753  0.43112976  1
+  Mg  Mg6  1  0.75000073  0.84071777  0.06887010  1
+  Mg  Mg7  1  0.25000024  0.65928294  0.56886997  1
+  Sn  Sn8  1  0.25000024  0.27332760  0.61366695  1
+  Sn  Sn9  1  0.75000073  0.22667263  0.11366709  1
+  Sn  Sn10  1  0.75000073  0.72667287  0.38633278  1
+  Sn  Sn11  1  0.25000024  0.77332784  0.88633265  1

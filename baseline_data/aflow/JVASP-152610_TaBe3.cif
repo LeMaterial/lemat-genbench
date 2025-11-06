@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_TaBe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.43769043
+_cell_length_b   7.43769043
+_cell_length_c   7.43769043
+_cell_angle_alpha   35.59421721
+_cell_angle_beta   35.59421721
+_cell_angle_gamma   35.59421721
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TaBe3
+_chemical_formula_sum   'Ta3 Be9'
+_cell_volume   124.58307123
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ta  Ta0  1  0.14022984  0.14022984  0.14022980  1
+  Ta  Ta1  1  0.85977019  0.85977019  0.85976996  1
+  Ta  Ta2  1  0.00000000  0.00000000  0.00000000  1
+  Be  Be3  1  0.07464765  0.58395717  0.58395660  1
+  Be  Be4  1  0.58395717  0.07464765  0.58395660  1
+  Be  Be5  1  0.58395659  0.58395659  0.07464788  1
+  Be  Be6  1  0.92535237  0.41604285  0.41604316  1
+  Be  Be7  1  0.41604344  0.41604344  0.92535188  1
+  Be  Be8  1  0.41604285  0.92535237  0.41604316  1
+  Be  Be9  1  0.33453149  0.33453149  0.33453141  1
+  Be  Be10  1  0.66546853  0.66546853  0.66546836  1
+  Be  Be11  1  0.50000001  0.50000001  0.49999988  1

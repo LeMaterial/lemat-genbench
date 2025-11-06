@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_MnFeP
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.52119752
+_cell_length_b   5.78681271
+_cell_length_c   6.62593458
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MnFeP
+_chemical_formula_sum   'Mn4 Fe4 P4'
+_cell_volume   135.01342600
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mn  Mn0  1  0.25000018  0.02995571  0.17233230  1
+  Mn  Mn1  1  0.75000053  0.47004406  0.67233195  1
+  Mn  Mn2  1  0.75000053  0.97004382  0.82766701  1
+  Mn  Mn3  1  0.25000018  0.52995547  0.32766735  1
+  Fe  Fe4  1  0.25000018  0.14755607  0.56286608  1
+  Fe  Fe5  1  0.75000053  0.35244369  0.06286643  1
+  Fe  Fe6  1  0.75000053  0.85244346  0.43713323  1
+  Fe  Fe7  1  0.25000018  0.64755584  0.93713288  1
+  P  P8  1  0.25000018  0.76858168  0.62411209  1
+  P  P9  1  0.75000053  0.73141762  0.12411244  1
+  P  P10  1  0.75000053  0.23141785  0.37588722  1
+  P  P11  1  0.25000018  0.26858191  0.87588687  1

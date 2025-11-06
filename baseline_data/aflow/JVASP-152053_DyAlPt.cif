@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_DyAlPt
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.40443361
+_cell_length_b   6.90690341
+_cell_length_c   7.75506443
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   DyAlPt
+_chemical_formula_sum   'Dy4 Al4 Pt4'
+_cell_volume   235.91679611
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.24999979  0.02757052  0.31769689  1
+  Dy  Dy1  1  0.74999938  0.47242923  0.81769661  1
+  Dy  Dy2  1  0.74999938  0.97242898  0.68230254  1
+  Dy  Dy3  1  0.24999979  0.52757027  0.18230282  1
+  Al  Al4  1  0.24999979  0.14706358  0.93431577  1
+  Al  Al5  1  0.74999938  0.35293617  0.43431606  1
+  Al  Al6  1  0.74999938  0.85293592  0.06568366  1
+  Al  Al7  1  0.24999979  0.64706334  0.56568337  1
+  Pt  Pt8  1  0.24999979  0.27297328  0.61367985  1
+  Pt  Pt9  1  0.74999938  0.22702648  0.11368013  1
+  Pt  Pt10  1  0.74999938  0.72702623  0.38631958  1
+  Pt  Pt11  1  0.24999979  0.77297303  0.88631929  1

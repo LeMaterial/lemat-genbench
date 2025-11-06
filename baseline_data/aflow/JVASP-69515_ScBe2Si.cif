@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_ScBe2Si
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.55826018
+_cell_length_b   4.55826018
+_cell_length_c   4.55826018
+_cell_angle_alpha   130.73978497
+_cell_angle_beta   130.73978497
+_cell_angle_gamma   72.22683350
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ScBe2Si
+_chemical_formula_sum   'Sc1 Be2 Si1'
+_cell_volume   53.15670268
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sc  Sc0  1  0.25000006  0.74999907  0.49999901  1
+  Be  Be1  1  0.00000000  0.00000000  0.00000000  1
+  Be  Be2  1  0.50000012  0.50000012  0.00000000  1
+  Si  Si3  1  0.74999907  0.25000006  0.49999901  1

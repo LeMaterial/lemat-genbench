@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_BaNbBi2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.30905634
+_cell_length_b   3.30905634
+_cell_length_c   11.47397589
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaNbBi2
+_chemical_formula_sum   'Ba1 Nb1 Bi2'
+_cell_volume   125.63835911
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.50000055  0.50000055  0.73376920  1
+  Nb  Nb1  1  0.00000000  0.00000000  0.48076792  1
+  Bi  Bi2  1  0.00000000  0.00000000  0.98703028  1
+  Bi  Bi3  1  0.50000055  0.50000055  0.29843350  1

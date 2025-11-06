@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_UAlFe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.53292394
+_cell_length_b   6.53292394
+_cell_length_c   3.98097916
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.01601053
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   UAlFe
+_chemical_formula_sum   'U3 Al3 Fe3'
+_cell_volume   147.11794554
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  U  U0  1  0.57721222  -0.00013074  0.50000011  1
+  U  U1  1  -0.00013074  0.57721222  0.50000011  1
+  U  U2  1  0.42263714  0.42263714  0.50000011  1
+  Al  Al3  1  0.23452327  -0.00002945  0.00000000  1
+  Al  Al4  1  -0.00002945  0.23452327  0.00000000  1
+  Al  Al5  1  0.76549508  0.76549508  0.00000000  1
+  Fe  Fe6  1  0.33336443  0.66671814  0.00000000  1
+  Fe  Fe7  1  0.66671814  0.33336443  0.00000000  1
+  Fe  Fe8  1  0.00020856  0.00020856  0.50000011  1

@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_SrBePd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.87576538
+_cell_length_b   5.87576538
+_cell_length_c   5.87576538
+_cell_angle_alpha   147.33533714
+_cell_angle_beta   147.33533714
+_cell_angle_gamma   46.86751614
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrBePd
+_chemical_formula_sum   'Sr1 Be1 Pd1'
+_cell_volume   58.87423521
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.66724787  0.66724787  0.00000000  1
+  Be  Be1  1  0.94459310  0.94459310  0.00000000  1
+  Pd  Pd2  1  0.38816088  0.38816088  0.00000000  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_ZrGeIr
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.06618295
+_cell_length_b   6.61169797
+_cell_length_c   7.60640385
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZrGeIr
+_chemical_formula_sum   'Zr4 Ge4 Ir4'
+_cell_volume   204.49340261
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zr  Zr0  1  0.24999982  0.02143322  0.81288142  1
+  Zr  Zr1  1  0.74999946  0.47856694  0.31288167  1
+  Zr  Zr2  1  0.74999946  0.97856709  0.18711808  1
+  Zr  Zr3  1  0.24999982  0.52143337  0.68711782  1
+  Ge  Ge4  1  0.24999982  0.76844631  0.38248283  1
+  Ge  Ge5  1  0.74999946  0.73155415  0.88248258  1
+  Ge  Ge6  1  0.74999946  0.23155400  0.61751666  1
+  Ge  Ge7  1  0.24999982  0.26844616  0.11751692  1
+  Ir  Ir8  1  0.24999982  0.15237814  0.43496609  1
+  Ir  Ir9  1  0.74999946  0.34762201  0.93496583  1
+  Ir  Ir10  1  0.74999946  0.84762216  0.56503341  1
+  Ir  Ir11  1  0.24999982  0.65237830  0.06503366  1

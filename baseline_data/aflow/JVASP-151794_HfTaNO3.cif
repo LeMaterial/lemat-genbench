@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_HfTaNO3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.11068243
+_cell_length_b   5.05927703
+_cell_length_c   5.30007133
+_cell_angle_alpha   80.90616870
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfTaNO3
+_chemical_formula_sum   'Hf2 Ta2 N2 O6'
+_cell_volume   135.31805684
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.03816377  0.71820031  0.46394530  1
+  Hf  Hf1  1  0.53816353  0.28180030  0.53605444  1
+  Ta  Ta2  1  0.44752323  0.71229053  0.96296061  1
+  Ta  Ta3  1  0.94752299  0.28771007  0.03703913  1
+  N  N4  1  0.23444227  0.44694011  0.78910121  1
+  N  N5  1  0.73444203  0.55306050  0.21089854  1
+  O  O6  1  0.19216974  0.94097095  0.10267145  1
+  O  O7  1  0.69216951  0.05902965  0.89732829  1
+  O  O8  1  0.83992743  0.07324628  0.39662033  1
+  O  O9  1  0.33992767  0.92675432  0.60337941  1
+  O  O10  1  0.74687237  0.55479319  0.72797500  1
+  O  O11  1  0.24687261  0.44520742  0.27202474  1

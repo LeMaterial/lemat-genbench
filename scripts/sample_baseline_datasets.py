@@ -388,7 +388,16 @@ class OQMDFetcher(MaterialsFetcher):
 
 
 class AFLOWFetcher(MaterialsFetcher):
-    """Fetch from AFLOW using AFLUX REST API."""
+    """Fetch from AFLOW using AFLUX REST API.
+    
+    Fetches structures from AFLOW's ICSD catalog, which contains experimentally-
+    reported crystal structures. Additional filters are applied to match the types
+    of structures found in MP, OQMD, and Alexandria by excluding:
+    - Noble gas compounds (He, Ne, Ar, Kr, Rn) - high-pressure/exotic phases
+    - Pure hydrogen structures - extreme high-pressure phases
+    
+    This ensures the AFLOW baseline is comparable to other experimental databases.
+    """
     
     def __init__(self):
         super().__init__("aflow")
@@ -417,6 +426,10 @@ class AFLOWFetcher(MaterialsFetcher):
         
         consecutive_failures = 0
         max_consecutive_failures = 5
+        
+        # Track filtering statistics
+        total_processed = 0
+        filtered_by_api = 0
         
         try:
             while len(structures) < (target_count or float('inf')) and page < max_pages:
@@ -452,6 +465,8 @@ class AFLOWFetcher(MaterialsFetcher):
                     
                     for entry in entries:
                         try:
+                            total_processed += 1
+                            
                             # Get compound/formula
                             compound = entry.get('compound', '')
                             if not compound:
@@ -463,6 +478,18 @@ class AFLOWFetcher(MaterialsFetcher):
                             
                             # Check if inorganic
                             if not is_inorganic(elements, compound):
+                                continue
+                            
+                            # Filter out exotic compositions not found in MP/OQMD/Alexandria
+                            # Exclude noble gases (except Xe in some known compounds)
+                            noble_gases = {'He', 'Ne', 'Ar', 'Kr', 'Rn'}
+                            if any(el in noble_gases for el in elements):
+                                filtered_by_api += 1
+                                continue
+                            
+                            # Exclude pure hydrogen structures (often high-pressure phases)
+                            if set(elements) == {'H'}:
+                                filtered_by_api += 1
                                 continue
                             
                             # Get POSCAR geometry
@@ -489,7 +516,33 @@ class AFLOWFetcher(MaterialsFetcher):
                                 contcar_text = contcar_response.text
                             
                             # Parse POSCAR to Structure
-                            structure = Structure.from_str(contcar_text, fmt='poscar')
+                            # Strategy: Try auto-detection first (VASP5), then provide element names
+                            try:
+                                from pymatgen.io.vasp import Poscar
+                                # First try: let pymatgen auto-detect (works for VASP5 format)
+                                poscar = Poscar.from_str(contcar_text)
+                                structure = poscar.structure
+                                
+                                # Verify composition matches what AFLOW reports
+                                parsed_formula = structure.composition.reduced_formula
+                                expected_formula = comp.reduced_formula
+                                
+                                if parsed_formula != expected_formula:
+                                    # Auto-detection gave wrong elements, provide them explicitly
+                                    # AFLOW typically uses alphabetically sorted element order
+                                    elements_alphabetical = sorted(elements)
+                                    poscar = Poscar.from_str(contcar_text, default_names=elements_alphabetical)
+                                    structure = poscar.structure
+                                    
+                                    # Verify again
+                                    if structure.composition.reduced_formula != expected_formula:
+                                        logger.warning(f"Composition mismatch for {compound}: "
+                                                     f"expected {expected_formula}, got {structure.composition.reduced_formula}")
+                                        continue
+                                        
+                            except Exception as e:
+                                logger.debug(f"Failed to parse POSCAR for {compound}: {e}")
+                                continue
                             
                             # Get metadata
                             auid = entry.get('auid', f'aflow_{len(structures)}')
@@ -506,6 +559,12 @@ class AFLOWFetcher(MaterialsFetcher):
                             })
                             
                             pbar.update(1)
+                            
+                            # Log progress every 1000 processed entries
+                            if total_processed % 1000 == 0:
+                                kept_rate = len(structures) / total_processed * 100 if total_processed > 0 else 0
+                                logger.info(f"Progress: Processed {total_processed}, Kept {len(structures)} ({kept_rate:.1f}%), "
+                                          f"Filtered: {filtered_by_api}")
                             
                             # Save intermediate checkpoint every 1000 structures
                             if len(structures) % 1000 == 0:
@@ -541,6 +600,10 @@ class AFLOWFetcher(MaterialsFetcher):
             pbar.close()
         
         logger.info(f"AFLOW: {len(structures)} inorganic structures fetched")
+        if total_processed > 0:
+            logger.info(f"Filtering stats - Total processed: {total_processed}, "
+                       f"Filtered: {filtered_by_api}, "
+                       f"Success rate: {len(structures)/total_processed*100:.1f}%")
         
         if len(structures) == 0:
             logger.warning("AFLOW returned 0 structures. API may be unavailable or all structures filtered out.")

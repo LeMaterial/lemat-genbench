@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_Be2TlHg
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   2.99206310
+_cell_length_b   2.99206310
+_cell_length_c   8.47896400
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Be2TlHg
+_chemical_formula_sum   'Be2 Tl1 Hg1'
+_cell_volume   75.90743022
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.00000000  0.00000000  0.10436405  1
+  Be  Be1  1  0.49999948  0.49999948  0.16567841  1
+  Tl  Tl2  1  0.49999948  0.49999948  0.79302613  1
+  Hg  Hg3  1  0.00000000  0.00000000  0.43693171  1

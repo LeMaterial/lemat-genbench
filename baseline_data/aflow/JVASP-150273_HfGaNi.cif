@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_HfGaNi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.83308767
+_cell_length_b   6.83308767
+_cell_length_c   3.41337742
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00037744
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfGaNi
+_chemical_formula_sum   'Hf3 Ga3 Ni3'
+_cell_volume   138.02166931
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.59795169  -0.00000093  0.50000038  1
+  Hf  Hf1  1  -0.00000093  0.59795169  0.50000038  1
+  Hf  Hf2  1  0.40204752  0.40204752  0.50000038  1
+  Ga  Ga3  1  0.26123638  -0.00000012  0.00000000  1
+  Ga  Ga4  1  -0.00000012  0.26123638  0.00000000  1
+  Ga  Ga5  1  0.73876320  0.73876320  0.00000000  1
+  Ni  Ni6  1  0.33333221  0.66666584  0.00000000  1
+  Ni  Ni7  1  0.66666584  0.33333221  0.00000000  1
+  Ni  Ni8  1  0.00000041  0.00000041  0.50000038  1

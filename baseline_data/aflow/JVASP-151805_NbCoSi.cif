@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_NbCoSi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.66451826
+_cell_length_b   6.25856840
+_cell_length_c   7.06563426
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NbCoSi
+_chemical_formula_sum   'Nb4 Co4 Si4'
+_cell_volume   162.04776542
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nb  Nb0  1  0.25000012  0.02053502  0.82016122  1
+  Nb  Nb1  1  0.75000036  0.47946511  0.32016152  1
+  Nb  Nb2  1  0.75000036  0.97946524  0.17983817  1
+  Nb  Nb3  1  0.25000012  0.52053514  0.67983787  1
+  Co  Co4  1  0.25000012  0.14143086  0.43653708  1
+  Co  Co5  1  0.75000036  0.35856927  0.93653678  1
+  Co  Co6  1  0.75000036  0.85856940  0.56346232  1
+  Co  Co7  1  0.25000012  0.64143098  0.06346262  1
+  Si  Si8  1  0.25000012  0.77563364  0.38284703  1
+  Si  Si9  1  0.75000036  0.72436674  0.88284672  1
+  Si  Si10  1  0.75000036  0.22436662  0.61715237  1
+  Si  Si11  1  0.25000012  0.27563351  0.11715267  1

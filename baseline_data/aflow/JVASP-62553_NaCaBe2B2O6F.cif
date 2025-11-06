@@ -1,0 +1,52 @@
+# generated using pymatgen
+data_NaCaBe2B2O6F
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   14.18741200
+_cell_length_b   4.66160133
+_cell_length_c   4.65894404
+_cell_angle_alpha   59.98109262
+_cell_angle_beta   90.11526128
+_cell_angle_gamma   90.23066233
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaCaBe2B2O6F
+_chemical_formula_sum   'Na2 Ca2 Be4 B4 O12 F2'
+_cell_volume   266.79036518
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.86272134  0.88889943  0.99135802  1
+  Na  Na1  1  0.36272102  0.88026151  0.00864070  1
+  Ca  Ca2  1  0.61179850  0.90364361  0.98256165  1
+  Ca  Ca3  1  0.11179861  0.88620777  0.01743886  1
+  Be  Be4  1  0.97423851  0.25807650  0.31992713  1
+  Be  Be5  1  0.47423833  0.57800219  0.68007713  1
+  Be  Be6  1  0.74887991  0.20885018  0.36293999  1
+  Be  Be7  1  0.24888015  0.57179515  0.63705766  1
+  B  B8  1  0.72251747  0.52574128  0.69480431  1
+  B  B9  1  0.00083631  0.59061415  0.63749282  1
+  B  B10  1  0.22251760  0.22054706  0.30519633  1
+  B  B11  1  0.50083622  0.22810544  0.36251021  1
+  O  O12  1  0.23521827  0.49470143  0.33866068  1
+  O  O13  1  0.73521897  0.83336268  0.66133756  1
+  O  O14  1  0.23107266  0.25347442  0.99346009  1
+  O  O15  1  0.73107122  0.24692854  0.00654423  1
+  O  O16  1  0.48633162  0.25791902  0.64036843  1
+  O  O17  1  0.98633256  0.89828450  0.35963458  1
+  O  O18  1  0.52457159  0.92045448  0.40684933  1
+  O  O19  1  0.49620067  0.50354440  0.05080262  1
+  O  O20  1  0.99619978  0.55434775  0.94919746  1
+  O  O21  1  0.69614023  0.47649638  0.43523586  1
+  O  O22  1  0.02457143  0.32730436  0.59315391  1
+  O  O23  1  0.19613969  0.91173924  0.56475963  1
+  F  F24  1  0.36111949  0.68460225  0.61490295  1
+  F  F25  1  0.86111954  0.29949387  0.38509906  1

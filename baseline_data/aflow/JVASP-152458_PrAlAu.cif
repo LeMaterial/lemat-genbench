@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_PrAlAu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.60471163
+_cell_length_b   7.58410326
+_cell_length_c   7.80537077
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PrAlAu
+_chemical_formula_sum   'Pr4 Al4 Au4'
+_cell_volume   272.58390739
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.24999991  0.01083328  0.30727030  1
+  Pr  Pr1  1  0.74999973  0.48916651  0.80727025  1
+  Pr  Pr2  1  0.74999973  0.98916629  0.69272960  1
+  Pr  Pr3  1  0.24999991  0.51083306  0.19272965  1
+  Al  Al4  1  0.24999991  0.17485376  0.91746335  1
+  Al  Al5  1  0.74999973  0.32514602  0.41746340  1
+  Al  Al6  1  0.74999973  0.82514581  0.08253655  1
+  Al  Al7  1  0.24999991  0.67485355  0.58253650  1
+  Au  Au8  1  0.24999991  0.30166226  0.59128164  1
+  Au  Au9  1  0.74999973  0.19833753  0.09128169  1
+  Au  Au10  1  0.74999973  0.69833731  0.40871826  1
+  Au  Au11  1  0.24999991  0.80166204  0.90871822  1

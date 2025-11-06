@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_CeTeCl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.46021302
+_cell_length_b   7.93362842
+_cell_length_c   9.37704451
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CeTeCl
+_chemical_formula_sum   'Ce4 Te4 Cl4'
+_cell_volume   331.81302825
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.24999983  0.23679495  0.63226114  1
+  Ce  Ce1  1  0.74999949  0.26320515  0.13226138  1
+  Ce  Ce2  1  0.74999949  0.76320524  0.36773838  1
+  Ce  Ce3  1  0.24999983  0.73679505  0.86773814  1
+  Te  Te4  1  0.24999983  0.46318721  0.33223884  1
+  Te  Te5  1  0.74999949  0.03681289  0.83223860  1
+  Te  Te6  1  0.74999949  0.53681299  0.66776068  1
+  Te  Te7  1  0.24999983  0.96318731  0.16776092  1
+  Cl  Cl8  1  0.24999983  0.86432669  0.55968637  1
+  Cl  Cl9  1  0.74999949  0.63567361  0.05968661  1
+  Cl  Cl10  1  0.74999949  0.13567351  0.44031315  1
+  Cl  Cl11  1  0.24999983  0.36432659  0.94031291  1

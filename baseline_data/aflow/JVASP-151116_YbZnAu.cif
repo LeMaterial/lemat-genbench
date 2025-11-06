@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_YbZnAu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.35301236
+_cell_length_b   7.03347721
+_cell_length_c   8.08527210
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   YbZnAu
+_chemical_formula_sum   'Yb4 Zn4 Au4'
+_cell_volume   247.54526583
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Yb  Yb0  1  0.24999986  0.02462139  0.30626934  1
+  Yb  Yb1  1  0.74999959  0.47537881  0.80626921  1
+  Yb  Yb2  1  0.74999959  0.97537900  0.69373040  1
+  Yb  Yb3  1  0.24999986  0.52462159  0.19373053  1
+  Zn  Zn4  1  0.24999986  0.16145025  0.92982588  1
+  Zn  Zn5  1  0.74999959  0.33854995  0.42982601  1
+  Zn  Zn6  1  0.74999959  0.83855015  0.07017386  1
+  Zn  Zn7  1  0.24999986  0.66145045  0.57017373  1
+  Au  Au8  1  0.24999986  0.26717427  0.61169732  1
+  Au  Au9  1  0.74999959  0.23282593  0.11169745  1
+  Au  Au10  1  0.74999959  0.73282613  0.38830242  1
+  Au  Au11  1  0.24999986  0.76717447  0.88830229  1

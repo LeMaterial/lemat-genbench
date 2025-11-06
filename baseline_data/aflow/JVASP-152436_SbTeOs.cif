@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_SbTeOs
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.62647453
+_cell_length_b   6.73115459
+_cell_length_c   6.79841236
+_cell_angle_alpha   66.12806585
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SbTeOs
+_chemical_formula_sum   'Sb4 Te4 Os4'
+_cell_volume   277.29411848
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sb  Sb0  1  0.64074644  0.86057367  0.38496151  1
+  Sb  Sb1  1  0.14074678  0.13942540  0.11503869  1
+  Sb  Sb2  1  0.35925288  0.13942497  0.61503909  1
+  Sb  Sb3  1  0.85925253  0.86057325  0.88496192  1
+  Te  Te4  1  0.36540165  0.65347632  0.18240109  1
+  Te  Te5  1  0.86540131  0.34652275  0.31759911  1
+  Te  Te6  1  0.63459766  0.34652232  0.81759951  1
+  Te  Te7  1  0.13459801  0.65347590  0.68240150  1
+  Os  Os8  1  0.99847595  0.72433186  0.29459833  1
+  Os  Os9  1  0.49847629  0.27566721  0.20540187  1
+  Os  Os10  1  0.00152336  0.27566679  0.70540228  1
+  Os  Os11  1  0.50152302  0.72433144  0.79459873  1

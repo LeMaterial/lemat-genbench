@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_Ba4TcSb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.91773799
+_cell_length_b   6.91773799
+_cell_length_c   6.91773799
+_cell_angle_alpha   60.00000000
+_cell_angle_beta   60.00000000
+_cell_angle_gamma   60.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba4TcSb
+_chemical_formula_sum   'Ba4 Tc1 Sb1'
+_cell_volume   234.08701823
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.12549528  0.62483498  0.62483498  1
+  Ba  Ba1  1  0.62483498  0.62483498  0.62483498  1
+  Ba  Ba2  1  0.62483498  0.12549528  0.62483498  1
+  Ba  Ba3  1  0.62483498  0.62483498  0.12549528  1
+  Tc  Tc4  1  0.00000000  0.00000000  0.00000000  1
+  Sb  Sb5  1  0.25000003  0.25000003  0.25000003  1

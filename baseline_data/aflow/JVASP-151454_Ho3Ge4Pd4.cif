@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ho3(GePd)4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.09566856
+_cell_length_b   8.09566856
+_cell_length_c   8.09566856
+_cell_angle_alpha   150.23283266
+_cell_angle_beta   128.13740548
+_cell_angle_gamma   60.94823668
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho3(GePd)4
+_chemical_formula_sum   'Ho3 Ge4 Pd4'
+_cell_volume   205.45475718
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.50000000  0.00000000  0.50000000  1
+  Ho  Ho1  1  0.87392563  0.87392563  0.00000000  1
+  Ho  Ho2  1  0.12607445  0.12607445  0.00000000  1
+  Ge  Ge3  1  0.71665117  0.21665117  0.50000000  1
+  Ge  Ge4  1  0.28334887  0.78334882  0.49999995  1
+  Ge  Ge5  1  0.81068071  0.50000004  0.31068067  1
+  Ge  Ge6  1  0.18931934  0.49999995  0.68931928  1
+  Pd  Pd7  1  0.52674001  0.32474117  0.20199884  1
+  Pd  Pd8  1  0.47326003  0.67525881  0.79800111  1
+  Pd  Pd9  1  0.87725774  0.67525890  0.20199884  1
+  Pd  Pd10  1  0.12274230  0.32474108  0.79800111  1

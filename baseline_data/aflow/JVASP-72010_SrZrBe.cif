@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_SrZrBe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.53667705
+_cell_length_b   3.53667705
+_cell_length_c   7.04344257
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99999725
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrZrBe
+_chemical_formula_sum   'Sr1 Zr1 Be1'
+_cell_volume   76.29681870
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.66666728  0.33333351  0.29297059  1
+  Zr  Zr1  1  0.33333351  0.66666728  0.73806793  1
+  Be  Be2  1  -0.00000000  0.00000000  0.96896175  1

@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_Ti2In5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.08091297
+_cell_length_b   10.08091297
+_cell_length_c   3.00440138
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ti2In5
+_chemical_formula_sum   'Ti4 In10'
+_cell_volume   305.32170833
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ti  Ti0  1  0.17885237  0.67885222  0.49999977  1
+  Ti  Ti1  1  0.82114734  0.32114749  0.49999977  1
+  Ti  Ti2  1  0.32114749  0.17885237  0.49999977  1
+  Ti  Ti3  1  0.67885222  0.82114734  0.49999977  1
+  In  In4  1  0.00000000  0.49999985  0.00000000  1
+  In  In5  1  0.49999985  0.00000000  0.00000000  1
+  In  In6  1  0.06440858  0.20700697  0.00000000  1
+  In  In7  1  0.93559112  0.79299274  0.00000000  1
+  In  In8  1  0.79299274  0.06440858  0.00000000  1
+  In  In9  1  0.20700697  0.93559112  0.00000000  1
+  In  In10  1  0.43559127  0.70700682  0.00000000  1
+  In  In11  1  0.56440843  0.29299288  0.00000000  1
+  In  In12  1  0.70700682  0.56440843  0.00000000  1
+  In  In13  1  0.29299288  0.43559127  0.00000000  1

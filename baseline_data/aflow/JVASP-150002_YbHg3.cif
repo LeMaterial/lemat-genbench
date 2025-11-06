@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_YbHg3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.60719977
+_cell_length_b   6.60731631
+_cell_length_c   5.15658043
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99941652
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   YbHg3
+_chemical_formula_sum   'Yb2 Hg6'
+_cell_volume   194.95640920
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Yb  Yb0  1  0.66667966  0.33335961  0.24999998  1
+  Yb  Yb1  1  0.33332066  0.66664119  0.74999994  1
+  Hg  Hg2  1  0.66638225  0.83320188  0.24999998  1
+  Hg  Hg3  1  0.16681975  0.83320175  0.24999998  1
+  Hg  Hg4  1  0.16680135  0.33360263  0.24999998  1
+  Hg  Hg5  1  0.33361808  0.16679891  0.74999994  1
+  Hg  Hg6  1  0.83318057  0.16679905  0.74999994  1
+  Hg  Hg7  1  0.83319897  0.66639817  0.74999994  1
