@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_HoSi3Pt2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.06527611
+_cell_length_b   7.18065308
+_cell_length_c   8.22575220
+_cell_angle_alpha   117.79825440
+_cell_angle_beta   104.30633455
+_cell_angle_gamma   89.99999965
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HoSi3Pt2
+_chemical_formula_sum   'Ho2 Si6 Pt4'
+_cell_volume   203.95384140
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.12550682  0.09437360  0.25101365  1
+  Ho  Ho1  1  0.87449318  0.90562640  0.74898635  1
+  Si  Si2  1  0.68243543  0.47393482  0.36487187  1
+  Si  Si3  1  0.04484276  0.41431553  0.08968551  1
+  Si  Si4  1  0.34063313  0.14626300  0.68126526  1
+  Si  Si5  1  0.65936687  0.85373700  0.31873474  1
+  Si  Si6  1  0.95515724  0.58568447  0.91031449  1
+  Si  Si7  1  0.31756457  0.52606518  0.63512813  1
+  Pt  Pt8  1  0.51192813  0.20786088  0.02385526  1
+  Pt  Pt9  1  0.48807187  0.79213912  0.97614474  1
+  Pt  Pt10  1  0.21100687  0.72315089  0.42201473  1
+  Pt  Pt11  1  0.78899313  0.27684911  0.57798527  1

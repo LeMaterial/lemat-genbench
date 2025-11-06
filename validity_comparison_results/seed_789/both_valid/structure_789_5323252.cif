@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Nd2Sm7Er3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.55882681
+_cell_length_b   6.42140264
+_cell_length_c   18.10535928
+_cell_angle_alpha   75.38264087
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nd2Sm7Er3
+_chemical_formula_sum   'Nd2 Sm7 Er3'
+_cell_volume   400.36348819
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nd  Nd0  1  0.50000000  0.61248994  0.32857671  1
+  Nd  Nd1  1  0.50000000  0.38751006  0.67142329  1
+  Sm  Sm2  1  0.50000000  0.23943925  0.50289234  1
+  Sm  Sm3  1  0.50000000  0.76056075  0.49710766  1
+  Sm  Sm4  1  0.00000000  0.55927672  0.16380564  1
+  Sm  Sm5  1  0.00000000  0.00000000  0.00000000  1
+  Sm  Sm6  1  0.00000000  0.44072328  0.83619436  1
+  Sm  Sm7  1  0.50000000  0.94102080  0.83087956  1
+  Sm  Sm8  1  0.50000000  0.05897920  0.16912044  1
+  Er  Er9  1  0.50000000  0.50000000  0.00000000  1
+  Er  Er10  1  0.00000000  0.11182687  0.34165321  1
+  Er  Er11  1  0.00000000  0.88817313  0.65834679  1

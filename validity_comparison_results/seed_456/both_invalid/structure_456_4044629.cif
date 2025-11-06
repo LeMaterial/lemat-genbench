@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_Ho2IrI2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.12420128
+_cell_length_b   4.12534013
+_cell_length_c   11.95418294
+_cell_angle_alpha   81.17622490
+_cell_angle_beta   80.06674996
+_cell_angle_gamma   60.00912822
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho2IrI2
+_chemical_formula_sum   'Ho2 Ir1 I2'
+_cell_volume   172.97373858
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.71343687  0.19950125  0.37362501  1
+  Ho  Ho1  1  0.28656313  0.80049875  0.62637499  1
+  Ir  Ir2  1  0.00000000  0.50000000  0.50000000  1
+  I  I3  1  0.44675616  0.91240060  0.19408708  1
+  I  I4  1  0.55324384  0.08759940  0.80591292  1

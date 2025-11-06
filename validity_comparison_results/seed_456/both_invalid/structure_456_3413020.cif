@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Pu8Ge2H
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.06675391
+_cell_length_b   5.69576688
+_cell_length_c   8.43328412
+_cell_angle_alpha   104.24062798
+_cell_angle_beta   105.51210950
+_cell_angle_gamma   100.78673367
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pu8Ge2H
+_chemical_formula_sum   'Pu8 Ge2 H1'
+_cell_volume   218.81018875
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pu  Pu0  1  0.48826556  0.40934874  0.14224134  1
+  Pu  Pu1  1  0.31012597  0.00163876  0.70557292  1
+  Pu  Pu2  1  0.23995312  0.25658231  0.44851881  1
+  Pu  Pu3  1  0.03480125  0.77291993  0.98016598  1
+  Pu  Pu4  1  0.76004888  0.74341669  0.55148119  1
+  Pu  Pu5  1  0.68987503  0.99836124  0.29442708  1
+  Pu  Pu6  1  0.51173344  0.59065326  0.85775766  1
+  Pu  Pu7  1  0.96519775  0.22708007  0.01983402  1
+  Ge  Ge8  1  0.13956443  0.69358539  0.32853761  1
+  Ge  Ge9  1  0.86043657  0.30641361  0.67146239  1
+  H  H10  1  0.49999800  0.00000100  0.00000000  1

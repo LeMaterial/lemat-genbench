@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_TbYHo2Er5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.55830977
+_cell_length_b   10.24870986
+_cell_length_c   10.49195847
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   105.73397155
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TbYHo2Er5
+_chemical_formula_sum   'Tb2 Y2 Ho4 Er10'
+_cell_volume   575.28532277
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.79986848  0.59973697  0.51162172  1
+  Tb  Tb1  1  0.20013152  0.40026303  0.01162172  1
+  Y  Y2  1  0.58650624  0.17301248  0.95459859  1
+  Y  Y3  1  0.41349376  0.82698752  0.45459859  1
+  Ho  Ho4  1  0.88723838  0.77447677  0.81807022  1
+  Ho  Ho5  1  0.10996481  0.21992961  0.73685172  1
+  Ho  Ho6  1  0.11276162  0.22552323  0.31807022  1
+  Ho  Ho7  1  0.89003519  0.78007039  0.23685172  1
+  Er  Er8  1  0.39057482  0.78114964  0.02323098  1
+  Er  Er9  1  0.71924597  0.43849193  0.80781217  1
+  Er  Er10  1  0.47858584  0.95717168  0.73746940  1
+  Er  Er11  1  0.30043475  0.60086951  0.70912896  1
+  Er  Er12  1  0.98219849  0.96439697  0.52518624  1
+  Er  Er13  1  0.60942518  0.21885036  0.52323098  1
+  Er  Er14  1  0.28075403  0.56150807  0.30781217  1
+  Er  Er15  1  0.52141416  0.04282832  0.23746940  1
+  Er  Er16  1  0.69956525  0.39913049  0.20912896  1
+  Er  Er17  1  0.01780151  0.03560303  0.02518624  1

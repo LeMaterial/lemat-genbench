@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Ce(ZnPt3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.95210557
+_cell_length_b   7.95210557
+_cell_length_c   7.95210557
+_cell_angle_alpha   59.99999996
+_cell_angle_beta   59.99999998
+_cell_angle_gamma   59.99999998
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ce(ZnPt3)2
+_chemical_formula_sum   'Ce2 Zn4 Pt12'
+_cell_volume   355.57515941
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.50000000  0.50000000  0.50000000  1
+  Ce  Ce1  1  0.75000000  0.75000000  0.75000000  1
+  Zn  Zn2  1  0.12500000  0.12500000  0.12500000  1
+  Zn  Zn3  1  0.12500000  0.62500000  0.12500000  1
+  Zn  Zn4  1  0.12500000  0.12500000  0.62500000  1
+  Zn  Zn5  1  0.62500000  0.12500000  0.12500000  1
+  Pt  Pt6  1  0.26159015  0.26159015  0.73840985  1
+  Pt  Pt7  1  0.73840985  0.73840985  0.26159015  1
+  Pt  Pt8  1  0.26159015  0.73840985  0.26159015  1
+  Pt  Pt9  1  0.26159015  0.73840985  0.73840985  1
+  Pt  Pt10  1  0.51159015  0.51159015  0.98840985  1
+  Pt  Pt11  1  0.51159015  0.98840985  0.98840985  1
+  Pt  Pt12  1  0.73840985  0.26159015  0.73840985  1
+  Pt  Pt13  1  0.98840985  0.98840985  0.51159015  1
+  Pt  Pt14  1  0.51159015  0.98840985  0.51159015  1
+  Pt  Pt15  1  0.98840985  0.51159015  0.51159015  1
+  Pt  Pt16  1  0.73840985  0.26159015  0.26159015  1
+  Pt  Pt17  1  0.98840985  0.51159015  0.98840985  1

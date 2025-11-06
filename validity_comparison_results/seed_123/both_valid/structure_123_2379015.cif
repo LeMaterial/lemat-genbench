@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_Nd2Ho8Er3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.50780219
+_cell_length_b   7.57327859
+_cell_length_c   11.02873835
+_cell_angle_alpha   110.09111618
+_cell_angle_beta   90.00827640
+_cell_angle_gamma   89.99932052
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nd2Ho8Er3
+_chemical_formula_sum   'Nd2 Ho8 Er3'
+_cell_volume   432.03796778
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nd  Nd0  1  0.49969399  0.24042629  0.48102293  1
+  Nd  Nd1  1  0.50030601  0.75957371  0.51897707  1
+  Ho  Ho2  1  0.00022160  0.66090160  0.32157485  1
+  Ho  Ho3  1  0.99977840  0.33909840  0.67842515  1
+  Ho  Ho4  1  0.99993905  0.12790201  0.25593310  1
+  Ho  Ho5  1  0.00006095  0.87209799  0.74406690  1
+  Ho  Ho6  1  0.49987924  0.60707122  0.78758170  1
+  Ho  Ho7  1  0.49987404  0.18041556  0.78751305  1
+  Ho  Ho8  1  0.50012596  0.81958444  0.21248695  1
+  Ho  Ho9  1  0.50012076  0.39292878  0.21241830  1
+  Er  Er10  1  0.50000000  0.00000000  0.00000000  1
+  Er  Er11  1  0.99999432  0.28565137  0.00006327  1
+  Er  Er12  1  0.00000568  0.71434863  0.99993673  1

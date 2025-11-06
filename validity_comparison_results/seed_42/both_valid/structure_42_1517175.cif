@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_DyHo3Ni2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.86428864
+_cell_length_b   8.22854133
+_cell_length_c   9.80836043
+_cell_angle_alpha   77.08618182
+_cell_angle_beta   78.63903039
+_cell_angle_gamma   76.41957307
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   DyHo3Ni2
+_chemical_formula_sum   'Dy2 Ho6 Ni4'
+_cell_volume   292.03588916
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.84599405  0.56206123  0.74594967  1
+  Dy  Dy1  1  0.15400595  0.43793877  0.25405033  1
+  Ho  Ho2  1  0.15437984  0.93755715  0.75368317  1
+  Ho  Ho3  1  0.84562016  0.06244285  0.24631683  1
+  Ho  Ho4  1  0.41797248  0.22309818  0.94095785  1
+  Ho  Ho5  1  0.58202752  0.77690182  0.05904215  1
+  Ho  Ho6  1  0.58233484  0.27543700  0.55989433  1
+  Ho  Ho7  1  0.41766516  0.72456300  0.44010567  1
+  Ni  Ni8  1  0.23127626  0.58797246  0.94947503  1
+  Ni  Ni9  1  0.76872374  0.41202754  0.05052497  1
+  Ni  Ni10  1  0.76863054  0.91242629  0.55031262  1
+  Ni  Ni11  1  0.23136946  0.08757371  0.44968738  1

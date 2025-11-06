@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_In3Ga3CuGe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.03580161
+_cell_length_b   7.33490131
+_cell_length_c   7.33490130
+_cell_angle_alpha   120.00000007
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   In3Ga3CuGe2
+_chemical_formula_sum   'In3 Ga3 Cu1 Ge2'
+_cell_volume   188.03945771
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ge  Ge0  1  0.50000000  0.33333333  0.66666667  1
+  Ge  Ge1  1  0.50000000  0.66666667  0.33333333  1
+  Cu  Cu2  1  0.00000000  0.00000000  0.00000000  1
+  Ga  Ga3  1  0.50000000  0.75990842  0.75990842  1
+  Ga  Ga4  1  0.50000000  0.24009158  0.00000000  1
+  Ga  Ga5  1  0.50000000  0.00000000  0.24009158  1
+  In  In6  1  0.00000000  0.00000000  0.61374892  1
+  In  In7  1  0.00000000  0.61374892  0.00000000  1
+  In  In8  1  0.00000000  0.38625108  0.38625108  1

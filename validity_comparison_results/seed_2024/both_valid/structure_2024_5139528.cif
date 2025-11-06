@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_BeSiNi4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.38285216
+_cell_length_b   6.93576539
+_cell_length_c   4.39595561
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   110.50084450
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BeSiNi4
+_chemical_formula_sum   'Be2 Si2 Ni8'
+_cell_volume   125.16697210
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.50000000  0.00000000  0.50000000  1
+  Be  Be1  1  -0.00000000  0.50000000  0.50000000  1
+  Si  Si2  1  0.00000000  0.00000000  0.00000000  1
+  Si  Si3  1  0.50000000  0.50000000  -0.00000000  1
+  Ni  Ni4  1  0.08070869  0.66170622  0.08925177  1
+  Ni  Ni5  1  0.41929131  0.16170622  0.91074823  1
+  Ni  Ni6  1  0.41069598  0.33799161  0.41608103  1
+  Ni  Ni7  1  0.08930402  0.83799161  0.58391897  1
+  Ni  Ni8  1  0.91929131  0.33829378  0.91074823  1
+  Ni  Ni9  1  0.58070869  0.83829378  0.08925177  1
+  Ni  Ni10  1  0.58930402  0.66200839  0.58391897  1
+  Ni  Ni11  1  0.91069598  0.16200839  0.41608103  1

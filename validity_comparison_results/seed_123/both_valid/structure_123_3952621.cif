@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_AlCuPt2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.90282656
+_cell_length_b   4.90282656
+_cell_length_c   4.45127737
+_cell_angle_alpha   73.32132504
+_cell_angle_beta   73.32132505
+_cell_angle_gamma   34.03307851
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   AlCuPt2
+_chemical_formula_sum   'Al1 Cu1 Pt2'
+_cell_volume   57.12298614
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.76024114  0.76024114  0.79543705  1
+  Pt  Pt1  1  0.01054453  0.01054453  0.94066922  1
+  Pt  Pt2  1  0.23564195  0.23564195  0.31218080  1
+  Al  Al3  1  0.49357238  0.49357238  0.45171292  1

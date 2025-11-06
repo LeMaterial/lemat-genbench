@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_FeNiS
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.17688302
+_cell_length_b   6.17688303
+_cell_length_c   4.78977393
+_cell_angle_alpha   49.84939205
+_cell_angle_beta   49.84939194
+_cell_angle_gamma   59.99999995
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   FeNiS
+_chemical_formula_sum   'Fe3 Ni3 S3'
+_cell_volume   105.65236722
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  S  S0  1  0.04104640  0.04104640  0.87686080  1
+  S  S1  1  0.37438060  0.37438060  0.87685819  1
+  S  S2  1  0.70771256  0.70771256  0.87686232  1
+  Fe  Fe3  1  0.75434847  0.42102079  0.73693934  1
+  Fe  Fe4  1  0.08769139  0.75434847  0.73693934  1
+  Fe  Fe5  1  0.42102079  0.08769139  0.73693934  1
+  Ni  Ni6  1  0.58757061  0.92085142  0.23740022  1
+  Ni  Ni7  1  0.92085142  0.25417775  0.23740022  1
+  Ni  Ni8  1  0.25417775  0.58757061  0.23740022  1

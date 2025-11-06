@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_TaRe2Tc
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.22469610
+_cell_length_b   5.22469611
+_cell_length_c   5.22469610
+_cell_angle_alpha   145.02463403
+_cell_angle_beta   129.22766279
+_cell_angle_gamma   63.14065791
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TaRe2Tc
+_chemical_formula_sum   'Ta1 Re2 Tc1'
+_cell_volume   62.61784309
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Re  Re0  1  0.00286397  0.00286397  1.00000000  1
+  Re  Re1  1  0.25443047  0.75443047  0.50000000  1
+  Ta  Ta2  1  0.49878554  0.49878554  0.00000000  1
+  Tc  Tc3  1  0.74392002  0.24392002  0.50000000  1

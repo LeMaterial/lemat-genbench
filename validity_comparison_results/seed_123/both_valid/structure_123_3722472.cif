@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_K3Na5Hg3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.75215296
+_cell_length_b   9.50547334
+_cell_length_c   9.50547438
+_cell_angle_alpha   120.00000001
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K3Na5Hg3
+_chemical_formula_sum   'K3 Na5 Hg3'
+_cell_volume   528.34846175
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.00000000  0.63983084  0.00000000  1
+  K  K1  1  0.00000000  1.00000000  0.63983084  1
+  K  K2  1  0.00000000  0.36016916  0.36016916  1
+  Na  Na3  1  0.50000000  0.66666700  0.33333300  1
+  Na  Na4  1  0.50000000  0.33333300  0.66666700  1
+  Na  Na5  1  0.50000000  0.26006815  1.00000000  1
+  Na  Na6  1  0.50000000  0.73993185  0.73993185  1
+  Na  Na7  1  0.50000000  0.00000000  0.26006815  1
+  Hg  Hg8  1  0.50000000  0.62649100  1.00000000  1
+  Hg  Hg9  1  0.50000000  0.37350900  0.37350900  1
+  Hg  Hg10  1  0.50000000  0.00000000  0.62649100  1

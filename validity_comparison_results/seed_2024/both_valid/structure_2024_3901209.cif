@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_SmTh2SnN5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.60695124
+_cell_length_b   7.33545354
+_cell_length_c   11.75848598
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   104.23250974
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmTh2SnN5
+_chemical_formula_sum   'Sm2 Th4 Sn2 N10'
+_cell_volume   301.56403900
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.76312556  0.52625113  0.48467529  1
+  Sm  Sm1  1  0.23687444  0.47374887  0.98467529  1
+  Th  Th2  1  0.86893183  0.73786367  0.73665276  1
+  Th  Th3  1  0.13496781  0.26993563  0.71346662  1
+  Th  Th4  1  0.13106817  0.26213633  0.23665276  1
+  Th  Th5  1  0.86503219  0.73006437  0.21346662  1
+  Sn  Sn6  1  0.50279552  0.00559104  0.98237835  1
+  Sn  Sn7  1  0.49720448  0.99440896  0.48237835  1
+  N  N8  1  0.38117950  0.76235901  0.08352482  1
+  N  N9  1  0.72070981  0.44141962  0.83699765  1
+  N  N10  1  0.46790273  0.93580545  0.80985901  1
+  N  N11  1  0.28427965  0.56855929  0.63948259  1
+  N  N12  1  0.93238613  0.86477226  0.53693290  1
+  N  N13  1  0.61882050  0.23764099  0.58352482  1
+  N  N14  1  0.27929019  0.55858038  0.33699765  1
+  N  N15  1  0.53209727  0.06419455  0.30985901  1
+  N  N16  1  0.71572035  0.43144071  0.13948259  1
+  N  N17  1  0.06761387  0.13522774  0.03693290  1

@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Ac2Cd3Cu2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.47689078
+_cell_length_b   5.83218166
+_cell_length_c   7.46950604
+_cell_angle_alpha   93.32414972
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   112.56983821
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ac2Cd3Cu2
+_chemical_formula_sum   'Ac2 Cd3 Cu2'
+_cell_volume   179.73687986
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.63493104  0.26986207  0.33460928  1
+  Ac  Ac1  1  0.36506896  0.73013793  0.66539072  1
+  Cd  Cd2  1  0.33295402  0.66590705  0.14249570  1
+  Cd  Cd3  1  0.00000000  0.00000000  0.00000000  1
+  Cd  Cd4  1  0.66704598  0.33409295  0.85750430  1
+  Cu  Cu5  1  0.07027684  0.14055467  0.64314977  1
+  Cu  Cu6  1  0.92972316  0.85944533  0.35685023  1

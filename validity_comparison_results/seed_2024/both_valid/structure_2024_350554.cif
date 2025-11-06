@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_CsNa2ErI6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.27798508
+_cell_length_b   8.27643821
+_cell_length_c   9.01303992
+_cell_angle_alpha   62.65054287
+_cell_angle_beta   62.62835881
+_cell_angle_gamma   59.97575549
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsNa2ErI6
+_chemical_formula_sum   'Cs1 Na2 Er1 I6'
+_cell_volume   453.16791673
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.80082277  0.80086252  0.59768849  1
+  Na  Na1  1  0.51890245  0.51890877  0.44374173  1
+  Na  Na2  1  0.99724297  0.99758563  0.00685873  1
+  Er  Er3  1  0.32932893  0.32917708  0.01221181  1
+  I  I4  1  0.56550102  0.26246034  0.22606032  1
+  I  I5  1  0.26246647  0.94581867  0.22597126  1
+  I  I6  1  0.94576009  0.56583443  0.22602880  1
+  I  I7  1  0.32973200  0.72969229  0.75883996  1
+  I  I8  1  0.72991658  0.18173709  0.75879020  1
+  I  I9  1  0.18192373  0.32952419  0.75900972  1

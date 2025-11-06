@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_NaHfAgS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   12.15969021
+_cell_length_b   3.72740968
+_cell_length_c   11.25008938
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaHfAgS3
+_chemical_formula_sum   'Na4 Hf4 Ag4 S12'
+_cell_volume   509.90070548
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.76134341  0.75000073  0.20516993  1
+  Ag  Ag1  1  0.26134301  0.75000073  0.29482966  1
+  Ag  Ag2  1  0.73865698  0.24999935  0.70517040  1
+  Ag  Ag3  1  0.23865657  0.24999935  0.79483013  1
+  Hf  Hf4  1  0.05458938  0.24999935  0.16427158  1
+  Hf  Hf5  1  0.55458896  0.24999935  0.33572800  1
+  Hf  Hf6  1  0.44541102  0.75000073  0.66427206  1
+  Hf  Hf7  1  0.94541060  0.75000073  0.83572847  1
+  Na  Na8  1  0.36412194  0.75000073  0.00338308  1
+  Na  Na9  1  0.86412152  0.75000073  0.49661650  1
+  Na  Na10  1  0.13587846  0.24999935  0.50338356  1
+  Na  Na11  1  0.63587804  0.24999935  0.99661697  1
+  S  S12  1  0.92963799  0.75000073  0.07876115  1
+  S  S13  1  0.24952609  0.24999935  0.13437404  1
+  S  S14  1  0.54952058  0.75000073  0.17097820  1
+  S  S15  1  0.04952018  0.75000073  0.32902139  1
+  S  S16  1  0.74952567  0.24999935  0.36562554  1
+  S  S17  1  0.42963759  0.75000073  0.42123843  1
+  S  S18  1  0.57036239  0.24999935  0.57876162  1
+  S  S19  1  0.25047431  0.75000073  0.63437452  1
+  S  S20  1  0.95047981  0.24999935  0.67097867  1
+  S  S21  1  0.45047940  0.24999935  0.82902186  1
+  S  S22  1  0.75047389  0.75000073  0.86562601  1
+  S  S23  1  0.07036199  0.24999935  0.92123890  1

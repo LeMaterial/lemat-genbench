@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_Co2Os
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.76103141
+_cell_length_b   2.53600913
+_cell_length_c   19.29306032
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Co2Os
+_chemical_formula_sum   'Co4 Os2'
+_cell_volume   232.94477926
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.75000001  0.74999999  0.38874083  1
+  Co  Co1  1  0.75000000  0.25000000  0.61125919  1
+  Co  Co2  1  0.25000000  0.75000000  0.38874082  1
+  Co  Co3  1  0.25000000  0.25000000  0.61125918  1
+  Os  Os4  1  0.50000000  0.00000000  0.50000000  1
+  Os  Os5  1  0.00000000  0.50000000  0.50000000  1

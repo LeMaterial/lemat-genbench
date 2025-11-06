@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Ti4Al2Mo
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.74372923
+_cell_length_b   4.95750773
+_cell_length_c   5.80919607
+_cell_angle_alpha   115.25798709
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ti4Al2Mo
+_chemical_formula_sum   'Ti4 Al2 Mo1'
+_cell_volume   123.55428236
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ti  Ti0  1  0.50000000  0.64472043  0.28944087  1
+  Ti  Ti1  1  0.00000000  0.80290714  0.60581328  1
+  Ti  Ti2  1  0.50000000  0.35527957  0.71055913  1
+  Ti  Ti3  1  0.00000000  0.19709286  0.39418672  1
+  Al  Al4  1  0.50000000  0.11119687  0.22239275  1
+  Al  Al5  1  0.50000000  0.88880313  0.77760725  1
+  Mo  Mo6  1  0.00000000  0.50000000  0.00000000  1

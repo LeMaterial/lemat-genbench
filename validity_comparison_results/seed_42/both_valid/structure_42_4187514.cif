@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_PaFeNi4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.85705184
+_cell_length_b   4.85695342
+_cell_length_c   4.85695891
+_cell_angle_alpha   59.99854586
+_cell_angle_beta   60.00243522
+_cell_angle_gamma   60.00145290
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PaFeNi4
+_chemical_formula_sum   'Pa1 Fe1 Ni4'
+_cell_volume   81.02034650
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.12948428  0.62353045  0.62349501  1
+  Ni  Ni1  1  0.62358656  0.12943970  0.62347361  1
+  Ni  Ni2  1  0.62353271  0.62353826  0.62350913  1
+  Ni  Ni3  1  0.62355012  0.62351501  0.12941054  1
+  Pa  Pa4  1  0.00003444  0.00000903  0.99998343  1
+  Fe  Fe5  1  0.24980490  0.25004755  0.25011928  1

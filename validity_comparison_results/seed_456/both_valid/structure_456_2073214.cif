@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Zr(AgI4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.19636827
+_cell_length_b   8.82414600
+_cell_length_c   8.82414519
+_cell_angle_alpha   89.66028397
+_cell_angle_beta   103.76067165
+_cell_angle_gamma   103.76067886
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Zr(AgI4)2
+_chemical_formula_sum   'Zr1 Ag2 I8'
+_cell_volume   527.88175533
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zr  Zr0  1  0.00000000  0.00000000  0.00000000  1
+  Ag  Ag1  1  0.33550170  0.82664428  0.82664428  1
+  Ag  Ag2  1  0.66449830  0.17335572  0.17335572  1
+  I  I3  1  0.80997388  0.90777941  0.25155927  1
+  I  I4  1  0.19002612  0.74844073  0.09222059  1
+  I  I5  1  0.68684411  0.77726311  0.77726311  1
+  I  I6  1  0.31315589  0.22273689  0.22273689  1
+  I  I7  1  0.80997388  0.25155927  0.90777941  1
+  I  I8  1  0.19002612  0.09222059  0.74844073  1
+  I  I9  1  0.19023091  0.57826646  0.57826646  1
+  I  I10  1  0.80976909  0.42173354  0.42173354  1

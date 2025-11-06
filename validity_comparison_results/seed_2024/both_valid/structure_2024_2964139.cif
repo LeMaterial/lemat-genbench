@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ta8Nb2Fe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.36491214
+_cell_length_b   7.55968958
+_cell_length_c   7.55968958
+_cell_angle_alpha   41.30970928
+_cell_angle_beta   80.27231301
+_cell_angle_gamma   80.27231302
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ta8Nb2Fe
+_chemical_formula_sum   'Ta8 Nb2 Fe1'
+_cell_volume   199.06776066
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ta  Ta0  1  0.06501099  0.09021139  0.59286688  1
+  Ta  Ta1  1  0.06501099  0.59286688  0.09021139  1
+  Ta  Ta2  1  0.93498901  0.90978861  0.40713312  1
+  Ta  Ta3  1  0.25588817  0.50020708  0.50020708  1
+  Ta  Ta4  1  0.93498901  0.40713312  0.90978861  1
+  Ta  Ta5  1  0.46017208  0.10083837  0.10083837  1
+  Ta  Ta6  1  0.53982792  0.89916163  0.89916163  1
+  Ta  Ta7  1  0.74411183  0.49979292  0.49979292  1
+  Nb  Nb8  1  0.56425833  0.30434594  0.30434594  1
+  Nb  Nb9  1  0.43574167  0.69565406  0.69565406  1
+  Fe  Fe10  1  0.00000000  0.00000000  0.00000000  1

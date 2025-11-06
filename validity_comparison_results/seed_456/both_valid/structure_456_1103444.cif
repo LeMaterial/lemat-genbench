@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_CuAuSeS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.44671857
+_cell_length_b   7.12774136
+_cell_length_c   7.80162531
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   93.14953977
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CuAuSeS3
+_chemical_formula_sum   'Cu2 Au2 Se2 S6'
+_cell_volume   246.89948498
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.00000000  0.00000000  0.00000000  1
+  Au  Au1  1  0.00000000  0.49999990  0.00000000  1
+  Cu  Cu2  1  0.44767377  0.25000065  0.32941364  1
+  Cu  Cu3  1  0.55232612  0.75000056  0.67058619  1
+  S  S4  1  0.66984754  0.25000065  0.07083713  1
+  S  S5  1  0.11598559  0.50421162  0.30441827  1
+  S  S6  1  0.11598559  0.99578810  0.30441827  1
+  S  S7  1  0.88401442  0.00421171  0.69558285  1
+  S  S8  1  0.88401442  0.49578819  0.69558285  1
+  S  S9  1  0.33015235  0.75000056  0.92916271  1
+  Se  Se10  1  0.43161212  0.75000056  0.35831539  1
+  Se  Se11  1  0.56838777  0.25000065  0.64168445  1

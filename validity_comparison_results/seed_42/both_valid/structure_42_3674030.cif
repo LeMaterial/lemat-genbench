@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_La3(CdGe2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.45886593
+_cell_length_b   6.38421556
+_cell_length_c   9.05274987
+_cell_angle_alpha   69.74025563
+_cell_angle_beta   75.74293224
+_cell_angle_gamma   69.56103478
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La3(CdGe2)2
+_chemical_formula_sum   'La3 Cd2 Ge4'
+_cell_volume   224.22097088
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.38031297  0.55070410  0.68866795  1
+  La  La1  1  0.00000000  0.00000000  0.00000000  1
+  La  La2  1  0.61968703  0.44929590  0.31133205  1
+  Cd  Cd3  1  0.31773057  0.03059325  0.33394661  1
+  Cd  Cd4  1  0.68226943  0.96940675  0.66605339  1
+  Ge  Ge5  1  0.28339458  0.38417127  0.04904158  1
+  Ge  Ge6  1  0.71660542  0.61582873  0.95095842  1
+  Ge  Ge7  1  0.08268125  0.23271321  0.60192330  1
+  Ge  Ge8  1  0.91731875  0.76728679  0.39807670  1

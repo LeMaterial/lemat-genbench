@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_ZrInBi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.64608874
+_cell_length_b   4.64611712
+_cell_length_c   8.06149862
+_cell_angle_alpha   106.68121126
+_cell_angle_beta   106.68105479
+_cell_angle_gamma   89.99723395
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZrInBi
+_chemical_formula_sum   'Zr2 In2 Bi2'
+_cell_volume   159.03525318
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Bi  Bi0  1  0.15021337  0.15021384  0.30196633  1
+  Bi  Bi1  1  0.84978663  0.84978616  0.69803367  1
+  Zr  Zr2  1  0.50000000  0.00000000  -0.00000000  1
+  Zr  Zr3  1  0.00000000  0.50000000  0.00000000  1
+  In  In4  1  0.36038959  0.36038913  0.71940716  1
+  In  In5  1  0.63961041  0.63961087  0.28059284  1

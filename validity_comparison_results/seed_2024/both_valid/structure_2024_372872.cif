@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_La4Ho3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.19438639
+_cell_length_b   8.24707553
+_cell_length_c   6.27939736
+_cell_angle_alpha   97.80798952
+_cell_angle_beta   114.43152179
+_cell_angle_gamma   89.99999906
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La4Ho3
+_chemical_formula_sum   'La4 Ho3'
+_cell_volume   242.17082826
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.85677414  0.57614311  0.71354828  1
+  La  La1  1  0.14322586  0.42385689  0.28645072  1
+  La  La2  1  0.71295587  0.14183993  0.42591175  1
+  La  La3  1  0.28704413  0.85816007  0.57408825  1
+  Ho  Ho4  1  0.00000000  0.00000000  0.00000000  1
+  Ho  Ho5  1  0.57104085  0.71283495  0.14208270  1
+  Ho  Ho6  1  0.42895915  0.28716505  0.85791730  1

@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Ho2Ga2Co5Ge
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.31471476
+_cell_length_b   9.42341410
+_cell_length_c   9.42341410
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho2Ga2Co5Ge
+_chemical_formula_sum   'Ho4 Ga4 Co10 Ge2'
+_cell_volume   294.34910137
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.00000000  0.67371810  0.17371810  1
+  Ho  Ho1  1  0.00000000  0.32628190  0.82628190  1
+  Ho  Ho2  1  0.00000000  0.17371810  0.32628190  1
+  Ho  Ho3  1  0.00000000  0.82628190  0.67371810  1
+  Ga  Ga4  1  0.00000000  0.12413466  0.62413466  1
+  Ga  Ga5  1  0.00000000  0.87586534  0.37586534  1
+  Ga  Ga6  1  0.00000000  0.62413466  0.87586534  1
+  Ga  Ga7  1  0.00000000  0.37586534  0.12413466  1
+  Co  Co8  1  0.50000000  0.19881735  0.06134408  1
+  Co  Co9  1  0.50000000  0.80118265  0.93865592  1
+  Co  Co10  1  0.50000000  0.06134408  0.80118265  1
+  Co  Co11  1  0.50000000  0.69881735  0.43865592  1
+  Co  Co12  1  0.50000000  0.93865592  0.19881735  1
+  Co  Co13  1  0.50000000  0.30118265  0.56134408  1
+  Co  Co14  1  0.50000000  0.56134408  0.69881735  1
+  Co  Co15  1  0.50000000  0.43865592  0.30118265  1
+  Co  Co16  1  0.50000000  0.50000000  0.00000000  1
+  Co  Co17  1  0.50000000  0.00000000  0.50000000  1
+  Ge  Ge18  1  0.00000000  0.00000000  0.00000000  1
+  Ge  Ge19  1  0.00000000  0.50000000  0.50000000  1

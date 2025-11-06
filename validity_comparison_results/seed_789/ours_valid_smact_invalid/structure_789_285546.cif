@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_LiHf2TeO8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.76594172
+_cell_length_b   4.76541261
+_cell_length_c   6.47445030
+_cell_angle_alpha   89.99998107
+_cell_angle_beta   89.99969516
+_cell_angle_gamma   89.86435256
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiHf2TeO8
+_chemical_formula_sum   'Li1 Hf2 Te1 O8'
+_cell_volume   147.04522343
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  -0.00000000  0.00000000  0.50000000  1
+  Hf  Hf1  1  0.50000439  0.49999953  0.73711328  1
+  Hf  Hf2  1  0.49999561  0.50000047  0.26288672  1
+  Te  Te3  1  0.00000000  0.00000000  0.00000000  1
+  O  O4  1  0.19441899  0.80492403  0.21921002  1
+  O  O5  1  0.70837541  0.70910332  0.00000040  1
+  O  O6  1  0.80557655  0.19507874  0.21920815  1
+  O  O7  1  0.80558101  0.19507597  0.78078998  1
+  O  O8  1  0.29162459  0.29089668  0.99999960  1
+  O  O9  1  0.19442345  0.80492126  0.78079185  1
+  O  O10  1  0.69202863  0.69258834  0.49999759  1
+  O  O11  1  0.30797137  0.30741166  0.50000241  1

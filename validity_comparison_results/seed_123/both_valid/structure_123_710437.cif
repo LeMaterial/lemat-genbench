@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Be2NbSi2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.52145350
+_cell_length_b   3.52145350
+_cell_length_c   10.34753837
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Be2NbSi2
+_chemical_formula_sum   'Be4 Nb2 Si4'
+_cell_volume   128.31604392
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.75000000  0.75000000  0.85124038  1
+  Be  Be1  1  0.25000000  0.25000000  0.14875962  1
+  Be  Be2  1  0.25000000  0.75000000  0.50000000  1
+  Be  Be3  1  0.75000000  0.25000000  0.50000000  1
+  Nb  Nb4  1  0.25000000  0.25000000  0.70582973  1
+  Nb  Nb5  1  0.75000000  0.75000000  0.29417027  1
+  Si  Si6  1  0.25000000  0.75000000  0.00000000  1
+  Si  Si7  1  0.75000000  0.25000000  0.00000000  1
+  Si  Si8  1  0.25000000  0.25000000  0.36005229  1
+  Si  Si9  1  0.75000000  0.75000000  0.63994771  1

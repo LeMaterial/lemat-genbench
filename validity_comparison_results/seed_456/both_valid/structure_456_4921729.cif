@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_LuAlGe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.97903024
+_cell_length_b   4.97903041
+_cell_length_c   5.25146298
+_cell_angle_alpha   110.44673566
+_cell_angle_beta   110.44673527
+_cell_angle_gamma   105.02852998
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LuAlGe3
+_chemical_formula_sum   'Lu1 Al1 Ge3'
+_cell_volume   102.95562744
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ge  Ge0  1  0.84770803  0.34826015  0.69594903  1
+  Ge  Ge1  1  0.34826015  0.84770803  0.69594903  1
+  Ge  Ge2  1  0.95765820  0.95765820  0.91585049  1
+  Lu  Lu3  1  0.60283548  0.60283548  0.20506265  1
+  Al  Al4  1  0.24553813  0.24553813  0.49118780  1

@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Y7(ErTh)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.09661524
+_cell_length_b   7.99351334
+_cell_length_c   7.99351334
+_cell_angle_alpha   91.58918758
+_cell_angle_beta   74.43927335
+_cell_angle_gamma   74.43927334
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Y7(ErTh)2
+_chemical_formula_sum   'Y7 Er2 Th2'
+_cell_volume   359.42545027
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Y  Y0  1  0.17399909  0.06109277  0.58822158  1
+  Y  Y1  1  0.82600091  0.41177842  0.93890723  1
+  Y  Y2  1  0.82600091  0.93890723  0.41177842  1
+  Y  Y3  1  0.17399909  0.58822158  0.06109277  1
+  Y  Y4  1  0.00000000  0.00000000  0.00000000  1
+  Y  Y5  1  0.58757312  0.76942132  0.76942132  1
+  Y  Y6  1  0.41242688  0.23057868  0.23057868  1
+  Er  Er7  1  0.50000000  0.22029020  0.77970980  1
+  Er  Er8  1  0.50000000  0.77970980  0.22029020  1
+  Th  Th9  1  0.80263117  0.42221631  0.42221631  1
+  Th  Th10  1  0.19736883  0.57778369  0.57778369  1

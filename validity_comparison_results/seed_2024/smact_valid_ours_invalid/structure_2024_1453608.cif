@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_Li2TlCl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.19220823
+_cell_length_b   8.19220823
+_cell_length_c   3.48393394
+_cell_angle_alpha   78.18589905
+_cell_angle_beta   78.18589908
+_cell_angle_gamma   22.12710753
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2TlCl
+_chemical_formula_sum   'Li2 Tl1 Cl1'
+_cell_volume   86.13156451
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cl  Cl0  1  0.70228875  0.70228875  0.80193457  1
+  Li  Li1  1  0.08178410  0.08178410  0.91579543  1
+  Li  Li2  1  0.27161869  0.27161869  0.23270205  1
+  Tl  Tl3  1  0.44430846  0.44430846  0.54956795  1

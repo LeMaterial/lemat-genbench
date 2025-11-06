@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_Mn3CrAs3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.28064317
+_cell_length_b   4.05770229
+_cell_length_c   20.61345718
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00008338
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Mn3CrAs3
+_chemical_formula_sum   'Mn6 Cr2 As6'
+_cell_volume   692.62009278
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mn  Mn0  1  0.96200834  0.22999033  0.57554803  1
+  Mn  Mn1  1  0.03911988  0.73000913  0.42423866  1
+  Mn  Mn2  1  0.16891605  0.73009261  0.55734686  1
+  Mn  Mn3  1  0.83603083  0.22994211  0.44785314  1
+  Mn  Mn4  1  0.59557029  0.72992110  0.48617011  1
+  Mn  Mn5  1  0.41089188  0.23001700  0.51196013  1
+  Cr  Cr6  1  0.86825028  0.73009023  0.51334898  1
+  Cr  Cr7  1  0.12687965  0.23024649  0.48347216  1
+  As  As8  1  0.94745138  0.73004105  0.63547459  1
+  As  As9  1  0.04476203  0.23008786  0.36315456  1
+  As  As10  1  0.25486642  0.23015373  0.61057419  1
+  As  As11  1  0.74617962  0.73001404  0.38815492  1
+  As  As12  1  0.31714962  0.73015312  0.45135251  1
+  As  As13  1  0.68192377  0.23004117  0.55135116  1

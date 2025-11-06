@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Tl2Ga2TeO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.04452953
+_cell_length_b   6.04452952
+_cell_length_c   6.91240280
+_cell_angle_alpha   64.07313837
+_cell_angle_beta   64.07313838
+_cell_angle_gamma   60.00000001
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tl2Ga2TeO6
+_chemical_formula_sum   'Tl2 Ga2 Te1 O6'
+_cell_volume   188.79743493
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tl  Tl0  1  0.79399837  0.79399837  0.61800490  1
+  Tl  Tl1  1  0.20600163  0.20600163  0.38199510  1
+  Ga  Ga2  1  0.40203760  0.40203760  0.79388619  1
+  Ga  Ga3  1  0.59796240  0.59796240  0.20611381  1
+  Te  Te4  1  0.00000000  0.00000000  0.00000000  1
+  O  O5  1  0.76189633  0.76189633  0.22883208  1
+  O  O6  1  0.24737527  0.76189633  0.22883208  1
+  O  O7  1  0.76189633  0.24737527  0.22883208  1
+  O  O8  1  0.23810367  0.75262473  0.77116792  1
+  O  O9  1  0.75262473  0.23810367  0.77116792  1
+  O  O10  1  0.23810367  0.23810367  0.77116792  1

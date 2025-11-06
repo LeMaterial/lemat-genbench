@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Ta2AgS4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.38093563
+_cell_length_b   3.38095079
+_cell_length_c   14.00884017
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   89.99995227
+_cell_angle_gamma   59.99985162
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ta2AgS4
+_chemical_formula_sum   'Ta2 Ag1 S4'
+_cell_volume   138.67811031
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ta  Ta0  1  0.00003483  0.99998258  0.75725976  1
+  Ta  Ta1  1  0.99996517  0.00001742  0.24274024  1
+  Ag  Ag2  1  -0.00000000  0.00000000  0.50000000  1
+  S  S3  1  0.33336589  0.33331706  0.64472819  1
+  S  S4  1  0.66663411  0.66668294  0.35527181  1
+  S  S5  1  0.66663230  0.66668385  0.13479176  1
+  S  S6  1  0.33336770  0.33331615  0.86520824  1

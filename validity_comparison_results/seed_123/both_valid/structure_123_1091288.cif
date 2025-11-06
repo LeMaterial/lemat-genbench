@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_TlGaPdS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.36732918
+_cell_length_b   3.52063394
+_cell_length_c   11.09937354
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   107.23371182
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TlGaPdS3
+_chemical_formula_sum   'Tl2 Ga2 Pd2 S6'
+_cell_volume   274.96674452
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ga  Ga0  1  0.58004579  0.75000129  0.39758955  1
+  Ga  Ga1  1  0.41995290  0.25000043  0.60240966  1
+  Pd  Pd2  1  0.49122837  0.25000043  0.11316134  1
+  Pd  Pd3  1  0.50877210  0.75000129  0.88683881  1
+  S  S4  1  0.29224384  0.75000129  0.02458528  1
+  S  S5  1  0.73945342  0.25000043  0.32109624  1
+  S  S6  1  0.33125891  0.25000043  0.38115157  1
+  S  S7  1  0.66874114  0.75000129  0.61884764  1
+  S  S8  1  0.26054569  0.75000129  0.67890391  1
+  S  S9  1  0.70775664  0.25000043  0.97541487  1
+  Tl  Tl10  1  0.99767819  0.75000129  0.20067242  1
+  Tl  Tl11  1  0.00232093  0.25000043  0.79932774  1

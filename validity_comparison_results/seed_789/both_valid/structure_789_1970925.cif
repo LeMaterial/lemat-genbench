@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_NaPbWI
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.63448328
+_cell_length_b   3.63448328
+_cell_length_c   9.13211194
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaPbWI
+_chemical_formula_sum   'Na1 Pb1 W1 I1'
+_cell_volume   104.46894492
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.66667000  0.33333000  0.04101534  1
+  Pb  Pb1  1  0.00000000  0.00000000  0.77301320  1
+  W  W2  1  0.33333000  0.66667000  0.55332161  1
+  I  I3  1  0.00000000  0.00000000  0.35551985  1

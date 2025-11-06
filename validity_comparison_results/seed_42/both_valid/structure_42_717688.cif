@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Ac2NpZnO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.02202003
+_cell_length_b   5.87190334
+_cell_length_c   6.14172769
+_cell_angle_alpha   118.55704627
+_cell_angle_beta   121.35484527
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ac2NpZnO6
+_chemical_formula_sum   'Ac2 Np1 Zn1 O6'
+_cell_volume   153.67917222
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.23414917  0.25635740  0.51271380  1
+  Ac  Ac1  1  0.76585083  0.74364260  0.48728620  1
+  Np  Np2  1  0.00000000  0.50000000  0.00000000  1
+  Zn  Zn3  1  0.50000000  0.00000000  0.00000000  1
+  O  O4  1  0.35198854  0.74320661  0.48641223  1
+  O  O5  1  0.19413954  0.18249802  0.87085363  1
+  O  O6  1  0.80586046  0.31164439  0.12914637  1
+  O  O7  1  0.19413954  0.68835561  0.87085363  1
+  O  O8  1  0.80586046  0.81750198  0.12914637  1
+  O  O9  1  0.64801146  0.25679339  0.51358777  1

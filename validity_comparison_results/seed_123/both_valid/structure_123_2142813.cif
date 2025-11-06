@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Tm4PuS5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.87524114
+_cell_length_b   5.45552993
+_cell_length_c   10.19594893
+_cell_angle_alpha   105.51759010
+_cell_angle_beta   100.95501105
+_cell_angle_gamma   89.99999532
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tm4PuS5
+_chemical_formula_sum   'Tm4 Pu1 S5'
+_cell_volume   203.62047151
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tm  Tm0  1  0.40117648  0.40117648  0.80235196  1
+  Tm  Tm1  1  0.80105322  0.80105322  0.60210645  1
+  Tm  Tm2  1  0.19894678  0.19894678  0.39789355  1
+  Tm  Tm3  1  0.59882352  0.59882352  0.19764804  1
+  Pu  Pu4  1  0.00000000  0.00000000  0.00000000  1
+  S  S5  1  0.60268097  0.10268097  0.20536295  1
+  S  S6  1  0.79994306  0.29994306  0.59988612  1
+  S  S7  1  0.20005694  0.70005694  0.40011388  1
+  S  S8  1  0.00000000  0.50000000  0.00000000  1
+  S  S9  1  0.39731903  0.89731903  0.79463705  1

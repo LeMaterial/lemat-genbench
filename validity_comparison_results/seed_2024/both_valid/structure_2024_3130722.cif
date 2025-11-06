@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_CsLi2AgBr4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.04710982
+_cell_length_b   7.30523847
+_cell_length_c   7.30523847
+_cell_angle_alpha   57.36083101
+_cell_angle_beta   61.16213888
+_cell_angle_gamma   61.16213886
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsLi2AgBr4
+_chemical_formula_sum   'Cs1 Li2 Ag1 Br4'
+_cell_volume   264.53348711
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.00000000  0.00000000  0.00000000  1
+  Li  Li1  1  0.25000657  0.24999343  0.24999343  1
+  Li  Li2  1  0.74999343  0.75000657  0.75000657  1
+  Ag  Ag3  1  0.50000000  0.50000000  0.50000000  1
+  Br  Br4  1  0.46906228  0.12587608  0.52894003  1
+  Br  Br5  1  0.12387739  0.87412392  0.47105997  1
+  Br  Br6  1  0.87612161  0.52894003  0.12587608  1
+  Br  Br7  1  0.53093872  0.47105997  0.87412392  1

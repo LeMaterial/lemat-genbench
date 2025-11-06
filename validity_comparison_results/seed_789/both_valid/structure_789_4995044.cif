@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_CuSbAu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.29650834
+_cell_length_b   4.29580516
+_cell_length_c   6.27232963
+_cell_angle_alpha   89.97454773
+_cell_angle_beta   89.99733626
+_cell_angle_gamma   90.00523401
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CuSbAu
+_chemical_formula_sum   'Cu2 Sb2 Au2'
+_cell_volume   115.76814196
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.81306076  0.36533016  0.91957271  1
+  Cu  Cu1  1  0.31410786  0.86801733  0.91958167  1
+  Sb  Sb2  1  0.81368124  0.86641192  0.63356728  1
+  Sb  Sb3  1  0.31351146  0.36631315  0.20566689  1
+  Au  Au4  1  0.81417744  0.86466317  0.18665050  1
+  Au  Au5  1  0.31297724  0.36808926  0.65258076  1

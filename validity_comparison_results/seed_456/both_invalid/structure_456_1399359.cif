@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_CeTmAs
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.12075408
+_cell_length_b   4.12075331
+_cell_length_c   8.73333947
+_cell_angle_alpha   103.66324647
+_cell_angle_beta   103.66324285
+_cell_angle_gamma   89.99765881
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CeTmAs
+_chemical_formula_sum   'Ce2 Tm2 As2'
+_cell_volume   139.77847214
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  As  As0  1  0.14383773  0.14383794  0.28744695  1
+  As  As1  1  0.85616227  0.85616206  0.71255305  1
+  Tm  Tm2  1  0.32019390  0.32019374  0.64071159  1
+  Tm  Tm3  1  0.67980610  0.67980626  0.35928841  1
+  Ce  Ce4  1  0.50000000  0.00000000  0.00000000  1
+  Ce  Ce5  1  -0.00000000  0.50000000  0.00000000  1

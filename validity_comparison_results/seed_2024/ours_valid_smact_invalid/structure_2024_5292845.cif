@@ -1,0 +1,45 @@
+# generated using pymatgen
+data_MgTi3(SnO4)3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.83434570
+_cell_length_b   6.00135309
+_cell_length_c   6.00916017
+_cell_angle_alpha   68.40290696
+_cell_angle_beta   65.05736264
+_cell_angle_gamma   65.76600410
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgTi3(SnO4)3
+_chemical_formula_sum   'Mg1 Ti3 Sn3 O12'
+_cell_volume   255.99258099
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg0  1  0.71003850  0.31467998  0.79480276  1
+  Ti  Ti1  1  0.70732822  0.32332591  0.29999804  1
+  Ti  Ti2  1  0.19710682  0.34528576  0.37169157  1
+  Ti  Ti3  1  0.00039079  0.98391095  0.04256580  1
+  Sn  Sn4  1  0.87830385  0.70327421  0.70155444  1
+  Sn  Sn5  1  0.31118722  0.66493826  0.66951261  1
+  Sn  Sn6  1  0.43052711  0.98581870  -0.01845858  1
+  O  O7  1  0.30926810  0.39999667  0.01693649  1
+  O  O8  1  0.72095803  0.06135977  0.62916240  1
+  O  O9  1  0.24451928  0.92608993  0.87760915  1
+  O  O10  1  0.58219276  0.54525699  0.53676192  1
+  O  O11  1  0.94179128  0.25671181  0.18784120  1
+  O  O12  1  0.74203450  0.08610302  0.12825843  1
+  O  O13  1  0.32988619  0.41902324  0.48152475  1
+  O  O14  1  0.03293934  0.76878407  0.81982767  1
+  O  O15  1  0.67109937  0.58283241  0.98370366  1
+  O  O16  1  0.97359493  0.32835108  0.67228308  1
+  O  O17  1  0.28220918  0.99354785  0.38571634  1
+  O  O18  1  0.02390854  0.71547038  0.32346928  1

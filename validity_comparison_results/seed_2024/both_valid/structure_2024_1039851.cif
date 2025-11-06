@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_LuMgIr
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.13194205
+_cell_length_b   7.13194205
+_cell_length_c   4.03107901
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LuMgIr
+_chemical_formula_sum   'Lu3 Mg3 Ir3'
+_cell_volume   177.56916568
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ir  Ir0  1  0.66666617  0.33333263  0.00000000  1
+  Ir  Ir1  1  0.33333344  0.66666688  0.00000000  1
+  Ir  Ir2  1  0.00000000  0.00000000  0.50000012  1
+  Lu  Lu3  1  0.40741638  0.00000000  0.50000012  1
+  Lu  Lu4  1  -0.00000000  0.40741572  0.50000012  1
+  Lu  Lu5  1  0.59258426  0.59258379  0.50000012  1
+  Mg  Mg6  1  0.75306417  0.00000000  0.00000000  1
+  Mg  Mg7  1  0.24693598  0.24693501  0.00000000  1
+  Mg  Mg8  1  0.00000000  0.75306451  0.00000000  1

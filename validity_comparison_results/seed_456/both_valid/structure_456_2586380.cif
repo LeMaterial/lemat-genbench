@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Sm5HoTm2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.05663379
+_cell_length_b   7.16066587
+_cell_length_c   14.32109668
+_cell_angle_alpha   90.00003261
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sm5HoTm2
+_chemical_formula_sum   'Sm10 Ho2 Tm4'
+_cell_volume   518.55065630
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.00000000  0.00000000  0.00000000  1
+  Sm  Sm1  1  0.00000000  0.50000000  0.50000000  1
+  Sm  Sm2  1  0.00000000  0.50044273  0.75084400  1
+  Sm  Sm3  1  0.00000000  0.49955727  0.24915600  1
+  Sm  Sm4  1  0.00000000  0.99955653  0.25081063  1
+  Sm  Sm5  1  0.00000000  0.00044347  0.74918937  1
+  Sm  Sm6  1  0.50000000  0.25093502  0.87561962  1
+  Sm  Sm7  1  0.50000000  0.74906498  0.12438038  1
+  Sm  Sm8  1  0.50000000  0.24906634  0.37559605  1
+  Sm  Sm9  1  0.50000000  0.75093366  0.62440395  1
+  Ho  Ho10  1  0.00000000  -0.00000000  0.50000000  1
+  Ho  Ho11  1  0.00000000  0.50000000  0.00000000  1
+  Tm  Tm12  1  0.50000000  0.24991981  0.62427914  1
+  Tm  Tm13  1  0.50000000  0.75008019  0.37572086  1
+  Tm  Tm14  1  0.50000000  0.25008199  0.12424319  1
+  Tm  Tm15  1  0.50000000  0.74991801  0.87575681  1

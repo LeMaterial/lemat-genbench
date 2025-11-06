@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Sr2SnAsPt6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.75930348
+_cell_length_b   7.10936456
+_cell_length_c   8.60814184
+_cell_angle_alpha   49.82947853
+_cell_angle_beta   53.48273905
+_cell_angle_gamma   84.18382479
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2SnAsPt6
+_chemical_formula_sum   'Sr2 Sn1 As1 Pt6'
+_cell_volume   225.55505472
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.74741076  0.25257771  0.54133618  1
+  Sr  Sr1  1  0.25259201  0.74742427  0.45865902  1
+  Sn  Sn2  1  0.99999969  0.99999973  0.00000058  1
+  As  As3  1  0.49999947  0.49999958  0.00000096  1
+  Pt  Pt4  1  0.26981635  0.22807237  0.49014533  1
+  Pt  Pt5  1  0.77187735  0.73014027  0.98809886  1
+  Pt  Pt6  1  0.25136088  0.74863076  0.86554178  1
+  Pt  Pt7  1  0.74863712  0.25136729  0.13446225  1
+  Pt  Pt8  1  0.22812038  0.26985821  0.01190494  1
+  Pt  Pt9  1  0.73018300  0.77192680  0.50985610  1

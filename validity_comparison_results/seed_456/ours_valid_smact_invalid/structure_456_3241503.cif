@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Ti7In3N2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.08755644
+_cell_length_b   4.10548288
+_cell_length_c   11.70471937
+_cell_angle_alpha   100.11831593
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ti7In3N2
+_chemical_formula_sum   'Ti7 In3 N2'
+_cell_volume   193.36656569
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ti  Ti0  1  0.50000000  0.70017241  0.40003986  1
+  Ti  Ti1  1  0.50000000  0.29982759  0.59996014  1
+  Ti  Ti2  1  0.00000000  0.59592198  0.19163141  1
+  Ti  Ti3  1  0.00000000  0.00000000  0.00000000  1
+  Ti  Ti4  1  0.00000000  0.40407802  0.80836859  1
+  Ti  Ti5  1  0.50000000  0.90268907  0.80545904  1
+  Ti  Ti6  1  0.50000000  0.09731093  0.19454096  1
+  In  In7  1  0.50000000  0.50000000  0.00000000  1
+  In  In8  1  0.00000000  0.19757562  0.39483813  1
+  In  In9  1  0.00000000  0.80242438  0.60516187  1
+  N  N10  1  0.50000000  0.61373935  0.22724686  1
+  N  N11  1  0.50000000  0.38626065  0.77275314  1

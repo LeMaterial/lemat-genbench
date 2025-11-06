@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Pr5ThPb5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.48330173
+_cell_length_b   8.03567573
+_cell_length_c   8.93096157
+_cell_angle_alpha   105.99928457
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   113.79136362
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr5ThPb5
+_chemical_formula_sum   'Pr5 Th1 Pb5'
+_cell_volume   405.96895117
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.66703951  0.33407903  0.33439004  1
+  Pr  Pr1  1  0.66820983  0.33641966  0.83526959  1
+  Pr  Pr2  1  0.00000000  0.00000000  0.50000000  1
+  Pr  Pr3  1  0.33179017  0.66358034  0.16473041  1
+  Pr  Pr4  1  0.33296049  0.66592097  0.66560996  1
+  Th  Th5  1  0.00000000  0.00000000  0.00000000  1
+  Pb  Pb6  1  0.83567130  0.67134160  0.17106168  1
+  Pb  Pb7  1  0.83507816  0.67015631  0.66574210  1
+  Pb  Pb8  1  0.50000000  0.00000000  0.00000000  1
+  Pb  Pb9  1  0.16492184  0.32984369  0.33425790  1
+  Pb  Pb10  1  0.16432870  0.32865840  0.82893832  1

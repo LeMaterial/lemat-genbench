@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_MgNbAg
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.04710008
+_cell_length_b   2.88372599
+_cell_length_c   9.92865542
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgNbAg
+_chemical_formula_sum   'Mg4 Nb4 Ag4'
+_cell_volume   230.40072040
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nb  Nb0  1  0.42596238  0.25000000  0.40035032  1
+  Nb  Nb1  1  0.07403762  0.75000000  0.90035032  1
+  Nb  Nb2  1  0.57403762  0.75000000  0.59964968  1
+  Nb  Nb3  1  0.92596238  0.25000000  0.09964968  1
+  Mg  Mg4  1  0.81643183  0.25000000  0.40078159  1
+  Mg  Mg5  1  0.68356817  0.75000000  0.90078159  1
+  Mg  Mg6  1  0.18356817  0.75000000  0.59921841  1
+  Mg  Mg7  1  0.31643183  0.25000000  0.09921841  1
+  Ag  Ag8  1  0.88309209  0.25000000  0.68687078  1
+  Ag  Ag9  1  0.61690791  0.75000000  0.18687078  1
+  Ag  Ag10  1  0.11690791  0.75000000  0.31312922  1
+  Ag  Ag11  1  0.38309209  0.25000000  0.81312922  1

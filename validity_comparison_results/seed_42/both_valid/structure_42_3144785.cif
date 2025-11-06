@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Pu6GaAu5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.95697976
+_cell_length_b   7.79784517
+_cell_length_c   9.19428492
+_cell_angle_alpha   115.08508901
+_cell_angle_beta   116.04764016
+_cell_angle_gamma   90.00734944
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pu6GaAu5
+_chemical_formula_sum   'Pu6 Ga1 Au5'
+_cell_volume   281.49829114
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.34189332  0.83672247  0.67340059  1
+  Au  Au1  1  0.67435550  0.66809178  0.33614536  1
+  Au  Au2  1  0.00000000  0.50000000  0.00000000  1
+  Au  Au3  1  0.32564450  0.33190822  0.66385464  1
+  Au  Au4  1  0.65810668  0.16327753  0.32659941  1
+  Ga  Ga5  1  0.00000000  0.00000000  0.00000000  1
+  Pu  Pu6  1  0.16757479  0.41527106  0.33174311  1
+  Pu  Pu7  1  0.16757902  0.91646329  0.33174878  1
+  Pu  Pu8  1  0.49999621  0.24957742  0.99999450  1
+  Pu  Pu9  1  0.50000379  0.75042258  0.00000550  1
+  Pu  Pu10  1  0.83242098  0.08353671  0.66825122  1
+  Pu  Pu11  1  0.83242521  0.58472894  0.66825689  1

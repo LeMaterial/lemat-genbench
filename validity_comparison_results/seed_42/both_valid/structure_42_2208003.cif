@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Ce(TiCl3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.39094305
+_cell_length_b   6.39094295
+_cell_length_c   18.09096639
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000108
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ce(TiCl3)2
+_chemical_formula_sum   'Ce1 Ti2 Cl6'
+_cell_volume   639.91498784
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.99999999  0.99999999  0.49999999  1
+  Ti  Ti1  1  0.33333333  0.66666666  0.49999999  1
+  Ti  Ti2  1  0.66666666  0.33333334  0.50000000  1
+  Cl  Cl3  1  0.62993018  0.00000000  0.58542845  1
+  Cl  Cl4  1  0.37006983  0.37006983  0.58542845  1
+  Cl  Cl5  1  1.00000000  0.62993017  0.58542845  1
+  Cl  Cl6  1  0.37006983  1.00000000  0.41457155  1
+  Cl  Cl7  1  0.62993017  0.62993017  0.41457156  1
+  Cl  Cl8  1  0.00000001  0.37006983  0.41457155  1

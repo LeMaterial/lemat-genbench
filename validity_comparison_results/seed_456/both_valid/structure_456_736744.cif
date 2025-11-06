@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_PrNp2RhN4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.48295793
+_cell_length_b   5.98838732
+_cell_length_c   11.65905821
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   106.90641620
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PrNp2RhN4
+_chemical_formula_sum   'Pr2 Np4 Rh2 N8'
+_cell_volume   232.66664880
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.10636631  0.21273262  0.75000000  1
+  Pr  Pr1  1  0.89363369  0.78726738  0.25000000  1
+  Np  Np2  1  0.37099961  0.74199923  0.55590508  1
+  Np  Np3  1  0.62900039  0.25800077  0.05590508  1
+  Np  Np4  1  0.62900039  0.25800077  0.44409492  1
+  Np  Np5  1  0.37099961  0.74199923  0.94409492  1
+  Rh  Rh6  1  0.84406520  0.68813040  0.75000000  1
+  Rh  Rh7  1  0.15593480  0.31186960  0.25000000  1
+  N  N8  1  0.26564258  0.53128516  0.10043223  1
+  N  N9  1  0.73435742  0.46871484  0.60043223  1
+  N  N10  1  0.73435742  0.46871484  0.89956777  1
+  N  N11  1  0.26564258  0.53128516  0.39956777  1
+  N  N12  1  0.00000000  0.00000000  0.50000000  1
+  N  N13  1  0.00000000  0.00000000  0.00000000  1
+  N  N14  1  0.44998506  0.89997011  0.75000000  1
+  N  N15  1  0.55001494  0.10002989  0.25000000  1

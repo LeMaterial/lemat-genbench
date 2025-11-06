@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Li2Sm5Pb4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.52113014
+_cell_length_b   7.64117311
+_cell_length_c   10.98859546
+_cell_angle_alpha   110.64892928
+_cell_angle_beta   101.87160358
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2Sm5Pb4
+_chemical_formula_sum   'Li2 Sm5 Pb4'
+_cell_volume   346.54224162
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.56669475  0.56529623  0.13339051  1
+  Li  Li1  1  0.43330525  0.43470377  0.86660949  1
+  Sm  Sm2  1  0.16108394  0.92009063  0.32216789  1
+  Sm  Sm3  1  0.83891606  0.07990937  0.67783211  1
+  Sm  Sm4  1  0.16068476  0.39832274  0.32136951  1
+  Sm  Sm5  1  0.50000000  0.00000000  0.00000000  1
+  Sm  Sm6  1  0.83931524  0.60167726  0.67863049  1
+  Pb  Pb7  1  0.70849895  0.70723288  0.41699691  1
+  Pb  Pb8  1  0.00013143  0.70585004  0.00026386  1
+  Pb  Pb9  1  0.29150105  0.29276712  0.58300309  1
+  Pb  Pb10  1  0.99986857  0.29414996  0.99973614  1

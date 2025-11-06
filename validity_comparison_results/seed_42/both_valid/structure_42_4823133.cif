@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_ReSCl2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.59578190
+_cell_length_b   6.00900857
+_cell_length_c   19.50596223
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   108.17840779
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ReSCl2
+_chemical_formula_sum   'Re2 S2 Cl4'
+_cell_volume   511.79285366
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Re  Re0  1  0.17611779  0.34768275  0.50000032  1
+  Re  Re1  1  0.67176031  0.84429181  0.50000043  1
+  S  S2  1  0.68739097  0.47657258  0.50000202  1
+  S  S3  1  0.18331192  0.97750745  0.50000122  1
+  Cl  Cl4  1  0.60593984  0.88541246  0.61531428  1
+  Cl  Cl5  1  0.60595966  0.88542438  0.38468370  1
+  Cl  Cl6  1  0.10891453  0.38562063  0.61550120  1
+  Cl  Cl7  1  0.10894712  0.38562609  0.38449684  1

@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_NaAc8Ni5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.34634920
+_cell_length_b   10.39832304
+_cell_length_c   11.33958002
+_cell_angle_alpha   103.37722374
+_cell_angle_beta   101.04879863
+_cell_angle_gamma   90.00000267
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaAc8Ni5
+_chemical_formula_sum   'Na1 Ac8 Ni5'
+_cell_volume   488.81501643
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.49996330  0.49998052  0.99992561  1
+  Ac  Ac1  1  0.24216088  0.16246888  0.48432276  1
+  Ac  Ac2  1  0.75783858  0.83752857  0.51567715  1
+  Ac  Ac3  1  0.17413877  0.48885144  0.34827755  1
+  Ac  Ac4  1  0.82587088  0.51118538  0.65174175  1
+  Ac  Ac5  1  0.09492034  0.84589936  0.18984068  1
+  Ac  Ac6  1  0.90507375  0.15409097  0.81014750  1
+  Ac  Ac7  1  0.42836101  0.84232422  0.85672301  1
+  Ac  Ac8  1  0.57165248  0.15764249  0.14330495  1
+  Ni  Ni9  1  0.29656610  0.67743916  0.59313220  1
+  Ni  Ni10  1  0.70344568  0.32261610  0.40689135  1
+  Ni  Ni11  1  0.33426932  0.99211144  0.66853864  1
+  Ni  Ni12  1  0.66573476  0.00785668  0.33146852  1
+  Ni  Ni13  1  0.00000416  0.00000279  0.00000832  1

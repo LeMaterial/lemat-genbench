@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Ac2InPd6Pb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.16584309
+_cell_length_b   7.16584023
+_cell_length_c   7.16585598
+_cell_angle_alpha   59.99987998
+_cell_angle_beta   59.99986636
+_cell_angle_gamma   89.99963627
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ac2InPd6Pb
+_chemical_formula_sum   'Ac2 In1 Pd6 Pb1'
+_cell_volume   260.18796630
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.25000000  0.75000000  0.50000000  1
+  Ac  Ac1  1  0.75000000  0.25000000  0.50000000  1
+  In  In2  1  0.00000000  0.00000000  0.00000000  1
+  Pd  Pd3  1  0.24738571  0.75261422  1.00000000  1
+  Pd  Pd4  1  0.75260407  0.75260399  0.99999940  1
+  Pd  Pd5  1  0.24739133  0.24739132  0.50521725  1
+  Pd  Pd6  1  0.75261429  0.24738578  0.00000000  1
+  Pd  Pd7  1  0.24739593  0.24739601  0.00000060  1
+  Pd  Pd8  1  0.75260867  0.75260868  0.49478275  1
+  Pb  Pb9  1  0.50000000  0.50000000  0.00000000  1

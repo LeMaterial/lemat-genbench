@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Pr4Te2CBr
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.16896818
+_cell_length_b   7.57101684
+_cell_length_c   7.59181929
+_cell_angle_alpha   72.12531111
+_cell_angle_beta   89.99973375
+_cell_angle_gamma   89.99969735
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr4Te2CBr
+_chemical_formula_sum   'Pr4 Te2 C1 Br1'
+_cell_volume   228.05649965
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.00000300  0.71160996  0.71624491  1
+  Pr  Pr1  1  0.99999600  0.28839154  0.28375359  1
+  Pr  Pr2  1  0.50000200  0.69902023  0.29909893  1
+  Pr  Pr3  1  0.49999700  0.30098077  0.70090007  1
+  Te  Te4  1  0.00000000  0.00000100  0.99999900  1
+  Te  Te5  1  0.50000000  0.00000100  0.49999900  1
+  C  C6  1  0.00000050  0.49999400  0.50000450  1
+  Br  Br7  1  0.49999900  0.50000150  0.99999950  1

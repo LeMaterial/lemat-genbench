@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ba8Sb2N
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.75341781
+_cell_length_b   7.53043628
+_cell_length_c   12.63085266
+_cell_angle_alpha   106.17293337
+_cell_angle_beta   103.16479098
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba8Sb2N
+_chemical_formula_sum   'Ba8 Sb2 N1'
+_cell_volume   510.59258278
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.42990467  0.68538452  0.85980934  1
+  Ba  Ba1  1  0.66794567  0.94624160  0.33589235  1
+  Ba  Ba2  1  0.78705947  0.67911180  0.57411895  1
+  Ba  Ba3  1  0.95322167  0.17072624  0.90644234  1
+  Ba  Ba4  1  0.21294053  0.32088820  0.42588105  1
+  Ba  Ba5  1  0.33205433  0.05375840  0.66410765  1
+  Ba  Ba6  1  0.57009533  0.31461548  0.14019066  1
+  Ba  Ba7  1  0.04677933  0.82927376  0.09355866  1
+  Sb  Sb8  1  0.80692671  0.24621413  0.61385241  1
+  Sb  Sb9  1  0.19307329  0.75378587  0.38614759  1
+  N  N10  1  0.50000000  0.00000000  0.00000000  1

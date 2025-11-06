@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Pr3(AlZn2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.35688219
+_cell_length_b   5.86423202
+_cell_length_c   8.80570588
+_cell_angle_alpha   100.15555998
+_cell_angle_beta   89.96363811
+_cell_angle_gamma   111.80871928
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr3(AlZn2)2
+_chemical_formula_sum   'Pr3 Al2 Zn4'
+_cell_volume   205.09023652
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.61825399  0.23702248  0.37971849  1
+  Pr  Pr1  1  0.00000000  0.00000000  0.00000000  1
+  Pr  Pr2  1  0.38174601  0.76297752  0.62028151  1
+  Zn  Zn3  1  0.28854793  0.57705443  0.92787710  1
+  Zn  Zn4  1  0.91168653  0.82340879  0.35172094  1
+  Zn  Zn5  1  0.08831347  0.17659121  0.64827906  1
+  Zn  Zn6  1  0.71145207  0.42294557  0.07212290  1
+  Al  Al7  1  0.69645205  0.39302878  0.77015980  1
+  Al  Al8  1  0.30354795  0.60697122  0.22984020  1

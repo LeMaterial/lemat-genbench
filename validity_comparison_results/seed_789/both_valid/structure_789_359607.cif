@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Pa3Cr(AsO3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.57076699
+_cell_length_b   7.50372376
+_cell_length_c   7.14085405
+_cell_angle_alpha   121.69571403
+_cell_angle_beta   76.27538235
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pa3Cr(AsO3)2
+_chemical_formula_sum   'Pa3 Cr1 As2 O6'
+_cell_volume   243.90372896
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pa  Pa0  1  0.00000000  0.50000000  0.00000000  1
+  Pa  Pa1  1  0.50000000  0.50000000  0.50000000  1
+  Pa  Pa2  1  0.50000000  0.00000000  0.50000000  1
+  Cr  Cr3  1  0.50000000  -0.00000000  -0.00000000  1
+  As  As4  1  0.13147491  0.71315794  0.42631688  1
+  As  As5  1  0.86852509  0.28684206  0.57368312  1
+  O  O6  1  0.72206284  0.37986820  0.15877308  1
+  O  O7  1  0.27793716  0.62013180  0.84122692  1
+  O  O8  1  0.57917318  0.82956503  0.65913007  1
+  O  O9  1  0.42082682  0.17043497  0.34086993  1
+  O  O10  1  0.27793716  0.22109413  0.84122692  1
+  O  O11  1  0.72206284  0.77890587  0.15877308  1

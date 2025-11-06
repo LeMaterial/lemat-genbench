@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Np3Ge7Rh2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.99447702
+_cell_length_b   4.08799726
+_cell_length_c   14.07503439
+_cell_angle_alpha   98.35011018
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Np3Ge7Rh2
+_chemical_formula_sum   'Np3 Ge7 Rh2'
+_cell_volume   227.40055711
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Np  Np0  1  0.50000000  0.50000000  0.00000000  1
+  Np  Np1  1  0.50000000  0.67856698  0.35713396  1
+  Np  Np2  1  0.50000000  0.32143302  0.64286604  1
+  Ge  Ge3  1  0.00000000  0.41776106  0.83552113  1
+  Ge  Ge4  1  0.00000000  0.77446485  0.54892970  1
+  Ge  Ge5  1  0.00000000  0.00000000  0.00000000  1
+  Ge  Ge6  1  0.00000000  0.58223894  0.16447887  1
+  Ge  Ge7  1  0.50000000  0.08145775  0.16291650  1
+  Ge  Ge8  1  0.50000000  0.91854225  0.83708350  1
+  Ge  Ge9  1  0.00000000  0.22553515  0.45107030  1
+  Rh  Rh10  1  0.00000000  0.86101821  0.72203742  1
+  Rh  Rh11  1  0.00000000  0.13898179  0.27796258  1

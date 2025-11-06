@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_Dy2ErTh
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.57624926
+_cell_length_b   3.57636894
+_cell_length_c   11.46287132
+_cell_angle_alpha   89.99919483
+_cell_angle_beta   89.99927036
+_cell_angle_gamma   60.00115769
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy2ErTh
+_chemical_formula_sum   'Dy2 Er1 Th1'
+_cell_volume   126.96944178
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.80692165  0.03745039  0.55974340  1
+  Dy  Dy1  1  0.80699360  0.03733465  0.06665514  1
+  Er  Er2  1  0.14006176  0.37131061  0.31317167  1
+  Th  Th3  1  0.14052800  0.37020535  0.81321379  1

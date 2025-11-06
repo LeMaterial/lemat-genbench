@@ -1,0 +1,45 @@
+# generated using pymatgen
+data_Tb5(Nd6Al)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.08910816
+_cell_length_b   9.87082210
+_cell_length_c   9.02719847
+_cell_angle_alpha   73.39327098
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   114.18903396
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb5(Nd6Al)2
+_chemical_formula_sum   'Tb5 Nd12 Al2'
+_cell_volume   624.39631027
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.24826382  0.49652765  0.78306579  1
+  Tb  Tb1  1  0.31638563  0.63277126  0.16549822  1
+  Tb  Tb2  1  0.00000000  0.00000000  0.50000000  1
+  Tb  Tb3  1  0.68361437  0.36722874  0.83450178  1
+  Tb  Tb4  1  0.75173618  0.50347235  0.21693421  1
+  Nd  Nd5  1  0.94932348  0.89864696  0.16872581  1
+  Nd  Nd6  1  0.06239936  0.72520518  0.86578863  1
+  Nd  Nd7  1  0.66280583  0.72520518  0.86578863  1
+  Nd  Nd8  1  0.08120856  0.69265654  0.46958204  1
+  Nd  Nd9  1  0.61144798  0.69265654  0.46958204  1
+  Nd  Nd10  1  0.48002076  0.96004152  0.69191689  1
+  Nd  Nd11  1  0.51997924  0.03995848  0.30808311  1
+  Nd  Nd12  1  0.91879144  0.30734346  0.53041796  1
+  Nd  Nd13  1  0.38855202  0.30734346  0.53041796  1
+  Nd  Nd14  1  0.93760064  0.27479482  0.13421137  1
+  Nd  Nd15  1  0.33719417  0.27479482  0.13421137  1
+  Nd  Nd16  1  0.05067652  0.10135304  0.83127419  1
+  Al  Al17  1  0.66097642  1.00000000  0.00000000  1
+  Al  Al18  1  0.33902358  0.00000000  1.00000000  1

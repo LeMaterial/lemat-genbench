@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_NdErSi2W2C
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.89307709
+_cell_length_b   5.89307709
+_cell_length_c   7.20029404
+_cell_angle_alpha   123.22531810
+_cell_angle_beta   123.22531810
+_cell_angle_gamma   38.46676093
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NdErSi2W2C
+_chemical_formula_sum   'Nd1 Er1 Si2 W2 C1'
+_cell_volume   126.67685597
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  C  C0  1  0.99692470  0.99692470  0.98963016  1
+  Er  Er1  1  0.42671720  0.42671720  0.70589859  1
+  Nd  Nd2  1  0.57709462  0.57709462  0.30193474  1
+  Si  Si3  1  0.86759309  0.86759309  0.33715924  1
+  Si  Si4  1  0.13291016  0.13291016  0.66753450  1
+  W  W5  1  0.20671165  0.20671165  0.08117750  1
+  W  W6  1  0.79205030  0.79205030  0.91666745  1

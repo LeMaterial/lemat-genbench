@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_ZnNiRhO4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.92058885
+_cell_length_b   6.03957378
+_cell_length_c   6.03957565
+_cell_angle_alpha   60.80669736
+_cell_angle_beta   60.64959792
+_cell_angle_gamma   60.64958792
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZnNiRhO4
+_chemical_formula_sum   'Zn2 Ni2 Rh2 O8'
+_cell_volume   155.12691529
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zn  Zn0  1  0.63919590  0.61080363  0.11080456  1
+  Zn  Zn1  1  0.36080410  0.38919637  0.88919544  1
+  Ni  Ni2  1  0.50000000  0.00000000  0.50000000  1
+  Ni  Ni3  1  0.00000000  0.00000000  0.50000000  1
+  Rh  Rh4  1  0.00000000  0.00000000  0.00000000  1
+  Rh  Rh5  1  0.00000000  0.50000000  0.50000000  1
+  O  O6  1  0.76651700  0.75487382  0.71209318  1
+  O  O7  1  0.23348357  0.78790976  0.74512210  1
+  O  O8  1  0.76651643  0.21209024  0.25487790  1
+  O  O9  1  0.23348300  0.24512618  0.28790682  1
+  O  O10  1  0.22639669  0.75310252  0.25310235  1
+  O  O11  1  0.76739745  0.75310252  0.25310235  1
+  O  O12  1  0.23260255  0.24689748  0.74689765  1
+  O  O13  1  0.77360331  0.24689748  0.74689765  1

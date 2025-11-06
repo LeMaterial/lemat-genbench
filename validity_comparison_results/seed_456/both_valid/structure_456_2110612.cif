@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_In4IrRh2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.56192359
+_cell_length_b   4.56192357
+_cell_length_c   7.79753385
+_cell_angle_alpha   72.99092953
+_cell_angle_beta   72.99091667
+_cell_angle_gamma   59.99998386
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   In4IrRh2
+_chemical_formula_sum   'In4 Ir1 Rh2'
+_cell_volume   132.27503619
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  In  In0  1  0.87116492  0.87116492  0.38650625  1
+  In  In1  1  0.12883508  0.12883508  0.61349375  1
+  In  In2  1  0.61969595  0.61969595  0.14091214  1
+  In  In3  1  0.38030405  0.38030405  0.85908786  1
+  Ir  Ir4  1  0.00000000  0.00000000  0.00000000  1
+  Rh  Rh5  1  0.74634618  0.74634618  0.76096047  1
+  Rh  Rh6  1  0.25365382  0.25365382  0.23903953  1

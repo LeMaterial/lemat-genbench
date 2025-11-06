@@ -1,0 +1,52 @@
+# generated using pymatgen
+data_Nd2Si2PbS8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.09649202
+_cell_length_b   9.05285858
+_cell_length_c   10.44472159
+_cell_angle_alpha   62.90514323
+_cell_angle_beta   64.18550974
+_cell_angle_gamma   59.84042654
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nd2Si2PbS8
+_chemical_formula_sum   'Nd4 Si4 Pb2 S16'
+_cell_volume   637.76454338
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nd  Nd0  1  0.06119192  0.43880213  0.74813244  1
+  Nd  Nd1  1  0.43947703  0.75029216  0.75314877  1
+  Nd  Nd2  1  0.25187351  0.93880213  0.24813244  1
+  Nd  Nd3  1  0.55708204  0.25029216  0.25314877  1
+  Si  Si4  1  0.65235779  0.65605379  0.02147837  1
+  Si  Si5  1  0.17011004  0.15605379  0.52147837  1
+  Si  Si6  1  0.33280117  0.34343460  0.97768501  1
+  Si  Si7  1  0.84607922  0.84343460  0.47768501  1
+  Pb  Pb8  1  0.74921994  0.07226104  0.74965402  1
+  Pb  Pb9  1  0.92886500  0.57226104  0.24965402  1
+  S  S10  1  0.88606921  0.71144011  0.92651490  1
+  S  S11  1  0.71393045  0.44128309  0.94653891  1
+  S  S12  1  0.43802694  0.88868119  0.94710405  1
+  S  S13  1  0.39824755  0.94128309  0.44653891  1
+  S  S14  1  0.97597578  0.21144011  0.42651490  1
+  S  S15  1  0.22618783  0.38868119  0.44710405  1
+  S  S16  1  0.11101943  0.27532760  0.04551366  1
+  S  S17  1  0.28156845  0.54260752  0.06390134  1
+  S  S18  1  0.53345657  0.10638493  0.07064313  1
+  S  S19  1  0.61192268  0.04260752  0.56390134  1
+  S  S20  1  0.06813931  0.77532760  0.54551366  1
+  S  S21  1  0.78951536  0.60638493  0.57064313  1
+  S  S22  1  0.56573644  0.57611445  0.25971151  1
+  S  S23  1  0.09843760  0.07611445  0.75971151  1
+  S  S24  1  0.40013073  0.44731740  0.73997388  1
+  S  S25  1  0.91257799  0.94731740  0.23997388  1

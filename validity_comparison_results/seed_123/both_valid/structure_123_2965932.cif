@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_AcLa2PrTm
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.68901062
+_cell_length_b   8.14573754
+_cell_length_c   7.36408900
+_cell_angle_alpha   123.57799641
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   AcLa2PrTm
+_chemical_formula_sum   'Ac2 La4 Pr2 Tm2'
+_cell_volume   384.26834006
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.25000000  0.75666646  0.51333292  1
+  Ac  Ac1  1  0.75000000  0.24333354  0.48666708  1
+  La  La2  1  0.50000000  0.29493859  0.00000000  1
+  La  La3  1  0.00000000  0.70506141  1.00000000  1
+  La  La4  1  0.50000000  0.70506141  1.00000000  1
+  La  La5  1  0.00000000  0.29493859  0.00000000  1
+  Pr  Pr6  1  0.25000000  0.06293915  0.12587831  1
+  Pr  Pr7  1  0.75000000  0.93706085  0.87412169  1
+  Tm  Tm8  1  0.75000000  0.69093960  0.38188019  1
+  Tm  Tm9  1  0.25000000  0.30906040  0.61811981  1

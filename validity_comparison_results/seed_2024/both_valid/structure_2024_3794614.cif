@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_HoVSi3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.43924055
+_cell_length_b   5.96850492
+_cell_length_c   5.96850493
+_cell_angle_alpha   120.00068346
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HoVSi3
+_chemical_formula_sum   'Ho2 V2 Si6'
+_cell_volume   167.80195617
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Si  Si0  1  0.75000000  0.80090234  0.60178502  1
+  Si  Si1  1  0.25000000  0.19910646  0.80089354  1
+  Si  Si2  1  0.75000000  0.80089354  0.19910646  1
+  Si  Si3  1  0.25000000  0.19909766  0.39821498  1
+  Si  Si4  1  0.25000000  0.60178502  0.80090234  1
+  Si  Si5  1  0.75000000  0.39821498  0.19909766  1
+  Ho  Ho6  1  0.75000000  0.33334510  0.66665490  1
+  Ho  Ho7  1  0.25000000  0.66665490  0.33334510  1
+  V  V8  1  0.50000000  0.00000000  0.00000000  1
+  V  V9  1  0.00000000  0.00000000  0.00000000  1

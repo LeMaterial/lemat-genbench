@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_ZnCuW2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.62429868
+_cell_length_b   4.95869568
+_cell_length_c   2.66446475
+_cell_angle_alpha   86.17136458
+_cell_angle_beta   69.14520832
+_cell_angle_gamma   118.12970945
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZnCuW2
+_chemical_formula_sum   'Zn1 Cu1 W2'
+_cell_volume   58.70503189
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.50000000  0.50000000  0.00000000  1
+  W  W1  1  0.00000000  0.00000000  0.00000000  1
+  W  W2  1  0.50000000  0.00000000  0.50000000  1
+  Zn  Zn3  1  -0.00000000  0.50000000  0.50000000  1

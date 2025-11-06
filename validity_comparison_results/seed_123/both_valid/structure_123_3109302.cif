@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_ScTiTc
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.18206507
+_cell_length_b   3.18206507
+_cell_length_c   11.57512147
+_cell_angle_alpha   97.90047587
+_cell_angle_beta   97.90047587
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ScTiTc
+_chemical_formula_sum   'Sc2 Ti2 Tc2'
+_cell_volume   114.96863794
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ti  Ti0  1  0.29166210  0.29166210  0.58332420  1
+  Ti  Ti1  1  0.70833790  0.70833790  0.41667580  1
+  Tc  Tc2  1  0.14994607  0.14994607  0.29989214  1
+  Tc  Tc3  1  0.85005393  0.85005393  0.70010786  1
+  Sc  Sc4  1  0.57595505  0.57595505  0.15190910  1
+  Sc  Sc5  1  0.42404495  0.42404495  0.84809090  1

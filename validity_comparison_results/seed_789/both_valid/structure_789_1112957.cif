@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_LiCuReTeSe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.89051282
+_cell_length_b   6.89051282
+_cell_length_c   9.80098572
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   150.97864114
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiCuReTeSe2
+_chemical_formula_sum   'Li2 Cu2 Re2 Te2 Se4'
+_cell_volume   225.75429283
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.54080898  0.45919101  0.25000036  1
+  Cu  Cu1  1  0.45919101  0.54080898  0.75000007  1
+  Li  Li2  1  0.20512593  0.79487406  0.25000036  1
+  Li  Li3  1  0.79487406  0.20512593  0.75000007  1
+  Re  Re4  1  0.00000000  0.00000000  0.00000000  1
+  Re  Re5  1  0.00000000  0.00000000  0.49999971  1
+  Se  Se6  1  0.63814042  0.36185957  0.04879713  1
+  Se  Se7  1  0.63814042  0.36185957  0.45120360  1
+  Se  Se8  1  0.36185957  0.63814042  0.54879684  1
+  Se  Se9  1  0.36185957  0.63814042  0.95120330  1
+  Te  Te10  1  0.89444439  0.10555560  0.25000036  1
+  Te  Te11  1  0.10555560  0.89444439  0.75000007  1

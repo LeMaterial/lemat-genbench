@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Ho2Sn2Mo2C
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.73866893
+_cell_length_b   6.08841656
+_cell_length_c   7.10647383
+_cell_angle_alpha   70.01711180
+_cell_angle_beta   74.77238697
+_cell_angle_gamma   72.12358308
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho2Sn2Mo2C
+_chemical_formula_sum   'Ho2 Sn2 Mo2 C1'
+_cell_volume   142.41505267
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  C  C0  1  0.00000000  0.00000000  0.00000000  1
+  Mo  Mo1  1  0.19388213  0.67727574  0.93694594  1
+  Mo  Mo2  1  0.80611787  0.32272426  0.06305406  1
+  Ho  Ho3  1  0.55084506  0.15197326  0.74540597  1
+  Ho  Ho4  1  0.44915494  0.84802674  0.25459403  1
+  Sn  Sn5  1  0.14621107  0.35528834  0.35120416  1
+  Sn  Sn6  1  0.85378893  0.64471166  0.64879584  1

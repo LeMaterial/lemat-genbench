@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_La2FeCo
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.42741178
+_cell_length_b   6.42741181
+_cell_length_c   6.42741179
+_cell_angle_alpha   147.54990516
+_cell_angle_beta   139.76266739
+_cell_angle_gamma   52.61020239
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La2FeCo
+_chemical_formula_sum   'La2 Fe1 Co1'
+_cell_volume   91.50637046
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.43545569  0.43545569  0.00000000  1
+  Fe  Fe1  1  0.31542161  0.81542161  0.50000000  1
+  La  La2  1  0.01665295  0.01665295  0.00000000  1
+  La  La3  1  0.73246974  0.23246974  0.50000000  1

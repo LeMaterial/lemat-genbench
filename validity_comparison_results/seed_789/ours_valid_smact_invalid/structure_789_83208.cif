@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Pm2FeMoN5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.22529454
+_cell_length_b   7.22980905
+_cell_length_c   10.02805115
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   102.88854947
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pm2FeMoN5
+_chemical_formula_sum   'Pm4 Fe2 Mo2 N10'
+_cell_volume   227.94540895
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.87520390  0.75040780  0.81722821  1
+  Pm  Pm1  1  0.11857705  0.23715411  0.69761295  1
+  Pm  Pm2  1  0.12479610  0.24959220  0.31722821  1
+  Pm  Pm3  1  0.88142295  0.76284589  0.19761295  1
+  Fe  Fe4  1  0.55206884  0.10413769  0.94934952  1
+  Fe  Fe5  1  0.44793116  0.89586231  0.44934952  1
+  Mo  Mo6  1  0.79230170  0.58460339  0.52097569  1
+  Mo  Mo7  1  0.20769830  0.41539661  0.02097569  1
+  N  N8  1  0.33652495  0.67304990  0.00506146  1
+  N  N9  1  0.67729964  0.35459928  0.87870557  1
+  N  N10  1  0.50277830  0.00555660  0.78209103  1
+  N  N11  1  0.30345562  0.60691125  0.65745611  1
+  N  N12  1  0.97252352  0.94504704  0.51548945  1
+  N  N13  1  0.66347505  0.32695010  0.50506146  1
+  N  N14  1  0.32270036  0.64540072  0.37870557  1
+  N  N15  1  0.49722170  0.99444340  0.28209103  1
+  N  N16  1  0.69654438  0.39308875  0.15745611  1
+  N  N17  1  0.02747648  0.05495296  0.01548945  1

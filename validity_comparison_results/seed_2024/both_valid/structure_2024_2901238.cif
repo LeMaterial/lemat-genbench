@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_BeFeOs2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.78727154
+_cell_length_b   4.78727154
+_cell_length_c   4.08182529
+_cell_angle_alpha   64.75695513
+_cell_angle_beta   64.75695510
+_cell_angle_gamma   34.56766774
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BeFeOs2
+_chemical_formula_sum   'Be1 Fe1 Os2'
+_cell_volume   47.48881090
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.50812198  0.50812198  0.49198392  1
+  Os  Os1  1  0.99584935  0.99584935  0.00433429  1
+  Os  Os2  1  0.76819972  0.76819972  0.73153151  1
+  Fe  Fe3  1  0.22782895  0.22782895  0.27215029  1

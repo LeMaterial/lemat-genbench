@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Be2CoRu2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.44563265
+_cell_length_b   6.44563265
+_cell_length_c   2.77557809
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Be2CoRu2
+_chemical_formula_sum   'Be4 Co2 Ru4'
+_cell_volume   115.31466765
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ru  Ru0  1  0.36180355  0.86180355  0.00000000  1
+  Ru  Ru1  1  0.86180355  0.63819645  0.00000000  1
+  Ru  Ru2  1  0.63819645  0.13819645  0.00000000  1
+  Ru  Ru3  1  0.13819645  0.36180355  0.00000000  1
+  Co  Co4  1  0.00000000  0.00000000  0.00000000  1
+  Co  Co5  1  0.50000000  0.50000000  0.00000000  1
+  Be  Be6  1  0.16013196  0.66013196  0.50000000  1
+  Be  Be7  1  0.66013196  0.83986804  0.50000000  1
+  Be  Be8  1  0.83986804  0.33986804  0.50000000  1
+  Be  Be9  1  0.33986804  0.16013196  0.50000000  1

@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_DyHo(PaAs2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.09787414
+_cell_length_b   7.08839263
+_cell_length_c   7.09692101
+_cell_angle_alpha   70.50395505
+_cell_angle_beta   89.99971689
+_cell_angle_gamma   89.99968104
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   DyHo(PaAs2)2
+_chemical_formula_sum   'Dy1 Ho1 Pa2 As4'
+_cell_volume   194.32716681
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.00000050  0.49999400  0.50000450  1
+  Ho  Ho1  1  0.49999900  0.50000150  0.99999950  1
+  Pa  Pa2  1  0.00000000  0.00000100  0.99999900  1
+  Pa  Pa3  1  0.50000000  0.00000100  0.49999900  1
+  As  As4  1  0.00000300  0.75082551  0.75027581  1
+  As  As5  1  0.99999600  0.24917599  0.24972269  1
+  As  As6  1  0.50000200  0.75123990  0.24901899  1
+  As  As7  1  0.49999700  0.24876110  0.75098001  1

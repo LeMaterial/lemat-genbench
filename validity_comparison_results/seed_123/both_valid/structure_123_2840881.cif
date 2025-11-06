@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_La5Tb2Ho5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.11803483
+_cell_length_b   10.84218852
+_cell_length_c   8.13989308
+_cell_angle_alpha   98.68496493
+_cell_angle_beta   71.67663290
+_cell_angle_gamma   76.34800603
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La5Tb2Ho5
+_chemical_formula_sum   'La5 Tb2 Ho5'
+_cell_volume   404.06488620
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.66770053  0.25141581  0.41318413  1
+  La  La1  1  0.99699754  0.25150303  0.75450189  1
+  La  La2  1  0.00300246  0.74849697  0.24549811  1
+  La  La3  1  0.33229947  0.74858419  0.58681587  1
+  La  La4  1  0.00000000  0.00000000  0.00000000  1
+  Tb  Tb5  1  0.33245576  0.50090489  0.83418359  1
+  Tb  Tb6  1  0.66754424  0.49909511  0.16581641  1
+  Ho  Ho7  1  -0.00000000  0.50000000  0.50000000  1
+  Ho  Ho8  1  0.66871855  0.74646026  0.91610364  1
+  Ho  Ho9  1  0.33271982  0.99998815  0.33457320  1
+  Ho  Ho10  1  0.66728018  0.00001185  0.66542680  1
+  Ho  Ho11  1  0.33128145  0.25353974  0.08389636  1

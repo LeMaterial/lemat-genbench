@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_TmTlAgS3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.98773936
+_cell_length_b   6.98773936
+_cell_length_c   10.62385143
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   146.73569946
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TmTlAgS3
+_chemical_formula_sum   'Tm2 Tl2 Ag2 S6'
+_cell_volume   284.53359662
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.90689354  0.09310490  0.24999973  1
+  Ag  Ag1  1  0.09310490  0.90689354  0.75000013  1
+  S  S2  1  0.86538884  0.13460959  0.02717658  1
+  S  S3  1  0.54205952  0.45793892  0.24999973  1
+  S  S4  1  0.86538884  0.13460959  0.47282288  1
+  S  S5  1  0.13460959  0.86538884  0.52717699  1
+  S  S6  1  0.45793892  0.54205952  0.75000013  1
+  S  S7  1  0.13460959  0.86538884  0.97282328  1
+  Tl  Tl8  1  0.21520164  0.78479679  0.24999973  1
+  Tl  Tl9  1  0.78479679  0.21520164  0.75000013  1
+  Tm  Tm10  1  0.49999922  0.49999922  0.00000000  1
+  Tm  Tm11  1  0.49999922  0.49999922  0.50000040  1

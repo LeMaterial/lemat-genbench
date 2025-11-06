@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_HoTmZrSc
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.74288394
+_cell_length_b   4.74039908
+_cell_length_c   5.80009780
+_cell_angle_alpha   114.11994523
+_cell_angle_beta   114.13339323
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HoTmZrSc
+_chemical_formula_sum   'Ho1 Tm1 Zr1 Sc1'
+_cell_volume   106.40868234
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.11993078  0.11993078  0.23986156  1
+  Tm  Tm1  1  0.36982270  0.86982270  0.73964541  1
+  Zr  Zr2  1  0.86944994  0.36944994  0.73889989  1
+  Sc  Sc3  1  0.61992657  0.61992657  0.23985315  1

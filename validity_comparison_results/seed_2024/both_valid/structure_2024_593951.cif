@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_SrLiAgTe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.10745207
+_cell_length_b   6.10578802
+_cell_length_c   8.34768122
+_cell_angle_alpha   111.45175222
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrLiAgTe2
+_chemical_formula_sum   'Sr2 Li2 Ag2 Te4'
+_cell_volume   289.72730562
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.23415197  0.75000000  0.50000000  1
+  Sr  Sr1  1  0.76584803  0.25000000  0.50000000  1
+  Li  Li2  1  0.50000000  0.75000000  0.00000000  1
+  Li  Li3  1  0.50000000  0.25000000  0.00000000  1
+  Ag  Ag4  1  0.00000000  0.00000000  0.00000000  1
+  Ag  Ag5  1  0.00000000  0.50000000  0.00000000  1
+  Te  Te6  1  0.72836641  0.86699096  0.73398093  1
+  Te  Te7  1  0.72836641  0.63300904  0.26601907  1
+  Te  Te8  1  0.27163359  0.36699096  0.73398093  1
+  Te  Te9  1  0.27163359  0.13300904  0.26601907  1

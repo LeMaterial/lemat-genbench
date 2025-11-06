@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_TbTl(GeI4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.71908560
+_cell_length_b   7.19351038
+_cell_length_c   9.56746010
+_cell_angle_alpha   87.41155105
+_cell_angle_beta   85.81195428
+_cell_angle_gamma   86.83495640
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TbTl(GeI4)2
+_chemical_formula_sum   'Tb1 Tl1 Ge2 I8'
+_cell_volume   528.57722735
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.00000000  0.00000000  0.00000000  1
+  Tl  Tl1  1  -0.00000000  -0.00000000  0.50000000  1
+  Ge  Ge2  1  0.46429383  0.46339732  0.74489923  1
+  Ge  Ge3  1  0.53570617  0.53660268  0.25510077  1
+  I  I4  1  0.17213624  0.75353801  0.22108067  1
+  I  I5  1  0.67621030  0.76069329  0.02273155  1
+  I  I6  1  0.84247093  0.25868817  0.22662738  1
+  I  I7  1  0.82786376  0.24646199  0.77891933  1
+  I  I8  1  0.32378970  0.23930671  0.97726845  1
+  I  I9  1  0.15752907  0.74131183  0.77337262  1
+  I  I10  1  0.64065953  0.72470333  0.47200193  1
+  I  I11  1  0.35934047  0.27529667  0.52799807  1

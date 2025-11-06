@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Pr2Al3Pt2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.24251177
+_cell_length_b   5.88841294
+_cell_length_c   7.22633844
+_cell_angle_alpha   116.35893677
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   111.11508203
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr2Al3Pt2
+_chemical_formula_sum   'Pr2 Al3 Pt2'
+_cell_volume   148.10781261
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.85971480  0.71943060  0.22662521  1
+  Pr  Pr1  1  0.14028520  0.28056940  0.77337479  1
+  Al  Al2  1  0.50000000  0.00000000  0.00000000  1
+  Al  Al3  1  0.64300372  0.28600745  0.43270558  1
+  Al  Al4  1  0.35699628  0.71399255  0.56729442  1
+  Pt  Pt5  1  0.86231213  0.72462327  0.78463432  1
+  Pt  Pt6  1  0.13768787  0.27537673  0.21536568  1

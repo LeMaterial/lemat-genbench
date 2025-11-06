@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ta5(Nb2W)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   2.79665206
+_cell_length_b   7.31585388
+_cell_length_c   10.56334690
+_cell_angle_alpha   96.82217016
+_cell_angle_beta   110.94665507
+_cell_angle_gamma   78.09705299
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ta5(Nb2W)2
+_chemical_formula_sum   'Ta5 Nb4 W2'
+_cell_volume   197.26199463
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ta  Ta0  1  0.44935141  0.54158500  0.63956590  1
+  Ta  Ta1  1  0.55064859  0.45841500  0.36043410  1
+  Ta  Ta2  1  0.86612456  0.90982941  0.72968157  1
+  Ta  Ta3  1  0.50000000  0.00000000  -0.00000000  1
+  Ta  Ta4  1  0.13387544  0.09017059  0.27031843  1
+  Nb  Nb5  1  0.16212261  0.18055550  0.54388538  1
+  Nb  Nb6  1  0.97292649  0.63457082  0.91467522  1
+  Nb  Nb7  1  0.83787739  0.81944450  0.45611462  1
+  Nb  Nb8  1  0.02707351  0.36542918  0.08532478  1
+  W  W9  1  0.38941870  0.26931795  0.82220894  1
+  W  W10  1  0.61058130  0.73068205  0.17779106  1

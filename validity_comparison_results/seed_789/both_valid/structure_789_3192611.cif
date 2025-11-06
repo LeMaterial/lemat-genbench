@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Th2In4Bi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.57561846
+_cell_length_b   6.57561893
+_cell_length_c   6.73901232
+_cell_angle_alpha   119.15551248
+_cell_angle_beta   119.15549924
+_cell_angle_gamma   90.21844961
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Th2In4Bi
+_chemical_formula_sum   'Th2 In4 Bi1'
+_cell_volume   210.82450799
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Bi  Bi0  1  0.78577235  0.78577235  0.57148609  1
+  Th  Th1  1  0.28576157  0.78553924  0.57141031  1
+  Th  Th2  1  0.78553924  0.28576157  0.57141031  1
+  In  In3  1  0.78592444  0.78592444  0.07168216  1
+  In  In4  1  0.28565219  0.28565219  0.07121227  1
+  In  In5  1  0.78562964  0.28572258  0.07139993  1
+  In  In6  1  0.28572258  0.78562964  0.07139993  1

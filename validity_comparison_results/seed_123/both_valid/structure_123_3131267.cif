@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Zr2BeCu6Ni
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.95043893
+_cell_length_b   5.95354414
+_cell_length_c   5.95646806
+_cell_angle_alpha   60.02109872
+_cell_angle_beta   60.03680769
+_cell_angle_gamma   89.95443893
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Zr2BeCu6Ni
+_chemical_formula_sum   'Zr2 Be1 Cu6 Ni1'
+_cell_volume   149.39972408
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zr  Zr0  1  0.75002345  0.25035334  0.49962234  1
+  Zr  Zr1  1  0.24997932  0.74964864  0.50037286  1
+  Be  Be2  1  0.99999969  0.99999973  0.00000058  1
+  Cu  Cu3  1  0.23553781  0.23553780  0.52870111  1
+  Cu  Cu4  1  0.76460050  0.76475335  0.99960282  1
+  Cu  Cu5  1  0.23574109  0.76470747  0.00000263  1
+  Cu  Cu6  1  0.76425691  0.23529058  0.00000140  1
+  Cu  Cu7  1  0.23539723  0.23524513  0.00040098  1
+  Cu  Cu8  1  0.76446154  0.76446137  0.47130032  1
+  Ni  Ni9  1  0.49999947  0.49999958  0.00000096  1

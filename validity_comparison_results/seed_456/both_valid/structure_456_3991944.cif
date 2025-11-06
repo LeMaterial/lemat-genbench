@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_NaSbPd4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.08330466
+_cell_length_b   7.02355384
+_cell_length_c   7.88006292
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaSbPd4
+_chemical_formula_sum   'Na2 Sb2 Pd8'
+_cell_volume   225.99476828
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.00000000  0.66411222  0.75000000  1
+  Na  Na1  1  0.00000000  0.33588778  0.25000000  1
+  Sb  Sb2  1  0.00000000  0.24073590  0.75000000  1
+  Sb  Sb3  1  0.00000000  0.75926410  0.25000000  1
+  Pd  Pd4  1  0.00000000  0.00000000  0.50000000  1
+  Pd  Pd5  1  0.00000000  0.00000000  0.00000000  1
+  Pd  Pd6  1  0.50000000  0.95997931  0.75000000  1
+  Pd  Pd7  1  0.50000000  0.04002069  0.25000000  1
+  Pd  Pd8  1  0.50000000  0.69798734  0.04139299  1
+  Pd  Pd9  1  0.50000000  0.30201266  0.95860701  1
+  Pd  Pd10  1  0.50000000  0.69798734  0.45860701  1
+  Pd  Pd11  1  0.50000000  0.30201266  0.54139299  1

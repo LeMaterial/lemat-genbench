@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_RbPrCoTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   12.58008700
+_cell_length_b   4.56896500
+_cell_length_c   13.62872300
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   RbPrCoTe3
+_chemical_formula_sum   'Rb4 Pr4 Co4 Te12'
+_cell_volume   783.35142986
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.74953536  0.00000000  0.20209524  1
+  Co  Co1  1  0.24953484  0.00000000  0.29790392  1
+  Co  Co2  1  0.75046619  0.49999945  0.70209513  1
+  Co  Co3  1  0.25046568  0.49999945  0.79790381  1
+  Pr  Pr4  1  0.47405078  0.49999945  0.17297659  1
+  Pr  Pr5  1  0.97405050  0.49999945  0.32702330  1
+  Pr  Pr6  1  0.02594974  0.00000000  0.67297648  1
+  Pr  Pr7  1  0.52595026  0.00000000  0.82702246  1
+  Rb  Rb8  1  0.17766650  0.00000000  0.00561168  1
+  Rb  Rb9  1  0.67766622  0.00000000  0.49438748  1
+  Rb  Rb10  1  0.32233402  0.49999945  0.50561157  1
+  Rb  Rb11  1  0.82233454  0.49999945  0.99438810  1
+  Te  Te12  1  0.60998863  0.00000000  0.06105047  1
+  Te  Te13  1  0.94832174  0.00000000  0.16622540  1
+  Te  Te14  1  0.21561695  0.49999945  0.21641793  1
+  Te  Te15  1  0.71561667  0.49999945  0.28358270  1
+  Te  Te16  1  0.44832122  0.00000000  0.33377448  1
+  Te  Te17  1  0.10998891  0.00000000  0.43894942  1
+  Te  Te18  1  0.89001213  0.49999945  0.56105036  1
+  Te  Te19  1  0.55167901  0.49999945  0.66622529  1
+  Te  Te20  1  0.28438357  0.00000000  0.71641708  1
+  Te  Te21  1  0.78438329  0.00000000  0.78358259  1
+  Te  Te22  1  0.05167850  0.49999945  0.83377437  1
+  Te  Te23  1  0.39001241  0.49999945  0.93894931  1

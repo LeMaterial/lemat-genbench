@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_KTh2Tl9
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.85299988
+_cell_length_b   4.85299988
+_cell_length_c   14.96634682
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KTh2Tl9
+_chemical_formula_sum   'K1 Th2 Tl9'
+_cell_volume   352.48153103
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.00000000  0.00000000  0.00000000  1
+  Th  Th1  1  0.00000000  0.00000000  0.34603834  1
+  Th  Th2  1  0.00000000  0.00000000  0.65396166  1
+  Tl  Tl3  1  0.50000000  0.50000000  0.00000000  1
+  Tl  Tl4  1  0.50000000  0.50000000  0.33447043  1
+  Tl  Tl5  1  0.50000000  0.50000000  0.66552957  1
+  Tl  Tl6  1  0.50000000  0.00000000  0.17485883  1
+  Tl  Tl7  1  0.50000000  0.00000000  0.50000000  1
+  Tl  Tl8  1  0.50000000  0.00000000  0.82514117  1
+  Tl  Tl9  1  0.00000000  0.50000000  0.17485883  1
+  Tl  Tl10  1  0.00000000  0.50000000  0.50000000  1
+  Tl  Tl11  1  0.00000000  0.50000000  0.82514117  1

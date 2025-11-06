@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_SmB4Os
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.83032421
+_cell_length_b   4.83032421
+_cell_length_c   4.83032421
+_cell_angle_alpha   141.51833470
+_cell_angle_beta   112.24465436
+_cell_angle_gamma   80.71359920
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmB4Os
+_chemical_formula_sum   'Sm1 B4 Os1'
+_cell_volume   63.10306702
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  B  B0  1  0.58603005  0.25098236  0.33504769  1
+  B  B1  1  0.08406530  0.74901718  0.33504621  1
+  B  B2  1  0.91593573  0.25098236  0.66495336  1
+  B  B3  1  0.41397097  0.74901718  0.66495188  1
+  Os  Os4  1  0.00000000  0.00000000  0.00000000  1
+  Sm  Sm5  1  0.50000050  0.50000050  0.00000000  1

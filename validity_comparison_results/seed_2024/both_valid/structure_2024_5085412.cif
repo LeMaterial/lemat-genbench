@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_NaYGe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.02386116
+_cell_length_b   5.38869670
+_cell_length_c   4.91032548
+_cell_angle_alpha   89.99922575
+_cell_angle_beta   89.96860488
+_cell_angle_gamma   90.00239596
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaYGe
+_chemical_formula_sum   'Na2 Y2 Ge2'
+_cell_volume   185.85312743
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Y  Y0  1  0.10238582  0.35121090  0.19967041  1
+  Y  Y1  1  0.03939152  0.85118836  0.69981793  1
+  Na  Na2  1  0.51815348  0.67751326  0.69919550  1
+  Na  Na3  1  0.62354843  0.17749152  0.19997919  1
+  Ge  Ge4  1  0.26480477  0.84587704  0.19949106  1
+  Ge  Ge5  1  0.87699068  0.34588807  0.69990059  1

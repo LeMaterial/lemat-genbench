@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_BeAsCCl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.18120104
+_cell_length_b   3.18120104
+_cell_length_c   21.15446049
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99999996
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BeAsCCl
+_chemical_formula_sum   'Be3 As3 C3 Cl3'
+_cell_volume   185.40217208
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.00000000  0.00000000  0.84544429  1
+  Be  Be1  1  0.33333333  0.66666667  0.51211129  1
+  Be  Be2  1  0.66666667  0.33333333  0.17877729  1
+  As  As3  1  0.00000000  0.00000000  0.74058126  1
+  As  As4  1  0.33333333  0.66666667  0.40724826  1
+  As  As5  1  0.66666667  0.33333333  0.07391426  1
+  C  C6  1  0.00000000  0.00000000  0.03812902  1
+  C  C7  1  0.33333333  0.66666667  0.70479602  1
+  C  C8  1  0.66666667  0.33333333  0.37146202  1
+  Cl  Cl9  1  0.00000000  0.00000000  0.56077543  1
+  Cl  Cl10  1  0.33333333  0.66666667  0.22744243  1
+  Cl  Cl11  1  0.66666667  0.33333333  0.89410843  1

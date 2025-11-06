@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Rb2Na6HgAu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.41640842
+_cell_length_b   8.41641131
+_cell_length_c   8.41639544
+_cell_angle_alpha   60.00010338
+_cell_angle_beta   60.00011513
+_cell_angle_gamma   90.00031302
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Rb2Na6HgAu
+_chemical_formula_sum   'Rb2 Na6 Hg1 Au1'
+_cell_volume   421.56557168
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rb  Rb0  1  0.25000000  0.75000000  0.50000000  1
+  Rb  Rb1  1  0.75000000  0.25000000  0.50000000  1
+  Na  Na2  1  0.25517186  0.74482815  0.00000000  1
+  Na  Na3  1  0.74481659  0.74481659  0.99999950  1
+  Na  Na4  1  0.25517839  0.25517839  0.48964322  1
+  Na  Na5  1  0.74482814  0.25517185  1.00000000  1
+  Na  Na6  1  0.25518341  0.25518341  0.00000050  1
+  Na  Na7  1  0.74482161  0.74482161  0.51035678  1
+  Hg  Hg8  1  0.00000000  0.00000000  0.00000000  1
+  Au  Au9  1  0.50000000  0.50000000  0.00000000  1

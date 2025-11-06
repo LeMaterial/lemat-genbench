@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_K2SmAlTe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.20285721
+_cell_length_b   9.20285806
+_cell_length_c   9.43733179
+_cell_angle_alpha   120.84581731
+_cell_angle_beta   120.84582647
+_cell_angle_gamma   90.60465767
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K2SmAlTe4
+_chemical_formula_sum   'K4 Sm2 Al2 Te8'
+_cell_volume   547.11128100
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.50000047  0.99999998  0.00000040  1
+  K  K1  1  0.49999992  0.00000001  0.49999974  1
+  K  K2  1  0.99999925  0.99999990  0.50000020  1
+  K  K3  1  0.50000047  0.49999894  0.99999957  1
+  Sm  Sm4  1  0.00000052  0.49999994  0.99999922  1
+  Sm  Sm5  1  0.00000052  0.50000023  0.50000130  1
+  Al  Al6  1  0.49999862  0.50000136  0.50000028  1
+  Al  Al7  1  0.99999825  0.00000153  0.99999988  1
+  Te  Te8  1  0.21235103  0.75601799  0.98415415  1
+  Te  Te9  1  0.74398090  0.28765029  0.51584587  1
+  Te  Te10  1  0.25601888  0.71235019  0.48415423  1
+  Te  Te11  1  0.78765024  0.24398105  0.01584585  1
+  Te  Te12  1  0.75789909  0.74261641  0.95170395  1
+  Te  Te13  1  0.75738339  0.74210103  0.54829627  1
+  Te  Te14  1  0.24261597  0.25789850  0.45170348  1
+  Te  Te15  1  0.24210146  0.25738364  0.04829664  1

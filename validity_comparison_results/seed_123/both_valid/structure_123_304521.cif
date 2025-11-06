@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Cs4Th3CuSe8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.59931952
+_cell_length_b   9.77485107
+_cell_length_c   8.68781289
+_cell_angle_alpha   116.54439060
+_cell_angle_beta   119.66362062
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cs4Th3CuSe8
+_chemical_formula_sum   'Cs4 Th3 Cu1 Se8'
+_cell_volume   544.21461625
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.50000000  0.00000000  0.00000000  1
+  Cs  Cs1  1  0.50000000  0.00000000  0.50000000  1
+  Cs  Cs2  1  0.00000000  0.00000000  0.00000000  1
+  Cs  Cs3  1  0.00000000  0.00000000  0.50000000  1
+  Th  Th4  1  0.50000000  0.50000000  0.00000000  1
+  Th  Th5  1  0.50000000  0.50000000  0.50000000  1
+  Th  Th6  1  0.00000000  0.50000000  0.50000000  1
+  Cu  Cu7  1  0.00000000  0.50000000  0.00000000  1
+  Se  Se8  1  0.22322116  0.68078402  0.95474296  1
+  Se  Se9  1  0.23392902  0.68909859  0.46785804  1
+  Se  Se10  1  0.26935470  0.30534986  0.53870939  1
+  Se  Se11  1  0.73152180  0.68078402  0.95474296  1
+  Se  Se12  1  0.26847820  0.31921598  0.04525704  1
+  Se  Se13  1  0.73064530  0.69465014  0.46129061  1
+  Se  Se14  1  0.76607098  0.31090141  0.53214196  1
+  Se  Se15  1  0.77677884  0.31921598  0.04525704  1

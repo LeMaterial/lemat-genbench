@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_U2Sn
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.62354914
+_cell_length_b   3.74965059
+_cell_length_c   5.87299457
+_cell_angle_alpha   108.60038863
+_cell_angle_beta   113.30220261
+_cell_angle_gamma   90.01049174
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   U2Sn
+_chemical_formula_sum   'U2 Sn1'
+_cell_volume   68.72386953
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  U  U0  1  0.74026856  0.81002768  0.61984279  1
+  U  U1  1  0.25973144  0.18997232  0.38015721  1
+  Sn  Sn2  1  0.50000000  0.50000000  -0.00000000  1

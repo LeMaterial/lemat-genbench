@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Sc8TlIn2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.80768648
+_cell_length_b   7.63550111
+_cell_length_c   8.45303187
+_cell_angle_alpha   116.84860873
+_cell_angle_beta   106.52158559
+_cell_angle_gamma   89.99999958
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sc8TlIn2
+_chemical_formula_sum   'Sc8 Tl1 In2'
+_cell_volume   262.41377277
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sc  Sc0  1  0.65256152  0.86983449  0.30512404  1
+  Sc  Sc1  1  0.34744548  0.56471445  0.69489096  1
+  Sc  Sc2  1  0.15381077  0.15381577  0.30762153  1
+  Sc  Sc3  1  0.99999500  0.29656806  0.99998900  1
+  Sc  Sc4  1  0.84618923  0.84618323  0.69237847  1
+  Sc  Sc5  1  0.65255452  0.43528555  0.30510904  1
+  Sc  Sc6  1  0.34743848  0.13016551  0.69487596  1
+  Sc  Sc7  1  0.00000500  0.70343194  0.00001000  1
+  Tl  Tl8  1  0.50000000  -0.00000000  0.00000000  1
+  In  In9  1  0.19289073  0.69288173  0.38578146  1
+  In  In10  1  0.80710927  0.30711827  0.61421754  1

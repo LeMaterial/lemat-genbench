@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_Tb7NdTm5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.64139337
+_cell_length_b   8.67879897
+_cell_length_c   8.67879830
+_cell_angle_alpha   80.22167019
+_cell_angle_beta   67.50376517
+_cell_angle_gamma   67.50376947
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb7NdTm5
+_chemical_formula_sum   'Tb7 Nd1 Tm5'
+_cell_volume   426.84383841
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.57648202  0.42351698  0.42351698  1
+  Tb  Tb1  1  0.27011982  0.72988018  0.72988018  1
+  Tb  Tb2  1  0.01793340  0.30868916  0.65544603  1
+  Tb  Tb3  1  0.01793340  0.65544603  0.30868916  1
+  Tb  Tb4  1  0.26438822  0.23561178  0.23561178  1
+  Tb  Tb5  1  0.52040934  0.80779335  0.15138897  1
+  Tb  Tb6  1  0.52040934  0.15138897  0.80779335  1
+  Nd  Nd7  1  0.96658924  0.03341276  0.03341276  1
+  Tm  Tm8  1  0.53286437  0.00009890  0.46221952  1
+  Tm  Tm9  1  0.00481721  0.00009890  0.46221952  1
+  Tm  Tm10  1  0.53286437  0.46221952  0.00009890  1
+  Tm  Tm11  1  0.00481721  0.46221952  0.00009890  1
+  Tm  Tm12  1  0.77037405  0.72962595  0.72962595  1

@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_KZr2Cr
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.82510275
+_cell_length_b   8.82510268
+_cell_length_c   8.82510262
+_cell_angle_alpha   159.06718996
+_cell_angle_beta   151.36351569
+_cell_angle_gamma   35.73975069
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KZr2Cr
+_chemical_formula_sum   'K1 Zr2 Cr1'
+_cell_volume   117.55443774
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cr  Cr0  1  0.51794070  0.51794070  -0.00000000  1
+  K  K1  1  0.32398602  0.82398602  0.50000000  1
+  Zr  Zr2  1  0.01725046  0.01725046  -0.00000000  1
+  Zr  Zr3  1  0.64082282  0.14082282  0.50000000  1

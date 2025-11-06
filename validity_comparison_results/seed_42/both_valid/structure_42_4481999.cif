@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Pr4GaNi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.22667749
+_cell_length_b   6.61953237
+_cell_length_c   10.81622282
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   103.98175338
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr4GaNi
+_chemical_formula_sum   'Pr8 Ga2 Ni2'
+_cell_volume   363.13425410
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.90575798  0.32089258  0.81151596  1
+  Pr  Pr1  1  0.09424202  0.82089258  0.18848404  1
+  Pr  Pr2  1  0.45060237  0.82311581  0.90120475  1
+  Pr  Pr3  1  0.54939763  0.32311581  0.09879525  1
+  Pr  Pr4  1  0.69614032  0.56875224  0.39228064  1
+  Pr  Pr5  1  0.30385968  0.06875224  0.60771936  1
+  Pr  Pr6  1  0.69508246  0.07559605  0.39016392  1
+  Pr  Pr7  1  0.30491754  0.57559605  0.60983608  1
+  Ga  Ga8  1  0.84478918  0.82249022  0.68957736  1
+  Ga  Ga9  1  0.15521082  0.32249022  0.31042264  1
+  Ni  Ni10  1  0.58249186  0.82255309  0.16498472  1
+  Ni  Ni11  1  0.41750814  0.32255309  0.83501528  1

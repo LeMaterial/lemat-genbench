@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_AgTeI
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   11.24842593
+_cell_length_b   3.68485712
+_cell_length_c   19.65291341
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   70.91688357
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   AgTeI
+_chemical_formula_sum   'Ag2 Te2 I2'
+_cell_volume   769.82492901
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.57822884  0.51058296  0.56803556  1
+  Ag  Ag1  1  0.22387513  0.86886112  0.43942226  1
+  Te  Te2  1  0.76078842  0.82895346  0.59477616  1
+  Te  Te3  1  0.10789565  0.48448703  0.35802178  1
+  I  I4  1  0.32197957  0.76911437  0.56799728  1
+  I  I5  1  0.91861482  0.67228996  0.47174697  1

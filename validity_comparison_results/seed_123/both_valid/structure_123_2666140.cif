@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_SmTm4Tl7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.71228509
+_cell_length_b   9.81314485
+_cell_length_c   7.27792310
+_cell_angle_alpha   81.29270757
+_cell_angle_beta   66.89363919
+_cell_angle_gamma   73.07900841
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmTm4Tl7
+_chemical_formula_sum   'Sm1 Tm4 Tl7'
+_cell_volume   358.67390124
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.00000000  0.00000000  0.00000000  1
+  Tm  Tm1  1  0.58370131  0.21689859  0.61569880  1
+  Tm  Tm2  1  0.41629869  0.78310141  0.38430120  1
+  Tm  Tm3  1  0.71770185  0.67275659  0.89183971  1
+  Tm  Tm4  1  0.28229815  0.32724341  0.10816029  1
+  Tl  Tl5  1  0.78648638  0.89404999  0.53297725  1
+  Tl  Tl6  1  0.21351362  0.10595001  0.46702275  1
+  Tl  Tl7  1  0.08023543  0.66858758  0.17094155  1
+  Tl  Tl8  1  0.91976457  0.33141242  0.82905845  1
+  Tl  Tl9  1  0.36447505  0.54804842  0.72300148  1
+  Tl  Tl10  1  0.50000000  0.00000000  0.00000000  1
+  Tl  Tl11  1  0.63552495  0.45195158  0.27699852  1

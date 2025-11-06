@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Tb6Pr4Y
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.73798664
+_cell_length_b   7.73798664
+_cell_length_c   8.59289375
+_cell_angle_alpha   116.76004526
+_cell_angle_beta   116.76004526
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb6Pr4Y
+_chemical_formula_sum   'Tb6 Pr4 Y1'
+_cell_volume   396.72197199
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.92454784  0.44512703  0.36967487  1
+  Tb  Tb1  1  0.44512703  0.92454784  0.36967487  1
+  Tb  Tb2  1  0.55487297  0.55487297  0.63032513  1
+  Tb  Tb3  1  0.00000000  0.50000000  0.00000000  1
+  Tb  Tb4  1  0.07545216  0.07545216  0.63032513  1
+  Tb  Tb5  1  0.50000000  0.00000000  0.00000000  1
+  Pr  Pr6  1  0.09866918  0.74717903  0.84584821  1
+  Pr  Pr7  1  0.90133082  0.90133082  0.15415179  1
+  Pr  Pr8  1  0.74717903  0.09866918  0.84584821  1
+  Pr  Pr9  1  0.25282097  0.25282097  0.15415179  1
+  Y  Y10  1  0.50000000  0.50000000  0.00000000  1

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Li(MgAu)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.30394876
+_cell_length_b   5.51664031
+_cell_length_c   8.92618460
+_cell_angle_alpha   75.20379196
+_cell_angle_beta   76.04937906
+_cell_angle_gamma   67.04003397
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li(MgAu)2
+_chemical_formula_sum   'Li2 Mg4 Au4'
+_cell_volume   186.27886580
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.78654218  0.07302725  0.35388939  1
+  Li  Li1  1  0.21345782  0.92697275  0.64611061  1
+  Mg  Mg2  1  0.33329579  0.24935624  0.08405118  1
+  Mg  Mg3  1  0.52473201  0.29326588  0.65727009  1
+  Mg  Mg4  1  0.66670421  0.75064376  0.91594882  1
+  Mg  Mg5  1  0.47526799  0.70673412  0.34272991  1
+  Au  Au6  1  0.95441795  0.21529363  0.87587046  1
+  Au  Au7  1  0.14155514  0.32489311  0.39199562  1
+  Au  Au8  1  0.04558205  0.78470637  0.12412954  1
+  Au  Au9  1  0.85844486  0.67510689  0.60800438  1

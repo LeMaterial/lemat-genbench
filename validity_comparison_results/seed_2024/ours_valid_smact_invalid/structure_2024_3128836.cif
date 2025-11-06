@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Na(H4Pt)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.55321586
+_cell_length_b   5.36697843
+_cell_length_c   6.02179650
+_cell_angle_alpha   63.50164284
+_cell_angle_beta   89.99991197
+_cell_angle_gamma   89.99980306
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na(H4Pt)2
+_chemical_formula_sum   'Na1 H8 Pt2'
+_cell_volume   102.77202371
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.50000000  0.00000000  0.00000000  1
+  H  H1  1  0.99999806  0.12279943  0.28374442  1
+  H  H2  1  0.99999804  0.40629260  0.71627367  1
+  H  H3  1  0.39360948  0.50000740  0.00000111  1
+  H  H4  1  0.49999999  0.77179366  0.45652476  1
+  H  H5  1  0.50000001  0.22820634  0.54347524  1
+  H  H6  1  0.60639052  0.49999260  0.99999889  1
+  H  H7  1  0.00000196  0.59370740  0.28372633  1
+  H  H8  1  0.00000194  0.87720057  0.71625558  1
+  Pt  Pt9  1  0.99999998  0.23005269  0.53987449  1
+  Pt  Pt10  1  0.00000002  0.76994731  0.46012551  1

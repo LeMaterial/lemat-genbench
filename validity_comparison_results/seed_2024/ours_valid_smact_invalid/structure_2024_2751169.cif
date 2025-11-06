@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_PmDy6Y3Th2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.18715314
+_cell_length_b   6.18715314
+_cell_length_c   11.79411207
+_cell_angle_alpha   95.03159080
+_cell_angle_beta   95.03159084
+_cell_angle_gamma   119.95864360
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PmDy6Y3Th2
+_chemical_formula_sum   'Pm1 Dy6 Y3 Th2'
+_cell_volume   385.10643938
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.00000000  0.00000000  0.00000000  1
+  Dy  Dy1  1  0.91679070  0.57899798  0.75236292  1
+  Dy  Dy2  1  0.74519403  0.74519403  0.24784274  1
+  Dy  Dy3  1  0.08320930  0.42100202  0.24763708  1
+  Dy  Dy4  1  0.57899798  0.91679070  0.75236292  1
+  Dy  Dy5  1  0.25480597  0.25480597  0.75215726  1
+  Dy  Dy6  1  0.42100202  0.08320930  0.24763708  1
+  Y  Y7  1  0.16636701  0.83363299  0.50000000  1
+  Y  Y8  1  0.83363299  0.16636701  0.50000000  1
+  Y  Y9  1  0.50000000  0.50000000  0.50000000  1
+  Th  Th10  1  0.33332206  0.66667794  0.00000000  1
+  Th  Th11  1  0.66667794  0.33332206  0.00000000  1

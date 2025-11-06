@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_Pm8Sm3In2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.15881592
+_cell_length_b   9.40823667
+_cell_length_c   8.75950568
+_cell_angle_alpha   72.59853560
+_cell_angle_beta   61.84235955
+_cell_angle_gamma   71.20477292
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pm8Sm3In2
+_chemical_formula_sum   'Pm8 Sm3 In2'
+_cell_volume   417.00284963
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.15569837  0.26865198  0.18713844  1
+  Pm  Pm1  1  0.84430163  0.73134802  0.81286156  1
+  Pm  Pm2  1  0.76000595  0.35121034  0.95329017  1
+  Pm  Pm3  1  0.23999405  0.64878966  0.04670983  1
+  Pm  Pm4  1  0.91942393  0.11050404  0.65731711  1
+  Pm  Pm5  1  0.52958930  0.20717028  0.42351418  1
+  Pm  Pm6  1  0.47041070  0.79282972  0.57648582  1
+  Pm  Pm7  1  0.08057607  0.88949596  0.34268289  1
+  Sm  Sm8  1  0.00000000  0.50000000  0.50000000  1
+  Sm  Sm9  1  0.30254086  0.04764520  0.87568103  1
+  Sm  Sm10  1  0.69745914  0.95235480  0.12431997  1
+  In  In11  1  0.62450097  0.57632414  0.26310971  1
+  In  In12  1  0.37549903  0.42367586  0.73689029  1

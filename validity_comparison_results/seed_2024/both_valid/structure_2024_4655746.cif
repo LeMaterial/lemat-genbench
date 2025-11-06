@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Li2Cd5Ag2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.80362877
+_cell_length_b   8.37486626
+_cell_length_c   9.98447028
+_cell_angle_alpha   114.79637328
+_cell_angle_beta   103.91929999
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2Cd5Ag2
+_chemical_formula_sum   'Li4 Cd10 Ag4'
+_cell_volume   351.60509821
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.00000000  0.87179938  0.00000000  1
+  Li  Li1  1  0.50000000  0.37179938  0.00000000  1
+  Li  Li2  1  0.25023590  0.45612607  0.50000000  1
+  Li  Li3  1  0.74976410  0.95612607  0.50000000  1
+  Cd  Cd4  1  0.41620256  0.61997727  0.83324855  1
+  Cd  Cd5  1  0.58379844  0.78672871  0.16675245  1
+  Cd  Cd6  1  0.91704700  0.11997727  0.83324955  1
+  Cd  Cd7  1  0.08295400  0.28672871  0.16675145  1
+  Cd  Cd8  1  0.16529853  0.03615766  0.33040524  1
+  Cd  Cd9  1  0.83470147  0.70575242  0.66959476  1
+  Cd  Cd10  1  0.66510671  0.53615766  0.33040524  1
+  Cd  Cd11  1  0.33489329  0.20575242  0.66959476  1
+  Cd  Cd12  1  0.24973532  0.78904195  0.50000100  1
+  Cd  Cd13  1  0.75026568  0.28904195  0.50000000  1
+  Ag  Ag14  1  0.08368999  0.61847597  0.16653540  1
+  Ag  Ag15  1  0.91630901  0.45194057  0.83346360  1
+  Ag  Ag16  1  0.58284441  0.11847597  0.16653440  1
+  Ag  Ag17  1  0.41715459  0.95194057  0.83346460  1

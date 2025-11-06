@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_In2Bi3As4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.76813902
+_cell_length_b   5.97850592
+_cell_length_c   19.66728857
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   89.99998787
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   In2Bi3As4
+_chemical_formula_sum   'In2 Bi3 As4'
+_cell_volume   913.38556301
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  In  In0  1  0.49999994  0.25813712  0.48480421  1
+  In  In1  1  0.00000007  0.59907347  0.37863259  1
+  Bi  Bi2  1  0.25472830  0.72825754  0.52877373  1
+  Bi  Bi3  1  0.74527142  0.72825746  0.52877361  1
+  Bi  Bi4  1  0.99999989  0.25999360  0.53136466  1
+  As  As5  1  0.83724347  0.04826297  0.41664700  1
+  As  As6  1  0.16275657  0.04826290  0.41664699  1
+  As  As7  1  0.50000006  0.97717877  0.59841239  1
+  As  As8  1  0.00000029  0.87603781  0.61594484  1

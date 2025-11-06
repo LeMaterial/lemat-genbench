@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Ac2Al2Fe2C
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.26085658
+_cell_length_b   6.23583331
+_cell_length_c   6.26791060
+_cell_angle_alpha   74.92646998
+_cell_angle_beta   70.12955392
+_cell_angle_gamma   70.02299890
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ac2Al2Fe2C
+_chemical_formula_sum   'Ac2 Al2 Fe2 C1'
+_cell_volume   145.23429174
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.55610045  0.18242556  0.70537355  1
+  Ac  Ac1  1  0.44389955  0.81757444  0.29462645  1
+  Al  Al2  1  0.19046806  0.39061417  0.22844970  1
+  Al  Al3  1  0.80953194  0.60938583  0.77155030  1
+  Fe  Fe4  1  0.18116155  0.71946145  0.91821446  1
+  Fe  Fe5  1  0.81883845  0.28053855  0.08178554  1
+  C  C6  1  0.00000000  0.00000000  0.00000000  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_HoScFe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.38310527
+_cell_length_b   6.68517107
+_cell_length_c   7.03315230
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   118.51623609
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HoScFe
+_chemical_formula_sum   'Ho4 Sc4 Fe4'
+_cell_volume   263.70976765
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.59187342  0.18374584  0.54053694  1
+  Fe  Fe1  1  0.90812658  0.81625416  0.04053694  1
+  Fe  Fe2  1  0.40812658  0.81625416  0.45946306  1
+  Fe  Fe3  1  0.09187342  0.18374584  0.95946306  1
+  Sc  Sc4  1  0.29171674  0.08343449  0.25000000  1
+  Sc  Sc5  1  0.20828326  0.91656551  0.75000000  1
+  Sc  Sc6  1  0.70828326  0.91656551  0.75000000  1
+  Sc  Sc7  1  0.79171674  0.08343449  0.25000000  1
+  Ho  Ho8  1  0.80446859  0.60893719  0.38851160  1
+  Ho  Ho9  1  0.69553141  0.39106281  0.88851160  1
+  Ho  Ho10  1  0.19553141  0.39106281  0.61148840  1
+  Ho  Ho11  1  0.30446859  0.60893719  0.11148840  1

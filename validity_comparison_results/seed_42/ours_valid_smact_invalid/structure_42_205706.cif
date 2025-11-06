@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_CsCuH6Pt
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.78751647
+_cell_length_b   4.78751762
+_cell_length_c   6.32303238
+_cell_angle_alpha   90.00005549
+_cell_angle_beta   90.00057696
+_cell_angle_gamma   60.00083013
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsCuH6Pt
+_chemical_formula_sum   'Cs1 Cu1 H6 Pt1'
+_cell_volume   125.51058021
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.99997984  0.00001059  0.99998949  1
+  Cu  Cu1  1  0.66667052  0.66670422  0.49999389  1
+  H  H2  1  0.02726235  0.35710488  0.35620638  1
+  H  H3  1  0.35707536  0.02730005  0.64377595  1
+  H  H4  1  0.61557006  0.35708409  0.64376721  1
+  H  H5  1  0.02730235  0.61557455  0.64380689  1
+  H  H6  1  0.35705008  0.61559872  0.35620805  1
+  H  H7  1  0.61553872  0.02733099  0.35617039  1
+  Pt  Pt8  1  0.33331422  0.33334200  0.49999272  1

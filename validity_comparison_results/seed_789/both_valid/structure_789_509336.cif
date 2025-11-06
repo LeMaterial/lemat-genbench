@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Cd(PbBr3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.31693145
+_cell_length_b   7.88726891
+_cell_length_c   10.77984508
+_cell_angle_alpha   105.44300356
+_cell_angle_beta   90.00008342
+_cell_angle_gamma   105.88239583
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cd(PbBr3)2
+_chemical_formula_sum   'Cd1 Pb2 Br6'
+_cell_volume   339.23050147
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cd  Cd0  1  0.99999800  0.00000100  0.50000300  1
+  Pb  Pb1  1  0.66439412  0.32881825  0.82676965  1
+  Pb  Pb2  1  0.33557288  0.67120075  0.17322935  1
+  Br  Br3  1  0.31201085  0.62403969  0.87559050  1
+  Br  Br4  1  0.68797715  0.37598131  0.12440550  1
+  Br  Br5  1  0.98552262  0.97107223  0.23628995  1
+  Br  Br6  1  0.63088597  0.26177394  0.53682515  1
+  Br  Br7  1  0.01446538  0.02894577  0.76371205  1
+  Br  Br8  1  0.36911203  0.73822806  0.46317385  1

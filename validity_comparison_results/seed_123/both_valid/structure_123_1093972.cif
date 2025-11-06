@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_KZrCuSeS2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.57416333
+_cell_length_b   7.57416333
+_cell_length_c   10.05040409
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   150.98869610
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KZrCuSeS2
+_chemical_formula_sum   'K2 Zr2 Cu2 Se2 S4'
+_cell_volume   279.62669053
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.47001187  0.52998687  0.24999990  1
+  Cu  Cu1  1  0.52998687  0.47001187  0.74999970  1
+  K  K2  1  0.75965195  0.24034679  0.24999990  1
+  K  K3  1  0.24034679  0.75965195  0.74999970  1
+  S  S4  1  0.38500727  0.61499147  0.05925533  1
+  S  S5  1  0.38500727  0.61499147  0.44074447  1
+  S  S6  1  0.61499147  0.38500727  0.55925513  1
+  S  S7  1  0.61499147  0.38500727  0.94074426  1
+  Se  Se8  1  0.07663881  0.92335993  0.24999990  1
+  Se  Se9  1  0.92335993  0.07663881  0.74999970  1
+  Zr  Zr10  1  0.00000000  0.00000000  0.00000000  1
+  Zr  Zr11  1  0.00000000  0.00000000  0.49999980  1

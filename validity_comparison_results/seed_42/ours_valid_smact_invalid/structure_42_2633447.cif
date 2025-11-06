@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_In3(HgAs)4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.82314178
+_cell_length_b   6.26816665
+_cell_length_c   19.96226770
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   93.61849710
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   In3(HgAs)4
+_chemical_formula_sum   'In3 Hg4 As4'
+_cell_volume   976.93335972
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  In  In0  1  0.36598343  0.70280426  0.49792668  1
+  In  In1  1  0.82293883  0.63245001  0.40168149  1
+  In  In2  1  0.96652571  0.03169260  0.57326886  1
+  Hg  Hg3  1  0.27069327  0.31218858  0.56045383  1
+  Hg  Hg4  1  0.75215082  0.68004392  0.62437868  1
+  Hg  Hg5  1  0.61234465  0.10923531  0.44106757  1
+  Hg  Hg6  1  0.99082841  0.25607613  0.40295283  1
+  As  As7  1  0.46055594  0.96104255  0.60706702  1
+  As  As8  1  0.65791750  0.24715024  0.56535873  1
+  As  As9  1  0.51565403  0.76038890  0.37579631  1
+  As  As10  1  0.07545614  0.88341086  0.45004799  1

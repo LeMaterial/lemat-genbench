@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Ba4HPb2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.42849986
+_cell_length_b   5.42849986
+_cell_length_c   10.23821698
+_cell_angle_alpha   105.37346721
+_cell_angle_beta   105.37346721
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba4HPb2
+_chemical_formula_sum   'Ba4 H1 Pb2'
+_cell_volume   279.69853897
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pb  Pb0  1  0.63075689  0.63075689  0.26151377  1
+  Pb  Pb1  1  0.36924311  0.36924311  0.73848623  1
+  H  H2  1  0.00000000  0.00000000  0.00000000  1
+  Ba  Ba3  1  0.81811006  0.81811006  0.63622013  1
+  Ba  Ba4  1  0.18188994  0.18188994  0.36377987  1
+  Ba  Ba5  1  0.00000000  0.50000000  0.00000000  1
+  Ba  Ba6  1  0.50000000  0.00000000  0.00000000  1

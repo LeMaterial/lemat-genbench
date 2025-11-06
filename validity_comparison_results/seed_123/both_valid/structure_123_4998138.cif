@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ho3TmSc7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.43088704
+_cell_length_b   7.94298791
+_cell_length_c   7.94298790
+_cell_angle_alpha   81.96778392
+_cell_angle_beta   110.04143523
+_cell_angle_gamma   110.04143521
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho3TmSc7
+_chemical_formula_sum   'Ho3 Tm1 Sc7'
+_cell_volume   302.30324111
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  -0.00000000  0.78846059  0.21153941  1
+  Ho  Ho1  1  0.50000000  0.00000000  0.00000000  1
+  Ho  Ho2  1  -0.00000000  0.21153941  0.78846059  1
+  Tm  Tm3  1  0.50000000  0.50000000  0.50000000  1
+  Sc  Sc4  1  0.20853057  0.20793056  0.20793056  1
+  Sc  Sc5  1  0.28707480  0.98144907  0.59305223  1
+  Sc  Sc6  1  0.71292520  0.40694777  0.01855093  1
+  Sc  Sc7  1  0.28707480  0.59305223  0.98144907  1
+  Sc  Sc8  1  -0.00000000  0.50000000  0.50000000  1
+  Sc  Sc9  1  0.71292520  0.01855093  0.40694777  1
+  Sc  Sc10  1  0.79146943  0.79206944  0.79206944  1

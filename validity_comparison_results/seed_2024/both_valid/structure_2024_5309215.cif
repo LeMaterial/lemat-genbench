@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_PuTl2(ICl2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.90824412
+_cell_length_b   7.90824412
+_cell_length_c   7.90824412
+_cell_angle_alpha   83.10660258
+_cell_angle_beta   124.05657356
+_cell_angle_gamma   124.05657355
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PuTl2(ICl2)2
+_chemical_formula_sum   'Pu1 Tl2 I2 Cl4'
+_cell_volume   325.69430460
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pu  Pu0  1  0.00000000  0.00000000  0.00000000  1
+  Tl  Tl1  1  0.50000000  0.75000000  0.25000000  1
+  Tl  Tl2  1  0.50000000  0.25000000  0.75000000  1
+  I  I3  1  1.00000000  0.74247767  0.74247767  1
+  I  I4  1  -0.00000000  0.25752233  0.25752233  1
+  Cl  Cl5  1  0.00000000  0.75581687  0.24418313  1
+  Cl  Cl6  1  0.51163373  0.75581687  0.75581687  1
+  Cl  Cl7  1  0.00000000  0.24418313  0.75581687  1
+  Cl  Cl8  1  0.48836627  0.24418313  0.24418313  1

@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_K6RbIn6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.72927174
+_cell_length_b   9.43914900
+_cell_length_c   9.43914629
+_cell_angle_alpha   85.21776466
+_cell_angle_beta   69.11732836
+_cell_angle_gamma   69.11732390
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K6RbIn6
+_chemical_formula_sum   'K6 Rb1 In6'
+_cell_volume   522.72479785
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.34424035  0.65575965  0.65575965  1
+  K  K1  1  0.65575965  0.34424035  0.34424035  1
+  K  K2  1  1.00000000  0.32878353  0.67121647  1
+  K  K3  1  -0.00000000  0.67121647  0.32878353  1
+  K  K4  1  0.32274875  0.17725125  0.17725125  1
+  K  K5  1  0.67725125  0.82274875  0.82274875  1
+  Rb  Rb6  1  0.00000000  0.00000000  0.00000000  1
+  In  In7  1  0.00000000  0.50000000  0.00000000  1
+  In  In8  1  0.50000000  0.50000000  0.00000000  1
+  In  In9  1  0.00000000  -0.00000000  0.50000000  1
+  In  In10  1  0.50000000  0.00000000  0.50000000  1
+  In  In11  1  0.50000000  0.76291659  0.23708341  1
+  In  In12  1  0.50000000  0.23708341  0.76291659  1

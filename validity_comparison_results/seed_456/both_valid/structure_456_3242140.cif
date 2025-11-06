@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Na2ZnS2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.21592661
+_cell_length_b   7.44250111
+_cell_length_c   9.55137153
+_cell_angle_alpha   125.03943167
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   110.51269457
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na2ZnS2
+_chemical_formula_sum   'Na4 Zn2 S4'
+_cell_volume   274.37022016
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.67408331  0.34816662  0.51699342  1
+  Na  Na1  1  0.32591669  0.65183338  0.48300658  1
+  Na  Na2  1  0.05904947  0.11809995  0.74901362  1
+  Na  Na3  1  0.94095053  0.88190005  0.25098638  1
+  Zn  Zn4  1  0.37273178  0.74546355  0.85413553  1
+  Zn  Zn5  1  0.62726822  0.25453645  0.14586447  1
+  S  S6  1  0.18205106  0.36410212  0.60762160  1
+  S  S7  1  0.81794894  0.63589788  0.39237840  1
+  S  S8  1  0.46053859  0.92107718  0.15011467  1
+  S  S9  1  0.53946141  0.07892282  0.84988533  1

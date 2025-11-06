@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Er2Ga3Pd5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.17478587
+_cell_length_b   6.75055417
+_cell_length_c   12.61979372
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   99.52084440
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Er2Ga3Pd5
+_chemical_formula_sum   'Er4 Ga6 Pd10'
+_cell_volume   350.75357962
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.47373687  0.72272162  0.94747374  1
+  Er  Er1  1  0.17611560  0.77510313  0.35223220  1
+  Er  Er2  1  0.82388440  0.27510313  0.64776780  1
+  Er  Er3  1  0.52626313  0.22272162  0.05252626  1
+  Ga  Ga4  1  0.78413061  0.82326207  0.56826122  1
+  Ga  Ga5  1  0.62591649  0.45181939  0.25183399  1
+  Ga  Ga6  1  0.04231265  0.91399934  0.08462430  1
+  Ga  Ga7  1  0.21586939  0.32326207  0.43173878  1
+  Ga  Ga8  1  0.95768735  0.41399934  0.91537570  1
+  Ga  Ga9  1  0.37408351  0.95181939  0.74816601  1
+  Pd  Pd10  1  0.40256433  0.34751976  0.80512867  1
+  Pd  Pd11  1  0.30373559  0.59002671  0.60747118  1
+  Pd  Pd12  1  0.69626441  0.09002671  0.39252882  1
+  Pd  Pd13  1  0.11766857  0.17747221  0.23533814  1
+  Pd  Pd14  1  0.27382092  0.02361762  0.54764184  1
+  Pd  Pd15  1  0.94193048  0.03926915  0.88386096  1
+  Pd  Pd16  1  0.72617908  0.52361762  0.45235816  1
+  Pd  Pd17  1  0.88233143  0.67747221  0.76466186  1
+  Pd  Pd18  1  0.05806952  0.53926915  0.11613904  1
+  Pd  Pd19  1  0.59743567  0.84751976  0.19487133  1

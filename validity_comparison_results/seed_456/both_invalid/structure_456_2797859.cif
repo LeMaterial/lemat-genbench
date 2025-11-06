@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Lu3Al3Si2Ag
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.19409510
+_cell_length_b   6.88010107
+_cell_length_c   6.88010107
+_cell_angle_alpha   119.99999995
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Lu3Al3Si2Ag
+_chemical_formula_sum   'Lu3 Al3 Si2 Ag1'
+_cell_volume   171.93272322
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Si  Si0  1  0.50000000  0.33333333  0.66666667  1
+  Si  Si1  1  0.50000000  0.66666667  0.33333333  1
+  Lu  Lu2  1  0.00000000  1.00000000  0.58135853  1
+  Lu  Lu3  1  0.00000000  0.58135853  0.00000000  1
+  Lu  Lu4  1  0.00000000  0.41864147  0.41864147  1
+  Al  Al5  1  0.50000000  0.75346985  0.75346985  1
+  Al  Al6  1  0.50000000  0.24653015  0.00000000  1
+  Al  Al7  1  0.50000000  -0.00000000  0.24653015  1
+  Ag  Ag8  1  0.00000000  0.00000000  0.00000000  1

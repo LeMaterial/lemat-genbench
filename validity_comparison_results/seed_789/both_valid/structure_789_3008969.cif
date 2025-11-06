@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Dy2HoC3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.70300451
+_cell_length_b   6.91879575
+_cell_length_c   6.91879462
+_cell_angle_alpha   67.31361569
+_cell_angle_beta   65.66086414
+_cell_angle_gamma   65.66083902
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy2HoC3
+_chemical_formula_sum   'Dy4 Ho2 C6'
+_cell_volume   218.83653162
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.07101843  0.09785606  0.76010809  1
+  Dy  Dy1  1  0.57101843  0.26010809  0.59785606  1
+  Dy  Dy2  1  0.42898157  0.73989191  0.40214394  1
+  Dy  Dy3  1  0.92898157  0.90214394  0.23989191  1
+  Ho  Ho4  1  0.75000000  0.73203763  0.76796237  1
+  Ho  Ho5  1  0.25000000  0.26796237  0.23203763  1
+  C  C6  1  0.37976804  0.00000100  0.99999900  1
+  C  C7  1  0.62023196  0.99999900  0.00000100  1
+  C  C8  1  0.12023196  0.50000100  0.50000000  1
+  C  C9  1  0.00000000  -0.00000000  0.50000000  1
+  C  C10  1  0.50000000  -0.00000000  0.50000000  1
+  C  C11  1  0.87976804  0.49999900  0.50000000  1

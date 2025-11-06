@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_CaInGeH
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.37035229
+_cell_length_b   4.37035230
+_cell_length_c   4.97710948
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   59.99999997
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CaInGeH
+_chemical_formula_sum   'Ca1 In1 Ge1 H1'
+_cell_volume   82.32670217
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.66666667  0.66666667  0.05460223  1
+  Ge  Ge1  1  0.33333333  0.33333333  0.61026802  1
+  Ca  Ca2  1  0.00000000  0.00000000  0.97503002  1
+  In  In3  1  0.66666667  0.66666667  0.44131273  1

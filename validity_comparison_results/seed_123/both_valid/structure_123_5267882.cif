@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Sn(BiPb3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.47238730
+_cell_length_b   8.47292958
+_cell_length_c   10.25288331
+_cell_angle_alpha   78.00628121
+_cell_angle_beta   80.25072040
+_cell_angle_gamma   78.17573038
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sn(BiPb3)2
+_chemical_formula_sum   'Sn1 Bi2 Pb6'
+_cell_volume   286.26465698
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sn  Sn0  1  0.00000000  0.00000000  0.00000000  1
+  Bi  Bi1  1  0.34682275  0.01349386  0.29285965  1
+  Bi  Bi2  1  0.65317725  0.98650614  0.70714035  1
+  Pb  Pb3  1  0.77356805  0.35281980  0.10004510  1
+  Pb  Pb4  1  0.22643195  0.64718020  0.89995490  1
+  Pb  Pb5  1  0.37414019  0.69752171  0.55419890  1
+  Pb  Pb6  1  0.04828158  0.65356026  0.24987558  1
+  Pb  Pb7  1  0.95171842  0.34643974  0.75012442  1
+  Pb  Pb8  1  0.62585981  0.30247829  0.44580110  1

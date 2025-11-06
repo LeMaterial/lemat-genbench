@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Zr(TiN)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.45955523
+_cell_length_b   5.45955522
+_cell_length_c   5.57509948
+_cell_angle_alpha   113.95990934
+_cell_angle_beta   113.95990922
+_cell_angle_gamma   99.61564859
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Zr(TiN)2
+_chemical_formula_sum   'Zr2 Ti4 N4'
+_cell_volume   127.33581668
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zr  Zr0  1  0.87494361  0.62505639  0.75000000  1
+  Zr  Zr1  1  0.12505639  0.37494361  0.25000000  1
+  Ti  Ti2  1  0.22853499  0.97795812  0.45717526  1
+  Ti  Ti3  1  0.47795812  0.72853499  0.95717526  1
+  Ti  Ti4  1  0.77146501  0.02204188  0.54282474  1
+  Ti  Ti5  1  0.52204188  0.27146501  0.04282474  1
+  N  N6  1  0.15980395  0.34019605  0.75000000  1
+  N  N7  1  0.40936768  0.09063232  0.25000000  1
+  N  N8  1  0.59063232  0.90936768  0.75000000  1
+  N  N9  1  0.84019605  0.65980395  0.25000000  1

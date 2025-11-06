@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_ZrAgHgBr6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.11633103
+_cell_length_b   7.33006435
+_cell_length_c   7.61511077
+_cell_angle_alpha   110.16466783
+_cell_angle_beta   100.22437952
+_cell_angle_gamma   59.00253974
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZrAgHgBr6
+_chemical_formula_sum   'Zr1 Ag1 Hg1 Br6'
+_cell_volume   319.62946355
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zr  Zr0  1  0.32431222  0.33785861  0.50005143  1
+  Ag  Ag1  1  0.62868659  0.68568314  0.49984552  1
+  Hg  Hg2  1  0.23157321  0.88407013  0.00006526  1
+  Br  Br3  1  0.98667779  0.30321635  0.28883109  1
+  Br  Br4  1  0.32197777  0.11144230  0.70635945  1
+  Br  Br5  1  0.59878136  0.43565700  0.73532624  1
+  Br  Br6  1  0.98656988  0.71010379  0.71102711  1
+  Br  Br7  1  0.32214942  0.56641619  0.29357044  1
+  Br  Br8  1  0.59903525  0.96560256  0.26483443  1

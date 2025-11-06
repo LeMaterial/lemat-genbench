@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_PmCd2Rh
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.16960025
+_cell_length_b   5.39253560
+_cell_length_c   8.60702865
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   112.75698411
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PmCd2Rh
+_chemical_formula_sum   'Pm2 Cd4 Rh2'
+_cell_volume   178.46130405
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.93319534  0.86385274  0.25000000  1
+  Pm  Pm1  1  0.06680466  0.13614726  0.75000000  1
+  Cd  Cd2  1  0.35666383  0.71256239  0.54779282  1
+  Cd  Cd3  1  0.64333617  0.28743761  0.45220718  1
+  Cd  Cd4  1  0.35666383  0.71256239  0.95220718  1
+  Cd  Cd5  1  0.64333617  0.28743761  0.04779282  1
+  Rh  Rh6  1  0.77815350  0.55460532  0.75000000  1
+  Rh  Rh7  1  0.22184650  0.44539468  0.25000000  1

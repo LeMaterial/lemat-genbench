@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ho3(ZnGa)4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.31289162
+_cell_length_b   6.78993400
+_cell_length_c   8.20071012
+_cell_angle_alpha   114.45541067
+_cell_angle_beta   105.24566933
+_cell_angle_gamma   90.00000072
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho3(ZnGa)4
+_chemical_formula_sum   'Ho3 Zn4 Ga4'
+_cell_volume   209.28624954
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.12550379  0.12550379  0.25100759  1
+  Ho  Ho1  1  0.87449621  0.87449621  0.74899241  1
+  Ho  Ho2  1  0.00000000  0.50000000  0.00000000  1
+  Zn  Zn3  1  0.33445415  0.14583882  0.66890930  1
+  Zn  Zn4  1  0.66554585  0.47692852  0.33109070  1
+  Zn  Zn5  1  0.66554585  0.85416118  0.33109070  1
+  Zn  Zn6  1  0.33445415  0.52307148  0.66890930  1
+  Ga  Ga7  1  0.21931251  0.71931251  0.43862502  1
+  Ga  Ga8  1  0.78068749  0.28068749  0.56137498  1
+  Ga  Ga9  1  0.50000000  0.81240224  1.00000000  1
+  Ga  Ga10  1  0.50000000  0.18759776  -0.00000000  1

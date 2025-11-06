@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_BaBiAu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.11797322
+_cell_length_b   8.11797322
+_cell_length_c   4.98427925
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaBiAu
+_chemical_formula_sum   'Ba3 Bi3 Au3'
+_cell_volume   284.46459881
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Au  Au0  1  0.24870493  0.00000000  0.00000000  1
+  Au  Au1  1  0.00000000  0.24870380  0.00000000  1
+  Au  Au2  1  0.75129598  0.75129605  0.00000000  1
+  Ba  Ba3  1  0.57949686  0.00000000  0.50000007  1
+  Ba  Ba4  1  0.42050405  0.42050412  0.50000007  1
+  Ba  Ba5  1  0.00000000  0.57949573  0.50000007  1
+  Bi  Bi6  1  0.66666730  0.33333376  0.00000000  1
+  Bi  Bi7  1  0.33333305  0.66666609  0.00000000  1
+  Bi  Bi8  1  0.00000000  0.00000000  0.50000007  1

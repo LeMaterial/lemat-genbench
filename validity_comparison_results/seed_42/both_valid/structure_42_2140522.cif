@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Sr(CoH4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.85228499
+_cell_length_b   4.73174768
+_cell_length_c   4.73174816
+_cell_angle_alpha   117.19887625
+_cell_angle_beta   90.00014789
+_cell_angle_gamma   90.00015327
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr(CoH4)2
+_chemical_formula_sum   'Sr1 Co2 H8'
+_cell_volume   76.71337775
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.00383344  0.99694471  0.99694471  1
+  Co  Co1  1  0.51964187  0.66999174  0.32383878  1
+  Co  Co2  1  0.51964187  0.32383878  0.66999174  1
+  H  H3  1  0.50352176  0.97462184  0.66639517  1
+  H  H4  1  0.50352176  0.66639517  0.97462184  1
+  H  H5  1  0.73922112  0.49695264  0.49695264  1
+  H  H6  1  0.95622517  0.31770914  0.67601439  1
+  H  H7  1  0.95622517  0.67601439  0.31770914  1
+  H  H8  1  0.29147491  0.49696429  0.49696429  1
+  H  H9  1  0.50351497  0.32742453  0.01920478  1
+  H  H10  1  0.50351497  0.01920478  0.32742453  1

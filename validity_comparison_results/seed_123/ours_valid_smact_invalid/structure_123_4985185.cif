@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Ce2Co(Ni4P)3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.31663173
+_cell_length_b   6.31663173
+_cell_length_c   6.31663173
+_cell_angle_alpha   80.63762479
+_cell_angle_beta   80.63762480
+_cell_angle_gamma   80.63762484
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ce2Co(Ni4P)3
+_chemical_formula_sum   'Ce2 Co1 Ni12 P3'
+_cell_volume   242.94917896
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.61674859  0.61674859  0.61674859  1
+  Ce  Ce1  1  0.38325141  0.38325141  0.38325141  1
+  Co  Co2  1  0.00000000  0.00000000  0.00000000  1
+  Ni  Ni3  1  0.34949292  0.34949292  0.90536497  1
+  Ni  Ni4  1  0.82382422  0.82382422  0.33910240  1
+  Ni  Ni5  1  0.33910240  0.82382422  0.82382422  1
+  Ni  Ni6  1  0.90536497  0.34949292  0.34949292  1
+  Ni  Ni7  1  0.82382422  0.33910240  0.82382422  1
+  Ni  Ni8  1  0.34949292  0.90536497  0.34949292  1
+  Ni  Ni9  1  0.65050708  0.65050708  0.09463503  1
+  Ni  Ni10  1  0.17617578  0.17617578  0.66089760  1
+  Ni  Ni11  1  0.66089760  0.17617578  0.17617578  1
+  Ni  Ni12  1  0.09463503  0.65050708  0.65050708  1
+  Ni  Ni13  1  0.17617578  0.66089760  0.17617578  1
+  Ni  Ni14  1  0.65050708  0.09463503  0.65050708  1
+  P  P15  1  0.50000000  0.00000000  0.00000000  1
+  P  P16  1  0.00000000  0.50000000  0.00000000  1
+  P  P17  1  0.00000000  -0.00000000  0.50000000  1

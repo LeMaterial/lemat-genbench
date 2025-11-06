@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_Fe2H2Os
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   2.67093283
+_cell_length_b   2.67093283
+_cell_length_c   5.96683511
+_cell_angle_alpha   77.06680200
+_cell_angle_beta   77.06680200
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Fe2H2Os
+_chemical_formula_sum   'Fe2 H2 Os1'
+_cell_volume   40.37813876
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.75000000  0.25000000  0.50000000  1
+  H  H1  1  0.25000000  0.75000000  0.50000000  1
+  Os  Os2  1  0.00000000  0.00000000  0.00000000  1
+  Fe  Fe3  1  0.34620187  0.34620187  0.30759626  1
+  Fe  Fe4  1  0.65379813  0.65379813  0.69240374  1

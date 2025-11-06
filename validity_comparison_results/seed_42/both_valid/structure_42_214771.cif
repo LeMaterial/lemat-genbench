@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_CaUCuSe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.04038348
+_cell_length_b   5.80951692
+_cell_length_c   8.38411670
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   107.38248423
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CaUCuSe4
+_chemical_formula_sum   'Ca2 U2 Cu2 Se8'
+_cell_volume   327.26005766
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ca  Ca0  1  0.73204195  0.75000000  0.93692291  1
+  Ca  Ca1  1  0.26795805  0.25000000  0.06307709  1
+  U  U2  1  0.73388961  0.75000000  0.43793893  1
+  U  U3  1  0.26611039  0.25000000  0.56206107  1
+  Cu  Cu4  1  0.25719379  0.75000000  0.31590219  1
+  Cu  Cu5  1  0.74280621  0.25000000  0.68409781  1
+  Se  Se6  1  0.02057381  0.51009742  0.73910701  1
+  Se  Se7  1  0.97942619  0.01009742  0.26089299  1
+  Se  Se8  1  0.97942619  0.48990258  0.26089299  1
+  Se  Se9  1  0.02057381  0.98990258  0.73910701  1
+  Se  Se10  1  0.43831623  0.75000000  0.11952938  1
+  Se  Se11  1  0.56168377  0.25000000  0.88047062  1
+  Se  Se12  1  0.42873460  0.75000000  0.60531817  1
+  Se  Se13  1  0.57126540  0.25000000  0.39468183  1

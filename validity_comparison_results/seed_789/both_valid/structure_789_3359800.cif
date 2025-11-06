@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_NbNiGe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.92453801
+_cell_length_b   5.12197116
+_cell_length_c   5.12197116
+_cell_angle_alpha   85.60797330
+_cell_angle_beta   67.47365673
+_cell_angle_gamma   67.47365673
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NbNiGe
+_chemical_formula_sum   'Nb2 Ni2 Ge2'
+_cell_volume   87.54944235
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nb  Nb0  1  -0.00000000  0.60344874  0.39655126  1
+  Nb  Nb1  1  0.50000000  0.18414170  0.81585830  1
+  Ni  Ni2  1  0.30665670  0.00504497  0.38164162  1
+  Ni  Ni3  1  0.69334330  0.61835838  0.99495503  1
+  Ge  Ge4  1  0.22379715  0.76045095  0.79195475  1
+  Ge  Ge5  1  0.77620285  0.20804525  0.23954905  1

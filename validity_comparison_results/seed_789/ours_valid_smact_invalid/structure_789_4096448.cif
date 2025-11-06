@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_PmHo5Tl8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.03838345
+_cell_length_b   8.03838346
+_cell_length_c   8.03838346
+_cell_angle_alpha   110.02337005
+_cell_angle_beta   108.37247734
+_cell_angle_gamma   110.02337002
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PmHo5Tl8
+_chemical_formula_sum   'Pm1 Ho5 Tl8'
+_cell_volume   399.72816325
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.25000000  0.50000000  0.75000000  1
+  Ho  Ho1  1  0.01739776  0.36675922  0.12344355  1
+  Ho  Ho2  1  0.87655645  0.89395420  0.24331567  1
+  Ho  Ho3  1  0.75668433  0.63324078  0.65063854  1
+  Ho  Ho4  1  0.50000000  0.00000000  0.50000000  1
+  Ho  Ho5  1  0.34936146  0.10604580  0.98260224  1
+  Tl  Tl6  1  0.12282865  0.74521401  0.04870257  1
+  Tl  Tl7  1  0.95129743  0.07412608  0.69651144  1
+  Tl  Tl8  1  0.77738763  0.25883579  0.36496889  1
+  Tl  Tl9  1  0.63503111  0.41241875  0.89386691  1
+  Tl  Tl10  1  0.48144816  0.58758125  0.22261237  1
+  Tl  Tl11  1  0.62238536  0.92587392  0.87717135  1
+  Tl  Tl12  1  0.30348856  0.25478599  0.37761464  1
+  Tl  Tl13  1  0.10613309  0.74116421  0.51855184  1

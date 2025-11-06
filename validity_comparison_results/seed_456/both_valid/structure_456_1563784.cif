@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_K2NaNiH4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.93895292
+_cell_length_b   6.47734223
+_cell_length_c   10.92968764
+_cell_angle_alpha   85.05841384
+_cell_angle_beta   76.94171743
+_cell_angle_gamma   67.58896619
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K2NaNiH4
+_chemical_formula_sum   'K4 Na2 Ni2 H8'
+_cell_volume   314.88737166
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.17246222  1.00000000  0.65507555  1
+  K  K1  1  0.82753778  0.00000000  0.34492445  1
+  K  K2  1  0.57753778  0.50000000  0.84492445  1
+  K  K3  1  0.92246222  0.50000000  0.15507555  1
+  Na  Na4  1  0.75000000  0.50000000  0.50000000  1
+  Na  Na5  1  0.00000000  0.00000000  0.00000000  1
+  Ni  Ni6  1  0.25000000  0.50000000  0.50000000  1
+  Ni  Ni7  1  0.50000000  0.00000000  0.00000000  1
+  H  H8  1  0.43809955  0.82487615  0.09947391  1
+  H  H9  1  0.36244960  0.17512385  0.90052609  1
+  H  H10  1  0.73702431  0.82487615  0.90052609  1
+  H  H11  1  0.46242654  0.17512385  0.09947391  1
+  H  H12  1  0.31190045  0.67512385  0.40052609  1
+  H  H13  1  0.38755040  0.32487615  0.59947391  1
+  H  H14  1  0.01297569  0.67512385  0.59947391  1
+  H  H15  1  0.28757346  0.32487615  0.40052609  1

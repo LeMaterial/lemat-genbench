@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_Ho4Tl2O
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.38730902
+_cell_length_b   6.82313692
+_cell_length_c   8.98246251
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   110.33636029
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho4Tl2O
+_chemical_formula_sum   'Ho8 Tl4 O2'
+_cell_volume   367.06822350
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.53639311  0.50211764  0.27795931  1
+  Ho  Ho1  1  0.13279125  0.75000000  0.94844591  1
+  Ho  Ho2  1  0.86720875  0.25000000  0.05155409  1
+  Ho  Ho3  1  0.53639311  0.99788236  0.27795931  1
+  Ho  Ho4  1  0.92154370  0.25000000  0.64858304  1
+  Ho  Ho5  1  0.46360689  0.00211764  0.72204069  1
+  Ho  Ho6  1  0.46360689  0.49788236  0.72204069  1
+  Ho  Ho7  1  0.07845630  0.75000000  0.35141696  1
+  Tl  Tl8  1  0.69568909  0.75000000  0.02602087  1
+  Tl  Tl9  1  0.30431091  0.25000000  0.97397913  1
+  Tl  Tl10  1  0.18874053  0.25000000  0.41187178  1
+  Tl  Tl11  1  0.81125947  0.75000000  0.58812822  1
+  O  O12  1  0.29790965  0.75000000  0.20767541  1
+  O  O13  1  0.70209035  0.25000000  0.79232459  1

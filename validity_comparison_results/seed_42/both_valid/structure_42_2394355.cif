@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Rb2Tc(I2Cl)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.17792967
+_cell_length_b   7.92064266
+_cell_length_c   7.92064266
+_cell_angle_alpha   61.43400958
+_cell_angle_beta   58.38704279
+_cell_angle_gamma   58.38704282
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Rb2Tc(I2Cl)2
+_chemical_formula_sum   'Rb2 Tc1 I4 Cl2'
+_cell_volume   357.15209240
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rb  Rb0  1  0.21334513  0.75140418  0.75140418  1
+  Rb  Rb1  1  0.78665487  0.24859582  0.24859582  1
+  Tc  Tc2  1  0.50000000  0.00000000  -0.00000000  1
+  I  I3  1  0.28783595  0.73419265  0.21598451  1
+  I  I4  1  0.71216405  0.78401549  0.26580735  1
+  I  I5  1  0.71216405  0.26580735  0.78401549  1
+  I  I6  1  0.28783595  0.21598451  0.73419265  1
+  Cl  Cl7  1  0.23799719  0.21752494  0.21752494  1
+  Cl  Cl8  1  0.76200281  0.78247506  0.78247506  1

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Tb5Ho4Mg
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.73435127
+_cell_length_b   7.98751673
+_cell_length_c   7.98751674
+_cell_angle_alpha   82.59684627
+_cell_angle_beta   68.96383979
+_cell_angle_gamma   68.96383986
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb5Ho4Mg
+_chemical_formula_sum   'Tb5 Ho4 Mg1'
+_cell_volume   318.71368081
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.76479695  0.37204108  0.00001118  1
+  Tb  Tb1  1  0.13683802  0.00001118  0.62795892  1
+  Tb  Tb2  1  0.76480713  0.99998882  0.37204108  1
+  Tb  Tb3  1  0.13684821  0.62795892  0.99998882  1
+  Tb  Tb4  1  0.66900986  0.00000000  1.00000000  1
+  Ho  Ho5  1  0.46151410  0.32151963  0.67845196  1
+  Ho  Ho6  1  0.78303373  0.67845196  0.67848037  1
+  Ho  Ho7  1  0.13996606  0.32154804  0.32151963  1
+  Ho  Ho8  1  0.46148669  0.67848037  0.32154804  1
+  Mg  Mg9  1  0.19199826  1.00000000  0.00000000  1

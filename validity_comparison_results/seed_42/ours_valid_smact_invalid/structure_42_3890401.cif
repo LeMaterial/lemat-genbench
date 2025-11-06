@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_CuReSi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.54112252
+_cell_length_b   6.28735583
+_cell_length_c   2.75282985
+_cell_angle_alpha   82.82654274
+_cell_angle_beta   72.49308734
+_cell_angle_gamma   24.68036049
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CuReSi
+_chemical_formula_sum   'Cu1 Re1 Si1'
+_cell_volume   41.83284868
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.99120104  0.99120104  0.00879896  1
+  Re  Re1  1  0.67542572  0.67542572  0.32457428  1
+  Si  Si2  1  0.33337324  0.33337324  0.66662676  1

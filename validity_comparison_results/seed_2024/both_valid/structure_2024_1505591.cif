@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Ac2MnGe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.55497211
+_cell_length_b   6.55497211
+_cell_length_c   6.12493877
+_cell_angle_alpha   117.81619379
+_cell_angle_beta   117.81619385
+_cell_angle_gamma   97.35133871
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ac2MnGe4
+_chemical_formula_sum   'Ac2 Mn1 Ge4'
+_cell_volume   184.67350995
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.24992618  0.75007382  0.50000000  1
+  Ac  Ac1  1  0.74992618  0.25007382  0.50000000  1
+  Mn  Mn2  1  0.00078850  0.99921150  0.00000000  1
+  Ge  Ge3  1  0.71268910  0.71310603  0.00000000  1
+  Ge  Ge4  1  0.28689397  0.28731090  1.00000000  1
+  Ge  Ge5  1  0.28661497  0.28699589  0.57361086  1
+  Ge  Ge6  1  0.71300411  0.71338503  0.42638914  1

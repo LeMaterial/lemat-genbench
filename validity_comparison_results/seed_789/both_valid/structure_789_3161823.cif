@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_K5Na6Li
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   13.20918604
+_cell_length_b   7.22439642
+_cell_length_c   7.27086831
+_cell_angle_alpha   60.21123380
+_cell_angle_beta   84.56131742
+_cell_angle_gamma   79.00163299
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K5Na6Li
+_chemical_formula_sum   'K5 Na6 Li1'
+_cell_volume   591.10413666
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.76236390  0.77719480  0.00000000  1
+  Na  Na1  1  0.76312774  0.07762212  0.30027964  1
+  Na  Na2  1  0.23687226  0.62209924  0.30028064  1
+  Na  Na3  1  0.23687226  0.92237788  0.69972036  1
+  Na  Na4  1  0.76312774  0.37790076  0.69971936  1
+  Na  Na5  1  0.23763610  0.22280520  1.00000000  1
+  K  K6  1  0.50000000  0.16865613  0.66268775  1
+  K  K7  1  -0.00000000  0.66653795  0.66692411  1
+  K  K8  1  1.00000000  0.33346205  0.33307589  1
+  K  K9  1  0.50000000  0.50000000  0.00000000  1
+  K  K10  1  0.50000000  0.83134387  0.33731325  1
+  Li  Li11  1  0.00000000  0.00000000  0.00000000  1

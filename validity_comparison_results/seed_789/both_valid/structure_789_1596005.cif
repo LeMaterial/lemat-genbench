@@ -1,0 +1,43 @@
+# generated using pymatgen
+data_K2(Ag3Pd2)3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.62930358
+_cell_length_b   5.62930344
+_cell_length_c   13.61340292
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000084
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K2(Ag3Pd2)3
+_chemical_formula_sum   'K2 Ag9 Pd6'
+_cell_volume   373.59981790
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.00000000  0.00000000  0.67330353  1
+  K  K1  1  0.00000000  0.00000000  0.32669647  1
+  Ag  Ag2  1  0.50000000  0.00000000  0.83518169  1
+  Ag  Ag3  1  0.00000000  0.50000000  0.83518169  1
+  Ag  Ag4  1  0.50000000  0.50000000  0.83518169  1
+  Ag  Ag5  1  0.50000000  0.00000000  0.16481831  1
+  Ag  Ag6  1  0.00000000  0.50000000  0.16481831  1
+  Ag  Ag7  1  0.50000000  0.50000000  0.16481831  1
+  Ag  Ag8  1  0.50000000  0.00000000  0.50000000  1
+  Ag  Ag9  1  0.00000000  0.50000000  0.50000000  1
+  Ag  Ag10  1  0.50000000  0.50000000  0.50000000  1
+  Pd  Pd11  1  0.33333300  0.66666700  0.00000000  1
+  Pd  Pd12  1  0.66666700  0.33333300  0.00000000  1
+  Pd  Pd13  1  0.33333300  0.66666700  0.66722853  1
+  Pd  Pd14  1  0.66666700  0.33333300  0.66722853  1
+  Pd  Pd15  1  0.66666700  0.33333300  0.33277147  1
+  Pd  Pd16  1  0.33333300  0.66666700  0.33277147  1

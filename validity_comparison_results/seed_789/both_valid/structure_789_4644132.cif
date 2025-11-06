@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_NpCrGe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.85649342
+_cell_length_b   4.09542163
+_cell_length_c   6.75619981
+_cell_angle_alpha   89.99825899
+_cell_angle_beta   106.56093791
+_cell_angle_gamma   89.99975252
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NpCrGe
+_chemical_formula_sum   'Np2 Cr2 Ge2'
+_cell_volume   102.28067249
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Np  Np0  1  0.95044984  0.24778438  0.89445993  1
+  Np  Np1  1  0.05723743  0.74775490  0.10873656  1
+  Cr  Cr2  1  0.26053364  0.24779442  0.51618801  1
+  Cr  Cr3  1  0.74720215  0.74768717  0.48706615  1
+  Ge  Ge4  1  0.62680581  0.24772887  0.24822988  1
+  Ge  Ge5  1  0.38091613  0.74779625  0.75502047  1

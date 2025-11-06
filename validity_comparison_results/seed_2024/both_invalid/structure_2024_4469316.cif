@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Dy5CoTe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.10025567
+_cell_length_b   7.47060750
+_cell_length_c   7.47060794
+_cell_angle_alpha   80.40424614
+_cell_angle_beta   65.90292482
+_cell_angle_gamma   65.90291684
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy5CoTe4
+_chemical_formula_sum   'Dy5 Co1 Te4'
+_cell_volume   283.70271484
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.91051492  0.34241740  0.83860914  1
+  Dy  Dy1  1  0.25293232  0.83860914  0.65758260  1
+  Dy  Dy2  1  0.74912405  0.16139086  0.34241740  1
+  Dy  Dy3  1  0.09154146  0.65758260  0.16139086  1
+  Dy  Dy4  1  0.50080445  1.00000000  1.00000000  1
+  Co  Co5  1  0.00108781  0.00000000  -0.00000000  1
+  Te  Te6  1  0.41315026  0.39838693  0.77745854  1
+  Te  Te7  1  0.81153819  0.77745854  0.60161207  1
+  Te  Te8  1  0.19060881  0.22254146  0.39838793  1
+  Te  Te9  1  0.58899673  0.60161207  0.22254146  1

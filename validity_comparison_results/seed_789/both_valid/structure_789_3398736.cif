@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_Mg2FeP
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.37635168
+_cell_length_b   5.37635168
+_cell_length_c   4.42141883
+_cell_angle_alpha   65.63840203
+_cell_angle_beta   65.63840204
+_cell_angle_gamma   33.81611261
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Mg2FeP
+_chemical_formula_sum   'Mg2 Fe1 P1'
+_cell_volume   64.17574827
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.20698231  0.20698231  0.29336484  1
+  Mg  Mg1  1  0.98019346  0.98019346  0.01943294  1
+  Mg  Mg2  1  0.76910336  0.76910336  0.73128589  1
+  P  P3  1  0.54372087  0.54372087  0.45591632  1

@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Ca2TiZn2Pd5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.54324202
+_cell_length_b   10.06627221
+_cell_length_c   10.06627221
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ca2TiZn2Pd5
+_chemical_formula_sum   'Ca4 Ti2 Zn4 Pd10'
+_cell_volume   359.03613352
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ca  Ca0  1  0.00000000  0.67324731  0.17324731  1
+  Ca  Ca1  1  0.00000000  0.32675269  0.82675269  1
+  Ca  Ca2  1  0.00000000  0.17324731  0.32675269  1
+  Ca  Ca3  1  0.00000000  0.82675269  0.67324731  1
+  Ti  Ti4  1  0.00000000  0.00000000  0.00000000  1
+  Ti  Ti5  1  0.00000000  0.50000000  0.50000000  1
+  Zn  Zn6  1  0.00000000  0.12700825  0.62700825  1
+  Zn  Zn7  1  0.00000000  0.87299175  0.37299175  1
+  Zn  Zn8  1  0.00000000  0.62700825  0.87299175  1
+  Zn  Zn9  1  0.00000000  0.37299175  0.12700825  1
+  Pd  Pd10  1  0.50000000  0.19587730  0.06137145  1
+  Pd  Pd11  1  0.50000000  0.80412270  0.93862855  1
+  Pd  Pd12  1  0.50000000  0.06137145  0.80412270  1
+  Pd  Pd13  1  0.50000000  0.69587730  0.43862855  1
+  Pd  Pd14  1  0.50000000  0.93862855  0.19587730  1
+  Pd  Pd15  1  0.50000000  0.30412270  0.56137145  1
+  Pd  Pd16  1  0.50000000  0.56137145  0.69587730  1
+  Pd  Pd17  1  0.50000000  0.43862855  0.30412270  1
+  Pd  Pd18  1  0.50000000  0.50000000  0.00000000  1
+  Pd  Pd19  1  0.50000000  0.00000000  0.50000000  1

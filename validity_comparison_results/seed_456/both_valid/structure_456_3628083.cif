@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Dy2Zn2Hg3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.22873984
+_cell_length_b   6.03561972
+_cell_length_c   6.72442393
+_cell_angle_alpha   97.97048524
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   110.50660134
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy2Zn2Hg3
+_chemical_formula_sum   'Dy2 Zn2 Hg3'
+_cell_volume   158.98079646
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.63072094  0.26144188  0.33031826  1
+  Dy  Dy1  1  0.36927906  0.73855812  0.66968174  1
+  Zn  Zn2  1  0.08567902  0.17135803  0.63852278  1
+  Zn  Zn3  1  0.91432098  0.82864197  0.36147722  1
+  Hg  Hg4  1  0.30203811  0.60407622  0.15787857  1
+  Hg  Hg5  1  0.00000000  0.00000000  0.00000000  1
+  Hg  Hg6  1  0.69796189  0.39592378  0.84212143  1

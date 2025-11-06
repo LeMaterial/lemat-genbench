@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_SrLaMn2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.55447118
+_cell_length_b   4.11254097
+_cell_length_c   6.45842639
+_cell_angle_alpha   71.42961115
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrLaMn2
+_chemical_formula_sum   'Sr1 La1 Mn2'
+_cell_volume   114.67073875
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.50000000  0.75882527  0.85780404  1
+  Mn  Mn1  1  0.00000000  0.18867367  0.99783582  1
+  Mn  Mn2  1  0.50000000  0.07737488  0.21979572  1
+  Sr  Sr3  1  0.00000000  0.47512619  0.42456443  1

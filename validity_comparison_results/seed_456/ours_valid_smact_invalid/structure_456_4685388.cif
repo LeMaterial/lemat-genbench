@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_PmAlZn2Ni
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.98940904
+_cell_length_b   4.15976897
+_cell_length_c   6.17120790
+_cell_angle_alpha   109.69605106
+_cell_angle_beta   108.85822724
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PmAlZn2Ni
+_chemical_formula_sum   'Pm1 Al1 Zn2 Ni1'
+_cell_volume   90.55931635
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.43832946  0.43832946  0.87665892  1
+  Al  Al1  1  0.19891270  0.69891270  0.39782539  1
+  Zn  Zn2  1  0.70100821  0.20100821  0.40201641  1
+  Zn  Zn3  1  0.04809476  0.04809476  0.09618952  1
+  Ni  Ni4  1  0.82579486  0.82579486  0.65158973  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_NpCS
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.57048605
+_cell_length_b   6.55752931
+_cell_length_c   8.18866410
+_cell_angle_alpha   90.00003628
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NpCS
+_chemical_formula_sum   'Np4 C4 S4'
+_cell_volume   191.72583492
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  C  C0  1  0.75000000  0.25007526  0.76839197  1
+  C  C1  1  0.25000000  0.24991914  0.26839901  1
+  C  C2  1  0.25000000  0.74992474  0.23160803  1
+  C  C3  1  0.75000000  0.75008086  0.73160099  1
+  S  S4  1  0.75000000  0.24997095  0.54734734  1
+  S  S5  1  0.25000000  0.25001819  0.04735478  1
+  S  S6  1  0.25000000  0.75002905  0.45265266  1
+  S  S7  1  0.75000000  0.74998181  0.95264522  1
+  Np  Np8  1  0.75000000  0.49994660  0.25013972  1
+  Np  Np9  1  0.25000000  0.00005593  0.75013730  1
+  Np  Np10  1  0.25000000  0.50005340  0.74986028  1
+  Np  Np11  1  0.75000000  0.99994407  0.24986270  1

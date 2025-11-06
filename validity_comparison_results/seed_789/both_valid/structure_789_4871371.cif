@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_HoAgHgAu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.64599947
+_cell_length_b   4.64631880
+_cell_length_c   5.12967284
+_cell_angle_alpha   116.92598704
+_cell_angle_beta   116.92702776
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HoAgHgAu
+_chemical_formula_sum   'Ho1 Ag1 Hg1 Au1'
+_cell_volume   85.04559825
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.25001255  0.74998800  0.50002510  1
+  Ag  Ag1  1  0.74999931  0.24994441  0.49999861  1
+  Hg  Hg2  1  0.49999374  0.49996476  0.99998746  1
+  Au  Au3  1  0.99999442  0.00010282  0.99998882  1

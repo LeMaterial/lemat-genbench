@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_KCuSnTe2Se
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.10733421
+_cell_length_b   7.10733421
+_cell_length_c   11.61292420
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   144.69932655
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KCuSnTe2Se
+_chemical_formula_sum   'K2 Cu2 Sn2 Te4 Se2'
+_cell_volume   338.98706301
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.43321437  0.56678338  0.24999991  1
+  Cu  Cu1  1  0.56678338  0.43321437  0.74999973  1
+  K  K2  1  0.71897700  0.28102075  0.24999991  1
+  K  K3  1  0.28102075  0.71897700  0.74999973  1
+  Se  Se4  1  0.02165063  0.97834712  0.24999991  1
+  Se  Se5  1  0.97834712  0.02165063  0.74999973  1
+  Sn  Sn6  1  0.00000000  0.00000000  0.00000000  1
+  Sn  Sn7  1  0.00000000  0.00000000  0.49999982  1
+  Te  Te8  1  0.34707143  0.65292633  0.04253623  1
+  Te  Te9  1  0.34707143  0.65292633  0.45746359  1
+  Te  Te10  1  0.65292633  0.34707143  0.54253605  1
+  Te  Te11  1  0.65292633  0.34707143  0.95746341  1

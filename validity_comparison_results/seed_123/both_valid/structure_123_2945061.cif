@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Pa2Cu3Ge4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.73568443
+_cell_length_b   7.53075186
+_cell_length_c   7.85257499
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   111.42053289
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pa2Cu3Ge4
+_chemical_formula_sum   'Pa4 Cu6 Ge8'
+_cell_volume   315.75509769
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pa  Pa0  1  0.11527492  0.58628004  0.23054984  1
+  Pa  Pa1  1  0.88472508  0.41371996  0.76945016  1
+  Pa  Pa2  1  0.38472508  0.08628004  0.76945016  1
+  Pa  Pa3  1  0.61527492  0.91371996  0.23054984  1
+  Cu  Cu4  1  0.00000000  0.00000000  0.00000000  1
+  Cu  Cu5  1  0.50000000  0.50000000  0.00000000  1
+  Cu  Cu6  1  0.53432516  0.75000000  0.56865033  1
+  Cu  Cu7  1  0.96567484  0.25000000  0.43134967  1
+  Cu  Cu8  1  0.46567484  0.25000000  0.43134967  1
+  Cu  Cu9  1  0.03432516  0.75000000  0.56865033  1
+  Ge  Ge10  1  0.70181913  0.75000000  0.90363826  1
+  Ge  Ge11  1  0.79818087  0.25000000  0.09636174  1
+  Ge  Ge12  1  0.29818087  0.25000000  0.09636174  1
+  Ge  Ge13  1  0.20181913  0.75000000  0.90363826  1
+  Ge  Ge14  1  0.18380608  0.95777253  0.36761216  1
+  Ge  Ge15  1  0.81619392  0.04222747  0.63238784  1
+  Ge  Ge16  1  0.31619392  0.45777253  0.63238784  1
+  Ge  Ge17  1  0.68380608  0.54222747  0.36761216  1

@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_In3Ga3Si2Rh
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.02290030
+_cell_length_b   7.04953457
+_cell_length_c   7.04953457
+_cell_angle_alpha   120.00000005
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   In3Ga3Si2Rh
+_chemical_formula_sum   'In3 Ga3 Si2 Rh1'
+_cell_volume   173.13735966
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Si  Si0  1  0.50000000  0.33333333  0.66666667  1
+  Si  Si1  1  0.50000000  0.66666667  0.33333333  1
+  Rh  Rh2  1  0.00000000  0.00000000  0.00000000  1
+  Ga  Ga3  1  0.50000000  0.75351022  0.75351022  1
+  Ga  Ga4  1  0.50000000  0.24648978  0.00000000  1
+  Ga  Ga5  1  0.50000000  0.00000000  0.24648978  1
+  In  In6  1  0.00000000  0.00000000  0.60686836  1
+  In  In7  1  0.00000000  0.60686836  0.00000000  1
+  In  In8  1  0.00000000  0.39313164  0.39313164  1

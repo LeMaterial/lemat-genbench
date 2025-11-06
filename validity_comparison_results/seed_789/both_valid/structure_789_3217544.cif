@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_K3Li3CdBr8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.28257858
+_cell_length_b   8.30398249
+_cell_length_c   8.90030274
+_cell_angle_alpha   117.83212083
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.91477197
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K3Li3CdBr8
+_chemical_formula_sum   'K3 Li3 Cd1 Br8'
+_cell_volume   447.03936122
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.00000000  0.00000000  0.00000000  1
+  K  K1  1  0.00000000  0.50000000  0.00000000  1
+  K  K2  1  0.50000000  0.50000000  0.00000000  1
+  Li  Li3  1  0.50000000  -0.00000000  0.50000000  1
+  Li  Li4  1  0.50000000  0.50000000  0.50000000  1
+  Li  Li5  1  -0.00000000  0.50000000  0.50000000  1
+  Cd  Cd6  1  -0.00000000  -0.00000000  0.50000000  1
+  Br  Br7  1  0.26454031  0.52908061  0.29486893  1
+  Br  Br8  1  0.73545969  0.47091939  0.70513107  1
+  Br  Br9  1  0.76607673  0.53215445  0.29818579  1
+  Br  Br10  1  0.23392327  0.46784555  0.70181421  1
+  Br  Br11  1  0.76511833  0.03124765  0.29759006  1
+  Br  Br12  1  0.23488167  0.96875235  0.70240994  1
+  Br  Br13  1  0.26612932  0.03124765  0.29759006  1
+  Br  Br14  1  0.73387068  0.96875235  0.70240994  1

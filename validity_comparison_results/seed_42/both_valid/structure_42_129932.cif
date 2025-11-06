@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Th3BiOs
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.35121587
+_cell_length_b   7.77881204
+_cell_length_c   8.47548271
+_cell_angle_alpha   117.31620254
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Th3BiOs
+_chemical_formula_sum   'Th6 Bi2 Os2'
+_cell_volume   313.45955424
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Th  Th0  1  0.50000000  0.30228742  1.00000000  1
+  Th  Th1  1  0.00000000  0.87688581  0.75377162  1
+  Th  Th2  1  0.50000000  0.69771258  0.00000000  1
+  Th  Th3  1  0.50000000  0.50000000  0.50000000  1
+  Th  Th4  1  0.00000000  0.12311419  0.24622838  1
+  Th  Th5  1  0.50000000  -0.00000000  0.50000000  1
+  Bi  Bi6  1  0.00000000  0.64052429  0.28104757  1
+  Bi  Bi7  1  0.00000000  0.35947571  0.71895243  1
+  Os  Os8  1  0.50000000  0.10742870  0.21485841  1
+  Os  Os9  1  0.50000000  0.89257130  0.78514159  1

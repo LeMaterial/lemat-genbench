@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_ZrNCl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.17660773
+_cell_length_b   6.27765571
+_cell_length_c   7.25015399
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZrNCl
+_chemical_formula_sum   'Zr4 N4 Cl4'
+_cell_volume   235.60797200
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  N  N0  1  0.50000000  0.83464939  0.12510721  1
+  N  N1  1  0.50000000  0.33461180  0.37487433  1
+  N  N2  1  0.50000000  0.33464939  0.87489279  1
+  N  N3  1  0.50000000  0.83461180  0.62512567  1
+  Cl  Cl4  1  0.00000000  0.00112218  0.37554468  1
+  Cl  Cl5  1  0.00000000  0.00123563  0.87538581  1
+  Cl  Cl6  1  0.00000000  0.50123563  0.12461419  1
+  Cl  Cl7  1  0.00000000  0.50112218  0.62445532  1
+  Zr  Zr8  1  0.50000000  0.00128390  0.37506248  1
+  Zr  Zr9  1  0.50000000  0.50129810  0.12493717  1
+  Zr  Zr10  1  0.50000000  0.00129810  0.87506283  1
+  Zr  Zr11  1  0.50000000  0.50128390  0.62493752  1

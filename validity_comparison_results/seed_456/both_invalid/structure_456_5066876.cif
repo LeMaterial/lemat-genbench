@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Rb8BiAu2F
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.10650152
+_cell_length_b   8.06642731
+_cell_length_c   9.96439009
+_cell_angle_alpha   89.91895880
+_cell_angle_beta   89.97436054
+_cell_angle_gamma   88.55672657
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Rb8BiAu2F
+_chemical_formula_sum   'Rb8 Bi1 Au2 F1'
+_cell_volume   651.36908465
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rb  Rb0  1  0.17403658  0.79304626  0.21169443  1
+  Rb  Rb1  1  0.72807220  0.75810351  0.99924021  1
+  Rb  Rb2  1  0.82494758  0.20612500  0.21135054  1
+  Rb  Rb3  1  0.82596342  0.20695374  0.78830557  1
+  Rb  Rb4  1  0.27192780  0.24189649  0.00075979  1
+  Rb  Rb5  1  0.17505242  0.79387500  0.78864946  1
+  Rb  Rb6  1  0.66472738  0.71008358  0.49990689  1
+  Rb  Rb7  1  0.33527262  0.28991642  0.50009311  1
+  Bi  Bi8  1  0.00000000  0.00000000  0.50000000  1
+  Au  Au9  1  0.49979718  0.49954810  0.78638430  1
+  Au  Au10  1  0.50020282  0.50045190  0.21361570  1
+  F  F11  1  0.00000000  0.00000000  0.00000000  1

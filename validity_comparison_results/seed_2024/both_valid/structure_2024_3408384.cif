@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_CeEr(ScTl2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.26055644
+_cell_length_b   5.26055644
+_cell_length_c   9.18548342
+_cell_angle_alpha   73.36034061
+_cell_angle_beta   73.36034065
+_cell_angle_gamma   59.99999997
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CeEr(ScTl2)2
+_chemical_formula_sum   'Ce1 Er1 Sc2 Tl4'
+_cell_volume   207.75644629
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.50000000  0.50000000  0.50000000  1
+  Er  Er1  1  0.00000000  0.00000000  0.00000000  1
+  Sc  Sc2  1  0.74942433  0.74942433  0.75172702  1
+  Sc  Sc3  1  0.25057567  0.25057567  0.24827298  1
+  Tl  Tl4  1  0.37314746  0.37314746  0.88055763  1
+  Tl  Tl5  1  0.87741529  0.87741529  0.36775414  1
+  Tl  Tl6  1  0.12258471  0.12258471  0.63224586  1
+  Tl  Tl7  1  0.62685254  0.62685254  0.11944237  1

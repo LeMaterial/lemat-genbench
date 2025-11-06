@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Ho2Cu2Ni5Ge
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.58557192
+_cell_length_b   8.99096696
+_cell_length_c   8.99096696
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho2Cu2Ni5Ge
+_chemical_formula_sum   'Ho4 Cu4 Ni10 Ge2'
+_cell_volume   289.84862303
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.00000000  0.67731080  0.17731080  1
+  Ho  Ho1  1  0.00000000  0.32268920  0.82268920  1
+  Ho  Ho2  1  0.00000000  0.17731080  0.32268920  1
+  Ho  Ho3  1  0.00000000  0.82268920  0.67731080  1
+  Cu  Cu4  1  0.00000000  0.11992120  0.61992120  1
+  Cu  Cu5  1  0.00000000  0.88007880  0.38007880  1
+  Cu  Cu6  1  0.00000000  0.61992120  0.88007880  1
+  Cu  Cu7  1  0.00000000  0.38007880  0.11992120  1
+  Ni  Ni8  1  0.50000000  0.20137313  0.05905378  1
+  Ni  Ni9  1  0.50000000  0.79862687  0.94094622  1
+  Ni  Ni10  1  0.50000000  0.05905378  0.79862687  1
+  Ni  Ni11  1  0.50000000  0.70137313  0.44094622  1
+  Ni  Ni12  1  0.50000000  0.94094622  0.20137313  1
+  Ni  Ni13  1  0.50000000  0.29862687  0.55905378  1
+  Ni  Ni14  1  0.50000000  0.55905378  0.70137313  1
+  Ni  Ni15  1  0.50000000  0.44094622  0.29862687  1
+  Ni  Ni16  1  0.50000000  0.50000000  0.00000000  1
+  Ni  Ni17  1  0.50000000  0.00000000  0.50000000  1
+  Ge  Ge18  1  0.00000000  0.00000000  0.00000000  1
+  Ge  Ge19  1  0.00000000  0.50000000  0.50000000  1

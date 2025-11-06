@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_La2Hf2Rh
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.83492800
+_cell_length_b   3.83492800
+_cell_length_c   9.97484451
+_cell_angle_alpha   78.91704897
+_cell_angle_beta   78.91704897
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La2Hf2Rh
+_chemical_formula_sum   'La2 Hf2 Rh1'
+_cell_volume   141.17194539
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rh  Rh0  1  0.00000000  0.00000000  0.00000000  1
+  Hf  Hf1  1  0.75000000  0.25000000  0.50000000  1
+  Hf  Hf2  1  0.25000000  0.75000000  0.50000000  1
+  La  La3  1  0.41680063  0.41680063  0.16639875  1
+  La  La4  1  0.58319937  0.58319937  0.83360125  1

@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Dy2TmAl3Cu2Pd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.05753177
+_cell_length_b   7.01688666
+_cell_length_c   7.01688666
+_cell_angle_alpha   120.09289786
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy2TmAl3Cu2Pd
+_chemical_formula_sum   'Dy2 Tm1 Al3 Cu2 Pd1'
+_cell_volume   172.85190829
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.50000101  0.23987794  0.00095443  1
+  Al  Al1  1  0.50000101  0.00095443  0.23987794  1
+  Al  Al2  1  0.50000101  0.76009790  0.76009790  1
+  Cu  Cu3  1  0.50000101  0.66385364  0.33437220  1
+  Cu  Cu4  1  0.50000101  0.33437220  0.66385364  1
+  Dy  Dy5  1  0.00000000  0.99917049  0.58038283  1
+  Dy  Dy6  1  0.00000000  0.58038283  0.99917049  1
+  Pd  Pd7  1  0.00000000  0.00292135  0.00292135  1
+  Tm  Tm8  1  0.00000000  0.41836832  0.41836832  1

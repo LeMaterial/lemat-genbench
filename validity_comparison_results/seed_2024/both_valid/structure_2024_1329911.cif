@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_NdTiO4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.21824309
+_cell_length_b   6.05789661
+_cell_length_c   6.08893707
+_cell_angle_alpha   114.28243371
+_cell_angle_beta   109.17247907
+_cell_angle_gamma   101.60735456
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NdTiO4
+_chemical_formula_sum   'Nd2 Ti2 O8'
+_cell_volume   152.55866506
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nd  Nd0  1  0.39108592  0.64108592  0.28217084  1
+  Nd  Nd1  1  0.60891408  0.35891408  0.71782916  1
+  Ti  Ti2  1  0.22746884  0.97746884  0.95493868  1
+  Ti  Ti3  1  0.77253116  0.02253116  0.04506132  1
+  O  O4  1  0.98935630  0.21666886  0.90023516  1
+  O  O5  1  0.81263699  0.74755278  0.68786167  1
+  O  O6  1  0.41087886  0.68356630  0.90023516  1
+  O  O7  1  0.37522468  0.94030888  0.68786167  1
+  O  O8  1  0.62477532  0.05969112  0.31213833  1
+  O  O9  1  0.58912114  0.31643370  0.09976484  1
+  O  O10  1  0.18736301  0.25244722  0.31213833  1
+  O  O11  1  0.01064370  0.78333114  0.09976484  1

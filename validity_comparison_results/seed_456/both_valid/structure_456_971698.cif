@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Dy2Al3Ir
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.53069449
+_cell_length_b   5.53069449
+_cell_length_c   8.68632075
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy2Al3Ir
+_chemical_formula_sum   'Dy4 Al6 Ir2'
+_cell_volume   230.10488142
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.16339571  0.32679141  0.24999998  1
+  Al  Al1  1  0.16339544  0.83660389  0.24999998  1
+  Al  Al2  1  0.67320845  0.83660389  0.24999998  1
+  Al  Al3  1  0.32679185  0.16339571  0.74999994  1
+  Al  Al4  1  0.83660486  0.16339571  0.74999994  1
+  Al  Al5  1  0.83660459  0.67320818  0.74999994  1
+  Dy  Dy6  1  0.66666675  0.33333250  0.05295222  1
+  Dy  Dy7  1  0.66666675  0.33333250  0.44704773  1
+  Dy  Dy8  1  0.33333355  0.66666709  0.55295218  1
+  Dy  Dy9  1  0.33333355  0.66666709  0.94704769  1
+  Ir  Ir10  1  0.00000000  0.00000000  0.00000000  1
+  Ir  Ir11  1  0.00000000  0.00000000  0.49999996  1

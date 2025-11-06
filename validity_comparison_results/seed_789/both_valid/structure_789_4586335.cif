@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Cs4Rb2SiP2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.29626363
+_cell_length_b   13.69376232
+_cell_length_c   13.69376232
+_cell_angle_alpha   44.09958730
+_cell_angle_beta   71.06011285
+_cell_angle_gamma   71.06011287
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cs4Rb2SiP2
+_chemical_formula_sum   'Cs4 Rb2 Si1 P2'
+_cell_volume   647.37731504
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.25500637  0.65879555  0.14607274  1
+  Cs  Cs1  1  0.74499363  0.85392726  0.34120445  1
+  Cs  Cs2  1  0.74499363  0.34120445  0.85392726  1
+  Cs  Cs3  1  0.25500637  0.14607274  0.65879555  1
+  Rb  Rb4  1  0.97753774  0.75848059  0.75848059  1
+  Rb  Rb5  1  0.02246226  0.24151941  0.24151941  1
+  Si  Si6  1  0.50000000  -0.00000000  -0.00000000  1
+  P  P7  1  0.26495085  0.08452287  0.08452287  1
+  P  P8  1  0.73504915  0.91547713  0.91547713  1

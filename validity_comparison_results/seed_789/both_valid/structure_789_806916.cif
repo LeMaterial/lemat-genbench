@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_SnIrPt
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.95004748
+_cell_length_b   6.95004748
+_cell_length_c   3.80819320
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SnIrPt
+_chemical_formula_sum   'Sn3 Ir3 Pt3'
+_cell_volume   159.30343792
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ir  Ir0  1  0.60339012  0.00000000  0.50000089  1
+  Ir  Ir1  1  0.39661071  0.39661117  0.50000089  1
+  Ir  Ir2  1  -0.00000000  0.60338921  0.50000089  1
+  Pt  Pt3  1  0.26543272  0.00000000  0.00000000  1
+  Pt  Pt4  1  0.00000000  0.26543144  0.00000000  1
+  Pt  Pt5  1  0.73456746  0.73456728  0.00000000  1
+  Sn  Sn6  1  0.66666647  0.33333402  0.00000000  1
+  Sn  Sn7  1  0.33333318  0.66666637  0.00000000  1
+  Sn  Sn8  1  0.00000000  0.00000000  0.50000089  1

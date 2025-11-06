@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_CuAgF3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.39090609
+_cell_length_b   4.39090609
+_cell_length_c   8.51292453
+_cell_angle_alpha   75.05471829
+_cell_angle_beta   75.05471829
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CuAgF3
+_chemical_formula_sum   'Cu2 Ag2 F6'
+_cell_volume   152.82391779
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.66206854  0.16206854  0.67586292  1
+  Cu  Cu1  1  0.83793146  0.33793146  0.32413708  1
+  Ag  Ag2  1  0.00000000  0.00000000  0.00000000  1
+  Ag  Ag3  1  0.25000000  0.75000000  0.50000000  1
+  F  F4  1  0.12625184  0.87909262  0.24181476  1
+  F  F5  1  0.12090738  0.87374816  0.75818524  1
+  F  F6  1  0.12090738  0.36806659  0.75818524  1
+  F  F7  1  0.63193341  0.87909262  0.24181476  1
+  F  F8  1  0.31084686  0.31084686  0.37830627  1
+  F  F9  1  0.68915314  0.68915314  0.62169373  1

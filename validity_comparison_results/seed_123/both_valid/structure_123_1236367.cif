@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_DyBr3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.67910354
+_cell_length_b   6.67910354
+_cell_length_c   12.15601634
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   DyBr3
+_chemical_formula_sum   'Dy4 Br12'
+_cell_volume   542.28504365
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Br  Br0  1  0.19983370  0.19983370  0.00000000  1
+  Br  Br1  1  0.80016577  0.80016577  0.00000000  1
+  Br  Br2  1  0.70303596  0.29696351  0.16310853  1
+  Br  Br3  1  0.29696351  0.70303596  0.16310853  1
+  Br  Br4  1  0.20303623  0.20303623  0.33689162  1
+  Br  Br5  1  0.79696324  0.79696324  0.33689162  1
+  Br  Br6  1  0.69983344  0.30016603  0.50000015  1
+  Br  Br7  1  0.30016603  0.69983344  0.50000015  1
+  Br  Br8  1  0.20303623  0.20303623  0.66310868  1
+  Br  Br9  1  0.79696324  0.79696324  0.66310868  1
+  Br  Br10  1  0.70303596  0.29696351  0.83689177  1
+  Br  Br11  1  0.29696351  0.70303596  0.83689177  1
+  Dy  Dy12  1  0.00000000  0.00000000  0.17036173  1
+  Dy  Dy13  1  0.49999974  0.49999974  0.32963842  1
+  Dy  Dy14  1  0.49999974  0.49999974  0.67036188  1
+  Dy  Dy15  1  0.00000000  0.00000000  0.82963857  1

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_TlAuBr3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.36098861
+_cell_length_b   7.02778811
+_cell_length_c   9.83578266
+_cell_angle_alpha   90.00035776
+_cell_angle_beta   74.22793596
+_cell_angle_gamma   89.99983013
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TlAuBr3
+_chemical_formula_sum   'Tl2 Au2 Br6'
+_cell_volume   356.62008976
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tl  Tl0  1  0.38056083  0.66920952  0.95814184  1
+  Tl  Tl1  1  0.64509917  0.16920552  0.42731916  1
+  Au  Au2  1  0.89009362  0.15490178  0.93893806  1
+  Au  Au3  1  0.13554838  0.65491279  0.44650195  1
+  Br  Br4  1  0.63046277  0.66344310  0.45673039  1
+  Br  Br5  1  0.80502403  0.42199533  0.10953088  1
+  Br  Br6  1  0.05982751  0.36845927  0.59836583  1
+  Br  Br7  1  0.96584049  0.86844029  0.78708117  1
+  Br  Br8  1  0.39519722  0.16342709  0.92871062  1
+  Br  Br9  1  0.22063898  0.92200233  0.27591010  1

@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Dy4Y5Tm2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.40611558
+_cell_length_b   6.61535814
+_cell_length_c   9.91694243
+_cell_angle_alpha   63.18353247
+_cell_angle_beta   68.07409724
+_cell_angle_gamma   55.96032875
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy4Y5Tm2
+_chemical_formula_sum   'Dy4 Y5 Tm2'
+_cell_volume   354.48637300
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.31785936  0.86528997  0.49899131  1
+  Dy  Dy1  1  0.68214064  0.13471003  0.50100869  1
+  Dy  Dy2  1  0.67005863  0.78074381  0.87913892  1
+  Dy  Dy3  1  0.32994137  0.21925619  0.12086108  1
+  Y  Y4  1  0.20874590  0.35888466  0.78084221  1
+  Y  Y5  1  0.79125410  0.64111534  0.21915779  1
+  Y  Y6  1  0.00000000  0.50000000  0.50000000  1
+  Y  Y7  1  0.65152623  0.35888466  0.78084221  1
+  Y  Y8  1  0.34847377  0.64111534  0.21915779  1
+  Tm  Tm9  1  0.14442726  0.83246057  0.87868592  1
+  Tm  Tm10  1  0.85557274  0.16753943  0.12131408  1

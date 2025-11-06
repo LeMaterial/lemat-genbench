@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Ta5CuRu6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.43284427
+_cell_length_b   7.69064111
+_cell_length_c   7.69064145
+_cell_angle_alpha   119.51146092
+_cell_angle_beta   106.79101377
+_cell_angle_gamma   106.79102492
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ta5CuRu6
+_chemical_formula_sum   'Ta5 Cu1 Ru6'
+_cell_volume   186.91132869
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ru  Ru0  1  0.25124696  0.08186860  0.42092075  1
+  Ru  Ru1  1  0.74875304  0.57907925  0.91813140  1
+  Ru  Ru2  1  0.75214898  0.25193460  0.25193460  1
+  Ru  Ru3  1  0.24785102  0.74806540  0.74806540  1
+  Ru  Ru4  1  0.25124696  0.42092075  0.08186860  1
+  Ru  Ru5  1  0.74875304  0.91813140  0.57907925  1
+  Cu  Cu6  1  0.00000000  0.00000000  0.00000000  1
+  Ta  Ta7  1  0.50000000  0.15899315  0.84100685  1
+  Ta  Ta8  1  -0.00000000  0.33489953  0.66510047  1
+  Ta  Ta9  1  0.50000000  0.50000000  0.50000000  1
+  Ta  Ta10  1  1.00000000  0.66510047  0.33489953  1
+  Ta  Ta11  1  0.50000000  0.84100685  0.15899315  1

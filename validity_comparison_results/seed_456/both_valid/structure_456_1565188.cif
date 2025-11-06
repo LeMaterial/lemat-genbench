@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_Ce2SmSc
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.41142725
+_cell_length_b   3.41142725
+_cell_length_c   11.53029616
+_cell_angle_alpha   81.49282852
+_cell_angle_beta   81.49282852
+_cell_angle_gamma   60.00000006
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ce2SmSc
+_chemical_formula_sum   'Ce2 Sm1 Sc1'
+_cell_volume   114.50195685
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.08705868  0.08705868  0.73882397  1
+  Ce  Ce1  1  0.24552651  0.24552651  0.26342048  1
+  Sm  Sm2  1  0.66834602  0.66834602  0.99496094  1
+  Sc  Sc3  1  0.49906880  0.49906880  0.50279360  1

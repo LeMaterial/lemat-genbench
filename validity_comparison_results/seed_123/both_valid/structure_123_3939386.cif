@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_ZrPd4Au5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.96522693
+_cell_length_b   5.80732484
+_cell_length_c   6.48664018
+_cell_angle_alpha   103.39178754
+_cell_angle_beta   105.05738915
+_cell_angle_gamma   74.86536418
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZrPd4Au5
+_chemical_formula_sum   'Zr1 Pd4 Au5'
+_cell_volume   171.64141168
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zr  Zr0  1  0.50000000  0.00000000  0.00000000  1
+  Pd  Pd1  1  0.69447037  0.29413717  0.39319517  1
+  Pd  Pd2  1  0.10305315  0.89979867  0.20039182  1
+  Pd  Pd3  1  0.30552963  0.70586283  0.60680483  1
+  Pd  Pd4  1  0.89694685  0.10020133  0.79960818  1
+  Au  Au5  1  0.29561839  0.19906639  0.59713933  1
+  Au  Au6  1  0.09950042  0.39522524  0.19927379  1
+  Au  Au7  1  0.90049958  0.60477476  0.80072621  1
+  Au  Au8  1  0.50000000  0.50000000  -0.00000000  1
+  Au  Au9  1  0.70438161  0.80093361  0.40286067  1

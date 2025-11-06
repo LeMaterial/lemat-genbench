@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_Pu8Mn5Ru
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.16771932
+_cell_length_b   7.16771932
+_cell_length_c   7.16771932
+_cell_angle_alpha   109.95126045
+_cell_angle_beta   108.51534873
+_cell_angle_gamma   109.95126051
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pu8Mn5Ru
+_chemical_formula_sum   'Pu8 Mn5 Ru1'
+_cell_volume   283.42006761
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pu  Pu0  1  0.12640808  0.75109480  0.01855897  1
+  Pu  Pu1  1  0.98144103  0.10784912  0.73253583  1
+  Pu  Pu2  1  0.76447461  0.25050991  0.37462459  1
+  Pu  Pu3  1  0.62537541  0.38985002  0.87588532  1
+  Pu  Pu4  1  0.48603530  0.61014998  0.23552539  1
+  Pu  Pu5  1  0.62468671  0.89215088  0.87359192  1
+  Pu  Pu6  1  0.26746417  0.24890520  0.37531329  1
+  Pu  Pu7  1  0.12411468  0.74949009  0.51396470  1
+  Mn  Mn8  1  0.99876812  0.37228290  0.12668004  1
+  Mn  Mn9  1  0.87331996  0.87208808  0.24560286  1
+  Mn  Mn10  1  0.75439714  0.62771710  0.62648522  1
+  Mn  Mn11  1  0.50000000  0.00000000  0.50000000  1
+  Mn  Mn12  1  0.37351478  0.12791192  0.00123188  1
+  Ru  Ru13  1  0.25000000  0.50000000  0.75000000  1

@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_KLuTe3Pd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   16.31688243
+_cell_length_b   4.27290236
+_cell_length_c   11.24963723
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KLuTe3Pd
+_chemical_formula_sum   'K4 Lu4 Te12 Pd4'
+_cell_volume   784.32971933
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.23245127  0.75000076  0.04090354  1
+  K  K1  1  0.73245119  0.75000076  0.45909658  1
+  K  K2  1  0.26754927  0.25000103  0.54090366  1
+  K  K3  1  0.76754920  0.25000103  0.95909670  1
+  Lu  Lu4  1  0.52484842  0.75000076  0.15810821  1
+  Lu  Lu5  1  0.02484788  0.75000076  0.34189191  1
+  Lu  Lu6  1  0.97515197  0.25000103  0.65810833  1
+  Lu  Lu7  1  0.47515204  0.25000103  0.84189204  1
+  Pd  Pd8  1  0.01555444  0.25000103  0.11008266  1
+  Pd  Pd9  1  0.51555437  0.25000103  0.38991746  1
+  Pd  Pd10  1  0.48444610  0.75000076  0.61008278  1
+  Pd  Pd11  1  0.98444602  0.75000076  0.88991758  1
+  Te  Te12  1  0.40108213  0.25000103  0.08491385  1
+  Te  Te13  1  0.91945076  0.75000076  0.10838572  1
+  Te  Te14  1  0.64444909  0.25000103  0.23800323  1
+  Te  Te15  1  0.14444855  0.25000103  0.26199689  1
+  Te  Te16  1  0.41945022  0.75000076  0.39161441  1
+  Te  Te17  1  0.90108206  0.25000103  0.41508627  1
+  Te  Te18  1  0.09891841  0.75000076  0.58491397  1
+  Te  Te19  1  0.58054963  0.25000103  0.60838584  1
+  Te  Te20  1  0.85555130  0.75000076  0.73800335  1
+  Te  Te21  1  0.35555138  0.75000076  0.76199702  1
+  Te  Te22  1  0.08054970  0.25000103  0.89161453  1
+  Te  Te23  1  0.59891833  0.75000076  0.91508640  1

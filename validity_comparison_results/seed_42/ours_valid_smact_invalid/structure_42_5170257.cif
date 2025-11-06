@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_MgTi4O8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.28133664
+_cell_length_b   5.28317416
+_cell_length_c   5.55784558
+_cell_angle_alpha   77.46822753
+_cell_angle_beta   110.27556872
+_cell_angle_gamma   104.33187396
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgTi4O8
+_chemical_formula_sum   'Mg1 Ti4 O8'
+_cell_volume   139.46370570
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg0  1  -0.00000000  0.00000000  0.50000000  1
+  Ti  Ti1  1  0.60835327  0.30292897  0.56559635  1
+  Ti  Ti2  1  0.28402211  0.23720663  0.06709456  1
+  Ti  Ti3  1  0.39164673  0.69707103  0.43440365  1
+  Ti  Ti4  1  0.71597789  0.76279337  0.93290544  1
+  O  O5  1  0.58852393  0.06698873  0.29554829  1
+  O  O6  1  0.42949427  0.43154563  0.78545991  1
+  O  O7  1  0.41147607  0.93301127  0.70445171  1
+  O  O8  1  0.57050573  0.56845437  0.21454009  1
+  O  O9  1  0.81956666  0.66309639  0.67486769  1
+  O  O10  1  0.06915257  0.85211213  0.20569381  1
+  O  O11  1  0.18043334  0.33690361  0.32513231  1
+  O  O12  1  0.93084743  0.14788787  0.79430619  1

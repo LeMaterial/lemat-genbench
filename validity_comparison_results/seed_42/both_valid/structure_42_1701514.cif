@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_Bi2Pd2Au
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.97649963
+_cell_length_b   5.64722260
+_cell_length_c   5.64634101
+_cell_angle_alpha   71.43550184
+_cell_angle_beta   69.38230265
+_cell_angle_gamma   69.38568102
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Bi2Pd2Au
+_chemical_formula_sum   'Bi2 Pd2 Au1'
+_cell_volume   108.30624964
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Bi  Bi0  1  0.70711660  0.79284093  0.29292387  1
+  Bi  Bi1  1  0.29288140  0.20715907  0.70707613  1
+  Pd  Pd2  1  0.00010362  0.21163265  0.28815911  1
+  Pd  Pd3  1  0.99989538  0.78836735  0.71184089  1
+  Au  Au4  1  0.49999900  0.50000000  0.00000000  1

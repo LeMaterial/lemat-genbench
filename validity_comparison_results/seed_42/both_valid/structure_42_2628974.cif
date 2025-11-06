@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_CeGa4Ge
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.53792504
+_cell_length_b   5.53792504
+_cell_length_c   5.53792504
+_cell_angle_alpha   59.99999997
+_cell_angle_beta   60.00000000
+_cell_angle_gamma   60.00000001
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CeGa4Ge
+_chemical_formula_sum   'Ce1 Ga4 Ge1'
+_cell_volume   120.09535798
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ge  Ge0  1  0.00000000  0.00000000  0.00000000  1
+  Ga  Ga1  1  0.62579520  0.62579420  0.12261639  1
+  Ga  Ga2  1  0.62579520  0.12261639  0.62579420  1
+  Ga  Ga3  1  0.62579520  0.62579420  0.62579420  1
+  Ga  Ga4  1  0.12261739  0.62579420  0.62579420  1
+  Ce  Ce5  1  0.25000000  0.25000000  0.25000000  1

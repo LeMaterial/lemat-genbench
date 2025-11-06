@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_RbPuSiO5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.06646252
+_cell_length_b   6.06646252
+_cell_length_c   7.93386303
+_cell_angle_alpha   105.13175447
+_cell_angle_beta   105.13175445
+_cell_angle_gamma   105.69624661
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   RbPuSiO5
+_chemical_formula_sum   'Rb2 Pu2 Si2 O10'
+_cell_volume   253.47927833
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rb  Rb0  1  0.33636136  0.66363864  0.25000000  1
+  Rb  Rb1  1  0.66363864  0.33636136  0.75000000  1
+  Pu  Pu2  1  0.00000000  0.00000000  0.50000000  1
+  Pu  Pu3  1  0.00000000  0.00000000  0.00000000  1
+  Si  Si4  1  0.69154430  0.30845570  0.25000000  1
+  Si  Si5  1  0.30845570  0.69154430  0.75000000  1
+  O  O6  1  0.05769257  0.94230743  0.25000000  1
+  O  O7  1  0.94230743  0.05769257  0.75000000  1
+  O  O8  1  0.86663005  0.28315219  0.12029582  1
+  O  O9  1  0.13336995  0.71684781  0.87970418  1
+  O  O10  1  0.71684781  0.13336995  0.37970418  1
+  O  O11  1  0.28315219  0.86663005  0.62029582  1
+  O  O12  1  0.77779340  0.60058751  0.38214482  1
+  O  O13  1  0.22220660  0.39941249  0.61785518  1
+  O  O14  1  0.39941249  0.22220660  0.11785518  1
+  O  O15  1  0.60058751  0.77779340  0.88214482  1

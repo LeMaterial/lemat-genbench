@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_La3IrPb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.01198483
+_cell_length_b   9.23298892
+_cell_length_c   9.23298892
+_cell_angle_alpha   130.22323528
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La3IrPb
+_chemical_formula_sum   'La3 Ir1 Pb1'
+_cell_volume   261.13940641
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pb  Pb0  1  0.50000000  0.09555142  0.90444858  1
+  Ir  Ir1  1  0.00000000  0.40971236  0.59028764  1
+  La  La2  1  0.50000000  0.68131262  0.80293135  1
+  La  La3  1  0.50000000  0.19706865  0.31868738  1
+  La  La4  1  0.00000000  0.24440495  0.75559505  1

@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Dy2Zr3N4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.31524335
+_cell_length_b   5.77484076
+_cell_length_c   7.59690139
+_cell_angle_alpha   74.56429866
+_cell_angle_beta   77.39763821
+_cell_angle_gamma   73.31536643
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy2Zr3N4
+_chemical_formula_sum   'Dy2 Zr3 N4'
+_cell_volume   132.70184163
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.60185674  0.18789566  0.60837886  1
+  Dy  Dy1  1  0.39814326  0.81210434  0.39162114  1
+  Zr  Zr2  1  0.00000000  0.00000000  0.00000000  1
+  Zr  Zr3  1  0.21202892  0.39423271  0.18171944  1
+  Zr  Zr4  1  0.78797108  0.60576729  0.81828056  1
+  N  N5  1  0.79854032  0.11207771  0.29081465  1
+  N  N6  1  0.20145968  0.88792229  0.70918535  1
+  N  N7  1  0.39765843  0.29960492  0.90506721  1
+  N  N8  1  0.60234157  0.70039508  0.09493279  1

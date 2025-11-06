@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_BaTbS2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.06614411
+_cell_length_b   4.06614410
+_cell_length_c   7.79016144
+_cell_angle_alpha   74.87181278
+_cell_angle_beta   74.87181280
+_cell_angle_gamma   60.00000003
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaTbS2
+_chemical_formula_sum   'Ba1 Tb1 S2'
+_cell_volume   106.35773104
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.49604865  0.49604865  0.51185405  1
+  Tb  Tb1  1  0.66940389  0.66940389  0.99178734  1
+  S  S2  1  0.07015041  0.07015041  0.78954878  1
+  S  S3  1  0.26439705  0.26439705  0.20680884  1

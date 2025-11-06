@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Sr3TlPd8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.61774685
+_cell_length_b   9.61774685
+_cell_length_c   9.61774685
+_cell_angle_alpha   33.46651864
+_cell_angle_beta   33.46651864
+_cell_angle_gamma   33.46651864
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr3TlPd8
+_chemical_formula_sum   'Sr3 Tl1 Pd8'
+_cell_volume   240.94052342
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pd  Pd0  1  0.18787286  0.18787286  0.18787286  1
+  Pd  Pd1  1  0.43689194  0.93747557  0.43689057  1
+  Pd  Pd2  1  0.93747557  0.43689194  0.43689057  1
+  Pd  Pd3  1  0.93743743  0.93743743  0.43966890  1
+  Pd  Pd4  1  0.68752597  0.68752597  0.68752597  1
+  Pd  Pd5  1  0.93743607  0.43966923  0.93743848  1
+  Pd  Pd6  1  0.43966923  0.93743607  0.93743848  1
+  Pd  Pd7  1  0.43689161  0.43689161  0.93747485  1
+  Sr  Sr8  1  0.37601620  0.37601620  0.37601620  1
+  Sr  Sr9  1  0.50365795  0.50365795  0.50365795  1
+  Sr  Sr10  1  0.99551120  0.99551120  0.99551120  1
+  Tl  Tl11  1  0.87361286  0.87361286  0.87361286  1

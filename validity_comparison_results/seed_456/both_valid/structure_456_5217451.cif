@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Ni(Sb3Au)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.57298596
+_cell_length_b   6.89240104
+_cell_length_c   6.89240101
+_cell_angle_alpha   119.99853181
+_cell_angle_beta   90.00180035
+_cell_angle_gamma   90.00178844
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ni(Sb3Au)2
+_chemical_formula_sum   'Ni1 Sb6 Au2'
+_cell_volume   229.27995165
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.00000000  0.00000000  0.00000000  1
+  Sb  Sb1  1  0.80455075  0.65181305  0.65181305  1
+  Sb  Sb2  1  0.19543943  0.65180985  0.99999528  1
+  Sb  Sb3  1  0.19543943  0.99999528  0.65180985  1
+  Sb  Sb4  1  0.80456157  0.34819015  0.00000472  1
+  Sb  Sb5  1  0.19544925  0.34818795  0.34818795  1
+  Sb  Sb6  1  0.80456157  0.00000472  0.34819015  1
+  Au  Au7  1  0.50000000  0.66667099  0.33332901  1
+  Au  Au8  1  0.50000000  0.33332901  0.66667099  1

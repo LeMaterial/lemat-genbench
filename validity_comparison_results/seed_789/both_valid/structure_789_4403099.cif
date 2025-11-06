@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ac(Si2Pt3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.15510609
+_cell_length_b   6.60368620
+_cell_length_c   6.35027432
+_cell_angle_alpha   58.78951902
+_cell_angle_beta   57.65925143
+_cell_angle_gamma   89.21676155
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ac(Si2Pt3)2
+_chemical_formula_sum   'Ac1 Si4 Pt6'
+_cell_volume   201.88378552
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.01657839  0.06655068  0.98871868  1
+  Si  Si1  1  0.47294943  0.07465714  0.32986805  1
+  Si  Si2  1  0.83045016  0.86281623  0.70823398  1
+  Si  Si3  1  0.17127019  0.58360544  0.28871860  1
+  Si  Si4  1  0.57138721  0.43382675  0.60925612  1
+  Pt  Pt5  1  0.47958159  0.74423214  0.71934837  1
+  Pt  Pt6  1  0.80876548  0.47620917  0.75161183  1
+  Pt  Pt7  1  0.50558894  0.47847451  0.26740879  1
+  Pt  Pt8  1  0.96099823  0.56904000  0.07769836  1
+  Pt  Pt9  1  0.18275821  0.21723658  0.27505620  1
+  Pt  Pt10  1  0.49981716  0.99345337  0.98393402  1

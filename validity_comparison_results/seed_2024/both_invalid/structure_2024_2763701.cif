@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Pm3Ho2ErS6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.81671961
+_cell_length_b   6.81671961
+_cell_length_c   6.91986886
+_cell_angle_alpha   99.42752670
+_cell_angle_beta   99.42752667
+_cell_angle_gamma   120.17517421
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pm3Ho2ErS6
+_chemical_formula_sum   'Pm3 Ho2 Er1 S6'
+_cell_volume   262.55399931
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.16731948  0.83268052  0.50000000  1
+  Pm  Pm1  1  0.83268052  0.16731948  0.50000000  1
+  Pm  Pm2  1  0.50000000  0.50000000  0.50000000  1
+  Ho  Ho3  1  0.33330479  0.66669521  0.00000000  1
+  Ho  Ho4  1  0.66669521  0.33330479  0.00000000  1
+  Er  Er5  1  0.00000000  0.00000000  0.00000000  1
+  S  S6  1  0.92185840  0.58975374  0.76518728  1
+  S  S7  1  0.74627244  0.74627244  0.23538260  1
+  S  S8  1  0.07814160  0.41024626  0.23481272  1
+  S  S9  1  0.58975374  0.92185840  0.76518728  1
+  S  S10  1  0.25372756  0.25372756  0.76461740  1
+  S  S11  1  0.41024626  0.07814160  0.23481272  1

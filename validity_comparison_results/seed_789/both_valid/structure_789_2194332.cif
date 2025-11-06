@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Sr4TlPd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.11587082
+_cell_length_b   9.01600773
+_cell_length_c   8.99916383
+_cell_angle_alpha   114.29219476
+_cell_angle_beta   106.37399527
+_cell_angle_gamma   103.09049928
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr4TlPd
+_chemical_formula_sum   'Sr8 Tl2 Pd2'
+_cell_volume   464.56831277
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.01828788  0.22430330  0.87349028  1
+  Sr  Sr1  1  0.79100426  0.70898019  0.65391671  1
+  Sr  Sr2  1  0.35520240  0.64918698  0.87349028  1
+  Sr  Sr3  1  0.36291245  0.94493651  0.65391671  1
+  Sr  Sr4  1  0.63708755  0.05506349  0.34608329  1
+  Sr  Sr5  1  0.64479760  0.35081302  0.12650972  1
+  Sr  Sr6  1  0.20899574  0.29101981  0.34608329  1
+  Sr  Sr7  1  0.98171212  0.77569670  0.12650972  1
+  Tl  Tl8  1  0.38446672  0.63446672  0.26893243  1
+  Tl  Tl9  1  0.61553328  0.36553328  0.73106757  1
+  Pd  Pd10  1  0.24722767  0.99722767  0.99445635  1
+  Pd  Pd11  1  0.75277233  0.00277233  0.00554365  1

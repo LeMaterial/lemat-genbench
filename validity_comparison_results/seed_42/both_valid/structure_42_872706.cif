@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_DyTm2In3AgPt2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.73634515
+_cell_length_b   7.80320555
+_cell_length_c   7.80320555
+_cell_angle_alpha   120.14276244
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   DyTm2In3AgPt2
+_chemical_formula_sum   'Dy1 Tm2 In3 Ag1 Pt2'
+_cell_volume   196.74203186
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.00000000  0.99931402  0.99931402  1
+  Dy  Dy1  1  0.00000000  0.40897023  0.40897023  1
+  In  In2  1  0.49999931  0.99910663  0.26944226  1
+  In  In3  1  0.49999931  0.73133904  0.73133904  1
+  In  In4  1  0.49999931  0.26944226  0.99910663  1
+  Pt  Pt5  1  0.49999931  0.66850855  0.33267026  1
+  Pt  Pt6  1  0.49999931  0.33267026  0.66850855  1
+  Tm  Tm7  1  0.00000000  0.59059974  0.00000000  1
+  Tm  Tm8  1  0.00000000  0.00000000  0.59059974  1

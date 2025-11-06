@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Tl8Bi2Pb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.90455144
+_cell_length_b   8.38175421
+_cell_length_c   8.38175421
+_cell_angle_alpha   79.40318897
+_cell_angle_beta   80.81136276
+_cell_angle_gamma   80.81136273
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tl8Bi2Pb
+_chemical_formula_sum   'Tl8 Bi2 Pb1'
+_cell_volume   398.86386872
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tl  Tl0  1  0.78660913  0.18193526  0.65541288  1
+  Tl  Tl1  1  0.21339087  0.34458712  0.81806474  1
+  Tl  Tl2  1  0.89636860  0.26078806  0.26078806  1
+  Tl  Tl3  1  0.10363140  0.73921194  0.73921194  1
+  Tl  Tl4  1  0.78660913  0.65541288  0.18193526  1
+  Tl  Tl5  1  0.21339087  0.81806474  0.34458712  1
+  Tl  Tl6  1  0.30886817  0.40793509  0.40793509  1
+  Tl  Tl7  1  0.69113183  0.59206491  0.59206491  1
+  Bi  Bi8  1  0.45448141  0.13171301  0.13171301  1
+  Bi  Bi9  1  0.54551859  0.86828699  0.86828699  1
+  Pb  Pb10  1  0.00000000  0.00000000  0.00000000  1

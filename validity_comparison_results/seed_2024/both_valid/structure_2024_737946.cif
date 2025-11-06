@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Ce2Nd3Ru2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.36102236
+_cell_length_b   6.36102236
+_cell_length_c   9.07598334
+_cell_angle_alpha   69.31615734
+_cell_angle_beta   69.31615734
+_cell_angle_gamma   35.13220837
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ce2Nd3Ru2
+_chemical_formula_sum   'Ce2 Nd3 Ru2'
+_cell_volume   196.29367462
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.17383318  0.17383318  0.18516840  1
+  Ce  Ce1  1  0.82616682  0.82616682  0.81483160  1
+  Nd  Nd2  1  0.50000000  0.50000000  0.00000000  1
+  Nd  Nd3  1  0.38463391  0.38463391  0.41545838  1
+  Nd  Nd4  1  0.61536609  0.61536609  0.58454162  1
+  Ru  Ru5  1  0.20395165  0.20395165  0.76886393  1
+  Ru  Ru6  1  0.79604835  0.79604835  0.23113607  1

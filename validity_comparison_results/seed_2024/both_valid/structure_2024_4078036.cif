@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Cs2Tl2InAu4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.81178475
+_cell_length_b   6.93543419
+_cell_length_c   6.93543420
+_cell_angle_alpha   66.53348153
+_cell_angle_beta   113.30297971
+_cell_angle_gamma   113.30297971
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cs2Tl2InAu4
+_chemical_formula_sum   'Cs2 Tl2 In1 Au4'
+_cell_volume   303.65388697
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.30797403  0.57602404  0.57602404  1
+  Cs  Cs1  1  0.69202597  0.42397596  0.42397596  1
+  Tl  Tl2  1  0.14784624  0.15373555  0.15373555  1
+  Tl  Tl3  1  0.85215376  0.84626445  0.84626445  1
+  In  In4  1  0.50000000  0.00000000  -0.00000000  1
+  Au  Au5  1  0.19181524  0.62409303  0.00646844  1
+  Au  Au6  1  0.80818476  0.99353156  0.37590697  1
+  Au  Au7  1  0.80818476  0.37590697  0.99353156  1
+  Au  Au8  1  0.19181524  0.00646844  0.62409303  1

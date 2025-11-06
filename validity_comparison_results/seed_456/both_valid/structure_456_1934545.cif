@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_LiVSi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.09219079
+_cell_length_b   3.72194750
+_cell_length_c   8.57829862
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   109.43962449
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiVSi
+_chemical_formula_sum   'Li4 V4 Si4'
+_cell_volume   153.31491592
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.00000000  0.00000000  0.00000000  1
+  Li  Li1  1  -0.00000000  0.50000000  0.50000000  1
+  Li  Li2  1  0.50000000  0.50000000  0.50000000  1
+  Li  Li3  1  0.50000000  0.00000000  -0.00000000  1
+  V  V4  1  0.65922911  0.00000000  0.33673831  1
+  V  V5  1  0.34077089  0.00000000  0.66326169  1
+  V  V6  1  0.65922911  0.50000000  0.83673831  1
+  V  V7  1  0.34077089  0.50000000  0.16326169  1
+  Si  Si8  1  0.16457436  0.00000000  0.32587818  1
+  Si  Si9  1  0.83542564  0.00000000  0.67412182  1
+  Si  Si10  1  0.16457436  0.50000000  0.82587818  1
+  Si  Si11  1  0.83542564  0.50000000  0.17412182  1

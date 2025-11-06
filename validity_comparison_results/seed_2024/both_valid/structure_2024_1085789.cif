@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Li2Cu2W3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.76076833
+_cell_length_b   6.76076833
+_cell_length_c   6.76076833
+_cell_angle_alpha   36.91306224
+_cell_angle_beta   36.91306224
+_cell_angle_gamma   36.91306224
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2Cu2W3
+_chemical_formula_sum   'Li2 Cu2 W3'
+_cell_volume   99.86428733
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.05710438  0.05710438  0.05710438  1
+  Cu  Cu1  1  0.48250129  0.48250129  0.48250129  1
+  Li  Li2  1  0.18869922  0.18869922  0.18869922  1
+  Li  Li3  1  0.76730754  0.76730754  0.76730754  1
+  W  W4  1  0.33882425  0.33882425  0.33882425  1
+  W  W5  1  0.62443145  0.62443145  0.62443145  1
+  W  W6  1  0.91613342  0.91613342  0.91613342  1

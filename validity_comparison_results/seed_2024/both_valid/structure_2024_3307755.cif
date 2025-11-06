@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_Dy13Sc2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.52604923
+_cell_length_b   8.84640226
+_cell_length_c   8.83012030
+_cell_angle_alpha   114.37665428
+_cell_angle_beta   81.49984754
+_cell_angle_gamma   98.39929115
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy13Sc2
+_chemical_formula_sum   'Dy13 Sc2'
+_cell_volume   457.18256327
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.69205770  0.64033439  0.04329077  1
+  Dy  Dy1  1  0.30794230  0.35966561  0.95670923  1
+  Dy  Dy2  1  0.00000000  0.00000000  0.00000000  1
+  Dy  Dy3  1  0.28485052  0.02131738  0.62327632  1
+  Dy  Dy4  1  0.71514948  0.97868262  0.37672368  1
+  Dy  Dy5  1  0.09428555  0.57144581  0.76848350  1
+  Dy  Dy6  1  0.90571445  0.42855419  0.23151650  1
+  Dy  Dy7  1  0.39804740  0.59831798  0.40192381  1
+  Dy  Dy8  1  0.60195260  0.40168202  0.59807619  1
+  Dy  Dy9  1  0.51083986  0.83570565  0.82778317  1
+  Dy  Dy10  1  0.48916014  0.16429435  0.17221683  1
+  Dy  Dy11  1  0.80415734  0.20056168  0.79868636  1
+  Dy  Dy12  1  0.19584266  0.79943832  0.20131364  1
+  Sc  Sc13  1  0.89482941  0.75721204  0.55903937  1
+  Sc  Sc14  1  0.10517059  0.24278796  0.44096063  1

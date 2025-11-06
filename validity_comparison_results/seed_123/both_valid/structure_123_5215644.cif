@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Ho8Si3Te4S
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.33137485
+_cell_length_b   8.51536492
+_cell_length_c   8.33145043
+_cell_angle_alpha   119.29568882
+_cell_angle_beta   119.99969995
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho8Si3Te4S
+_chemical_formula_sum   'Ho8 Si3 Te4 S1'
+_cell_volume   422.34729755
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.24061072  0.71576422  0.97511097  1
+  Ho  Ho1  1  0.24095446  0.71621939  0.48190891  1
+  Ho  Ho2  1  0.26026606  0.28090331  0.52053212  1
+  Ho  Ho3  1  0.73450025  0.71576422  0.97511097  1
+  Ho  Ho4  1  0.26549975  0.28423578  0.02488903  1
+  Ho  Ho5  1  0.73973394  0.71909669  0.47946788  1
+  Ho  Ho6  1  0.75904554  0.28378061  0.51809109  1
+  Ho  Ho7  1  0.75938928  0.28423578  0.02488903  1
+  Si  Si8  1  0.50000000  0.50000000  0.00000000  1
+  Si  Si9  1  0.50000000  0.50000000  0.50000000  1
+  Si  Si10  1  -0.00000000  0.50000000  0.50000000  1
+  Te  Te11  1  0.50000000  0.00000000  0.00000000  1
+  Te  Te12  1  0.50000000  -0.00000000  0.50000000  1
+  Te  Te13  1  0.00000000  0.00000000  0.00000000  1
+  Te  Te14  1  -0.00000000  -0.00000000  0.50000000  1
+  S  S15  1  0.00000000  0.50000000  0.00000000  1

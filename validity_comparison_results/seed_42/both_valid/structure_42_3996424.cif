@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_ZnCo2Cu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.38230685
+_cell_length_b   4.38230686
+_cell_length_c   4.47612497
+_cell_angle_alpha   80.83639214
+_cell_angle_beta   80.83639211
+_cell_angle_gamma   33.99064770
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZnCo2Cu
+_chemical_formula_sum   'Zn1 Co2 Cu1'
+_cell_volume   47.38681302
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.00397364  0.00397364  0.97514829  1
+  Co  Co1  1  0.74688982  0.74688982  0.77135274  1
+  Cu  Cu2  1  0.49783832  0.49783832  0.49347171  1
+  Zn  Zn3  1  0.25129821  0.25129821  0.26002725  1

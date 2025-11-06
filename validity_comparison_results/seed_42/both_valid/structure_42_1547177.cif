@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Ti5CuIr6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.16401362
+_cell_length_b   7.40155280
+_cell_length_c   7.40155285
+_cell_angle_alpha   114.07134515
+_cell_angle_beta   106.33756933
+_cell_angle_gamma   106.33756323
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ti5CuIr6
+_chemical_formula_sum   'Ti5 Cu1 Ir6'
+_cell_volume   178.28719948
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ir  Ir0  1  0.25976266  0.09138079  0.42815052  1
+  Ir  Ir1  1  0.74023734  0.57184948  0.90861921  1
+  Ir  Ir2  1  0.76855241  0.26856241  0.26856241  1
+  Ir  Ir3  1  0.23144759  0.73143759  0.73143759  1
+  Ir  Ir4  1  0.25976266  0.42815052  0.09138079  1
+  Ir  Ir5  1  0.74023734  0.90861921  0.57184948  1
+  Cu  Cu6  1  0.00000000  0.00000000  0.00000000  1
+  Ti  Ti7  1  0.50000000  0.14936987  0.85063013  1
+  Ti  Ti8  1  1.00000000  0.32399155  0.67600845  1
+  Ti  Ti9  1  0.50000000  0.50000000  0.50000000  1
+  Ti  Ti10  1  0.00000000  0.67600845  0.32399155  1
+  Ti  Ti11  1  0.50000000  0.85063013  0.14936987  1

@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Ho4Er4Mg
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.97754909
+_cell_length_b   7.77687831
+_cell_length_c   7.77687831
+_cell_angle_alpha   84.12178765
+_cell_angle_beta   71.33572599
+_cell_angle_gamma   71.33572606
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho4Er4Mg
+_chemical_formula_sum   'Ho4 Er4 Mg1'
+_cell_volume   270.21042122
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.66715875  0.66568148  0.00000102  1
+  Ho  Ho1  1  0.33284125  0.33431852  0.99999898  1
+  Ho  Ho2  1  0.66715977  0.99999898  0.66568148  1
+  Ho  Ho3  1  0.33284023  0.00000102  0.33431852  1
+  Er  Er4  1  0.66638362  0.33357062  0.33366114  1
+  Er  Er5  1  0.33361638  0.66642938  0.66633886  1
+  Er  Er6  1  0.00004576  0.66633886  0.33357062  1
+  Er  Er7  1  0.99995424  0.33366114  0.66642938  1
+  Mg  Mg8  1  0.00000000  0.00000000  0.00000000  1

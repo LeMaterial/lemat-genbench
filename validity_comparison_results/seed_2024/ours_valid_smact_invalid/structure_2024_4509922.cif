@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_H6Br(ClO)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.10795398
+_cell_length_b   6.15311623
+_cell_length_c   6.38177510
+_cell_angle_alpha   119.15892328
+_cell_angle_beta   91.80852585
+_cell_angle_gamma   77.75404504
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   H6Br(ClO)2
+_chemical_formula_sum   'H6 Br1 Cl2 O2'
+_cell_volume   170.56695010
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.38616501  0.62749695  0.78947042  1
+  H  H1  1  0.94199432  0.37684267  0.21203889  1
+  H  H2  1  0.20048953  0.68085094  0.59819384  1
+  H  H3  1  0.05800568  0.62315733  0.78796111  1
+  H  H4  1  0.79951047  0.31914906  0.40180616  1
+  H  H5  1  0.61383499  0.37250305  0.21052958  1
+  Br  Br6  1  0.50000000  0.00000000  0.50000000  1
+  Cl  Cl7  1  0.75723003  0.44596612  0.75106740  1
+  Cl  Cl8  1  0.24276997  0.55403388  0.24893260  1
+  O  O9  1  0.19630404  0.71233034  0.77168883  1
+  O  O10  1  0.80369596  0.28766966  0.22831117  1

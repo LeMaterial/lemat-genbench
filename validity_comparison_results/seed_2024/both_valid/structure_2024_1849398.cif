@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Ho3Ga3Ge2Rh
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.19265785
+_cell_length_b   6.96394765
+_cell_length_c   6.96394766
+_cell_angle_alpha   120.00000002
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho3Ga3Ge2Rh
+_chemical_formula_sum   'Ho3 Ga3 Ge2 Rh1'
+_cell_volume   176.08852268
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ge  Ge0  1  0.50000000  0.33333333  0.66666667  1
+  Ge  Ge1  1  0.50000000  0.66666667  0.33333333  1
+  Rh  Rh2  1  0.00000000  0.00000000  0.00000000  1
+  Ho  Ho3  1  0.00000000  0.00000000  0.59083654  1
+  Ho  Ho4  1  0.00000000  0.59083654  0.00000000  1
+  Ho  Ho5  1  0.00000000  0.40916346  0.40916346  1
+  Ga  Ga6  1  0.50000000  0.76617722  0.76617722  1
+  Ga  Ga7  1  0.50000000  0.23382278  0.00000000  1
+  Ga  Ga8  1  0.50000000  0.00000000  0.23382278  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Ba7Ge3N2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.38181570
+_cell_length_b   5.65080700
+_cell_length_c   13.27530726
+_cell_angle_alpha   98.34217856
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba7Ge3N2
+_chemical_formula_sum   'Ba7 Ge3 N2'
+_cell_volume   399.45166334
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ge  Ge0  1  0.50000000  0.50000000  0.00000000  1
+  Ge  Ge1  1  0.50000000  0.60806125  0.42306822  1
+  Ge  Ge2  1  0.50000000  0.39193875  0.57693178  1
+  Ba  Ba3  1  0.00000000  0.45776446  0.81135202  1
+  Ba  Ba4  1  0.00000000  0.80583763  0.58897852  1
+  Ba  Ba5  1  0.00000000  0.00000000  0.00000000  1
+  Ba  Ba6  1  0.00000000  0.54223554  0.18864798  1
+  Ba  Ba7  1  0.50000000  0.00422112  0.21830296  1
+  Ba  Ba8  1  0.50000000  0.99577888  0.78169704  1
+  Ba  Ba9  1  0.00000000  0.19416237  0.41102148  1
+  N  N10  1  0.00000000  0.91203078  0.78334120  1
+  N  N11  1  0.00000000  0.08796922  0.21665880  1

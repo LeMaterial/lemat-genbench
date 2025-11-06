@@ -1,0 +1,45 @@
+# generated using pymatgen
+data_Sm12Hg6C
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.30998964
+_cell_length_b   8.30998964
+_cell_length_c   8.30998963
+_cell_angle_alpha   95.05259705
+_cell_angle_beta   95.05259705
+_cell_angle_gamma   95.05259708
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sm12Hg6C
+_chemical_formula_sum   'Sm12 Hg6 C1'
+_cell_volume   566.74143439
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.80101139  0.58089264  0.46291416  1
+  Sm  Sm1  1  0.46291416  0.80101139  0.58089264  1
+  Sm  Sm2  1  0.58089264  0.46291416  0.80101139  1
+  Sm  Sm3  1  0.19898861  0.41910736  0.53708584  1
+  Sm  Sm4  1  0.53708584  0.19898861  0.41910736  1
+  Sm  Sm5  1  0.41910736  0.53708584  0.19898861  1
+  Sm  Sm6  1  0.96607024  0.07768194  0.29139328  1
+  Sm  Sm7  1  0.92231806  0.70860672  0.03392976  1
+  Sm  Sm8  1  0.70860672  0.03392976  0.92231806  1
+  Sm  Sm9  1  0.03392976  0.92231806  0.70860672  1
+  Sm  Sm10  1  0.07768194  0.29139328  0.96607024  1
+  Sm  Sm11  1  0.29139328  0.96607024  0.07768194  1
+  Hg  Hg12  1  0.64522081  0.85253092  0.25479538  1
+  Hg  Hg13  1  0.74520462  0.35477919  0.14746908  1
+  Hg  Hg14  1  0.14746908  0.74520462  0.35477919  1
+  Hg  Hg15  1  0.35477919  0.14746908  0.74520462  1
+  Hg  Hg16  1  0.25479538  0.64522081  0.85253092  1
+  Hg  Hg17  1  0.85253092  0.25479538  0.64522081  1
+  C  C18  1  0.00000000  0.00000000  0.00000000  1

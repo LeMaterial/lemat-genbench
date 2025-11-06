@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_CsBiPb3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.44418751
+_cell_length_b   5.44381568
+_cell_length_c   7.87014980
+_cell_angle_alpha   69.61582417
+_cell_angle_beta   69.63067065
+_cell_angle_gamma   89.91807067
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsBiPb3
+_chemical_formula_sum   'Cs1 Bi1 Pb3'
+_cell_volume   203.05643569
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.40667631  0.21019603  0.89195951  1
+  Bi  Bi1  1  0.01701106  0.82047915  0.67045993  1
+  Pb  Pb2  1  0.65108892  0.95469507  0.40295772  1
+  Pb  Pb3  1  0.15125816  0.45446691  0.40296904  1
+  Pb  Pb4  1  0.78172758  0.58534310  0.14278605  1

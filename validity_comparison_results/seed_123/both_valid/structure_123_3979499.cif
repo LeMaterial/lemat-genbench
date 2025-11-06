@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_CePuBrN
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.59128775
+_cell_length_b   3.59092509
+_cell_length_c   7.75860979
+_cell_angle_alpha   90.05488169
+_cell_angle_beta   103.36953511
+_cell_angle_gamma   119.94209856
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CePuBrN
+_chemical_formula_sum   'Ce1 Pu1 Br1 N1'
+_cell_volume   83.54385122
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.51500176  0.15576032  0.68567273  1
+  Pu  Pu1  1  0.08865250  0.94194484  0.04610365  1
+  Br  Br2  1  0.96415071  0.38045032  0.35967849  1
+  N  N3  1  0.31009504  0.55264452  0.87820514  1

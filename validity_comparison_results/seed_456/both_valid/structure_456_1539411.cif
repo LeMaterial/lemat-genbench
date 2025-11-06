@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_Mn2TcHg
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.81440166
+_cell_length_b   4.81440166
+_cell_length_c   4.72668927
+_cell_angle_alpha   78.35287328
+_cell_angle_beta   78.35287330
+_cell_angle_gamma   35.25697570
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Mn2TcHg
+_chemical_formula_sum   'Mn2 Tc1 Hg1'
+_cell_volume   61.80623277
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hg  Hg0  1  0.24900301  0.24900301  0.23123892  1
+  Mn  Mn1  1  0.00556188  0.00556188  0.99532629  1
+  Mn  Mn2  1  0.75610410  0.75610410  0.72360238  1
+  Tc  Tc3  1  0.48933101  0.48933101  0.54983240  1

@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_LaCd8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.20257134
+_cell_length_b   7.20257135
+_cell_length_c   9.62440943
+_cell_angle_alpha   48.07762514
+_cell_angle_beta   48.07762511
+_cell_angle_gamma   83.84474968
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaCd8
+_chemical_formula_sum   'La1 Cd8'
+_cell_volume   218.46378423
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cd  Cd0  1  1.00000000  1.00000000  0.34247046  1
+  Cd  Cd1  1  0.00000000  0.00000000  0.65752954  1
+  Cd  Cd2  1  0.34247046  0.65752954  0.00000000  1
+  Cd  Cd3  1  0.32464186  0.67535814  0.32464186  1
+  Cd  Cd4  1  0.32464186  0.67535814  0.67535814  1
+  Cd  Cd5  1  0.65752954  0.34247046  0.00000000  1
+  Cd  Cd6  1  0.67535814  0.32464186  0.32464186  1
+  Cd  Cd7  1  0.67535814  0.32464186  0.67535814  1
+  La  La8  1  0.00000000  0.00000000  0.00000000  1

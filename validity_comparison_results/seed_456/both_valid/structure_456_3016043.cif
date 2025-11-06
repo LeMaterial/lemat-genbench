@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Sr2Ac4Ru
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.85706128
+_cell_length_b   5.85706128
+_cell_length_c   10.84951403
+_cell_angle_alpha   74.34033005
+_cell_angle_beta   74.34033005
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2Ac4Ru
+_chemical_formula_sum   'Sr2 Ac4 Ru1'
+_cell_volume   344.00979659
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ru  Ru0  1  0.00000000  0.00000000  0.00000000  1
+  Ac  Ac1  1  0.85836474  0.85836474  0.28327152  1
+  Ac  Ac2  1  0.14163526  0.14163526  0.71672848  1
+  Ac  Ac3  1  0.00000000  0.50000000  0.00000000  1
+  Ac  Ac4  1  0.50000000  0.00000000  0.00000000  1
+  Sr  Sr5  1  0.65877211  0.65877211  0.68245478  1
+  Sr  Sr6  1  0.34122789  0.34122789  0.31754522  1

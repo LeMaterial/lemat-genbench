@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ho7(AlZn)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.60799399
+_cell_length_b   7.38822616
+_cell_length_c   6.60799399
+_cell_angle_alpha   89.99897563
+_cell_angle_beta   110.31531940
+_cell_angle_gamma   90.00102434
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho7(AlZn)2
+_chemical_formula_sum   'Ho7 Al2 Zn2'
+_cell_volume   302.54355124
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.00002383  0.28130261  0.49999721  1
+  Ho  Ho1  1  0.49999721  0.71869739  0.00002383  1
+  Ho  Ho2  1  0.99997617  0.71869739  0.50000279  1
+  Ho  Ho3  1  0.50000279  0.28130261  0.99997617  1
+  Ho  Ho4  1  0.00000000  0.00000000  0.00000000  1
+  Ho  Ho5  1  0.49998200  0.74593559  0.50001800  1
+  Ho  Ho6  1  0.50001800  0.25406441  0.49998200  1
+  Al  Al7  1  0.82860058  0.50000000  0.82860058  1
+  Al  Al8  1  0.17139942  0.50000000  0.17139942  1
+  Zn  Zn9  1  0.70991189  0.00000590  0.29008811  1
+  Zn  Zn10  1  0.29008811  0.99999410  0.70991189  1

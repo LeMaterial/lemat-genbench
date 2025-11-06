@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Er4ZnBi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.26508126
+_cell_length_b   8.83845599
+_cell_length_c   7.82433604
+_cell_angle_alpha   114.08613526
+_cell_angle_beta   100.32899172
+_cell_angle_gamma   113.04094965
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Er4ZnBi
+_chemical_formula_sum   'Er8 Zn2 Bi2'
+_cell_volume   333.02992609
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.08860709  0.19963850  0.81237422  1
+  Er  Er1  1  0.77366292  0.72024130  0.63911946  1
+  Er  Er2  1  0.22376713  0.61273572  0.81237422  1
+  Er  Er3  1  0.36545654  0.91887816  0.63911946  1
+  Er  Er4  1  0.63454346  0.08112184  0.36088054  1
+  Er  Er5  1  0.77623287  0.38726428  0.18762578  1
+  Er  Er6  1  0.22633708  0.27975870  0.36088054  1
+  Er  Er7  1  0.91139291  0.80036150  0.18762578  1
+  Zn  Zn8  1  0.25142074  0.00142074  0.00284247  1
+  Zn  Zn9  1  0.74857926  0.99857926  0.99715753  1
+  Bi  Bi10  1  0.36414009  0.61414009  0.22827919  1
+  Bi  Bi11  1  0.63585991  0.38585991  0.77172081  1

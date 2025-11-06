@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_ErTm2PuSc4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.90357220
+_cell_length_b   8.90357005
+_cell_length_c   11.10829846
+_cell_angle_alpha   128.59727763
+_cell_angle_beta   128.59731956
+_cell_angle_gamma   87.58752278
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ErTm2PuSc4
+_chemical_formula_sum   'Er2 Tm4 Pu2 Sc8'
+_cell_volume   442.60918684
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.49999809  0.50000240  0.50000345  1
+  Er  Er1  1  0.99999451  0.00000028  0.99999647  1
+  Tm  Tm2  1  0.50000318  0.00000450  0.00000345  1
+  Tm  Tm3  1  0.49999856  0.00000007  0.49999735  1
+  Tm  Tm4  1  0.00000019  0.00000285  0.50000009  1
+  Tm  Tm5  1  0.50000085  0.49999604  0.99999969  1
+  Pu  Pu6  1  0.00000249  0.50000171  0.00000513  1
+  Pu  Pu7  1  0.99999551  0.49999539  0.49999187  1
+  Sc  Sc8  1  0.23616854  0.73476951  0.98536300  1
+  Sc  Sc9  1  0.76522597  0.26383676  0.51463696  1
+  Sc  Sc10  1  0.23477077  0.73615427  0.48536188  1
+  Sc  Sc11  1  0.76384795  0.26523066  0.01463910  1
+  Sc  Sc12  1  0.76164926  0.73890624  0.00093545  1
+  Sc  Sc13  1  0.76109000  0.73835080  0.49906644  1
+  Sc  Sc14  1  0.23890682  0.26165590  0.50093398  1
+  Sc  Sc15  1  0.23834631  0.26109362  0.99906671  1

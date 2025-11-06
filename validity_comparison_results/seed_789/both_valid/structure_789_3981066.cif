@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Er8ZnPd2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.52100256
+_cell_length_b   7.90047287
+_cell_length_c   7.90047253
+_cell_angle_alpha   115.58119486
+_cell_angle_beta   99.09981064
+_cell_angle_gamma   99.09981086
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Er8ZnPd2
+_chemical_formula_sum   'Er8 Zn1 Pd2'
+_cell_volume   296.82869534
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.58387533  0.33663806  0.08788609  1
+  Er  Er1  1  0.58387533  0.08788609  0.33663806  1
+  Er  Er2  1  0.18324941  0.38528693  0.38528693  1
+  Er  Er3  1  0.99395260  0.22677788  0.77250101  1
+  Er  Er4  1  0.99395260  0.77250101  0.22677788  1
+  Er  Er5  1  0.80476759  0.62778897  0.62778897  1
+  Er  Er6  1  0.39097277  0.91740893  0.66755583  1
+  Er  Er7  1  0.39097277  0.66755583  0.91740893  1
+  Zn  Zn8  1  0.07899472  0.00260164  0.00260164  1
+  Pd  Pd9  1  0.49752694  0.70219271  0.30729694  1
+  Pd  Pd10  1  0.49752694  0.30729694  0.70219271  1

@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_Ac3GaAs2Pd9
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.59985667
+_cell_length_b   6.59985666
+_cell_length_c   8.88242584
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ac3GaAs2Pd9
+_chemical_formula_sum   'Ac3 Ga1 As2 Pd9'
+_cell_volume   335.06666988
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.33333333  0.66666667  0.66205357  1
+  Ac  Ac1  1  0.00000000  0.00000000  0.00000000  1
+  Ac  Ac2  1  0.66666667  0.33333333  0.33794643  1
+  Ga  Ga3  1  0.00000000  0.00000000  0.50000000  1
+  As  As4  1  0.33333333  0.66666667  0.17966163  1
+  As  As5  1  0.66666667  0.33333333  0.82033837  1
+  Pd  Pd6  1  0.85618182  0.14381818  0.70861630  1
+  Pd  Pd7  1  0.85618182  0.71236364  0.70861630  1
+  Pd  Pd8  1  0.28763636  0.14381818  0.70861630  1
+  Pd  Pd9  1  0.71236364  0.85618182  0.29138370  1
+  Pd  Pd10  1  0.14381818  0.28763636  0.29138370  1
+  Pd  Pd11  1  0.14381818  0.85618182  0.29138370  1
+  Pd  Pd12  1  0.50000000  0.00000000  0.00000000  1
+  Pd  Pd13  1  0.00000000  0.50000000  0.00000000  1
+  Pd  Pd14  1  0.50000000  0.50000000  0.00000000  1

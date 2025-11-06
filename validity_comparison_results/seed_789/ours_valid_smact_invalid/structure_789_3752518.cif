@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Sr2In4As3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.88598413
+_cell_length_b   5.23308873
+_cell_length_c   21.29153588
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00004629
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2In4As3
+_chemical_formula_sum   'Sr2 In4 As3'
+_cell_volume   655.81927391
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.49999814  0.41634510  0.35959393  1
+  Sr  Sr1  1  0.99999871  0.79484532  0.59684313  1
+  In  In2  1  0.24569580  0.29905680  0.50243607  1
+  In  In3  1  0.75430212  0.29905622  0.50243513  1
+  In  In4  1  0.50001233  0.31077826  0.63113140  1
+  In  In5  1  0.99999846  0.07928795  0.35930962  1
+  As  As6  1  0.26098063  0.81004540  0.44672314  1
+  As  As7  1  0.73901558  0.81004618  0.44672326  1
+  As  As8  1  0.49999901  0.81102177  0.65480432  1

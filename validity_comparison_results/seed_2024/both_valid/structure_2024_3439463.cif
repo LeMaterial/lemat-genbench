@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_BaSrCrO4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.99661198
+_cell_length_b   5.99079077
+_cell_length_c   7.30689154
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   108.60439190
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaSrCrO4
+_chemical_formula_sum   'Ba2 Sr2 Cr2 O8'
+_cell_volume   248.77903882
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.71451307  0.75000000  0.93156617  1
+  Ba  Ba1  1  0.28548693  0.25000000  0.06843383  1
+  Sr  Sr2  1  0.80654407  0.75000000  0.46204839  1
+  Sr  Sr3  1  0.19345593  0.25000000  0.53795161  1
+  Cr  Cr4  1  0.25490110  0.75000000  0.31466076  1
+  Cr  Cr5  1  0.74509890  0.25000000  0.68533924  1
+  O  O6  1  0.95395343  0.47948912  0.73552183  1
+  O  O7  1  0.04604657  0.97948912  0.26447817  1
+  O  O8  1  0.04604657  0.52051088  0.26447817  1
+  O  O9  1  0.95395343  0.02051088  0.73552183  1
+  O  O10  1  0.44028726  0.75000000  0.16242456  1
+  O  O11  1  0.55971274  0.25000000  0.83757544  1
+  O  O12  1  0.42617669  0.75000000  0.56263958  1
+  O  O13  1  0.57382331  0.25000000  0.43736042  1

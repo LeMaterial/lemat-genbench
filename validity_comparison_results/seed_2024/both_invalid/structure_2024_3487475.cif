@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Th6Hg3C
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.55897626
+_cell_length_b   8.40158731
+_cell_length_c   10.45494296
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   86.27131449
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Th6Hg3C
+_chemical_formula_sum   'Th12 Hg6 C2'
+_cell_volume   574.90856147
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Th  Th0  1  0.65972492  0.14299101  0.94877998  1
+  Th  Th1  1  0.61113462  0.22519888  0.56347587  1
+  Th  Th2  1  0.65588496  0.44630030  0.27639181  1
+  Th  Th3  1  0.34411504  0.55369970  0.72360819  1
+  Th  Th4  1  0.38886538  0.77480112  0.43652413  1
+  Th  Th5  1  0.34027508  0.85700899  0.05122002  1
+  Th  Th6  1  0.15972492  0.35700899  0.44877998  1
+  Th  Th7  1  0.11113462  0.27480112  0.06347587  1
+  Th  Th8  1  0.15588496  0.05369970  0.77639181  1
+  Th  Th9  1  0.84411504  0.94630030  0.22360819  1
+  Th  Th10  1  0.88886538  0.72519888  0.93652413  1
+  Th  Th11  1  0.84027508  0.64299101  0.55122002  1
+  Hg  Hg12  1  0.59318461  0.88632514  0.73232831  1
+  Hg  Hg13  1  0.50000000  0.50000000  0.00000000  1
+  Hg  Hg14  1  0.40681539  0.11367486  0.26767169  1
+  Hg  Hg15  1  0.09318461  0.61367486  0.23232831  1
+  Hg  Hg16  1  -0.00000000  0.00000000  0.50000000  1
+  Hg  Hg17  1  0.90681539  0.38632514  0.76767169  1
+  C  C18  1  0.50000000  0.50000000  0.50000000  1
+  C  C19  1  0.00000000  0.00000000  0.00000000  1

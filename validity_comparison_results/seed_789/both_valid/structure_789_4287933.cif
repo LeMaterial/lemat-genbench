@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Tl2In2Si
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.46350282
+_cell_length_b   7.46350282
+_cell_length_c   5.12881906
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tl2In2Si
+_chemical_formula_sum   'Tl4 In4 Si2'
+_cell_volume   285.69509245
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tl  Tl0  1  0.34832959  0.84832959  0.00000000  1
+  Tl  Tl1  1  0.84832959  0.65167041  0.00000000  1
+  Tl  Tl2  1  0.65167041  0.15167041  0.00000000  1
+  Tl  Tl3  1  0.15167041  0.34832959  0.00000000  1
+  Si  Si4  1  0.00000000  0.00000000  0.00000000  1
+  Si  Si5  1  0.50000000  0.50000000  0.00000000  1
+  In  In6  1  0.16172271  0.66172271  0.50000000  1
+  In  In7  1  0.66172271  0.83827729  0.50000000  1
+  In  In8  1  0.83827729  0.33827729  0.50000000  1
+  In  In9  1  0.33827729  0.16172271  0.50000000  1

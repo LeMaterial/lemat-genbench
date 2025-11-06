@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Yb3Cu2(ClO2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.82626201
+_cell_length_b   3.82626201
+_cell_length_c   10.82136297
+_cell_angle_alpha   100.18505808
+_cell_angle_beta   100.18505808
+_cell_angle_gamma   90.00067264
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Yb3Cu2(ClO2)2
+_chemical_formula_sum   'Yb3 Cu2 Cl2 O4'
+_cell_volume   153.39401970
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Yb  Yb0  1  0.00000000  0.00000000  0.00000000  1
+  Yb  Yb1  1  0.14608417  0.14608417  0.29187379  1
+  Yb  Yb2  1  0.85391583  0.85391583  0.70812621  1
+  O  O3  1  0.92550457  0.42551830  0.85134285  1
+  O  O4  1  0.42551830  0.92550457  0.85134285  1
+  O  O5  1  0.57448170  0.07449543  0.14865715  1
+  O  O6  1  0.07449543  0.57448170  0.14865715  1
+  Cu  Cu7  1  0.43114758  0.43114758  0.86263971  1
+  Cu  Cu8  1  0.56885242  0.56885242  0.13736029  1
+  Cl  Cl9  1  0.29887952  0.29887952  0.59788135  1
+  Cl  Cl10  1  0.70112048  0.70112048  0.40211865  1

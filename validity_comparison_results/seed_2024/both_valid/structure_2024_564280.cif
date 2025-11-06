@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_La2MgSiPt6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.61965435
+_cell_length_b   8.39140683
+_cell_length_c   8.78578422
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La2MgSiPt6
+_chemical_formula_sum   'La4 Mg2 Si2 Pt12'
+_cell_volume   414.30952110
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.50000000  0.72751348  0.25443003  1
+  La  La1  1  0.00000000  0.27248652  0.75443003  1
+  La  La2  1  0.50000000  0.72751348  0.74556997  1
+  La  La3  1  0.00000000  0.27248652  0.24556997  1
+  Mg  Mg4  1  0.00000000  0.71817128  0.50000000  1
+  Mg  Mg5  1  0.50000000  0.28182872  0.00000000  1
+  Si  Si6  1  0.50000000  0.22949879  0.50000000  1
+  Si  Si7  1  0.00000000  0.77050121  0.00000000  1
+  Pt  Pt8  1  0.50000000  0.10283501  0.25062148  1
+  Pt  Pt9  1  0.50000000  0.10283501  0.74937852  1
+  Pt  Pt10  1  0.00000000  0.89716499  0.24937852  1
+  Pt  Pt11  1  0.00000000  0.89716499  0.75062148  1
+  Pt  Pt12  1  0.24593567  0.99223211  0.50000000  1
+  Pt  Pt13  1  0.75406433  0.99223211  0.50000000  1
+  Pt  Pt14  1  0.24970771  0.45864062  0.50000000  1
+  Pt  Pt15  1  0.75029229  0.45864062  0.50000000  1
+  Pt  Pt16  1  0.74970771  0.54135938  0.00000000  1
+  Pt  Pt17  1  0.25029229  0.54135938  0.00000000  1
+  Pt  Pt18  1  0.25406433  0.00776789  0.00000000  1
+  Pt  Pt19  1  0.74593567  0.00776789  0.00000000  1

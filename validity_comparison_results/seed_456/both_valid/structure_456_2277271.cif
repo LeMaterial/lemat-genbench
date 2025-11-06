@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_CaBe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.48921634
+_cell_length_b   3.74044900
+_cell_length_c   3.73160250
+_cell_angle_alpha   120.05551556
+_cell_angle_beta   109.94604941
+_cell_angle_gamma   90.18551834
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CaBe3
+_chemical_formula_sum   'Ca1 Be3'
+_cell_volume   60.89402677
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.04805087  0.18298299  0.86555215  1
+  Be  Be1  1  0.95194913  0.81701701  0.13444785  1
+  Be  Be2  1  -0.00000000  0.50000000  0.50000000  1
+  Ca  Ca3  1  0.50000000  -0.00000000  0.50000000  1

@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_Ac2PdPb3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.06003517
+_cell_length_b   6.55876663
+_cell_length_c   6.60011868
+_cell_angle_alpha   74.61701751
+_cell_angle_beta   67.45994679
+_cell_angle_gamma   67.30994169
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ac2PdPb3
+_chemical_formula_sum   'Ac2 Pd1 Pb3'
+_cell_volume   184.87204481
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.54659307  0.19379777  0.71301610  1
+  Ac  Ac1  1  0.43477851  0.82154322  0.30889976  1
+  Pd  Pd2  1  0.17717157  0.36866797  0.27698790  1
+  Pb  Pb3  1  0.87286742  0.60413986  0.65012431  1
+  Pb  Pb4  1  0.80898765  0.25355315  0.12847156  1
+  Pb  Pb5  1  0.15959980  0.75830103  0.92249937  1

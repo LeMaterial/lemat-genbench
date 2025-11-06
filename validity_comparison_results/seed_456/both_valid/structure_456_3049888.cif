@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_YScSi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.79912080
+_cell_length_b   6.79916305
+_cell_length_c   3.26200672
+_cell_angle_alpha   76.11959631
+_cell_angle_beta   76.12104615
+_cell_angle_gamma   27.75935784
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   YScSi
+_chemical_formula_sum   'Y1 Sc1 Si1'
+_cell_volume   68.05715933
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sc  Sc0  1  0.97083301  0.97083301  0.02916699  1
+  Si  Si1  1  0.33928914  0.33928914  0.66071086  1
+  Y  Y2  1  0.68987784  0.68987784  0.31012216  1

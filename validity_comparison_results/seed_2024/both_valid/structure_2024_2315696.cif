@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_SiW
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.33499764
+_cell_length_b   8.33499764
+_cell_length_c   8.33499765
+_cell_angle_alpha   20.24434418
+_cell_angle_beta   20.24434419
+_cell_angle_gamma   20.24434416
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SiW
+_chemical_formula_sum   'Si2 W2'
+_cell_volume   60.66723342
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Si  Si0  1  0.99984700  0.99984700  0.99984700  1
+  Si  Si1  1  0.75015300  0.75015300  0.75015300  1
+  W  W2  1  0.49682998  0.49682998  0.49682998  1
+  W  W3  1  0.25317002  0.25317002  0.25317002  1

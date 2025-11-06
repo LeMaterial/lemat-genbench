@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_Dy5(ScIr)4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.33103816
+_cell_length_b   8.52111919
+_cell_length_c   8.52111839
+_cell_angle_alpha   86.29698090
+_cell_angle_beta   75.27762672
+_cell_angle_gamma   75.27763311
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy5(ScIr)4
+_chemical_formula_sum   'Dy5 Sc4 Ir4'
+_cell_volume   294.16407235
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.69151571  0.93622433  0.68074426  1
+  Dy  Dy1  1  0.30848429  0.06377567  0.31925574  1
+  Dy  Dy2  1  0.00000000  0.00000000  0.00000000  1
+  Dy  Dy3  1  0.62774003  0.68074426  0.06377567  1
+  Dy  Dy4  1  0.37225997  0.31925574  0.93622433  1
+  Sc  Sc5  1  0.89263405  0.51227417  0.70245773  1
+  Sc  Sc6  1  0.59509178  0.29754227  0.51227417  1
+  Sc  Sc7  1  0.10736595  0.48772583  0.29754227  1
+  Sc  Sc8  1  0.40490822  0.70245773  0.48772583  1
+  Ir  Ir9  1  0.74541111  0.32999017  0.17918761  1
+  Ir  Ir10  1  0.25458889  0.67000983  0.82081239  1
+  Ir  Ir11  1  0.92459872  0.82081239  0.32999017  1
+  Ir  Ir12  1  0.07540128  0.17918761  0.67000983  1

@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ca2UH8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.52773601
+_cell_length_b   5.54365515
+_cell_length_c   6.42481319
+_cell_angle_alpha   115.55803003
+_cell_angle_beta   105.93830646
+_cell_angle_gamma   90.00000126
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ca2UH8
+_chemical_formula_sum   'Ca2 U1 H8'
+_cell_volume   107.97372163
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ca  Ca0  1  0.17850688  0.67850889  0.35701178  1
+  Ca  Ca1  1  0.82149312  0.32149111  0.64298822  1
+  U  U2  1  0.50000100  -0.00000000  0.00000000  1
+  H  H3  1  0.65230158  0.89673073  0.30460413  1
+  H  H4  1  0.34769742  0.59212960  0.69539287  1
+  H  H5  1  0.13614271  0.13614266  0.27229731  1
+  H  H6  1  0.99999900  0.26289495  0.99999900  1
+  H  H7  1  0.86385629  0.86385734  0.72770269  1
+  H  H8  1  0.65230258  0.40787040  0.30460713  1
+  H  H9  1  0.34769842  0.10326927  0.69539587  1
+  H  H10  1  0.00000100  0.73710505  0.00000100  1

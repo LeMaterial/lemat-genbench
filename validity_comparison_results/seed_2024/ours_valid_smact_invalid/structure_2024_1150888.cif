@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_Dy3Sb2S
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.23343347
+_cell_length_b   4.23343347
+_cell_length_c   10.34198538
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy3Sb2S
+_chemical_formula_sum   'Dy3 Sb2 S1'
+_cell_volume   160.51662877
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.00000000  0.00000000  0.00000000  1
+  Dy  Dy1  1  0.66666785  0.33333416  0.35482355  1
+  Dy  Dy2  1  0.33333279  0.66666559  0.64517689  1
+  S  S3  1  0.00000000  0.00000000  0.49999974  1
+  Sb  Sb4  1  0.33333279  0.66666559  0.17808283  1
+  Sb  Sb5  1  0.66666785  0.33333416  0.82191762  1

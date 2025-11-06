@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_Pm11Dy9Ho4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.65341738
+_cell_length_b   15.36791394
+_cell_length_c   15.36791344
+_cell_angle_alpha   113.16411790
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pm11Dy9Ho4
+_chemical_formula_sum   'Pm11 Dy9 Ho4'
+_cell_volume   793.27734420
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.00000000  0.59434643  0.95660250  1
+  Pm  Pm1  1  0.00000000  0.40565357  0.04339750  1
+  Pm  Pm2  1  0.00000000  0.95660250  0.59434643  1
+  Pm  Pm3  1  0.00000000  0.04339750  0.40565357  1
+  Pm  Pm4  1  0.00000000  0.63160547  0.36839453  1
+  Pm  Pm5  1  0.00000000  0.36839453  0.63160547  1
+  Pm  Pm6  1  0.00000000  0.83935819  0.16064181  1
+  Pm  Pm7  1  0.00000000  0.16064181  0.83935819  1
+  Pm  Pm8  1  0.00000000  0.00000000  0.00000000  1
+  Pm  Pm9  1  0.00000000  0.70777607  0.70777607  1
+  Pm  Pm10  1  0.00000000  0.29222393  0.29222393  1
+  Dy  Dy11  1  0.50000000  0.63051774  0.16527061  1
+  Dy  Dy12  1  0.50000000  0.36948226  0.83472939  1
+  Dy  Dy13  1  0.50000000  0.16527061  0.63051774  1
+  Dy  Dy14  1  0.50000000  0.83472939  0.36948226  1
+  Dy  Dy15  1  0.50000000  0.78619865  0.93224512  1
+  Dy  Dy16  1  0.50000000  0.21380135  0.06775488  1
+  Dy  Dy17  1  0.50000000  0.93224512  0.78619865  1
+  Dy  Dy18  1  0.50000000  0.06775488  0.21380135  1
+  Dy  Dy19  1  0.50000000  0.50000000  0.50000000  1
+  Ho  Ho20  1  0.50000000  0.55531357  0.75852157  1
+  Ho  Ho21  1  0.50000000  0.44468643  0.24147843  1
+  Ho  Ho22  1  0.50000000  0.75852157  0.55531357  1
+  Ho  Ho23  1  0.50000000  0.24147843  0.44468643  1

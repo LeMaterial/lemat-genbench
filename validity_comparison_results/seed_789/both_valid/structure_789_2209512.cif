@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_SmHo7Tm2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.56442614
+_cell_length_b   9.10863093
+_cell_length_c   9.10865948
+_cell_angle_alpha   122.89808232
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmHo7Tm2
+_chemical_formula_sum   'Sm1 Ho7 Tm2'
+_cell_volume   387.63239332
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.00000000  0.00000000  0.00000000  1
+  Ho  Ho1  1  0.00000000  0.78464008  0.21535295  1
+  Ho  Ho2  1  0.00000000  0.21535992  0.78464705  1
+  Ho  Ho3  1  0.50000000  0.06188353  0.29196240  1
+  Ho  Ho4  1  0.50000000  0.93811647  0.70803760  1
+  Ho  Ho5  1  0.50000000  0.29196211  0.06188524  1
+  Ho  Ho6  1  0.50000000  0.70803789  0.93811476  1
+  Ho  Ho7  1  0.50000000  0.50000000  0.50000000  1
+  Tm  Tm8  1  0.50000000  0.70342390  0.29657597  1
+  Tm  Tm9  1  0.50000000  0.29657610  0.70342403  1

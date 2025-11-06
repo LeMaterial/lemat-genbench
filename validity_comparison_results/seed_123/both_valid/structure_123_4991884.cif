@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_BaCaGaP2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.27639120
+_cell_length_b   7.32634813
+_cell_length_c   7.80258260
+_cell_angle_alpha   104.89253839
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaCaGaP2
+_chemical_formula_sum   'Ba2 Ca2 Ga2 P4'
+_cell_volume   291.49031538
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.21772296  0.50000000  0.75000000  1
+  Ba  Ba1  1  0.78227704  0.50000000  0.25000000  1
+  Ca  Ca2  1  0.48308212  0.00000000  0.25000000  1
+  Ca  Ca3  1  0.51691788  0.00000000  0.75000000  1
+  Ga  Ga4  1  0.00000000  0.00000000  0.00000000  1
+  Ga  Ga5  1  0.00000000  0.00000000  0.50000000  1
+  P  P6  1  0.73631456  0.75144988  0.94770918  1
+  P  P7  1  0.73631456  0.24855012  0.55229082  1
+  P  P8  1  0.26368444  0.75144988  0.44770918  1
+  P  P9  1  0.26368444  0.24855012  0.05229082  1

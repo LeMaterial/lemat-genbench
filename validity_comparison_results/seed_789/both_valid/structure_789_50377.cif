@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_CaTa2Au
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   2.95190025
+_cell_length_b   2.95190025
+_cell_length_c   9.49737741
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   99.65074528
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CaTa2Au
+_chemical_formula_sum   'Ca1 Ta2 Au1'
+_cell_volume   81.58625308
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ca  Ca0  1  0.50000000  0.50000000  0.73240250  1
+  Au  Au1  1  0.00000000  0.00000000  0.48147418  1
+  Ta  Ta2  1  0.00000000  0.00000000  0.03026717  1
+  Ta  Ta3  1  0.50000000  0.50000000  0.25585616  1

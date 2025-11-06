@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_ZnFeNi2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.46961859
+_cell_length_b   4.46967184
+_cell_length_c   4.35378480
+_cell_angle_alpha   79.47769430
+_cell_angle_beta   79.47798975
+_cell_angle_gamma   33.38792535
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZnFeNi2
+_chemical_formula_sum   'Zn1 Fe1 Ni2'
+_cell_volume   46.98686797
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.00207818  0.00208129  0.01631938  1
+  Ni  Ni1  1  0.74588674  0.74588053  0.73918931  1
+  Zn  Zn2  1  0.49687118  0.49687462  0.51791825  1
+  Fe  Fe3  1  0.25516390  0.25516356  0.22657305  1

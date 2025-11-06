@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Nd8AlCo2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.31004504
+_cell_length_b   8.13756912
+_cell_length_c   8.13756884
+_cell_angle_alpha   113.05991148
+_cell_angle_beta   96.99135966
+_cell_angle_gamma   96.99136056
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nd8AlCo2
+_chemical_formula_sum   'Nd8 Al1 Co2'
+_cell_volume   315.55625723
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nd  Nd0  1  0.56468022  0.32416840  0.06961018  1
+  Nd  Nd1  1  0.56468022  0.06961018  0.32416840  1
+  Nd  Nd2  1  0.19297156  0.38500246  0.38500246  1
+  Nd  Nd3  1  0.99992006  0.25535549  0.75071508  1
+  Nd  Nd4  1  0.99992006  0.75071508  0.25535549  1
+  Nd  Nd5  1  0.80721189  0.62135283  0.62135283  1
+  Nd  Nd6  1  0.43520260  0.93651094  0.68184567  1
+  Nd  Nd7  1  0.43520260  0.68184567  0.93651094  1
+  Al  Al8  1  0.99983374  0.00321321  0.00321321  1
+  Co  Co9  1  0.50002202  0.69559819  0.31056156  1
+  Co  Co10  1  0.50002202  0.31056156  0.69559819  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_CsRhN
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.13245979
+_cell_length_b   6.13245979
+_cell_length_c   6.13245979
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsRhN
+_chemical_formula_sum   'Cs4 Rh4 N4'
+_cell_volume   230.62380213
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rh  Rh0  1  0.35600683  0.64399317  0.14399317  1
+  Rh  Rh1  1  0.14399317  0.35600683  0.64399317  1
+  Rh  Rh2  1  0.64399317  0.14399317  0.35600683  1
+  Rh  Rh3  1  0.85600683  0.85600683  0.85600683  1
+  N  N4  1  0.39820549  0.39820549  0.39820549  1
+  N  N5  1  0.10179451  0.60179451  0.89820549  1
+  N  N6  1  0.89820549  0.10179451  0.60179451  1
+  N  N7  1  0.60179451  0.89820549  0.10179451  1
+  Cs  Cs8  1  0.13004326  0.13004326  0.13004326  1
+  Cs  Cs9  1  0.63004326  0.36995674  0.86995674  1
+  Cs  Cs10  1  0.36995674  0.86995674  0.63004326  1
+  Cs  Cs11  1  0.86995674  0.63004326  0.36995674  1

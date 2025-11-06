@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_PuZnSb2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.38696884
+_cell_length_b   4.38696884
+_cell_length_c   10.01696735
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PuZnSb2
+_chemical_formula_sum   'Pu2 Zn2 Sb4'
+_cell_volume   192.78150109
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pu  Pu0  1  0.00000000  0.50000000  0.25952458  1
+  Pu  Pu1  1  0.50000000  0.00000000  0.74047542  1
+  Zn  Zn2  1  0.50000000  0.50000000  0.00000000  1
+  Zn  Zn3  1  0.00000000  0.00000000  0.00000000  1
+  Sb  Sb4  1  0.50000000  0.00000000  0.17900095  1
+  Sb  Sb5  1  0.00000000  0.50000000  0.82099905  1
+  Sb  Sb6  1  0.00000000  0.00000000  0.50000000  1
+  Sb  Sb7  1  0.50000000  0.50000000  0.50000000  1

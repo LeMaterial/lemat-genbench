@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_NpGa3Ir
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.17718914
+_cell_length_b   4.17718826
+_cell_length_c   6.17795642
+_cell_angle_alpha   109.75946318
+_cell_angle_beta   109.75945316
+_cell_angle_gamma   90.00000075
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NpGa3Ir
+_chemical_formula_sum   'Np1 Ga3 Ir1'
+_cell_volume   94.67971418
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Np  Np0  1  0.00904532  0.00904532  0.01809063  1
+  Ga  Ga1  1  0.26533013  0.76533013  0.53065927  1
+  Ga  Ga2  1  0.76533013  0.26533013  0.53065927  1
+  Ga  Ga3  1  0.41398831  0.41398831  0.82797561  1
+  Ir  Ir4  1  0.63656011  0.63656011  0.27312122  1

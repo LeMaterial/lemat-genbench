@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_NaTmHgSe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.17689242
+_cell_length_b   4.14214646
+_cell_length_c   10.01137556
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   105.03865482
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaTmHgSe3
+_chemical_formula_sum   'Na2 Tm2 Hg2 Se6'
+_cell_volume   327.47085320
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hg  Hg0  1  0.40324797  0.75000004  0.39564686  1
+  Hg  Hg1  1  0.59675286  0.25000082  0.60435357  1
+  Na  Na2  1  0.69605301  0.25000082  0.20664021  1
+  Na  Na3  1  0.30394660  0.75000004  0.79336022  1
+  Se  Se4  1  0.41141306  0.75000004  0.13395155  1
+  Se  Se5  1  0.93434018  0.75000004  0.14585412  1
+  Se  Se6  1  0.22859405  0.25000082  0.45816227  1
+  Se  Se7  1  0.77140646  0.75000004  0.54183712  1
+  Se  Se8  1  0.06565910  0.25000082  0.85414527  1
+  Se  Se9  1  0.58858655  0.25000082  0.86604888  1
+  Tm  Tm10  1  0.16821968  0.25000082  0.14512081  1
+  Tm  Tm11  1  0.83177993  0.75000004  0.85487961  1

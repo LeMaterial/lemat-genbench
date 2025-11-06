@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_NdCu(AgSe2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.08445300
+_cell_length_b   7.22178794
+_cell_length_c   12.99637194
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   106.42660193
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NdCu(AgSe2)2
+_chemical_formula_sum   'Nd2 Cu2 Ag4 Se8'
+_cell_volume   367.70720605
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nd  Nd0  1  0.09296190  0.18592380  0.75000000  1
+  Nd  Nd1  1  0.90703810  0.81407620  0.25000000  1
+  Cu  Cu2  1  0.83359461  0.66718923  0.75000000  1
+  Cu  Cu3  1  0.16640539  0.33281077  0.25000000  1
+  Ag  Ag4  1  0.37343067  0.74686134  0.55751735  1
+  Ag  Ag5  1  0.62656933  0.25313866  0.05751735  1
+  Ag  Ag6  1  0.62656933  0.25313866  0.44248265  1
+  Ag  Ag7  1  0.37343067  0.74686134  0.94248265  1
+  Se  Se8  1  0.30015813  0.60031626  0.12644659  1
+  Se  Se9  1  0.69984187  0.39968374  0.62644659  1
+  Se  Se10  1  0.69984187  0.39968374  0.87355341  1
+  Se  Se11  1  0.30015813  0.60031626  0.37355341  1
+  Se  Se12  1  0.00000000  0.00000000  0.50000000  1
+  Se  Se13  1  0.00000000  0.00000000  0.00000000  1
+  Se  Se14  1  0.43238028  0.86476056  0.75000000  1
+  Se  Se15  1  0.56761972  0.13523944  0.25000000  1

@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ba8CdAu2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.89462627
+_cell_length_b   9.15185373
+_cell_length_c   9.15185292
+_cell_angle_alpha   110.17175409
+_cell_angle_beta   98.23516741
+_cell_angle_gamma   98.23516360
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba8CdAu2
+_chemical_formula_sum   'Ba8 Cd1 Au2'
+_cell_volume   524.80019439
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.58692824  0.33172776  0.06602307  1
+  Ba  Ba1  1  0.58692824  0.06602307  0.33172776  1
+  Ba  Ba2  1  0.19636871  0.37610497  0.37610497  1
+  Ba  Ba3  1  0.98381454  0.23498386  0.76081998  1
+  Ba  Ba4  1  0.98381454  0.76081998  0.23498386  1
+  Ba  Ba5  1  0.78850191  0.63873696  0.63873696  1
+  Ba  Ba6  1  0.38373671  0.93963067  0.66674333  1
+  Ba  Ba7  1  0.38373671  0.66674333  0.93963067  1
+  Cd  Cd8  1  0.12103913  0.01365998  0.01365998  1
+  Au  Au9  1  0.49239913  0.68772738  0.31777604  1
+  Au  Au10  1  0.49239913  0.31777604  0.68772738  1

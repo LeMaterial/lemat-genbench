@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_MoIBr3Cl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.69754915
+_cell_length_b   7.24258914
+_cell_length_c   9.82328107
+_cell_angle_alpha   108.92803560
+_cell_angle_beta   91.76771057
+_cell_angle_gamma   116.20411639
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MoIBr3Cl
+_chemical_formula_sum   'Mo2 I2 Br6 Cl2'
+_cell_volume   395.81504421
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Br  Br0  1  0.88192266  0.37053607  0.13822151  1
+  Br  Br1  1  0.30125737  0.00120963  0.23862029  1
+  Br  Br2  1  0.44081603  0.56462437  0.32487542  1
+  Br  Br3  1  0.55918525  0.43537627  0.67512432  1
+  Br  Br4  1  0.69874318  0.99878948  0.76137944  1
+  Br  Br5  1  0.11807863  0.62946457  0.86177823  1
+  Cl  Cl6  1  0.78109204  0.83415935  0.04176905  1
+  Cl  Cl7  1  0.21890702  0.16583976  0.95823068  1
+  I  I8  1  0.92604218  0.19205807  0.44092206  1
+  I  I9  1  0.07395911  0.80794257  0.55907767  1
+  Mo  Mo10  1  0.10296226  0.20667040  0.20658346  1
+  Mo  Mo11  1  0.89703754  0.79333025  0.79341627  1

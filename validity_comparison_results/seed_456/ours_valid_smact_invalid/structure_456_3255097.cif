@@ -1,0 +1,54 @@
+# generated using pymatgen
+data_Tb(Pm2Dy)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.34640787
+_cell_length_b   11.37210960
+_cell_length_c   15.53061499
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb(Pm2Dy)2
+_chemical_formula_sum   'Tb4 Pm16 Dy8'
+_cell_volume   944.26040153
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.00000000  0.00000000  0.50000000  1
+  Tb  Tb1  1  0.50000000  0.50000000  0.50000000  1
+  Tb  Tb2  1  0.00000000  0.50000000  0.00000000  1
+  Tb  Tb3  1  0.50000000  0.00000000  0.00000000  1
+  Pm  Pm4  1  0.99998808  0.70707439  0.57049575  1
+  Pm  Pm5  1  0.49998808  0.79292561  0.42950425  1
+  Pm  Pm6  1  0.00001192  0.20707339  0.92950425  1
+  Pm  Pm7  1  0.50001192  0.29292561  0.07049575  1
+  Pm  Pm8  1  0.00001192  0.29292561  0.42950425  1
+  Pm  Pm9  1  0.50001192  0.20707439  0.57049575  1
+  Pm  Pm10  1  0.99998808  0.79292561  0.07049575  1
+  Pm  Pm11  1  0.49998808  0.70707439  0.92950425  1
+  Pm  Pm12  1  0.99957770  0.10022675  0.69393854  1
+  Pm  Pm13  1  0.49957770  0.39977325  0.30606146  1
+  Pm  Pm14  1  0.00042230  0.60022675  0.80606146  1
+  Pm  Pm15  1  0.50042230  0.89977325  0.19393854  1
+  Pm  Pm16  1  0.00042230  0.89977325  0.30606146  1
+  Pm  Pm17  1  0.50042230  0.60022675  0.69393854  1
+  Pm  Pm18  1  0.99957770  0.39977325  0.19393854  1
+  Pm  Pm19  1  0.49957770  0.10022675  0.80606146  1
+  Dy  Dy20  1  0.99961265  0.89439420  0.84318003  1
+  Dy  Dy21  1  0.49961265  0.60560580  0.15681997  1
+  Dy  Dy22  1  0.00038735  0.39439420  0.65681997  1
+  Dy  Dy23  1  0.50038735  0.10560580  0.34318003  1
+  Dy  Dy24  1  0.00038735  0.10560580  0.15681997  1
+  Dy  Dy25  1  0.50038735  0.39439420  0.84318003  1
+  Dy  Dy26  1  0.99961265  0.60560580  0.34318003  1
+  Dy  Dy27  1  0.49961265  0.89439420  0.65681997  1

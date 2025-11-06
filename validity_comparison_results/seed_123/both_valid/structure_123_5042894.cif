@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_HfTi2Co
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.01782234
+_cell_length_b   4.01782234
+_cell_length_c   5.56550986
+_cell_angle_alpha   68.84100399
+_cell_angle_beta   68.84100395
+_cell_angle_gamma   59.99999997
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfTi2Co
+_chemical_formula_sum   'Hf1 Ti2 Co1'
+_cell_volume   70.72624766
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.49149066  0.49149066  0.52552802  1
+  Ti  Ti1  1  0.04990608  0.04990608  0.85028177  1
+  Ti  Ti2  1  0.27816417  0.27816417  0.16550748  1
+  Co  Co3  1  0.68043909  0.68043909  0.95868174  1

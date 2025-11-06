@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Sr8Cd2Ni
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.28648994
+_cell_length_b   8.70461604
+_cell_length_c   8.70461793
+_cell_angle_alpha   73.01279802
+_cell_angle_beta   75.04788005
+_cell_angle_gamma   75.04790003
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr8Cd2Ni
+_chemical_formula_sum   'Sr8 Cd2 Ni1'
+_cell_volume   500.07017355
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.24187327  0.66576648  0.05586094  1
+  Sr  Sr1  1  0.75812673  0.94413906  0.33423352  1
+  Sr  Sr2  1  0.25126918  0.12630688  0.12630688  1
+  Sr  Sr3  1  0.74873082  0.87369312  0.87369312  1
+  Sr  Sr4  1  0.24187327  0.05586094  0.66576648  1
+  Sr  Sr5  1  0.75812673  0.33423352  0.94413906  1
+  Sr  Sr6  1  0.80301705  0.41129315  0.41129315  1
+  Sr  Sr7  1  0.19698295  0.58870685  0.58870685  1
+  Cd  Cd8  1  0.40950679  0.32681667  0.32681667  1
+  Cd  Cd9  1  0.59049321  0.67318333  0.67318333  1
+  Ni  Ni10  1  0.00000000  0.00000000  0.00000000  1

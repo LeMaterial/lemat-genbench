@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Ca4HfU3As8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.19338144
+_cell_length_b   8.32470755
+_cell_length_c   8.19343970
+_cell_angle_alpha   119.47996906
+_cell_angle_beta   119.99976480
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ca4HfU3As8
+_chemical_formula_sum   'Ca4 Hf1 U3 As8'
+_cell_volume   398.24860420
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ca  Ca0  1  0.50000000  0.00000000  0.00000000  1
+  Ca  Ca1  1  0.50000000  0.00000000  0.50000000  1
+  Ca  Ca2  1  0.00000000  0.00000000  0.00000000  1
+  Ca  Ca3  1  0.00000000  0.00000000  0.50000000  1
+  Hf  Hf4  1  0.00000000  0.50000000  0.00000000  1
+  U  U5  1  0.50000000  0.50000000  0.00000000  1
+  U  U6  1  0.50000000  0.50000000  0.50000000  1
+  U  U7  1  0.00000000  0.50000000  0.50000000  1
+  As  As8  1  0.23858185  0.72778332  0.98919871  1
+  As  As9  1  0.23858415  0.72777873  0.47716831  1
+  As  As10  1  0.25540545  0.26623090  0.51081090  1
+  As  As11  1  0.75061686  0.72778332  0.98919871  1
+  As  As12  1  0.24938314  0.27221668  0.01080129  1
+  As  As13  1  0.74459455  0.73376910  0.48918910  1
+  As  As14  1  0.76141585  0.27222127  0.52283169  1
+  As  As15  1  0.76141815  0.27221668  0.01080129  1

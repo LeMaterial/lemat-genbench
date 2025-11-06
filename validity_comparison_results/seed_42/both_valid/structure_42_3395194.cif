@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Rb2PaTeO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.07557120
+_cell_length_b   6.07557174
+_cell_length_c   6.07652731
+_cell_angle_alpha   120.00245906
+_cell_angle_beta   120.00247504
+_cell_angle_gamma   89.99686471
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Rb2PaTeO6
+_chemical_formula_sum   'Rb2 Pa1 Te1 O6'
+_cell_volume   158.59672541
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Rb  Rb0  1  0.74989034  0.25037363  0.49976383  1
+  Rb  Rb1  1  0.24987325  0.75039123  0.49976457  1
+  Pa  Pa2  1  0.49989642  0.50039483  0.99979464  1
+  Te  Te3  1  0.99989854  0.00039666  0.99979651  1
+  O  O4  1  0.75449291  0.75501035  0.99959391  1
+  O  O5  1  0.75463653  0.75513046  0.50956148  1
+  O  O6  1  0.24531949  0.24579103  0.00003684  1
+  O  O7  1  0.75456011  0.24575264  0.99979699  1
+  O  O8  1  0.24516844  0.24566641  0.49003017  1
+  O  O9  1  0.24523496  0.75503776  0.99980405  1

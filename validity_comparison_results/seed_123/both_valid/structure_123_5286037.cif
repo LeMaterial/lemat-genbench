@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_CeNd2IrN4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.43911051
+_cell_length_b   6.21760255
+_cell_length_c   12.09437242
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   106.05514636
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CeNd2IrN4
+_chemical_formula_sum   'Ce2 Nd4 Ir2 N8'
+_cell_volume   248.52723319
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.11127335  0.22254671  0.75000000  1
+  Ce  Ce1  1  0.88872665  0.77745329  0.25000000  1
+  Nd  Nd2  1  0.36961241  0.73922483  0.54835224  1
+  Nd  Nd3  1  0.63038759  0.26077517  0.04835224  1
+  Nd  Nd4  1  0.63038759  0.26077517  0.45164776  1
+  Nd  Nd5  1  0.36961241  0.73922483  0.95164776  1
+  Ir  Ir6  1  0.84873282  0.69746564  0.75000000  1
+  Ir  Ir7  1  0.15126718  0.30253436  0.25000000  1
+  N  N8  1  0.28344168  0.56688337  0.13924901  1
+  N  N9  1  0.71655832  0.43311663  0.63924901  1
+  N  N10  1  0.71655832  0.43311663  0.86075099  1
+  N  N11  1  0.28344168  0.56688337  0.36075099  1
+  N  N12  1  0.00000000  0.00000000  0.50000000  1
+  N  N13  1  0.00000000  0.00000000  0.00000000  1
+  N  N14  1  0.45245976  0.90491952  0.75000000  1
+  N  N15  1  0.54754024  0.09508048  0.25000000  1

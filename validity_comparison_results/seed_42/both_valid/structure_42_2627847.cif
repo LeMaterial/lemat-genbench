@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_NaB2H7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   2.93830042
+_cell_length_b   6.82812474
+_cell_length_c   6.82812931
+_cell_angle_alpha   144.00816210
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaB2H7
+_chemical_formula_sum   'Na1 B2 H7'
+_cell_volume   80.50686205
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.00000000  0.00000000  0.00000000  1
+  B  B1  1  0.50000000  0.61026984  0.38973020  1
+  B  B2  1  0.50000000  0.38973016  0.61026980  1
+  H  H3  1  0.00000000  0.59074577  0.40925400  1
+  H  H4  1  0.00000000  0.40925423  0.59074600  1
+  H  H5  1  0.50000000  0.09322288  0.40440436  1
+  H  H6  1  0.50000000  0.90677712  0.59559564  1
+  H  H7  1  0.50000000  0.40440373  0.09322246  1
+  H  H8  1  0.50000000  0.59559627  0.90677754  1
+  H  H9  1  0.50000000  0.50000000  0.50000000  1

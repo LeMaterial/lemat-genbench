@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Dy3Tl2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.10712038
+_cell_length_b   6.10712091
+_cell_length_c   8.93181710
+_cell_angle_alpha   109.99088750
+_cell_angle_beta   109.99134678
+_cell_angle_gamma   90.00000742
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy3Tl2
+_chemical_formula_sum   'Dy6 Tl4'
+_cell_volume   291.60587835
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.13248142  0.88252276  0.26496484  1
+  Dy  Dy1  1  0.13244308  0.38248342  0.76496484  1
+  Dy  Dy2  1  0.63252276  0.38248342  0.76496584  1
+  Dy  Dy3  1  0.13248242  0.38244308  0.26496584  1
+  Dy  Dy4  1  0.50737572  0.00737672  0.01475244  1
+  Dy  Dy5  1  0.75737572  0.75737672  0.51475244  1
+  Tl  Tl6  1  0.95343152  0.95343352  0.90686405  1
+  Tl  Tl7  1  0.70343152  0.20343252  0.40686405  1
+  Tl  Tl8  1  0.56138392  0.56138192  0.12276584  1
+  Tl  Tl9  1  0.31138292  0.81138192  0.62276584  1

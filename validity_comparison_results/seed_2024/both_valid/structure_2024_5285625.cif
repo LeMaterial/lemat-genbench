@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_BaPu2CoO8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.15624169
+_cell_length_b   5.15500590
+_cell_length_c   7.00231540
+_cell_angle_alpha   89.90460239
+_cell_angle_beta   89.90517820
+_cell_angle_gamma   84.69055809
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaPu2CoO8
+_chemical_formula_sum   'Ba1 Pu2 Co1 O8'
+_cell_volume   185.32569623
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.00000000  0.00000000  0.50000000  1
+  Pu  Pu1  1  0.49980776  0.49981088  0.76305089  1
+  Pu  Pu2  1  0.50019224  0.50018912  0.23694911  1
+  Co  Co3  1  0.00000000  0.00000000  0.00000000  1
+  O  O4  1  0.21898533  0.77995382  0.20617700  1
+  O  O5  1  0.68006686  0.68075671  0.00004651  1
+  O  O6  1  0.78069123  0.21972066  0.20617227  1
+  O  O7  1  0.78101467  0.22004618  0.79382300  1
+  O  O8  1  0.31993314  0.31924329  0.99995349  1
+  O  O9  1  0.21930877  0.78027934  0.79382773  1
+  O  O10  1  0.65903049  0.65999986  0.50090180  1
+  O  O11  1  0.34096951  0.34000014  0.49909820  1

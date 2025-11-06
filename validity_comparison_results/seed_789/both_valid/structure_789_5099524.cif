@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_MgCdGa2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.11925432
+_cell_length_b   6.38053070
+_cell_length_c   6.75422104
+_cell_angle_alpha   89.99812198
+_cell_angle_beta   90.00109327
+_cell_angle_gamma   110.08411361
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgCdGa2
+_chemical_formula_sum   'Mg2 Cd2 Ga4'
+_cell_volume   166.72622133
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg0  1  0.54526070  0.08953759  0.24999900  1
+  Mg  Mg1  1  0.45473930  0.91046241  0.75000100  1
+  Cd  Cd2  1  0.25196709  0.52230466  0.24999100  1
+  Cd  Cd3  1  0.74803291  0.47769534  0.75000900  1
+  Ga  Ga4  1  0.89123665  0.78951641  0.44690589  1
+  Ga  Ga5  1  0.10876335  0.21048359  0.55309411  1
+  Ga  Ga6  1  0.10868535  0.21049159  0.94689789  1
+  Ga  Ga7  1  0.89131465  0.78950841  0.05310211  1

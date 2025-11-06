@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_La4Tl5Pb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.39927162
+_cell_length_b   6.91044485
+_cell_length_c   9.20033891
+_cell_angle_alpha   106.09137586
+_cell_angle_beta   107.06319564
+_cell_angle_gamma   89.99986243
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La4Tl5Pb
+_chemical_formula_sum   'La4 Tl5 Pb1'
+_cell_volume   314.07112821
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.69271011  0.24877053  0.38542023  1
+  La  La1  1  0.07653779  0.83036240  0.15307459  1
+  La  La2  1  0.30728989  0.75122947  0.61457977  1
+  La  La3  1  0.92346221  0.16963760  0.84692541  1
+  Tl  Tl4  1  0.30020276  0.23267507  0.60040553  1
+  Tl  Tl5  1  0.12171973  0.40229270  0.24343946  1
+  Tl  Tl6  1  0.87828027  0.59770730  0.75656054  1
+  Tl  Tl7  1  0.50000000  0.50000000  0.00000000  1
+  Tl  Tl8  1  0.69979724  0.76732493  0.39959447  1
+  Pb  Pb9  1  0.50000000  -0.00000000  -0.00000000  1

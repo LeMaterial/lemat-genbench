@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_SmY4Ho7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.15555624
+_cell_length_b   9.46064550
+_cell_length_c   8.81558322
+_cell_angle_alpha   81.13949295
+_cell_angle_beta   90.04375089
+_cell_angle_gamma   40.96426223
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmY4Ho7
+_chemical_formula_sum   'Sm1 Y4 Ho7'
+_cell_volume   380.20758048
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.00000000  0.00000000  0.00000000  1
+  Y  Y1  1  0.52959557  0.71977390  0.33470044  1
+  Y  Y2  1  0.47040443  0.28022610  0.66529956  1
+  Y  Y3  1  0.72204046  0.77815250  0.66618837  1
+  Y  Y4  1  0.27795954  0.22184750  0.33381163  1
+  Ho  Ho5  1  0.75049366  0.49913362  0.99900371  1
+  Ho  Ho6  1  0.24950634  0.50086638  0.00099629  1
+  Ho  Ho7  1  0.97235006  0.27735023  0.66628609  1
+  Ho  Ho8  1  0.02764994  0.72264977  0.33371391  1
+  Ho  Ho9  1  0.22131832  0.77892017  0.66616355  1
+  Ho  Ho10  1  0.50000000  0.00000000  0.00000000  1
+  Ho  Ho11  1  0.77868168  0.22107983  0.33383645  1

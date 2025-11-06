@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Pu4HgRu2Pt
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.96295843
+_cell_length_b   4.96295843
+_cell_length_c   8.56461560
+_cell_angle_alpha   73.15783637
+_cell_angle_beta   73.15783634
+_cell_angle_gamma   59.99999996
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pu4HgRu2Pt
+_chemical_formula_sum   'Pu4 Hg1 Ru2 Pt1'
+_cell_volume   172.16446721
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pu  Pu0  1  0.38081147  0.38081147  0.85756560  1
+  Pu  Pu1  1  0.87003084  0.87003084  0.38990748  1
+  Pu  Pu2  1  0.12996916  0.12996916  0.61009252  1
+  Pu  Pu3  1  0.61918853  0.61918853  0.14243440  1
+  Hg  Hg4  1  0.00000000  0.00000000  0.00000000  1
+  Ru  Ru5  1  0.75107915  0.75107915  0.74676256  1
+  Ru  Ru6  1  0.24892085  0.24892085  0.25323744  1
+  Pt  Pt7  1  0.50000000  0.50000000  0.50000000  1

@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_In2Ag3Au4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.16008267
+_cell_length_b   4.29102544
+_cell_length_c   9.82570192
+_cell_angle_alpha   64.48245006
+_cell_angle_beta   64.64954469
+_cell_angle_gamma   64.93195304
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   In2Ag3Au4
+_chemical_formula_sum   'In2 Ag3 Au4'
+_cell_volume   169.62581086
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  In  In0  1  0.66179701  0.44590401  0.22236692  1
+  In  In1  1  0.33820299  0.55409599  0.77763308  1
+  Ag  Ag2  1  0.66909390  0.11166448  0.55317415  1
+  Ag  Ag3  1  0.00000000  0.00000000  0.00000000  1
+  Ag  Ag4  1  0.33090610  0.88833552  0.44682585  1
+  Au  Au5  1  0.33129996  0.22153329  0.11151985  1
+  Au  Au6  1  0.00295823  0.33532538  0.66496299  1
+  Au  Au7  1  0.99704177  0.66467462  0.33503701  1
+  Au  Au8  1  0.66870004  0.77846671  0.88848015  1

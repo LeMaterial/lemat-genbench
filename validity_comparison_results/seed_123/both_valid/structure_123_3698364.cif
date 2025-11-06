@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Mg5Ga3Ag
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.44507291
+_cell_length_b   6.44507291
+_cell_length_c   10.01379589
+_cell_angle_alpha   84.91582130
+_cell_angle_beta   84.91582126
+_cell_angle_gamma   85.08536740
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Mg5Ga3Ag
+_chemical_formula_sum   'Mg10 Ga6 Ag2'
+_cell_volume   411.42461703
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg0  1  0.98975302  0.40136255  0.34871631  1
+  Mg  Mg1  1  0.31168013  0.68831987  -0.00000000  1
+  Mg  Mg2  1  0.73377233  0.73377233  0.14407474  1
+  Mg  Mg3  1  0.46698538  0.46698538  0.33448767  1
+  Mg  Mg4  1  0.53301462  0.53301462  0.66551233  1
+  Mg  Mg5  1  0.26622767  0.26622767  0.85592526  1
+  Mg  Mg6  1  0.40136255  0.98975302  0.34871631  1
+  Mg  Mg7  1  0.68831987  0.31168013  -0.00000000  1
+  Mg  Mg8  1  0.01024698  0.59863745  0.65128369  1
+  Mg  Mg9  1  0.59863745  0.01024698  0.65128369  1
+  Ga  Ga10  1  0.72786988  0.72786988  0.86848631  1
+  Ga  Ga11  1  0.73536183  0.73536183  0.43238643  1
+  Ga  Ga12  1  0.00000000  0.00000000  0.00000000  1
+  Ga  Ga13  1  -0.00000000  -0.00000000  0.50000000  1
+  Ga  Ga14  1  0.27213012  0.27213012  0.13151369  1
+  Ga  Ga15  1  0.26463817  0.26463817  0.56761357  1
+  Ag  Ag16  1  0.01067359  0.01067359  0.74871174  1
+  Ag  Ag17  1  0.98932641  0.98932641  0.25128826  1

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_LuZnN3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.34404635
+_cell_length_b   6.49070446
+_cell_length_c   6.86712059
+_cell_angle_alpha   90.83388465
+_cell_angle_beta   68.60084861
+_cell_angle_gamma   121.63639772
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LuZnN3
+_chemical_formula_sum   'Lu2 Zn2 N6'
+_cell_volume   115.17659895
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zn  Zn0  1  0.68430438  0.06084970  0.16268116  1
+  Zn  Zn1  1  0.31569562  0.93915030  0.83731884  1
+  Lu  Lu2  1  0.63613991  0.53815172  0.22840797  1
+  Lu  Lu3  1  0.36386009  0.46184828  0.77159203  1
+  N  N4  1  0.51191369  0.74513313  0.97884010  1
+  N  N5  1  0.48808631  0.25486687  0.02115990  1
+  N  N6  1  0.70334674  0.28912902  0.42929901  1
+  N  N7  1  0.18932007  0.74749504  0.42390051  1
+  N  N8  1  0.29665326  0.71087098  0.57070099  1
+  N  N9  1  0.81067993  0.25250496  0.57609949  1

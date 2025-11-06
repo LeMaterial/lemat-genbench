@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Pm6As2S3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.93786717
+_cell_length_b   6.94308699
+_cell_length_c   6.94308745
+_cell_angle_alpha   120.00000224
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pm6As2S3
+_chemical_formula_sum   'Pm6 As2 S3'
+_cell_volume   289.64220451
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.75146558  0.33104015  0.33106610  1
+  Pm  Pm1  1  0.75146558  0.00002595  0.66895985  1
+  Pm  Pm2  1  0.75146558  0.66893390  0.99997405  1
+  Pm  Pm3  1  0.24853442  0.66895985  0.66893390  1
+  Pm  Pm4  1  0.24853442  0.99997405  0.33104015  1
+  Pm  Pm5  1  0.24853442  0.33106610  0.00002595  1
+  As  As6  1  0.49997666  0.33333300  0.66666700  1
+  As  As7  1  0.50002334  0.66666700  0.33333300  1
+  S  S8  1  0.00001107  0.66666700  0.33333300  1
+  S  S9  1  0.99998893  0.33333300  0.66666700  1
+  S  S10  1  0.50000000  0.00000000  0.00000000  1

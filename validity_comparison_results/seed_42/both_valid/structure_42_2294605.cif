@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Sm4PuTl5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.83213268
+_cell_length_b   3.83213268
+_cell_length_c   19.54392261
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sm4PuTl5
+_chemical_formula_sum   'Sm4 Pu1 Tl5'
+_cell_volume   287.00721121
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.00000000  0.00000000  0.19874095  1
+  Sm  Sm1  1  0.00000000  0.00000000  0.39952204  1
+  Sm  Sm2  1  0.00000000  0.00000000  0.60047796  1
+  Sm  Sm3  1  0.00000000  0.00000000  0.80125905  1
+  Pu  Pu4  1  0.00000000  0.00000000  0.00000000  1
+  Tl  Tl5  1  0.50000000  0.50000000  0.10089201  1
+  Tl  Tl6  1  0.50000000  0.50000000  0.29962187  1
+  Tl  Tl7  1  0.50000000  0.50000000  0.50000000  1
+  Tl  Tl8  1  0.50000000  0.50000000  0.70037813  1
+  Tl  Tl9  1  0.50000000  0.50000000  0.89910799  1

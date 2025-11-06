@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Ho3TmSe6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.15018422
+_cell_length_b   7.15018361
+_cell_length_c   7.66102354
+_cell_angle_alpha   62.18231462
+_cell_angle_beta   62.18230187
+_cell_angle_gamma   60.00000059
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho3TmSe6
+_chemical_formula_sum   'Ho3 Tm1 Se6'
+_cell_volume   285.73955067
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.34759371  0.34759371  0.95721886  1
+  Ho  Ho1  1  0.65189377  0.65189377  0.04431869  1
+  Ho  Ho2  1  0.15251958  0.15251958  0.54244226  1
+  Tm  Tm3  1  0.84676009  0.84676009  0.45971872  1
+  Se  Se4  1  0.94505915  0.55877628  0.24986594  1
+  Se  Se5  1  0.24629862  0.94505915  0.24986594  1
+  Se  Se6  1  0.55877628  0.24629762  0.24986594  1
+  Se  Se7  1  0.05548520  0.44611742  0.74890121  1
+  Se  Se8  1  0.74949617  0.05548520  0.74890121  1
+  Se  Se9  1  0.44611742  0.74949617  0.74890121  1

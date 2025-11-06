@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_NaNbSeO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.40577323
+_cell_length_b   6.27697100
+_cell_length_c   5.78379723
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   104.40140954
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaNbSeO
+_chemical_formula_sum   'Na4 Nb4 Se4 O4'
+_cell_volume   260.41605861
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.10633408  0.74967528  0.03303819  1
+  Na  Na1  1  0.89366543  0.24967616  0.46696345  1
+  Na  Na2  1  0.10633413  0.75032368  0.53303723  1
+  Na  Na3  1  0.89366548  0.25032456  0.96696248  1
+  Nb  Nb4  1  0.48730832  0.12012004  0.23342058  1
+  Nb  Nb5  1  0.51269228  0.62011916  0.26657937  1
+  Nb  Nb6  1  0.48730700  0.37987908  0.73341952  1
+  Nb  Nb7  1  0.51269261  0.87987980  0.76658019  1
+  O  O8  1  0.64516805  0.36891998  0.11787134  1
+  O  O9  1  0.35483147  0.86891910  0.38213030  1
+  O  O10  1  0.64516810  0.13108074  0.61787037  1
+  O  O11  1  0.35483152  0.63107986  0.88212934  1
+  Se  Se12  1  0.77114201  0.88535537  0.16869378  1
+  Se  Se13  1  0.22885859  0.38535466  0.33130617  1
+  Se  Se14  1  0.77114070  0.61464678  0.66869272  1
+  Se  Se15  1  0.22885892  0.11464606  0.83130699  1

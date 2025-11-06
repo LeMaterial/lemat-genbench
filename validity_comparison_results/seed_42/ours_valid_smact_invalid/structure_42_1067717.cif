@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Hf3(ZnB)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.63738331
+_cell_length_b   7.63738331
+_cell_length_c   7.63738331
+_cell_angle_alpha   32.56471196
+_cell_angle_beta   32.56471196
+_cell_angle_gamma   32.56471196
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Hf3(ZnB)2
+_chemical_formula_sum   'Hf3 Zn2 B2'
+_cell_volume   114.77529584
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  B  B0  1  0.50731001  0.50731001  0.50731001  1
+  B  B1  1  0.99579919  0.99579919  0.99579919  1
+  Hf  Hf2  1  0.38674274  0.38674274  0.38674274  1
+  Hf  Hf3  1  0.62674593  0.62674593  0.62674593  1
+  Hf  Hf4  1  0.86495061  0.86495061  0.86495061  1
+  Zn  Zn5  1  0.24305291  0.24305291  0.24305291  1
+  Zn  Zn6  1  0.75039887  0.75039887  0.75039887  1

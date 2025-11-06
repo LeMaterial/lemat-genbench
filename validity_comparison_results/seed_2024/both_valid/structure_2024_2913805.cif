@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Cs2KPu2O7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.32364566
+_cell_length_b   4.32364567
+_cell_length_c   12.40220971
+_cell_angle_alpha   79.97024550
+_cell_angle_beta   79.97024550
+_cell_angle_gamma   89.99511597
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cs2KPu2O7
+_chemical_formula_sum   'Cs2 K1 Pu2 O7'
+_cell_volume   224.70417526
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.81177042  0.81177042  0.37683247  1
+  Cs  Cs1  1  0.18822958  0.18822958  0.62316753  1
+  K  K2  1  0.00000000  0.00000000  0.00000000  1
+  Pu  Pu3  1  0.58778332  0.58778332  0.82422508  1
+  Pu  Pu4  1  0.41221668  0.41221668  0.17577492  1
+  O  O5  1  0.50000000  0.50000000  0.00000000  1
+  O  O6  1  0.33059307  0.33059307  0.33916940  1
+  O  O7  1  0.66940693  0.66940693  0.66083060  1
+  O  O8  1  0.91370819  0.41370759  0.17280368  1
+  O  O9  1  0.41370759  0.91370819  0.17280368  1
+  O  O10  1  0.58629241  0.08629181  0.82719632  1
+  O  O11  1  0.08629181  0.58629241  0.82719632  1

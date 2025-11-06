@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Pu2AlSi2Ir5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.55622490
+_cell_length_b   9.65524172
+_cell_length_c   9.65524172
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pu2AlSi2Ir5
+_chemical_formula_sum   'Pu4 Al2 Si4 Ir10'
+_cell_volume   331.52441715
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pu  Pu0  1  0.00000000  0.67563337  0.17563337  1
+  Pu  Pu1  1  0.00000000  0.32436663  0.82436663  1
+  Pu  Pu2  1  0.00000000  0.17563337  0.32436663  1
+  Pu  Pu3  1  0.00000000  0.82436663  0.67563337  1
+  Al  Al4  1  0.00000000  0.00000000  0.00000000  1
+  Al  Al5  1  0.00000000  0.50000000  0.50000000  1
+  Si  Si6  1  0.00000000  0.12461971  0.62461971  1
+  Si  Si7  1  0.00000000  0.87538029  0.37538029  1
+  Si  Si8  1  0.00000000  0.62461971  0.87538029  1
+  Si  Si9  1  0.00000000  0.37538029  0.12461971  1
+  Ir  Ir10  1  0.50000000  0.20811237  0.06570389  1
+  Ir  Ir11  1  0.50000000  0.79188763  0.93429611  1
+  Ir  Ir12  1  0.50000000  0.06570389  0.79188763  1
+  Ir  Ir13  1  0.50000000  0.70811237  0.43429611  1
+  Ir  Ir14  1  0.50000000  0.93429611  0.20811237  1
+  Ir  Ir15  1  0.50000000  0.29188763  0.56570389  1
+  Ir  Ir16  1  0.50000000  0.56570389  0.70811237  1
+  Ir  Ir17  1  0.50000000  0.43429611  0.29188763  1
+  Ir  Ir18  1  0.50000000  0.50000000  0.00000000  1
+  Ir  Ir19  1  0.50000000  0.00000000  0.50000000  1

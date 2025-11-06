@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_NaCdBr3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.22554058
+_cell_length_b   7.22554211
+_cell_length_c   7.89905119
+_cell_angle_alpha   62.78261322
+_cell_angle_beta   62.78261524
+_cell_angle_gamma   60.00000301
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaCdBr3
+_chemical_formula_sum   'Na2 Cd2 Br6'
+_cell_volume   303.27734201
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.35306219  0.35306219  0.94081242  1
+  Na  Na1  1  0.64693781  0.64693781  0.05918758  1
+  Cd  Cd2  1  0.15857762  0.15857762  0.52426615  1
+  Cd  Cd3  1  0.84142238  0.84142238  0.47573385  1
+  Br  Br4  1  0.05117639  0.43333922  0.74011018  1
+  Br  Br5  1  0.77537420  0.05117639  0.74011018  1
+  Br  Br6  1  0.56666078  0.22462580  0.25988982  1
+  Br  Br7  1  0.22462580  0.94882361  0.25988982  1
+  Br  Br8  1  0.94882361  0.56666078  0.25988982  1
+  Br  Br9  1  0.43333922  0.77537420  0.74011018  1

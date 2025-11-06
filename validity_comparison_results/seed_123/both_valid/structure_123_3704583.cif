@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_AcHo2Th
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.66763797
+_cell_length_b   3.66763796
+_cell_length_c   11.98666377
+_cell_angle_alpha   81.19985878
+_cell_angle_beta   81.19985877
+_cell_angle_gamma   60.00000004
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   AcHo2Th
+_chemical_formula_sum   'Ac1 Ho2 Th1'
+_cell_volume   137.44132171
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.50045854  0.50045854  0.49862437  1
+  Ho  Ho1  1  0.07802549  0.07802549  0.76592352  1
+  Ho  Ho2  1  0.25504403  0.25504403  0.23486792  1
+  Th  Th3  1  0.66647193  0.66647193  0.00058320  1

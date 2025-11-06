@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Th6NiOs2Se3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.12980731
+_cell_length_b   8.72260444
+_cell_length_c   9.64518469
+_cell_angle_alpha   108.10427450
+_cell_angle_beta   102.36193869
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Th6NiOs2Se3
+_chemical_formula_sum   'Th6 Ni1 Os2 Se3'
+_cell_volume   321.75824039
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Th  Th0  1  0.34128924  0.89776535  0.68257847  1
+  Th  Th1  1  0.67512554  0.56337555  0.35025209  1
+  Th  Th2  1  0.65871076  0.10223465  0.31742153  1
+  Th  Th3  1  0.00813007  0.23078428  0.01625914  1
+  Th  Th4  1  0.99186993  0.76921572  0.98374086  1
+  Th  Th5  1  0.32487446  0.43662445  0.64974791  1
+  Ni  Ni6  1  0.50000000  0.00000000  0.00000000  1
+  Os  Os7  1  0.83541893  0.67082087  0.67083786  1
+  Os  Os8  1  0.16458107  0.32917913  0.32916214  1
+  Se  Se9  1  0.50000000  0.50000000  0.00000000  1
+  Se  Se10  1  0.83378560  0.16605040  0.66757119  1
+  Se  Se11  1  0.16621440  0.83394960  0.33242881  1

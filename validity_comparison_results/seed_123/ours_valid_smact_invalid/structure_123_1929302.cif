@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Pm5Dy4Sc
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.54887487
+_cell_length_b   11.43649954
+_cell_length_c   8.61766058
+_cell_angle_alpha   71.81298158
+_cell_angle_beta   101.88242400
+_cell_angle_gamma   90.00005506
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pm5Dy4Sc
+_chemical_formula_sum   'Pm5 Dy4 Sc1'
+_cell_volume   324.39123630
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.21063182  0.38386824  0.42125162  1
+  Pm  Pm1  1  0.18531576  0.92611402  0.37066651  1
+  Pm  Pm2  1  0.81468424  0.07388598  0.62933349  1
+  Pm  Pm3  1  0.50000000  0.50000000  -0.00000000  1
+  Pm  Pm4  1  0.78936818  0.61613176  0.57874838  1
+  Dy  Dy5  1  0.60437673  0.20176143  0.20876448  1
+  Dy  Dy6  1  0.91759980  0.28690820  0.83520263  1
+  Dy  Dy7  1  0.39562327  0.79823857  0.79123552  1
+  Dy  Dy8  1  0.08240020  0.71309180  0.16479737  1
+  Sc  Sc9  1  0.50000000  -0.00000000  -0.00000000  1

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Ta6PdRu5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.25129278
+_cell_length_b   7.10904331
+_cell_length_c   7.62673296
+_cell_angle_alpha   117.78005109
+_cell_angle_beta   106.20940294
+_cell_angle_gamma   90.00061579
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ta6PdRu5
+_chemical_formula_sum   'Ta6 Ru5 Pd1'
+_cell_volume   193.51614138
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ru  Ru0  1  0.65684764  0.15677534  0.31370268  1
+  Ru  Ru1  1  0.32621288  0.32607784  0.65225711  1
+  Ru  Ru2  1  0.00000000  0.50000000  0.00000000  1
+  Ru  Ru3  1  0.67378712  0.67392216  0.34774289  1
+  Ru  Ru4  1  0.34315236  0.84322466  0.68629732  1
+  Pd  Pd5  1  0.00000000  0.00000000  0.00000000  1
+  Ta  Ta6  1  0.83215239  0.57559797  0.66405937  1
+  Ta  Ta7  1  0.83219592  0.08852838  0.66413425  1
+  Ta  Ta8  1  0.49995563  0.73754430  0.99990898  1
+  Ta  Ta9  1  0.50004437  0.26245570  0.00009102  1
+  Ta  Ta10  1  0.16780408  0.91147162  0.33586575  1
+  Ta  Ta11  1  0.16784761  0.42440203  0.33594063  1

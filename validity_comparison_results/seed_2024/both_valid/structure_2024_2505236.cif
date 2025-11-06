@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Y2Ga2Hg
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.47661625
+_cell_length_b   5.93873771
+_cell_length_c   9.67502793
+_cell_angle_alpha   88.65050502
+_cell_angle_beta   76.62349347
+_cell_angle_gamma   67.85822878
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Y2Ga2Hg
+_chemical_formula_sum   'Y4 Ga4 Hg2'
+_cell_volume   231.20416908
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Y  Y0  1  0.68161162  0.31506883  0.32170892  1
+  Y  Y1  1  0.91581020  0.26623398  0.90214562  1
+  Y  Y2  1  0.31838838  0.68493117  0.67829108  1
+  Y  Y3  1  0.08418980  0.73376602  0.09785438  1
+  Ga  Ga4  1  0.06233913  0.30743277  0.56788898  1
+  Ga  Ga5  1  0.63991565  0.82623275  0.89393695  1
+  Ga  Ga6  1  0.93766087  0.69256723  0.43211102  1
+  Ga  Ga7  1  0.36008435  0.17376725  0.10606305  1
+  Hg  Hg8  1  0.62454300  0.09458542  0.65632757  1
+  Hg  Hg9  1  0.37545700  0.90541458  0.34367243  1

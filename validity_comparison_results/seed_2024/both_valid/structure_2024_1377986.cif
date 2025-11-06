@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Np6Bi2Ru
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.56535283
+_cell_length_b   8.87299613
+_cell_length_c   8.87499193
+_cell_angle_alpha   132.32541636
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Np6Bi2Ru
+_chemical_formula_sum   'Np6 Bi2 Ru1'
+_cell_volume   207.57763339
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Np  Np0  1  0.50000000  0.46285310  0.46284095  1
+  Np  Np1  1  0.50000000  0.68210623  0.01437471  1
+  Np  Np2  1  0.50000000  0.01456802  0.68239883  1
+  Np  Np3  1  0.00000000  0.69529589  0.69530052  1
+  Np  Np4  1  0.00000000  0.18519146  0.92887480  1
+  Np  Np5  1  0.00000000  0.92866369  0.18492500  1
+  Ru  Ru6  1  0.50000000  0.07244088  0.07244164  1
+  Bi  Bi7  1  0.00000000  0.65279437  0.30635527  1
+  Bi  Bi8  1  0.00000000  0.30608537  0.65248527  1

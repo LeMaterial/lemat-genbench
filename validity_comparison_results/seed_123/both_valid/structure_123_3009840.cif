@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Zr(Ti4Co)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.34169055
+_cell_length_b   6.72705716
+_cell_length_c   6.72705716
+_cell_angle_alpha   50.31177558
+_cell_angle_beta   94.91275772
+_cell_angle_gamma   94.91275775
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Zr(Ti4Co)2
+_chemical_formula_sum   'Zr1 Ti8 Co2'
+_cell_volume   185.18356306
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zr  Zr0  1  0.00000000  0.00000000  0.00000000  1
+  Ti  Ti1  1  0.42231163  0.37870323  0.85465417  1
+  Ti  Ti2  1  0.57768837  0.14534583  0.62129677  1
+  Ti  Ti3  1  0.15432980  0.78863460  0.78863460  1
+  Ti  Ti4  1  0.84567020  0.21136540  0.21136540  1
+  Ti  Ti5  1  0.42231163  0.85465417  0.37870323  1
+  Ti  Ti6  1  0.57768837  0.62129677  0.14534583  1
+  Ti  Ti7  1  0.90124677  0.58428245  0.58428245  1
+  Ti  Ti8  1  0.09875323  0.41571755  0.41571755  1
+  Co  Co9  1  0.70476729  0.74659052  0.74659052  1
+  Co  Co10  1  0.29523271  0.25340948  0.25340948  1

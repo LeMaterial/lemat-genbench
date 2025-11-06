@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Na2MgUTe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.39515929
+_cell_length_b   7.54614193
+_cell_length_c   7.94477316
+_cell_angle_alpha   108.81808954
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na2MgUTe4
+_chemical_formula_sum   'Na2 Mg1 U1 Te4'
+_cell_volume   249.41552773
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.50000000  -0.00000000  0.50000000  1
+  Na  Na1  1  0.00000000  0.50000000  0.50000000  1
+  Mg  Mg2  1  0.50000000  0.50000000  0.00000000  1
+  U  U3  1  0.00000000  0.00000000  0.00000000  1
+  Te  Te4  1  0.50000000  0.24472623  0.23291124  1
+  Te  Te5  1  0.50000000  0.75527377  0.76708876  1
+  Te  Te6  1  0.00000000  0.26464313  0.78000551  1
+  Te  Te7  1  0.00000000  0.73535687  0.21999449  1

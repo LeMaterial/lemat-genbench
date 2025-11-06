@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_V2FeB6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   2.98455067
+_cell_length_b   5.46049774
+_cell_length_c   5.46049775
+_cell_angle_alpha   91.44857435
+_cell_angle_beta   74.12756717
+_cell_angle_gamma   74.12756725
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   V2FeB6
+_chemical_formula_sum   'V2 Fe1 B6'
+_cell_volume   81.85082693
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  B  B0  1  0.71220182  0.07303547  0.50251375  1
+  B  B1  1  0.28779700  0.92696168  0.49748975  1
+  B  B2  1  0.28779700  0.49748975  0.92696168  1
+  B  B3  1  0.49999863  0.60639295  0.39360881  1
+  B  B4  1  0.49999863  0.39360881  0.60639295  1
+  B  B5  1  0.71220182  0.50251375  0.07303547  1
+  Fe  Fe6  1  0.00000240  0.99999620  0.99999620  1
+  V  V7  1  0.80098305  0.69934673  0.69934673  1
+  V  V8  1  0.19901864  0.30065066  0.30065066  1

@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Pm8Ho2Tl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.04083312
+_cell_length_b   8.06840340
+_cell_length_c   9.48787730
+_cell_angle_alpha   105.13435167
+_cell_angle_beta   105.40534117
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pm8Ho2Tl
+_chemical_formula_sum   'Pm8 Ho2 Tl1'
+_cell_volume   358.11958023
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.40930699  0.55668816  0.81861398  1
+  Pm  Pm1  1  0.67972738  0.90882060  0.35945577  1
+  Pm  Pm2  1  0.86324397  0.82000987  0.72648793  1
+  Pm  Pm3  1  0.95484142  0.27478822  0.90968184  1
+  Pm  Pm4  1  0.13675603  0.17999013  0.27351207  1
+  Pm  Pm5  1  0.32027262  0.09117940  0.64054423  1
+  Pm  Pm6  1  0.59069301  0.44331184  0.18138602  1
+  Pm  Pm7  1  0.04515958  0.72521178  0.09031916  1
+  Ho  Ho8  1  0.77563415  0.36641745  0.55126730  1
+  Ho  Ho9  1  0.22436585  0.63358255  0.44873270  1
+  Tl  Tl10  1  0.50000000  0.00000000  0.00000000  1

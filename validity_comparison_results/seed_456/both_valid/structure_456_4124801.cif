@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Ni3TeS3Cl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.32765749
+_cell_length_b   5.32765750
+_cell_length_c   5.32777093
+_cell_angle_alpha   82.60174632
+_cell_angle_beta   82.60174629
+_cell_angle_gamma   82.60212043
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ni3TeS3Cl
+_chemical_formula_sum   'Ni3 Te1 S3 Cl1'
+_cell_volume   147.74503746
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.78789085  0.78789085  0.18706408  1
+  Ni  Ni1  1  0.78789261  0.18705167  0.78789234  1
+  Ni  Ni2  1  0.18705167  0.78789261  0.78789234  1
+  S  S3  1  0.47515574  0.95811124  0.95812123  1
+  S  S4  1  0.95811124  0.47515574  0.95812123  1
+  S  S5  1  0.95812359  0.95812359  0.47515607  1
+  Te  Te6  1  0.25492369  0.25492369  0.25489780  1
+  Cl  Cl7  1  0.56351962  0.56351962  0.56352390  1

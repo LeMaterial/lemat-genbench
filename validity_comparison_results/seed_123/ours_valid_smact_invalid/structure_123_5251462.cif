@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_SrPmPt10
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.41760825
+_cell_length_b   5.46794524
+_cell_length_c   9.41248957
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrPmPt10
+_chemical_formula_sum   'Sr1 Pm1 Pt10'
+_cell_volume   227.36094459
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.00000000  0.00000000  0.00000000  1
+  Pm  Pm1  1  0.00000000  0.50000000  0.50000000  1
+  Pt  Pt2  1  0.00000000  0.00000000  0.33648864  1
+  Pt  Pt3  1  0.00000000  0.50000000  0.82946380  1
+  Pt  Pt4  1  0.00000000  0.50000000  0.17053620  1
+  Pt  Pt5  1  0.00000000  0.00000000  0.66351136  1
+  Pt  Pt6  1  0.50000000  0.00000000  0.50000000  1
+  Pt  Pt7  1  0.50000000  0.50000000  0.00000000  1
+  Pt  Pt8  1  0.50000000  0.25225218  0.25389251  1
+  Pt  Pt9  1  0.50000000  0.74774782  0.74610749  1
+  Pt  Pt10  1  0.50000000  0.74774782  0.25389251  1
+  Pt  Pt11  1  0.50000000  0.25225218  0.74610749  1

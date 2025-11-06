@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Nd5TlCo2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.85468945
+_cell_length_b   7.85468945
+_cell_length_c   8.94096977
+_cell_angle_alpha   116.05620737
+_cell_angle_beta   116.05620744
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nd5TlCo2
+_chemical_formula_sum   'Nd10 Tl2 Co4'
+_cell_volume   432.28208475
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nd  Nd0  1  0.53164060  0.70748167  0.73912227  1
+  Nd  Nd1  1  0.79251833  0.96835940  0.26087773  1
+  Nd  Nd2  1  0.00000000  0.00000000  0.00000000  1
+  Nd  Nd3  1  0.50000000  0.50000000  0.00000000  1
+  Nd  Nd4  1  0.20748167  0.03164060  0.73912227  1
+  Nd  Nd5  1  0.70748167  0.20748167  0.73912227  1
+  Nd  Nd6  1  0.03164060  0.53164060  0.73912227  1
+  Nd  Nd7  1  0.29251833  0.79251833  0.26087773  1
+  Nd  Nd8  1  0.96835940  0.46835940  0.26087773  1
+  Nd  Nd9  1  0.46835940  0.29251833  0.26087773  1
+  Tl  Tl10  1  0.75000000  0.75000000  0.50000000  1
+  Tl  Tl11  1  0.25000000  0.25000000  0.50000000  1
+  Co  Co12  1  0.13150980  0.36849020  1.00000000  1
+  Co  Co13  1  0.63150980  0.13151080  1.00000000  1
+  Co  Co14  1  0.36848920  0.86849020  0.00000000  1
+  Co  Co15  1  0.86848920  0.63151080  0.00000000  1

@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_CsNaAg
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.03445236
+_cell_length_b   7.23094418
+_cell_length_c   8.38680716
+_cell_angle_alpha   107.49025307
+_cell_angle_beta   107.46608280
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsNaAg
+_chemical_formula_sum   'Cs2 Na2 Ag2'
+_cell_volume   276.40247120
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.77370490  0.10376293  0.54740980  1
+  Ag  Ag1  1  0.22629510  0.89623707  0.45259020  1
+  Na  Na2  1  0.60587253  0.76029751  0.21174506  1
+  Na  Na3  1  0.39412747  0.23970249  0.78825494  1
+  Cs  Cs4  1  0.86927485  0.70691572  0.73854970  1
+  Cs  Cs5  1  0.13072515  0.29308428  0.26145030  1

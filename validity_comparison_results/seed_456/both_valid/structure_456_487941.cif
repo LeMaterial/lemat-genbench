@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_LiTb2AlGa6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.48649562
+_cell_length_b   6.66732861
+_cell_length_c   9.34411441
+_cell_angle_alpha   45.69398814
+_cell_angle_beta   47.67900199
+_cell_angle_gamma   74.25965085
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiTb2AlGa6
+_chemical_formula_sum   'Li1 Tb2 Al1 Ga6'
+_cell_volume   198.12265512
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.50000000  0.50000000  -0.00000000  1
+  Tb  Tb1  1  0.23805661  0.73564002  0.50868571  1
+  Tb  Tb2  1  0.76194339  0.26435998  0.49131429  1
+  Al  Al3  1  0.00000000  0.00000000  0.00000000  1
+  Ga  Ga4  1  0.29549444  0.77317740  0.13695380  1
+  Ga  Ga5  1  0.82567299  0.68512008  0.99306503  1
+  Ga  Ga6  1  0.28135433  0.22286425  0.49382082  1
+  Ga  Ga7  1  0.70450556  0.22682260  0.86304620  1
+  Ga  Ga8  1  0.17432701  0.31487992  0.00693497  1
+  Ga  Ga9  1  0.71864567  0.77713575  0.50617918  1

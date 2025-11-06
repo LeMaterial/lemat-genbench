@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Cu2ReCl6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.38311804
+_cell_length_b   6.38311797
+_cell_length_c   7.36645367
+_cell_angle_alpha   64.32558377
+_cell_angle_beta   64.32558611
+_cell_angle_gamma   59.99997492
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cu2ReCl6
+_chemical_formula_sum   'Cu2 Re1 Cl6'
+_cell_volume   225.06283131
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.73477262  0.73477162  0.79568414  1
+  Cu  Cu1  1  0.59747538  0.59747538  0.20757287  1
+  Re  Re2  1  0.33318475  0.33318475  0.00044676  1
+  Cl  Cl3  1  0.70853359  0.40685919  0.77749057  1
+  Cl  Cl4  1  0.10711764  0.70853359  0.77749057  1
+  Cl  Cl5  1  0.40685919  0.10711764  0.77749057  1
+  Cl  Cl6  1  0.25752019  0.56148827  0.22225717  1
+  Cl  Cl7  1  0.95873537  0.25752019  0.22225717  1
+  Cl  Cl8  1  0.56148827  0.95873437  0.22225717  1

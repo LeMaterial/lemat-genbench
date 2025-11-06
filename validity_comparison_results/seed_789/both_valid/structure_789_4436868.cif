@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_YAgAs
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.23467820
+_cell_length_b   5.23519525
+_cell_length_c   3.90090874
+_cell_angle_alpha   68.11787728
+_cell_angle_beta   68.13197700
+_cell_angle_gamma   43.75014576
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   YAgAs
+_chemical_formula_sum   'Y1 Ag1 As1'
+_cell_volume   67.70495261
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Y  Y0  1  0.67869539  0.67869539  0.32130461  1
+  As  As1  1  0.31645279  0.31645279  0.68354721  1
+  Ag  Ag2  1  0.00485182  0.00485182  0.99514818  1

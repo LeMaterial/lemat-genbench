@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Tb6Tl2In
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.20592259
+_cell_length_b   7.35475593
+_cell_length_c   9.01605826
+_cell_angle_alpha   114.07108958
+_cell_angle_beta   106.77464833
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb6Tl2In
+_chemical_formula_sum   'Tb6 Tl2 In1'
+_cell_volume   299.02941476
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.16596510  0.41571003  0.33233967  1
+  Tb  Tb1  1  0.83403490  0.08337036  0.66766033  1
+  Tb  Tb2  1  0.83403490  0.58428997  0.66766033  1
+  Tb  Tb3  1  0.50000000  0.24877172  1.00000000  1
+  Tb  Tb4  1  0.16596510  0.91662964  0.33233967  1
+  Tb  Tb5  1  0.50000000  0.75122828  0.00000000  1
+  Tl  Tl6  1  0.66642519  0.66671738  0.33343376  1
+  Tl  Tl7  1  0.33357481  0.33328262  0.66656624  1
+  In  In8  1  0.00000000  0.00000000  0.00000000  1

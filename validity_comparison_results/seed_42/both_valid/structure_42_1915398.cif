@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Th2OsPd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.28584317
+_cell_length_b   6.08334797
+_cell_length_c   7.85446039
+_cell_angle_alpha   110.15014388
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Th2OsPd
+_chemical_formula_sum   'Th4 Os2 Pd2'
+_cell_volume   192.24948736
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Th  Th0  1  0.75000000  0.22267149  0.44348218  1
+  Th  Th1  1  0.25000000  0.77732851  0.55651782  1
+  Th  Th2  1  0.25000000  0.76799115  0.07469836  1
+  Th  Th3  1  0.75000000  0.23200885  0.92530164  1
+  Os  Os4  1  0.75000000  0.69448995  0.29150792  1
+  Os  Os5  1  0.25000000  0.30551005  0.70849208  1
+  Pd  Pd6  1  0.25000000  0.31162697  0.20493925  1
+  Pd  Pd7  1  0.75000000  0.68837303  0.79506075  1

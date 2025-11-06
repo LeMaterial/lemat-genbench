@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_SrNd3(NiO4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.36551836
+_cell_length_b   5.39620537
+_cell_length_c   6.82398604
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   66.85018619
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrNd3(NiO4)2
+_chemical_formula_sum   'Sr1 Nd3 Ni2 O8'
+_cell_volume   181.66890320
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.85694500  0.50000000  0.28611000  1
+  Nd  Nd1  1  0.36288701  -0.00000000  0.27422597  1
+  Nd  Nd2  1  0.63915195  -0.00000000  0.72169610  1
+  Nd  Nd3  1  0.13692063  0.50000000  0.72615873  1
+  Ni  Ni4  1  0.49742669  0.50000000  0.00514662  1
+  Ni  Ni5  1  0.99652472  -0.00000000  0.00695056  1
+  O  O6  1  0.17926371  -0.00000000  0.64147258  1
+  O  O7  1  0.66427522  0.50000000  0.67144957  1
+  O  O8  1  0.32399530  0.50000000  0.35200940  1
+  O  O9  1  0.82412888  -0.00000000  0.35174224  1
+  O  O10  1  0.25399568  0.24002640  0.99075956  1
+  O  O11  1  0.75524476  0.75997360  0.99075956  1
+  O  O12  1  0.25399568  0.75997360  0.99075956  1
+  O  O13  1  0.75524476  0.24002640  0.99075956  1

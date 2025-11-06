@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_ErTmSi2Os
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.66942524
+_cell_length_b   5.66942524
+_cell_length_c   9.87948551
+_cell_angle_alpha   116.37135853
+_cell_angle_beta   116.37135853
+_cell_angle_gamma   43.57457016
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ErTmSi2Os
+_chemical_formula_sum   'Er2 Tm2 Si4 Os2'
+_cell_volume   192.21874180
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.99258288  0.99258288  0.32145083  1
+  Er  Er1  1  0.00741682  0.00741682  0.67854900  1
+  Os  Os2  1  0.73079370  0.73079370  0.37165242  1
+  Os  Os3  1  0.26920600  0.26920600  0.62834742  1
+  Si  Si4  1  0.49453612  0.49453612  0.12364132  1
+  Si  Si5  1  0.35858756  0.35858756  0.43985921  1
+  Si  Si6  1  0.64141215  0.64141215  0.56014062  1
+  Si  Si7  1  0.50546358  0.50546358  0.87635851  1
+  Tm  Tm8  1  0.18533501  0.18533501  0.11117679  1
+  Tm  Tm9  1  0.81466469  0.81466469  0.88882304  1

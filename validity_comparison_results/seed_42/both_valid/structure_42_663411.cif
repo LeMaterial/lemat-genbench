@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_LiMg2Zn2Pd5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.61685478
+_cell_length_b   9.43992663
+_cell_length_c   9.43992663
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiMg2Zn2Pd5
+_chemical_formula_sum   'Li2 Mg4 Zn4 Pd10'
+_cell_volume   322.30593998
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.00000000  0.00000000  0.00000000  1
+  Li  Li1  1  0.00000000  0.50000000  0.50000000  1
+  Mg  Mg2  1  0.00000000  0.66976296  0.16976296  1
+  Mg  Mg3  1  0.00000000  0.33023704  0.83023704  1
+  Mg  Mg4  1  0.00000000  0.16976296  0.33023704  1
+  Mg  Mg5  1  0.00000000  0.83023704  0.66976296  1
+  Zn  Zn6  1  0.00000000  0.13026063  0.63026063  1
+  Zn  Zn7  1  0.00000000  0.86973937  0.36973937  1
+  Zn  Zn8  1  0.00000000  0.63026063  0.86973937  1
+  Zn  Zn9  1  0.00000000  0.36973937  0.13026063  1
+  Pd  Pd10  1  0.50000000  0.19368923  0.07594631  1
+  Pd  Pd11  1  0.50000000  0.80631077  0.92405369  1
+  Pd  Pd12  1  0.50000000  0.07594631  0.80631077  1
+  Pd  Pd13  1  0.50000000  0.69368923  0.42405369  1
+  Pd  Pd14  1  0.50000000  0.92405369  0.19368923  1
+  Pd  Pd15  1  0.50000000  0.30631077  0.57594631  1
+  Pd  Pd16  1  0.50000000  0.57594631  0.69368923  1
+  Pd  Pd17  1  0.50000000  0.42405369  0.30631077  1
+  Pd  Pd18  1  0.50000000  0.50000000  0.00000000  1
+  Pd  Pd19  1  0.50000000  0.00000000  0.50000000  1

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Sc3GaN
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.60999393
+_cell_length_b   6.55570509
+_cell_length_c   6.16820882
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   109.67514660
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sc3GaN
+_chemical_formula_sum   'Sc6 Ga2 N2'
+_cell_volume   175.53065461
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sc  Sc0  1  0.87866839  0.97902121  0.24377262  1
+  Sc  Sc1  1  0.12133161  0.02097879  0.75622738  1
+  Sc  Sc2  1  0.87866839  0.52097879  0.24377262  1
+  Sc  Sc3  1  0.12133161  0.47902121  0.75622738  1
+  Sc  Sc4  1  0.45583598  0.25000000  0.40633985  1
+  Sc  Sc5  1  0.54416402  0.75000000  0.59366015  1
+  Ga  Ga6  1  0.67365592  0.25000000  0.88173836  1
+  Ga  Ga7  1  0.32634408  0.75000000  0.11826164  1
+  N  N8  1  0.98593720  0.25000000  0.46922925  1
+  N  N9  1  0.01406280  0.75000000  0.53077075  1

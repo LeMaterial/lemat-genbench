@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_Na2PtF6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.78074566
+_cell_length_b   5.55223099
+_cell_length_c   9.08834779
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.30663266
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na2PtF6
+_chemical_formula_sum   'Na4 Pt2 F12'
+_cell_volume   291.69575322
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.99833907  0.49531972  0.79905602  1
+  Na  Na1  1  0.50166093  0.99531972  0.70094398  1
+  Na  Na2  1  0.49833907  0.00468028  0.29905602  1
+  Na  Na3  1  0.00166093  0.50468028  0.20094398  1
+  Pt  Pt4  1  0.50000000  0.50000000  0.00000000  1
+  Pt  Pt5  1  -0.00000000  0.00000000  0.50000000  1
+  F  F6  1  0.85429310  0.80679990  0.34248209  1
+  F  F7  1  0.85515273  0.79410468  0.65083814  1
+  F  F8  1  0.79277709  0.68476831  0.99711632  1
+  F  F9  1  0.70722291  0.18476831  0.50288368  1
+  F  F10  1  0.64484727  0.29410468  0.84916186  1
+  F  F11  1  0.64570690  0.30679990  0.15751791  1
+  F  F12  1  0.14570690  0.19320010  0.65751791  1
+  F  F13  1  0.14484727  0.20589532  0.34916186  1
+  F  F14  1  0.20722291  0.31523169  0.00288368  1
+  F  F15  1  0.29277709  0.81523169  0.49711632  1
+  F  F16  1  0.35515273  0.70589532  0.15083814  1
+  F  F17  1  0.35429310  0.69320010  0.84248209  1

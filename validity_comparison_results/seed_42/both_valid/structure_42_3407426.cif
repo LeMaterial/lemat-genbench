@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Sr3YPt8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.54835496
+_cell_length_b   5.54835521
+_cell_length_c   9.57577949
+_cell_angle_alpha   73.15953813
+_cell_angle_beta   73.15953752
+_cell_angle_gamma   60.00000135
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr3YPt8
+_chemical_formula_sum   'Sr3 Y1 Pt8'
+_cell_volume   240.58158321
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.37437524  0.37437524  0.87687428  1
+  Sr  Sr1  1  0.00119357  0.00119357  0.99641830  1
+  Sr  Sr2  1  0.49864301  0.49864301  0.50407197  1
+  Y  Y3  1  0.87566701  0.87566701  0.37299897  1
+  Pt  Pt4  1  0.93190259  0.43689571  0.19430599  1
+  Pt  Pt5  1  0.44356637  0.93787983  0.68067397  1
+  Pt  Pt6  1  0.43689571  0.43689571  0.19430599  1
+  Pt  Pt7  1  0.93787983  0.93787983  0.68067397  1
+  Pt  Pt8  1  0.18770624  0.18770624  0.43688127  1
+  Pt  Pt9  1  0.68739188  0.68739188  0.93782336  1
+  Pt  Pt10  1  0.43689571  0.93190259  0.19430599  1
+  Pt  Pt11  1  0.93787983  0.44356637  0.68067397  1

@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_La(Er2Tm)4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.22148582
+_cell_length_b   7.22148385
+_cell_length_c   9.85323582
+_cell_angle_alpha   90.00017829
+_cell_angle_beta   111.49656133
+_cell_angle_gamma   120.00032414
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La(Er2Tm)4
+_chemical_formula_sum   'La1 Er8 Tm4'
+_cell_volume   403.20007268
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.00000000  0.50000100  0.50000000  1
+  Er  Er1  1  0.56142774  0.78070985  0.34213959  1
+  Er  Er2  1  0.43857226  0.21928915  0.65785941  1
+  Er  Er3  1  0.49930791  0.24965146  0.30377935  1
+  Er  Er4  1  0.94587210  0.19552855  0.69621965  1
+  Er  Er5  1  0.50069209  0.75034854  0.69622065  1
+  Er  Er6  1  0.94587310  0.75035054  0.69622064  1
+  Er  Er7  1  0.05412690  0.24964946  0.30377936  1
+  Er  Er8  1  0.05412790  0.80447145  0.30377935  1
+  Tm  Tm9  1  0.00000000  0.00000000  0.00000000  1
+  Tm  Tm10  1  -0.00000000  0.50000000  -0.00000000  1
+  Tm  Tm11  1  0.50000000  0.49999900  -0.00000000  1
+  Tm  Tm12  1  0.50000000  -0.00000000  -0.00000000  1

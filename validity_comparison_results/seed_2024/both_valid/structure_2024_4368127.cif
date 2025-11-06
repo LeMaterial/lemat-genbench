@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_TbCe2(ZnSi)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.22567210
+_cell_length_b   4.22567210
+_cell_length_c   9.49143065
+_cell_angle_alpha   77.13794057
+_cell_angle_beta   77.13794055
+_cell_angle_gamma   60.00000002
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TbCe2(ZnSi)2
+_chemical_formula_sum   'Tb1 Ce2 Zn2 Si2'
+_cell_volume   141.84399924
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.00000000  0.00000000  0.00000000  1
+  Ce  Ce1  1  0.14073908  0.14073908  0.57778375  1
+  Ce  Ce2  1  0.85926092  0.85926092  0.42221625  1
+  Zn  Zn3  1  0.59764764  0.59764764  0.20705708  1
+  Zn  Zn4  1  0.40235236  0.40235236  0.79294292  1
+  Si  Si5  1  0.73628103  0.73628103  0.79115791  1
+  Si  Si6  1  0.26371897  0.26371897  0.20884209  1

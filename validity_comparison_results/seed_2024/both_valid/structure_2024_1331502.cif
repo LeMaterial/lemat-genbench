@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_TbPr2(HoEr)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.51728024
+_cell_length_b   6.12457498
+_cell_length_c   11.84515734
+_cell_angle_alpha   71.72486945
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   106.68709890
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TbPr2(HoEr)2
+_chemical_formula_sum   'Tb1 Pr2 Ho2 Er2'
+_cell_volume   230.95255318
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.00000000  0.00000000  0.50000000  1
+  Pr  Pr1  1  0.67119112  0.34238324  0.91488239  1
+  Pr  Pr2  1  0.32880888  0.65761676  0.08511761  1
+  Ho  Ho3  1  0.45070366  0.90140831  0.76811377  1
+  Ho  Ho4  1  0.54929634  0.09859169  0.23188623  1
+  Er  Er5  1  0.77342514  0.54684928  0.36538240  1
+  Er  Er6  1  0.22657486  0.45315072  0.63461760  1

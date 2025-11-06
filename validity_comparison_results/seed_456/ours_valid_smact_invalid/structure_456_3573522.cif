@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_CrCuSi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.68841260
+_cell_length_b   5.88418658
+_cell_length_c   7.09993208
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CrCuSi
+_chemical_formula_sum   'Cr4 Si4 Cu4'
+_cell_volume   154.09201216
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cr  Cr0  1  0.75000000  0.46472216  0.68075662  1
+  Cr  Cr1  1  0.25000000  0.03527784  0.18075662  1
+  Cr  Cr2  1  0.75000000  0.96472216  0.81924338  1
+  Cr  Cr3  1  0.25000000  0.53527784  0.31924338  1
+  Si  Si4  1  0.25000000  0.24528810  0.87096520  1
+  Si  Si5  1  0.25000000  0.74528810  0.62903480  1
+  Si  Si6  1  0.75000000  0.75471190  0.12903480  1
+  Si  Si7  1  0.75000000  0.25471190  0.37096520  1
+  Cu  Cu8  1  0.25000000  0.64503385  0.94462541  1
+  Cu  Cu9  1  0.25000000  0.14503385  0.55537459  1
+  Cu  Cu10  1  0.75000000  0.85496615  0.44462541  1
+  Cu  Cu11  1  0.75000000  0.35496615  0.05537459  1

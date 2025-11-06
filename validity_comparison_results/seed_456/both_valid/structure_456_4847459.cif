@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_Al2PCl3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.65736701
+_cell_length_b   3.72586181
+_cell_length_c   19.70140275
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   106.26295369
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Al2PCl3
+_chemical_formula_sum   'Al2 P1 Cl3'
+_cell_volume   469.12820874
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.64217528  0.15801667  0.45364791  1
+  Al  Al1  1  0.03692481  0.85575110  0.52644108  1
+  P  P2  1  0.99428139  0.33439852  0.45613325  1
+  Cl  Cl3  1  0.42615349  0.04942523  0.54084861  1
+  Cl  Cl4  1  0.52628271  0.60004332  0.39214813  1
+  Cl  Cl5  1  0.96317713  0.81960411  0.63078102  1

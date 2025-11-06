@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_BeNbCu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.34208590
+_cell_length_b   2.81504598
+_cell_length_c   6.19419944
+_cell_angle_alpha   116.95504338
+_cell_angle_beta   70.50015035
+_cell_angle_gamma   105.28559207
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BeNbCu
+_chemical_formula_sum   'Be2 Nb2 Cu2'
+_cell_volume   77.56529690
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.95713131  0.43514993  0.53066929  1
+  Be  Be1  1  0.22107245  0.78798708  0.25158288  1
+  Nb  Nb2  1  0.58906241  0.61152625  0.39114566  1
+  Nb  Nb3  1  0.58910527  0.11161963  0.89111468  1
+  Cu  Cu4  1  0.98349572  0.98870402  0.07125458  1
+  Cu  Cu5  1  0.19459639  0.23420868  0.71116051  1

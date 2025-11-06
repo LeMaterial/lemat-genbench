@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Dy3Er8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.79883616
+_cell_length_b   4.79883647
+_cell_length_c   21.79746646
+_cell_angle_alpha   83.68250321
+_cell_angle_beta   83.68250235
+_cell_angle_gamma   60.00036325
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy3Er8
+_chemical_formula_sum   'Dy3 Er8'
+_cell_volume   431.19704190
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.41865462  0.41865462  0.74402792  1
+  Dy  Dy1  1  0.58134538  0.58134538  0.25597208  1
+  Dy  Dy2  1  0.00000000  0.00000000  0.00000000  1
+  Er  Er3  1  0.17228730  0.17228730  0.48313407  1
+  Er  Er4  1  0.30391387  0.30391387  0.08826314  1
+  Er  Er5  1  0.69608613  0.69608613  0.91173686  1
+  Er  Er6  1  0.82771270  0.82771270  0.51686593  1
+  Er  Er7  1  0.52757668  0.52757668  0.41726635  1
+  Er  Er8  1  0.05541190  0.05541290  0.83377350  1
+  Er  Er9  1  0.94458710  0.94458810  0.16622650  1
+  Er  Er10  1  0.47242332  0.47242332  0.58273365  1

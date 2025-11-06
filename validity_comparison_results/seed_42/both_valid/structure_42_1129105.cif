@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_Nd2CuTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   11.51722107
+_cell_length_b   4.23359818
+_cell_length_c   14.45337609
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nd2CuTe3
+_chemical_formula_sum   'Nd8 Cu4 Te12'
+_cell_volume   704.73630016
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.73376555  0.25000011  0.22137596  1
+  Cu  Cu1  1  0.23376559  0.25000011  0.27862418  1
+  Cu  Cu2  1  0.76623518  0.75000032  0.72137609  1
+  Cu  Cu3  1  0.26623523  0.75000032  0.77862431  1
+  Nd  Nd4  1  0.72171924  0.75000032  0.01221306  1
+  Nd  Nd5  1  0.98176113  0.75000032  0.24556339  1
+  Nd  Nd6  1  0.48176118  0.75000032  0.25443675  1
+  Nd  Nd7  1  0.22171928  0.75000032  0.48778707  1
+  Nd  Nd8  1  0.77828149  0.25000011  0.51221320  1
+  Nd  Nd9  1  0.51823960  0.25000011  0.74556352  1
+  Nd  Nd10  1  0.01823964  0.25000011  0.75443688  1
+  Nd  Nd11  1  0.27828154  0.25000011  0.98778721  1
+  Te  Te12  1  0.90047243  0.25000011  0.09661826  1
+  Te  Te13  1  0.55115205  0.25000011  0.10312539  1
+  Te  Te14  1  0.23389236  0.75000032  0.16057010  1
+  Te  Te15  1  0.73389231  0.75000032  0.33943004  1
+  Te  Te16  1  0.05115210  0.25000011  0.39687475  1
+  Te  Te17  1  0.40047247  0.25000011  0.40338188  1
+  Te  Te18  1  0.59952830  0.75000032  0.59661839  1
+  Te  Te19  1  0.94884868  0.75000032  0.60312552  1
+  Te  Te20  1  0.26610759  0.25000011  0.66057023  1
+  Te  Te21  1  0.76610842  0.25000011  0.83943017  1
+  Te  Te22  1  0.44884873  0.75000032  0.89687488  1
+  Te  Te23  1  0.09952835  0.75000032  0.90338201  1

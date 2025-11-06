@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_SrLi2CdI6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.72084085
+_cell_length_b   7.72070865
+_cell_length_c   8.36158169
+_cell_angle_alpha   62.50085361
+_cell_angle_beta   62.49784383
+_cell_angle_gamma   59.98966085
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SrLi2CdI6
+_chemical_formula_sum   'Sr1 Li2 Cd1 I6'
+_cell_volume   365.15029018
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.81821080  0.81826982  0.54531273  1
+  Li  Li1  1  0.50782441  0.50782882  0.47631328  1
+  Li  Li2  1  0.00837431  0.00847885  0.97463719  1
+  Cd  Cd3  1  0.31980630  0.31976012  0.04056930  1
+  I  I4  1  0.59947578  0.25131182  0.23778980  1
+  I  I5  1  0.25131327  0.91141184  0.23785323  1
+  I  I6  1  0.91149064  0.59943978  0.23784304  1
+  I  I7  1  0.37967853  0.73554779  0.75494806  1
+  I  I8  1  0.73553098  0.12987310  0.75497910  1
+  I  I9  1  0.12989199  0.37967907  0.75495528  1

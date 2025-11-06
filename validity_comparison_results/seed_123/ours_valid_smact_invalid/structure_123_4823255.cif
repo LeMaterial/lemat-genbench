@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Pm2Co5Si4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.39036414
+_cell_length_b   5.39229196
+_cell_length_c   7.09260692
+_cell_angle_alpha   79.05121520
+_cell_angle_beta   67.66639209
+_cell_angle_gamma   60.01182589
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pm2Co5Si4
+_chemical_formula_sum   'Pm2 Co5 Si4'
+_cell_volume   165.16399822
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.86624056  1.00000000  0.26751889  1
+  Pm  Pm1  1  0.13375944  0.00000000  0.73248111  1
+  Co  Co2  1  0.50000000  0.00000000  0.00000000  1
+  Co  Co3  1  0.00000000  0.50000000  0.00000000  1
+  Co  Co4  1  0.50000000  0.50000000  0.00000000  1
+  Co  Co5  1  0.25000000  0.50000000  0.50000000  1
+  Co  Co6  1  0.75000000  0.50000000  0.50000000  1
+  Si  Si7  1  0.47596254  0.30979788  0.73827704  1
+  Si  Si8  1  0.52403746  0.69020212  0.26172296  1
+  Si  Si9  1  0.21423958  0.30979788  0.26172296  1
+  Si  Si10  1  0.78576042  0.69020212  0.73827704  1

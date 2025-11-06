@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Cs2KNaTe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.87968773
+_cell_length_b   7.72519125
+_cell_length_c   10.45972717
+_cell_angle_alpha   111.67138245
+_cell_angle_beta   112.12743919
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cs2KNaTe2
+_chemical_formula_sum   'Cs4 K2 Na2 Te4'
+_cell_volume   540.91930395
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.43197825  0.17499785  0.34999670  1
+  Cs  Cs1  1  0.56802175  0.82500215  0.65000330  1
+  Cs  Cs2  1  0.08198155  0.32500215  0.65000330  1
+  Cs  Cs3  1  0.91801845  0.67499785  0.34999670  1
+  K  K4  1  0.00000000  0.75000000  0.00000000  1
+  K  K5  1  0.00000000  0.25000000  0.00000000  1
+  Na  Na6  1  0.50000000  0.75000000  0.00000000  1
+  Na  Na7  1  0.50000000  0.25000000  0.00000000  1
+  Te  Te8  1  0.83401942  0.10697895  0.21395690  1
+  Te  Te9  1  0.37993748  0.60697895  0.21395690  1
+  Te  Te10  1  0.62006252  0.39302105  0.78604310  1
+  Te  Te11  1  0.16598058  0.89302105  0.78604310  1

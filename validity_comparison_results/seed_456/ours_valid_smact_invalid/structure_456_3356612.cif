@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_PmAlCo
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.28386920
+_cell_length_b   6.03751958
+_cell_length_c   6.98679466
+_cell_angle_alpha   44.92499535
+_cell_angle_beta   72.14741682
+_cell_angle_gamma   69.22061277
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PmAlCo
+_chemical_formula_sum   'Pm2 Al2 Co2'
+_cell_volume   118.88998549
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.29687484  0.03913534  0.36711597  1
+  Co  Co1  1  0.70312516  0.96086466  0.63288403  1
+  Al  Al2  1  0.90365076  0.88488350  0.30781599  1
+  Al  Al3  1  0.09634924  0.11511650  0.69218401  1
+  Pm  Pm4  1  0.62476903  0.56802539  0.18243754  1
+  Pm  Pm5  1  0.37523097  0.43197461  0.81756246  1

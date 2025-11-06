@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_SiBiI
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.29674783
+_cell_length_b   4.29431026
+_cell_length_c   14.55126600
+_cell_angle_alpha   97.39799887
+_cell_angle_beta   92.61180715
+_cell_angle_gamma   50.37239167
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SiBiI
+_chemical_formula_sum   'Si2 Bi2 I2'
+_cell_volume   204.83901636
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  I  I0  1  0.69517932  0.43724136  0.14434743  1
+  I  I1  1  0.30482068  0.56275864  0.85565257  1
+  Bi  Bi2  1  0.38590056  0.32073862  0.39432079  1
+  Bi  Bi3  1  0.61409944  0.67926138  0.60567921  1
+  Si  Si4  1  0.11192103  0.96493466  0.28699558  1
+  Si  Si5  1  0.88807897  0.03506534  0.71300442  1

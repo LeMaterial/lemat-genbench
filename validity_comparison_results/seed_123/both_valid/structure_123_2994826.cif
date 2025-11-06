@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Sr2Th(ReN3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.07994822
+_cell_length_b   6.08290108
+_cell_length_c   7.06477562
+_cell_angle_alpha   115.73368882
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.98394322
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2Th(ReN3)2
+_chemical_formula_sum   'Sr2 Th1 Re2 N6'
+_cell_volume   195.82584237
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.70918495  0.41837091  0.12488806  1
+  Sr  Sr1  1  0.29081505  0.58162909  0.87511194  1
+  Th  Th2  1  0.50000000  0.00000000  0.50000000  1
+  Re  Re3  1  0.90471321  0.80942741  0.71117692  1
+  Re  Re4  1  0.09528679  0.19057259  0.28882308  1
+  N  N5  1  0.75618038  0.51235977  0.76786156  1
+  N  N6  1  0.24238255  0.98308663  0.22980415  1
+  N  N7  1  0.25929693  0.01691337  0.77019585  1
+  N  N8  1  0.75761745  0.01691337  0.77019585  1
+  N  N9  1  0.74070307  0.98308663  0.22980415  1
+  N  N10  1  0.24381962  0.48764023  0.23213844  1

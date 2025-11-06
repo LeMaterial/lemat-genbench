@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Ni3TeO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.16732506
+_cell_length_b   5.16732506
+_cell_length_c   5.51740927
+_cell_angle_alpha   62.07764567
+_cell_angle_beta   62.07764568
+_cell_angle_gamma   60.00000007
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ni3TeO6
+_chemical_formula_sum   'Ni3 Te1 O6'
+_cell_volume   107.32454292
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.50725392  0.50725392  0.47823824  1
+  Ni  Ni1  1  0.21760395  0.21760395  0.34718815  1
+  Ni  Ni2  1  0.01350157  0.01350157  0.95949528  1
+  Te  Te3  1  0.70836402  0.70836402  0.87490795  1
+  O  O4  1  0.61342490  0.32419741  0.14958685  1
+  O  O5  1  0.32419741  0.91279184  0.14958685  1
+  O  O6  1  0.91279184  0.61342490  0.14958685  1
+  O  O7  1  0.80980191  0.08803873  0.66495661  1
+  O  O8  1  0.08803873  0.43720275  0.66495661  1
+  O  O9  1  0.43720375  0.80980191  0.66495661  1

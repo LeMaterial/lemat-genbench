@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Sm3(DyTl)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.97257503
+_cell_length_b   3.53618368
+_cell_length_c   12.25349123
+_cell_angle_alpha   89.99993948
+_cell_angle_beta   78.29315152
+_cell_angle_gamma   89.99999574
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sm3(DyTl)2
+_chemical_formula_sum   'Sm3 Dy2 Tl2'
+_cell_volume   210.98266439
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.85582216  1.00000000  0.28835667  1
+  Sm  Sm1  1  0.00000000  0.00000000  0.00000000  1
+  Sm  Sm2  1  0.14417784  -0.00000000  0.71164333  1
+  Dy  Dy3  1  0.71338633  0.50000000  0.57322733  1
+  Dy  Dy4  1  0.28661367  0.50000000  0.42677267  1
+  Tl  Tl5  1  0.57293123  0.50000000  0.85413754  1
+  Tl  Tl6  1  0.42706877  0.50000000  0.14586246  1

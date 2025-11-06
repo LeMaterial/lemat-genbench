@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_Sr(BiSe2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.22899776
+_cell_length_b   7.27953727
+_cell_length_c   14.40686546
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   106.88619249
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr(BiSe2)2
+_chemical_formula_sum   'Sr2 Bi4 Se8'
+_cell_volume   424.39459659
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.61298578  0.22597156  0.75000000  1
+  Sr  Sr1  1  0.38701422  0.77402844  0.25000000  1
+  Bi  Bi2  1  0.13393399  0.26786799  0.42861720  1
+  Bi  Bi3  1  0.86606601  0.73213201  0.92861720  1
+  Bi  Bi4  1  0.13393399  0.26786799  0.07138280  1
+  Bi  Bi5  1  0.86606601  0.73213201  0.57138280  1
+  Se  Se6  1  0.77285293  0.54570587  0.11719907  1
+  Se  Se7  1  0.77285293  0.54570587  0.38280093  1
+  Se  Se8  1  0.22714707  0.45429413  0.88280093  1
+  Se  Se9  1  0.22714707  0.45429413  0.61719907  1
+  Se  Se10  1  0.95594800  0.91189601  0.75000000  1
+  Se  Se11  1  0.04405200  0.08810399  0.25000000  1
+  Se  Se12  1  0.50000000  0.00000000  0.00000000  1
+  Se  Se13  1  0.50000000  0.00000000  0.50000000  1

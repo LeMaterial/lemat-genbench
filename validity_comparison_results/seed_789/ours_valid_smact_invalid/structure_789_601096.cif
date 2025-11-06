@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_PmNi(BiO3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.80359057
+_cell_length_b   5.80698389
+_cell_length_c   6.10492012
+_cell_angle_alpha   61.62858720
+_cell_angle_beta   61.63393038
+_cell_angle_gamma   60.04749200
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   PmNi(BiO3)2
+_chemical_formula_sum   'Pm1 Ni1 Bi2 O6'
+_cell_volume   149.02339498
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pm  Pm0  1  0.80268237  0.80258889  0.59232802  1
+  Ni  Ni1  1  0.31903058  0.31904704  0.04296218  1
+  Bi  Bi2  1  0.52972403  0.52932842  0.41116718  1
+  Bi  Bi3  1  0.01712995  0.01703008  0.94890580  1
+  O  O4  1  0.60426993  0.19465653  0.24366356  1
+  O  O5  1  0.19521686  0.95716340  0.24359063  1
+  O  O6  1  0.95706732  0.60408227  0.24386712  1
+  O  O7  1  0.41014319  0.69488925  0.76286327  1
+  O  O8  1  0.69478840  0.13250084  0.76246999  1
+  O  O9  1  0.13154437  0.41031427  0.76338325  1

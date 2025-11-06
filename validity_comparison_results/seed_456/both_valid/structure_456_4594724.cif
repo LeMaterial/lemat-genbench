@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_Sc2TlZn
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.45071719
+_cell_length_b   3.49297895
+_cell_length_c   5.87910559
+_cell_angle_alpha   72.72314037
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sc2TlZn
+_chemical_formula_sum   'Sc2 Tl1 Zn1'
+_cell_volume   87.27430504
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sc  Sc0  1  0.00000000  0.96798733  0.93961592  1
+  Sc  Sc1  1  0.50000000  0.29043015  0.29374582  1
+  Tl  Tl2  1  0.00000000  0.69885554  0.47633299  1
+  Zn  Zn3  1  0.50000000  0.54272699  0.79030527  1

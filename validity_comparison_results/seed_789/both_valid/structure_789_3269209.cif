@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Ta4In2Rh
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.69183644
+_cell_length_b   4.69183644
+_cell_length_c   8.10357620
+_cell_angle_alpha   73.17247145
+_cell_angle_beta   73.17247145
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ta4In2Rh
+_chemical_formula_sum   'Ta4 In2 Rh1'
+_cell_volume   162.75173878
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  In  In0  1  0.63970811  0.63970811  0.72058378  1
+  In  In1  1  0.36029189  0.36029189  0.27941622  1
+  Rh  Rh2  1  0.00000000  0.00000000  0.00000000  1
+  Ta  Ta3  1  0.83236574  0.83236574  0.33526852  1
+  Ta  Ta4  1  0.16763426  0.16763426  0.66473148  1
+  Ta  Ta5  1  0.00000000  0.50000000  0.00000000  1
+  Ta  Ta6  1  0.50000000  0.00000000  0.00000000  1

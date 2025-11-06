@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_V6Fe3N
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.75523445
+_cell_length_b   6.13577301
+_cell_length_c   6.13577301
+_cell_angle_alpha   47.85756602
+_cell_angle_beta   45.31541859
+_cell_angle_gamma   45.31541858
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   V6Fe3N
+_chemical_formula_sum   'V6 Fe3 N1'
+_cell_volume   120.47044636
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  V  V0  1  0.42638918  0.14742081  0.65357298  1
+  V  V1  1  0.57361082  0.34642702  0.85257919  1
+  V  V2  1  0.57361082  0.85257919  0.34642702  1
+  V  V3  1  0.42638918  0.65357298  0.14742081  1
+  V  V4  1  0.05001591  0.75311164  0.75311164  1
+  V  V5  1  0.94998409  0.24688836  0.24688836  1
+  Fe  Fe6  1  0.12518497  0.35654528  0.35654528  1
+  Fe  Fe7  1  0.87481503  0.64345472  0.64345472  1
+  Fe  Fe8  1  0.00000000  0.00000000  0.00000000  1
+  N  N9  1  0.50000000  0.50000000  0.50000000  1

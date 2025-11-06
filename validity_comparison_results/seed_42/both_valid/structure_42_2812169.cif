@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Ho2Al3Cu2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.16062770
+_cell_length_b   5.52734035
+_cell_length_c   6.79989609
+_cell_angle_alpha   113.99673478
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   112.10888682
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho2Al3Cu2
+_chemical_formula_sum   'Ho2 Al3 Cu2'
+_cell_volume   130.17566208
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.85447281  0.70894662  0.21810618  1
+  Ho  Ho1  1  0.14552719  0.29105338  0.78189382  1
+  Al  Al2  1  0.50000000  0.00000000  0.00000000  1
+  Al  Al3  1  0.61986934  0.23973868  0.43756347  1
+  Al  Al4  1  0.38013066  0.76026132  0.56243653  1
+  Cu  Cu5  1  0.85842154  0.71684209  0.77531448  1
+  Cu  Cu6  1  0.14157846  0.28315791  0.22468552  1

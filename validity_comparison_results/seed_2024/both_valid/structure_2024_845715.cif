@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_YTmZnCo2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.29293353
+_cell_length_b   5.29293353
+_cell_length_c   5.29293353
+_cell_angle_alpha   134.97632628
+_cell_angle_beta   118.15185350
+_cell_angle_gamma   79.71034421
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   YTmZnCo2
+_chemical_formula_sum   'Y1 Tm1 Zn1 Co2'
+_cell_volume   89.58975391
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.78810880  0.49920761  0.28890118  1
+  Co  Co1  1  0.21030676  0.49920797  0.71109969  1
+  Tm  Tm2  1  0.79324613  0.79324613  -0.00000000  1
+  Y  Y3  1  0.20752438  0.20752438  0.00000000  1
+  Zn  Zn4  1  0.50081382  0.00081340  0.50000042  1

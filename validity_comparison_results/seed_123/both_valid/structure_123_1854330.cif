@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_Cr2MoPb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.77720674
+_cell_length_b   8.77720674
+_cell_length_c   8.77720674
+_cell_angle_alpha   20.08632332
+_cell_angle_beta   20.08632331
+_cell_angle_gamma   20.08632330
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cr2MoPb
+_chemical_formula_sum   'Cr2 Mo1 Pb1'
+_cell_volume   69.77729183
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cr  Cr0  1  0.98526356  0.98526356  0.98526356  1
+  Cr  Cr1  1  0.24985832  0.24985832  0.24985832  1
+  Mo  Mo2  1  0.51541126  0.51541126  0.51541126  1
+  Pb  Pb3  1  0.74946687  0.74946687  0.74946687  1

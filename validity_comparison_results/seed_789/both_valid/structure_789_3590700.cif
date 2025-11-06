@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_CsNa(MnBr4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.02304914
+_cell_length_b   7.02304913
+_cell_length_c   10.19524768
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000003
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsNa(MnBr4)2
+_chemical_formula_sum   'Cs1 Na1 Mn2 Br8'
+_cell_volume   435.49164398
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.00000000  0.00000000  0.00000000  1
+  Na  Na1  1  0.00000000  0.00000000  0.50000000  1
+  Mn  Mn2  1  0.66666667  0.33333333  0.25003672  1
+  Mn  Mn3  1  0.33333333  0.66666667  0.74996328  1
+  Br  Br4  1  0.33333333  0.66666667  0.98233769  1
+  Br  Br5  1  0.34005713  0.33347134  0.31467204  1
+  Br  Br6  1  0.66652866  0.00658578  0.31467204  1
+  Br  Br7  1  0.66666667  0.33333333  0.01766231  1
+  Br  Br8  1  0.33347134  0.99341422  0.68532796  1
+  Br  Br9  1  0.65994287  0.66652866  0.68532796  1
+  Br  Br10  1  0.00658578  0.34005713  0.68532796  1
+  Br  Br11  1  0.99341422  0.65994287  0.31467204  1

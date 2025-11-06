@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Er3BiSeN
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.08529569
+_cell_length_b   8.69416058
+_cell_length_c   9.06228218
+_cell_angle_alpha   100.43499273
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Er3BiSeN
+_chemical_formula_sum   'Er6 Bi2 Se2 N2'
+_cell_volume   316.55260594
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.25000000  0.84848711  0.48895525  1
+  Er  Er1  1  0.75000000  0.88759319  0.16316578  1
+  Er  Er2  1  0.75000000  0.41236147  0.15124155  1
+  Er  Er3  1  0.75000000  0.15151289  0.51104475  1
+  Er  Er4  1  0.25000000  0.58763853  0.84875845  1
+  Er  Er5  1  0.25000000  0.11240681  0.83683422  1
+  Bi  Bi6  1  0.75000000  0.82811317  0.78843351  1
+  Bi  Bi7  1  0.25000000  0.17188683  0.21156649  1
+  Se  Se8  1  0.25000000  0.64630614  0.16417319  1
+  Se  Se9  1  0.75000000  0.35369386  0.83582681  1
+  N  N10  1  0.25000000  0.09449056  0.59847618  1
+  N  N11  1  0.75000000  0.90550944  0.40152382  1

@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Ho4Tm3Co4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.54477953
+_cell_length_b   8.72860466
+_cell_length_c   9.04091258
+_cell_angle_alpha   118.86372910
+_cell_angle_beta   101.30554380
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ho4Tm3Co4
+_chemical_formula_sum   'Ho4 Tm3 Co4'
+_cell_volume   238.76654574
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ho  Ho0  1  0.33493929  0.14943111  0.66987959  1
+  Ho  Ho1  1  0.66506071  0.47955052  0.33012041  1
+  Ho  Ho2  1  0.66506071  0.85056889  0.33012041  1
+  Ho  Ho3  1  0.33493929  0.52044948  0.66987959  1
+  Tm  Tm4  1  0.10326496  0.10326496  0.20652992  1
+  Tm  Tm5  1  0.89673504  0.89673504  0.79347008  1
+  Tm  Tm6  1  0.00000000  0.50000000  0.00000000  1
+  Co  Co7  1  0.25285686  0.75285686  0.50571371  1
+  Co  Co8  1  0.74714314  0.24714314  0.49428629  1
+  Co  Co9  1  0.50000000  0.78705041  0.00000000  1
+  Co  Co10  1  0.50000000  0.21294959  1.00000000  1

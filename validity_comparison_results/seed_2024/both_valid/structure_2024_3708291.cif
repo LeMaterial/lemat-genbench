@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_LaZrIn
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.61518900
+_cell_length_b   7.61520334
+_cell_length_c   3.35312607
+_cell_angle_alpha   77.28130908
+_cell_angle_beta   77.28181141
+_cell_angle_gamma   25.43687911
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaZrIn
+_chemical_formula_sum   'La1 Zr1 In1'
+_cell_volume   81.36522845
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  In  In0  1  0.01128355  0.01128355  0.98871645  1
+  La  La1  1  0.33656125  0.33656125  0.66343875  1
+  Zr  Zr2  1  0.65215520  0.65215520  0.34784480  1

@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_Al2ReCl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.91928022
+_cell_length_b   5.91928022
+_cell_length_c   5.91928022
+_cell_angle_alpha   153.39121795
+_cell_angle_beta   131.45060575
+_cell_angle_gamma   56.21629436
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Al2ReCl
+_chemical_formula_sum   'Al2 Re1 Cl1'
+_cell_volume   69.22887063
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Re  Re0  1  0.75201089  0.25201089  0.50000000  1
+  Al  Al1  1  0.96734066  0.96734066  1.00000000  1
+  Al  Al2  1  0.22788464  0.72788464  0.50000000  1
+  Cl  Cl3  1  0.55276379  0.55276379  -0.00000000  1

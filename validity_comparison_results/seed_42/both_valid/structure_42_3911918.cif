@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Fe3Ir6Ru
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.82432953
+_cell_length_b   8.41740298
+_cell_length_c   8.52758768
+_cell_angle_alpha   90.93468754
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Fe3Ir6Ru
+_chemical_formula_sum   'Fe6 Ir12 Ru2'
+_cell_volume   274.47439015
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.25000000  0.55056158  0.39830531  1
+  Fe  Fe1  1  0.75000000  0.44943842  0.60169469  1
+  Fe  Fe2  1  0.25000000  0.35221337  0.80156682  1
+  Fe  Fe3  1  0.75000000  0.64778663  0.19843318  1
+  Fe  Fe4  1  0.25000000  0.74626680  0.99879528  1
+  Fe  Fe5  1  0.75000000  0.25373320  0.00120472  1
+  Ir  Ir6  1  0.25000000  0.45300480  0.10018205  1
+  Ir  Ir7  1  0.75000000  0.54699520  0.89981795  1
+  Ir  Ir8  1  0.25000000  0.15276051  0.19914253  1
+  Ir  Ir9  1  0.75000000  0.84723949  0.80085747  1
+  Ir  Ir10  1  0.25000000  0.64477972  0.69732887  1
+  Ir  Ir11  1  0.75000000  0.35522028  0.30267113  1
+  Ir  Ir12  1  0.25000000  0.25409580  0.50338375  1
+  Ir  Ir13  1  0.75000000  0.74590420  0.49661625  1
+  Ir  Ir14  1  0.25000000  0.84482048  0.29697071  1
+  Ir  Ir15  1  0.75000000  0.15517952  0.70302929  1
+  Ir  Ir16  1  0.25000000  0.05455698  0.90074511  1
+  Ir  Ir17  1  0.75000000  0.94544302  0.09925489  1
+  Ru  Ru18  1  0.25000000  0.94986224  0.59821695  1
+  Ru  Ru19  1  0.75000000  0.05013776  0.40178305  1

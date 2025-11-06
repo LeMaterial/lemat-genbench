@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_HfBr3Cl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.86348868
+_cell_length_b   14.65712209
+_cell_length_c   20.01944926
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   89.99999474
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfBr3Cl
+_chemical_formula_sum   'Hf2 Br6 Cl2'
+_cell_volume   1133.65387093
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.99999990  0.04495936  0.50000000  1
+  Hf  Hf1  1  0.49999989  0.54495930  0.50000000  1
+  Br  Br2  1  0.49962195  0.54043968  0.62536433  1
+  Br  Br3  1  0.50037818  0.54043968  0.37463569  1
+  Br  Br4  1  0.00037817  0.04043966  0.62536432  1
+  Br  Br5  1  0.99962193  0.04043967  0.37463569  1
+  Br  Br6  1  0.99999999  0.67478106  0.49999999  1
+  Br  Br7  1  0.49999998  0.17478106  0.50000000  1
+  Cl  Cl8  1  0.00000000  0.43127027  0.50000000  1
+  Cl  Cl9  1  0.50000002  0.93127026  0.49999999  1

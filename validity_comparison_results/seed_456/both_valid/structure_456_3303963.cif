@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_LiHo3In4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.48237166
+_cell_length_b   3.48237166
+_cell_length_c   16.10834484
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiHo3In4
+_chemical_formula_sum   'Li1 Ho3 In4'
+_cell_volume   195.34448644
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  In  In0  1  0.00000000  0.00000000  0.90279245  1
+  In  In1  1  0.00000000  0.00000000  0.09720755  1
+  In  In2  1  0.00000000  0.00000000  0.36519225  1
+  In  In3  1  0.00000000  0.00000000  0.63480775  1
+  Ho  Ho4  1  0.50000000  0.50000000  0.23183573  1
+  Ho  Ho5  1  0.50000000  0.50000000  0.50000000  1
+  Ho  Ho6  1  0.50000000  0.50000000  0.76816427  1
+  Li  Li7  1  0.50000000  0.50000000  0.00000000  1

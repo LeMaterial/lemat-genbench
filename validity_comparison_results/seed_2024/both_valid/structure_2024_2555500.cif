@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Tb8SnRu2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.47538193
+_cell_length_b   7.91060832
+_cell_length_c   7.91060833
+_cell_angle_alpha   112.72764688
+_cell_angle_beta   97.60477064
+_cell_angle_gamma   97.60477068
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb8SnRu2
+_chemical_formula_sum   'Tb8 Sn1 Ru2'
+_cell_volume   306.87969407
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.92341861  0.93298535  0.67162782  1
+  Tb  Tb1  1  0.92341861  0.67162782  0.93298535  1
+  Tb  Tb2  1  0.29925741  0.61311863  0.61311863  1
+  Tb  Tb3  1  0.50000000  0.75291862  0.24708138  1
+  Tb  Tb4  1  0.50000000  0.24708138  0.75291862  1
+  Tb  Tb5  1  0.70074259  0.38688137  0.38688137  1
+  Tb  Tb6  1  0.07658139  0.32837218  0.06701465  1
+  Tb  Tb7  1  0.07658139  0.06701465  0.32837218  1
+  Sn  Sn8  1  0.50000000  0.00000000  0.00000000  1
+  Ru  Ru9  1  0.00000000  0.31084369  0.68915631  1
+  Ru  Ru10  1  -0.00000000  0.68915631  0.31084369  1

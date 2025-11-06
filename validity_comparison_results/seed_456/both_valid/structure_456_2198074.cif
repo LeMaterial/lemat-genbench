@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_ErZnCd4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.11333469
+_cell_length_b   7.07541259
+_cell_length_c   8.76765258
+_cell_angle_alpha   113.79689187
+_cell_angle_beta   106.87415135
+_cell_angle_gamma   89.99992341
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ErZnCd4
+_chemical_formula_sum   'Er2 Zn2 Cd8'
+_cell_volume   275.24405654
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Er  Er0  1  0.20132967  0.19980944  0.39961888  1
+  Er  Er1  1  0.79867033  0.80019056  0.60038112  1
+  Zn  Zn2  1  0.73134665  0.49717936  0.99435972  1
+  Zn  Zn3  1  0.26865335  0.50282064  0.00564028  1
+  Cd  Cd4  1  0.82853467  0.32517854  0.65035808  1
+  Cd  Cd5  1  0.62936540  0.35711854  0.25539918  1
+  Cd  Cd6  1  0.00000100  0.18472380  -0.00000000  1
+  Cd  Cd7  1  0.37063360  0.10171936  0.74460182  1
+  Cd  Cd8  1  0.17146533  0.67482146  0.34964192  1
+  Cd  Cd9  1  0.37063460  0.64288146  0.74460082  1
+  Cd  Cd10  1  0.99999900  0.81527620  1.00000000  1
+  Cd  Cd11  1  0.62936640  0.89828064  0.25539818  1

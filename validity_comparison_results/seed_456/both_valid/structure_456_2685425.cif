@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Ca2FeTcO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.54307317
+_cell_length_b   5.54312255
+_cell_length_c   5.48540725
+_cell_angle_alpha   59.64349806
+_cell_angle_beta   59.64158569
+_cell_angle_gamma   59.99891409
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ca2FeTcO6
+_chemical_formula_sum   'Ca2 Fe1 Tc1 O6'
+_cell_volume   118.52984271
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ca  Ca0  1  0.56467391  0.56435021  0.30643397  1
+  Ca  Ca1  1  0.06720750  0.06752883  0.79792403  1
+  Fe  Fe2  1  0.81612591  0.81612578  0.55162382  1
+  Tc  Tc3  1  0.31616545  0.31616596  0.05150278  1
+  O  O4  1  0.56194757  0.14742010  0.30041636  1
+  O  O5  1  0.14772327  0.98996308  0.30069950  1
+  O  O6  1  0.99018366  0.56122026  0.30116000  1
+  O  O7  1  0.48463583  0.64246587  0.80187240  1
+  O  O8  1  0.64224595  0.07142269  0.80140923  1
+  O  O9  1  0.07068794  0.48493823  0.80215890  1

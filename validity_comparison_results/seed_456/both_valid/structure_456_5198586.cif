@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_Tb2Pr4DyHo
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.18847974
+_cell_length_b   5.15554492
+_cell_length_c   11.34757950
+_cell_angle_alpha   62.96518961
+_cell_angle_beta   90.00000233
+_cell_angle_gamma   89.99985254
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb2Pr4DyHo
+_chemical_formula_sum   'Tb2 Pr4 Dy1 Ho1'
+_cell_volume   270.37359456
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  -0.00000000  0.00000100  0.99999900  1
+  Tb  Tb1  1  0.50000000  0.00000100  0.49999900  1
+  Pr  Pr2  1  0.00000322  0.75046526  0.74957643  1
+  Pr  Pr3  1  0.99999578  0.24953624  0.25042207  1
+  Pr  Pr4  1  0.50000233  0.74996638  0.25016789  1
+  Pr  Pr5  1  0.49999667  0.25003462  0.74983111  1
+  Dy  Dy6  1  0.49999900  0.50000150  0.99999950  1
+  Ho  Ho7  1  0.00000050  0.49999400  0.50000450  1

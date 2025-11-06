@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Th3(HgAu3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.37240970
+_cell_length_b   4.37240970
+_cell_length_c   14.21816241
+_cell_angle_alpha   98.84496978
+_cell_angle_beta   98.84496978
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Th3(HgAu3)2
+_chemical_formula_sum   'Th3 Hg2 Au6'
+_cell_volume   265.31795208
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Th  Th0  1  0.00000000  0.00000000  0.00000000  1
+  Th  Th1  1  0.80100813  0.80100813  0.60201625  1
+  Th  Th2  1  0.19899187  0.19899187  0.39798375  1
+  Hg  Hg3  1  0.44884235  0.44884135  0.89768369  1
+  Hg  Hg4  1  0.55115765  0.55115865  0.10231631  1
+  Au  Au5  1  0.11701915  0.61702015  0.23403931  1
+  Au  Au6  1  0.61701915  0.11702015  0.23403931  1
+  Au  Au7  1  0.88298085  0.38297985  0.76596069  1
+  Au  Au8  1  0.38298085  0.88297985  0.76596069  1
+  Au  Au9  1  0.69049876  0.69049776  0.38099652  1
+  Au  Au10  1  0.30950124  0.30950224  0.61900348  1

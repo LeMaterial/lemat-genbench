@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Cu2Te2Pb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.01471706
+_cell_length_b   7.01471706
+_cell_length_c   7.01471706
+_cell_angle_alpha   114.86561187
+_cell_angle_beta   89.53022047
+_cell_angle_gamma   125.99451245
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cu2Te2Pb
+_chemical_formula_sum   'Cu4 Te4 Pb2'
+_cell_volume   239.58033618
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.37439816  0.81214013  0.18653961  1
+  Cu  Cu1  1  0.12560118  0.31214079  0.43774197  1
+  Cu  Cu2  1  0.87439847  0.68785850  0.56225830  1
+  Cu  Cu3  1  0.62560048  0.18785916  0.81345965  1
+  Pb  Pb4  1  0.25000045  0.25000045  0.00000000  1
+  Pb  Pb5  1  0.74999979  0.74999979  -0.00000000  1
+  Te  Te6  1  0.85636495  0.34286497  0.19923124  1
+  Te  Te7  1  0.64363404  0.84286492  0.48650029  1
+  Te  Te8  1  0.35636561  0.15713437  0.51349998  1
+  Te  Te9  1  0.14363470  0.65713432  0.80076902  1

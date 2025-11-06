@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_ZrW2Cl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.18068279
+_cell_length_b   3.22716554
+_cell_length_c   8.33129470
+_cell_angle_alpha   67.20411069
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZrW2Cl
+_chemical_formula_sum   'Zr1 W2 Cl1'
+_cell_volume   78.83764663
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cl  Cl0  1  0.50000000  0.11970098  0.75342820  1
+  W  W1  1  0.00000000  0.82585916  0.04995888  1
+  W  W2  1  0.50000000  0.14457522  0.23089917  1
+  Zr  Zr3  1  0.00000000  0.40986463  0.46571374  1

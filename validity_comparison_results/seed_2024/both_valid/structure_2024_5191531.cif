@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_CdAgO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.29610614
+_cell_length_b   3.29610614
+_cell_length_c   8.83346511
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   89.99931060
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CdAgO
+_chemical_formula_sum   'Cd2 Ag2 O2'
+_cell_volume   95.96955375
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cd  Cd0  1  0.83032574  0.66967426  0.35354237  1
+  Cd  Cd1  1  0.33032574  0.16967426  0.64645763  1
+  Ag  Ag2  1  0.33030414  0.16969586  0.09183508  1
+  Ag  Ag3  1  0.83030414  0.66969586  0.90816492  1
+  O  O4  1  0.33034012  0.16965988  0.36966611  1
+  O  O5  1  0.83034012  0.66965988  0.63033389  1

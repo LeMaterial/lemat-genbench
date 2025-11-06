@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Ba(Tl3In)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.69027479
+_cell_length_b   9.65255273
+_cell_length_c   9.65255272
+_cell_angle_alpha   59.10980207
+_cell_angle_beta   79.31715429
+_cell_angle_gamma   79.31715438
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba(Tl3In)2
+_chemical_formula_sum   'Ba1 Tl6 In2'
+_cell_volume   288.28079843
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.99999637  0.00000114  0.00000114  1
+  Tl  Tl1  1  0.32447210  0.00382639  0.35484978  1
+  Tl  Tl2  1  0.67552722  0.99617723  0.64514862  1
+  Tl  Tl3  1  0.67552722  0.64514862  0.99617723  1
+  Tl  Tl4  1  0.50000205  0.33429516  0.66570098  1
+  Tl  Tl5  1  0.50000205  0.66570098  0.33429516  1
+  Tl  Tl6  1  0.32447210  0.35484978  0.00382639  1
+  In  In7  1  0.12806193  0.35483539  0.35483539  1
+  In  In8  1  0.87193897  0.64516331  0.64516331  1

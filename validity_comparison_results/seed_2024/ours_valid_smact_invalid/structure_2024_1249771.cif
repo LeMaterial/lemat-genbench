@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_ErTaB4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.73784413
+_cell_length_b   4.73784413
+_cell_length_c   4.73784413
+_cell_angle_alpha   141.04847504
+_cell_angle_beta   109.47266363
+_cell_angle_gamma   83.62500643
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ErTaB4
+_chemical_formula_sum   'Er1 Ta1 B4'
+_cell_volume   61.03218974
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  B  B0  1  0.58381472  0.24879506  0.33501967  1
+  B  B1  1  0.08622406  0.75120640  0.33502053  1
+  B  B2  1  0.91377653  0.24879506  0.66498148  1
+  B  B3  1  0.41618587  0.75120640  0.66498234  1
+  Er  Er4  1  0.00000000  0.00000000  0.00000000  1
+  Ta  Ta5  1  0.50000002  0.50000002  -0.00000000  1

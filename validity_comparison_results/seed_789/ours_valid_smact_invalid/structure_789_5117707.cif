@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Pa2Ga2Si4Rh
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.03534251
+_cell_length_b   6.03534250
+_cell_length_c   6.03534250
+_cell_angle_alpha   91.14584442
+_cell_angle_beta   119.34066622
+_cell_angle_gamma   119.34066618
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pa2Ga2Si4Rh
+_chemical_formula_sum   'Pa2 Ga2 Si4 Rh1'
+_cell_volume   156.96522589
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pa  Pa0  1  0.50000000  0.75000000  0.25000000  1
+  Pa  Pa1  1  0.50000000  0.25000000  0.75000000  1
+  Ga  Ga2  1  1.00000000  0.70918144  0.70918144  1
+  Ga  Ga3  1  -0.00000000  0.29081856  0.29081856  1
+  Si  Si4  1  0.00000000  0.71980337  0.28019663  1
+  Si  Si5  1  0.43960574  0.71980237  0.71980237  1
+  Si  Si6  1  -0.00000000  0.28019663  0.71980337  1
+  Si  Si7  1  0.56039426  0.28019763  0.28019763  1
+  Rh  Rh8  1  0.00000000  0.00000000  0.00000000  1

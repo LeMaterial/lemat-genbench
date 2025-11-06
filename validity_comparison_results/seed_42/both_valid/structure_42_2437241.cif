@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_CeCoSiNi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.22350107
+_cell_length_b   3.77743508
+_cell_length_c   4.54768065
+_cell_angle_alpha   114.53912120
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CeCoSiNi
+_chemical_formula_sum   'Ce1 Co1 Si1 Ni1'
+_cell_volume   66.00049995
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.50000000  0.22837229  0.45674457  1
+  Co  Co1  1  0.50000000  0.48918866  0.97837731  1
+  Si  Si2  1  0.00000000  0.59554743  0.19109485  1
+  Ni  Ni3  1  0.00000000  0.91470163  0.82940327  1

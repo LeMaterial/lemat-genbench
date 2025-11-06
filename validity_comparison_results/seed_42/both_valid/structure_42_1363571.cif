@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Cs6Rb2NaHg
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.21189633
+_cell_length_b   12.67697619
+_cell_length_c   15.05133418
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   88.64585778
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cs6Rb2NaHg
+_chemical_formula_sum   'Cs12 Rb4 Na2 Hg2'
+_cell_volume   1757.18873198
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.36720693  0.66455787  0.01379630  1
+  Cs  Cs1  1  0.86720693  0.83544213  0.51379630  1
+  Cs  Cs2  1  0.63279307  0.33544213  0.98620370  1
+  Cs  Cs3  1  0.13279307  0.16455787  0.48620370  1
+  Cs  Cs4  1  0.39587851  0.68492569  0.48235101  1
+  Cs  Cs5  1  0.89587851  0.81507431  0.98235101  1
+  Cs  Cs6  1  0.60412149  0.31507431  0.51764899  1
+  Cs  Cs7  1  0.10412149  0.18492569  0.01764899  1
+  Cs  Cs8  1  0.80568047  0.57694241  0.23795244  1
+  Cs  Cs9  1  0.30568047  0.92305759  0.73795244  1
+  Cs  Cs10  1  0.19431953  0.42305759  0.76204756  1
+  Cs  Cs11  1  0.69431953  0.07694241  0.26204756  1
+  Rb  Rb12  1  0.24043566  0.90937274  0.25207261  1
+  Rb  Rb13  1  0.74043566  0.59062726  0.75207261  1
+  Rb  Rb14  1  0.75956434  0.09062726  0.74792739  1
+  Rb  Rb15  1  0.25956434  0.40937274  0.24792739  1
+  Na  Na16  1  0.50000000  0.00000000  -0.00000000  1
+  Na  Na17  1  -0.00000000  0.50000000  0.50000000  1
+  Hg  Hg18  1  0.50000000  0.00000000  0.50000000  1
+  Hg  Hg19  1  0.00000000  0.50000000  0.00000000  1

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_LaTb3Nd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.58352036
+_cell_length_b   8.88213088
+_cell_length_c   9.19120155
+_cell_angle_alpha   120.71615503
+_cell_angle_beta   100.84339876
+_cell_angle_gamma   117.47167227
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaTb3Nd
+_chemical_formula_sum   'La2 Tb6 Nd2'
+_cell_volume   340.87295369
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.46885315  0.06409861  0.21236871  1
+  La  La1  1  0.53114685  0.93590139  0.78763129  1
+  Tb  Tb2  1  0.97737791  0.58317925  0.24346019  1
+  Tb  Tb3  1  0.84080403  0.66180513  0.65363207  1
+  Tb  Tb4  1  0.65684616  0.81927291  0.41809800  1
+  Tb  Tb5  1  0.34315384  0.18072709  0.58190200  1
+  Tb  Tb6  1  0.02262209  0.41682075  0.75653981  1
+  Tb  Tb7  1  0.15919597  0.33819487  0.34636793  1
+  Nd  Nd8  1  0.26885674  0.25485078  0.96280105  1
+  Nd  Nd9  1  0.73114326  0.74514922  0.03719895  1

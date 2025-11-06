@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Li2Ga3Ag5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.53412597
+_cell_length_b   8.87538464
+_cell_length_c   8.87538464
+_cell_angle_alpha   93.26199385
+_cell_angle_beta   71.83417520
+_cell_angle_gamma   71.83417520
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2Ga3Ag5
+_chemical_formula_sum   'Li4 Ga6 Ag10'
+_cell_volume   387.78807709
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.14385996  0.58061466  0.13166641  1
+  Li  Li1  1  0.64385996  0.13166641  0.58061466  1
+  Li  Li2  1  0.85614004  0.41938534  0.86833359  1
+  Li  Li3  1  0.35614004  0.86833359  0.41938534  1
+  Ga  Ga4  1  0.37556747  0.47878790  0.77007817  1
+  Ga  Ga5  1  0.87556747  0.77007817  0.47878790  1
+  Ga  Ga6  1  0.62443253  0.52121210  0.22992183  1
+  Ga  Ga7  1  0.12443253  0.22992183  0.52121210  1
+  Ga  Ga8  1  0.25000000  0.00000000  0.00000000  1
+  Ga  Ga9  1  0.75000000  0.00000000  0.00000000  1
+  Ag  Ag10  1  0.40692316  0.25420429  0.93194938  1
+  Ag  Ag11  1  0.90692316  0.93194938  0.25420429  1
+  Ag  Ag12  1  0.59307684  0.74579571  0.06805062  1
+  Ag  Ag13  1  0.09307684  0.06805062  0.74579571  1
+  Ag  Ag14  1  0.49245210  0.75754790  0.75754790  1
+  Ag  Ag15  1  0.50754790  0.24245210  0.24245210  1
+  Ag  Ag16  1  0.75000000  0.50000000  0.50000000  1
+  Ag  Ag17  1  0.25000000  0.50000000  0.50000000  1
+  Ag  Ag18  1  0.00754790  0.24245210  0.24245210  1
+  Ag  Ag19  1  0.99245210  0.75754790  0.75754790  1

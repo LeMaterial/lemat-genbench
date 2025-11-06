@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_CePm4Nd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.44830858
+_cell_length_b   6.06773514
+_cell_length_c   11.62243280
+_cell_angle_alpha   117.28659577
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   106.50811910
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CePm4Nd
+_chemical_formula_sum   'Ce1 Pm4 Nd1'
+_cell_volume   204.77656813
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.50000000  0.00000000  0.00000000  1
+  Pm  Pm1  1  0.15759115  0.31518330  0.84545564  1
+  Pm  Pm2  1  0.84240885  0.68481670  0.15454436  1
+  Pm  Pm3  1  0.65760708  0.31521415  0.33855432  1
+  Pm  Pm4  1  0.34239292  0.68478585  0.66144568  1
+  Nd  Nd5  1  0.00000000  0.00000000  0.50000000  1

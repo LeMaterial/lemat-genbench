@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_Y3ErMg3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.73349739
+_cell_length_b   7.73349797
+_cell_length_c   6.93884289
+_cell_angle_alpha   89.83517492
+_cell_angle_beta   89.83517335
+_cell_angle_gamma   92.80052145
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Y3ErMg3
+_chemical_formula_sum   'Y6 Er2 Mg6'
+_cell_volume   414.49204821
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Y  Y0  1  0.00001972  0.00001972  0.75405805  1
+  Y  Y1  1  0.49847355  0.00128881  0.25264412  1
+  Y  Y2  1  0.00128881  0.49847355  0.25264412  1
+  Y  Y3  1  0.50152645  0.99871119  0.74735588  1
+  Y  Y4  1  0.99871119  0.50152645  0.74735588  1
+  Y  Y5  1  0.99998028  0.99998028  0.24594195  1
+  Er  Er6  1  0.31419940  0.31419940  0.99571891  1
+  Er  Er7  1  0.68580060  0.68580060  0.00428109  1
+  Mg  Mg8  1  0.27194534  0.27194534  0.49911865  1
+  Mg  Mg9  1  0.32587378  0.67412622  0.50000000  1
+  Mg  Mg10  1  0.67412622  0.32587378  0.50000000  1
+  Mg  Mg11  1  0.25556091  0.74443909  1.00000000  1
+  Mg  Mg12  1  0.74443909  0.25556091  0.00000000  1
+  Mg  Mg13  1  0.72805466  0.72805466  0.50088135  1

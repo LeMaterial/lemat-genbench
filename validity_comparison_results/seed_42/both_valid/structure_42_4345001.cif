@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_KPuCd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.73547820
+_cell_length_b   6.73607745
+_cell_length_c   9.49611575
+_cell_angle_alpha   110.63701281
+_cell_angle_beta   110.63734360
+_cell_angle_gamma   29.23432687
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KPuCd
+_chemical_formula_sum   'K2 Pu2 Cd2'
+_cell_volume   195.96296225
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.70017841  0.17844993  0.58493548  1
+  K  K1  1  0.02393354  0.48973205  0.82641366  1
+  Cd  Cd2  1  0.40026433  0.86834559  0.43550003  1
+  Cd  Cd3  1  0.69358947  0.16078166  0.19923610  1
+  Pu  Pu4  1  0.97535557  0.44294320  0.19985779  1
+  Pu  Pu5  1  0.34449267  0.81219758  0.05375894  1

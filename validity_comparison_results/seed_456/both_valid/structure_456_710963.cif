@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Pr3(GaGe2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.23397683
+_cell_length_b   6.12061386
+_cell_length_c   9.12634027
+_cell_angle_alpha   110.08177848
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   110.23542869
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr3(GaGe2)2
+_chemical_formula_sum   'Pr3 Ga2 Ge4'
+_cell_volume   206.51512706
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.62501064  0.25002129  0.69181728  1
+  Pr  Pr1  1  0.00000000  0.00000000  0.00000000  1
+  Pr  Pr2  1  0.37498936  0.74997871  0.30818272  1
+  Ga  Ga3  1  0.67713301  0.35426602  0.32345662  1
+  Ga  Ga4  1  0.32286699  0.64573398  0.67654338  1
+  Ge  Ge5  1  0.71428417  0.42856733  0.05492233  1
+  Ge  Ge6  1  0.28571583  0.57143267  0.94507767  1
+  Ge  Ge7  1  0.91023740  0.82047480  0.60109431  1
+  Ge  Ge8  1  0.08976260  0.17952520  0.39890569  1

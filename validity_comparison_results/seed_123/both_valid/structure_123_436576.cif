@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_HfTlNiTe3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.92877217
+_cell_length_b   8.82116300
+_cell_length_c   11.17685676
+_cell_angle_alpha   115.98445084
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfTlNiTe3
+_chemical_formula_sum   'Hf2 Tl2 Ni2 Te6'
+_cell_volume   348.19299424
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ni  Ni0  1  0.25000000  0.91089933  0.39393286  1
+  Ni  Ni1  1  0.75000000  0.08910067  0.60606714  1
+  Tl  Tl2  1  0.25000000  0.69124647  0.69445695  1
+  Tl  Tl3  1  0.75000000  0.30875353  0.30554305  1
+  Te  Te4  1  0.75000000  0.05808365  0.82397862  1
+  Te  Te5  1  0.25000000  0.94191635  0.17602138  1
+  Te  Te6  1  0.25000000  0.23074071  0.54780821  1
+  Te  Te7  1  0.75000000  0.76925929  0.45219179  1
+  Te  Te8  1  0.75000000  0.56205356  0.88234102  1
+  Te  Te9  1  0.25000000  0.43794644  0.11765898  1
+  Hf  Hf10  1  0.25000000  0.28914188  0.81882939  1
+  Hf  Hf11  1  0.75000000  0.71085812  0.18117061  1

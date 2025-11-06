@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Sm4Ho2Th
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.60954468
+_cell_length_b   3.60973559
+_cell_length_c   20.51771820
+_cell_angle_alpha   95.17495135
+_cell_angle_beta   89.99998001
+_cell_angle_gamma   119.99829048
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sm4Ho2Th
+_chemical_formula_sum   'Sm4 Ho2 Th1'
+_cell_volume   230.26436393
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.90960182  0.81920370  0.95679911  1
+  Sm  Sm1  1  0.42779696  0.85559475  0.52159310  1
+  Sm  Sm2  1  0.99976091  0.99952132  0.23778531  1
+  Sm  Sm3  1  0.52379520  0.04759184  0.80939578  1
+  Ho  Ho4  1  0.62046715  0.24093503  0.09689843  1
+  Ho  Ho5  1  0.71019983  0.42039994  0.37944762  1
+  Th  Th6  1  0.80977713  0.61955442  0.66608164  1

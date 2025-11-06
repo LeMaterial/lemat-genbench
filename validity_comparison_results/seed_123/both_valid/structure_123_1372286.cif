@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_HgP2Pt
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.30447450
+_cell_length_b   7.30447449
+_cell_length_c   7.30447449
+_cell_angle_alpha   26.67320281
+_cell_angle_beta   26.67320279
+_cell_angle_gamma   26.67320279
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HgP2Pt
+_chemical_formula_sum   'Hg1 P2 Pt1'
+_cell_volume   69.24134510
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hg  Hg0  1  0.74780891  0.74780891  0.74780891  1
+  P  P1  1  0.98210048  0.98210048  0.98210048  1
+  P  P2  1  0.25264298  0.25264298  0.25264298  1
+  Pt  Pt3  1  0.51744764  0.51744764  0.51744764  1

@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_MgAgSb
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.87908349
+_cell_length_b   4.41566495
+_cell_length_c   4.41469293
+_cell_angle_alpha   90.49029866
+_cell_angle_beta   109.10257892
+_cell_angle_gamma   70.35647297
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgAgSb
+_chemical_formula_sum   'Mg2 Ag2 Sb2'
+_cell_volume   135.79784913
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sb  Sb0  1  0.25355759  0.23311614  0.95089248  1
+  Sb  Sb1  1  0.83860134  0.91163955  0.26650165  1
+  Mg  Mg2  1  0.25215021  0.74182907  0.44347150  1
+  Mg  Mg3  1  0.84002964  0.40301442  0.77361567  1
+  Ag  Ag4  1  0.54610150  0.07248128  0.60870646  1
+  Ag  Ag5  1  0.54607437  0.57241129  0.10859729  1

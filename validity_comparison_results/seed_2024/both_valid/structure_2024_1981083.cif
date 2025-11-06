@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Sc2NbSi2Ru5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.20052477
+_cell_length_b   9.85752755
+_cell_length_c   9.85752755
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sc2NbSi2Ru5
+_chemical_formula_sum   'Sc4 Nb2 Si4 Ru10'
+_cell_volume   310.99771042
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sc  Sc0  1  0.00000000  0.67231050  0.17231050  1
+  Sc  Sc1  1  0.00000000  0.32768950  0.82768950  1
+  Sc  Sc2  1  0.00000000  0.17231050  0.32768950  1
+  Sc  Sc3  1  0.00000000  0.82768950  0.67231050  1
+  Nb  Nb4  1  0.00000000  0.00000000  0.00000000  1
+  Nb  Nb5  1  0.00000000  0.50000000  0.50000000  1
+  Si  Si6  1  0.00000000  0.12723229  0.62723229  1
+  Si  Si7  1  0.00000000  0.87276771  0.37276771  1
+  Si  Si8  1  0.00000000  0.62723229  0.87276771  1
+  Si  Si9  1  0.00000000  0.37276771  0.12723229  1
+  Ru  Ru10  1  0.50000000  0.20677700  0.06884301  1
+  Ru  Ru11  1  0.50000000  0.79322300  0.93115699  1
+  Ru  Ru12  1  0.50000000  0.06884301  0.79322300  1
+  Ru  Ru13  1  0.50000000  0.70677700  0.43115699  1
+  Ru  Ru14  1  0.50000000  0.93115699  0.20677700  1
+  Ru  Ru15  1  0.50000000  0.29322300  0.56884301  1
+  Ru  Ru16  1  0.50000000  0.56884301  0.70677700  1
+  Ru  Ru17  1  0.50000000  0.43115699  0.29322300  1
+  Ru  Ru18  1  0.50000000  0.50000000  0.00000000  1
+  Ru  Ru19  1  0.50000000  0.00000000  0.50000000  1

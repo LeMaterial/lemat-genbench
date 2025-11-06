@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Ac5MgSn6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.22091288
+_cell_length_b   10.63405343
+_cell_length_c   9.70477876
+_cell_angle_alpha   56.77850055
+_cell_angle_beta   74.46116233
+_cell_angle_gamma   60.72757358
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ac5MgSn6
+_chemical_formula_sum   'Ac5 Mg1 Sn6'
+_cell_volume   393.18378221
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ac  Ac0  1  0.50000000  0.14857578  0.70284944  1
+  Ac  Ac1  1  -0.00000000  0.33010342  0.33979417  1
+  Ac  Ac2  1  0.50000000  0.50000000  0.00000000  1
+  Ac  Ac3  1  1.00000000  0.66989658  0.66020583  1
+  Ac  Ac4  1  0.50000000  0.85142422  0.29715056  1
+  Mg  Mg5  1  0.00000000  0.00000000  0.00000000  1
+  Sn  Sn6  1  0.75026339  0.08336341  0.33161329  1
+  Sn  Sn7  1  0.24973661  0.58502330  0.33161329  1
+  Sn  Sn8  1  0.24731094  0.25061226  1.00000000  1
+  Sn  Sn9  1  0.75268906  0.74938774  0.00000000  1
+  Sn  Sn10  1  0.75026339  0.41497670  0.66838671  1
+  Sn  Sn11  1  0.24973661  0.91663659  0.66838671  1

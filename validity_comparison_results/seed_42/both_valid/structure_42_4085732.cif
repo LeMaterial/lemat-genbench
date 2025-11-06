@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_ThSc2InHg4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.89293606
+_cell_length_b   4.89293606
+_cell_length_c   9.82455027
+_cell_angle_alpha   75.58072132
+_cell_angle_beta   75.58072134
+_cell_angle_gamma   60.00000002
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ThSc2InHg4
+_chemical_formula_sum   'Th1 Sc2 In1 Hg4'
+_cell_volume   195.09367234
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Th  Th0  1  0.00000000  0.00000000  0.00000000  1
+  Sc  Sc1  1  0.76373114  0.76373114  0.70880657  1
+  Sc  Sc2  1  0.23626886  0.23626886  0.29119343  1
+  In  In3  1  0.50000000  0.50000000  0.50000000  1
+  Hg  Hg4  1  0.38635977  0.38635977  0.84092068  1
+  Hg  Hg5  1  0.87812386  0.87812386  0.36562842  1
+  Hg  Hg6  1  0.12187614  0.12187614  0.63437158  1
+  Hg  Hg7  1  0.61364023  0.61364023  0.15907932  1

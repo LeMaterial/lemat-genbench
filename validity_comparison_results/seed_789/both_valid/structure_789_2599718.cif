@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Pr6Cu5Ag
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.19351495
+_cell_length_b   7.23825858
+_cell_length_c   8.20420428
+_cell_angle_alpha   89.99963066
+_cell_angle_beta   108.80532226
+_cell_angle_gamma   89.99977103
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Pr6Cu5Ag
+_chemical_formula_sum   'Pr6 Cu5 Ag1'
+_cell_volume   291.94921351
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Pr  Pr0  1  0.83059531  0.74668339  0.65941110  1
+  Pr  Pr1  1  0.83058661  0.25327664  0.65939849  1
+  Pr  Pr2  1  0.49999623  0.25819584  0.99999754  1
+  Pr  Pr3  1  0.50000377  0.74180416  0.00000246  1
+  Pr  Pr4  1  0.16941339  0.74672336  0.34060151  1
+  Pr  Pr5  1  0.16940469  0.25331661  0.34058890  1
+  Ag  Ag6  1  0.00000000  0.00000000  0.00000000  1
+  Cu  Cu7  1  0.66367435  0.50000631  0.33053130  1
+  Cu  Cu8  1  0.33694882  0.00000321  0.67067348  1
+  Cu  Cu9  1  0.00000000  0.50000000  -0.00000000  1
+  Cu  Cu10  1  0.66305118  0.99999679  0.32932652  1
+  Cu  Cu11  1  0.33632565  0.49999369  0.66946870  1

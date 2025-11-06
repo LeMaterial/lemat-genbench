@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Fe6CoTe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.57626696
+_cell_length_b   6.60756972
+_cell_length_c   6.60756972
+_cell_angle_alpha   119.99999998
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Fe6CoTe2
+_chemical_formula_sum   'Fe6 Co1 Te2'
+_cell_volume   135.22097750
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Te  Te0  1  0.50000000  0.33333333  0.66666667  1
+  Te  Te1  1  0.50000000  0.66666667  0.33333333  1
+  Co  Co2  1  0.00000000  0.00000000  0.00000000  1
+  Fe  Fe3  1  0.50000000  0.23511404  0.00000000  1
+  Fe  Fe4  1  0.00000000  0.00000000  0.63681281  1
+  Fe  Fe5  1  0.50000000  0.76488596  0.76488596  1
+  Fe  Fe6  1  0.50000000  1.00000000  0.23511404  1
+  Fe  Fe7  1  0.00000000  0.36318719  0.36318719  1
+  Fe  Fe8  1  0.00000000  0.63681281  1.00000000  1

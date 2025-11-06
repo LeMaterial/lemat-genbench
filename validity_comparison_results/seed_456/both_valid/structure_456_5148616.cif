@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Eu2FeSi2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.18754866
+_cell_length_b   6.10755510
+_cell_length_c   9.13576204
+_cell_angle_alpha   82.85389498
+_cell_angle_beta   76.75597252
+_cell_angle_gamma   69.94927481
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Eu2FeSi2
+_chemical_formula_sum   'Eu4 Fe2 Si4'
+_cell_volume   213.38493437
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Eu  Eu0  1  0.18694489  0.72531787  0.90080963  1
+  Eu  Eu1  1  0.99324414  0.34578346  0.66775930  1
+  Eu  Eu2  1  0.81305511  0.27468213  0.09919037  1
+  Eu  Eu3  1  0.00675586  0.65421654  0.33224070  1
+  Si  Si4  1  0.48730160  0.89403042  0.13131035  1
+  Si  Si5  1  0.67840207  0.21591300  0.42723026  1
+  Si  Si6  1  0.51269840  0.10596958  0.86868965  1
+  Si  Si7  1  0.32159793  0.78408700  0.57276974  1
+  Fe  Fe8  1  0.28148781  0.05954777  0.37739183  1
+  Fe  Fe9  1  0.71851219  0.94045223  0.62260817  1

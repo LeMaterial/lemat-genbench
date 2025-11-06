@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Nd4PtO7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.03813146
+_cell_length_b   6.89994410
+_cell_length_c   7.11993142
+_cell_angle_alpha   83.53575273
+_cell_angle_beta   73.52605007
+_cell_angle_gamma   72.98508762
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nd4PtO7
+_chemical_formula_sum   'Nd4 Pt1 O7'
+_cell_volume   181.81619512
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nd  Nd0  1  0.58727199  0.22144914  0.60400689  1
+  Nd  Nd1  1  0.41272801  0.77855086  0.39599311  1
+  Nd  Nd2  1  0.74962955  0.66153152  0.83920938  1
+  Nd  Nd3  1  0.25037045  0.33846848  0.16079062  1
+  Pt  Pt4  1  0.00000000  0.00000000  0.00000000  1
+  O  O5  1  0.79765297  0.85182187  0.55287219  1
+  O  O6  1  0.20234703  0.14817813  0.44712781  1
+  O  O7  1  0.09300395  0.70554452  0.10844758  1
+  O  O8  1  0.90699605  0.29445548  0.89155242  1
+  O  O9  1  0.36864020  0.57040964  0.69230997  1
+  O  O10  1  0.50000000  0.00000000  0.00000000  1
+  O  O11  1  0.63135980  0.42959036  0.30769003  1

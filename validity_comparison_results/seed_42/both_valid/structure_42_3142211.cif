@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Sr2Zn(SiAu3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.76185162
+_cell_length_b   6.76185162
+_cell_length_c   8.74960855
+_cell_angle_alpha   67.26877130
+_cell_angle_beta   67.26877132
+_cell_angle_gamma   60.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2Zn(SiAu3)2
+_chemical_formula_sum   'Sr2 Zn1 Si2 Au6'
+_cell_volume   310.05908326
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.78318243  0.78318243  0.65045270  1
+  Sr  Sr1  1  0.21681757  0.21681757  0.34954730  1
+  Zn  Zn2  1  0.00000000  0.00000000  0.00000000  1
+  Si  Si3  1  0.44966571  0.44966571  0.65100186  1
+  Si  Si4  1  0.55033429  0.55033429  0.34899814  1
+  Au  Au5  1  0.77213410  0.77213410  0.26906365  1
+  Au  Au6  1  0.18666815  0.77213410  0.26906365  1
+  Au  Au7  1  0.77213410  0.18666815  0.26906365  1
+  Au  Au8  1  0.22786590  0.81333185  0.73093635  1
+  Au  Au9  1  0.81333185  0.22786590  0.73093635  1
+  Au  Au10  1  0.22786590  0.22786590  0.73093635  1

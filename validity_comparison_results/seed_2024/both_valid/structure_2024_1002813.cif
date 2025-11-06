@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_TbTm2Al3CuAg2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.08106250
+_cell_length_b   7.20773495
+_cell_length_c   7.20773495
+_cell_angle_alpha   120.19732913
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TbTm2Al3CuAg2
+_chemical_formula_sum   'Tb1 Tm2 Al3 Cu1 Ag2'
+_cell_volume   183.24599631
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.49999969  0.66996515  0.33111660  1
+  Ag  Ag1  1  0.49999969  0.33111660  0.66996515  1
+  Al  Al2  1  0.49999969  0.99966435  0.22810940  1
+  Al  Al3  1  0.49999969  0.77092758  0.77092758  1
+  Al  Al4  1  0.49999969  0.22810940  0.99966435  1
+  Cu  Cu5  1  0.00000000  0.99681665  0.99681665  1
+  Tb  Tb6  1  0.00000000  0.40547707  0.40547707  1
+  Tm  Tm7  1  0.00000000  0.59780111  0.00012607  1
+  Tm  Tm8  1  0.00000000  0.00012607  0.59780111  1

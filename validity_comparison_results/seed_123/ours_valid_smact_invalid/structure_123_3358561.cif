@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Li2Cu2Cl5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.65294542
+_cell_length_b   6.49485624
+_cell_length_c   9.81379567
+_cell_angle_alpha   107.88506694
+_cell_angle_beta   100.72192082
+_cell_angle_gamma   89.99553925
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2Cu2Cl5
+_chemical_formula_sum   'Li2 Cu2 Cl5'
+_cell_volume   217.30969517
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.88913710  0.07357536  0.77831023  1
+  Li  Li1  1  0.11086290  0.92642464  0.22168977  1
+  Cu  Cu2  1  0.61040429  0.34723091  0.22075857  1
+  Cu  Cu3  1  0.38959571  0.65276909  0.77924143  1
+  Cl  Cl4  1  0.67638126  0.12088679  0.35279555  1
+  Cl  Cl5  1  0.32361874  0.87911321  0.64720445  1
+  Cl  Cl6  1  0.89631673  0.45537885  0.79262442  1
+  Cl  Cl7  1  0.10368327  0.54462115  0.20737558  1
+  Cl  Cl8  1  0.00000000  0.00000000  0.00000000  1

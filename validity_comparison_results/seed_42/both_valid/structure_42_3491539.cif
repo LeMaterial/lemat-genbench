@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_Ba3Pr3DyTe8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.21683291
+_cell_length_b   9.21219026
+_cell_length_c   9.65302704
+_cell_angle_alpha   118.47290585
+_cell_angle_beta   90.01090479
+_cell_angle_gamma   119.98723629
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba3Pr3DyTe8
+_chemical_formula_sum   'Ba3 Pr3 Dy1 Te8'
+_cell_volume   592.62976987
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.00000000  0.00000000  0.00000000  1
+  Ba  Ba1  1  -0.00000000  0.50000000  0.00000000  1
+  Ba  Ba2  1  0.50000000  0.50000000  0.00000000  1
+  Pr  Pr3  1  0.50000000  0.00000000  0.50000000  1
+  Pr  Pr4  1  0.50000000  0.50000000  0.50000000  1
+  Pr  Pr5  1  0.00000000  0.50000000  0.50000000  1
+  Dy  Dy6  1  0.00000000  0.00000000  0.50000000  1
+  Te  Te7  1  0.25752374  0.51514137  0.27267400  1
+  Te  Te8  1  0.74247626  0.48485863  0.72732600  1
+  Te  Te9  1  0.76358956  0.52719228  0.28033168  1
+  Te  Te10  1  0.23641044  0.47280772  0.71966832  1
+  Te  Te11  1  0.76346386  0.01682172  0.28023832  1
+  Te  Te12  1  0.23653614  0.98317828  0.71976168  1
+  Te  Te13  1  0.25315000  0.01674380  0.28027167  1
+  Te  Te14  1  0.74685000  0.98325620  0.71972833  1

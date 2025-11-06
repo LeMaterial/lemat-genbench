@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_FeHg2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.86131055
+_cell_length_b   9.86131055
+_cell_length_c   4.54866203
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   162.56991713
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   FeHg2
+_chemical_formula_sum   'Fe2 Hg4'
+_cell_volume   132.49830814
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.08269195  0.91730805  0.00000000  1
+  Fe  Fe1  1  0.67654919  0.32345081  0.00000000  1
+  Hg  Hg2  1  0.30324025  0.69675975  0.00000000  1
+  Hg  Hg3  1  0.53196321  0.46803679  0.50000000  1
+  Hg  Hg4  1  0.18249635  0.81750365  0.50000000  1
+  Hg  Hg5  1  0.88972568  0.11027432  0.50000000  1
