@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_DyInCu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.42449805
+_cell_length_b   7.42449343
+_cell_length_c   3.93677868
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00343487
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   DyInCu
+_chemical_formula_sum   'Dy3 In3 Cu3'
+_cell_volume   187.92758110
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.00000016  0.40978821  0.50000017  1
+  Dy  Dy1  1  0.59021327  0.59021363  0.50000017  1
+  Dy  Dy2  1  0.40978786  -0.00000035  0.50000017  1
+  In  In3  1  -0.00000177  0.74453754  0.00000000  1
+  In  In4  1  0.25546287  0.25546361  0.00000000  1
+  In  In5  1  0.74453807  -0.00000129  0.00000000  1
+  Cu  Cu6  1  0.00000172  0.00000179  0.50000017  1
+  Cu  Cu7  1  0.66666538  0.33333210  0.00000000  1
+  Cu  Cu8  1  0.33333184  0.66666516  0.00000000  1

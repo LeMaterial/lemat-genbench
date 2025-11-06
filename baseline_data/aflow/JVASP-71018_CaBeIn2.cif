@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_CaBeIn2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.55727236
+_cell_length_b   3.55727236
+_cell_length_c   7.27759946
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CaBeIn2
+_chemical_formula_sum   'Ca1 Be1 In2'
+_cell_volume   92.09210180
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ca  Ca0  1  0.49999967  0.49999967  0.72736678  1
+  Be  Be1  1  0.00000000  0.00000000  0.44415202  1
+  In  In2  1  0.00000000  0.00000000  0.03009665  1
+  In  In3  1  0.49999967  0.49999967  0.29838466  1

@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_Zr2Be2Ga
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.12007688
+_cell_length_b   9.12007688
+_cell_length_c   9.12007688
+_cell_angle_alpha   161.04346280
+_cell_angle_beta   161.04346280
+_cell_angle_gamma   26.93379174
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Zr2Be2Ga
+_chemical_formula_sum   'Zr2 Be2 Ga1'
+_cell_volume   80.01928413
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zr  Zr0  1  0.61250449  0.61250449  0.00000000  1
+  Zr  Zr1  1  0.38749584  0.38749584  0.00000000  1
+  Be  Be2  1  0.75000172  0.25000008  0.50000164  1
+  Be  Be3  1  0.25000008  0.75000172  0.50000164  1
+  Ga  Ga4  1  0.00000000  0.00000000  0.00000000  1

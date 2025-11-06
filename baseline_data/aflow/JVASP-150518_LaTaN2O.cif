@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_LaTaN2O
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.78415199
+_cell_length_b   5.65118832
+_cell_length_c   5.74648742
+_cell_angle_alpha   60.98613071
+_cell_angle_beta   58.69347190
+_cell_angle_gamma   60.32355563
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaTaN2O
+_chemical_formula_sum   'La2 Ta2 N4 O2'
+_cell_volume   132.71256960
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.25334788  0.74665109  0.75342913  1
+  La  La1  1  0.74665145  0.25334783  0.24657300  1
+  Ta  Ta2  1  0.49999977  -0.00000006  0.00000031  1
+  Ta  Ta3  1  -0.00000011  0.49999952  0.50000076  1
+  N  N4  1  0.68751839  0.31248061  0.81220202  1
+  N  N5  1  0.31248094  0.68751831  0.18780011  1
+  N  N6  1  0.75017539  0.75017519  0.24982534  1
+  N  N7  1  0.24982394  0.24982373  0.75017680  1
+  O  O8  1  0.81351663  0.81351633  0.68648447  1
+  O  O9  1  0.18648270  0.18648260  0.31351767  1

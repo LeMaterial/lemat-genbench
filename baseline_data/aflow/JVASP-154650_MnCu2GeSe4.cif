@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_MnCu2GeSe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.60709722
+_cell_length_b   6.87594085
+_cell_length_c   8.00133167
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MnCu2GeSe4
+_chemical_formula_sum   'Mn2 Cu4 Ge2 Se8'
+_cell_volume   363.50057511
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mn  Mn0  1  0.99085332  0.15982630  0.00000000  1
+  Mn  Mn1  1  0.49085311  0.84017357  0.49999990  1
+  Cu  Cu2  1  0.99761198  0.67320312  0.25074867  1
+  Cu  Cu3  1  0.49761177  0.32679676  0.24925123  1
+  Cu  Cu4  1  0.49761177  0.32679676  0.75074856  1
+  Cu  Cu5  1  0.99761198  0.67320312  0.74925113  1
+  Ge  Ge6  1  0.48991639  0.83099357  0.00000000  1
+  Ge  Ge7  1  0.98991660  0.16900631  0.49999990  1
+  Se  Se8  1  0.36336650  0.65781985  0.24732659  1
+  Se  Se9  1  0.86336671  0.34218003  0.25267331  1
+  Se  Se10  1  0.86336671  0.34218003  0.74732648  1
+  Se  Se11  1  0.36336650  0.65781985  0.75267321  1
+  Se  Se12  1  0.86243080  0.81913845  0.00000000  1
+  Se  Se13  1  0.36243059  0.18086143  0.49999990  1
+  Se  Se14  1  0.36984482  0.16776131  0.00000000  1
+  Se  Se15  1  0.86984503  0.83223857  0.49999990  1

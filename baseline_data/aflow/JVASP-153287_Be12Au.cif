@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_Be12Au
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.59194746
+_cell_length_b   5.59194746
+_cell_length_c   5.59194746
+_cell_angle_alpha   98.41498995
+_cell_angle_beta   98.41498995
+_cell_angle_gamma   135.01698099
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Be12Au
+_chemical_formula_sum   'Be12 Au1'
+_cell_volume   114.20562523
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.00000001  0.00000001  0.50000001  1
+  Be  Be1  1  0.50000000  0.50000000  0.50000001  1
+  Be  Be2  1  -0.00000001  0.50000000  0.00000000  1
+  Be  Be3  1  0.50000000  -0.00000001  0.00000000  1
+  Be  Be4  1  0.00000000  0.64830739  0.64830739  1
+  Be  Be5  1  0.00000000  0.35169263  0.35169263  1
+  Be  Be6  1  0.64830739  0.00000000  0.64830739  1
+  Be  Be7  1  0.35169263  0.00000000  0.35169263  1
+  Be  Be8  1  0.49999999  0.73731046  0.23731047  1
+  Be  Be9  1  0.50000001  0.26268954  0.76268955  1
+  Be  Be10  1  0.73731046  0.49999999  0.23731047  1
+  Be  Be11  1  0.26268954  0.50000001  0.76268955  1
+  Au  Au12  1  0.00000000  0.00000000  0.00000000  1

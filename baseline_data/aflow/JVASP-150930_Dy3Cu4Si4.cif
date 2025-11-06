@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Dy3(CuSi)4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.86691588
+_cell_length_b   7.86691588
+_cell_length_c   7.86691588
+_cell_angle_alpha   149.51999505
+_cell_angle_beta   130.94146880
+_cell_angle_gamma   58.86248067
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Dy3(CuSi)4
+_chemical_formula_sum   'Dy3 Cu4 Si4'
+_cell_volume   185.10040744
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Dy  Dy0  1  0.49999956  0.00000000  0.49999956  1
+  Dy  Dy1  1  0.86967753  0.86967753  0.00000000  1
+  Dy  Dy2  1  0.13032260  0.13032260  0.00000000  1
+  Cu  Cu3  1  0.85851082  0.66778304  0.19072778  1
+  Cu  Cu4  1  0.14148881  0.33221702  0.80927176  1
+  Cu  Cu5  1  0.52294488  0.33221710  0.19072778  1
+  Cu  Cu6  1  0.47705474  0.66778296  0.80927176  1
+  Si  Si7  1  0.28418308  0.78418307  0.49999999  1
+  Si  Si8  1  0.71581655  0.21581699  0.49999956  1
+  Si  Si9  1  0.18504621  0.49999999  0.68504620  1
+  Si  Si10  1  0.81495341  0.50000007  0.31495334  1

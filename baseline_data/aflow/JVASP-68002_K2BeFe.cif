@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_K2BeFe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.21434121
+_cell_length_b   5.21434121
+_cell_length_c   5.21434121
+_cell_angle_alpha   120.06431906
+_cell_angle_beta   120.06431906
+_cell_angle_gamma   89.88863217
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K2BeFe
+_chemical_formula_sum   'K2 Be1 Fe1'
+_cell_volume   100.15209432
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.00000000  0.00000000  0.00000000  1
+  K  K1  1  0.25000016  0.75000101  0.50000085  1
+  Be  Be2  1  0.50000032  0.50000032  0.00000000  1
+  Fe  Fe3  1  0.75000101  0.25000016  0.50000085  1

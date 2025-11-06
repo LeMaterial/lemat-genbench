@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_BeHgIr
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.43046643
+_cell_length_b   5.43046643
+_cell_length_c   5.43046643
+_cell_angle_alpha   147.95179554
+_cell_angle_beta   147.95179554
+_cell_angle_gamma   45.95653062
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BeHgIr
+_chemical_formula_sum   'Be1 Hg1 Ir1'
+_cell_volume   44.93831152
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.03981833  0.03981833  0.00000000  1
+  Hg  Hg1  1  0.33538805  0.33538805  0.00000000  1
+  Ir  Ir2  1  0.62479457  0.62479457  0.00000000  1

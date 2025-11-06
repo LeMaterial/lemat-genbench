@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_LaCrO3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.52305789
+_cell_length_b   5.53115012
+_cell_length_c   7.80505996
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LaCrO3
+_chemical_formula_sum   'La4 Cr4 O12'
+_cell_volume   238.43570204
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.96844197  0.99420372  0.25000000  1
+  La  La1  1  0.53155860  0.49420373  0.75000000  1
+  La  La2  1  0.03155841  0.00579626  0.75000000  1
+  La  La3  1  0.46844178  0.50579625  0.25000000  1
+  Cr  Cr4  1  0.00000000  0.49999999  0.00000000  1
+  Cr  Cr5  1  0.50000019  0.00000000  0.00000000  1
+  Cr  Cr6  1  0.00000000  0.49999999  0.50000000  1
+  Cr  Cr7  1  0.50000019  0.00000000  0.50000000  1
+  O  O8  1  0.21540980  0.78437009  0.03881402  1
+  O  O9  1  0.28459039  0.28437010  0.96118599  1
+  O  O10  1  0.21540980  0.78437009  0.46118598  1
+  O  O11  1  0.28459039  0.28437010  0.53881402  1
+  O  O12  1  0.78459058  0.21562989  0.96118599  1
+  O  O13  1  0.98795094  0.57283373  0.75000000  1
+  O  O14  1  0.01204945  0.42716625  0.25000000  1
+  O  O15  1  0.48795075  0.92716624  0.75000000  1
+  O  O16  1  0.71540999  0.71562988  0.46118598  1
+  O  O17  1  0.51204964  0.07283374  0.25000000  1
+  O  O18  1  0.71540999  0.71562988  0.03881402  1
+  O  O19  1  0.78459058  0.21562989  0.53881402  1

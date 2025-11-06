@@ -1,0 +1,35 @@
+# generated using pymatgen
+data_Cu8O
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.39836382
+_cell_length_b   4.39836382
+_cell_length_c   5.48313130
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.35011603
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cu8O
+_chemical_formula_sum   'Cu8 O1'
+_cell_volume   106.07250786
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cu  Cu0  1  0.17691500  0.39907223  0.49999988  1
+  Cu  Cu1  1  0.60092909  0.82308632  0.49999988  1
+  Cu  Cu2  1  0.20170074  0.42399802  0.00000000  1
+  Cu  Cu3  1  0.57600329  0.79830058  0.00000000  1
+  Cu  Cu4  1  0.11305006  0.88695125  0.72542837  1
+  Cu  Cu5  1  0.11305006  0.88695125  0.27457140  1
+  Cu  Cu6  1  0.66473683  0.33526448  0.27454104  1
+  Cu  Cu7  1  0.66473683  0.33526448  0.72545872  1
+  O  O8  1  0.88888414  0.11111717  0.00000000  1

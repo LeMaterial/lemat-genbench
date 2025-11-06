@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_Be(TcTe)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.21836451
+_cell_length_b   5.21836451
+_cell_length_c   5.21836451
+_cell_angle_alpha   118.58647630
+_cell_angle_beta   118.58647630
+_cell_angle_gamma   92.46624341
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Be(TcTe)2
+_chemical_formula_sum   'Be1 Tc2 Te2'
+_cell_volume   102.52607878
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.00000000  0.00000000  0.00000000  1
+  Tc  Tc1  1  0.65595124  0.65595124  0.00000000  1
+  Tc  Tc2  1  0.34404946  0.34404946  0.00000000  1
+  Te  Te3  1  0.75000044  0.25000017  0.50000027  1
+  Te  Te4  1  0.25000017  0.75000044  0.50000027  1

@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_NaCe2C3O9F
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.08759641
+_cell_length_b   5.08754553
+_cell_length_c   8.54029707
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00078928
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NaCe2C3O9F
+_chemical_formula_sum   'Na1 Ce2 C3 O9 F1'
+_cell_volume   191.43490021
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.00000539  0.00001643  0.00000000  1
+  Ce  Ce1  1  0.33333166  0.66666400  0.72336507  1
+  Ce  Ce2  1  0.33333166  0.66666400  0.27663527  1
+  C  C3  1  0.66666518  0.33333326  0.80425373  1
+  C  C4  1  0.66666518  0.33333326  0.19574661  1
+  C  C5  1  0.99999712  0.99999086  0.50000017  1
+  O  O6  1  0.81355518  0.18650600  0.80141582  1
+  O  O7  1  0.81349510  0.62705670  0.80141700  1
+  O  O8  1  0.37294721  0.18643665  0.80141588  1
+  O  O9  1  0.81355518  0.18650600  0.19858453  1
+  O  O10  1  0.81349510  0.62705670  0.19858334  1
+  O  O11  1  0.37294721  0.18643665  0.19858446  1
+  O  O12  1  0.14717693  0.29432441  0.50000017  1
+  O  O13  1  0.70566681  0.85283488  0.50000017  1
+  O  O14  1  0.14714726  0.85281302  0.50000017  1
+  F  F15  1  0.33331807  0.66662597  0.00000000  1

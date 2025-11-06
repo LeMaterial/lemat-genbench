@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Re5Si3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.13777943
+_cell_length_b   7.13777943
+_cell_length_c   7.13777943
+_cell_angle_alpha   96.95256817
+_cell_angle_beta   96.95256817
+_cell_angle_gamma   139.27983082
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Re5Si3
+_chemical_formula_sum   'Re10 Si6'
+_cell_volume   222.41437497
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Re  Re0  1  0.07218304  0.77644385  0.84862689  1
+  Re  Re1  1  0.92781734  0.22355653  0.15137350  1
+  Re  Re2  1  0.77644384  0.92781734  0.70426081  1
+  Re  Re3  1  0.22355655  0.07218304  0.29573959  1
+  Re  Re4  1  0.42781715  0.27644365  0.70426081  1
+  Re  Re5  1  0.57218323  0.72355673  0.29573959  1
+  Re  Re6  1  0.72355673  0.42781714  0.15137350  1
+  Re  Re7  1  0.27644365  0.57218324  0.84862689  1
+  Re  Re8  1  0.25000009  0.75000029  0.50000020  1
+  Re  Re9  1  0.75000029  0.25000009  0.50000020  1
+  Si  Si10  1  0.17148999  0.32851021  0.50000020  1
+  Si  Si11  1  0.82851039  0.67149018  0.50000020  1
+  Si  Si12  1  0.32851019  0.82851039  0.15702022  1
+  Si  Si13  1  0.67149019  0.17148999  0.84298018  1
+  Si  Si14  1  0.25000009  0.25000009  0.00000000  1
+  Si  Si15  1  0.75000028  0.75000028  0.00000000  1

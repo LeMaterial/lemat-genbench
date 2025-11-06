@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_Be2ZnIr
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.60379753
+_cell_length_b   4.60379753
+_cell_length_c   4.60379753
+_cell_angle_alpha   136.90592828
+_cell_angle_beta   136.90592828
+_cell_angle_gamma   62.58282219
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Be2ZnIr
+_chemical_formula_sum   'Be2 Zn1 Ir1'
+_cell_volume   44.98816008
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.00000000  0.00000000  0.00000000  1
+  Be  Be1  1  0.24999975  0.74999878  0.49999903  1
+  Zn  Zn2  1  0.74999878  0.24999975  0.49999903  1
+  Ir  Ir3  1  0.49999950  0.49999950  0.00000000  1

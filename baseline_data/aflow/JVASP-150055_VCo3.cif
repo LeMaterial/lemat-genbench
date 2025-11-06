@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_VCo3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.98240804
+_cell_length_b   4.98239422
+_cell_length_c   4.00001283
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99990702
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   VCo3
+_chemical_formula_sum   'V2 Co6'
+_cell_volume   85.99432691
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  V  V0  1  0.33332793  0.66667712  0.24999982  1
+  V  V1  1  0.66667274  0.33332296  0.74999947  1
+  Co  Co2  1  0.83663892  0.67328854  0.24999982  1
+  Co  Co3  1  0.32671426  0.16335103  0.24999982  1
+  Co  Co4  1  0.83666376  0.16334858  0.24999982  1
+  Co  Co5  1  0.16336175  0.32671154  0.74999947  1
+  Co  Co6  1  0.67328641  0.83664905  0.74999947  1
+  Co  Co7  1  0.16333691  0.83665150  0.74999947  1

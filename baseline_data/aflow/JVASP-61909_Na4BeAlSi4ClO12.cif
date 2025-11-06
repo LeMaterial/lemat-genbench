@@ -1,0 +1,49 @@
+# generated using pymatgen
+data_Na4BeAlSi4ClO12
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.58791256
+_cell_length_b   7.58791256
+_cell_length_c   7.58791256
+_cell_angle_alpha   110.30395131
+_cell_angle_beta   110.30395131
+_cell_angle_gamma   107.81829660
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na4BeAlSi4ClO12
+_chemical_formula_sum   'Na4 Be1 Al1 Si4 Cl1 O12'
+_cell_volume   336.10490813
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.97196711  0.01481755  0.34907383  1
+  Na  Na1  1  0.66574472  0.62289328  0.65092717  1
+  Na  Na2  1  0.37710705  0.02803322  0.04285144  1
+  Na  Na3  1  0.98518278  0.33425562  0.95714956  1
+  Be  Be4  1  0.75000042  0.24999992  0.50000050  1
+  Al  Al5  1  0.24999992  0.75000042  0.50000050  1
+  Si  Si6  1  0.49043745  0.25031700  0.73203484  1
+  Si  Si7  1  0.51828250  0.75840295  0.26796616  1
+  Si  Si8  1  0.74968333  0.48171717  0.24011945  1
+  Si  Si9  1  0.24159738  0.50956354  0.75988155  1
+  Cl  Cl10  1  0.00000000  0.00000000  0.00000000  1
+  O  O11  1  0.30617764  0.58924047  0.01779980  1
+  O  O12  1  0.41075986  0.42855966  0.71693816  1
+  O  O13  1  0.00307615  0.30969882  0.61082389  1
+  O  O14  1  0.69030217  0.30112507  0.69337832  1
+  O  O15  1  0.60774708  0.99692418  0.30662267  1
+  O  O16  1  0.28283447  0.00991714  0.56654461  1
+  O  O17  1  0.44337186  0.71629019  0.43345638  1
+  O  O18  1  0.28371014  0.71716653  0.72708267  1
+  O  O19  1  0.99008319  0.55662781  0.27291833  1
+  O  O20  1  0.71162183  0.69382203  0.28306283  1
+  O  O21  1  0.57144134  0.28837850  0.98220120  1
+  O  O22  1  0.69887527  0.39225260  0.38917711  1

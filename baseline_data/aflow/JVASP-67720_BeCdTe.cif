@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_BeCdTe
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.51414502
+_cell_length_b   6.51414502
+_cell_length_c   6.51414502
+_cell_angle_alpha   147.70739285
+_cell_angle_beta   147.70739285
+_cell_angle_gamma   46.31750113
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BeCdTe
+_chemical_formula_sum   'Be1 Cd1 Te1'
+_cell_volume   78.61755219
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Be  Be0  1  0.11522110  0.11522110  0.00000000  1
+  Cd  Cd1  1  0.31894846  0.31894846  0.00000000  1
+  Te  Te2  1  0.56583197  0.56583197  0.00000000  1

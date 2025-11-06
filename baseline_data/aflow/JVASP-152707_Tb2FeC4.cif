@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_Tb2FeC4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.61509714
+_cell_length_b   6.61509714
+_cell_length_c   6.61509714
+_cell_angle_alpha   135.01335498
+_cell_angle_beta   111.34396945
+_cell_angle_gamma   85.91492062
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Tb2FeC4
+_chemical_formula_sum   'Tb4 Fe2 C8'
+_cell_volume   182.82651003
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.80233709  0.64445385  0.15788323  1
+  Tb  Tb1  1  0.19766235  0.35554656  0.84211745  1
+  Tb  Tb2  1  0.48657088  0.14445427  0.34211662  1
+  Tb  Tb3  1  0.51342855  0.85554615  0.65788406  1
+  Fe  Fe4  1  -0.00000000  0.75000125  0.75000125  1
+  Fe  Fe5  1  -0.00000000  0.25000042  0.25000042  1
+  C  C6  1  0.20804793  0.87190580  0.33614379  1
+  C  C7  1  0.79195150  0.12809461  0.66385689  1
+  C  C8  1  0.53576202  0.37190497  0.16385704  1
+  C  C9  1  0.46423742  0.62809544  0.83614364  1
+  C  C10  1  0.08562580  0.92145021  0.16417726  1
+  C  C11  1  0.91437363  0.07855021  0.83582342  1
+  C  C12  1  0.75727295  0.42144937  0.33582357  1
+  C  C13  1  0.24272648  0.57855104  0.66417711  1
