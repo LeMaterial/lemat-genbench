@@ -388,7 +388,16 @@ class OQMDFetcher(MaterialsFetcher):
 
 
 class AFLOWFetcher(MaterialsFetcher):
-    """Fetch from AFLOW using AFLUX REST API."""
+    """Fetch from AFLOW using AFLUX REST API.
+    
+    Fetches structures from AFLOW's ICSD catalog, which contains experimentally-
+    reported crystal structures. Additional filters are applied to match the types
+    of structures found in MP, OQMD, and Alexandria by excluding:
+    - Noble gas compounds (He, Ne, Ar, Kr, Rn) - high-pressure/exotic phases
+    - Pure hydrogen structures - extreme high-pressure phases
+    
+    This ensures the AFLOW baseline is comparable to other experimental databases.
+    """
     
     def __init__(self):
         super().__init__("aflow")
@@ -463,6 +472,16 @@ class AFLOWFetcher(MaterialsFetcher):
                             
                             # Check if inorganic
                             if not is_inorganic(elements, compound):
+                                continue
+                            
+                            # Filter out exotic compositions not found in MP/OQMD/Alexandria
+                            # Exclude noble gases (except Xe in some known compounds)
+                            noble_gases = {'He', 'Ne', 'Ar', 'Kr', 'Rn'}
+                            if any(el in noble_gases for el in elements):
+                                continue
+                            
+                            # Exclude pure hydrogen structures (often high-pressure phases)
+                            if set(elements) == {'H'}:
                                 continue
                             
                             # Get POSCAR geometry
