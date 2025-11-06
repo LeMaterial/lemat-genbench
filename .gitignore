@@ -1,5 +1,6 @@
 hydra-outputs/
 multirun/
+*.zip
 
 .vscode/
 # Byte-compiled / optimized / DLL files

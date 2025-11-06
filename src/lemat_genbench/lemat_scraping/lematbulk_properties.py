@@ -3,6 +3,8 @@ from multiprocessing import Pool, cpu_count
 from datasets import load_dataset
 from pymatgen.core import Structure
 from tqdm import tqdm
+from lemat_genbench.fingerprinting import one_hot_encode_composition
+from lemat_genbench.utils.distribution_utils import map_space_group_to_crystal_system
 
 # Crystal System Mapping Reference
 # ================================

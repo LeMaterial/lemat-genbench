@@ -21,13 +21,13 @@ from pathlib import Path
 import numpy as np
 
 
-def create_15k_sample():
+def create_15k_sample(data_type="mp20"):
     """Create 15K sample pickle file from full MMD values."""
     
     # File paths
-    full_pickle_path = "data/lematbulk_mmd_values.pkl"
-    sample_indices_path = "data/lematbulk_mmd_sample_indices_15k.npy"
-    output_pickle_path = "data/lematbulk_mmd_values_15k.pkl"
+    full_pickle_path = "data/"+data_type+"_mmd_values.pkl"
+    sample_indices_path = "data/"+data_type+"_mmd_sample_indices_15k.npy"
+    output_pickle_path = "data/"+data_type+"_mmd_values_15k.pkl"
     
     print("🔄 Creating 15K MMD sample pickle file...")
     
