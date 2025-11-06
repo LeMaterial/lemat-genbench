@@ -222,3 +222,4 @@ results_neurips/
 # Baseline dataset sampling
 baseline_sampling.log
 baseline_data/checkpoints/*.pkl
+baseline_results/
