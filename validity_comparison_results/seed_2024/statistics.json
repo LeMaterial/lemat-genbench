@@ -1,0 +1,7025 @@
+{
+  "seed": 2024,
+  "n_samples": 1000,
+  "ours_valid_smact_invalid": [
+    {
+      "structure_id": "2024_2513376",
+      "dataset_index": 2513376,
+      "composition": "K1V4Se8",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1762254",
+      "dataset_index": 1762254,
+      "composition": "Bi2I4O12",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_574311",
+      "dataset_index": 574311,
+      "composition": "V2Fe1B6",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2435941",
+      "dataset_index": 2435941,
+      "composition": "Tb12Pm5Tl2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2322554",
+      "dataset_index": 2322554,
+      "composition": "Li1Ho1Er1Si1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_110376",
+      "dataset_index": 110376,
+      "composition": "Ca2Zn1Hg1H1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_639838",
+      "dataset_index": 639838,
+      "composition": "Sc2Ni1Te1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2631102",
+      "dataset_index": 2631102,
+      "composition": "La4Pm4Te12",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4589495",
+      "dataset_index": 4589495,
+      "composition": "Sn5Br12",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2411234",
+      "dataset_index": 2411234,
+      "composition": "Se2S8I2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3110751",
+      "dataset_index": 3110751,
+      "composition": "Hf1Ta1Pd2O1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2528958",
+      "dataset_index": 2528958,
+      "composition": "Tl1B1Sb2F1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2060163",
+      "dataset_index": 2060163,
+      "composition": "Ac1Ni3P1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2978195",
+      "dataset_index": 2978195,
+      "composition": "Li4B8C8",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4300912",
+      "dataset_index": 4300912,
+      "composition": "Na2Mg4Te2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4805407",
+      "dataset_index": 4805407,
+      "composition": "Hg1Sb2Os1I1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3958954",
+      "dataset_index": 3958954,
+      "composition": "Rb2Al1B2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1178638",
+      "dataset_index": 1178638,
+      "composition": "Tl1Ag1B4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3551556",
+      "dataset_index": 3551556,
+      "composition": "Se1Cl3",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5308851",
+      "dataset_index": 5308851,
+      "composition": "Mg1Zr1Bi2Te1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_225492",
+      "dataset_index": 225492,
+      "composition": "Pm10Tl4Cd4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1860078",
+      "dataset_index": 1860078,
+      "composition": "Na2Dy4O8",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4503669",
+      "dataset_index": 4503669,
+      "composition": "Te1Pd6",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_260917",
+      "dataset_index": 260917,
+      "composition": "Y1Co2Tc1B1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1645338",
+      "dataset_index": 1645338,
+      "composition": "V10P8",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5004500",
+      "dataset_index": 5004500,
+      "composition": "La3Pm1Pr6Er2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_481474",
+      "dataset_index": 481474,
+      "composition": "Li2W4I4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3911566",
+      "dataset_index": 3911566,
+      "composition": "Cu1Re1Si2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3614011",
+      "dataset_index": 3614011,
+      "composition": "Ta2Ag1H1Os1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4962894",
+      "dataset_index": 4962894,
+      "composition": "V1Te2I1N1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1824283",
+      "dataset_index": 1824283,
+      "composition": "Li1Pm1Tl6",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4245929",
+      "dataset_index": 4245929,
+      "composition": "Sc12Pd6O2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5292845",
+      "dataset_index": 5292845,
+      "composition": "Mg1Ti3Sn3O12",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_72262",
+      "dataset_index": 72262,
+      "composition": "Cu2B4Os2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1392757",
+      "dataset_index": 1392757,
+      "composition": "Pm3Zn2Pd7",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1161037",
+      "dataset_index": 1161037,
+      "composition": "Pm1Dy1In1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1150888",
+      "dataset_index": 1150888,
+      "composition": "Dy3Sb2S1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_635552",
+      "dataset_index": 635552,
+      "composition": "Gd2As4Pd4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2486968",
+      "dataset_index": 2486968,
+      "composition": "Ca2Pm15Y2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2292888",
+      "dataset_index": 2292888,
+      "composition": "Pm1Sm1Eu1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3342121",
+      "dataset_index": 3342121,
+      "composition": "Pm1Pr12Tm5",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1343875",
+      "dataset_index": 1343875,
+      "composition": "Mg2Te1Pb1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3324249",
+      "dataset_index": 3324249,
+      "composition": "Tb1Pm2Dy3As6",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4509922",
+      "dataset_index": 4509922,
+      "composition": "H6Br1Cl2O2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1249771",
+      "dataset_index": 1249771,
+      "composition": "Er1Ta1B4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1783298",
+      "dataset_index": 1783298,
+      "composition": "Ta4Pb1Br1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3265739",
+      "dataset_index": 3265739,
+      "composition": "Al1V3As1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_733529",
+      "dataset_index": 733529,
+      "composition": "Pm1Dy1Ge2Pt2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3836769",
+      "dataset_index": 3836769,
+      "composition": "Pm2Ga3Cu4Ir1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4980661",
+      "dataset_index": 4980661,
+      "composition": "Cu2Ge2B2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4027195",
+      "dataset_index": 4027195,
+      "composition": "K12Bi20Br48",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_147130",
+      "dataset_index": 147130,
+      "composition": "Mn3Cl8",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2006163",
+      "dataset_index": 2006163,
+      "composition": "Bi4B4I2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2814917",
+      "dataset_index": 2814917,
+      "composition": "K4Pr3Pb1O8",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_37735",
+      "dataset_index": 37735,
+      "composition": "Pm4Al3",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2749758",
+      "dataset_index": 2749758,
+      "composition": "Sn1Sb2Te1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_221406",
+      "dataset_index": 221406,
+      "composition": "Mg1Ta1Sn1Se2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3795863",
+      "dataset_index": 3795863,
+      "composition": "Ac2Tb2Pm4Er2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1753987",
+      "dataset_index": 1753987,
+      "composition": "Ba1Te2Ru1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1477993",
+      "dataset_index": 1477993,
+      "composition": "Pm2Sm1Si4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4104469",
+      "dataset_index": 4104469,
+      "composition": "Ta2Te8I2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2003241",
+      "dataset_index": 2003241,
+      "composition": "Li1Hg2C2O6",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3725629",
+      "dataset_index": 3725629,
+      "composition": "Tb4Pm1Y3Se8",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4273400",
+      "dataset_index": 4273400,
+      "composition": "Cd2Cu1Si1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3080399",
+      "dataset_index": 3080399,
+      "composition": "Sr1Cu1Si1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2751169",
+      "dataset_index": 2751169,
+      "composition": "Pm1Dy6Y3Th2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4128196",
+      "dataset_index": 4128196,
+      "composition": "Pm15Nd1Tl4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4645034",
+      "dataset_index": 4645034,
+      "composition": "V2Ru1H1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3093051",
+      "dataset_index": 3093051,
+      "composition": "Tl3Bi4S8",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_885658",
+      "dataset_index": 885658,
+      "composition": "Sm1B4Os1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4557587",
+      "dataset_index": 4557587,
+      "composition": "Ba1Zr1Cu2B1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_800651",
+      "dataset_index": 800651,
+      "composition": "In1Te4Pt1Au3",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1608590",
+      "dataset_index": 1608590,
+      "composition": "Na4Pm2Se2O10",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2401954",
+      "dataset_index": 2401954,
+      "composition": "Te4Os1Pb1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_742392",
+      "dataset_index": 742392,
+      "composition": "Cr2Bi1As1Au1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_147072",
+      "dataset_index": 147072,
+      "composition": "B52H76",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4259476",
+      "dataset_index": 4259476,
+      "composition": "Mg4Al1B10",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2175857",
+      "dataset_index": 2175857,
+      "composition": "Tb1Te2P2Pd7",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3627047",
+      "dataset_index": 3627047,
+      "composition": "Ca1Pm1P2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2397680",
+      "dataset_index": 2397680,
+      "composition": "Ac1Pr2Pm1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1853832",
+      "dataset_index": 1853832,
+      "composition": "Cd4Ni12N4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4439521",
+      "dataset_index": 4439521,
+      "composition": "Pm2Sm1Nb1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2809899",
+      "dataset_index": 2809899,
+      "composition": "Pm4Ta1N5",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2819914",
+      "dataset_index": 2819914,
+      "composition": "La1Y2Te1I1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3244408",
+      "dataset_index": 3244408,
+      "composition": "As2H2Pd2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_952120",
+      "dataset_index": 952120,
+      "composition": "Na1Hf1B4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1202510",
+      "dataset_index": 1202510,
+      "composition": "Hf1Sc1Co1B1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5260880",
+      "dataset_index": 5260880,
+      "composition": "Er1Re4B2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1884905",
+      "dataset_index": 1884905,
+      "composition": "Pm4Nd2Dy3",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4176619",
+      "dataset_index": 4176619,
+      "composition": "Cu1S8Br2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2634692",
+      "dataset_index": 2634692,
+      "composition": "Hg8Cl11",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3368241",
+      "dataset_index": 3368241,
+      "composition": "Ba1Y1Cd2As1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3468063",
+      "dataset_index": 3468063,
+      "composition": "K1Al1Fe1B2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2171470",
+      "dataset_index": 2171470,
+      "composition": "Pm1Dy1P1S1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_203866",
+      "dataset_index": 203866,
+      "composition": "Ca1Ta3I1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2271643",
+      "dataset_index": 2271643,
+      "composition": "Tl1Ag1As3",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3792292",
+      "dataset_index": 3792292,
+      "composition": "Ba2Ta4F22",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3552772",
+      "dataset_index": 3552772,
+      "composition": "Ba4As4H4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5300600",
+      "dataset_index": 5300600,
+      "composition": "Na3As1Pd4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3744795",
+      "dataset_index": 3744795,
+      "composition": "La1Cu3B1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_326823",
+      "dataset_index": 326823,
+      "composition": "Cs2Na1As2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3128836",
+      "dataset_index": 3128836,
+      "composition": "Na1H8Pt2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1834156",
+      "dataset_index": 1834156,
+      "composition": "Be2Tl2Sb1O6",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_553517",
+      "dataset_index": 553517,
+      "composition": "N6O18F2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1619167",
+      "dataset_index": 1619167,
+      "composition": "Pm1Mn1Ga3",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1918309",
+      "dataset_index": 1918309,
+      "composition": "Sb1W4Se1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1116702",
+      "dataset_index": 1116702,
+      "composition": "La1Pr1Cu2Si4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3618563",
+      "dataset_index": 3618563,
+      "composition": "Ca4Si8H4",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2930447",
+      "dataset_index": 2930447,
+      "composition": "La1Pm1Cd1Co1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3799282",
+      "dataset_index": 3799282,
+      "composition": "Si1As2Os1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3764721",
+      "dataset_index": 3764721,
+      "composition": "Ta2H1Pd9",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_463178",
+      "dataset_index": 463178,
+      "composition": "Re1Sn2F1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3779411",
+      "dataset_index": 3779411,
+      "composition": "Li1Te2Mo1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_304030",
+      "dataset_index": 304030,
+      "composition": "Li1Th1As2Ru2",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4308116",
+      "dataset_index": 4308116,
+      "composition": "Si1Ag2Te1",
+      "smact_valid": false,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3340672",
+      "dataset_index": 3340672,
+      "composition": "Zr1Sb2Se1",
+      "smact_valid": false,
+      "ours_valid": true
+    }
+  ],
+  "smact_valid_ours_invalid": [
+    {
+      "structure_id": "2024_2806539",
+      "dataset_index": 2806539,
+      "composition": "Be1Ru1Br2",
+      "smact_valid": true,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4098283",
+      "dataset_index": 4098283,
+      "composition": "Ho3Th5S8",
+      "smact_valid": true,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_3665408",
+      "dataset_index": 3665408,
+      "composition": "Mg1Be2Sb1",
+      "smact_valid": true,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_5306772",
+      "dataset_index": 5306772,
+      "composition": "Ca1Be2N1",
+      "smact_valid": true,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_1453608",
+      "dataset_index": 1453608,
+      "composition": "Li2Tl1Cl1",
+      "smact_valid": true,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_1479703",
+      "dataset_index": 1479703,
+      "composition": "Ca4Fe2I2",
+      "smact_valid": true,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2023255",
+      "dataset_index": 2023255,
+      "composition": "Sr6Pt2I3Cl1",
+      "smact_valid": true,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2593176",
+      "dataset_index": 2593176,
+      "composition": "Ho4Tl2C2",
+      "smact_valid": true,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_1667838",
+      "dataset_index": 1667838,
+      "composition": "Nd4Sm1Er3Se8",
+      "smact_valid": true,
+      "ours_valid": false
+    }
+  ],
+  "both_valid": [
+    {
+      "structure_id": "2024_1537395",
+      "dataset_index": 1537395,
+      "composition": "Re4Bi2P2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5243336",
+      "dataset_index": 5243336,
+      "composition": "Pd4Rh2Pt4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3130722",
+      "dataset_index": 3130722,
+      "composition": "Cs1Li2Ag1Br4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2901525",
+      "dataset_index": 2901525,
+      "composition": "Tc1Hg1Br6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4683731",
+      "dataset_index": 4683731,
+      "composition": "Ba4Li2Ag2Sn12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4806927",
+      "dataset_index": 4806927,
+      "composition": "Nb4Co1Pt3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5054880",
+      "dataset_index": 5054880,
+      "composition": "La6Cu2Sn2Se14",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_561983",
+      "dataset_index": 561983,
+      "composition": "Hf1Ge3Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4589028",
+      "dataset_index": 4589028,
+      "composition": "Ho1Tm1Lu1Pa1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1134875",
+      "dataset_index": 1134875,
+      "composition": "Gd2Al2As2O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2061937",
+      "dataset_index": 2061937,
+      "composition": "Rb4Sc4Br12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3432327",
+      "dataset_index": 3432327,
+      "composition": "Sr1Mg1Tl1Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3296303",
+      "dataset_index": 3296303,
+      "composition": "Ba2Li1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4714519",
+      "dataset_index": 4714519,
+      "composition": "Ni2Au1Cl1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3290108",
+      "dataset_index": 3290108,
+      "composition": "Ca1Re1Cu1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_722399",
+      "dataset_index": 722399,
+      "composition": "Ba1Al1P1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5197988",
+      "dataset_index": 5197988,
+      "composition": "Sr1Mn2Bi1F1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_251659",
+      "dataset_index": 251659,
+      "composition": "La2Mg1Fe1Bi1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4849082",
+      "dataset_index": 4849082,
+      "composition": "Cd2Fe1Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3769490",
+      "dataset_index": 3769490,
+      "composition": "Be1P1I3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3182699",
+      "dataset_index": 3182699,
+      "composition": "Ce2Tm1Sc1Se4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5059378",
+      "dataset_index": 5059378,
+      "composition": "Th2H6Rh2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3122939",
+      "dataset_index": 3122939,
+      "composition": "Al1Rh1Pb2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1514285",
+      "dataset_index": 1514285,
+      "composition": "Cd3Ga2Ag8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3891449",
+      "dataset_index": 3891449,
+      "composition": "Sc12Tl6Ir2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2904781",
+      "dataset_index": 2904781,
+      "composition": "Sc1Tl3Tc1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5139528",
+      "dataset_index": 5139528,
+      "composition": "Be2Si2Ni8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3020910",
+      "dataset_index": 3020910,
+      "composition": "Ce1Pr1N1Cl1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_280268",
+      "dataset_index": 280268,
+      "composition": "Ti1Pd7",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3505571",
+      "dataset_index": 3505571,
+      "composition": "Nb3In1Ir1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3466152",
+      "dataset_index": 3466152,
+      "composition": "Sr1Fe1Si1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_522508",
+      "dataset_index": 522508,
+      "composition": "Y1Mo2Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4157028",
+      "dataset_index": 4157028,
+      "composition": "Ba1Na1Ti2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3539164",
+      "dataset_index": 3539164,
+      "composition": "La1Cr1Co1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2471887",
+      "dataset_index": 2471887,
+      "composition": "Mg6Cr2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_897789",
+      "dataset_index": 897789,
+      "composition": "Na1Sc1Co1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2994036",
+      "dataset_index": 2994036,
+      "composition": "Sc1Tc1S1Cl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_889210",
+      "dataset_index": 889210,
+      "composition": "La2Nd1Ni2Pt7",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3463862",
+      "dataset_index": 3463862,
+      "composition": "Th4As4N4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2996821",
+      "dataset_index": 2996821,
+      "composition": "Sn2Hg4Ru2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_985339",
+      "dataset_index": 985339,
+      "composition": "Zr1Fe1Os1Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1894041",
+      "dataset_index": 1894041,
+      "composition": "Rb4Pr1U3Se8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2091466",
+      "dataset_index": 2091466,
+      "composition": "Mn2Si1As1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_189599",
+      "dataset_index": 189599,
+      "composition": "Mg1Mn1Sb2I1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_516910",
+      "dataset_index": 516910,
+      "composition": "Ba2Cu2B2S6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_85283",
+      "dataset_index": 85283,
+      "composition": "Li1Ag1Hg2F8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5206715",
+      "dataset_index": 5206715,
+      "composition": "Ca1Cd2Fe1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1433383",
+      "dataset_index": 1433383,
+      "composition": "Tc1Se1Br1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3696003",
+      "dataset_index": 3696003,
+      "composition": "Cs1Ag1Pb3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3208281",
+      "dataset_index": 3208281,
+      "composition": "Cd2In2Ga4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4364335",
+      "dataset_index": 4364335,
+      "composition": "Ta1Fe1Co2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2375172",
+      "dataset_index": 2375172,
+      "composition": "Ti1Tc1Mo1W1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3416181",
+      "dataset_index": 3416181,
+      "composition": "Na2Re1Ni1Pt1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2131873",
+      "dataset_index": 2131873,
+      "composition": "Zn2Ni1Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1521631",
+      "dataset_index": 1521631,
+      "composition": "Y2Nb1Fe1Ag1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1587264",
+      "dataset_index": 1587264,
+      "composition": "Al1Fe1Tc1Cu1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4399016",
+      "dataset_index": 4399016,
+      "composition": "Dy2Mg1Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2864168",
+      "dataset_index": 2864168,
+      "composition": "V3Cr1S6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2041053",
+      "dataset_index": 2041053,
+      "composition": "Ho2Sn4Pd4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_477560",
+      "dataset_index": 477560,
+      "composition": "Al1Sb1Pd1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2107345",
+      "dataset_index": 2107345,
+      "composition": "La2Pt2Au4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5320006",
+      "dataset_index": 5320006,
+      "composition": "H1Pd1Au1Se2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4568537",
+      "dataset_index": 4568537,
+      "composition": "Ac12Sm6Mg2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2650459",
+      "dataset_index": 2650459,
+      "composition": "Dy8Er1Sc2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3219511",
+      "dataset_index": 3219511,
+      "composition": "Pr1Gd2Zn1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5052856",
+      "dataset_index": 5052856,
+      "composition": "Pr8Dy6Tm2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2011205",
+      "dataset_index": 2011205,
+      "composition": "Li1Ac1Au3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_683321",
+      "dataset_index": 683321,
+      "composition": "Sc2Zn2As2O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1254391",
+      "dataset_index": 1254391,
+      "composition": "Cd2Bi2O5",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1760183",
+      "dataset_index": 1760183,
+      "composition": "Ca2Ta1Co1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1434377",
+      "dataset_index": 1434377,
+      "composition": "Cs2Pt1F6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1505591",
+      "dataset_index": 1505591,
+      "composition": "Ac2Mn1Ge4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5317412",
+      "dataset_index": 5317412,
+      "composition": "Rb4Dy3Co1O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3531872",
+      "dataset_index": 3531872,
+      "composition": "Y2In1Co1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_371837",
+      "dataset_index": 371837,
+      "composition": "Y1Th1Ga1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_463536",
+      "dataset_index": 463536,
+      "composition": "Sr6Y2B6O18",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1189114",
+      "dataset_index": 1189114,
+      "composition": "Sm1Zr1Bi1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3615438",
+      "dataset_index": 3615438,
+      "composition": "Hf1Pa1Ti1Re1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1228365",
+      "dataset_index": 1228365,
+      "composition": "Rb1Os1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1713934",
+      "dataset_index": 1713934,
+      "composition": "Cd2Ga2Cl10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1574606",
+      "dataset_index": 1574606,
+      "composition": "Tb1In6Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_94474",
+      "dataset_index": 94474,
+      "composition": "Dy4Mg1Zn2Cu1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_914840",
+      "dataset_index": 914840,
+      "composition": "Tm2In2Cl6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5013616",
+      "dataset_index": 5013616,
+      "composition": "K4Fe6S12O76",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_228798",
+      "dataset_index": 228798,
+      "composition": "Dy6Tm1Pd2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3404179",
+      "dataset_index": 3404179,
+      "composition": "Mg6Zr1Bi1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3725953",
+      "dataset_index": 3725953,
+      "composition": "Mn12O2F22",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1255265",
+      "dataset_index": 1255265,
+      "composition": "Zr1Cu1Ag1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3900478",
+      "dataset_index": 3900478,
+      "composition": "K1Mg1I1Cl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2562500",
+      "dataset_index": 2562500,
+      "composition": "Sr1Li1Y2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3444911",
+      "dataset_index": 3444911,
+      "composition": "Na4In8Ga6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3675507",
+      "dataset_index": 3675507,
+      "composition": "Na2Ti4Ge4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1086590",
+      "dataset_index": 1086590,
+      "composition": "K4Zr4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_883043",
+      "dataset_index": 883043,
+      "composition": "Y2Ir1Os1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5054495",
+      "dataset_index": 5054495,
+      "composition": "Tc1Mo1Se4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2491401",
+      "dataset_index": 2491401,
+      "composition": "Mg6Br6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_453240",
+      "dataset_index": 453240,
+      "composition": "Ac3B1Pt8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1144745",
+      "dataset_index": 1144745,
+      "composition": "Ta4Si4Pt4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4913011",
+      "dataset_index": 4913011,
+      "composition": "Hf1V1Rh1Au2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3722866",
+      "dataset_index": 3722866,
+      "composition": "Rb1V2Ir1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1650549",
+      "dataset_index": 1650549,
+      "composition": "Ti1Zn1Cr1W2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1449732",
+      "dataset_index": 1449732,
+      "composition": "Re2Mo1Rh1Se1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2901238",
+      "dataset_index": 2901238,
+      "composition": "Be1Fe1Os2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_809629",
+      "dataset_index": 809629,
+      "composition": "Dy4Te4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2832038",
+      "dataset_index": 2832038,
+      "composition": "Cs1B1P2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3774743",
+      "dataset_index": 3774743,
+      "composition": "Sn8F16",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3901209",
+      "dataset_index": 3901209,
+      "composition": "Sm2Th4Sn2N10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3940323",
+      "dataset_index": 3940323,
+      "composition": "Li2Ca2Ga1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2637133",
+      "dataset_index": 2637133,
+      "composition": "Mg2Tl2Cl6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4748333",
+      "dataset_index": 4748333,
+      "composition": "Cd2Tc1Mo1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5181902",
+      "dataset_index": 5181902,
+      "composition": "Ac2Ga2P2Rh6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4743034",
+      "dataset_index": 4743034,
+      "composition": "Ho4Hf1Zn5",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3786239",
+      "dataset_index": 3786239,
+      "composition": "In4Si2Mo4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1852215",
+      "dataset_index": 1852215,
+      "composition": "Ti1Al2Pd6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5098108",
+      "dataset_index": 5098108,
+      "composition": "Li2Al2In2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5199283",
+      "dataset_index": 5199283,
+      "composition": "Nd2Rh2Se2O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3708291",
+      "dataset_index": 3708291,
+      "composition": "La1Zr1In1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1829742",
+      "dataset_index": 1829742,
+      "composition": "Gd1Sb1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2459763",
+      "dataset_index": 2459763,
+      "composition": "Al2Sb1Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2837628",
+      "dataset_index": 2837628,
+      "composition": "Na3Zn2Ru1O6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2229781",
+      "dataset_index": 2229781,
+      "composition": "La3Ho1Sb4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3886050",
+      "dataset_index": 3886050,
+      "composition": "In8Au8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1655399",
+      "dataset_index": 1655399,
+      "composition": "Pr7Sm12Ho1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4273268",
+      "dataset_index": 4273268,
+      "composition": "Ca3Hf1Mg1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3150447",
+      "dataset_index": 3150447,
+      "composition": "Al1Tl1Re2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2588026",
+      "dataset_index": 2588026,
+      "composition": "Sr1Li1Hg2Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2296195",
+      "dataset_index": 2296195,
+      "composition": "Ta1In2Sb1P1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1230091",
+      "dataset_index": 1230091,
+      "composition": "Na2Tm2Hg2Se6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4067263",
+      "dataset_index": 4067263,
+      "composition": "Na1Ac1Ga1Bi1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1085789",
+      "dataset_index": 1085789,
+      "composition": "Li2Cu2W3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_59257",
+      "dataset_index": 59257,
+      "composition": "Dy12Nb8Re12N48",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3006098",
+      "dataset_index": 3006098,
+      "composition": "Sc3Nb1N1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_411219",
+      "dataset_index": 411219,
+      "composition": "Th6Ga12Ir10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_578306",
+      "dataset_index": 578306,
+      "composition": "Tb1Lu1Te2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3306748",
+      "dataset_index": 3306748,
+      "composition": "Dy1Ho1Se1S1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2307137",
+      "dataset_index": 2307137,
+      "composition": "Ag1Os2Pb1C1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2530601",
+      "dataset_index": 2530601,
+      "composition": "Ta2Si2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3327567",
+      "dataset_index": 3327567,
+      "composition": "Rb4Ta2Co2O10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_155312",
+      "dataset_index": 155312,
+      "composition": "La8Nd1Sm2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3408384",
+      "dataset_index": 3408384,
+      "composition": "Ce1Er1Sc2Tl4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4148147",
+      "dataset_index": 4148147,
+      "composition": "Sr1Cd1Os1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4063703",
+      "dataset_index": 4063703,
+      "composition": "Dy2H2C2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_104046",
+      "dataset_index": 104046,
+      "composition": "Ga2C1N1O1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3352005",
+      "dataset_index": 3352005,
+      "composition": "Ca1Hg1As2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2498412",
+      "dataset_index": 2498412,
+      "composition": "Te1Ru1Cl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3567935",
+      "dataset_index": 3567935,
+      "composition": "Al2Fe1Ni1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3504967",
+      "dataset_index": 3504967,
+      "composition": "Gd1Mn1Ga2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3307755",
+      "dataset_index": 3307755,
+      "composition": "Dy13Sc2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4351944",
+      "dataset_index": 4351944,
+      "composition": "Sc1Ti1Os2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_236018",
+      "dataset_index": 236018,
+      "composition": "Cu4Hg2S2O12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_78245",
+      "dataset_index": 78245,
+      "composition": "Ba3Mg2Ga4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2202042",
+      "dataset_index": 2202042,
+      "composition": "Li6Si6Bi6O24",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4293661",
+      "dataset_index": 4293661,
+      "composition": "Ta2H2Br4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5022904",
+      "dataset_index": 5022904,
+      "composition": "Tm2Pu1Th1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_980581",
+      "dataset_index": 980581,
+      "composition": "Ba3Bi3Au3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5077030",
+      "dataset_index": 5077030,
+      "composition": "Ca6Cd4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1344839",
+      "dataset_index": 1344839,
+      "composition": "Al2Ni1Ge1S1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2598373",
+      "dataset_index": 2598373,
+      "composition": "U4Cl8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1610428",
+      "dataset_index": 1610428,
+      "composition": "Sm2Tl2Au2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_164222",
+      "dataset_index": 164222,
+      "composition": "La1Eu1Rh2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3580471",
+      "dataset_index": 3580471,
+      "composition": "Ti12Co4Os2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1019317",
+      "dataset_index": 1019317,
+      "composition": "Al1Cu1Ni1Mo1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1629285",
+      "dataset_index": 1629285,
+      "composition": "Na2Ag2Te2Cl12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4855243",
+      "dataset_index": 4855243,
+      "composition": "Fe1H2Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2805884",
+      "dataset_index": 2805884,
+      "composition": "Ti4Ge2As4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4219776",
+      "dataset_index": 4219776,
+      "composition": "Ca2Al6Hg6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4004990",
+      "dataset_index": 4004990,
+      "composition": "Al2Cu4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4154577",
+      "dataset_index": 4154577,
+      "composition": "Zr2Mn1Cu1Sb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_224153",
+      "dataset_index": 224153,
+      "composition": "Pr1Th1Cu1Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3171194",
+      "dataset_index": 3171194,
+      "composition": "Tm5Sc1P6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4756128",
+      "dataset_index": 4756128,
+      "composition": "Rb2Ba4Na2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1938794",
+      "dataset_index": 1938794,
+      "composition": "K1Os1F2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4188552",
+      "dataset_index": 4188552,
+      "composition": "La3Tb1Se6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3991566",
+      "dataset_index": 3991566,
+      "composition": "La1Ta2Si2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2556305",
+      "dataset_index": 2556305,
+      "composition": "Rb1Hf1Tl1Bi2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3585968",
+      "dataset_index": 3585968,
+      "composition": "Zr1Be2Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4633495",
+      "dataset_index": 4633495,
+      "composition": "Cd1Cu1P2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5075547",
+      "dataset_index": 5075547,
+      "composition": "Na2Pa1Ti2Se6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2297550",
+      "dataset_index": 2297550,
+      "composition": "Ta2Cr1In1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1551127",
+      "dataset_index": 1551127,
+      "composition": "Ac1Y1Tl6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_258204",
+      "dataset_index": 258204,
+      "composition": "Li1Hf1Co1Ir1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3459358",
+      "dataset_index": 3459358,
+      "composition": "Mn2Ga1N1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5008025",
+      "dataset_index": 5008025,
+      "composition": "K6Cd4Hg10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4224085",
+      "dataset_index": 4224085,
+      "composition": "Mn2Ni1H1Pt1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_268713",
+      "dataset_index": 268713,
+      "composition": "Ni1I2Br1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4587067",
+      "dataset_index": 4587067,
+      "composition": "Li6Mn1Ni1P2C2O14",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1282364",
+      "dataset_index": 1282364,
+      "composition": "Ni3Ag1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5273765",
+      "dataset_index": 5273765,
+      "composition": "Tb5Dy8Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_481492",
+      "dataset_index": 481492,
+      "composition": "Mg2Tl9In1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5296366",
+      "dataset_index": 5296366,
+      "composition": "Ce8Te6N2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4119729",
+      "dataset_index": 4119729,
+      "composition": "Np1Cd1Bi1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1435201",
+      "dataset_index": 1435201,
+      "composition": "Sc2Re4Ge2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4532394",
+      "dataset_index": 4532394,
+      "composition": "Zr1Al1Zn2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4199181",
+      "dataset_index": 4199181,
+      "composition": "Rb1Mo1Ir3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4736545",
+      "dataset_index": 4736545,
+      "composition": "S1I1Cl1O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3309745",
+      "dataset_index": 3309745,
+      "composition": "Na6Tl2Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1506024",
+      "dataset_index": 1506024,
+      "composition": "Al1Cr2Br1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4680884",
+      "dataset_index": 4680884,
+      "composition": "Cs2Ta2S6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1121813",
+      "dataset_index": 1121813,
+      "composition": "Sm2Tm2C1F5",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_265006",
+      "dataset_index": 265006,
+      "composition": "Fe2Hg4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1513223",
+      "dataset_index": 1513223,
+      "composition": "Tb1Sm3Y4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5039639",
+      "dataset_index": 5039639,
+      "composition": "Rb2Fe1Rh1F6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4527627",
+      "dataset_index": 4527627,
+      "composition": "K1Cr2Cu1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5067203",
+      "dataset_index": 5067203,
+      "composition": "Nb2Cd1Pb1Br1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2528233",
+      "dataset_index": 2528233,
+      "composition": "Pd1Pt1Se3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4269630",
+      "dataset_index": 4269630,
+      "composition": "Ho3Tm1Pu2Te6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4861502",
+      "dataset_index": 4861502,
+      "composition": "Zn1Si1Ru2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1662248",
+      "dataset_index": 1662248,
+      "composition": "Hf3Al1Cr1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1624145",
+      "dataset_index": 1624145,
+      "composition": "K2Al1Cr1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2956553",
+      "dataset_index": 2956553,
+      "composition": "Sr4Yb2Sb2O12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1834282",
+      "dataset_index": 1834282,
+      "composition": "Sb2Te1C1N1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1145021",
+      "dataset_index": 1145021,
+      "composition": "La2In2Cu4Sn2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4620385",
+      "dataset_index": 4620385,
+      "composition": "Tb1Zr1Ni2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2748524",
+      "dataset_index": 2748524,
+      "composition": "Sc4In1Ir1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1187598",
+      "dataset_index": 1187598,
+      "composition": "Tb1Er2Ni1Sn3Ir2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3729758",
+      "dataset_index": 3729758,
+      "composition": "Ti12Ni6C2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3059336",
+      "dataset_index": 3059336,
+      "composition": "Nb12Ga3Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2098409",
+      "dataset_index": 2098409,
+      "composition": "La2Pa1Ta1N4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4086590",
+      "dataset_index": 4086590,
+      "composition": "Tb4Pd7Au6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4441064",
+      "dataset_index": 4441064,
+      "composition": "Pr1Th1Cd1Os1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1859023",
+      "dataset_index": 1859023,
+      "composition": "Pd2Pt4C2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_269242",
+      "dataset_index": 269242,
+      "composition": "Yb4Mg4Ge4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3492560",
+      "dataset_index": 3492560,
+      "composition": "Sn1P1H1S1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4483036",
+      "dataset_index": 4483036,
+      "composition": "Mn2P6O18",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_418563",
+      "dataset_index": 418563,
+      "composition": "Li1V1Cu1Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2286295",
+      "dataset_index": 2286295,
+      "composition": "Hf3Mn1Re2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3937908",
+      "dataset_index": 3937908,
+      "composition": "Na2Ti4Bi2O12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2820293",
+      "dataset_index": 2820293,
+      "composition": "V1Zn1Si2Tc1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_719971",
+      "dataset_index": 719971,
+      "composition": "Hf1Cr1In2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4778428",
+      "dataset_index": 4778428,
+      "composition": "Mg1In2Co1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1436796",
+      "dataset_index": 1436796,
+      "composition": "Zr1Ta2W1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_809361",
+      "dataset_index": 809361,
+      "composition": "Na2Er2Co2O6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4964462",
+      "dataset_index": 4964462,
+      "composition": "Zr1Au2Br1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1760484",
+      "dataset_index": 1760484,
+      "composition": "Be6Cr6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1090212",
+      "dataset_index": 1090212,
+      "composition": "Li1Nb1Cu1Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1002813",
+      "dataset_index": 1002813,
+      "composition": "Tb1Tm2Al3Cu1Ag2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3476940",
+      "dataset_index": 3476940,
+      "composition": "Li2Sn1Pd1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3822607",
+      "dataset_index": 3822607,
+      "composition": "Li8Mn8P8O36",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4655974",
+      "dataset_index": 4655974,
+      "composition": "Al4Ni2C2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3590630",
+      "dataset_index": 3590630,
+      "composition": "Eu1Mg1Tl1Bi1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4989634",
+      "dataset_index": 4989634,
+      "composition": "Si2Pb4C2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5321932",
+      "dataset_index": 5321932,
+      "composition": "Na6Pd3F18",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4068917",
+      "dataset_index": 4068917,
+      "composition": "Ta1Sb1I2N1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4429578",
+      "dataset_index": 4429578,
+      "composition": "Sm4Mg4Rh4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4931642",
+      "dataset_index": 4931642,
+      "composition": "Ho2Ge4Rh8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2162622",
+      "dataset_index": 2162622,
+      "composition": "Ti6Ir2O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2758864",
+      "dataset_index": 2758864,
+      "composition": "Cr2Te6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4860964",
+      "dataset_index": 4860964,
+      "composition": "Mo2Os2Ru8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3888053",
+      "dataset_index": 3888053,
+      "composition": "Ac2Pr6Nd10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_489968",
+      "dataset_index": 489968,
+      "composition": "Ca1La1Tl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2732781",
+      "dataset_index": 2732781,
+      "composition": "Ce1Sm3Dy2S6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1219848",
+      "dataset_index": 1219848,
+      "composition": "Dy4Mg2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2126417",
+      "dataset_index": 2126417,
+      "composition": "Ca6Co2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4855488",
+      "dataset_index": 4855488,
+      "composition": "Ti7In2Ge2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1711681",
+      "dataset_index": 1711681,
+      "composition": "Sm2U2Tc6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3371616",
+      "dataset_index": 3371616,
+      "composition": "Sr2Tb2Br8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_852029",
+      "dataset_index": 852029,
+      "composition": "Tm1Th1Nb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1719233",
+      "dataset_index": 1719233,
+      "composition": "K3Ta1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1711304",
+      "dataset_index": 1711304,
+      "composition": "Tl2Os6O18",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3778708",
+      "dataset_index": 3778708,
+      "composition": "Mn1Te2H2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5041710",
+      "dataset_index": 5041710,
+      "composition": "K1Ba1Ta2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2112231",
+      "dataset_index": 2112231,
+      "composition": "Ce2Nd1Th1As4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2296326",
+      "dataset_index": 2296326,
+      "composition": "Pa2Te2Pt1N2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2057064",
+      "dataset_index": 2057064,
+      "composition": "Cu1Mo2W1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3077403",
+      "dataset_index": 3077403,
+      "composition": "Pa4Cr1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_396019",
+      "dataset_index": 396019,
+      "composition": "Li2Al1As1I1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_351147",
+      "dataset_index": 351147,
+      "composition": "Tm2Au3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1696931",
+      "dataset_index": 1696931,
+      "composition": "Lu1Cu4Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3394909",
+      "dataset_index": 3394909,
+      "composition": "Hf1Tl2V1Zn1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5085412",
+      "dataset_index": 5085412,
+      "composition": "Na2Y2Ge2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1420221",
+      "dataset_index": 1420221,
+      "composition": "Na1La1Al4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4567835",
+      "dataset_index": 4567835,
+      "composition": "Pa1Si1Ni1Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3820268",
+      "dataset_index": 3820268,
+      "composition": "Ba1Ac1Si1I1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2231224",
+      "dataset_index": 2231224,
+      "composition": "Ba2La2Pr2Mn6O18",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1436117",
+      "dataset_index": 1436117,
+      "composition": "Na2Tl12Sn5",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2511451",
+      "dataset_index": 2511451,
+      "composition": "Al7V2Ga1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1462389",
+      "dataset_index": 1462389,
+      "composition": "K4Tl3Cd1O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2006385",
+      "dataset_index": 2006385,
+      "composition": "Ba1Si1Pt2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2790168",
+      "dataset_index": 2790168,
+      "composition": "La2Er4Np2N8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1226885",
+      "dataset_index": 1226885,
+      "composition": "Zr1Cd1Cu1Bi1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1395537",
+      "dataset_index": 1395537,
+      "composition": "Mg1Mn1Pb2W1O6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4851913",
+      "dataset_index": 4851913,
+      "composition": "Ca2Np2Zn2N6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5250643",
+      "dataset_index": 5250643,
+      "composition": "Zn2Ir1Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3236018",
+      "dataset_index": 3236018,
+      "composition": "Na2Pr2Zn2F12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_117900",
+      "dataset_index": 117900,
+      "composition": "Bi2Se2Cl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3978836",
+      "dataset_index": 3978836,
+      "composition": "Ac1Ge2Pd5Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1872082",
+      "dataset_index": 1872082,
+      "composition": "Na3Zr1In1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3025876",
+      "dataset_index": 3025876,
+      "composition": "K12Hg12Sb8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3048117",
+      "dataset_index": 3048117,
+      "composition": "Na1Tb1Ga6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_372872",
+      "dataset_index": 372872,
+      "composition": "La4Ho3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_269479",
+      "dataset_index": 269479,
+      "composition": "Pr1Lu2Pu1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_533578",
+      "dataset_index": 533578,
+      "composition": "Ir2W1Br1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2207232",
+      "dataset_index": 2207232,
+      "composition": "Be6V2Ru8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1329911",
+      "dataset_index": 1329911,
+      "composition": "Nd2Ti2O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1168591",
+      "dataset_index": 1168591,
+      "composition": "Nb1Ni6Mo1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1065798",
+      "dataset_index": 1065798,
+      "composition": "K1Gd1Lu1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3974990",
+      "dataset_index": 3974990,
+      "composition": "Ba7Ge3N2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2954521",
+      "dataset_index": 2954521,
+      "composition": "Sr4Pa2Se8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2777671",
+      "dataset_index": 2777671,
+      "composition": "Ba1Cd4Ir1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1480295",
+      "dataset_index": 1480295,
+      "composition": "Co1N2F1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4732916",
+      "dataset_index": 4732916,
+      "composition": "Cs3In1I6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_872488",
+      "dataset_index": 872488,
+      "composition": "Ni6Hg2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1752658",
+      "dataset_index": 1752658,
+      "composition": "In1Ag1Au2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4058076",
+      "dataset_index": 4058076,
+      "composition": "Fe1Ni1Br2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1892328",
+      "dataset_index": 1892328,
+      "composition": "Ac2Al2Fe2C1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3328248",
+      "dataset_index": 3328248,
+      "composition": "Na1Sr1U1O4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2326491",
+      "dataset_index": 2326491,
+      "composition": "Y1Ag3Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_640898",
+      "dataset_index": 640898,
+      "composition": "Ga1Fe1Te2I1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1936923",
+      "dataset_index": 1936923,
+      "composition": "V1Ni2H1Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_618553",
+      "dataset_index": 618553,
+      "composition": "Mg1Fe1Pd1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3553802",
+      "dataset_index": 3553802,
+      "composition": "Cr1Rh2Br1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4675420",
+      "dataset_index": 4675420,
+      "composition": "Ac1Sm1Gd1Th1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2454256",
+      "dataset_index": 2454256,
+      "composition": "Cr2Ni2H4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3231131",
+      "dataset_index": 3231131,
+      "composition": "Y1Rh3C1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1489120",
+      "dataset_index": 1489120,
+      "composition": "La3Tb6Nd2Dy1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3338613",
+      "dataset_index": 3338613,
+      "composition": "Mn2Cu2S4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4336487",
+      "dataset_index": 4336487,
+      "composition": "Er1Tl1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4673086",
+      "dataset_index": 4673086,
+      "composition": "Sm2Dy2Tm7",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1824816",
+      "dataset_index": 1824816,
+      "composition": "Sr1Tl1Os2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4913504",
+      "dataset_index": 4913504,
+      "composition": "Li4Ce1Y3Se8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3639257",
+      "dataset_index": 3639257,
+      "composition": "Ho1Tl1Ga2Br6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1381545",
+      "dataset_index": 1381545,
+      "composition": "Ti1Te2Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2214813",
+      "dataset_index": 2214813,
+      "composition": "Sm4Dy6Sn8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3395202",
+      "dataset_index": 3395202,
+      "composition": "Ta1Tl1Se2O1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1724176",
+      "dataset_index": 1724176,
+      "composition": "In1Co1N1F2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_373718",
+      "dataset_index": 373718,
+      "composition": "In1Co3Sb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1274142",
+      "dataset_index": 1274142,
+      "composition": "Hf1Ta1Tl1Fe1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3525232",
+      "dataset_index": 3525232,
+      "composition": "Ta1Cu2Os1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1825258",
+      "dataset_index": 1825258,
+      "composition": "Cs2Ac1Se1O6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1725979",
+      "dataset_index": 1725979,
+      "composition": "Ho3Al7Ni2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1166630",
+      "dataset_index": 1166630,
+      "composition": "Re2B2As2O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5277732",
+      "dataset_index": 5277732,
+      "composition": "Np1Nb1Os2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1591355",
+      "dataset_index": 1591355,
+      "composition": "Mg1Cd1Cl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2052624",
+      "dataset_index": 2052624,
+      "composition": "Tb1La1Hg1Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4989848",
+      "dataset_index": 4989848,
+      "composition": "Mg1Cd4Co1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3126110",
+      "dataset_index": 3126110,
+      "composition": "B2Ir2F4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1940939",
+      "dataset_index": 1940939,
+      "composition": "Ac4Ag2Rh2O10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4078036",
+      "dataset_index": 4078036,
+      "composition": "Cs2Tl2In1Au4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2792422",
+      "dataset_index": 2792422,
+      "composition": "Rh4Se8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2900519",
+      "dataset_index": 2900519,
+      "composition": "Rb1Al1S2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2151646",
+      "dataset_index": 2151646,
+      "composition": "Ac1Cd10Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4085619",
+      "dataset_index": 4085619,
+      "composition": "Li4Ga2Ge2S8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4636061",
+      "dataset_index": 4636061,
+      "composition": "Li8Mg10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_58579",
+      "dataset_index": 58579,
+      "composition": "Al1P2N1O1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4604063",
+      "dataset_index": 4604063,
+      "composition": "Nb1Rh2Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2684046",
+      "dataset_index": 2684046,
+      "composition": "V1Ni4Pt4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_119068",
+      "dataset_index": 119068,
+      "composition": "Tl1Ag1P2O1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1981083",
+      "dataset_index": 1981083,
+      "composition": "Sc4Nb2Si4Ru10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3735743",
+      "dataset_index": 3735743,
+      "composition": "Mn1Ag3F8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4062669",
+      "dataset_index": 4062669,
+      "composition": "Mo2As4Pb4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5231613",
+      "dataset_index": 5231613,
+      "composition": "Zn2Ni1Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2600221",
+      "dataset_index": 2600221,
+      "composition": "Mn6Cr2As6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5127332",
+      "dataset_index": 5127332,
+      "composition": "Y6Ho8Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4221391",
+      "dataset_index": 4221391,
+      "composition": "Cd1Ni2Ir1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5309215",
+      "dataset_index": 5309215,
+      "composition": "Pu1Tl2I2Cl4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1601989",
+      "dataset_index": 1601989,
+      "composition": "Hg1Te1P1O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1395080",
+      "dataset_index": 1395080,
+      "composition": "Pr1Tm2Zr1Sc4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1849398",
+      "dataset_index": 1849398,
+      "composition": "Ho3Ga3Ge2Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_615234",
+      "dataset_index": 615234,
+      "composition": "Cr1Os1Pt2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4865957",
+      "dataset_index": 4865957,
+      "composition": "Ho1Cd8Ag6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5134368",
+      "dataset_index": 5134368,
+      "composition": "Li2Nb2Zn2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5324942",
+      "dataset_index": 5324942,
+      "composition": "Nd2Tm6Th6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2769964",
+      "dataset_index": 2769964,
+      "composition": "Th2Sb1N1O1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2755976",
+      "dataset_index": 2755976,
+      "composition": "Tl1Fe1Os2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4610634",
+      "dataset_index": 4610634,
+      "composition": "Tc4As2N2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_422451",
+      "dataset_index": 422451,
+      "composition": "Al1Cu1P2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4871077",
+      "dataset_index": 4871077,
+      "composition": "Y1Tl1Re1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_223450",
+      "dataset_index": 223450,
+      "composition": "K1Tl1Ag2Cl8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3660636",
+      "dataset_index": 3660636,
+      "composition": "Li1Ca1Bi1Sb2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5191531",
+      "dataset_index": 5191531,
+      "composition": "Cd2Ag2O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4309101",
+      "dataset_index": 4309101,
+      "composition": "Ba2In4Se4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3439463",
+      "dataset_index": 3439463,
+      "composition": "Ba2Sr2Cr2O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4668849",
+      "dataset_index": 4668849,
+      "composition": "Na6P6H10N6O14",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2643500",
+      "dataset_index": 2643500,
+      "composition": "La2V1Bi1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3229667",
+      "dataset_index": 3229667,
+      "composition": "Zr4Ag1Mo1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2030118",
+      "dataset_index": 2030118,
+      "composition": "Y1Mg2P1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_197144",
+      "dataset_index": 197144,
+      "composition": "Cs2S2Br4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2395628",
+      "dataset_index": 2395628,
+      "composition": "Dy2Lu6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1595462",
+      "dataset_index": 1595462,
+      "composition": "Zn2Br4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4885587",
+      "dataset_index": 4885587,
+      "composition": "Tl2B2Br4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4936864",
+      "dataset_index": 4936864,
+      "composition": "Ni8Ir2Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2913805",
+      "dataset_index": 2913805,
+      "composition": "Cs2K1Pu2O7",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2505236",
+      "dataset_index": 2505236,
+      "composition": "Y4Ga4Hg2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2300572",
+      "dataset_index": 2300572,
+      "composition": "Ca1Fe1As2Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1399171",
+      "dataset_index": 1399171,
+      "composition": "Tb1Al4Cu2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4953546",
+      "dataset_index": 4953546,
+      "composition": "Re1Os2Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3423043",
+      "dataset_index": 3423043,
+      "composition": "Nd1Th1Al1Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4229655",
+      "dataset_index": 4229655,
+      "composition": "Si1Bi1Te1I2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_664976",
+      "dataset_index": 664976,
+      "composition": "Y1In2Tc1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2223965",
+      "dataset_index": 2223965,
+      "composition": "Sm4Y3Tm5",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4584643",
+      "dataset_index": 4584643,
+      "composition": "Mg1Zr3Sc7",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1484044",
+      "dataset_index": 1484044,
+      "composition": "Ce2Pr1Zr1N4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_278873",
+      "dataset_index": 278873,
+      "composition": "Ba1Li1Ag1Hg2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_420487",
+      "dataset_index": 420487,
+      "composition": "La1Mg2In1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_234196",
+      "dataset_index": 234196,
+      "composition": "Nd2B6Ru10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2601065",
+      "dataset_index": 2601065,
+      "composition": "Hf6Ge1Sb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_774695",
+      "dataset_index": 774695,
+      "composition": "Na6Fe2B2P2O14",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3615693",
+      "dataset_index": 3615693,
+      "composition": "La1Zr1Re2W1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2858230",
+      "dataset_index": 2858230,
+      "composition": "Pa8Ga16Ge4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1440988",
+      "dataset_index": 1440988,
+      "composition": "Sr1Tl3Mo1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3100969",
+      "dataset_index": 3100969,
+      "composition": "Sm4Co6Ge10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3818353",
+      "dataset_index": 3818353,
+      "composition": "Nd3Ga6Pd9",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2443406",
+      "dataset_index": 2443406,
+      "composition": "Sr4Mn4Zn4P8O32",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4584517",
+      "dataset_index": 4584517,
+      "composition": "La2Th2Sb4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2306953",
+      "dataset_index": 2306953,
+      "composition": "Tb4Tl1Zn3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4067349",
+      "dataset_index": 4067349,
+      "composition": "Ac2Nd2Se2S3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4388061",
+      "dataset_index": 4388061,
+      "composition": "La2Zn7Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1251383",
+      "dataset_index": 1251383,
+      "composition": "Zr1Fe1Co1Bi1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_64616",
+      "dataset_index": 64616,
+      "composition": "Tb4Mg2Al4Pd10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5121663",
+      "dataset_index": 5121663,
+      "composition": "V1Co1Sn3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5153141",
+      "dataset_index": 5153141,
+      "composition": "Ag1P1Cl1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1251846",
+      "dataset_index": 1251846,
+      "composition": "Sn1Hg1As2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4264232",
+      "dataset_index": 4264232,
+      "composition": "Li1Fe1Sn2Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4408238",
+      "dataset_index": 4408238,
+      "composition": "Mn1In2Ni1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4387119",
+      "dataset_index": 4387119,
+      "composition": "Dy2Co6Si3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4720209",
+      "dataset_index": 4720209,
+      "composition": "Sr1La1S2N1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2105505",
+      "dataset_index": 2105505,
+      "composition": "Y1Ir1Se1O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3557135",
+      "dataset_index": 3557135,
+      "composition": "Pa1Zn2Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4079226",
+      "dataset_index": 4079226,
+      "composition": "Sr2Pa2W4N12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2950395",
+      "dataset_index": 2950395,
+      "composition": "Al1Cr2Ni1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1995807",
+      "dataset_index": 1995807,
+      "composition": "Tb4Pr1Y7",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5139149",
+      "dataset_index": 5139149,
+      "composition": "Th1Ni1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2504047",
+      "dataset_index": 2504047,
+      "composition": "Nd9Sm4Cd11",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3168507",
+      "dataset_index": 3168507,
+      "composition": "Tb1Ce2Pu1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4733299",
+      "dataset_index": 4733299,
+      "composition": "La6Sm8Er1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4541800",
+      "dataset_index": 4541800,
+      "composition": "Sm1Pa2Os9",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3196500",
+      "dataset_index": 3196500,
+      "composition": "Pa1Tl1Ag1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1143565",
+      "dataset_index": 1143565,
+      "composition": "Sr1Ni1Hg1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_15479",
+      "dataset_index": 15479,
+      "composition": "Sm4B2C6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3856293",
+      "dataset_index": 3856293,
+      "composition": "Zr1Ni1Cl1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4368127",
+      "dataset_index": 4368127,
+      "composition": "Tb1Ce2Zn2Si2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1369927",
+      "dataset_index": 1369927,
+      "composition": "Be1V1Mo1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2301741",
+      "dataset_index": 2301741,
+      "composition": "Ac1Yb1Rh2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1453737",
+      "dataset_index": 1453737,
+      "composition": "Co1Ni5Ir1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3621249",
+      "dataset_index": 3621249,
+      "composition": "Mg4Np4O20",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3148062",
+      "dataset_index": 3148062,
+      "composition": "Li1Pt1Pb2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2995631",
+      "dataset_index": 2995631,
+      "composition": "Zn1Cr2P1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5200261",
+      "dataset_index": 5200261,
+      "composition": "Er1Mn6Sn6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1347455",
+      "dataset_index": 1347455,
+      "composition": "Ba1In1Au2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2321846",
+      "dataset_index": 2321846,
+      "composition": "Tm4Be2Si4Rh10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3871467",
+      "dataset_index": 3871467,
+      "composition": "Y4Cd4Bi2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3024612",
+      "dataset_index": 3024612,
+      "composition": "Sc2Ir1Cl1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4695",
+      "dataset_index": 4695,
+      "composition": "Tb2Gd1Y1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3886582",
+      "dataset_index": 3886582,
+      "composition": "Te2Mo3Se2S2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1143805",
+      "dataset_index": 1143805,
+      "composition": "Gd2Si2As2O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4049850",
+      "dataset_index": 4049850,
+      "composition": "La1Y1Bi1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4659908",
+      "dataset_index": 4659908,
+      "composition": "Rb2Na6Hg1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4155746",
+      "dataset_index": 4155746,
+      "composition": "Y4Te6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_325962",
+      "dataset_index": 325962,
+      "composition": "Pa1Zn1Fe2Ge4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1967981",
+      "dataset_index": 1967981,
+      "composition": "Sn2H4Se2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4776524",
+      "dataset_index": 4776524,
+      "composition": "Al2Cu1Hg1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_709923",
+      "dataset_index": 709923,
+      "composition": "Rb1Np2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1900439",
+      "dataset_index": 1900439,
+      "composition": "Co1Tc2Rh1N1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4825934",
+      "dataset_index": 4825934,
+      "composition": "Li2Co2Ru2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1146935",
+      "dataset_index": 1146935,
+      "composition": "Er2Cd2As2O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1331502",
+      "dataset_index": 1331502,
+      "composition": "Tb1Pr2Ho2Er2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5014358",
+      "dataset_index": 5014358,
+      "composition": "Sr12N4Cl12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_845072",
+      "dataset_index": 845072,
+      "composition": "Be2C2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3719521",
+      "dataset_index": 3719521,
+      "composition": "Zr2Al1Mo1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1542990",
+      "dataset_index": 1542990,
+      "composition": "Sr1Nd3Ni2O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1086121",
+      "dataset_index": 1086121,
+      "composition": "Ba1Co2As2O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2452494",
+      "dataset_index": 2452494,
+      "composition": "W1Se1F2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1228458",
+      "dataset_index": 1228458,
+      "composition": "Sc2Bi2Pd2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1725429",
+      "dataset_index": 1725429,
+      "composition": "Y4Sb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_179821",
+      "dataset_index": 179821,
+      "composition": "Th2Ni2Sn6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_474252",
+      "dataset_index": 474252,
+      "composition": "Cr2F6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4442551",
+      "dataset_index": 4442551,
+      "composition": "Zn8N8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_610818",
+      "dataset_index": 610818,
+      "composition": "Rb1Li1Ta1Hg2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1031873",
+      "dataset_index": 1031873,
+      "composition": "K2Ag2Te2Os2S4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2016353",
+      "dataset_index": 2016353,
+      "composition": "Nd4Si4Pb2S16",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3861653",
+      "dataset_index": 3861653,
+      "composition": "Sr2Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_912451",
+      "dataset_index": 912451,
+      "composition": "In2Re1Hg1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2718302",
+      "dataset_index": 2718302,
+      "composition": "Mg4Re4Sn2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3280156",
+      "dataset_index": 3280156,
+      "composition": "Tb1Ho4Tm2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4058526",
+      "dataset_index": 4058526,
+      "composition": "Cd6Sn1Hg2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4750685",
+      "dataset_index": 4750685,
+      "composition": "Mg1Zr1Se1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_959563",
+      "dataset_index": 959563,
+      "composition": "Pr2Ge1Pd6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4701214",
+      "dataset_index": 4701214,
+      "composition": "Dy4Al12Pd1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2636916",
+      "dataset_index": 2636916,
+      "composition": "Pu1Cd2Pt9",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2232177",
+      "dataset_index": 2232177,
+      "composition": "Nb6Pd6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3830130",
+      "dataset_index": 3830130,
+      "composition": "Sr2Si4Ir3Pt1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4338825",
+      "dataset_index": 4338825,
+      "composition": "Ba4Nd8Be4O20",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3538194",
+      "dataset_index": 3538194,
+      "composition": "Si4Sn2Mo4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3971588",
+      "dataset_index": 3971588,
+      "composition": "Cu3Au4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_667184",
+      "dataset_index": 667184,
+      "composition": "Rb2Ba1Cd1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2389457",
+      "dataset_index": 2389457,
+      "composition": "Be2Tl1Zn1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1409866",
+      "dataset_index": 1409866,
+      "composition": "Mn1Ga1Au1Cl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3285885",
+      "dataset_index": 3285885,
+      "composition": "Dy2Ga6Co6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5276906",
+      "dataset_index": 5276906,
+      "composition": "In6Hg1Pb8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2523828",
+      "dataset_index": 2523828,
+      "composition": "Al20Hg48Sb12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4980127",
+      "dataset_index": 4980127,
+      "composition": "Li1Nb1V1Mo2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2442695",
+      "dataset_index": 2442695,
+      "composition": "Tb6Te3P1Se2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5252529",
+      "dataset_index": 5252529,
+      "composition": "Ca1Mg1Cu2Mo1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2780028",
+      "dataset_index": 2780028,
+      "composition": "K2Pd4Rh4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3587318",
+      "dataset_index": 3587318,
+      "composition": "Ce6Tm2Sb4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2220707",
+      "dataset_index": 2220707,
+      "composition": "Na1Ti1Br2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1554951",
+      "dataset_index": 1554951,
+      "composition": "Pr12Ho2Tm6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3840289",
+      "dataset_index": 3840289,
+      "composition": "Ti4S4Cl4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_884890",
+      "dataset_index": 884890,
+      "composition": "Mg1Be1Co1Sb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1213311",
+      "dataset_index": 1213311,
+      "composition": "Zr4Sn4Pd4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3399098",
+      "dataset_index": 3399098,
+      "composition": "Mg1Hg1Pt3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_918172",
+      "dataset_index": 918172,
+      "composition": "Hf4P4Os4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_800786",
+      "dataset_index": 800786,
+      "composition": "Nd4Cu4Te12Pb4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_564280",
+      "dataset_index": 564280,
+      "composition": "La4Mg2Si2Pt12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3227182",
+      "dataset_index": 3227182,
+      "composition": "Ac1Y1Co1Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2303328",
+      "dataset_index": 2303328,
+      "composition": "Cs4Pa2Br12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2769006",
+      "dataset_index": 2769006,
+      "composition": "La2Zn4Ge3Pt1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3794614",
+      "dataset_index": 3794614,
+      "composition": "Ho2V2Si6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3799987",
+      "dataset_index": 3799987,
+      "composition": "Cu4Bi4P4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1631492",
+      "dataset_index": 1631492,
+      "composition": "Ac2Tb4Pr7",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_967573",
+      "dataset_index": 967573,
+      "composition": "Sr1Th1Ag1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2235234",
+      "dataset_index": 2235234,
+      "composition": "Cs4Rh4N4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3301259",
+      "dataset_index": 3301259,
+      "composition": "Ba1Bi1Os3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3332670",
+      "dataset_index": 3332670,
+      "composition": "Hg2Pd7Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1277014",
+      "dataset_index": 1277014,
+      "composition": "Ca1Ac1Pr1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_72072",
+      "dataset_index": 72072,
+      "composition": "Hf8Zr2Al4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5292231",
+      "dataset_index": 5292231,
+      "composition": "Na42Nb15Ga9Si36O144",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_755441",
+      "dataset_index": 755441,
+      "composition": "Np1Sc2U1As4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4338315",
+      "dataset_index": 4338315,
+      "composition": "Sm3Dy2Tl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3944214",
+      "dataset_index": 3944214,
+      "composition": "Co1Ni1Ir2Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5096676",
+      "dataset_index": 5096676,
+      "composition": "Pr1Nd1Gd1Tl1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2522187",
+      "dataset_index": 2522187,
+      "composition": "Tc1Mo2W1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_236554",
+      "dataset_index": 236554,
+      "composition": "La2Dy7",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1504797",
+      "dataset_index": 1504797,
+      "composition": "Mg1Tc1Rh1W1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5197289",
+      "dataset_index": 5197289,
+      "composition": "Ac2Cd1Ga3Rh4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4120560",
+      "dataset_index": 4120560,
+      "composition": "Li2Cd1Os1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1718591",
+      "dataset_index": 1718591,
+      "composition": "Mg1Ag1Pb2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5315237",
+      "dataset_index": 5315237,
+      "composition": "La2Tb6Nd2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3213803",
+      "dataset_index": 3213803,
+      "composition": "La4Ag10Pd2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1288853",
+      "dataset_index": 1288853,
+      "composition": "Tb2Sb2N4O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_721099",
+      "dataset_index": 721099,
+      "composition": "Rb2Co1B1I6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_919023",
+      "dataset_index": 919023,
+      "composition": "Dy2Y2C2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2911443",
+      "dataset_index": 2911443,
+      "composition": "Tc2Hg1Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3177891",
+      "dataset_index": 3177891,
+      "composition": "Na30Y12In12Si15S21O144",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4206799",
+      "dataset_index": 4206799,
+      "composition": "Dy1Fe3B4O12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3830181",
+      "dataset_index": 3830181,
+      "composition": "La1Pr1Y1Pu1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4122039",
+      "dataset_index": 4122039,
+      "composition": "Ni1P3H1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3018407",
+      "dataset_index": 3018407,
+      "composition": "Li4Sm3Ga4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3196103",
+      "dataset_index": 3196103,
+      "composition": "Pb2I4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5285625",
+      "dataset_index": 5285625,
+      "composition": "Ba1Pu2Co1O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2627737",
+      "dataset_index": 2627737,
+      "composition": "Mn1Au2Se3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_824154",
+      "dataset_index": 824154,
+      "composition": "K1Ho1Hg1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2491785",
+      "dataset_index": 2491785,
+      "composition": "Ac2Er1Mg1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3905072",
+      "dataset_index": 3905072,
+      "composition": "Tm2Ge1Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4102020",
+      "dataset_index": 4102020,
+      "composition": "Cs4Ba2Pd4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3756005",
+      "dataset_index": 3756005,
+      "composition": "Zr1In1Se2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1217123",
+      "dataset_index": 1217123,
+      "composition": "Sr3Tl1Pd8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4260565",
+      "dataset_index": 4260565,
+      "composition": "Be6N2F6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5114917",
+      "dataset_index": 5114917,
+      "composition": "Ba1Li1Mg2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1565776",
+      "dataset_index": 1565776,
+      "composition": "Sc1Ta2Cu1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5157661",
+      "dataset_index": 5157661,
+      "composition": "Na2Si2Ir2O10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3475122",
+      "dataset_index": 3475122,
+      "composition": "Li1In1Pt1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3778642",
+      "dataset_index": 3778642,
+      "composition": "Mn2Ge1Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4465804",
+      "dataset_index": 4465804,
+      "composition": "Cs1K1Ga2Pt1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_773900",
+      "dataset_index": 773900,
+      "composition": "Sr1Ce2Be2O6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_862045",
+      "dataset_index": 862045,
+      "composition": "Rb3Er1F6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2602272",
+      "dataset_index": 2602272,
+      "composition": "Sr2Os1Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_381121",
+      "dataset_index": 381121,
+      "composition": "Co1Hg1N2F1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1977121",
+      "dataset_index": 1977121,
+      "composition": "Zr1Cr1In2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_385763",
+      "dataset_index": 385763,
+      "composition": "Er7Zn2Ni2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1262305",
+      "dataset_index": 1262305,
+      "composition": "Ta4P16S20Cl20",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4922264",
+      "dataset_index": 4922264,
+      "composition": "Re1Ni1Au2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4789527",
+      "dataset_index": 4789527,
+      "composition": "Ga3Cu8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3519156",
+      "dataset_index": 3519156,
+      "composition": "Tb12In5Hg2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1799144",
+      "dataset_index": 1799144,
+      "composition": "Li1Zn2P1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_316839",
+      "dataset_index": 316839,
+      "composition": "Tl1Fe1Tc2O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_81088",
+      "dataset_index": 81088,
+      "composition": "Er1Tm2Au6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4554821",
+      "dataset_index": 4554821,
+      "composition": "Dy1Pu1Tl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_355998",
+      "dataset_index": 355998,
+      "composition": "La4Tb1Tm7",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3675466",
+      "dataset_index": 3675466,
+      "composition": "La2Ho1Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3318803",
+      "dataset_index": 3318803,
+      "composition": "Ag5Hg2Pd4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4686844",
+      "dataset_index": 4686844,
+      "composition": "Na2Ag1N4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1736723",
+      "dataset_index": 1736723,
+      "composition": "Mg2Ti4Nb4Rh10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1851253",
+      "dataset_index": 1851253,
+      "composition": "Co2Cl4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1925009",
+      "dataset_index": 1925009,
+      "composition": "Ba4Y8Se16",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2819678",
+      "dataset_index": 2819678,
+      "composition": "La1Sc1Ga2Pd2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3369148",
+      "dataset_index": 3369148,
+      "composition": "Np1Cu2Sb1O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_398678",
+      "dataset_index": 398678,
+      "composition": "Hf4Ta6Ge8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2956072",
+      "dataset_index": 2956072,
+      "composition": "Ho2Re2O8F2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1998701",
+      "dataset_index": 1998701,
+      "composition": "Pa6Co2S12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3628448",
+      "dataset_index": 3628448,
+      "composition": "Zn1Fe1Ni2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1377986",
+      "dataset_index": 1377986,
+      "composition": "Np6Bi2Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4751302",
+      "dataset_index": 4751302,
+      "composition": "Tl3V1Pd1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_141140",
+      "dataset_index": 141140,
+      "composition": "Al1Cr2Si1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4377478",
+      "dataset_index": 4377478,
+      "composition": "Ca2Zn4H24Br12O12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3881301",
+      "dataset_index": 3881301,
+      "composition": "Dy5Ge5Pt2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5314767",
+      "dataset_index": 5314767,
+      "composition": "Re2Hg1Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_304290",
+      "dataset_index": 304290,
+      "composition": "Mo1P2Br1O1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2217105",
+      "dataset_index": 2217105,
+      "composition": "Nd4In1Ag2Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2670094",
+      "dataset_index": 2670094,
+      "composition": "Zr1Al2W1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5333876",
+      "dataset_index": 5333876,
+      "composition": "Na16Mn12P16O60",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4659830",
+      "dataset_index": 4659830,
+      "composition": "Ho2Ni3As4Ir1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4379672",
+      "dataset_index": 4379672,
+      "composition": "Bi3Pt2Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4881667",
+      "dataset_index": 4881667,
+      "composition": "Na2Mn4In2Br12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4723747",
+      "dataset_index": 4723747,
+      "composition": "La2Sm5Er12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2788225",
+      "dataset_index": 2788225,
+      "composition": "La1Zr2Tc1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2228319",
+      "dataset_index": 2228319,
+      "composition": "Ce1Ga1Ir1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_65939",
+      "dataset_index": 65939,
+      "composition": "Ac5Mg1Sn6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4354467",
+      "dataset_index": 4354467,
+      "composition": "Ce8Ge6S24",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5278682",
+      "dataset_index": 5278682,
+      "composition": "Nd2Ga4Ir1Au3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_350554",
+      "dataset_index": 350554,
+      "composition": "Cs1Na2Er1I6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1292202",
+      "dataset_index": 1292202,
+      "composition": "Y2Ta4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3559906",
+      "dataset_index": 3559906,
+      "composition": "Cr4Co2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2584491",
+      "dataset_index": 2584491,
+      "composition": "Li1Ga1C3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1041890",
+      "dataset_index": 1041890,
+      "composition": "Re2N2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4484660",
+      "dataset_index": 4484660,
+      "composition": "Ca1Cu1W2O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_580878",
+      "dataset_index": 580878,
+      "composition": "Na1Pa1F6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2344857",
+      "dataset_index": 2344857,
+      "composition": "Pr12Nd2Ho5",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4657558",
+      "dataset_index": 4657558,
+      "composition": "Fe1Cu1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1436174",
+      "dataset_index": 1436174,
+      "composition": "Y2Sb1Mo1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_819142",
+      "dataset_index": 819142,
+      "composition": "Dy1Zr1Pd1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1974824",
+      "dataset_index": 1974824,
+      "composition": "Er1Ag3Br6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3883271",
+      "dataset_index": 3883271,
+      "composition": "Si4Os4W2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5330439",
+      "dataset_index": 5330439,
+      "composition": "Li1Cd1Co2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4987318",
+      "dataset_index": 4987318,
+      "composition": "Ba2Au22",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1076408",
+      "dataset_index": 1076408,
+      "composition": "Hf8Sc4P6C6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_510769",
+      "dataset_index": 510769,
+      "composition": "Cs1Ge1Bi2O1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4461469",
+      "dataset_index": 4461469,
+      "composition": "Tm12In5Bi2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_273548",
+      "dataset_index": 273548,
+      "composition": "Er1Lu1Ga1Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_293085",
+      "dataset_index": 293085,
+      "composition": "Tm8Fe4O20",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_737946",
+      "dataset_index": 737946,
+      "composition": "Ce2Nd3Ru2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2160863",
+      "dataset_index": 2160863,
+      "composition": "Zn1Cd2Pd8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_188323",
+      "dataset_index": 188323,
+      "composition": "Ti6In1Pd12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3561047",
+      "dataset_index": 3561047,
+      "composition": "Tb2Nd2As4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_356620",
+      "dataset_index": 356620,
+      "composition": "Tb1Dy1Hg1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2891299",
+      "dataset_index": 2891299,
+      "composition": "Y2Ho2Si6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1255132",
+      "dataset_index": 1255132,
+      "composition": "Li2Cu2Mo2Se4S2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_513287",
+      "dataset_index": 513287,
+      "composition": "Nd4Pt1O7",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4601484",
+      "dataset_index": 4601484,
+      "composition": "Ca4Pt3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3020896",
+      "dataset_index": 3020896,
+      "composition": "Pr1Lu1Cd1Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1967558",
+      "dataset_index": 1967558,
+      "composition": "Sm12Er7Zr1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2330401",
+      "dataset_index": 2330401,
+      "composition": "Nd4Tl4Pb2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4708105",
+      "dataset_index": 4708105,
+      "composition": "Al2P1Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4906821",
+      "dataset_index": 4906821,
+      "composition": "Cd8In6Bi4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1268132",
+      "dataset_index": 1268132,
+      "composition": "K1Li1Mo1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_894241",
+      "dataset_index": 894241,
+      "composition": "Zr2Os4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1182593",
+      "dataset_index": 1182593,
+      "composition": "Lu1Tc1Ni1Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5095735",
+      "dataset_index": 5095735,
+      "composition": "As1P1I1N2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4451008",
+      "dataset_index": 4451008,
+      "composition": "Cs2Fe1W1Br6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1587751",
+      "dataset_index": 1587751,
+      "composition": "Ca1P1W1Cl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3005073",
+      "dataset_index": 3005073,
+      "composition": "Pa1Ge1Sb2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2169561",
+      "dataset_index": 2169561,
+      "composition": "Ca2Cu1Ni1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4655746",
+      "dataset_index": 4655746,
+      "composition": "Li4Cd10Ag4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4834507",
+      "dataset_index": 4834507,
+      "composition": "Tm1Cu1Sn2Pd4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3154189",
+      "dataset_index": 3154189,
+      "composition": "Np2Zn2H8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2296126",
+      "dataset_index": 2296126,
+      "composition": "Nd4Ho2Sc2Tl4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_821071",
+      "dataset_index": 821071,
+      "composition": "Ba1Li1Pa1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_663008",
+      "dataset_index": 663008,
+      "composition": "Er1Tm1Zn1Co1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4953555",
+      "dataset_index": 4953555,
+      "composition": "Zn1Os2Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3734052",
+      "dataset_index": 3734052,
+      "composition": "Ho4Cu4Ni10Ge2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3721471",
+      "dataset_index": 3721471,
+      "composition": "V2Co4P1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2447769",
+      "dataset_index": 2447769,
+      "composition": "Pr2Dy2Er4Tm10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2629576",
+      "dataset_index": 2629576,
+      "composition": "La6Nd2Cu8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1748871",
+      "dataset_index": 1748871,
+      "composition": "Tb1La1Zr2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_936878",
+      "dataset_index": 936878,
+      "composition": "Fe1Mo1Os1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_573740",
+      "dataset_index": 573740,
+      "composition": "Cr2Br6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2555500",
+      "dataset_index": 2555500,
+      "composition": "Tb8Sn1Ru2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2003600",
+      "dataset_index": 2003600,
+      "composition": "Cs1Np4Cu3Se12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1438101",
+      "dataset_index": 1438101,
+      "composition": "Mn2P2C2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4250858",
+      "dataset_index": 4250858,
+      "composition": "Ac3Zn2Sn4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4951061",
+      "dataset_index": 4951061,
+      "composition": "Y2Zn1P3Rh12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3104584",
+      "dataset_index": 3104584,
+      "composition": "Ti3Ag1Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_45554",
+      "dataset_index": 45554,
+      "composition": "Y1Co2Hg1Bi1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2863118",
+      "dataset_index": 2863118,
+      "composition": "In8Pb2Br12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1578222",
+      "dataset_index": 1578222,
+      "composition": "Dy4Er12Os4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1665528",
+      "dataset_index": 1665528,
+      "composition": "La3Ir1Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3015644",
+      "dataset_index": 3015644,
+      "composition": "La1Cd8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4290672",
+      "dataset_index": 4290672,
+      "composition": "Sr1Cd3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_254765",
+      "dataset_index": 254765,
+      "composition": "Sc2Ir1Au1C1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5014245",
+      "dataset_index": 5014245,
+      "composition": "Li1Mg30B1O31",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1653742",
+      "dataset_index": 1653742,
+      "composition": "Sm1Ho1Cd2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1268430",
+      "dataset_index": 1268430,
+      "composition": "Ho1Sc1Mo2C3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5067658",
+      "dataset_index": 5067658,
+      "composition": "Ti2Zn1Cr1Te1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4686567",
+      "dataset_index": 4686567,
+      "composition": "V2Cr1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1504893",
+      "dataset_index": 1504893,
+      "composition": "Rb1Ti1S2O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5261671",
+      "dataset_index": 5261671,
+      "composition": "Ca4Sc2Cu4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3829864",
+      "dataset_index": 3829864,
+      "composition": "In3Ga3Si2Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4734011",
+      "dataset_index": 4734011,
+      "composition": "Sr1Th1Hg4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_220470",
+      "dataset_index": 220470,
+      "composition": "Dy2Al3Zn1Cu12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1867505",
+      "dataset_index": 1867505,
+      "composition": "Cd6Ru6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3691120",
+      "dataset_index": 3691120,
+      "composition": "K1Cr2Si1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4788939",
+      "dataset_index": 4788939,
+      "composition": "Y1Lu1Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4336021",
+      "dataset_index": 4336021,
+      "composition": "Ca1Y2Al1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4849356",
+      "dataset_index": 4849356,
+      "composition": "Ir1Pt1Cl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2496157",
+      "dataset_index": 2496157,
+      "composition": "Li2Ag6Sn12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_942039",
+      "dataset_index": 942039,
+      "composition": "Zn2Co1Si1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4151766",
+      "dataset_index": 4151766,
+      "composition": "Ti1Ga1Rh1Cl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2174874",
+      "dataset_index": 2174874,
+      "composition": "Cr4In1Ir1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5306674",
+      "dataset_index": 5306674,
+      "composition": "Ba2Hg2Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3294989",
+      "dataset_index": 3294989,
+      "composition": "As2F6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3206554",
+      "dataset_index": 3206554,
+      "composition": "Li4In1Ag5",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1739522",
+      "dataset_index": 1739522,
+      "composition": "Sc4Au2Cl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2695881",
+      "dataset_index": 2695881,
+      "composition": "Co1Ni2P1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2390507",
+      "dataset_index": 2390507,
+      "composition": "Hf12Co2Rh4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2531250",
+      "dataset_index": 2531250,
+      "composition": "Na12In6Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1193610",
+      "dataset_index": 1193610,
+      "composition": "Lu4Ga4Ir4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2255401",
+      "dataset_index": 2255401,
+      "composition": "Ho1Tm1Zr1Sc1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1943038",
+      "dataset_index": 1943038,
+      "composition": "Al12Co4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5328364",
+      "dataset_index": 5328364,
+      "composition": "Al2Zn1Ag1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3315314",
+      "dataset_index": 3315314,
+      "composition": "Ni1Pd1Se1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4210112",
+      "dataset_index": 4210112,
+      "composition": "Li7Pd2Pt1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1668280",
+      "dataset_index": 1668280,
+      "composition": "Sc1Tl1S2N1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3066689",
+      "dataset_index": 3066689,
+      "composition": "Ba1Na2In1Ag1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_947718",
+      "dataset_index": 947718,
+      "composition": "Er2Co1B4Ir4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2064656",
+      "dataset_index": 2064656,
+      "composition": "Li1Zr1Se2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2690613",
+      "dataset_index": 2690613,
+      "composition": "Cd12Ni20Sn48",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2781026",
+      "dataset_index": 2781026,
+      "composition": "Sr2Ac1Rh1O5",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2592360",
+      "dataset_index": 2592360,
+      "composition": "Cs2Mn2Se8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1687464",
+      "dataset_index": 1687464,
+      "composition": "Be2Cu4Ag4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_767170",
+      "dataset_index": 767170,
+      "composition": "K2Zn1Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3368930",
+      "dataset_index": 3368930,
+      "composition": "Rb3Ce3Y1S8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3486135",
+      "dataset_index": 3486135,
+      "composition": "Al1In1Tc2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4696751",
+      "dataset_index": 4696751,
+      "composition": "Li1Er2Cd3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2964139",
+      "dataset_index": 2964139,
+      "composition": "Ta8Nb2Fe1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1892917",
+      "dataset_index": 1892917,
+      "composition": "Ti2Tl4Bi2S8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5120781",
+      "dataset_index": 5120781,
+      "composition": "Sb1Pt1Br2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4467104",
+      "dataset_index": 4467104,
+      "composition": "In2Ag3Au4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3299660",
+      "dataset_index": 3299660,
+      "composition": "Li2Si2Se4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4146997",
+      "dataset_index": 4146997,
+      "composition": "Rb3Au1Br2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2450898",
+      "dataset_index": 2450898,
+      "composition": "Re1Tc2Br1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4540177",
+      "dataset_index": 4540177,
+      "composition": "Dy4Y5Tm2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_444370",
+      "dataset_index": 444370,
+      "composition": "Tb1Eu1Sc2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3413398",
+      "dataset_index": 3413398,
+      "composition": "Rh2S2I2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3732128",
+      "dataset_index": 3732128,
+      "composition": "Pr6Nd1Mg2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_422117",
+      "dataset_index": 422117,
+      "composition": "Bi6P6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4430809",
+      "dataset_index": 4430809,
+      "composition": "Na3Ce3Au1Se8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4056349",
+      "dataset_index": 4056349,
+      "composition": "In2Fe1As1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3326315",
+      "dataset_index": 3326315,
+      "composition": "Ba1Sc1Cd1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4787878",
+      "dataset_index": 4787878,
+      "composition": "Nd1Tm1Sc2Se4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3275096",
+      "dataset_index": 3275096,
+      "composition": "Mn1Mo2Rh1C1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4955295",
+      "dataset_index": 4955295,
+      "composition": "Nd1Sc1Cu1Ni1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2353827",
+      "dataset_index": 2353827,
+      "composition": "K2Hf2Ga2Cl12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_629681",
+      "dataset_index": 629681,
+      "composition": "Tb2As1Au1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2926757",
+      "dataset_index": 2926757,
+      "composition": "Hg8Pb5",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_57978",
+      "dataset_index": 57978,
+      "composition": "Ho1Ni1Pb2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1057522",
+      "dataset_index": 1057522,
+      "composition": "Si2Ni2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2672533",
+      "dataset_index": 2672533,
+      "composition": "Er1Lu1Pu2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2648842",
+      "dataset_index": 2648842,
+      "composition": "Ba2Ti1Cd2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3622720",
+      "dataset_index": 3622720,
+      "composition": "Ba1Nd1Cd1Ga1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4472125",
+      "dataset_index": 4472125,
+      "composition": "Be3As3C3Cl3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_648965",
+      "dataset_index": 648965,
+      "composition": "Cd6Sb2P2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1267656",
+      "dataset_index": 1267656,
+      "composition": "Gd1Co5",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1825585",
+      "dataset_index": 1825585,
+      "composition": "Sr3Fe1As2O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1039851",
+      "dataset_index": 1039851,
+      "composition": "Lu3Mg3Ir3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4192594",
+      "dataset_index": 4192594,
+      "composition": "Tl1Ag1Os2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_113794",
+      "dataset_index": 113794,
+      "composition": "Np2Fe2Sb2O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4040808",
+      "dataset_index": 4040808,
+      "composition": "Cr1Ni1Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2186917",
+      "dataset_index": 2186917,
+      "composition": "Sr1Zr1Ru2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2828053",
+      "dataset_index": 2828053,
+      "composition": "La3Pr1Sm8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4133825",
+      "dataset_index": 4133825,
+      "composition": "Zn1Cd1Pd5",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5029695",
+      "dataset_index": 5029695,
+      "composition": "Tb12Y2Tm6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1223565",
+      "dataset_index": 1223565,
+      "composition": "Nd1Er1Si2W2C1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1889429",
+      "dataset_index": 1889429,
+      "composition": "Cr10Ge6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2067161",
+      "dataset_index": 2067161,
+      "composition": "Rb2Ge1Te1N1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_691359",
+      "dataset_index": 691359,
+      "composition": "Sm48Gd12Bi20",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2850140",
+      "dataset_index": 2850140,
+      "composition": "La1Mg5Cu2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2185533",
+      "dataset_index": 2185533,
+      "composition": "Th5Hg4Pb1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1814360",
+      "dataset_index": 1814360,
+      "composition": "Co1W5",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2438394",
+      "dataset_index": 2438394,
+      "composition": "Cd1Hg2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_123540",
+      "dataset_index": 123540,
+      "composition": "Al6Sb6O18",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2833667",
+      "dataset_index": 2833667,
+      "composition": "Cs2Si1N1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2564697",
+      "dataset_index": 2564697,
+      "composition": "S1I1N2F1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_495229",
+      "dataset_index": 495229,
+      "composition": "Li2Cr3Ni1O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_933349",
+      "dataset_index": 933349,
+      "composition": "Zr8Pt4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1319779",
+      "dataset_index": 1319779,
+      "composition": "Np1Pa1Be1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1662015",
+      "dataset_index": 1662015,
+      "composition": "Y1Ag2F6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1528508",
+      "dataset_index": 1528508,
+      "composition": "Tl1Ag1S2Cl1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2328062",
+      "dataset_index": 2328062,
+      "composition": "Li2Ca1Cu1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4516854",
+      "dataset_index": 4516854,
+      "composition": "Na1Sr1Mg2Ni1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4409202",
+      "dataset_index": 4409202,
+      "composition": "Re2Tc1Pt1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4994273",
+      "dataset_index": 4994273,
+      "composition": "Lu1Ag1Hg1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4643200",
+      "dataset_index": 4643200,
+      "composition": "Tb2Y2Ho4Er10",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1379550",
+      "dataset_index": 1379550,
+      "composition": "Pr4Er2Ge4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2077528",
+      "dataset_index": 2077528,
+      "composition": "Li4Pa2S6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3328478",
+      "dataset_index": 3328478,
+      "composition": "Pr4Si2C2N4O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3740820",
+      "dataset_index": 3740820,
+      "composition": "Tl1Si2Rh1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1767724",
+      "dataset_index": 1767724,
+      "composition": "K1Zn1P2S1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3630613",
+      "dataset_index": 3630613,
+      "composition": "Ag1P1C1S2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3860973",
+      "dataset_index": 3860973,
+      "composition": "Li3Th1Sc2Se6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_138753",
+      "dataset_index": 138753,
+      "composition": "K1Cd1Ge1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1942965",
+      "dataset_index": 1942965,
+      "composition": "Tm3Tl4Sb1S8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1001873",
+      "dataset_index": 1001873,
+      "composition": "Cu7Ag3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1582565",
+      "dataset_index": 1582565,
+      "composition": "Ag2Sn2Ge2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1723367",
+      "dataset_index": 1723367,
+      "composition": "Ba3Ag1P2S8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2625945",
+      "dataset_index": 2625945,
+      "composition": "Tb3Pr3Mg1Te8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3265631",
+      "dataset_index": 3265631,
+      "composition": "K1Ta2Ag1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2315696",
+      "dataset_index": 2315696,
+      "composition": "Si2W2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2497521",
+      "dataset_index": 2497521,
+      "composition": "Ir1Br1Cl2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_672761",
+      "dataset_index": 672761,
+      "composition": "Re1W1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1431762",
+      "dataset_index": 1431762,
+      "composition": "Rb2Hf1Mg1V1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2050677",
+      "dataset_index": 2050677,
+      "composition": "Sc1Os1Se1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1155090",
+      "dataset_index": 1155090,
+      "composition": "Be1Cu1Bi1Os1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2548198",
+      "dataset_index": 2548198,
+      "composition": "Ta1Pt1W1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4351148",
+      "dataset_index": 4351148,
+      "composition": "Zr2Se2I4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_753356",
+      "dataset_index": 753356,
+      "composition": "Sb8C8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1110164",
+      "dataset_index": 1110164,
+      "composition": "Er1Ni1Os1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_341133",
+      "dataset_index": 341133,
+      "composition": "Ga3Hg6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1270377",
+      "dataset_index": 1270377,
+      "composition": "Be2Cu1Ir1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4262254",
+      "dataset_index": 4262254,
+      "composition": "Dy1Re2O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_593951",
+      "dataset_index": 593951,
+      "composition": "Sr2Li2Ag2Te4",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3355052",
+      "dataset_index": 3355052,
+      "composition": "V1Pd1I3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2948974",
+      "dataset_index": 2948974,
+      "composition": "Tb1Dy1Tm1Th1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3763958",
+      "dataset_index": 3763958,
+      "composition": "Y1Cr1Hg1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_845715",
+      "dataset_index": 845715,
+      "composition": "Y1Tm1Zn1Co2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3481728",
+      "dataset_index": 3481728,
+      "composition": "Li1Ga2Hg8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1158896",
+      "dataset_index": 1158896,
+      "composition": "Ho2Sc2C1Br4Cl1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_3723498",
+      "dataset_index": 3723498,
+      "composition": "Re1W1O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2599406",
+      "dataset_index": 2599406,
+      "composition": "Ac2Al4O8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2621480",
+      "dataset_index": 2621480,
+      "composition": "Tl1Cu2Ru1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4340870",
+      "dataset_index": 4340870,
+      "composition": "Ta1Zn1Rh3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4826848",
+      "dataset_index": 4826848,
+      "composition": "H4Ir4S8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1269534",
+      "dataset_index": 1269534,
+      "composition": "Ho2S1O2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2174953",
+      "dataset_index": 2174953,
+      "composition": "Cs5Rb4Hg1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_221351",
+      "dataset_index": 221351,
+      "composition": "K4Mg2P4Se12",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2908248",
+      "dataset_index": 2908248,
+      "composition": "Rb1Ba1Pb3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4474703",
+      "dataset_index": 4474703,
+      "composition": "Sr1Pa1Sb2",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_4542567",
+      "dataset_index": 4542567,
+      "composition": "K2Cu1Sn4Au3",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1740947",
+      "dataset_index": 1740947,
+      "composition": "Pu2Cu1Pd1",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1813849",
+      "dataset_index": 1813849,
+      "composition": "K2Rb2V2O6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_5024853",
+      "dataset_index": 5024853,
+      "composition": "Rb2Ti2Te2S8",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_1585821",
+      "dataset_index": 1585821,
+      "composition": "Na2Te1I6",
+      "smact_valid": true,
+      "ours_valid": true
+    },
+    {
+      "structure_id": "2024_2883418",
+      "dataset_index": 2883418,
+      "composition": "Sc3Fe1Ag1",
+      "smact_valid": true,
+      "ours_valid": true
+    }
+  ],
+  "both_invalid": [
+    {
+      "structure_id": "2024_4616906",
+      "dataset_index": 4616906,
+      "composition": "In2Bi2F1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_737429",
+      "dataset_index": 737429,
+      "composition": "Cs1Ta3As1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2367947",
+      "dataset_index": 2367947,
+      "composition": "Pr2Ti1H1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2130583",
+      "dataset_index": 2130583,
+      "composition": "Pm1Pa1Ga1Sb1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4796639",
+      "dataset_index": 4796639,
+      "composition": "Rb2La1Cd1O1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4826843",
+      "dataset_index": 4826843,
+      "composition": "Ta2In1H2",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4221639",
+      "dataset_index": 4221639,
+      "composition": "Rb4Hg6Cl18",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_1230460",
+      "dataset_index": 1230460,
+      "composition": "Ba4Lu4O2",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2486245",
+      "dataset_index": 2486245,
+      "composition": "Ba8Sb2N1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4749868",
+      "dataset_index": 4749868,
+      "composition": "H4Pd8Se2",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_1369727",
+      "dataset_index": 1369727,
+      "composition": "Ba4H1Pb2",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_5020716",
+      "dataset_index": 5020716,
+      "composition": "Hf20Mg12H48",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_264057",
+      "dataset_index": 264057,
+      "composition": "Ba1Ca2Re1Te1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4238220",
+      "dataset_index": 4238220,
+      "composition": "Ac3Ho3Tm1Te8",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_169926",
+      "dataset_index": 169926,
+      "composition": "Y1Cd1Br1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4329221",
+      "dataset_index": 4329221,
+      "composition": "Tl1Ir1Cl1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2134274",
+      "dataset_index": 2134274,
+      "composition": "Cs8Pd1Cl2",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_1883098",
+      "dataset_index": 1883098,
+      "composition": "Ba2Y1O1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2763701",
+      "dataset_index": 2763701,
+      "composition": "Pm3Ho2Er1S6",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_318329",
+      "dataset_index": 318329,
+      "composition": "Rb2Dy1Te6",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4171632",
+      "dataset_index": 4171632,
+      "composition": "Ca2Hg1S1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_3040568",
+      "dataset_index": 3040568,
+      "composition": "Pa2Te1Ir1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2929702",
+      "dataset_index": 2929702,
+      "composition": "Pm1Si1Ag1Pd1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4366474",
+      "dataset_index": 4366474,
+      "composition": "U2Pa1N1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2256872",
+      "dataset_index": 2256872,
+      "composition": "Ca2Pa1H1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_757234",
+      "dataset_index": 757234,
+      "composition": "Er12Tl6C1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4911400",
+      "dataset_index": 4911400,
+      "composition": "Li4Mg2I10",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2399883",
+      "dataset_index": 2399883,
+      "composition": "Y1Zr2Cl1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_5212607",
+      "dataset_index": 5212607,
+      "composition": "K1La3H1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2416880",
+      "dataset_index": 2416880,
+      "composition": "Sr1La3P1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2776453",
+      "dataset_index": 2776453,
+      "composition": "Nd4Se1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_3585775",
+      "dataset_index": 3585775,
+      "composition": "Ba4Na2As1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_156283",
+      "dataset_index": 156283,
+      "composition": "Pr1Nd1Se1Cl1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2954116",
+      "dataset_index": 2954116,
+      "composition": "Pm4P1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4491334",
+      "dataset_index": 4491334,
+      "composition": "Rb4Li4Cl4",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_5179079",
+      "dataset_index": 5179079,
+      "composition": "Tb1Pm2Pr3Te6",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_5174591",
+      "dataset_index": 5174591,
+      "composition": "Li8Cu2Si2",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4396818",
+      "dataset_index": 4396818,
+      "composition": "Er4Al2Si2",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_1956232",
+      "dataset_index": 1956232,
+      "composition": "Pm6As2S3",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4469316",
+      "dataset_index": 4469316,
+      "composition": "Dy5Co1Te4",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2036606",
+      "dataset_index": 2036606,
+      "composition": "Rb1Li1H3",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_3044101",
+      "dataset_index": 3044101,
+      "composition": "Pt4Br3",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2539835",
+      "dataset_index": 2539835,
+      "composition": "Sr1Sc2Br1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_3487475",
+      "dataset_index": 3487475,
+      "composition": "Th12Hg6C2",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_5281806",
+      "dataset_index": 5281806,
+      "composition": "Li1Hf2Br1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2969446",
+      "dataset_index": 2969446,
+      "composition": "Cs3Tc1Cl1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_4438509",
+      "dataset_index": 4438509,
+      "composition": "Y1Pb2Br1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_3297755",
+      "dataset_index": 3297755,
+      "composition": "La4Os2Cl2",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_5110140",
+      "dataset_index": 5110140,
+      "composition": "Tb5Si1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_1890094",
+      "dataset_index": 1890094,
+      "composition": "Cs2Na1Se1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_3663144",
+      "dataset_index": 3663144,
+      "composition": "Ca2In1Cl1",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2806852",
+      "dataset_index": 2806852,
+      "composition": "Gd1Dy1Br2",
+      "smact_valid": false,
+      "ours_valid": false
+    },
+    {
+      "structure_id": "2024_2306598",
+      "dataset_index": 2306598,
+      "composition": "Tm2U2P2",
+      "smact_valid": false,
+      "ours_valid": false
+    }
+  ],
+  "smact_error_count": 0,
+  "ours_error_count": 0,
+  "summary": {
+    "ours_valid_smact_invalid_count": 116,
+    "smact_valid_ours_invalid_count": 9,
+    "both_valid_count": 822,
+    "both_invalid_count": 53,
+    "total_processed": 1000,
+    "smact_valid_rate": 0.831,
+    "ours_valid_rate": 0.938,
+    "agreement_rate": 0.875,
+    "disagreement_rate": 0.125
+  }
+}

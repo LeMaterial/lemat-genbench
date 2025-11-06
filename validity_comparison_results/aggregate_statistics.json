@@ -1,0 +1,102 @@
+{
+  "n_seeds": 5,
+  "n_samples_per_seed": 1000,
+  "total_samples": 5000,
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    2024
+  ],
+  "ours_valid_smact_invalid_counts": [
+    152,
+    119,
+    128,
+    116,
+    116
+  ],
+  "ours_valid_smact_invalid_mean": 126.2,
+  "ours_valid_smact_invalid_std": 13.629380029920657,
+  "ours_valid_smact_invalid_total": 631,
+  "smact_valid_ours_invalid_counts": [
+    13,
+    7,
+    12,
+    9,
+    9
+  ],
+  "smact_valid_ours_invalid_mean": 10.0,
+  "smact_valid_ours_invalid_std": 2.1908902300206643,
+  "smact_valid_ours_invalid_total": 50,
+  "both_valid_counts": [
+    795,
+    829,
+    815,
+    825,
+    822
+  ],
+  "both_valid_mean": 817.2,
+  "both_valid_std": 12.006664815842907,
+  "both_valid_total": 4086,
+  "both_invalid_counts": [
+    40,
+    45,
+    45,
+    50,
+    53
+  ],
+  "both_invalid_mean": 46.6,
+  "both_invalid_std": 4.498888751680797,
+  "both_invalid_total": 233,
+  "smact_valid_rate_mean": 0.8272,
+  "smact_valid_rate_std": 0.010067770358922541,
+  "smact_valid_rate_values": [
+    0.808,
+    0.836,
+    0.827,
+    0.834,
+    0.831
+  ],
+  "ours_valid_rate_mean": 0.9433999999999999,
+  "ours_valid_rate_std": 0.0037202150475476583,
+  "ours_valid_rate_values": [
+    0.947,
+    0.948,
+    0.943,
+    0.941,
+    0.938
+  ],
+  "agreement_rate_mean": 0.8638,
+  "agreement_rate_std": 0.01548418548067674,
+  "agreement_rate_values": [
+    0.835,
+    0.874,
+    0.86,
+    0.875,
+    0.875
+  ],
+  "disagreement_rate_mean": 0.13620000000000002,
+  "disagreement_rate_std": 0.015484185480676732,
+  "disagreement_rate_values": [
+    0.165,
+    0.126,
+    0.14,
+    0.125,
+    0.125
+  ],
+  "smact_error_counts": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "ours_error_counts": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
+}
