@@ -20,7 +20,7 @@ The script runs multiple seeds for reliable statistics and saves:
 import json
 import warnings
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 import numpy as np
 from datasets import load_dataset
@@ -340,19 +340,19 @@ def aggregate_statistics(all_stats: List[Dict], output_dir: Path):
     logger.info("AGGREGATE STATISTICS ACROSS ALL SEEDS")
     logger.info("="*80)
     logger.info(f"Total samples processed: {aggregate['total_samples']}")
-    logger.info(f"\nOurs valid, SMACT invalid:")
+    logger.info("\nOurs valid, SMACT invalid:")
     logger.info(f"  Mean: {aggregate['ours_valid_smact_invalid_mean']:.1f} ± {aggregate['ours_valid_smact_invalid_std']:.1f}")
     logger.info(f"  Total: {aggregate['ours_valid_smact_invalid_total']}")
-    logger.info(f"\nSMACT valid, ours invalid:")
+    logger.info("\nSMACT valid, ours invalid:")
     logger.info(f"  Mean: {aggregate['smact_valid_ours_invalid_mean']:.1f} ± {aggregate['smact_valid_ours_invalid_std']:.1f}")
     logger.info(f"  Total: {aggregate['smact_valid_ours_invalid_total']}")
-    logger.info(f"\nBoth valid:")
+    logger.info("\nBoth valid:")
     logger.info(f"  Mean: {aggregate['both_valid_mean']:.1f} ± {aggregate['both_valid_std']:.1f}")
     logger.info(f"  Total: {aggregate['both_valid_total']}")
-    logger.info(f"\nBoth invalid:")
+    logger.info("\nBoth invalid:")
     logger.info(f"  Mean: {aggregate['both_invalid_mean']:.1f} ± {aggregate['both_invalid_std']:.1f}")
     logger.info(f"  Total: {aggregate['both_invalid_total']}")
-    logger.info(f"\nValidity rates:")
+    logger.info("\nValidity rates:")
     logger.info(f"  SMACT: {aggregate['smact_valid_rate_mean']:.2%} ± {aggregate['smact_valid_rate_std']:.2%}")
     logger.info(f"  Ours:  {aggregate['ours_valid_rate_mean']:.2%} ± {aggregate['ours_valid_rate_std']:.2%}")
     logger.info(f"\nAgreement rate: {aggregate['agreement_rate_mean']:.2%} ± {aggregate['agreement_rate_std']:.2%}")

@@ -7,14 +7,14 @@ in baseline_data/aflow.
 
 import logging
 import pickle
-import requests
 from pathlib import Path
-from typing import List, Dict, Tuple
-from tqdm import tqdm
+from typing import Dict, List, Tuple
 
+import requests
 from pymatgen.core import Composition, Structure
-from pymatgen.io.vasp import Poscar
 from pymatgen.io.cif import CifWriter
+from pymatgen.io.vasp import Poscar
+from tqdm import tqdm
 
 # Configure logging
 logging.basicConfig(

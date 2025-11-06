@@ -8,7 +8,7 @@ our custom validity checks.
 import json
 from collections import Counter
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -259,11 +259,11 @@ def analyze_compositions(results_dir: Path, output_dir: Path):
             n_elements_counter[len(comp.elements)] += 1
         
         print(f"\nTotal structures: {len(compositions)}")
-        print(f"\nNumber of elements distribution:")
+        print("\nNumber of elements distribution:")
         for n_elem in sorted(n_elements_counter.keys()):
             print(f"  {n_elem} elements: {n_elements_counter[n_elem]} structures")
         
-        print(f"\nMost common elements:")
+        print("\nMost common elements:")
         for elem, count in element_counter.most_common(15):
             print(f"  {elem}: {count} structures ({count/len(compositions)*100:.1f}%)")
         
@@ -298,11 +298,11 @@ def analyze_compositions(results_dir: Path, output_dir: Path):
             n_elements_counter[len(comp.elements)] += 1
         
         print(f"\nTotal structures: {len(compositions)}")
-        print(f"\nNumber of elements distribution:")
+        print("\nNumber of elements distribution:")
         for n_elem in sorted(n_elements_counter.keys()):
             print(f"  {n_elem} elements: {n_elements_counter[n_elem]} structures")
         
-        print(f"\nMost common elements:")
+        print("\nMost common elements:")
         for elem, count in element_counter.most_common(15):
             print(f"  {elem}: {count} structures ({count/len(compositions)*100:.1f}%)")
     
