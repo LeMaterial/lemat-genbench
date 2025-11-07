@@ -140,22 +140,20 @@ def extract_metrics_from_results(results_data: Dict[str, Any]) -> Dict[str, Any]
         div_scores = parse_benchmark_string(results['diversity'])
         metrics['element_diversity'] = div_scores.get('element_diversity', None)
         metrics['space_group_diversity'] = div_scores.get('space_group_diversity', None)
-        metrics['site_number_diversity'] = div_scores.get('site_number_diversity', None)
+        metrics['site_diversity'] = div_scores.get('site_number_diversity', None)
         metrics['physical_size_diversity'] = div_scores.get('physical_size_diversity', None)
     
     # Novelty Benchmark (handle both 'novelty' and 'novelty_new')
     novelty_key = 'novelty_new' if 'novelty_new' in results else 'novelty'
     if novelty_key in results:
         novelty_scores = parse_benchmark_string(results[novelty_key])
-        metrics['novel_structures_count'] = novelty_scores.get('novel_structures_count', 0)
-        metrics['novelty_score'] = novelty_scores.get('novelty_score', None)
+        metrics['novel_count'] = novelty_scores.get('novel_structures_count', 0)
     
     # Uniqueness Benchmark (handle both 'uniqueness' and 'uniqueness_new')
     uniqueness_key = 'uniqueness_new' if 'uniqueness_new' in results else 'uniqueness'
     if uniqueness_key in results:
         unique_scores = parse_benchmark_string(results[uniqueness_key])
-        metrics['unique_structures_count'] = unique_scores.get('unique_structures_count', 0)
-        metrics['uniqueness_score'] = unique_scores.get('uniqueness_score', None)
+        metrics['unique_count'] = unique_scores.get('unique_structures_count', 0)
     
     # HHI Benchmark
     if 'hhi' in results:
@@ -168,29 +166,23 @@ def extract_metrics_from_results(results_data: Dict[str, Any]) -> Dict[str, Any]
     sun_key = 'sun_new' if 'sun_new' in results else 'sun'
     if sun_key in results:
         sun_scores = parse_benchmark_string(results[sun_key])
-        metrics['sun_stable_count'] = sun_scores.get('stable_count', 0)
-        metrics['sun_metastable_count'] = sun_scores.get('metastable_count', 0)
-        metrics['sun_unique_in_stable_count'] = sun_scores.get('unique_in_stable_count', 0)
-        metrics['sun_unique_in_metastable_count'] = sun_scores.get('unique_in_metastable_count', 0)
+        metrics['stable_count'] = sun_scores.get('stable_count', 0)
+        metrics['metastable_count'] = sun_scores.get('metastable_count', 0)
+        metrics['unique_in_stable_count'] = sun_scores.get('unique_in_stable_count', 0)
+        metrics['unique_in_metastable_count'] = sun_scores.get('unique_in_metastable_count', 0)
         metrics['sun_count'] = sun_scores.get('sun_count', 0)
         metrics['msun_count'] = sun_scores.get('msun_count', 0)
-        metrics['sun_rate'] = sun_scores.get('sun_rate', None)
-        metrics['msun_rate'] = sun_scores.get('msun_rate', None)
     
     # Stability Benchmark
     if 'stability' in results:
         stab_scores = parse_benchmark_string(results['stability'])
-        metrics['stability_stable_count'] = stab_scores.get('stable_count', 0)
-        metrics['stability_mean_e_above_hull'] = stab_scores.get('mean_e_above_hull', None)
+        metrics['stability_mean_above_hull'] = stab_scores.get('mean_e_above_hull', None)
         metrics['stability_std_e_above_hull'] = stab_scores.get('e_hull_std', None)
         metrics['stability_mean_ensemble_std'] = stab_scores.get('stability_mean_ensemble_std', None)
-        metrics['stability_metastable_count'] = stab_scores.get('metastable_count', 0)
         metrics['mean_formation_energy'] = stab_scores.get('mean_formation_energy', None)
         metrics['formation_energy_std'] = stab_scores.get('formation_energy_std', None)
-        metrics['mean_relaxation_RMSE'] = stab_scores.get('mean_relaxation_RMSE', None)
+        metrics['mean_relaxation_RMSD'] = stab_scores.get('mean_relaxation_RMSE', None)
         metrics['relaxation_RMSE_std'] = stab_scores.get('relaxation_RMSE_std', None)
-        metrics['stable_ratio'] = stab_scores.get('stable_ratio', None)
-        metrics['metastable_ratio'] = stab_scores.get('metastable_ratio', None)
     
     return metrics
 
@@ -213,6 +205,21 @@ def process_results_file(input_file: Path, output_dir: Optional[Path] = None) ->
     # Extract metrics
     metrics = extract_metrics_from_results(results_data)
     
+    # Define the desired column order
+    column_order = [
+        'run_name', 'timestamp', 'n_structures', 
+        'overall_valid_count', 'charge_neutral_count', 'distance_valid_count', 'plausibility_valid_count',
+        'unique_count', 'novel_count',
+        'mean_formation_energy', 'formation_energy_std',
+        'stability_mean_above_hull', 'stability_std_e_above_hull', 'stability_mean_ensemble_std',
+        'mean_relaxation_RMSD', 'relaxation_RMSE_std',
+        'stable_count', 'unique_in_stable_count', 'sun_count',
+        'metastable_count', 'unique_in_metastable_count', 'msun_count',
+        'JSDistance', 'MMD', 'FrechetDistance',
+        'element_diversity', 'space_group_diversity', 'site_diversity', 'physical_size_diversity',
+        'hhi_production_mean', 'hhi_reserve_mean', 'hhi_combined_mean'
+    ]
+    
     # Determine output directory and file
     if output_dir is None:
         output_dir = input_file.parent / 'extracted_results'
@@ -221,9 +228,9 @@ def process_results_file(input_file: Path, output_dir: Optional[Path] = None) ->
     # Change extension to .csv
     output_file = output_dir / input_file.with_suffix('.csv').name
     
-    # Write to CSV
+    # Write to CSV with specified column order
     with open(output_file, 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=metrics.keys())
+        writer = csv.DictWriter(f, fieldnames=column_order, extrasaction='ignore')
         writer.writeheader()
         writer.writerow(metrics)
     
