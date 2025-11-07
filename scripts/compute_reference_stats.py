@@ -31,7 +31,7 @@ def main():
     )
     parser.add_argument(
         "--dataset-name",
-        default="LeMaterial/LeMat-GenBench-embeddings",
+        default="LeMaterial/LeMat-GenBench-embeddings-mp20",
         help="HuggingFace dataset name"
     )
     parser.add_argument(
