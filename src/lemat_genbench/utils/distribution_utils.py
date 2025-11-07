@@ -546,12 +546,19 @@ def compute_reference_stats_direct(
     # Save to cache if specified
     if cache_dir:
         print("\n💾 Saving results to cache...")
-        save_reference_stats_cache(results, cache_dir)
+        print("mp20" in dataset_name)
+        print(dataset_name)
+        if "mp20" in dataset_name:
+            save_reference_stats_cache(results, cache_dir, savefile_name="mp_20")
+        else:
+            save_reference_stats_cache(results, cache_dir)
+
     
     return results
 
 
-def save_reference_stats_cache(stats_dict, cache_dir, dataset_version="LeMat-GenBench-5335K-samples"):
+def save_reference_stats_cache(stats_dict, cache_dir, dataset_version="LeMat-GenBench-5335K-samples",
+                               savefile_name = ""):
     """Save computed reference statistics to cache directory."""
     import time
     
@@ -567,8 +574,8 @@ def save_reference_stats_cache(stats_dict, cache_dir, dataset_version="LeMat-Gen
     
     for model_name, stats in stats_dict.items():
         # Save mu and sigma as separate files
-        mu_path = cache_path / f"{model_name}_mu.npy"
-        sigma_path = cache_path / f"{model_name}_sigma.npy"
+        mu_path = cache_path / f"{model_name}_mu"f"{savefile_name}.npy"
+        sigma_path = cache_path / f"{model_name}_sigma"f"{savefile_name}.npy"
         
         np.save(mu_path, stats["mu"])
         np.save(sigma_path, stats["sigma"])

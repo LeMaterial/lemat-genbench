@@ -33,6 +33,7 @@ dependencies = [
     "spglib>=2.6.0",
     "umap-learn>=0.5.9.post2",
     "smact>=3.2.0",
+    "dataset>=1.6.2",
 ]
 
 [project.scripts]
