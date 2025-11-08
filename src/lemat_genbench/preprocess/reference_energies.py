@@ -222,8 +222,6 @@ def _retrieve_df_mp20(hull_type="mace", threshold=0.025):
         Dataset of MP-20 materials close to the hull
     """
     try:
-        threshold_str = f"{threshold:.3f}".replace(".", "_")
-
         # Try local MP-20 hull-specific path first
         # Try .parquet first (main dataset), then .npz (metadata backup)
         for filename_pattern in [
