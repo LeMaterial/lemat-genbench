@@ -484,10 +484,10 @@ def run_benchmarks(structures, benchmark_families: List[str], config: Dict[str, 
                         cache_dir=config.get("cache_dir", "./data"),
                         js_distributions_file=config.get(
                             "js_distributions_file",
-                            "data/lematbulk_jsdistance_distributions.json",
+                            "data/mp20_jsdistance_distributions.json",
                         ),
                         mmd_values_file=config.get(
-                            "mmd_values_file", "data/lematbulk_mmd_values_15k.pkl"
+                            "mmd_values_file", "data/mp20_mmd_values_15k.pkl"
                         ),
                     )
 

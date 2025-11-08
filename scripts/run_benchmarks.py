@@ -600,10 +600,10 @@ def run_remaining_preprocessors(
             "orb": {
                 "model_type": "orb_v3_conservative_inf_omat",
                 "device": device,
-                "hull_type": "orb_conserv_inf",
+                "hull_type": "orb_mp20",
             },
-            "mace": {"model_type": "mp", "device": device, "hull_type": "mace_mp"},
-            "uma": {"task": "omat", "device": device, "hull_type": "uma"},
+            "mace": {"model_type": "mp", "device": device, "hull_type": "mace_mp20"},
+            "uma": {"task": "omat", "device": device, "hull_type": "uma_mp20"},
         }
 
         # Merge config file settings with defaults
@@ -711,10 +711,10 @@ def run_remaining_benchmarks(
                         cache_dir=config.get("cache_dir", "./data"),
                         js_distributions_file=config.get(
                             "js_distributions_file",
-                            "data/lematbulk_jsdistance_distributions.json",
+                            "data/mp20_jsdistance_distributions.json",
                         ),
                         mmd_values_file=config.get(
-                            "mmd_values_file", "data/lematbulk_mmd_values_15k.pkl"
+                            "mmd_values_file", "data/mp20_mmd_values_15k.pkl"
                         ),
                     )
 

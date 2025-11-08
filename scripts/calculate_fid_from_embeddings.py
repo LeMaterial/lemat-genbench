@@ -38,8 +38,8 @@ def calculate_fid_for_model(embeddings_file, model_name, mlips=['orb', 'mace', '
     
     # Load reference statistics
     cache_dir = "data"
-    print(f"\n1. Loading reference statistics from {cache_dir}...")
-    reference_stats = load_reference_stats_cache(cache_dir, mlips)
+    print(f"\n1. Loading MP-20 reference statistics from {cache_dir}...")
+    reference_stats = load_reference_stats_cache(cache_dir, mlips, suffix="_mp_20")
     
     if not reference_stats:
         raise ValueError(f"Could not load reference statistics from {cache_dir}")

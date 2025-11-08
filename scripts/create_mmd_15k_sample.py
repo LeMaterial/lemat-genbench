@@ -12,7 +12,7 @@ Usage:
     python scripts/create_mmd_15k_sample.py
 
 Result:
-    Creates data/lematbulk_mmd_values_15k.pkl (352KB vs 122MB original)
+    Creates data/mp20_mmd_values_15k.pkl (352KB vs 122MB original)
 """
 
 import pickle

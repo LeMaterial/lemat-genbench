@@ -18,8 +18,8 @@ validity_settings:
 # Distribution benchmark settings
 mlips: ["orb", "mace", "uma"]
 cache_dir: "./data"
-js_distributions_file: "data/lematbulk_jsdistance_distributions.json"
-mmd_values_file: "data/lematbulk_mmd_values_15k.pkl"
+js_distributions_file: "data/mp20_jsdistance_distributions.json"
+mmd_values_file: "data/mp20_mmd_values_15k.pkl"
 
 # Fingerprinting method configuration
 fingerprint_method: "structure-matcher"
@@ -71,15 +71,15 @@ preprocessor_config:
     orb:
       model_type: orb_v3_conservative_inf_omat
       device: cpu
-      hull_type: orb_conserv_inf  # Use ORB-specific hull
+      hull_type: orb_mp20  # Use ORB-specific hull
     mace:
       model_type: mp
       device: cpu
-      hull_type: mace_mp  # Use MACE-MP-specific hull
+      hull_type: mace_mp20  # Use MACE-MP-specific hull
     uma:
       task: omat
       device: cpu
-      hull_type: uma  # Use UMA-specific hull
+      hull_type: uma_mp20  # Use UMA-specific hull
   relax_structures: true
   relaxation_config:
     fmax: 0.02

@@ -44,7 +44,7 @@ class JSDistanceConfig(MetricConfig):
         Path to JSON file containing pre-computed reference distributions
     """
 
-    reference_distributions_file: str = "data/lematbulk_jsdistance_distributions.json"
+    reference_distributions_file: str = "data/mp20_jsdistance_distributions.json"
 
 
 class JSDistance(BaseMetric):
@@ -69,7 +69,7 @@ class JSDistance(BaseMetric):
 
     def __init__(
         self,
-        reference_distributions_file: str = "data/lematbulk_jsdistance_distributions.json",
+        reference_distributions_file: str = "data/mp20_jsdistance_distributions.json",
         name: str | None = None,
         description: str | None = None,
         n_jobs: int = 1,
@@ -217,7 +217,7 @@ class MMDConfig(MetricConfig):
         Path to pickle file containing 15K sampled reference values
     """
 
-    reference_values_file: str = "data/lematbulk_mmd_values_15k.pkl"
+    reference_values_file: str = "data/mp20_mmd_values_15k.pkl"
 
 
 class MMD(BaseMetric):
@@ -244,7 +244,7 @@ class MMD(BaseMetric):
 
     def __init__(
         self,
-        reference_values_file: str = "data/lematbulk_mmd_values_15k.pkl",
+        reference_values_file: str = "data/mp20_mmd_values_15k.pkl",
         name: str | None = None,
         description: str | None = None,
         n_jobs: int = 1,
@@ -420,7 +420,7 @@ class FrechetDistance(BaseMetric):
         )
         
         # Load cached reference statistics (required)
-        self.reference_stats = load_reference_stats_cache(cache_dir, mlips)
+        self.reference_stats = load_reference_stats_cache(cache_dir, mlips, suffix="_mp_20")
         if not self.reference_stats:
             raise ValueError(
                 f"Could not load cached reference statistics from {cache_dir}. "

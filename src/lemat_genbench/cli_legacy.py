@@ -180,8 +180,8 @@ def load_benchmark_config(config_name: str) -> dict:
             "type": "distribution",
             "mlips": ["orb", "mace", "uma"],
             "cache_dir": "./data",
-            "js_distributions_file": "data/lematbulk_jsdistance_distributions.json",
-            "mmd_values_file": "data/lematbulk_mmd_values_15k.pkl",
+            "js_distributions_file": "data/mp20_jsdistance_distributions.json",
+            "mmd_values_file": "data/mp20_mmd_values_15k.pkl",
             "description": "Distribution Benchmark for Materials Generation - evaluates similarity to reference distributions",
             "version": "0.1.0",
             "metadata": {
@@ -392,10 +392,10 @@ def main(input: str, config_name: str, output: str):
                 mlips=config.get("mlips", ["orb", "mace", "uma"]),
                 cache_dir=config.get("cache_dir", "./data"),
                 js_distributions_file=config.get(
-                    "js_distributions_file", "data/lematbulk_jsdistance_distributions.json"
+                    "js_distributions_file", "data/mp20_jsdistance_distributions.json"
                 ),
                 mmd_values_file=config.get(
-                    "mmd_values_file", "data/lematbulk_mmd_values_15k.pkl"
+                    "mmd_values_file", "data/mp20_mmd_values_15k.pkl"
                 ),
                 name=config.get("name", "DistributionBenchmark"),
                 description=config.get("description"),

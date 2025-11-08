@@ -71,7 +71,7 @@ class BaseMLIPCalculator(ABC):
         self,
         device: Union[str, torch.device] = "cpu",
         precision: str = "float32",
-        hull_type: Literal["dft", "uma", "orb", "mace_mp", "mace_omat"] = "dft",
+        hull_type: Literal["mace_mp20", "orb_mp20", "uma_mp20", "ensemble_mp20"] = "ensemble_mp20",
         **kwargs,
     ):
         self.device = (
@@ -357,7 +357,7 @@ def get_formation_energy_per_atom_from_total_energy(
 def get_energy_above_hull_from_total_energy(
     total_energy: float,
     composition,
-    hull_type: Literal["dft", "uma", "orb", "mace_mp", "mace_omat"] = "dft",
+    hull_type: Literal["mace_mp20", "orb_mp20", "uma_mp20", "ensemble_mp20"] = "ensemble_mp20",
 ) -> float:
     """Calculate energy above hull from total energy and composition.
 

@@ -225,29 +225,41 @@ def _retrieve_df_mp20(hull_type="mace", threshold=0.025):
         threshold_str = f"{threshold:.3f}".replace(".", "_")
 
         # Try local MP-20 hull-specific path first
-        local_hull_path = os.path.join(
-            CURRENT_FOLDER,
-            "..",
-            "..",
-            "..",
-            "data",
-            "mp20_hulls",
-            f"{hull_type}_above_hull_dataset.parquet",
-        )
+        # Try .parquet first (main dataset), then .npz (metadata backup)
+        for filename_pattern in [
+            f"{hull_type}_above_hull_dataset.parquet",  # Main dataset file
+            f"{hull_type}_above_hull_metadata.npz",     # Backup metadata file
+        ]:
+            local_hull_path = os.path.join(
+                CURRENT_FOLDER,
+                "..",
+                "..",
+                "..",
+                "data",
+                "mp20_hulls",
+                filename_pattern,
+            )
+            
+            if os.path.exists(local_hull_path):
+                if filename_pattern.endswith(".parquet"):
+                    dataset = pd.read_parquet(local_hull_path)
+                else:  # .npz
+                    import numpy as np
+                    data = np.load(local_hull_path, allow_pickle=True)
+                    # Convert npz to DataFrame
+                    dataset = pd.DataFrame({k: data[k] for k in data.files})
+                
+                if "species_at_sites" in dataset.columns:
+                    dataset["species_at_sites"] = dataset["species_at_sites"].apply(
+                        lambda x: x.tolist() if hasattr(x, "tolist") else x
+                    )
+                return dataset
 
-        if os.path.exists(local_hull_path):
-            dataset = pd.read_parquet(local_hull_path)
-            if "species_at_sites" in dataset.columns:
-                dataset["species_at_sites"] = dataset["species_at_sites"].apply(
-                    lambda x: x.tolist() if hasattr(x, "tolist") else x
-                )
-            return dataset
-
-        # Try to load from HuggingFace
+        # Try to load from HuggingFace as dataset splits
         try:
             from datasets import load_dataset
 
-            dataset_dict = load_dataset("LeMaterial/mp20-hull-reference")
+            dataset_dict = load_dataset("LeMaterial/mp20-hull-reference", token=True)
 
             if hull_type in dataset_dict:
                 dataset = dataset_dict[hull_type].to_pandas()
@@ -263,13 +275,18 @@ def _retrieve_df_mp20(hull_type="mace", threshold=0.025):
         # Fall back to file-based download from HuggingFace Hub
         from huggingface_hub import hf_hub_download
 
+        # Try to download parquet dataset file
         file_path = hf_hub_download(
             repo_id="LeMaterial/mp20-hull-reference",
-            filename=f"threshold_{threshold_str}/{hull_type}_above_hull_dataset.parquet",
+            filename=f"{hull_type}_above_hull_dataset.parquet",
             repo_type="dataset",
+            token=True,  # Use cached HuggingFace token
             cache_dir=os.path.join(CURRENT_FOLDER, "..", "..", "..", "data", ".cache"),
         )
+        
+        # Load parquet file as DataFrame
         dataset = pd.read_parquet(file_path)
+        
         if "species_at_sites" in dataset.columns:
             dataset["species_at_sites"] = dataset["species_at_sites"].apply(
                 lambda x: x.tolist() if hasattr(x, "tolist") else x
@@ -418,6 +435,7 @@ def _retrieve_matrix_mp20(hull_type="mace", threshold=0.025):
             repo_id="LeMaterial/mp20-hull-reference",
             filename=f"threshold_{threshold_str}/{hull_type}_above_hull_composition_matrix.npz",
             repo_type="dataset",
+            token=True,  # Use cached HuggingFace token
             cache_dir=os.path.join(CURRENT_FOLDER, "..", "..", "..", "data", ".cache"),
         )
         composition_array = sparse.load_npz(file_path).toarray()
@@ -508,7 +526,7 @@ def filter_df(df, matrix, composition):
         raise ValueError(f"Failed to filter reference dataset: {e}") from e
 
 
-def get_energy_above_hull(total_energy, composition, hull_type="dft", threshold=0.001):
+def get_energy_above_hull(total_energy, composition, hull_type="ensemble_mp20", threshold=0.025):
     """Calculate energy above hull from total energy and composition.
 
     This function properly handles charged species by converting them

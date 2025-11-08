@@ -31,15 +31,15 @@ preprocessor_config:
     orb:
       model_type: orb_v3_conservative_inf_omat
       # Each MLIP calculates energy above hull with respect to its own hull
-      hull_type: orb_conserv_inf
+      hull_type: orb_mp20
       # device: cpu # Device will be set by run_benchmarks.py or run_benchmarks_ssh.py
     mace:
       model_type: mp
-      hull_type: mace_mp
+      hull_type: mace_mp20
       # device: cpu
     uma:
       task: omat
-      hull_type: uma
+      hull_type: uma_mp20
       # device: cpu
   relax_structures: true             # Perform structure relaxation
   relaxation_config:

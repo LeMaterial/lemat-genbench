@@ -163,8 +163,8 @@ def load_benchmark_config(config_name: str) -> dict:
             "version": "0.1.0",
             "mlips": ["orb", "mace", "uma"],
             "cache_dir": "./data",
-            "js_distributions_file": "data/lematbulk_jsdistance_distributions.json",
-            "mmd_values_file": "data/lematbulk_mmd_values_15k.pkl",
+            "js_distributions_file": "data/mp20_jsdistance_distributions.json",
+            "mmd_values_file": "data/mp20_mmd_values_15k.pkl",
         }
         with open(config_path, "w") as f:
             yaml.dump(distribution_config, f, default_flow_style=False)
@@ -221,8 +221,8 @@ def load_benchmark_config(config_name: str) -> dict:
                     "config": {
                         "mlips": ["orb", "mace", "uma"],
                         "cache_dir": "./data",
-                        "js_distributions_file": "data/lematbulk_jsdistance_distributions.json",
-                        "mmd_values_file": "data/lematbulk_mmd_values_15k.pkl",
+                        "js_distributions_file": "data/mp20_jsdistance_distributions.json",
+                        "mmd_values_file": "data/mp20_mmd_values_15k.pkl",
                     },
                 },
                 "diversity": {
@@ -372,10 +372,10 @@ def main(input: str, config_name: str, output: str):
             cache_dir = config.get("cache_dir", "./data")
             js_distributions_file = config.get(
                 "js_distributions_file",
-                "data/lematbulk_jsdistance_distributions.json",
+                "data/mp20_jsdistance_distributions.json",
             )
             mmd_values_file = config.get(
-                "mmd_values_file", "data/lematbulk_mmd_values_15k.pkl"
+                "mmd_values_file", "data/mp20_mmd_values_15k.pkl"
             )
 
             benchmark = DistributionBenchmark(

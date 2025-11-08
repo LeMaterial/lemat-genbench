@@ -140,7 +140,7 @@ def compute_shannon_entropy(probability_vals):
 
 
 def compute_jensen_shannon_distance(
-    generated_crystals, crystal_param, metric_type, reference_distributions_file="data/lematbulk_jsdistance_distributions.json"
+    generated_crystals, crystal_param, metric_type, reference_distributions_file="data/mp20_jsdistance_distributions.json"
 ):
     """
     Compute Jensen-Shannon distance using pre-computed reference distributions.
@@ -194,7 +194,7 @@ def gaussian_kernel(x, y, sigma=1.0):
     return np.exp(-pairwise_dists / (2 * sigma**2))
 
 
-def compute_mmd(generated_crystals, crystal_param, reference_values_file="data/lematbulk_mmd_values_15k.pkl", sigma=1.0):
+def compute_mmd(generated_crystals, crystal_param, reference_values_file="data/mp20_mmd_values_15k.pkl", sigma=1.0):
     """
     Compute MMD using pre-computed 15K reference sample for reproducible results.
     
@@ -591,8 +591,18 @@ def save_reference_stats_cache(stats_dict, cache_dir, dataset_version="LeMat-Gen
     print(f"Metadata saved to: {metadata_path}")
 
 
-def load_reference_stats_cache(cache_dir, model_names=None):
-    """Load cached reference statistics."""
+def load_reference_stats_cache(cache_dir, model_names=None, suffix=""):
+    """Load cached reference statistics.
+    
+    Parameters
+    ----------
+    cache_dir : str
+        Directory containing cached files
+    model_names : list[str], optional
+        List of model names to load
+    suffix : str, optional
+        Suffix to add to filenames (e.g., "_mp_20" for MP-20 cache)
+    """
     cache_path = Path(cache_dir)
     
     if not cache_path.exists():
@@ -613,8 +623,8 @@ def load_reference_stats_cache(cache_dir, model_names=None):
     
     stats = {}
     for model_name in model_names:
-        mu_path = cache_path / f"{model_name}_mu.npy"
-        sigma_path = cache_path / f"{model_name}_sigma.npy"
+        mu_path = cache_path / f"{model_name}_mu{suffix}.npy"      # ADD suffix
+        sigma_path = cache_path / f"{model_name}_sigma{suffix}.npy"  # ADD suffix
         
         if mu_path.exists() and sigma_path.exists():
             stats[model_name] = {

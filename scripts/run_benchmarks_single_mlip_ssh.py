@@ -93,9 +93,9 @@ def get_optimal_n_jobs() -> int:
 def get_mlip_hull_type(mlip_name: str) -> str:
     """Get the hull type for a specific MLIP."""
     hull_types = {
-        "orb": "orb_conserv_inf",
-        "mace": "mace_mp",
-        "uma": "uma",
+        "orb": "orb_mp20",
+        "mace": "mace_mp20",
+        "uma": "uma_mp20",
     }
     
     if mlip_name not in hull_types:
@@ -110,17 +110,17 @@ def get_mlip_config(mlip_name: str, device: torch.device) -> Dict[str, Any]:
         "orb": {
             "model_type": "orb_v3_conservative_inf_omat",
             "device": device,
-            "hull_type": "orb_conserv_inf",
+            "hull_type": "orb_mp20",
         },
         "mace": {
             "model_type": "mp",
             "device": device,
-            "hull_type": "mace_mp",
+            "hull_type": "mace_mp20",
         },
         "uma": {
             "task": "omat",
             "device": device,
-            "hull_type": "uma",
+            "hull_type": "uma_mp20",
         },
     }
     
@@ -423,10 +423,10 @@ def run_remaining_benchmarks(
                         cache_dir=config.get("cache_dir", "./data"),
                         js_distributions_file=config.get(
                             "js_distributions_file",
-                            "data/lematbulk_jsdistance_distributions.json",
+                            "data/mp20_jsdistance_distributions.json",
                         ),
                         mmd_values_file=config.get(
-                            "mmd_values_file", "data/lematbulk_mmd_values_15k.pkl"
+                            "mmd_values_file", "data/mp20_mmd_values_15k.pkl"
                         ),
                     )
 
