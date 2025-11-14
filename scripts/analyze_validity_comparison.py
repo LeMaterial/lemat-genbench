@@ -190,41 +190,8 @@ def plot_seed_variation(aggregate_stats: Dict, output_dir: Path):
     
     seeds = aggregate_stats['seeds']
     
-    # Plot 1: Ours valid, SMACT invalid
+    # Plot 1: Both valid (matches order in Agreement/Disagreement Breakdown)
     ax = axes[0, 0]
-    counts = aggregate_stats['ours_valid_smact_invalid_counts']
-    ax.bar(range(len(seeds)), counts, alpha=0.8, color=palette['salmon'])
-    ax.set_xlabel('Seed', fontsize=11)
-    ax.set_ylabel('Count', fontsize=11)
-    ax.set_title('Ours Valid, SMACT Invalid', fontsize=12, fontweight='bold')
-    ax.set_xticks(range(len(seeds)))
-    ax.set_xticklabels(seeds)
-    ax.axhline(y=np.mean(counts), color='#d62828', linestyle='--', linewidth=2,
-               label=f'Mean: {np.mean(counts):.1f}')
-    ax.legend(loc='upper right', framealpha=0.95, fontsize=10)
-    ax.grid(axis='y', alpha=0.3)
-    # Add padding to y-axis to prevent legend overlap
-    y_max = max(counts)
-    ax.set_ylim([0, y_max * 1.15])
-    
-    # Plot 2: SMACT valid, ours invalid
-    ax = axes[0, 1]
-    counts = aggregate_stats['smact_valid_ours_invalid_counts']
-    ax.bar(range(len(seeds)), counts, alpha=0.8, color=palette['mauve'])
-    ax.set_xlabel('Seed', fontsize=11)
-    ax.set_ylabel('Count', fontsize=11)
-    ax.set_title('SMACT Valid, Ours Invalid', fontsize=12, fontweight='bold')
-    ax.set_xticks(range(len(seeds)))
-    ax.set_xticklabels(seeds)
-    ax.axhline(y=np.mean(counts), color='#d62828', linestyle='--', linewidth=2,
-               label=f'Mean: {np.mean(counts):.1f}')
-    ax.legend(loc='upper right', framealpha=0.95, fontsize=10)
-    ax.grid(axis='y', alpha=0.3)
-    y_max = max(counts)
-    ax.set_ylim([0, y_max * 1.15])
-    
-    # Plot 3: Both valid
-    ax = axes[1, 0]
     counts = aggregate_stats['both_valid_counts']
     ax.bar(range(len(seeds)), counts, alpha=0.8, color=palette['forest_green'])
     ax.set_xlabel('Seed', fontsize=11)
@@ -236,16 +203,49 @@ def plot_seed_variation(aggregate_stats: Dict, output_dir: Path):
                label=f'Mean: {np.mean(counts):.1f}')
     ax.legend(loc='upper right', framealpha=0.95, fontsize=10)
     ax.grid(axis='y', alpha=0.3)
+    # Add padding to y-axis to prevent legend overlap
     y_max = max(counts)
     ax.set_ylim([0, y_max * 1.15])
     
-    # Plot 4: Both invalid
-    ax = axes[1, 1]
+    # Plot 2: Both invalid
+    ax = axes[0, 1]
     counts = aggregate_stats['both_invalid_counts']
     ax.bar(range(len(seeds)), counts, alpha=0.8, color=palette['blue_gray'])
     ax.set_xlabel('Seed', fontsize=11)
     ax.set_ylabel('Count', fontsize=11)
     ax.set_title('Both Invalid', fontsize=12, fontweight='bold')
+    ax.set_xticks(range(len(seeds)))
+    ax.set_xticklabels(seeds)
+    ax.axhline(y=np.mean(counts), color='#d62828', linestyle='--', linewidth=2,
+               label=f'Mean: {np.mean(counts):.1f}')
+    ax.legend(loc='upper right', framealpha=0.95, fontsize=10)
+    ax.grid(axis='y', alpha=0.3)
+    y_max = max(counts)
+    ax.set_ylim([0, y_max * 1.15])
+    
+    # Plot 3: Ours valid, SMACT invalid
+    ax = axes[1, 0]
+    counts = aggregate_stats['ours_valid_smact_invalid_counts']
+    ax.bar(range(len(seeds)), counts, alpha=0.8, color=palette['salmon'])
+    ax.set_xlabel('Seed', fontsize=11)
+    ax.set_ylabel('Count', fontsize=11)
+    ax.set_title('Ours Valid, SMACT Invalid', fontsize=12, fontweight='bold')
+    ax.set_xticks(range(len(seeds)))
+    ax.set_xticklabels(seeds)
+    ax.axhline(y=np.mean(counts), color='#d62828', linestyle='--', linewidth=2,
+               label=f'Mean: {np.mean(counts):.1f}')
+    ax.legend(loc='upper right', framealpha=0.95, fontsize=10)
+    ax.grid(axis='y', alpha=0.3)
+    y_max = max(counts)
+    ax.set_ylim([0, y_max * 1.15])
+    
+    # Plot 4: SMACT valid, ours invalid
+    ax = axes[1, 1]
+    counts = aggregate_stats['smact_valid_ours_invalid_counts']
+    ax.bar(range(len(seeds)), counts, alpha=0.8, color=palette['mauve'])
+    ax.set_xlabel('Seed', fontsize=11)
+    ax.set_ylabel('Count', fontsize=11)
+    ax.set_title('SMACT Valid, Ours Invalid', fontsize=12, fontweight='bold')
     ax.set_xticks(range(len(seeds)))
     ax.set_xticklabels(seeds)
     ax.axhline(y=np.mean(counts), color='#d62828', linestyle='--', linewidth=2,

@@ -224,6 +224,7 @@ command.txt
 results_october/
 results_before_and_after_relax/
 results_neurips/
+validity_comparison_results/analysis/latex_captions.tex
 
 # Baseline dataset sampling
 baseline_sampling.log
