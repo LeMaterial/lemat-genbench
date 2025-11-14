@@ -70,6 +70,21 @@ def plot_validity_comparison(aggregate_stats: Dict, output_dir: Path):
     """
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
     
+    # Expanded palette with high contrast colors for visual diversity
+    palette = {
+        'navy': '#2E3B4E',          # Dark blue/navy
+        'deep_blue': '#3A6B8C',     # Deep blue
+        'teal': '#5B8A8A',          # Teal/cyan
+        'light_cyan': '#7CB8C9',    # Light cyan (bright)
+        'forest_green': '#527C5C',  # Forest green
+        'olive': '#7A8B5C',         # Olive/moss green
+        'tan': '#C9B88B',           # Tan/beige (lighter variant)
+        'salmon': '#C97C7C',        # Salmon/coral (warm)
+        'mauve': '#C98BB8',         # Mauve/pink
+        'purple': '#B8A5C9',        # Light purple
+        'blue_gray': '#A5B8C9',     # Light blue-gray
+    }
+    
     # Plot 1: Validity rates comparison
     methods = ['SMACT', 'Our Checks']
     means = [
@@ -82,19 +97,21 @@ def plot_validity_comparison(aggregate_stats: Dict, output_dir: Path):
     ]
     
     x = np.arange(len(methods))
-    bars = ax1.bar(x, means, yerr=stds, capsize=5, alpha=0.7, 
-                   color=['#3498db', '#e74c3c'])
+    bars = ax1.bar(x, means, yerr=stds, capsize=5, alpha=0.8, 
+                   color=[palette['navy'], palette['light_cyan']], 
+                   error_kw={'linewidth': 2, 'elinewidth': 1.5})
     ax1.set_ylabel('Validity Rate (%)', fontsize=12)
     ax1.set_title('Validity Rates: SMACT vs Our Checks', fontsize=14, fontweight='bold')
     ax1.set_xticks(x)
     ax1.set_xticklabels(methods, fontsize=11)
-    ax1.set_ylim([0, 100])
+    ax1.set_ylim([0, 105])  # Extended to accommodate labels above error bars
     ax1.grid(axis='y', alpha=0.3)
     
-    # Add value labels on bars
+    # Add value labels on bars - positioned above error bars to avoid overlap
     for i, (bar, mean, std) in enumerate(zip(bars, means, stds)):
         height = bar.get_height()
-        ax1.text(bar.get_x() + bar.get_width()/2., height,
+        # Position text above the error bar (height + std + small offset)
+        ax1.text(bar.get_x() + bar.get_width()/2., height + std + 1.5,
                 f'{mean:.1f}±{std:.1f}%',
                 ha='center', va='bottom', fontsize=10, fontweight='bold')
     
@@ -114,22 +131,28 @@ def plot_validity_comparison(aggregate_stats: Dict, output_dir: Path):
         aggregate_stats['smact_valid_ours_invalid_std'],
     ]
     
-    colors = ['#2ecc71', '#95a5a6', '#f39c12', '#9b59b6']
+    colors = [palette['forest_green'], palette['blue_gray'], palette['salmon'], palette['mauve']]
     x = np.arange(len(categories))
     bars = ax2.bar(x, counts_mean, yerr=counts_std, capsize=5, 
-                   alpha=0.7, color=colors)
+                   alpha=0.8, color=colors,
+                   error_kw={'linewidth': 2, 'elinewidth': 1.5})
     ax2.set_ylabel('Number of Structures', fontsize=12)
     ax2.set_title('Agreement/Disagreement Breakdown', fontsize=14, fontweight='bold')
     ax2.set_xticks(x)
     ax2.set_xticklabels(categories, fontsize=9)
     ax2.grid(axis='y', alpha=0.3)
     
-    # Add value labels on bars
+    # Add value labels on bars - positioned above error bars to avoid overlap
     for bar, mean, std in zip(bars, counts_mean, counts_std):
         height = bar.get_height()
-        ax2.text(bar.get_x() + bar.get_width()/2., height,
+        # Calculate appropriate offset based on the scale
+        offset = max(counts_mean) * 0.02  # 2% of max value
+        ax2.text(bar.get_x() + bar.get_width()/2., height + std + offset,
                 f'{mean:.0f}±{std:.0f}',
                 ha='center', va='bottom', fontsize=9, fontweight='bold')
+    
+    # Adjust y-axis limits to accommodate labels
+    ax2.set_ylim([0, max(counts_mean) * 1.15])
     
     plt.tight_layout()
     plt.savefig(output_dir / 'validity_comparison.png', dpi=300, bbox_inches='tight')
@@ -148,6 +171,21 @@ def plot_seed_variation(aggregate_stats: Dict, output_dir: Path):
     output_dir : Path
         Directory to save plots.
     """
+    # Expanded palette with high contrast colors for visual diversity (same as validity_comparison)
+    palette = {
+        'navy': '#2E3B4E',          # Dark blue/navy
+        'deep_blue': '#3A6B8C',     # Deep blue
+        'teal': '#5B8A8A',          # Teal/cyan
+        'light_cyan': '#7CB8C9',    # Light cyan (bright)
+        'forest_green': '#527C5C',  # Forest green
+        'olive': '#7A8B5C',         # Olive/moss green
+        'tan': '#C9B88B',           # Tan/beige (lighter variant)
+        'salmon': '#C97C7C',        # Salmon/coral (warm)
+        'mauve': '#C98BB8',         # Mauve/pink
+        'purple': '#B8A5C9',        # Light purple
+        'blue_gray': '#A5B8C9',     # Light blue-gray
+    }
+    
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
     
     seeds = aggregate_stats['seeds']
@@ -155,58 +193,67 @@ def plot_seed_variation(aggregate_stats: Dict, output_dir: Path):
     # Plot 1: Ours valid, SMACT invalid
     ax = axes[0, 0]
     counts = aggregate_stats['ours_valid_smact_invalid_counts']
-    ax.bar(range(len(seeds)), counts, alpha=0.7, color='#f39c12')
+    ax.bar(range(len(seeds)), counts, alpha=0.8, color=palette['salmon'])
     ax.set_xlabel('Seed', fontsize=11)
     ax.set_ylabel('Count', fontsize=11)
     ax.set_title('Ours Valid, SMACT Invalid', fontsize=12, fontweight='bold')
     ax.set_xticks(range(len(seeds)))
     ax.set_xticklabels(seeds)
-    ax.axhline(y=np.mean(counts), color='r', linestyle='--', 
+    ax.axhline(y=np.mean(counts), color='#d62828', linestyle='--', linewidth=2,
                label=f'Mean: {np.mean(counts):.1f}')
-    ax.legend()
+    ax.legend(loc='upper right', framealpha=0.95, fontsize=10)
     ax.grid(axis='y', alpha=0.3)
+    # Add padding to y-axis to prevent legend overlap
+    y_max = max(counts)
+    ax.set_ylim([0, y_max * 1.15])
     
     # Plot 2: SMACT valid, ours invalid
     ax = axes[0, 1]
     counts = aggregate_stats['smact_valid_ours_invalid_counts']
-    ax.bar(range(len(seeds)), counts, alpha=0.7, color='#9b59b6')
+    ax.bar(range(len(seeds)), counts, alpha=0.8, color=palette['mauve'])
     ax.set_xlabel('Seed', fontsize=11)
     ax.set_ylabel('Count', fontsize=11)
     ax.set_title('SMACT Valid, Ours Invalid', fontsize=12, fontweight='bold')
     ax.set_xticks(range(len(seeds)))
     ax.set_xticklabels(seeds)
-    ax.axhline(y=np.mean(counts), color='r', linestyle='--',
+    ax.axhline(y=np.mean(counts), color='#d62828', linestyle='--', linewidth=2,
                label=f'Mean: {np.mean(counts):.1f}')
-    ax.legend()
+    ax.legend(loc='upper right', framealpha=0.95, fontsize=10)
     ax.grid(axis='y', alpha=0.3)
+    y_max = max(counts)
+    ax.set_ylim([0, y_max * 1.15])
     
     # Plot 3: Both valid
     ax = axes[1, 0]
     counts = aggregate_stats['both_valid_counts']
-    ax.bar(range(len(seeds)), counts, alpha=0.7, color='#2ecc71')
+    ax.bar(range(len(seeds)), counts, alpha=0.8, color=palette['forest_green'])
     ax.set_xlabel('Seed', fontsize=11)
     ax.set_ylabel('Count', fontsize=11)
     ax.set_title('Both Valid', fontsize=12, fontweight='bold')
     ax.set_xticks(range(len(seeds)))
     ax.set_xticklabels(seeds)
-    ax.axhline(y=np.mean(counts), color='r', linestyle='--',
+    ax.axhline(y=np.mean(counts), color='#d62828', linestyle='--', linewidth=2,
                label=f'Mean: {np.mean(counts):.1f}')
-    ax.legend()
+    ax.legend(loc='upper right', framealpha=0.95, fontsize=10)
     ax.grid(axis='y', alpha=0.3)
+    y_max = max(counts)
+    ax.set_ylim([0, y_max * 1.15])
     
     # Plot 4: Both invalid
     ax = axes[1, 1]
     counts = aggregate_stats['both_invalid_counts']
-    ax.bar(range(len(seeds)), counts, alpha=0.7, color='#95a5a6')
+    ax.bar(range(len(seeds)), counts, alpha=0.8, color=palette['blue_gray'])
     ax.set_xlabel('Seed', fontsize=11)
     ax.set_ylabel('Count', fontsize=11)
     ax.set_title('Both Invalid', fontsize=12, fontweight='bold')
     ax.set_xticks(range(len(seeds)))
     ax.set_xticklabels(seeds)
-    ax.axhline(y=np.mean(counts), color='r', linestyle='--',
+    ax.axhline(y=np.mean(counts), color='#d62828', linestyle='--', linewidth=2,
                label=f'Mean: {np.mean(counts):.1f}')
-    ax.legend()
+    ax.legend(loc='upper right', framealpha=0.95, fontsize=10)
     ax.grid(axis='y', alpha=0.3)
+    y_max = max(counts)
+    ax.set_ylim([0, y_max * 1.15])
     
     plt.suptitle('Variation Across Seeds', fontsize=16, fontweight='bold', y=1.00)
     plt.tight_layout()

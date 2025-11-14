@@ -191,8 +191,15 @@ submissions/
 final_results/
 final_results_new/
 results_final/
-
+hf_leaderboard_v0_results/
+hf_leaderboard_v0_results.zip
+multi_mlip_results_plots.zip
+post_relax_mp20.zip
+pre_relax_mp20.zip
 dummy.csv
+pre_relax_mp20/
+post_relax_mp20/
+multi_mlip_results_plots/
 
 data/reference_fingerprints/
 data/reference_fingerprints_new/
