@@ -14,6 +14,53 @@ from typing import Any, Dict, List
 import numpy as np
 
 
+def get_dimensionality_reducer(method: str, n_samples: int, random_state: int = 42):
+    """
+    Get a configured dimensionality reduction object.
+
+    Parameters
+    ----------
+    method : str
+        One of "pca", "tsne", "umap"
+    n_samples : int
+        Number of samples in the dataset (used for hyperparameters)
+    random_state : int
+        Random seed for reproducibility
+
+    Returns
+    -------
+    reducer
+        An object with fit and fit_transform methods (like sklearn estimators)
+    """
+    from sklearn.decomposition import PCA
+    from sklearn.manifold import TSNE
+    from umap import UMAP
+
+    if method == "pca":
+        return PCA(n_components=2, random_state=random_state)
+
+    elif method == "tsne":
+        return TSNE(
+            n_components=2,
+            random_state=random_state,
+            perplexity=min(30, max(5, n_samples // 4)),
+        )
+
+    elif method == "umap":
+        # Reasonable defaults; n_neighbors scales mildly with dataset size
+        n_neighbors = max(5, min(30, n_samples // 20))
+        return UMAP(
+            n_components=2,
+            random_state=random_state,
+            n_neighbors=n_neighbors,
+            min_dist=0.1,
+            metric="euclidean",
+        )
+
+    else:
+        raise ValueError(f"Unknown dimensionality reduction method: {method}")
+
+
 def save_embeddings_from_structures(
     structures: List,
     config: Dict[str, Any],
@@ -170,9 +217,6 @@ def generate_embedding_plots(
         Options: "pca", "tsne", "umap". Defaults to all three.
     """
     import matplotlib.pyplot as plt
-    from sklearn.decomposition import PCA
-    from sklearn.manifold import TSNE
-    from umap import UMAP
 
     # Create output directory
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -190,29 +234,7 @@ def generate_embedding_plots(
         for method in methods:
             try:
                 # Perform dimensionality reduction
-                if method == "pca":
-                    reducer = PCA(n_components=2, random_state=42)
-                elif method == "tsne":
-                    reducer = TSNE(
-                        n_components=2,
-                        random_state=42,
-                        perplexity=min(30, len(emb_array) // 4),
-                    )
-                elif method == "umap":
-                    # Reasonable defaults; n_neighbors scales mildly with dataset size
-                    n_neighbors = max(5, min(30, len(emb_array) // 20))
-                    reducer = UMAP(
-                        n_components=2,
-                        random_state=42,
-                        n_neighbors=n_neighbors,
-                        min_dist=0.1,
-                        metric="euclidean",
-                    )
-                else:
-                    raise ValueError(
-                        f"Unknown dimensionality reduction method: {method}"
-                    )
-
+                reducer = get_dimensionality_reducer(method, len(emb_array))
                 reduced = reducer.fit_transform(emb_array)
 
                 # Create plot
