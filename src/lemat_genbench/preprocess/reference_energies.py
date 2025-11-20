@@ -141,7 +141,8 @@ def get_formation_energy_per_atom_from_composition_energy(
     composition : Composition
         Pymatgen composition object (may contain charged species)
     functional : str, optional
-        DFT functional to use for reference energies (default is "pbe")
+        Functional to use for reference energies (default is "pbe")
+        Could be ("pbe", "omat").
 
     Returns
     -------
