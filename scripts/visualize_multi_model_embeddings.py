@@ -14,7 +14,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from embedding_utils import get_dimensionality_reducer
 
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -49,7 +48,6 @@ def load_embeddings(
             with open(path, "rb") as f:
                 embeddings = pickle.load(f)
 
-            # Validate structure
             if not isinstance(embeddings, dict):
                 logger.warning(f"Unexpected format in {path}. Expected dictionary.")
                 continue
@@ -102,7 +100,6 @@ def align_and_plot_embeddings(
     for emb_type in embedding_types:
         logger.info(f"Processing embedding type: {emb_type}")
 
-        # Collect all datasets that have this embedding type
         target_datasets = {}
         all_data = []
         all_labels = []
@@ -142,18 +139,13 @@ def align_and_plot_embeddings(
                 current_mode = "joint"
 
             try:
-                reduced_data = {}  # label -> array
+                reduced_data = {}
 
                 if current_mode == "joint":
-                    # Concatenate all data
                     combined_data = np.vstack(all_data)
-
-                    # Get reducer using shared utility
                     reducer = get_dimensionality_reducer(method, len(combined_data))
-
                     reduced_combined = reducer.fit_transform(combined_data)
 
-                    # Split back
                     current_idx = 0
                     # We must iterate in the same order we constructed combined_data
                     # combined_data was built by iterating data.items()
@@ -165,14 +157,10 @@ def align_and_plot_embeddings(
                             ]
                             current_idx += n
 
-                else:  # ref_transform
-                    # Get reducer using shared utility (based on ref size)
+                else:
                     reducer = get_dimensionality_reducer(method, len(ref_data))
-
-                    # Fit on reference
                     reducer.fit(ref_data)
 
-                    # Transform all
                     for label, emb_array in target_datasets.items():
                         try:
                             reduced_data[label] = reducer.transform(emb_array)
@@ -181,27 +169,19 @@ def align_and_plot_embeddings(
                                 f"Failed to transform {label} with {method}: {e}"
                             )
 
-                # Plot
                 plt.figure(figsize=(12, 10))
-
-                # Sort labels to ensure consistent color assignment
                 sorted_labels = sorted(reduced_data.keys())
 
                 for label in sorted_labels:
                     coords = reduced_data[label]
                     is_ref = label == reference_label
 
-                    # Highlight logic
                     alpha = 0.6
                     size = 30
                     if current_mode == "ref_transform":
                         if is_ref:
                             alpha = 0.4
                             size = 20
-                    elif method == "tsne" or current_mode == "joint":
-                        # In joint mode, maybe make reference distinct?
-                        # Or just equal. Let's keep equal but make ref slightly different if specified
-                        pass
 
                     plt.scatter(
                         coords[:, 0],
@@ -269,11 +249,9 @@ def main():
         logger.error("No data loaded. Exiting.")
         return
 
-    # Determine reference label
     if args.reference:
         reference_label = args.reference
     else:
-        # Default to first loaded key
         reference_label = list(data.keys())[0]
         logger.info(f"No reference specified. Using '{reference_label}' as reference.")
 
