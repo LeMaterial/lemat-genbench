@@ -54,8 +54,6 @@ def get_dimensionality_reducer(method: str, n_samples: int, random_state: int = 
             n_components=2,
             random_state=random_state,
             n_neighbors=n_neighbors,
-            min_dist=0.1,
-            metric="euclidean",
         )
 
     else:

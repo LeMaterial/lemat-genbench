@@ -1,15 +1,17 @@
 """
 Script to visualize embeddings from multiple models/runs in a shared space.
 Allows setting one dataset as a reference for dimensionality reduction alignment.
+Supports filtering by SUN/MSUN status from benchmark results.
 """
 
 import argparse
 import glob
+import json
 import logging
 import pickle
 import re
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Set
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -143,12 +145,174 @@ def get_common_embedding_types(data: Dict[str, Dict[str, np.ndarray]]) -> List[s
     return sorted(list(types))
 
 
+def clean_label_for_display(label: str) -> str:
+    """Clean up label for display in plots.
+
+    Removes common prefixes like 'dataset-mp20-prerelax-' and suffixes like '_2500.csv'.
+
+    Args:
+        label: Original label
+
+    Returns:
+        Cleaned label for display
+    """
+    # Remove "dataset-mp20-prerelax-" or similar prefixes
+    cleaned = re.sub(r"^dataset-[^-]+-prerelax-", "", label)
+    # Remove "_2500.csv" or similar suffixes
+    cleaned = re.sub(r"_\d+\.csv$", "", cleaned)
+    # Remove just ".csv" if present
+    cleaned = cleaned.replace(".csv", "")
+    return cleaned
+
+
+def extract_sun_msun_indices(benchmark_json_path: Path) -> Dict[str, Set[int]]:
+    """Extract SUN and MSUN structure indices from benchmark JSON file.
+
+    Args:
+        benchmark_json_path: Path to benchmark JSON file
+
+    Returns:
+        Dictionary with 'sun_indices' and 'msun_indices' as sets of integers
+    """
+    with open(benchmark_json_path, "r") as f:
+        data = json.load(f)
+
+    sun_result_str = data.get("results", {}).get("sun", "")
+    if not sun_result_str:
+        logger.warning(f"No SUN results found in {benchmark_json_path}")
+        return {"sun_indices": set(), "msun_indices": set()}
+
+    # Extract indices using regex
+    sun_match = re.search(r"'sun_indices':\s*\[([^\]]+)\]", sun_result_str)
+    msun_match = re.search(r"'msun_indices':\s*\[([^\]]+)\]", sun_result_str)
+
+    def parse_indices(match):
+        if not match:
+            return set()
+        indices_str = match.group(1)
+        # Handle empty list
+        if not indices_str.strip():
+            return set()
+        # Parse comma-separated integers
+        try:
+            return set(int(x.strip()) for x in indices_str.split(",") if x.strip())
+        except ValueError as e:
+            logger.warning(f"Error parsing indices: {e}")
+            return set()
+
+    sun_indices = parse_indices(sun_match)
+    msun_indices = parse_indices(msun_match)
+
+    logger.info(
+        f"Extracted from {benchmark_json_path.name}: "
+        f"{len(sun_indices)} SUN indices, {len(msun_indices)} MSUN indices"
+    )
+
+    return {"sun_indices": sun_indices, "msun_indices": msun_indices}
+
+
+def load_benchmark_indices(
+    benchmark_dir: Path, model_label: str
+) -> Dict[str, Set[int]]:
+    """Load SUN/MSUN indices for a specific model from benchmark directory.
+
+    Args:
+        benchmark_dir: Directory containing benchmark JSON files
+        model_label: Model label from embeddings (e.g., 'diffcsp', 'mattergen', 'plaid_pp')
+
+    Returns:
+        Dictionary with 'sun_indices' and 'msun_indices'
+    """
+    # Find all benchmark JSON files
+    all_benchmark_files = list(benchmark_dir.glob("*_*_comprehensive_*.json"))
+
+    # Normalize model label for matching
+    model_normalized = model_label.lower().replace("_", "")
+
+    matching_files = []
+    for benchmark_file in all_benchmark_files:
+        filename = benchmark_file.stem
+        parts = filename.split("_")
+        if len(parts) >= 2:
+            file_model = parts[0].lower()
+            file_model_combined = (
+                "_".join(parts[:2]).lower() if len(parts) >= 2 else file_model
+            )
+
+            # Match if model name is in filename or vice versa
+            if (
+                model_normalized in file_model
+                or file_model in model_normalized
+                or model_normalized in file_model_combined
+                or file_model_combined in model_normalized
+            ):
+                matching_files.append(benchmark_file)
+
+    if not matching_files:
+        logger.warning(
+            f"No benchmark file found for model '{model_label}' in {benchmark_dir}. "
+            f"Available files: {[f.name for f in all_benchmark_files[:5]]}"
+        )
+        return {"sun_indices": set(), "msun_indices": set()}
+
+    if len(matching_files) > 1:
+        logger.warning(
+            f"Multiple benchmark files found for '{model_label}', using first: {matching_files[0].name}"
+        )
+
+    benchmark_file = matching_files[0]
+    indices = extract_sun_msun_indices(benchmark_file)
+
+    return {
+        **indices,
+        "benchmark_file": benchmark_file,
+    }
+
+
+def filter_embeddings_by_indices(
+    embeddings: Dict[str, np.ndarray],
+    valid_indices: Set[int],
+) -> Dict[str, np.ndarray]:
+    """Filter embeddings to only include structures at specified indices.
+
+    Args:
+        embeddings: Dictionary mapping embedding type names to numpy arrays
+        valid_indices: Set of structure indices to keep (relative to valid structures)
+
+    Returns:
+        Filtered embeddings dictionary
+    """
+    filtered = {}
+
+    for emb_type, emb_array in embeddings.items():
+        if len(emb_array) == 0:
+            continue
+
+        embedding_indices = sorted(
+            [idx for idx in valid_indices if idx < len(emb_array)]
+        )
+
+        if embedding_indices:
+            filtered[emb_type] = emb_array[embedding_indices]
+            logger.debug(
+                f"Filtered {emb_type}: {len(embedding_indices)}/{len(emb_array)} structures"
+            )
+        else:
+            logger.warning(
+                f"No matching indices for {emb_type} "
+                f"(indices: {sorted(valid_indices)[:10]}..., array size: {len(emb_array)})"
+            )
+
+    return filtered
+
+
 def align_and_plot_embeddings(
     data: Dict[str, Dict[str, np.ndarray]],
     reference_label: str,
     output_dir: Path,
     methods: List[str] = ["umap", "tsne"],
     mode: str = "ref_transform",
+    filter_label: Optional[str] = None,
 ):
     """
     Align embeddings from multiple sources using a reference dataset and plot them.
@@ -159,6 +323,7 @@ def align_and_plot_embeddings(
         output_dir: Directory to save plots.
         methods: List of reduction methods ('pca', 'umap', 'tsne').
         mode: 'ref_transform' (fit on ref, transform others) or 'joint' (fit on all).
+        filter_label: Optional label to add to plot titles (e.g., 'SUN', 'MSUN').
     """
     if mode == "ref_transform" and reference_label not in data:
         logger.error(
@@ -255,12 +420,15 @@ def align_and_plot_embeddings(
                             alpha = 0.4
                             size = 20
 
+                    # Clean label for display
+                    display_label = clean_label_for_display(label)
+
                     plt.scatter(
                         coords[:, 0],
                         coords[:, 1],
                         alpha=alpha,
                         s=size,
-                        label=f"{label} {'(Ref)' if is_ref and current_mode == 'ref_transform' else ''}",
+                        label=f"{display_label} {'(Ref)' if is_ref and current_mode == 'ref_transform' else ''}",
                         edgecolor="none",
                     )
 
@@ -272,12 +440,16 @@ def align_and_plot_embeddings(
                     if current_mode == "ref_transform"
                     else "Joint Embedding"
                 )
+                if filter_label:
+                    title_suffix = f"{filter_label} - {title_suffix}"
                 plt.title(f"Combined {emb_type} ({method.upper()})\n{title_suffix}")
                 plt.legend()
                 plt.grid(True, alpha=0.3)
 
+                filter_suffix = f"_{filter_label.lower()}" if filter_label else ""
                 plot_file = (
-                    output_dir / f"combined_{method}_{emb_type}_{current_mode}.png"
+                    output_dir
+                    / f"combined_{method}_{emb_type}_{current_mode}{filter_suffix}.png"
                 )
                 plt.savefig(plot_file, dpi=300, bbox_inches="tight")
                 plt.close()
@@ -321,8 +493,30 @@ def main():
         nargs="+",
         help="Filter to specific embedding types (e.g., 'graph' to only plot *_graph embeddings, or 'orb_graph mace_graph' for specific types)",
     )
+    parser.add_argument(
+        "--filter",
+        nargs="+",
+        choices=["sun", "msun"],
+        help="Filter embeddings by SUN (Stable, Unique, Novel) and/or MSUN (Metastable, Unique, Novel) structures. Can specify both (e.g., --filter sun msun). Requires --benchmark-dir.",
+    )
+    parser.add_argument(
+        "--benchmark-dir",
+        help="Directory containing benchmark JSON files (required when using --filter)",
+    )
+    parser.add_argument(
+        "--methods",
+        nargs="+",
+        default=["pca", "umap", "tsne"],
+        choices=["pca", "umap", "tsne"],
+        help="Dimensionality reduction methods to use",
+    )
 
     args = parser.parse_args()
+
+    # Validate filtering arguments
+    if args.filter and not args.benchmark_dir:
+        logger.error("--benchmark-dir is required when using --filter")
+        return
 
     data = load_embeddings(args.files, args.labels, args.embedding_types)
 
@@ -330,6 +524,7 @@ def main():
         logger.error("No data loaded. Exiting.")
         return
 
+    # Determine reference label
     if args.reference:
         reference_label = args.reference
     else:
@@ -338,7 +533,91 @@ def main():
 
     output_dir = Path(args.output)
 
-    align_and_plot_embeddings(data, reference_label, output_dir, mode=args.mode)
+    # Apply SUN/MSUN filtering if requested
+    if args.filter:
+        benchmark_dir = Path(args.benchmark_dir)
+        if not benchmark_dir.exists():
+            logger.error(f"Benchmark directory not found: {benchmark_dir}")
+            return
+
+        # Normalize filter types (handle duplicates)
+        filter_types = list(set([f.lower() for f in args.filter]))
+        filter_types.sort()  # Consistent ordering: msun, sun
+
+        logger.info(
+            f"\n{'=' * 60}\n"
+            f"Filtering embeddings for {', '.join([f.upper() for f in filter_types])} structures...\n"
+            f"{'=' * 60}"
+        )
+
+        # Load benchmark indices for each model
+        model_indices = {}
+        for label in data.keys():
+            indices_data = load_benchmark_indices(benchmark_dir, label)
+            if indices_data.get("sun_indices") or indices_data.get("msun_indices"):
+                model_indices[label] = indices_data
+
+        if not model_indices:
+            logger.error("No SUN/MSUN indices found for any models. Exiting.")
+            return
+
+        # Process each filter type separately
+        for filter_type in filter_types:
+            filter_label = filter_type.upper()
+            index_key = f"{filter_type}_indices"
+
+            logger.info(f"\nProcessing {filter_label} structures...")
+
+            # Filter embeddings for this type
+            filtered_data = {}
+
+            for label, embeddings in data.items():
+                if label not in model_indices:
+                    logger.warning(f"Skipping {label} - no benchmark indices found")
+                    continue
+
+                indices = model_indices[label].get(index_key, set())
+                if indices:
+                    filtered_embeddings = filter_embeddings_by_indices(
+                        embeddings, indices
+                    )
+                    if filtered_embeddings:
+                        filtered_data[label] = filtered_embeddings
+                        logger.info(
+                            f"Filtered {label}: {len(indices)} {filter_label} structures "
+                            f"(embedding size: {len(list(embeddings.values())[0]) if embeddings else 0})"
+                        )
+                else:
+                    logger.warning(f"No {filter_label} indices found for {label}")
+
+            if not filtered_data:
+                logger.warning(
+                    f"No {filter_label} structures found for any models. Skipping {filter_label} plots."
+                )
+                continue
+
+            # Create subdirectory for this filter type
+            filter_output_dir = output_dir / filter_type.lower()
+
+            # Generate plots for this filter type
+            align_and_plot_embeddings(
+                filtered_data,
+                reference_label,
+                filter_output_dir,
+                methods=args.methods,
+                mode=args.mode,
+                filter_label=filter_label,
+            )
+    else:
+        # No filtering - plot all data
+        align_and_plot_embeddings(
+            data,
+            reference_label,
+            output_dir,
+            methods=args.methods,
+            mode=args.mode,
+            filter_label=None,
+        )
 
 
 if __name__ == "__main__":
