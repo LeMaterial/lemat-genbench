@@ -48,7 +48,8 @@ def get_dimensionality_reducer(method: str, n_samples: int, random_state: int = 
 
     elif method == "umap":
         # Reasonable defaults; n_neighbors scales mildly with dataset size
-        n_neighbors = max(5, min(30, n_samples // 20))
+        n_neighbors = max(10, min(30, n_samples // 20))
+        print(f"n_neighbors: {n_neighbors}")
         return UMAP(
             n_components=2,
             random_state=random_state,

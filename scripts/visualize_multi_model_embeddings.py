@@ -4,9 +4,10 @@ Allows setting one dataset as a reference for dimensionality reduction alignment
 """
 
 import argparse
+import glob
 import logging
 import pickle
-import sys
+import re
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -22,27 +23,85 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+def expand_file_paths(file_paths: List[str]) -> List[Path]:
+    """Expand file paths, supporting glob patterns and directories."""
+    expanded = []
+    for path_str in file_paths:
+        path = Path(path_str)
+
+        if path.is_dir():
+            pkl_files = list(path.rglob("*.pkl"))
+            if pkl_files:
+                expanded.extend(pkl_files)
+                logger.info(f"Found {len(pkl_files)} .pkl files in directory: {path}")
+            else:
+                logger.warning(f"No .pkl files found in directory: {path}")
+        elif "*" in path_str or "?" in path_str:
+            globbed = glob.glob(path_str, recursive=True)
+            if globbed:
+                expanded.extend([Path(f) for f in globbed if Path(f).suffix == ".pkl"])
+                logger.info(
+                    f"Glob pattern '{path_str}' matched {len(globbed)} .pkl files"
+                )
+            else:
+                logger.warning(f"Glob pattern '{path_str}' matched no files")
+        else:
+            if path.exists():
+                if path.suffix == ".pkl":
+                    expanded.append(path)
+                else:
+                    logger.warning(f"File {path} is not a .pkl file, skipping")
+            else:
+                logger.warning(f"File not found: {path}")
+
+    return expanded
+
+
 def load_embeddings(
-    file_paths: List[str], labels: Optional[List[str]] = None
+    file_paths: List[str],
+    labels: Optional[List[str]] = None,
+    embedding_types_filter: Optional[List[str]] = None,
 ) -> Dict[str, Dict[str, np.ndarray]]:
-    """Load embedding pickle files."""
+    """Load embedding pickle files.
+
+    Args:
+        file_paths: List of file paths, glob patterns, or directories
+        labels: Optional custom labels for each file
+        embedding_types_filter: Optional list of embedding types to keep (e.g., ['orb_graph', 'mace_graph'])
+    """
+    expanded_paths = expand_file_paths(file_paths)
+
+    if not expanded_paths:
+        logger.error("No .pkl files found from provided paths")
+        return {}
+
     data = {}
 
-    if labels and len(labels) != len(file_paths):
-        logger.error("Number of labels must match number of file paths")
-        sys.exit(1)
-
-    for i, path_str in enumerate(file_paths):
-        path = Path(path_str)
-        if not path.exists():
-            logger.warning(f"File not found: {path}")
-            continue
-
-        label = (
-            labels[i]
-            if labels
-            else path.stem.replace("embeddings_", "").replace(".pkl", "")
+    if labels and len(labels) != len(expanded_paths):
+        logger.warning(
+            f"Number of labels ({len(labels)}) doesn't match number of files ({len(expanded_paths)}). Using auto-generated labels."
         )
+        labels = None
+
+    for i, path in enumerate(expanded_paths):
+        if labels:
+            label = labels[i]
+        else:
+            # Extract model name from parent directory (e.g., embeddings_plaid_pp_21102025 -> plaid_pp)
+            parent_dir = path.parent.name
+            if parent_dir.startswith("embeddings_"):
+                # Remove 'embeddings_' prefix and date suffix (numbers at the end)
+                model_part = parent_dir.replace("embeddings_", "")
+                # Remove trailing date pattern (numbers, possibly with underscores)
+                model_name = re.sub(r"_\d+$", "", model_part)
+                label = (
+                    model_name
+                    if model_name
+                    else path.stem.replace("embeddings_", "").replace(".pkl", "")
+                )
+            else:
+                # Fallback to filename if parent doesn't match pattern
+                label = path.stem.replace("embeddings_", "").replace(".pkl", "")
 
         try:
             with open(path, "rb") as f:
@@ -51,6 +110,19 @@ def load_embeddings(
             if not isinstance(embeddings, dict):
                 logger.warning(f"Unexpected format in {path}. Expected dictionary.")
                 continue
+
+            if embedding_types_filter:
+                filtered_embeddings = {
+                    k: v
+                    for k, v in embeddings.items()
+                    if any(filter_type in k for filter_type in embedding_types_filter)
+                }
+                if not filtered_embeddings:
+                    logger.warning(
+                        f"No matching embedding types in {path} (filter: {embedding_types_filter})"
+                    )
+                    continue
+                embeddings = filtered_embeddings
 
             data[label] = embeddings
             logger.info(
@@ -75,7 +147,7 @@ def align_and_plot_embeddings(
     data: Dict[str, Dict[str, np.ndarray]],
     reference_label: str,
     output_dir: Path,
-    methods: List[str] = ["pca", "umap", "tsne"],
+    methods: List[str] = ["umap", "tsne"],
     mode: str = "ref_transform",
 ):
     """
@@ -219,7 +291,11 @@ def main():
     parser = argparse.ArgumentParser(
         description="Visualize embeddings from multiple models."
     )
-    parser.add_argument("files", nargs="+", help="Path to embedding .pkl files")
+    parser.add_argument(
+        "files",
+        nargs="+",
+        help="Path to embedding .pkl files, glob patterns (e.g., 'results_final/embeddings_*/*.pkl'), or directories",
+    )
     parser.add_argument(
         "--labels", nargs="+", help="Custom labels for each file (must match count)"
     )
@@ -240,10 +316,15 @@ def main():
         default="ref_transform",
         help="Visualization mode: 'ref_transform' (map to reference) or 'joint' (fit on all)",
     )
+    parser.add_argument(
+        "--embedding-types",
+        nargs="+",
+        help="Filter to specific embedding types (e.g., 'graph' to only plot *_graph embeddings, or 'orb_graph mace_graph' for specific types)",
+    )
 
     args = parser.parse_args()
 
-    data = load_embeddings(args.files, args.labels)
+    data = load_embeddings(args.files, args.labels, args.embedding_types)
 
     if not data:
         logger.error("No data loaded. Exiting.")
