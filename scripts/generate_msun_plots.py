@@ -111,8 +111,6 @@ def plot_params_vs_metric(metric_data, title_suffix, filename, metric_name="MSUN
     # Find Pareto frontier (minimize params, maximize metric)
     points = list(zip(params_list, metric_list))
     pareto_points = find_pareto_frontier(points)
-    pareto_params = [p[0] for p in pareto_points]
-    pareto_metric = [p[1] for p in pareto_points]
 
     # Identify which models are on Pareto frontier
     pareto_models = []
@@ -254,8 +252,6 @@ def plot_inference_vs_metric(
     # Find Pareto frontier (minimize inference time, maximize metric)
     points = list(zip(inference_list, metric_list))
     pareto_points = find_pareto_frontier(points)
-    pareto_inference = [p[0] for p in pareto_points]
-    pareto_metric = [p[1] for p in pareto_points]
 
     # Identify which models are on Pareto frontier
     pareto_models = []
@@ -278,7 +274,7 @@ def plot_inference_vs_metric(
 
         if is_pareto:
             # Pareto frontier with purple outline similar to parameter plots
-            scatter = ax.scatter(
+            ax.scatter(
                 inference_list[i],
                 metric_list[i],
                 s=200,
@@ -290,7 +286,7 @@ def plot_inference_vs_metric(
             )
         else:
             # Other models with thin border
-            scatter = ax.scatter(
+            ax.scatter(
                 inference_list[i],
                 metric_list[i],
                 s=150,
@@ -443,7 +439,7 @@ def main():
 
     # Get the script's directory and create output directory
     script_dir = Path(__file__).parent
-    output_dir = script_dir.parent / "results_final" / "msun_plots"
+    output_dir = script_dir.parent / "results_final" / "efficiency_plots"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # LeMat-Bulk plots
