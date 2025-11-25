@@ -1,15 +1,26 @@
+import io
+import sys
 from typing import Any, Optional
 
 from material_hasher.hasher.bawl import BAWLHasher
 from pymatgen.analysis.local_env import EconNN
 from pymatgen.core import Structure
 
-# Handle optional imports gracefully
+# Redirect stderr temporarily to suppress the logging error
+old_stderr = sys.stderr
+sys.stderr = io.StringIO()
 try:
     from material_hasher.similarity.pdd import PointwiseDistanceDistributionSimilarity
     PDD_AVAILABLE = True
 except ImportError:
     PDD_AVAILABLE = False
+finally:
+    # Restore stderr after first import
+    sys.stderr = old_stderr
+
+# Redirect again for second import
+old_stderr = sys.stderr
+sys.stderr = io.StringIO()
 
 try:
     from material_hasher.similarity.structure_matchers import (
@@ -18,7 +29,9 @@ try:
     STRUCTURE_MATCHER_AVAILABLE = True
 except ImportError:
     STRUCTURE_MATCHER_AVAILABLE = False
-
+finally:
+    # Restore stderr after second import
+    sys.stderr = old_stderr
 
 def get_fingerprinter(fingerprint_method: str) -> Any:
     """Get a fingerprinter instance based on the specified method.
