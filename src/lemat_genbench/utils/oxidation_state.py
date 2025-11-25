@@ -104,17 +104,11 @@ def compositional_oxi_state_guesses(
             )
 
     # Load prior probabilities of oxidation states, used to rank solutions
-    here = Path(__file__).resolve().parent
-    three_up = here.parents[2]
+    # Create data directory if it doesn't exist
+    data_dir = Path("data")
+    data_dir.mkdir(exist_ok=True)
 
-    # Try loading from repo root first, fallback to package data directory
-    oxi_probs_path = three_up / "data" / "lemat_icsd_oxi_dict_probs.json"
-    if not oxi_probs_path.exists():
-        # Fallback: load from package data directory (works when installed as package)
-        package_data_dir = here.parent / "data"
-        oxi_probs_path = package_data_dir / "lemat_icsd_oxi_dict_probs.json"
-
-    with open(oxi_probs_path, "r") as f:
+    with open(data_dir /"lemat_icsd_oxi_dict_probs.json", "r") as f:
         loaded_dict = json.load(f)
     type(comp).oxi_prob = loaded_dict
     oxi_states_override = oxi_states_override or {}
