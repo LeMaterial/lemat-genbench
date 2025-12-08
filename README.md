@@ -3,6 +3,8 @@
 
 A comprehensive benchmarking framework for evaluating material generation models across multiple metrics including validity, distribution, diversity, novelty, uniqueness, and stability.
 
+[Link to the paper](https://arxiv.org/abs/2512.04562v1)
+
 ## 🚀 Quick Start
 
 ```bash
