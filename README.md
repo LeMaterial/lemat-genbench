@@ -1,6 +1,6 @@
 ![](assets/lematerial-logo.png)
 
-# LeMat-GenBench: Benchmark for Generative Models for Materials
+# LeMat-GenBench: A Unified Evaluation Framework for Crystal Generative Models
 
 A comprehensive benchmarking framework for evaluating material generation models across multiple metrics including validity, distribution, diversity, novelty, uniqueness, and stability.
 
