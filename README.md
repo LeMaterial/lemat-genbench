@@ -2,7 +2,7 @@
 
 # LeMat-GenBench: A Unified Evaluation Framework for Crystal Generative Models
 
-A comprehensive benchmarking framework for evaluating material generation models across multiple metrics including validity, distribution, diversity, novelty, uniqueness, and stability.
+A comprehensive benchmarking framework for evaluating material generation models across multiple metrics including validity, distribution, diversity, novelty, uniqueness, and stability. [[NeurIPS AI4Mat 2025 Spotlight](https://openreview.net/forum?id=ZfPGcTfDWn)]
 
 [![Paper](https://img.shields.io/badge/arXiv-2512.04562-b31b1b.svg)](https://arxiv.org/abs/2512.04562)
 [![Leaderboard](https://img.shields.io/badge/🤗%20HuggingFace-Leaderboard-yellow)](https://huggingface.co/spaces/LeMaterial/LeMat-GenBench)
