@@ -923,7 +923,7 @@ def main():
     )
     parser.add_argument(
         "--fingerprint-method",
-        default="short-bawl",
+        default="structure-matcher",
         choices=["bawl", "short-bawl", "structure-matcher", "pdd"],
         help="Fingerprinting method to use (default: short-bawl)",
     )

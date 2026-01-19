@@ -1,9 +1,13 @@
 ![](assets/lematerial-logo.png)
-# LeMat-GenBench: Benchmark for generative models for materials
+
+# LeMat-GenBench: Benchmark for Generative Models for Materials
 
 A comprehensive benchmarking framework for evaluating material generation models across multiple metrics including validity, distribution, diversity, novelty, uniqueness, and stability.
 
-[Link to the paper](https://arxiv.org/abs/2512.04562v1)
+[![Paper](https://img.shields.io/badge/arXiv-2512.04562-b31b1b.svg)](https://arxiv.org/abs/2512.04562)
+[![Leaderboard](https://img.shields.io/badge/🤗%20HuggingFace-Leaderboard-yellow)](https://huggingface.co/spaces/LeMaterial/LeMat-GenBench)
+
+---
 
 ## 🚀 Quick Start
 
@@ -15,18 +19,17 @@ cd lemat-genbench
 # Install dependencies
 uv sync
 
-# On macOS/Linux:
+# Activate the virtual environment (macOS/Linux)
 source .venv/bin/activate
-
-# On Windows:
-.venv\Scripts\activate
 
 # Set up UMA access (required for stability and distribution benchmarks)
 huggingface-cli login
 
 # Run a quick benchmark
-uv run scripts/run_benchmarks.py --cifs notebooks --config comprehensive --name quick_test
+uv run scripts/run_benchmarks.py --cifs cif_folder --config comprehensive_multi_mlip_hull --name quick_test
 ```
+
+---
 
 ## 📦 Installation
 
@@ -58,7 +61,7 @@ uv run scripts/run_benchmarks.py --cifs notebooks --config comprehensive --name 
    .venv\Scripts\activate
    ```
 
-4. **Set up UMA model access (required for stability and distribution benchmarks):**
+4. **Set up UMA model access** (required for stability and distribution benchmarks):
    ```bash
    # Request access to UMA model on HuggingFace
    # Visit: https://huggingface.co/facebook/UMA
@@ -66,89 +69,77 @@ uv run scripts/run_benchmarks.py --cifs notebooks --config comprehensive --name 
    
    # Login to HuggingFace CLI
    huggingface-cli login
-   # Enter your HuggingFace token when prompted
    ```
 
-## 🔧 Setup
-
-### UMA Model Access Setup
-
-The UMA model is gated and requires special access. Follow these steps:
-
-1. **Request Access:**
-   - Visit [UMA model page](https://huggingface.co/facebook/UMA)
-   - Click "Request access" button
-   - Wait for approval (usually within 24 hours)
-
-2. **Get HuggingFace Token:**
-   - Go to [HuggingFace Settings](https://huggingface.co/settings/tokens)
-   - Create a new token with "read" permissions
-   - Copy the token
-
-3. **Login via CLI:**
-   ```bash
-   huggingface-cli login
-   # Enter your token when prompted
-   ```
-
-4. **Verify Access:**
-   ```bash
-   # Test UMA access
-   uv run scripts/run_benchmarks.py --cifs notebooks --config comprehensive --name uma_test --families stability
-   ```
+---
 
 ## 📊 Benchmark Metrics
 
-### 1. **Validity Metrics**
+| Family | Description | Cost |
+|--------|-------------|------|
+| `validity` | Structure validation (charge, distance, plausibility) | Low |
+| `distribution` | Distribution similarity (JSD, MMD, Fréchet distance) | Medium |
+| `diversity` | Structural diversity (element, space group, site number) | Low |
+| `novelty` | Novelty vs. LeMat-Bulk reference dataset | Medium |
+| `uniqueness` | Internal uniqueness within generated set | Low |
+| `stability` | Thermodynamic stability (formation energy, e_above_hull) | High |
+| `hhi` | Supply risk assessment (production/reserve concentration) | Low |
+| `sun` | Composite metric (Stability + Uniqueness + Novelty) | High |
+
+<details>
+<summary><strong>📖 Detailed Metric Descriptions</strong></summary>
+
+### 1. Validity Metrics
 - **Charge Neutrality**: Ensures structures are charge-balanced using oxidation state analysis and bond valence calculations
 - **Minimum Interatomic Distance**: Validates that atomic distances exceed minimum thresholds based on atomic radii
 - **Coordination Environment**: Checks if coordination numbers match expected values for each element
 - **Physical Plausibility**: Validates density, lattice parameters, crystallographic format, and symmetry
 
-### 2. **Distribution Metrics**
+### 2. Distribution Metrics
 - **Jensen-Shannon Distance (JSD)**: Measures similarity of categorical properties (space groups, crystal systems, elemental compositions) between generated and reference materials
 - **Maximum Mean Discrepancy (MMD)**: Measures similarity of continuous properties (volume, density) between generated and reference materials using kernel methods
 - **Fréchet Distance**: Measures similarity of learned structural representations (embeddings) from MLIPs (ORB, MACE, UMA) between generated and reference materials
 
-**⚠️ Important Caveat**: MMD calculations use a **15K sample** from LeMat-Bulk dataset due to computational complexity. The full dataset contains ~5M structures, but using the entire dataset would be computationally infeasible.
+> ⚠️ **Note**: MMD calculations use a **15K sample** from LeMat-Bulk dataset due to computational complexity.
 
-### 3. **Diversity Metrics**
-- **Element Diversity**: Measures variety of chemical elements used across generated structures using Vendi scores and Shannon entropy
-- **Space Group Diversity**: Measures variety of crystal symmetries (space groups) present in generated structures
+### 3. Diversity Metrics
+- **Element Diversity**: Measures variety of chemical elements using Vendi scores and Shannon entropy
+- **Space Group Diversity**: Measures variety of crystal symmetries present in generated structures
 - **Site Number Diversity**: Measures variety in the number of atomic sites per structure
-- **Physical Size Diversity**: Measures variety in physical properties (density, lattice parameters, packing factor) compared to uniform distribution
+- **Physical Size Diversity**: Measures variety in physical properties (density, lattice parameters, packing factor)
 
-### 4. **Novelty Metrics**
+### 4. Novelty Metrics
 - **Novelty Ratio**: Fraction of generated structures NOT present in LeMat-Bulk reference dataset
 - **BAWL Fingerprinting**: Uses BAWL structure hashing to efficiently compare against ~5M known materials
 - **Structure Matcher**: Alternative method using pymatgen StructureMatcher for structural comparison
-- **Reference Comparison**: Measures how many structures are truly novel vs. known materials
 
-### 5. **Uniqueness Metrics**
+### 5. Uniqueness Metrics
 - **Uniqueness Ratio**: Fraction of unique structures within the generated set (internal diversity)
 - **BAWL Fingerprinting**: Uses BAWL structure hashing to identify duplicate structures efficiently
-- **Structure Matcher**: Alternative method using pymatgen StructureMatcher for structural comparison
 - **Duplicate Detection**: Counts and reports duplicate structures within the generated set
 
-### 6. **Stability Metrics**
+### 6. Stability Metrics
 - **Stability Ratio**: Fraction of structures with energy above hull ≤ 0 eV/atom (thermodynamically stable)
 - **Metastability Ratio**: Fraction of structures with energy above hull ≤ 0.1 eV/atom (metastable)
 - **Mean E_Above_Hull**: Average energy above hull across multiple MLIPs (ORB, MACE, UMA)
-- **Formation Energy**: Average formation energy across multiple MLIPs (ORB, MACE, UMA)
+- **Formation Energy**: Average formation energy across multiple MLIPs
 - **Relaxation Stability**: RMSE between original and relaxed atomic positions
 - **Ensemble Statistics**: Mean and standard deviation across MLIP predictions for uncertainty quantification
 
-**⚠️ Important Caveat**: Energy above hull calculations may fail for charged species (e.g., Cs+, Br-) as phase diagrams expect neutral compounds.
+> ⚠️ **Note**: Energy above hull calculations may fail for charged species (e.g., Cs+, Br-) as phase diagrams expect neutral compounds.
 
-### 7. **HHI (Herfindahl-Hirschman Index)**
-- **Production HHI**: Measures supply risk based on concentration of element production sources (market concentration)
-- **Reserve HHI**: Measures long-term supply risk based on concentration of element reserves (geographic distribution)
+### 7. HHI (Herfindahl-Hirschman Index)
+- **Production HHI**: Measures supply risk based on concentration of element production sources
+- **Reserve HHI**: Measures long-term supply risk based on concentration of element reserves
 
-### 8. **SUN (Stability, Uniqueness, Novelty)**
+### 8. SUN (Stability, Uniqueness, Novelty)
 - **SUN Rate**: Fraction of structures that are simultaneously stable (e_above_hull ≤ 0), unique, and novel
 - **MetaSUN Rate**: Fraction of structures that are simultaneously metastable (e_above_hull ≤ 0.1), unique, and novel
 - **Combined Rate**: Fraction of structures that are either stable or metastable, unique, and novel
-- **Efficient Computation**: Uses hierarchical filtering (uniqueness → novelty → stability) for optimal performance
+
+</details>
+
+---
 
 ## 🏃‍♂️ Usage
 
@@ -156,34 +147,34 @@ The UMA model is gated and requires special access. Follow these steps:
 
 ```bash
 # Run all benchmark families on CIF files in a directory
-uv run scripts/run_benchmarks.py --cifs /path/to/cif/directory --config comprehensive --name my_benchmark
+uv run scripts/run_benchmarks.py --cifs /path/to/cif/directory --config comprehensive_multi_mlip_hull --name my_benchmark
 
 # Run specific benchmark families
-uv run scripts/run_benchmarks.py --cifs structures.txt --config comprehensive --families validity novelty --name custom_run
-
-# Use a file list instead of directory
-uv run scripts/run_benchmarks.py --cifs my_structures.txt --config comprehensive --name file_list_run
+uv run scripts/run_benchmarks.py --cifs structures.txt --config comprehensive_multi_mlip_hull --families validity novelty --name custom_run
 
 # Load structures from CSV file
-uv run scripts/run_benchmarks.py --csv my_structures.csv --config comprehensive --name csv_benchmark
-
-# Run specific families on CSV input
-uv run scripts/run_benchmarks.py --csv structures.csv --config comprehensive --families validity diversity --name csv_quick_test
-
-# Use structure-matcher for fingerprinting (alternative to BAWL)
-uv run scripts/run_benchmarks.py \
-  --cifs submissions/test \
-  --config comprehensive_structure_matcher \
-  --name test_run_structure_matcher \
-  --fingerprint-method structure-matcher
+uv run scripts/run_benchmarks.py --csv my_structures.csv --config comprehensive_multi_mlip_hull --name csv_benchmark
 ```
 
-### Input Formats
+> 💡 **Tip**: Use configuration `comprehensive_multi_mlip_hull` for results comparable to the [leaderboard](https://huggingface.co/spaces/LeMaterial/LeMat-GenBench).
+
+### Command Line Options
+
+| Option | Description |
+|--------|-------------|
+| `--cifs` | Path to directory or file list containing CIF files |
+| `--csv` | Path to CSV file containing structures |
+| `--config` | Configuration name (default: `comprehensive`) |
+| `--name` | Name for this benchmark run (required) |
+| `--families` | Specific benchmark families to run (optional) |
+| `--fingerprint-method` | Method: `bawl`, `short-bawl`, `structure-matcher`, `pdd` |
+
+<details>
+<summary><strong>📥 Input Format Details</strong></summary>
 
 #### Option 1: Directory of CIF Files
 ```bash
-# Point to a directory containing CIF files
-uv run scripts/run_benchmarks.py --cifs /path/to/cif/directory --config comprehensive --name my_run
+uv run scripts/run_benchmarks.py --cifs /path/to/cif/directory --config comprehensive_multi_mlip_hull --name my_run
 ```
 
 #### Option 2: File List
@@ -197,15 +188,12 @@ path/to/structure3.cif
 
 Then run:
 ```bash
-uv run scripts/run_benchmarks.py --cifs my_structures.txt --config comprehensive --name my_run
+uv run scripts/run_benchmarks.py --cifs my_structures.txt --config comprehensive_multi_mlip_hull --name my_run
 ```
 
 #### Option 3: CSV File with Structures
-Load structures directly from a CSV file containing structure data:
-
 ```bash
-# Load from CSV file
-uv run scripts/run_benchmarks.py --csv my_structures.csv --config comprehensive --name my_csv_run
+uv run scripts/run_benchmarks.py --csv my_structures.csv --config comprehensive_multi_mlip_hull --name my_csv_run
 ```
 
 **CSV Format Requirements:**
@@ -221,54 +209,33 @@ material_id,structure,other_metadata
 1,"{""@module"": ""pymatgen.core.structure"", ""@class"": ""Structure"", ""lattice"": {...}, ""sites"": [...]}",metadata2
 ```
 
-**Note:** You can only use one input method at a time (`--cifs` OR `--csv`, not both).
+> **Note:** You can only use one input method at a time (`--cifs` OR `--csv`, not both).
 
-### Configuration Options
+</details>
 
-- **`--cifs`**: Path to directory or file list (use with `--cifs` OR `--csv`)
-- **`--csv`**: Path to CSV file containing structures (use with `--cifs` OR `--csv`)
-- **`--config`**: Configuration name (default: `comprehensive`)
-- **`--name`**: Name for this benchmark run (required)
-- **`--families`**: Specific benchmark families to run (optional, defaults to all)
-- **`--fingerprint-method`**: Fingerprinting method to use (`bawl`, `short-bawl`, `structure-matcher`, `pdd`)
+<details>
+<summary><strong>🔧 Fingerprinting Methods</strong></summary>
 
-### Available Benchmark Families
-
-| Family | Description | Computational Cost |
-|--------|-------------|-------------------|
-| `validity` | Fundamental structure validation (charge, distance, plausibility) | Low |
-| `distribution` | Distribution similarity (JSD, MMD, Fréchet distance) | Medium |
-| `diversity` | Structural diversity (element, space group, site number, physical) | Low |
-| `novelty` | Novelty vs. LeMat-Bulk reference dataset | Medium |
-| `uniqueness` | Internal uniqueness within generated set | Low |
-| `stability` | Thermodynamic stability (formation energy, e_above_hull) | High |
-| `hhi` | Supply risk assessment (production/reserve concentration) | Low |
-| `sun` | Composite metric (Stability + Uniqueness + Novelty) | High |
-
-### Available Configurations
-
-- `comprehensive.yaml` - All benchmark families using BAWL fingerprinting (default)
-- `comprehensive_structure_matcher.yaml` - All benchmark families using structure-matcher
-- `comprehensive_new.yaml` - Enhanced benchmarks with augmented fingerprinting
-- `validity.yaml` - Validity metrics only
-- `distribution.yaml` - Distribution metrics only
-- `diversity.yaml` - Diversity metrics only
-- `novelty.yaml` - Novelty metrics only
-- `uniqueness.yaml` - Uniqueness metrics only
-- `stability.yaml` - Stability metrics only
-- `hhi.yaml` - HHI metrics only
-- `sun.yaml` - SUN metrics only
-
-### Fingerprinting Methods
-
-| Method | Description | Speed | Memory Usage |
-|--------|-------------|-------|--------------|
+| Method | Description | Speed | Memory |
+|--------|-------------|-------|--------|
 | `bawl` | Full BAWL fingerprinting | Fast | Low |
 | `short-bawl` | Shortened BAWL fingerprinting (default) | Fast | Low |
 | `structure-matcher` | PyMatGen StructureMatcher comparison | Slow | High |
 | `pdd` | Packing density descriptor | Medium | Medium |
 
-### Running Specific Benchmark Families
+```bash
+# Use structure-matcher for better accuracy (slower)
+uv run scripts/run_benchmarks.py \
+  --cifs submissions/test \
+  --config comprehensive_structure_matcher \
+  --name test_run \
+  --fingerprint-method structure-matcher
+```
+
+</details>
+
+<details>
+<summary><strong>🎯 Running Specific Benchmark Families</strong></summary>
 
 #### Single Family
 ```bash
@@ -279,57 +246,38 @@ uv run scripts/run_benchmarks.py --cifs structures/ --config validity --families
 uv run scripts/run_benchmarks.py --cifs structures/ --config stability --families stability --name stability_only
 ```
 
-#### Multiple Families (2-3 families)
+#### Multiple Families
 ```bash
 # Run validity and novelty (low + medium cost)
-uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --families validity novelty --name validity_novelty
+uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive_multi_mlip_hull --families validity novelty --name validity_novelty
 
 # Run diversity, uniqueness, and HHI (all low cost)
-uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --families diversity uniqueness hhi --name diversity_analysis
+uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive_multi_mlip_hull --families diversity uniqueness hhi --name diversity_analysis
 
 # Run distribution and stability (medium + high cost)
-uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --families distribution stability --name distribution_stability
-
-# Run novelty, uniqueness, and SUN (medium + low + high cost)
-uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --families novelty uniqueness sun --name novelty_sun
+uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive_multi_mlip_hull --families distribution stability --name distribution_stability
 ```
 
 #### All Families (Default)
 ```bash
-# Run all benchmark families
-uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --name full_analysis
-# or explicitly specify all families
-uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive --families validity distribution diversity novelty uniqueness stability hhi sun --name explicit_full
+uv run scripts/run_benchmarks.py --cifs structures/ --config comprehensive_multi_mlip_hull --name full_analysis
 ```
 
-#### Using Structure-Matcher for Better Accuracy
-```bash
-# Use structure-matcher instead of BAWL fingerprinting for more accurate structural comparison
-uv run scripts/run_benchmarks.py \
-  --cifs submissions/test \
-  --config comprehensive_structure_matcher \
-  --name test_run_structure_matcher \
-  --fingerprint-method structure-matcher
+</details>
 
-# Run specific families with structure-matcher
-uv run scripts/run_benchmarks.py \
-  --cifs structures/ \
-  --config comprehensive \
-  --families novelty uniqueness \
-  --name novelty_uniqueness_matcher \
-  --fingerprint-method structure-matcher
-```
+---
 
 ## 📁 Output
 
-Results are saved to `results/` directory with format:
+Results are saved to `results/` directory:
+
 ```
 {run_name}_{config_name}_{timestamp}.json
 ```
 
-Example: `my_benchmark_comprehensive_20241204_143022.json`
+<details>
+<summary><strong>📄 Output Structure</strong></summary>
 
-### Output Structure
 ```json
 {
   "run_info": {
@@ -337,18 +285,41 @@ Example: `my_benchmark_comprehensive_20241204_143022.json`
     "config_name": "comprehensive",
     "timestamp": "20241204_143022",
     "n_structures": 100,
-    "benchmark_families": ["validity", "distribution", "diversity", ...]
+    "benchmark_families": ["validity", "distribution", "diversity", "..."]
   },
   "results": {
-    "validity": { ... },
-    "distribution": { ... },
-    "diversity": { ... },
-    ...
+    "validity": { "..." },
+    "distribution": { "..." },
+    "diversity": { "..." }
   }
 }
 ```
 
-## 🔍 Examples
+</details>
+
+<details>
+<summary><strong>📊 Extract Metrics from JSON</strong></summary>
+
+```bash
+# Process a single file
+uv run scripts/extract_benchmark_metrics.py results/my_run_comprehensive.json
+
+# Process all JSON files in a directory
+uv run scripts/extract_benchmark_metrics.py results_new/ --directory
+
+# Specify custom output directory
+uv run scripts/extract_benchmark_metrics.py results/my_run.json --output-dir custom_output/
+
+# Process directory with custom pattern
+uv run scripts/extract_benchmark_metrics.py final_results/ --directory --pattern "*comprehensive*.json"
+```
+
+</details>
+
+---
+
+<details>
+<summary><strong>🔍 More Examples</strong></summary>
 
 ### Quick Validation Check
 ```bash
@@ -362,7 +333,7 @@ uv run scripts/run_benchmarks.py --cifs my_structures/ --config stability --name
 
 ### Custom Benchmark Selection
 ```bash
-uv run scripts/run_benchmarks.py --cifs structures.txt --config comprehensive --families validity novelty uniqueness --name custom_analysis
+uv run scripts/run_benchmarks.py --cifs structures.txt --config comprehensive_multi_mlip_hull --families validity novelty uniqueness --name custom_analysis
 ```
 
 ### CSV Input Examples
@@ -371,26 +342,19 @@ uv run scripts/run_benchmarks.py --cifs structures.txt --config comprehensive --
 uv run scripts/run_benchmarks.py --csv my_structures.csv --config validity --name csv_validity
 
 # Full analysis of CSV structures
-uv run scripts/run_benchmarks.py --csv generated_structures.csv --config comprehensive --name csv_full_analysis
-
-# Distribution analysis only
-uv run scripts/run_benchmarks.py --csv structures.csv --config distribution --families distribution --name csv_distribution
+uv run scripts/run_benchmarks.py --csv generated_structures.csv --config comprehensive_multi_mlip_hull --name csv_full_analysis
 ```
 
 ### High-Performance SSH Examples
 ```bash
 # Use SSH-optimized script for large datasets
-uv run scripts/run_benchmarks_ssh.py --cifs large_dataset/ --config comprehensive --name large_run
-
-# Structure-matcher with SSH optimization
-uv run scripts/run_benchmarks_ssh.py \
-  --cifs submissions/large_test \
-  --config comprehensive_structure_matcher \
-  --name large_test_structure_matcher \
-  --fingerprint-method structure-matcher
+uv run scripts/run_benchmarks_ssh.py --cifs large_dataset/ --config comprehensive_multi_mlip_hull --name large_run
 ```
 
-## ⚠️ Important Notes
+</details>
+
+<details>
+<summary><strong>⚠️ Important Notes</strong></summary>
 
 ### Computational Requirements
 - **MMD Reference Sample**: Uses 15K samples from LeMat-Bulk for computational efficiency
@@ -406,82 +370,116 @@ uv run scripts/run_benchmarks_ssh.py \
 ### Charged Species Handling
 - **Formation Energy**: Works with charged species (Cs+, Br-, etc.)
 - **E_above_hull**: May fail for charged species (expected behavior)
-- **Warnings**: Some warnings are informational and expected
 
 ### Performance Tips
 - **Small Sets**: Use `--families` to run only needed benchmarks
 - **Large Sets**: Consider running benchmarks separately for memory efficiency
 - **Caching**: Models are cached locally for faster subsequent runs
 - **SSH Optimization**: Use `run_benchmarks_ssh.py` for high-core environments
-- **Fingerprinting**: Use `structure-matcher` for accuracy, `short-bawl` for speed
 
-## 🛠 Troubleshooting
+</details>
+
+<details>
+<summary><strong>🛠 Troubleshooting</strong></summary>
 
 ### Common Issues
 
-1. **UMA Access Denied:**
-   ```bash
-   # Ensure you're logged in
-   huggingface-cli login
-   
-   # Check access status
-   huggingface-cli whoami
-   ```
+**1. UMA Access Denied:**
+```bash
+# Ensure you're logged in
+huggingface-cli login
 
-2. **Memory Issues:**
-   ```bash
-   # Run fewer families at once
-   uv run scripts/run_benchmarks.py --cifs structures/ --config validity --families validity --name memory_test
-   ```
+# Check access status
+huggingface-cli whoami
+```
 
-3. **Timeout Errors:**
-   - Reduce structure count
-   - Use faster MLIP models (ORB instead of UMA)
-   - Increase timeout in configuration
+**2. Memory Issues:**
+```bash
+# Run fewer families at once
+uv run scripts/run_benchmarks.py --cifs structures/ --config validity --families validity --name memory_test
+```
 
-4. **Private Dataset Access Error:**
-   ```bash
-   # Error: 'Entalpic/LeMaterial-Above-Hull-dataset' doesn't exist on the Hub
-   # Solution: Download datasets locally (one-time setup)
-   uv run scripts/download_above_hull_datasets.py
-   ```
-   
-   This downloads the required datasets to `data/` folder for local access.
+**3. Timeout Errors:**
+- Reduce structure count
+- Use faster MLIP models (ORB instead of UMA)
+- Increase timeout in configuration
 
-5. **Structure-Matcher Performance:**
-   - Structure-matcher is more accurate but much slower than BAWL
-   - Consider using for smaller datasets or when accuracy is critical
-   - Use SSH-optimized script for large datasets
+**4. Private Dataset Access Error:**
+```bash
+# Error: 'Entalpic/LeMaterial-Above-Hull-dataset' doesn't exist on the Hub
+# Solution: Download datasets locally (one-time setup)
+uv run scripts/download_above_hull_datasets.py
+```
+
+**5. Structure-Matcher Performance:**
+- Structure-matcher is more accurate but much slower than BAWL
+- Consider using for smaller datasets or when accuracy is critical
+- Use SSH-optimized script for large datasets
 
 ### Getting Help
-
 - Check the [scripts documentation](scripts/README_benchmark_runner.md)
 - Review example configurations in `src/config/`
 - Examine test files for usage patterns
 
-## 📚 References
+</details>
+
+<details>
+<summary><strong>📚 References</strong></summary>
 
 ### Datasets
-- **LeMat-Bulk Dataset**: [HuggingFace](https://huggingface.co/datasets/LeMaterial/LeMat-Bulk) - Siron, Martin, et al. "LeMat-Bulk: aggregating, and de-duplicating quantum chemistry materials databases." AI for Accelerated Materials Design-ICLR 2025.
+- **LeMat-Bulk Dataset**: [HuggingFace](https://huggingface.co/datasets/LeMaterial/LeMat-Bulk)  
+  Siron, Martin, et al. "LeMat-Bulk: aggregating, and de-duplicating quantum chemistry materials databases." *AI for Accelerated Materials Design-ICLR 2025*.
 
 ### MLIP Models
-- **UMA Model**: [HuggingFace](https://huggingface.co/facebook/UMA) - Wood, Brandon M., et al. "UMA: A Family of Universal Models for Atoms." arXiv preprint arXiv:2506.23971 (2025).
-- **ORB Models**: [GitHub](https://github.com/orbital-materials/orb-models) - Rhodes, Benjamin, et al. "Orb-v3: atomistic simulation at scale." arXiv preprint arXiv:2504.06231 (2025).
-- **MACE Models**: [GitHub](https://github.com/ACEsuit/mace) - Batatia, Ilyes, et al. "MACE: Higher order equivariant message passing neural networks for fast and accurate force fields." Advances in neural information processing systems 35 (2022): 11423-11436.
+- **UMA Model**: [HuggingFace](https://huggingface.co/facebook/UMA)  
+  Wood, Brandon M., et al. "UMA: A Family of Universal Models for Atoms." *arXiv preprint arXiv:2506.23971* (2025).
+
+- **ORB Models**: [GitHub](https://github.com/orbital-materials/orb-models)  
+  Rhodes, Benjamin, et al. "Orb-v3: atomistic simulation at scale." *arXiv preprint arXiv:2504.06231* (2025).
+
+- **MACE Models**: [GitHub](https://github.com/ACEsuit/mace)  
+  Batatia, Ilyes, et al. "MACE: Higher order equivariant message passing neural networks for fast and accurate force fields." *Advances in Neural Information Processing Systems 35* (2022): 11423-11436.
 
 ### Core Metrics and Methods
 
-#### Distribution Metrics
-- **Fréchet Distance**: [FCD Implementation](https://github.com/bioinf-jku/FCD/blob/master/fcd/utils.py) - Measures similarity between embedding distributions
-- **Maximum Mean Discrepancy (MMD)**: [Gretton et al. (2012)](https://jmlr.org/papers/v13/gretton12a.html) - Gretton, Arthur, et al. "A kernel two-sample test." The journal of machine learning research 13.1 (2012): 723-773.
-- **Jensen-Shannon Distance**: [Lin (1991)](https://ieeexplore.ieee.org/document/86638) - Lin, Jianhua. "Divergence measures based on the Shannon entropy." IEEE Transactions on Information theory 37.1 (2002): 145-151.
+**Distribution Metrics:**
+- **Fréchet Distance**: [FCD Implementation](https://github.com/bioinf-jku/FCD/blob/master/fcd/utils.py)
+- **Maximum Mean Discrepancy (MMD)**: [Gretton et al. (2012)](https://jmlr.org/papers/v13/gretton12a.html)  
+  Gretton, Arthur, et al. "A kernel two-sample test." *JMLR 13.1* (2012): 723-773.
+- **Jensen-Shannon Distance**: [Lin (1991)](https://ieeexplore.ieee.org/document/86638)  
+  Lin, Jianhua. "Divergence measures based on the Shannon entropy." *IEEE Transactions on Information Theory 37.1* (2002): 145-151.
 
-#### Diversity Metrics
-- **Vendi Score**: [Friedman & Dieng (2023)](https://arxiv.org/abs/2210.02410) - Friedman, Dan, and Adji Bousso Dieng. "The vendi score: A diversity evaluation metric for machine learning." arXiv preprint arXiv:2210.02410 (2022).
+**Diversity Metrics:**
+- **Vendi Score**: [Friedman & Dieng (2023)](https://arxiv.org/abs/2210.02410)  
+  Friedman, Dan, and Adji Bousso Dieng. "The vendi score: A diversity evaluation metric for machine learning." *arXiv preprint arXiv:2210.02410* (2022).
 
-#### Supply Risk Metrics
-- **Herfindahl-Hirschman Index (HHI)**: [Mansouri Tehrani, Aria, et al](https://link.springer.com/article/10.1007/s40192-017-0085-4) - Mansouri Tehrani, Aria, et al. "Balancing mechanical properties and sustainability in the search for superhard materials." Integrating materials and manufacturing innovation 6.1 (2017): 1-8.
+**Supply Risk Metrics:**
+- **Herfindahl-Hirschman Index (HHI)**: [Mansouri Tehrani et al.](https://link.springer.com/article/10.1007/s40192-017-0085-4)  
+  Mansouri Tehrani, Aria, et al. "Balancing mechanical properties and sustainability in the search for superhard materials." *Integrating Materials and Manufacturing Innovation 6.1* (2017): 1-8.
+
+</details>
+
+---
 
 ## 📄 License
 
 This project is licensed under the Apache License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📝 Citation
+
+If you use LeMat-GenBench in your research, please cite:
+
+```bibtex
+@article{betala2025lemat,
+  title     = {LeMat-GenBench: A Unified Evaluation Framework for Crystal Generative Models},
+  author    = {Betala, Siddharth and Gleason, Samuel P. and Ramlaoui, Ali and Xu, Andy and 
+               Channing, Georgia and Levy, Daniel and Fourrier, Cl{\'e}mentine and Kazeev, Nikita and 
+               Joshi, Chaitanya K. and Kaba, S{\'e}kou-Oumar and Therrien, F{\'e}lix and 
+               Hernandez-Garcia, Alex and Mercado, Roc{\'\i}o and Krishnan, N. M. Anoop and 
+               Duval, Alexandre},
+  journal   = {arXiv preprint arXiv:2512.04562},
+  year      = {2025}
+}
+```
