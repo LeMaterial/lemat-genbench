@@ -200,6 +200,12 @@ dummy.csv
 pre_relax_mp20/
 post_relax_mp20/
 multi_mlip_results_plots/
+scripts/sample_mp_experimental.py
+scripts/calculate_fid_pre_relax_mp20.py
+scripts/calculate_fid_post_relax_mp20.py
+scripts/calculate_fid_diffcsp_pp.py
+scripts/calculate_fid_after_relax.py
+
 
 data/reference_fingerprints/
 data/reference_fingerprints_new/
@@ -230,3 +236,24 @@ validity_comparison_results/analysis/latex_captions.tex
 baseline_sampling.log
 baseline_data/checkpoints/*.pkl
 baseline_results/
+baseline_data/
+dataset-bulk-postrelax/
+dataset-bulk-prerelax/
+expt_data_results/
+expt_data_results_wrt_mp20/
+hf_leaderboard_v0_results/
+mp_20_results/
+mp_20_results_correct/
+mp-20-data/
+multi_mlip_results_plots/
+post_relax_mp20/
+pre_relax_mp20/
+mp_experimental_structures.pkl
+mp_experimental_structures.csv
+benchmark_mp20_ensemble.zip
+dataset-bulk-postrelax.zip
+dataset-bulk-prerelax.zip
+mp_20_results.zip
+results_final_jan_models.zip
+validity_comparison_results.zip
+results_final_jan_models/
