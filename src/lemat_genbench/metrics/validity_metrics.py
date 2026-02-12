@@ -169,7 +169,14 @@ class ChargeNeutralityMetric(BaseMetric):
         here = Path(__file__).resolve().parent
         three_up = here.parents[2]
 
-        with open(three_up / "data" / "lemat_icsd_oxi_state_mapping.json", "r") as f:
+        # Try loading from repo root first, fallback to package data directory
+        oxi_state_mapping_path = three_up / "data" / "lemat_icsd_oxi_state_mapping.json"
+        if not oxi_state_mapping_path.exists():
+            # Fallback: load from package data directory (works when installed as package)
+            package_data_dir = here.parent / "data"
+            oxi_state_mapping_path = package_data_dir / "lemat_icsd_oxi_state_mapping.json"
+        
+        with open(oxi_state_mapping_path, "r") as f:
             oxi_state_mapping = json.load(f)
 
         oxi_states_override = {}
