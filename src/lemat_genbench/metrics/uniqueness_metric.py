@@ -183,7 +183,10 @@ class UniquenessMetric(BaseMetric):
                                 is_unique = False
                     # individual_values.append(min_distance)
                     if is_unique:
+                        individual_values.append(1.0)  # Unique structures get a value of 1.0
                         count_unique += 1
+                    else:
+                        individual_values.append(0.0)  # Duplicates get a value of 0.0
 
                 return MetricResult(
                     metrics={
