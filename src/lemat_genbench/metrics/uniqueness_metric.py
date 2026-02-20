@@ -149,6 +149,11 @@ class UniquenessMetric(BaseMetric):
             Object containing the uniqueness metrics and computation metadata.
             The result will have a custom 'fingerprints' attribute containing
             the computed fingerprints for successful structures.
+            
+            **Note**: In this metric result the 'individual_values' will 
+            represent the uniqueness contribution of each structure
+            (1.0 for unique structures, and 1/count for duplicates), 
+            rather than a traditional per-structure metric.
         """
 
         start_time = time.time()
@@ -183,10 +188,7 @@ class UniquenessMetric(BaseMetric):
                                 is_unique = False
                     # individual_values.append(min_distance)
                     if is_unique:
-                        individual_values.append(1.0)  # Unique structures get a value of 1.0
                         count_unique += 1
-                    else:
-                        individual_values.append(0.0)  # Duplicates get a value of 0.0
 
                 return MetricResult(
                     metrics={
