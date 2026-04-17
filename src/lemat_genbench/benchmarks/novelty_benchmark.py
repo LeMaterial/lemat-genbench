@@ -116,24 +116,23 @@ class NoveltyBenchmark(BaseBenchmark):
         dict[str, float]
             Final aggregated scores.
         """
-        # Initialize default scores
         final_scores = {
             "novelty_score": np.nan,
             "novel_structures_count": 0,
             "total_structures_evaluated": 0,
-            "novelty_ratio": np.nan,  # Alias for novelty_score for clarity
+            "novelty_ratio": np.nan,
+            "novel_composition_count": 0,
+            "novel_spacegroup_count": 0,
+            "novel_structure_only_count": 0,
         }
 
-        # Extract novelty results
         novelty_results = evaluator_results.get("novelty")
         if novelty_results:
-            # Get the combined score (should be same as novelty_score)
             combined_value = novelty_results.get("combined_value")
             if combined_value is not None:
                 final_scores["novelty_score"] = float(combined_value)
                 final_scores["novelty_ratio"] = float(combined_value)
 
-            # Extract detailed metrics from the metric results
             metric_results = novelty_results.get("metric_results", {})
             novelty_metric_result = metric_results.get("novelty", {})
 
@@ -144,12 +143,13 @@ class NoveltyBenchmark(BaseBenchmark):
             else:
                 metrics = {}
 
-            # Extract count information
-            final_scores["novel_structures_count"] = metrics.get(
-                "novel_structures_count", 0
-            )
-            final_scores["total_structures_evaluated"] = metrics.get(
-                "total_structures_evaluated", 0
-            )
+            for key in (
+                "novel_structures_count",
+                "total_structures_evaluated",
+                "novel_composition_count",
+                "novel_spacegroup_count",
+                "novel_structure_only_count",
+            ):
+                final_scores[key] = metrics.get(key, 0)
 
         return final_scores
