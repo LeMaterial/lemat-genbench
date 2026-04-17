@@ -20,16 +20,16 @@ from pymatgen.io.cif import CifWriter
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from smact.metallicity import metallicity_score
 
-# Module-level symprec used by SpacegroupAnalyzer calls in this module.
-# Can be overridden at runtime (e.g. by the symprec sweep script).
-_SYMPREC = 0.01
-
 from lemat_genbench.metrics.base import BaseMetric, MetricConfig
 from lemat_genbench.utils.logging import logger
 from lemat_genbench.utils.oxidation_state import (
     compositional_oxi_state_guesses,
     get_inequivalent_site_info,
 )
+
+# Module-level symprec used by SpacegroupAnalyzer calls in this module.
+# Can be overridden at runtime (e.g. by the symprec sweep script).
+_SYMPREC = 0.01
 
 # Suppress common warnings
 warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")

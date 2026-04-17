@@ -8,11 +8,11 @@ import numpy as np
 from pymatgen.core.periodic_table import Element, Species
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 
+from lemat_genbench.utils.logging import logger
+
 # Module-level symprec used by SpacegroupAnalyzer calls in this module.
 # Can be overridden at runtime (e.g. by the symprec sweep script).
 _SYMPREC = 0.01
-
-from lemat_genbench.utils.logging import logger
 
 
 def electronegativity_correlation(
