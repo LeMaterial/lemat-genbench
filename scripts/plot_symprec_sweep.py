@@ -17,7 +17,6 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 # Metrics to extract and their regex patterns within final_scores
 METRICS = {
     "Validity": r"'overall_validity_ratio':\s*([\d.]+)",
