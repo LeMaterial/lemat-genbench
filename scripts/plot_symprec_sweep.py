@@ -115,16 +115,16 @@ def main() -> None:
                     fontsize=8,
                 )
 
-        ax.set_title(f"symprec {sp_key}", fontsize=10, fontweight="bold")
+        ax.set_title(f"symprec {sp_key}", fontsize=15, fontweight="bold")
         ax.set_xticks(x)
-        ax.set_xticklabels(metric_names, rotation=35, ha="right", fontsize=8)
+        ax.set_xticklabels(metric_names, rotation=35, ha="right", fontsize=12)
         ax.set_ylim(0, 1.15)
         ax.grid(axis="y", alpha=0.3)
 
-    axes[0].set_ylabel("Score")
+    axes[0].set_ylabel("Score", fontsize=15)
     fig.suptitle(
         f"Benchmark scores across symprec values — {data['run_info']['run_name']}",
-        fontsize=12,
+        fontsize=18,
         fontweight="bold",
     )
     fig.tight_layout()
