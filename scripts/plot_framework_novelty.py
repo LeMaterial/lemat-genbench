@@ -213,12 +213,12 @@ def plot_single_file(
                 )
 
     ax.set_xticks(x)
-    ax.set_xticklabels(labels, fontsize=32)
+    ax.set_xticklabels(labels, fontsize=28)
     ax.set_ylim(0, Y_MAX)
     ax.set_yticks(np.arange(0, Y_MAX + 1, 500))
-    ax.tick_params(axis="y", labelsize=32)
+    ax.tick_params(axis="y", labelsize=28)
     ax.grid(axis="y", alpha=0.3)
-    ax.set_title("Framework Novelty", fontsize=40, fontweight="bold")
+    ax.set_title("Framework Novelty", fontsize=36, fontweight="bold")
 
     if legend_handles:
         ax.legend(
@@ -230,7 +230,7 @@ def plot_single_file(
             edgecolor="0.7",
         )
 
-    fig.suptitle(run_name, fontsize=50, fontweight="bold")
+    fig.suptitle(run_name, fontsize=44, fontweight="bold")
     fig.tight_layout()
 
     fig.savefig(output_path, dpi=600, bbox_inches="tight")
