@@ -124,6 +124,9 @@ class NoveltyBenchmark(BaseBenchmark):
             "novel_composition_count": 0,
             "novel_spacegroup_count": 0,
             "novel_structure_only_count": 0,
+            "framework_existing_anon_known_sg": 0,
+            "framework_existing_anon_novel_sg": 0,
+            "framework_novel_anon": 0,
         }
 
         novelty_results = evaluator_results.get("novelty")
@@ -149,6 +152,9 @@ class NoveltyBenchmark(BaseBenchmark):
                 "novel_composition_count",
                 "novel_spacegroup_count",
                 "novel_structure_only_count",
+                "framework_existing_anon_known_sg",
+                "framework_existing_anon_novel_sg",
+                "framework_novel_anon",
             ):
                 final_scores[key] = metrics.get(key, 0)
 

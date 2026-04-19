@@ -5,9 +5,11 @@ structures are not present in a reference dataset of known materials.
 Uses LeMat-Bulk dataset and BAWL fingerprinting.
 """
 
+import json
 import warnings
 from collections import defaultdict
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
 
 import numpy as np
@@ -89,6 +91,49 @@ def _get_reference_spacegroups(
 
     sg_cache[formula] = spacegroups
     return spacegroups
+
+
+def _classify_framework(
+    structure: Structure, dataset_information: Dict[str, Any]
+) -> None:
+    """Classify a structure's framework novelty and append to the accumulator.
+
+    Appends one of ``"existing_anon_known_sg"``, ``"existing_anon_novel_sg"``,
+    ``"novel_anon"``, or ``None`` (on failure) to
+    ``dataset_information["_framework_classifications"]``.
+
+    No-op if the anon SG index was not loaded.
+
+    Parameters
+    ----------
+    structure : Structure
+        The structure to classify.
+    dataset_information : dict[str, Any]
+        Must contain ``anon_sg_index`` and ``_framework_classifications``.
+    """
+    fw_list = dataset_information.get("_framework_classifications")
+    anon_sg_index = dataset_information.get("anon_sg_index")
+    if fw_list is None or anon_sg_index is None:
+        return
+
+    try:
+        anon = Composition(
+            structure.composition.anonymized_formula
+        ).reduced_composition.anonymized_formula
+
+        if anon not in anon_sg_index:
+            fw_list.append("novel_anon")
+            return
+
+        sg = SpacegroupAnalyzer(
+            structure, symprec=_SYMPREC
+        ).get_space_group_number()
+        if sg in anon_sg_index[anon]:
+            fw_list.append("existing_anon_known_sg")
+        else:
+            fw_list.append("existing_anon_novel_sg")
+    except Exception:
+        fw_list.append(None)
 
 
 @dataclass
@@ -265,6 +310,28 @@ class NoveltyMetric(BaseMetric):
                     f"Indexed {len(ref_compositions)} unique reference compositions"
                 )
 
+            # Load pre-built anonymous formula → space group index for framework classification
+            _anon_sg_path = (
+                Path(__file__).resolve().parents[3]
+                / "data"
+                / "lematbulk_anon_sg_index.json"
+            )
+            if _anon_sg_path.exists():
+                with open(_anon_sg_path) as f:
+                    raw_index = json.load(f)
+                dataset_information["anon_sg_index"] = {
+                    anon: set(sgs) for anon, sgs in raw_index.items()
+                }
+                dataset_information["_framework_classifications"] = []
+                logger.info(
+                    f"Loaded framework index: {len(raw_index)} anonymous formulas"
+                )
+            else:
+                logger.info(
+                    "No framework index found at %s — skipping framework classification",
+                    _anon_sg_path,
+                )
+
             # Check if fingerprints are already available in the dataset
             if (
                 "entalpic_fingerprint" in dataset.column_names
@@ -427,6 +494,9 @@ class NoveltyMetric(BaseMetric):
             Coded novelty category (see above), or ``nan`` on failure.
         """
         try:
+            # Framework classification (independent of novelty, appends to shared list)
+            _classify_framework(structure, dataset_information)
+
             fingerprint = get_fingerprint(structure, fingerprinter)
 
             if hasattr(fingerprinter, "get_material_hash"):
@@ -544,15 +614,35 @@ class NoveltyMetric(BaseMetric):
         # Binary novel/not-novel for std calculation
         binary = [1.0 if v > 0 else 0.0 for v in valid_values]
 
+        metrics = {
+            "novelty_score": novelty_score,
+            "novel_structures_count": int(novel_count),
+            "total_structures_evaluated": total_count,
+            "novel_composition_count": int(novel_composition_count),
+            "novel_spacegroup_count": int(novel_spacegroup_count),
+            "novel_structure_only_count": int(novel_structure_only_count),
+        }
+
+        # Framework novelty counts (accumulated during compute_structure calls)
+        fw_classifications = None
+        if self._dataset_information is not None:
+            fw_classifications = self._dataset_information.get(
+                "_framework_classifications"
+            )
+        if fw_classifications is not None:
+            from collections import Counter
+
+            fw_counts = Counter(c for c in fw_classifications if c is not None)
+            metrics["framework_existing_anon_known_sg"] = fw_counts.get(
+                "existing_anon_known_sg", 0
+            )
+            metrics["framework_existing_anon_novel_sg"] = fw_counts.get(
+                "existing_anon_novel_sg", 0
+            )
+            metrics["framework_novel_anon"] = fw_counts.get("novel_anon", 0)
+
         return {
-            "metrics": {
-                "novelty_score": novelty_score,
-                "novel_structures_count": int(novel_count),
-                "total_structures_evaluated": total_count,
-                "novel_composition_count": int(novel_composition_count),
-                "novel_spacegroup_count": int(novel_spacegroup_count),
-                "novel_structure_only_count": int(novel_structure_only_count),
-            },
+            "metrics": metrics,
             "primary_metric": "novelty_score",
             "uncertainties": {
                 "novelty_score": {
