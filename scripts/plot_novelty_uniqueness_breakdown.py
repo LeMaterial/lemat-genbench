@@ -318,6 +318,7 @@ def plot_assembled_figure(
         If True, draw count and percentage text inside bars.
     """
     import string
+
     from matplotlib.gridspec import GridSpec, GridSpecFromSubplotSpec
 
     # Parse all files, filtering out skipped runs

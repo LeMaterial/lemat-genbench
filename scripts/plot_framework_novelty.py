@@ -327,6 +327,7 @@ def plot_assembled_figure(
         Number of columns in the panel grid.
     """
     import string
+
     from matplotlib.gridspec import GridSpec
 
     # Parse all files, filtering out skipped runs
