@@ -98,27 +98,25 @@ class UniquenessBenchmark(BaseBenchmark):
         dict[str, float]
             Final aggregated scores.
         """
-        # Initialize default scores
         final_scores = {
             "uniqueness_score": np.nan,
             "unique_structures_count": 0,
             "duplicate_structures_count": 0,
             "total_structures_evaluated": 0,
             "failed_fingerprinting_count": 0,
-            "uniqueness_ratio": np.nan,  # Alias for uniqueness_score for clarity
+            "uniqueness_ratio": np.nan,
+            "unique_composition_count": 0,
+            "unique_spacegroup_count": 0,
+            "unique_structure_only_count": 0,
         }
 
-        # Extract uniqueness results
         uniqueness_results = evaluator_results.get("uniqueness")
         if uniqueness_results:
-            # Get the combined score (should be same as uniqueness_score)
             combined_value = uniqueness_results.get("combined_value")
             if combined_value is not None:
                 final_scores["uniqueness_score"] = float(combined_value)
                 final_scores["uniqueness_ratio"] = float(combined_value)
-            # If combined_value is None, keep the default np.nan values
 
-            # Extract detailed metrics from the metric results
             metric_results = uniqueness_results.get("metric_results", {})
             uniqueness_metric_result = metric_results.get("uniqueness", {})
 
@@ -129,18 +127,15 @@ class UniquenessBenchmark(BaseBenchmark):
             else:
                 metrics = {}
 
-            # Extract count information
-            final_scores["unique_structures_count"] = metrics.get(
-                "unique_structures_count", 0
-            )
-            final_scores["duplicate_structures_count"] = metrics.get(
-                "duplicate_structures_count", 0
-            )
-            final_scores["total_structures_evaluated"] = metrics.get(
-                "total_structures_evaluated", 0
-            )
-            final_scores["failed_fingerprinting_count"] = metrics.get(
-                "failed_fingerprinting_count", 0
-            )
+            for key in (
+                "unique_structures_count",
+                "duplicate_structures_count",
+                "total_structures_evaluated",
+                "failed_fingerprinting_count",
+                "unique_composition_count",
+                "unique_spacegroup_count",
+                "unique_structure_only_count",
+            ):
+                final_scores[key] = metrics.get(key, 0)
 
         return final_scores
