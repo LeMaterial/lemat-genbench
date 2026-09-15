@@ -20,6 +20,22 @@ try:
 except ImportError:
     MACE_AVAILABLE = False
 
+#: Checkpoint for energies, forces and relaxation with ``model_type="mp"``.  It
+#: must be the one that produced ``mace_mp_energy`` in
+#: LeMaterial/LeMat-Bulk-MLIP-Hull, or every energy above the ``mace_mp`` hull
+#: mixes two energy scales.  MACE-MP-0b3-medium reproduces the published energies
+#: to float32 rounding (median 3.5e-7 eV/atom over 3350 structures); every other
+#: MACE-MP checkpoint misses by 14-30 meV/atom.  Named explicitly because
+#: ``mace_mp()``'s default changed in mace-torch 0.3.10 and is neither.
+MACE_MP_ENERGY_MODEL = "medium-0b3"
+
+#: Checkpoint for embeddings with ``model_type="mp"``.  It must be the one that
+#: produced ``mace_embeddings`` in LeMaterial/LeMat-GenBench-embeddings, from
+#: which the Fréchet distance reference statistics are computed.
+#: MACE-MPA-0-medium reproduces them to a relative L2 error of 2e-7; the
+#: energy checkpoint above is off by ~150%.
+MACE_MP_EMBEDDING_MODEL = "medium-mpa-0"
+
 
 class MACECalculator(BaseMLIPCalculator):
     """MACE calculator for energy/force calculations and embedding extraction."""
@@ -55,7 +71,9 @@ class MACECalculator(BaseMLIPCalculator):
 
             if self.model_type == "mp":
                 # Materials Project foundation model
-                self.ase_calc = mace_mp(device=device_str, **kwargs)
+                self._setup_mp_models(device_str, **kwargs)
+                logger.info(f"Successfully loaded MACE model: {self.model_type}")
+                return
             elif self.model_type == "off":
                 # Off-the-shelf models
                 self.ase_calc = mace_off(device=device_str, **kwargs)
@@ -86,26 +104,45 @@ class MACECalculator(BaseMLIPCalculator):
                 logger.error(f"Alternative loading also failed: {str(e2)}")
                 raise e
 
+    def _setup_mp_models(self, device_str, **kwargs):
+        """Load the MACE-MP checkpoints that match LeMat-GenBench's references.
+
+        Energies and embeddings are compared against references built with two
+        different checkpoints, so each is computed with its own: see
+        :data:`MACE_MP_ENERGY_MODEL` and :data:`MACE_MP_EMBEDDING_MODEL`.
+        Passing ``model`` or ``embedding_model`` overrides them, at the cost of
+        no longer matching the corresponding reference.
+        """
+        energy_model = kwargs.pop("model", MACE_MP_ENERGY_MODEL)
+        embedding_model = kwargs.pop("embedding_model", MACE_MP_EMBEDDING_MODEL)
+
+        self.ase_calc = mace_mp(model=energy_model, device=device_str, **kwargs)
+        if embedding_model == energy_model:
+            embedding_calc = self.ase_calc
+        else:
+            embedding_calc = mace_mp(
+                model=embedding_model, device=device_str, **kwargs
+            )
+        self.embedding_extractor = MACEEmbeddingExtractor(embedding_calc, self.device)
+        logger.info(
+            f"MACE-MP energies from '{energy_model}', "
+            f"embeddings from '{embedding_model}'"
+        )
+
     def _alternative_model_loading(self, device_str, **kwargs):
         """Alternative model loading approach for problematic models."""
         # This method can be used to implement alternative loading strategies
         # if the standard approach fails
 
         if self.model_type == "mp":
-            # Try loading with different parameters
+            # Retry in float32, keeping the checkpoints: substituting a different
+            # model would silently break the pairing with the hull and the
+            # embedding reference.
             kwargs_alt = kwargs.copy()
-            kwargs_alt.update(
-                {
-                    "model": "small",  # Try smaller model
-                    "default_dtype": "float32",
-                }
-            )
-            self.ase_calc = mace_mp(device=device_str, **kwargs_alt)
+            kwargs_alt["default_dtype"] = "float32"
+            self._setup_mp_models(device_str, **kwargs_alt)
         else:
             raise ValueError("Alternative loading only implemented for MP models")
-
-        # Create embedding extractor
-        self.embedding_extractor = MACEEmbeddingExtractor(self.ase_calc, self.device)
 
         logger.info("Successfully loaded MACE model using alternative approach")
 

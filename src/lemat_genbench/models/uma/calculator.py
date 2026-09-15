@@ -24,14 +24,32 @@ try:
 except ImportError:
     UMA_AVAILABLE = False
 
+#: Checkpoint for energies, forces and relaxation with the ``uma`` hull type.
+#: It should be the one that produced ``uma_energy`` in
+#: LeMaterial/LeMat-Bulk-MLIP-Hull. Named explicitly (mirroring the MACE-MP
+#: checkpoints in ``models/mace/calculator.py``) so a future ``fairchem-core``
+#: upgrade can't silently swap the weights behind this name out from under the
+#: hull reference the way ``mace_mp()``'s changing default once did.
+#:
+#: KNOWN DISCREPANCY (unresolved as of this writing): a direct energy
+#: comparison on LeMat-Bulk row 0 (mp-1196446) gives ~0.41 eV total-energy
+#: difference against the hull's cached uma_energy -- the same order of
+#: magnitude as the MACE-MP checkpoint bug this pins alongside. Unlike that
+#: bug, no alternate named UMA checkpoint has been found that closes the gap;
+#: it may be caused by an unpinned fairchem-core version (pyproject.toml only
+#: requires ">=2.3.0") rather than a model name mismatch. This needs the same
+#: audit MACE-MP got before the ``uma`` hull can be trusted the same way.
+UMA_MP_ENERGY_MODEL = "uma-s-1"
+UMA_MP_ENERGY_TASK = "omat"
+
 
 class UMACalculator(BaseMLIPCalculator):
     """UMA calculator for energy/force calculations and embedding extraction."""
 
     def __init__(
         self,
-        model_name: str = "uma-s-1",
-        task: str = "omat",  # "oc20", "omat", "omol", "odac", "omc"
+        model_name: str = UMA_MP_ENERGY_MODEL,
+        task: str = UMA_MP_ENERGY_TASK,  # "oc20", "omat", "omol", "odac", "omc"
         device: str = "cpu",
         precision: str = "float32",
         **kwargs,

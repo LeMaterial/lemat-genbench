@@ -19,6 +19,7 @@ Usage:
 import argparse
 import gc
 import json
+import os
 import sys
 import time
 from datetime import datetime
@@ -622,6 +623,12 @@ def run_remaining_preprocessors(
         # Show progress for MLIP model loading
         logger.info("🔥 Initializing MLIP models (this may take 1-2 minutes)...")
 
+        # n_jobs defaults to 4 inside MultiMLIPStabilityPreprocessor, which loads
+        # 4 concurrent copies of orb+mace+uma onto the GPU -- reliably OOMs on an
+        # 8GB card. Override via MLIP_PREPROCESSOR_N_JOBS for the GPU at hand
+        # (e.g. 1 on a consumer GPU, higher on an A100/H100 with more VRAM).
+        mlip_n_jobs = int(os.environ.get("MLIP_PREPROCESSOR_N_JOBS", "4"))
+
         mlip_preprocessor = MultiMLIPStabilityPreprocessor(
             mlip_names=["orb", "mace", "uma"],
             mlip_configs=mlip_configs,
@@ -631,6 +638,7 @@ def run_remaining_preprocessors(
             calculate_energy_above_hull=relax_structures,
             extract_embeddings=extract_embeddings,
             timeout=300,
+            n_jobs=mlip_n_jobs,
         )
 
         # Add progress bar for structure processing
