@@ -20,13 +20,22 @@ try:
 except ImportError:
     ORB_AVAILABLE = False
 
+#: Checkpoint for energies, forces and relaxation with ``model_type`` left at its
+#: default. It must be the one that produced ``orb_conserv_inf_energy`` in
+#: LeMaterial/LeMat-Bulk-MLIP-Hull, or every energy above the ``orb_conserv_inf``
+#: hull mixes two energy scales. Named explicitly (mirroring the MACE-MP
+#: checkpoints in ``models/mace/calculator.py``) so a future change to
+#: ``orb_models``' pretrained-model registry can't silently swap it out from
+#: under the hull reference the way ``mace_mp()``'s changing default once did.
+ORB_MP_ENERGY_MODEL = "orb_v3_conservative_inf_omat"
+
 
 class ORBCalculator(BaseMLIPCalculator):
     """ORB calculator for energy/force calculations and embedding extraction."""
 
     def __init__(
         self,
-        model_type: str = "orb_v3_conservative_inf_omat",
+        model_type: str = ORB_MP_ENERGY_MODEL,
         device: str = "cpu",
         precision: str = "float32-high",
         **kwargs,
