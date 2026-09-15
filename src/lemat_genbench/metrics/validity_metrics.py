@@ -27,6 +27,10 @@ from lemat_genbench.utils.oxidation_state import (
     get_inequivalent_site_info,
 )
 
+# Module-level symprec used by SpacegroupAnalyzer calls in this module.
+# Can be overridden at runtime (e.g. by the symprec sweep script).
+_SYMPREC = 0.01
+
 # Suppress common warnings
 warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -576,7 +580,7 @@ class PhysicalPlausibilityMetric(BaseMetric):
         if check_symmetry:
             total_checks += 1
             try:
-                sga = SpacegroupAnalyzer(structure)
+                sga = SpacegroupAnalyzer(structure, symprec=_SYMPREC)
                 space_group_number = sga.get_space_group_number()
                 if 1 <= space_group_number <= 230:
                     checks_passed += 1

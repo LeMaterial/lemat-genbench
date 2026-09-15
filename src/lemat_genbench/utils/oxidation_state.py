@@ -10,6 +10,10 @@ from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 
 from lemat_genbench.utils.logging import logger
 
+# Module-level symprec used by SpacegroupAnalyzer calls in this module.
+# Can be overridden at runtime (e.g. by the symprec sweep script).
+_SYMPREC = 0.01
+
 
 def electronegativity_correlation(
         elements: list[str],
@@ -269,7 +273,7 @@ def get_inequivalent_site_info(structure):
 
     # Get the symmetrically inequivalent indexes
     inequivalent_sites = (
-        SpacegroupAnalyzer(structure).get_symmetrized_structure().equivalent_indices
+        SpacegroupAnalyzer(structure, symprec=_SYMPREC).get_symmetrized_structure().equivalent_indices
     )
 
     # Equivalent indexes must all share the same atom type

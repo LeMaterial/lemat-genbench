@@ -8,6 +8,10 @@ from lemat_genbench.utils.distribution_utils import (
     one_hot_encode_composition,
 )
 
+# Module-level symprec used by spacegroup calls in this module.
+# Can be overridden at runtime (e.g. by the symprec sweep script).
+_SYMPREC = 0.01
+
 
 @dataclass
 class DistributionPreprocessorConfig(PreprocessorConfig):
@@ -63,9 +67,9 @@ class DistributionPreprocessor(BasePreprocessor):
             "Volume": structure.volume,
             "Density(g/cm^3)": structure.density,
             "Density(atoms/A^3)": structure.num_sites / structure.volume,
-            "SpaceGroup": structure.get_space_group_info()[1],
+            "SpaceGroup": structure.get_space_group_info(symprec=_SYMPREC)[1],
             "CrystalSystem": map_space_group_to_crystal_system(
-                structure.get_space_group_info()[1]
+                structure.get_space_group_info(symprec=_SYMPREC)[1]
             ),
             "CompositionCounts": one_hot_vectors[0],
             "Composition": one_hot_vectors[1],

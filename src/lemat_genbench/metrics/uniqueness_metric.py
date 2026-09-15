@@ -6,10 +6,12 @@ of unique structures in a generated set using BAWL fingerprinting.
 
 import time
 import warnings
+from collections import Counter
 from dataclasses import dataclass
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional, Tuple
 
 from pymatgen.core import Structure
+from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from tqdm import tqdm
 
 from lemat_genbench.fingerprinting.utils import get_fingerprint, get_fingerprinter
@@ -21,6 +23,84 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings(
     "ignore", category=DeprecationWarning, message=r".*__array__.*copy.*"
 )
+
+
+# Module-level symprec used by SpacegroupAnalyzer calls in this module.
+# Can be overridden at runtime (e.g. by the symprec sweep script).
+_SYMPREC = 0.01
+
+
+def _get_comp_sg(structure: Structure) -> Tuple[str, Optional[int]]:
+    """Return ``(reduced_formula, spacegroup_number)`` for *structure*.
+
+    Parameters
+    ----------
+    structure : Structure
+        Pymatgen structure.
+
+    Returns
+    -------
+    tuple[str, int | None]
+        Reduced formula and spacegroup number (``None`` on failure).
+    """
+    formula = structure.composition.reduced_formula
+    try:
+        sg = SpacegroupAnalyzer(structure, symprec=_SYMPREC).get_space_group_number()
+    except Exception:
+        sg = None
+    return formula, sg
+
+
+def _classify_unique_structures(
+    fingerprints: List[str],
+    comp_sg_pairs: List[Tuple[str, Optional[int]]],
+) -> Tuple[int, int, int]:
+    """Classify unique (by fingerprint) structures into novelty categories.
+
+    Compares each unique structure against ALL other generated structures
+    (including those with duplicate fingerprints) to determine the category.
+
+    Parameters
+    ----------
+    fingerprints : list[str]
+        Parallel list of fingerprint strings (same length as *comp_sg_pairs*).
+    comp_sg_pairs : list[tuple[str, int | None]]
+        Parallel list of ``(reduced_formula, spacegroup_number)`` pairs.
+
+    Returns
+    -------
+    tuple[int, int, int]
+        Counts of ``(unique_composition, unique_spacegroup, unique_structure_only)``.
+    """
+    fp_counts = Counter(fingerprints)
+
+    # Counts across ALL structures (including duplicates)
+    all_comp_counts = Counter(formula for formula, _ in comp_sg_pairs)
+    all_comp_sg_counts = Counter(
+        (formula, sg) for formula, sg in comp_sg_pairs if sg is not None
+    )
+
+    unique_comp = 0
+    unique_sg = 0
+    unique_struct = 0
+
+    for i, fp in enumerate(fingerprints):
+        if fp_counts[fp] != 1:
+            continue  # not a unique fingerprint
+        formula, sg = comp_sg_pairs[i]
+        if all_comp_counts[formula] == 1:
+            unique_comp += 1
+        elif sg is None:
+            # Can't determine spacegroup — conservatively classify as
+            # different-spacegroup since we can't confirm a match
+            # (consistent with novelty metric behaviour)
+            unique_sg += 1
+        elif all_comp_sg_counts[(formula, sg)] == 1:
+            unique_sg += 1
+        else:
+            unique_struct += 1
+
+    return unique_comp, unique_sg, unique_struct
 
 
 @dataclass
@@ -164,34 +244,57 @@ class UniquenessMetric(BaseMetric):
                 count_unique = 0
 
                 individual_values = []
+                unique_flags = []
+                comp_sg_pairs = [_get_comp_sg(s) for s in structures]
+
                 for i, structure1 in tqdm(
                     enumerate(structures),
                     total=len(structures),
                     disable=not self.verbose,
                 ):
                     is_unique = True
-                    # min_distance = float("inf")
                     for j, structure2 in enumerate(structures):
                         if i < j:
                             is_equivalent = fingerprinter.is_equivalent(
                                 structure1, structure2
                             )
-                            # similarity = fingerprinter.get_similarity_score(structure1, structure2)
-                            # distance = 1 - similarity
-                            # min_distance = min(min_distance, distance)
                             if is_equivalent:
                                 is_unique = False
-                    # individual_values.append(min_distance)
+                    unique_flags.append(is_unique)
                     if is_unique:
                         count_unique += 1
 
+                # Classify unique structures
+                all_comp_counts = Counter(f for f, _ in comp_sg_pairs)
+                all_comp_sg_counts = Counter(
+                    (f, sg) for f, sg in comp_sg_pairs if sg is not None
+                )
+                unique_comp = 0
+                unique_sg = 0
+                unique_struct = 0
+                for i, is_u in enumerate(unique_flags):
+                    if not is_u:
+                        continue
+                    formula, sg = comp_sg_pairs[i]
+                    if all_comp_counts[formula] == 1:
+                        unique_comp += 1
+                    elif sg is None:
+                        unique_sg += 1
+                    elif all_comp_sg_counts[(formula, sg)] == 1:
+                        unique_sg += 1
+                    else:
+                        unique_struct += 1
+
                 return MetricResult(
                     metrics={
-                        self.name: count_unique / len(structures),           # Fraction
-                        "unique_structures_count": count_unique,             # ✅ Add count
+                        self.name: count_unique / len(structures),
+                        "unique_structures_count": count_unique,
                         "total_structures_evaluated": len(structures),
                         "duplicate_structures_count": len(structures) - count_unique,
-                        "failed_fingerprinting_count": 0,  # Structure matcher doesn't have failures like fingerprinting
+                        "failed_fingerprinting_count": 0,
+                        "unique_composition_count": unique_comp,
+                        "unique_spacegroup_count": unique_sg,
+                        "unique_structure_only_count": unique_struct,
                     },
                     primary_metric=self.name,
                     uncertainties={},
@@ -204,6 +307,7 @@ class UniquenessMetric(BaseMetric):
                 )
 
             else:
+                comp_sg_pairs: List[Tuple[str, Optional[int]]] = []
                 for idx, structure in tqdm(
                     enumerate(structures),
                     total=len(structures),
@@ -215,6 +319,7 @@ class UniquenessMetric(BaseMetric):
                         )
                         if fingerprint is not None:
                             fingerprints.append(fingerprint)
+                            comp_sg_pairs.append(_get_comp_sg(structure))
                         else:
                             failed_indices.append(idx)
                             warnings.append(
@@ -230,9 +335,10 @@ class UniquenessMetric(BaseMetric):
                             exc_info=True,
                         )
 
-                # Calculate uniqueness metrics
+                # Calculate uniqueness metrics (with breakdown)
                 result_dict = self._calculate_uniqueness_metrics(
-                    fingerprints, len(structures), len(failed_indices)
+                    fingerprints, len(structures), len(failed_indices),
+                    comp_sg_pairs
                 )
 
                 # Create individual values for consistency with base class
@@ -292,18 +398,26 @@ class UniquenessMetric(BaseMetric):
         )
 
     def _calculate_uniqueness_metrics(
-        self, fingerprints: List[str], total_structures: int, failed_count: int
+        self,
+        fingerprints: List[str],
+        total_structures: int,
+        failed_count: int,
+        comp_sg_pairs: Optional[List[Tuple[str, Optional[int]]]] = None,
     ) -> Dict[str, Any]:
         """Calculate uniqueness metrics from fingerprints.
 
         Parameters
         ----------
-        fingerprints : List[str]
+        fingerprints : list[str]
             List of fingerprints from successful computations.
         total_structures : int
             Total number of structures evaluated.
         failed_count : int
             Number of structures that failed fingerprinting.
+        comp_sg_pairs : list[tuple[str, int | None]], optional
+            Parallel list of ``(reduced_formula, spacegroup_number)`` for each
+            entry in *fingerprints*.  When provided the breakdown of unique
+            structures by composition / spacegroup is included.
 
         Returns
         -------
@@ -318,19 +432,28 @@ class UniquenessMetric(BaseMetric):
                     "total_structures_evaluated": total_structures,
                     "duplicate_structures_count": 0,
                     "failed_fingerprinting_count": failed_count,
+                    "unique_composition_count": 0,
+                    "unique_spacegroup_count": 0,
+                    "unique_structure_only_count": 0,
                 },
                 "primary_metric": "uniqueness_score",
                 "uncertainties": {},
             }
 
-        # Count unique fingerprints
         unique_fingerprints = set(fingerprints)
         unique_count = len(unique_fingerprints)
         total_valid = len(fingerprints)
         duplicate_count = total_valid - unique_count
 
-        # Calculate uniqueness score
         uniqueness_score = unique_count / total_valid if total_valid > 0 else 0.0
+
+        # Breakdown of unique structures by composition / spacegroup
+        if comp_sg_pairs is not None and len(comp_sg_pairs) == len(fingerprints):
+            unique_comp, unique_sg, unique_struct = _classify_unique_structures(
+                fingerprints, comp_sg_pairs
+            )
+        else:
+            unique_comp = unique_sg = unique_struct = 0
 
         return {
             "metrics": {
@@ -339,6 +462,9 @@ class UniquenessMetric(BaseMetric):
                 "total_structures_evaluated": total_structures,
                 "duplicate_structures_count": duplicate_count,
                 "failed_fingerprinting_count": failed_count,
+                "unique_composition_count": unique_comp,
+                "unique_spacegroup_count": unique_sg,
+                "unique_structure_only_count": unique_struct,
             },
             "primary_metric": "uniqueness_score",
             "uncertainties": {
