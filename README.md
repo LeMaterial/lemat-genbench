@@ -9,6 +9,20 @@ A comprehensive benchmarking framework for evaluating material generation models
 
 ---
 
+> **⚠️ Known issue and ongoing recompute:**
+> Previous configs used to launch the benchmark used the MACE model with no checkpoint specified (`mace_mp()`), which silently tracked `mace-torch`'s changing default rather than the checkpoint that produced
+> `mace_mp_energy` in [`LeMat-Bulk-MLIP-Hull`](https://huggingface.co/datasets/LeMaterial/LeMat-Bulk-MLIP-Hull)
+> (`medium-0b3`). Every `mace_mp`-hull-based stability/SUN/MSUN result computed before this fix
+> mixed two energy scales. The checkpoints are now pinned explicitly.
+>
+> **Affected historical results are being recomputed**, and the public
+> [leaderboard](https://huggingface.co/spaces/LeMaterial/LeMat-GenBench) is being updated 
+> with corrected numbers. If you're comparing against previously published SUN/MSUN/stability
+> figures, treat them as provisional until this recompute lands — re-run with the
+> current `main` if you need current results now.
+
+---
+
 ## 🚀 Quick Start
 
 ```bash
