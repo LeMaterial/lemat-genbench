@@ -26,7 +26,8 @@ def electronegativity_correlation(
         
     Returns:
         Pearson correlation coefficient between oxidation states and electronegativity.
-        Returns NaN if correlation cannot be calculated.
+        Returns 0.0 when either vector has zero variance, and NaN for
+        missing data or mismatched inputs.
     """
 
     en_vals = []
@@ -41,9 +42,16 @@ def electronegativity_correlation(
     if len(en_vals) != len(oxidation_states):
         logger.error("Mismatch in array lengths for correlation calculation")
         return np.nan
-    else:
-        corr = np.corrcoef(oxidation_states, en_vals)[0,1]
-        return corr
+
+    if len(en_vals) <= 1:
+        return 0.0
+
+    # Pearson correlation is undefined for a constant vector. Such a
+    # solution has no electronegativity preference, so give it a neutral score.
+    if np.std(en_vals) < 1e-6 or np.std(oxidation_states) < 1e-6:
+        return 0.0
+
+    return float(np.corrcoef(oxidation_states, en_vals)[0, 1])
 
 
 def compositional_oxi_state_guesses(

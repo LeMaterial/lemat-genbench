@@ -1,16 +1,74 @@
 """Tests for validity metrics implementation."""
 
+import warnings
+from unittest.mock import Mock
+
 import numpy as np
 import pytest
+from pymatgen.core import Composition, Lattice
 from pymatgen.core.structure import Structure
 from pymatgen.util.testing import PymatgenTest
 
+from lemat_genbench.metrics import validity_metrics
 from lemat_genbench.metrics.validity_metrics import (
     ChargeNeutralityMetric,
     MinimumInteratomicDistanceMetric,
     OverallValidityMetric,
     PhysicalPlausibilityMetric,
 )
+from lemat_genbench.utils.oxidation_state import (
+    compositional_oxi_state_guesses,
+    electronegativity_correlation,
+)
+
+
+@pytest.mark.parametrize(
+    ("elements", "oxidation_states"),
+    [
+        (["Cu", "Si"], [1, -1]),
+        (["Li", "F"], [1, 1]),
+        (["Cu"], [1]),
+    ],
+)
+def test_electronegativity_correlation_constant_vector(elements, oxidation_states):
+    with warnings.catch_warnings():
+        warnings.simplefilter("error", RuntimeWarning)
+        assert electronegativity_correlation(elements, oxidation_states) == 0.0
+
+
+def test_electronegativity_correlation_nonconstant_vector():
+    assert electronegativity_correlation(["Ni", "P"], [1, -1]) < 0.0
+
+
+def test_equal_electronegativity_charge_fallback(monkeypatch):
+    structure = Structure(
+        Lattice.cubic(10), ["Cu", "Si"], [[0, 0, 0], [0.5, 0.5, 0.5]]
+    )
+    actual_guesses = compositional_oxi_state_guesses
+    fallback_calls = []
+
+    def guesses(comp, *, all_oxi_states, **kwargs):
+        if not all_oxi_states:
+            return (), (), ()
+        fallback_calls.append(comp)
+        return actual_guesses(comp, all_oxi_states=all_oxi_states, **kwargs)
+
+    monkeypatch.setattr(validity_metrics, "metallicity_score", lambda _: 0.0)
+    monkeypatch.setattr(
+        validity_metrics, "get_inequivalent_site_info", Mock(side_effect=ValueError)
+    )
+    monkeypatch.setattr(validity_metrics, "compositional_oxi_state_guesses", guesses)
+    analyzer = Mock()
+    analyzer.get_oxi_state_decorated_structure.side_effect = ValueError
+
+    with warnings.catch_warnings():
+        warnings.simplefilter("error", RuntimeWarning)
+        deviation = ChargeNeutralityMetric.compute_structure(
+            structure, bv_analyzer=analyzer
+        )
+
+    assert fallback_calls == [Composition("CuSi")]
+    assert deviation == 0.0
 
 
 @pytest.fixture

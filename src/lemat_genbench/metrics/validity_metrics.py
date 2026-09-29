@@ -213,10 +213,11 @@ class ChargeNeutralityMetric(BaseMetric):
                 )
 
             try:
-                score = -output[2][0] # correlation between oxidation state and electronegativity. Should be negative correlation for valid structures, reverse sign so logic 
-                # maximizing score is consistent
-                if score > 0.0:
-                    return 0.0  # Assume charge neutral (reasonable composition)
+                # Negative correlation is favored; zero is neutral when
+                # electronegativity provides no ordering information.
+                score = -output[2][0]
+                if score >= 0.0:
+                    return 0.0  # Charge-balanced with favorable or neutral correlation
                 else:
                     return 10.0  # correlation between oxidation state and electronegativity is positive (scores is negative) not a reasonable composition
             
