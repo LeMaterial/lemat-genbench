@@ -15,6 +15,10 @@ from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 
 from lemat_genbench.utils.logging import logger
 
+# Module-level symprec used by SpacegroupAnalyzer calls in this module.
+# Can be overridden at runtime (e.g. by the symprec sweep script).
+_SYMPREC = 0.01
+
 # Suppress common warnings from pymatgen
 warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -28,17 +32,18 @@ class CrystallographicAnalyzer:
     augmented fingerprinting approaches.
     """
 
-    def __init__(self, symprec: float = 0.01, angle_tolerance: float = 5.0):
+    def __init__(self, symprec: float | None = None, angle_tolerance: float = 5.0):
         """Initialize the crystallographic analyzer.
 
         Parameters
         ----------
-        symprec : float, default=0.01
+        symprec : float | None, default=None
             Symmetry precision for spacegroup analysis.
+            Defaults to the module-level ``_SYMPREC`` (0.01).
         angle_tolerance : float, default=5.0
             Angle tolerance in degrees for spacegroup analysis.
         """
-        self.symprec = symprec
+        self.symprec = symprec if symprec is not None else _SYMPREC
         self.angle_tolerance = angle_tolerance
 
     def analyze_structure(self, structure: Structure) -> Dict[str, Any]:
@@ -402,7 +407,7 @@ class CrystallographicAnalyzer:
 
 
 def structure_to_crystallographic_dict(
-    structure: Structure, symprec: float = 0.01, angle_tolerance: float = 5.0
+    structure: Structure, symprec: float | None = None, angle_tolerance: float = 5.0
 ) -> Dict[str, Any]:
     """Convert a pymatgen Structure to crystallographic metadata dictionary.
 
@@ -413,8 +418,9 @@ def structure_to_crystallographic_dict(
     ----------
     structure : Structure
         The pymatgen Structure object to analyze.
-    symprec : float, default=0.01
+    symprec : float | None, default=None
         Symmetry precision for spacegroup analysis.
+        Defaults to the module-level ``_SYMPREC`` (0.01).
     angle_tolerance : float, default=5.0
         Angle tolerance in degrees for spacegroup analysis.
 
@@ -424,7 +430,8 @@ def structure_to_crystallographic_dict(
         Dictionary containing crystallographic metadata.
     """
     analyzer = CrystallographicAnalyzer(
-        symprec=symprec, angle_tolerance=angle_tolerance
+        symprec=symprec if symprec is not None else _SYMPREC,
+        angle_tolerance=angle_tolerance,
     )
     crystal_data = analyzer.analyze_structure(structure)
     composition_data = analyzer.extract_composition_info(structure)
@@ -469,7 +476,7 @@ def lematbulk_item_to_structure(item: Dict[str, Any]) -> Structure:
 
 
 def analyze_lematbulk_item(
-    item: Dict[str, Any], symprec: float = 0.01, angle_tolerance: float = 5.0
+    item: Dict[str, Any], symprec: float | None = None, angle_tolerance: float = 5.0
 ) -> Dict[str, Any]:
     """Extract crystallographic metadata directly from LeMat-Bulk item.
 
@@ -480,8 +487,9 @@ def analyze_lematbulk_item(
     ----------
     item : Dict[str, Any]
         LeMat-Bulk dataset item.
-    symprec : float, default=0.01
+    symprec : float | None, default=None
         Symmetry precision for spacegroup analysis.
+        Defaults to the module-level ``_SYMPREC`` (0.01).
     angle_tolerance : float, default=5.0
         Angle tolerance in degrees for spacegroup analysis.
 

@@ -8,6 +8,10 @@ from pymatgen.core import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from tqdm import tqdm
 
+# Module-level symprec used by SpacegroupAnalyzer calls in this module.
+# Can be overridden at runtime (e.g. by the symprec sweep script).
+_SYMPREC = 0.01
+
 
 def get_inequivalent_site_info(structure: Structure) -> dict:
     """Gets the symmetrically inequivalent sites as found by the
@@ -27,7 +31,7 @@ def get_inequivalent_site_info(structure: Structure) -> dict:
 
     # Get the symmetrically inequivalent indexes
     inequivalent_sites = (
-        SpacegroupAnalyzer(structure).get_symmetrized_structure().equivalent_indices
+        SpacegroupAnalyzer(structure, symprec=_SYMPREC).get_symmetrized_structure().equivalent_indices
     )
 
     # Equivalent indexes must all share the same atom type

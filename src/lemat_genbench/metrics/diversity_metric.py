@@ -38,6 +38,10 @@ from lemat_genbench.utils.diversity_utils import (
 )
 from lemat_genbench.utils.logging import logger
 
+# Module-level symprec used by spacegroup calls in this module.
+# Can be overridden at runtime (e.g. by the symprec sweep script).
+_SYMPREC = 0.01
+
 """
 -------------------------------------------------------------------------------
 Elemental Diversity
@@ -264,7 +268,9 @@ class SpaceGroupDiversityMetric(BaseMetric):
 
         """
         try:
-            spacegroup_symbol, spacegroup_number = structure.get_space_group_info()
+            spacegroup_symbol, spacegroup_number = structure.get_space_group_info(
+                symprec=_SYMPREC
+            )
             spacegroup_histogram[spacegroup_symbol] += 1
             return spacegroup_number / 230
 

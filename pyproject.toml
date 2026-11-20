@@ -36,6 +36,7 @@ dependencies = [
     "mp-api>=0.45.12",
     "aflow>=0.0.11",
     "seaborn>=0.13.2",
+    "pymatviz>=0.17.2",
 ]
 
 [project.scripts]

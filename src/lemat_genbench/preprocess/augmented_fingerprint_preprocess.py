@@ -22,6 +22,10 @@ from lemat_genbench.fingerprinting.crystallographic_analyzer import (
 from lemat_genbench.preprocess.base import BasePreprocessor, PreprocessorConfig
 from lemat_genbench.utils.logging import logger
 
+# Module-level symprec used by spacegroup calls in this module.
+# Can be overridden at runtime (e.g. by the symprec sweep script).
+_SYMPREC = 0.01
+
 # Suppress common warnings
 warnings.filterwarnings("ignore", message="No oxidation states specified on sites!")
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -211,7 +215,7 @@ class AugmentedFingerprintPreprocessor(BasePreprocessor):
                 if include_fallback_properties:
                     try:
                         # Basic structural properties as fallback
-                        space_group_info = structure.get_space_group_info()
+                        space_group_info = structure.get_space_group_info(symprec=_SYMPREC)
                         fingerprint_properties.update({
                             "augmented_fingerprint_fallback_spacegroup": space_group_info[1],
                             "augmented_fingerprint_fallback_formula": structure.formula,
