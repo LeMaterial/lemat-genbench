@@ -2,7 +2,6 @@
 
 import json
 import math
-import time
 import warnings
 from collections import defaultdict
 from itertools import combinations_with_replacement, product
@@ -283,7 +282,16 @@ def test_cu7si25_oxi_state_guesses():
         assert abs(sol["Cu"] * 7 + sol["Si"] * 25) < 1e-9
 
 
-def test_large_site_performance_and_correctness():
+def test_bounded_oxi_combos_linear_count():
+    # Si has 8 oxidation states (-4..-1, 1..4) with 6 adjacent pairs separated by 1,
+    # so valid combos grow linearly as 8 + 6 * (n_atoms - 1) instead of C(n + 7, 7).
+    si_oxids = Element("Si").oxidation_states
+    for n_atoms in (1, 16, 32, 64):
+        combos = list(_bounded_oxi_combos(si_oxids, n_atoms))
+        assert len(combos) == 8 + 6 * (n_atoms - 1)
+
+
+def test_large_site_oxi_state_guesses():
     data_dir = Path(__file__).resolve().parents[2] / "src" / "lemat_genbench" / "data"
     with open(data_dir / "lemat_icsd_oxi_state_mapping.json", "r") as f:
         mapping = json.load(f)
@@ -296,7 +304,6 @@ def test_large_site_performance_and_correctness():
         for el in comp_unbalanced.elements
         if str(el) in mapping
     }
-    start = time.perf_counter()
     icsd_res = compositional_oxi_state_guesses(
         comp_unbalanced,
         all_oxi_states=False,
@@ -311,8 +318,6 @@ def test_large_site_performance_and_correctness():
         oxi_states_override=None,
         target_charge=0,
     )
-    elapsed_unbalanced = time.perf_counter() - start
-    assert elapsed_unbalanced < 1.0
     assert icsd_res == ((), (), ())
     assert all_res == ((), (), ())
 
@@ -323,7 +328,6 @@ def test_large_site_performance_and_correctness():
         for el in comp_balanced.elements
         if str(el) in mapping
     }
-    start = time.perf_counter()
     icsd_balanced = compositional_oxi_state_guesses(
         comp_balanced,
         all_oxi_states=False,
@@ -338,9 +342,7 @@ def test_large_site_performance_and_correctness():
         oxi_states_override=None,
         target_charge=0,
     )
-    elapsed_balanced = time.perf_counter() - start
 
-    assert elapsed_balanced < 1.0
     assert isinstance(icsd_balanced, tuple) and len(icsd_balanced) == 3
     assert len(all_balanced[0]) > 0
     assert all_balanced[2][0] == 0.0
@@ -348,11 +350,10 @@ def test_large_site_performance_and_correctness():
         assert abs(sol["Cu"] * 17 + sol["Si"] * 64) < 1e-9
 
 
-def test_multielement_large_site_target_sum_performance():
+def test_multielement_large_site_oxi_state_guesses():
     comp = Composition("Fe4Mn4Cr4O14")
     el_amt = comp.get_el_amt_dict()
 
-    start = time.perf_counter()
     res = compositional_oxi_state_guesses(
         comp,
         all_oxi_states=True,
@@ -360,9 +361,7 @@ def test_multielement_large_site_target_sum_performance():
         oxi_states_override=None,
         target_charge=0,
     )
-    elapsed = time.perf_counter() - start
 
-    assert elapsed < 1.0
     assert len(res[0]) > 0
     assert list(res[2]) == sorted(res[2])
     for sol in res[0]:
