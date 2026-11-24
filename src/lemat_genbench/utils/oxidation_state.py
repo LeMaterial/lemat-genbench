@@ -1,7 +1,7 @@
 import json
 import math
-from collections import defaultdict
-from itertools import combinations_with_replacement, product
+from collections import Counter, defaultdict
+from itertools import combinations_with_replacement
 from pathlib import Path
 
 import numpy as np
@@ -52,6 +52,97 @@ def electronegativity_correlation(
         return 0.0
 
     return float(np.corrcoef(oxidation_states, en_vals)[0, 1])
+
+
+def _bounded_oxi_combos(oxids: list | tuple, n_atoms: int):
+    """Yield multiset tuples of length ``n_atoms`` with ``max - min <= 1``.
+
+    Uses direct O(K * N) construction for integer oxidation states instead of
+    enumerating all ``combinations_with_replacement(oxids, n_atoms)``.
+    """
+    if n_atoms == 0:
+        yield ()
+        return
+    if n_atoms < 0 or not oxids:
+        return
+
+    sorted_oxids = sorted(set(oxids))
+    if all(isinstance(o, int) and not isinstance(o, bool) for o in sorted_oxids):
+        for k in sorted_oxids:
+            yield (k,) * n_atoms
+        for k1, k2 in zip(sorted_oxids, sorted_oxids[1:]):
+            if k2 - k1 == 1:
+                for m in range(1, n_atoms):
+                    yield (k1,) * m + (k2,) * (n_atoms - m)
+        return
+
+    for i, k_min in enumerate(sorted_oxids):
+        window = [o for o in sorted_oxids[i:] if o - k_min <= 1]
+        for combo in combinations_with_replacement(window, n_atoms):
+            if combo[0] == k_min:
+                yield combo
+
+
+def _iter_target_sum_tuples(el_sums: list[list], target_charge: float):
+    """Yield tuples from ``product(*el_sums)`` whose elements sum to ``target_charge``."""
+    if not el_sums or any(not s for s in el_sums):
+        return
+    n_elements = len(el_sums)
+    if n_elements == 1:
+        for s in el_sums[0]:
+            if s == target_charge:
+                yield (s,)
+        return
+
+    suffix_min = [0] * n_elements
+    suffix_max = [0] * n_elements
+    running_min = 0
+    running_max = 0
+    for i in range(n_elements - 1, -1, -1):
+        running_min += min(el_sums[i])
+        running_max += max(el_sums[i])
+        suffix_min[i] = running_min
+        suffix_max[i] = running_max
+
+    if not (suffix_min[0] <= target_charge <= suffix_max[0]):
+        return
+
+    all_int = all(
+        isinstance(v, int) and not isinstance(v, bool)
+        for sublist in el_sums
+        for v in sublist
+    ) and (
+        isinstance(target_charge, int)
+        and not isinstance(target_charge, bool)
+        or (isinstance(target_charge, float) and target_charge.is_integer())
+    )
+    int_target = int(target_charge) if all_int else None
+    last_counts = Counter(el_sums[-1]) if all_int else None
+
+    def _dfs(level: int, partial_sum, prefix: tuple):
+        next_level = level + 1
+        min_rem = suffix_min[next_level]
+        max_rem = suffix_max[next_level]
+        if next_level == n_elements - 1:
+            for s in el_sums[level]:
+                new_sum = partial_sum + s
+                if new_sum + min_rem <= target_charge <= new_sum + max_rem:
+                    if all_int:
+                        needed = int_target - new_sum
+                        for _ in range(last_counts.get(needed, 0)):
+                            yield (*prefix, s, needed)
+                    else:
+                        for last_val in el_sums[-1]:
+                            if new_sum + last_val == target_charge:
+                                yield (*prefix, s, last_val)
+            return
+
+        for s in el_sums[level]:
+            new_sum = partial_sum + s
+            if new_sum + min_rem <= target_charge <= new_sum + max_rem:
+                yield from _dfs(next_level, new_sum, (*prefix, s))
+
+    yield from _dfs(0, 0, ())
 
 
 def compositional_oxi_state_guesses(
@@ -154,70 +245,71 @@ def compositional_oxi_state_guesses(
                 Element(el).icsd_oxidation_states or Element(el).common_oxidation_states
             )
 
-        # Get all possible combinations of oxidation states
+        n_atoms = int(el_amt[el])
+        seen_sums: set = set()
+        if not all_oxi_states:
+            oxi_probs = {
+                o: type(comp).oxi_prob[str(Species(el, o))] for o in set(oxids)
+            }
+
+        # Get all possible combinations of oxidation states with max - min <= 1
         # and sum each combination
-        for oxid_combo in combinations_with_replacement(oxids, int(el_amt[el])):
-            # check to make sure none of the oxidation states deviate by more than 1 
-            if max(oxid_combo) - min(oxid_combo) <= 1: 
-                # List this sum as a possible option
-                oxid_sum = sum(oxid_combo)
-                if oxid_sum not in el_sums[idx]:
-                    el_sums[idx].append(oxid_sum)
+        for oxid_combo in _bounded_oxi_combos(oxids, n_atoms):
+            oxid_sum = sum(oxid_combo)
+            if oxid_sum not in seen_sums:
+                seen_sums.add(oxid_sum)
+                el_sums[idx].append(oxid_sum)
 
-                # Determine how probable is this combo?
-                if not all_oxi_states:
-                    scores = []
-                    for o in oxid_combo:
-                        scores.append(type(comp).oxi_prob[str(Species(el, o))])
-                    score = math.prod(scores)
+            # Determine how probable is this combo?
+            if not all_oxi_states:
+                score = math.prod(oxi_probs[o] for o in oxid_combo)
 
-                    # If it is the most probable combo for a certain sum,
-                    # store the combination
-                    if oxid_sum not in el_sum_scores[idx] or score > el_sum_scores[idx].get(
-                        oxid_sum, 0):
-                        
-                        el_sum_scores[idx][oxid_sum] = score
-                        el_best_oxid_combo[idx][oxid_sum] = oxid_combo
-                            
-            else:
-                pass
-    
+                # If it is the most probable combo for a certain sum,
+                # store the combination
+                if (
+                    oxid_sum not in el_sum_scores[idx]
+                    or score > el_sum_scores[idx][oxid_sum]
+                ):
+                    el_sum_scores[idx][oxid_sum] = score
+                    el_best_oxid_combo[idx][oxid_sum] = oxid_combo
+
     # Determine which combination of oxidation states for each element
     # is the most probable
 
     el_sums = [[x for x in sublist if x != 0] for sublist in el_sums]
-    
+
     all_sols = []  # will contain all solutions
     all_oxid_combo = []  # will contain the best combination of oxidation states for each site
     all_scores = []  # will contain a score for each solution
     scores = []
-    for x in product(*el_sums):
+    for x in _iter_target_sum_tuples(el_sums, target_charge):
         # Each x is a trial of one possible oxidation sum for each element
-        if sum(x) == target_charge:  # charge balance condition
-            el_sum_sol = dict(zip(elements, x, strict=True))  # element->oxid_sum
-            # Normalize oxid_sum by amount to get avg oxid state
-            sol = {el: v / el_amt[el] for el, v in el_sum_sol.items()}
-            # Add the solution to the list of solutions
+        el_sum_sol = dict(zip(elements, x, strict=True))  # element->oxid_sum
+        # Normalize oxid_sum by amount to get avg oxid state
+        sol = {el: v / el_amt[el] for el, v in el_sum_sol.items()}
+        # Add the solution to the list of solutions
+        all_sols.append(sol)
 
-                        
-            all_sols.append(sol)
-            
-            if not all_oxi_states:
-                # Determine the score for this solution
-                scores = []
-                for idx, v in enumerate(x):
-                    scores.append(el_sum_scores[idx][v])
-                # the score is geometric mean of the scores for all the elements in the compostion 
-                all_scores.append(math.prod(scores)**(1/n_sites))
-                # Collect the combination of oxidation states for each site
-                all_oxid_combo.append(
-                    {
-                        e: el_best_oxid_combo[idx][v]
-                        for idx, (e, v) in enumerate(zip(elements, x, strict=True))
-                    }
+        if not all_oxi_states:
+            # Determine the score for this solution
+            scores = []
+            for idx, v in enumerate(x):
+                scores.append(el_sum_scores[idx][v])
+            # the score is geometric mean of the scores for all the elements in the compostion
+            all_scores.append(math.prod(scores) ** (1 / n_sites))
+            # Collect the combination of oxidation states for each site
+            all_oxid_combo.append(
+                {
+                    e: el_best_oxid_combo[idx][v]
+                    for idx, (e, v) in enumerate(zip(elements, x, strict=True))
+                }
+            )
+        else:
+            all_scores.append(
+                electronegativity_correlation(
+                    elements=list(sol.keys()), oxidation_states=list(sol.values())
                 )
-            else:
-                all_scores.append(electronegativity_correlation(elements=list(sol.keys()), oxidation_states=list(sol.values())))
+            )
 
 
     # Sort the solutions from highest to lowest score
