@@ -1,11 +1,17 @@
 """Tests for validity metrics implementation."""
 
+import json
+import math
+import time
 import warnings
+from collections import defaultdict
+from itertools import combinations_with_replacement, product
+from pathlib import Path
 from unittest.mock import Mock
 
 import numpy as np
 import pytest
-from pymatgen.core import Composition, Lattice
+from pymatgen.core import Composition, Element, Lattice, Species
 from pymatgen.core.structure import Structure
 from pymatgen.util.testing import PymatgenTest
 
@@ -17,6 +23,8 @@ from lemat_genbench.metrics.validity_metrics import (
     PhysicalPlausibilityMetric,
 )
 from lemat_genbench.utils.oxidation_state import (
+    _bounded_oxi_combos,
+    _iter_target_sum_tuples,
     compositional_oxi_state_guesses,
     electronegativity_correlation,
 )
@@ -69,6 +77,296 @@ def test_equal_electronegativity_charge_fallback(monkeypatch):
 
     assert fallback_calls == [Composition("CuSi")]
     assert deviation == 0.0
+
+
+def _brute_force_oxi_guesses(
+    comp: Composition,
+    *,
+    all_oxi_states: bool,
+    oxi_states_override: dict[str, list] | None,
+    target_charge: float = 0,
+) -> tuple[tuple, tuple, tuple]:
+    """Reference implementation matching the original brute-force algorithm."""
+    comp = comp.reduced_composition
+    data_dir = Path(__file__).resolve().parents[2] / "src" / "lemat_genbench" / "data"
+    with open(data_dir / "lemat_icsd_oxi_dict_probs.json", "r") as f:
+        oxi_prob = json.load(f)
+
+    oxi_states_override = oxi_states_override or {}
+    el_amt = comp.get_el_amt_dict()
+    n_sites = int(sum(el_amt.values()))
+    elements = list(el_amt)
+    el_sums: list = []
+    el_sum_scores: defaultdict = defaultdict(dict)
+    el_best_oxid_combo: dict = {}
+
+    for idx, el in enumerate(elements):
+        el_sum_scores[idx] = {}
+        el_best_oxid_combo[idx] = {}
+        el_sums.append([])
+        if oxi_states_override.get(el):
+            oxids: list | tuple = oxi_states_override[el]
+        elif all_oxi_states:
+            oxids = Element(el).oxidation_states
+        else:
+            oxids = (
+                Element(el).icsd_oxidation_states or Element(el).common_oxidation_states
+            )
+
+        for oxid_combo in combinations_with_replacement(oxids, int(el_amt[el])):
+            if max(oxid_combo) - min(oxid_combo) <= 1:
+                oxid_sum = sum(oxid_combo)
+                if oxid_sum not in el_sums[idx]:
+                    el_sums[idx].append(oxid_sum)
+                if not all_oxi_states:
+                    score = math.prod(oxi_prob[str(Species(el, o))] for o in oxid_combo)
+                    if (
+                        oxid_sum not in el_sum_scores[idx]
+                        or score > el_sum_scores[idx][oxid_sum]
+                    ):
+                        el_sum_scores[idx][oxid_sum] = score
+                        el_best_oxid_combo[idx][oxid_sum] = oxid_combo
+
+    el_sums = [[x for x in sublist if x != 0] for sublist in el_sums]
+    all_sols, all_oxid_combo, all_scores = [], [], []
+    for x in product(*el_sums):
+        if sum(x) == target_charge:
+            sol = {el: v / el_amt[el] for el, v in zip(elements, x, strict=True)}
+            all_sols.append(sol)
+            if not all_oxi_states:
+                all_scores.append(
+                    math.prod(el_sum_scores[idx][v] for idx, v in enumerate(x))
+                    ** (1 / n_sites)
+                )
+                all_oxid_combo.append(
+                    {
+                        e: el_best_oxid_combo[idx][v]
+                        for idx, (e, v) in enumerate(zip(elements, x, strict=True))
+                    }
+                )
+            else:
+                all_scores.append(
+                    electronegativity_correlation(
+                        elements=list(sol.keys()), oxidation_states=list(sol.values())
+                    )
+                )
+
+    if not all_scores:
+        return (), (), ()
+    if all_oxi_states:
+        sorted_data = sorted(zip(all_scores, all_sols), key=lambda item: item[0])
+        all_scores, all_sols = zip(*sorted_data)
+        return tuple(all_sols), tuple(all_sols), tuple(all_scores)
+    sorted_data = sorted(
+        zip(all_scores, all_sols, all_oxid_combo), key=lambda item: item[0], reverse=True
+    )
+    all_scores, all_sols, all_oxid_combo = zip(*sorted_data)
+    return tuple(all_sols), tuple(all_oxid_combo), tuple(all_scores)
+
+
+@pytest.mark.parametrize(
+    ("oxids", "n_atoms"),
+    [
+        ([-4, -3, -2, -1, 1, 2, 3, 4], 5),
+        ([-2, 0, 2], 3),
+        ([3, 1, 2, 2], 4),
+        ([1], 4),
+        ([], 3),
+        ([1, 2, 3], 1),
+        ([1, 2, 3], 0),
+        ([1.5, 2.0, 2.5], 3),
+    ],
+)
+def test_bounded_oxi_combos_matches_brute_force(oxids, n_atoms):
+    expected = {
+        tuple(sorted(combo))
+        for combo in combinations_with_replacement(oxids, n_atoms)
+        if not combo or max(combo) - min(combo) <= 1
+    }
+    actual = [tuple(sorted(combo)) for combo in _bounded_oxi_combos(oxids, n_atoms)]
+    assert len(actual) == len(set(actual))
+    assert set(actual) == expected
+
+
+@pytest.mark.parametrize(
+    ("el_sums", "target"),
+    [
+        ([[1, 2, -1]], 2),
+        ([[1, 2], [-1, -2]], 0),
+        ([[1, 2, 3], [-4, -2, 0], [1, 2, 3], [-3, -1]], 0),
+        ([[1, 2], []], 0),
+        ([[2, 4], [2, 4]], 1),
+        ([[1.5, 2.5], [-1.5, -0.5]], 1.0),
+        ([[1, 1, 2], [-1, -2, -1]], 0),
+    ],
+)
+def test_iter_target_sum_tuples_matches_product(el_sums, target):
+    expected = [x for x in product(*el_sums) if sum(x) == target]
+    actual = list(_iter_target_sum_tuples(el_sums, target))
+    assert actual == expected
+
+
+@pytest.mark.parametrize(
+    "formula",
+    [
+        "Fe3O4",
+        "LiFePO4",
+        "CuSi",
+        "NaCl",
+        "SrTiO3",
+        "Mn2O3",
+        "Ba2Ca4As3H2",
+        "YBa2Cu3O7",
+    ],
+)
+def test_compositional_oxi_state_guesses_matches_brute_force(formula):
+    data_dir = Path(__file__).resolve().parents[2] / "src" / "lemat_genbench" / "data"
+    with open(data_dir / "lemat_icsd_oxi_state_mapping.json", "r") as f:
+        mapping = json.load(f)
+
+    comp = Composition(formula)
+    override = {str(el): mapping[str(el)] for el in comp.elements if str(el) in mapping}
+
+    for all_oxi, ov in [(False, override), (True, None)]:
+        actual = compositional_oxi_state_guesses(
+            comp,
+            all_oxi_states=all_oxi,
+            max_sites=-1,
+            oxi_states_override=ov,
+            target_charge=0,
+        )
+        expected = _brute_force_oxi_guesses(
+            comp, all_oxi_states=all_oxi, oxi_states_override=ov, target_charge=0
+        )
+        assert actual[2] == pytest.approx(expected[2])
+        assert {tuple(sorted(sol.items())) for sol in actual[0]} == {
+            tuple(sorted(sol.items())) for sol in expected[0]
+        }
+        if not all_oxi:
+            actual_combos = {
+                tuple((el, tuple(sorted(vals))) for el, vals in sorted(combo.items()))
+                for combo in actual[1]
+            }
+            expected_combos = {
+                tuple((el, tuple(sorted(vals))) for el, vals in sorted(combo.items()))
+                for combo in expected[1]
+            }
+            assert actual_combos == expected_combos
+
+
+def test_cu7si25_oxi_state_guesses():
+    data_dir = Path(__file__).resolve().parents[2] / "src" / "lemat_genbench" / "data"
+    with open(data_dir / "lemat_icsd_oxi_state_mapping.json", "r") as f:
+        mapping = json.load(f)
+
+    comp = Composition("Cu7Si25")
+    override = {str(el): mapping[str(el)] for el in comp.elements if str(el) in mapping}
+    icsd_res = compositional_oxi_state_guesses(
+        comp,
+        all_oxi_states=False,
+        max_sites=-1,
+        oxi_states_override=override,
+        target_charge=0,
+    )
+    assert icsd_res == ((), (), ())
+
+    all_res = compositional_oxi_state_guesses(
+        comp,
+        all_oxi_states=True,
+        max_sites=-1,
+        oxi_states_override=None,
+        target_charge=0,
+    )
+    assert len(all_res[0]) > 0
+    assert all_res[2][0] == 0.0
+    for sol in all_res[0]:
+        assert abs(sol["Cu"] * 7 + sol["Si"] * 25) < 1e-9
+
+
+def test_large_site_performance_and_correctness():
+    data_dir = Path(__file__).resolve().parents[2] / "src" / "lemat_genbench" / "data"
+    with open(data_dir / "lemat_icsd_oxi_state_mapping.json", "r") as f:
+        mapping = json.load(f)
+
+    # CuSi64 (64 Si sites, irreducibly large) has no charge-balanced solution
+    # because 64 * 1 > max(Cu) = 4, yet previously enumerated C(71, 7) combos.
+    comp_unbalanced = Composition("CuSi64")
+    override_unbalanced = {
+        str(el): mapping[str(el)]
+        for el in comp_unbalanced.elements
+        if str(el) in mapping
+    }
+    start = time.perf_counter()
+    icsd_res = compositional_oxi_state_guesses(
+        comp_unbalanced,
+        all_oxi_states=False,
+        max_sites=-1,
+        oxi_states_override=override_unbalanced,
+        target_charge=0,
+    )
+    all_res = compositional_oxi_state_guesses(
+        comp_unbalanced,
+        all_oxi_states=True,
+        max_sites=-1,
+        oxi_states_override=None,
+        target_charge=0,
+    )
+    elapsed_unbalanced = time.perf_counter() - start
+    assert elapsed_unbalanced < 1.0
+    assert icsd_res == ((), (), ())
+    assert all_res == ((), (), ())
+
+    # Cu17Si64 (coprime, 64 reduced Si sites) has charge-balanced solutions.
+    comp_balanced = Composition("Cu17Si64")
+    override_balanced = {
+        str(el): mapping[str(el)]
+        for el in comp_balanced.elements
+        if str(el) in mapping
+    }
+    start = time.perf_counter()
+    icsd_balanced = compositional_oxi_state_guesses(
+        comp_balanced,
+        all_oxi_states=False,
+        max_sites=-1,
+        oxi_states_override=override_balanced,
+        target_charge=0,
+    )
+    all_balanced = compositional_oxi_state_guesses(
+        comp_balanced,
+        all_oxi_states=True,
+        max_sites=-1,
+        oxi_states_override=None,
+        target_charge=0,
+    )
+    elapsed_balanced = time.perf_counter() - start
+
+    assert elapsed_balanced < 1.0
+    assert isinstance(icsd_balanced, tuple) and len(icsd_balanced) == 3
+    assert len(all_balanced[0]) > 0
+    assert all_balanced[2][0] == 0.0
+    for sol in all_balanced[0]:
+        assert abs(sol["Cu"] * 17 + sol["Si"] * 64) < 1e-9
+
+
+def test_multielement_large_site_target_sum_performance():
+    comp = Composition("Fe4Mn4Cr4O14")
+    el_amt = comp.get_el_amt_dict()
+
+    start = time.perf_counter()
+    res = compositional_oxi_state_guesses(
+        comp,
+        all_oxi_states=True,
+        max_sites=None,
+        oxi_states_override=None,
+        target_charge=0,
+    )
+    elapsed = time.perf_counter() - start
+
+    assert elapsed < 1.0
+    assert len(res[0]) > 0
+    assert list(res[2]) == sorted(res[2])
+    for sol in res[0]:
+        assert abs(sum(sol[el] * amt for el, amt in el_amt.items())) < 1e-9
 
 
 @pytest.fixture
